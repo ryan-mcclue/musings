@@ -1,0 +1,15 @@
+baseURL = "https://ryan-mcclue.github.io/"
+languageCode = "en-au"
+title = "Ryan's Musings"
+theme = "solar-theme-hugo"
+paginate = 5
+pygmentsStyle = "solarized-light"
+
+[params]
+  scheme = "light"
+  description = "Pride cometh before a fall"
+
+[menu]
+  [[menu.main]]
+    name = "Code"
+    url = "https://github.com/ryan-mcclue"
