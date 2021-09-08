@@ -8,9 +8,9 @@ hugo
 
 deploy_folder="$HOME/prog/personal/ryan-mcclue.github.io"
 find "$deploy_folder"/ -not \( -path "$deploy_folder/.git" -prune \) \
-  -and -not \( -type d -name "$deploy_folder" \) -exec rm -rf {} \;
+  -and -not \( -type d -wholename "$deploy_folder/" \) | xargs rm -rf 
 
 cp -a public/. "$deploy_folder/"
 cd "$deploy_folder"
-git add . && git commit -m "$commit_message" && git push
+git add . && git commit -m "$commit_message" --no-verify && git push origin master
 cd -
