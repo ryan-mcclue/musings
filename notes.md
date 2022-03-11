@@ -3,7 +3,7 @@
 Seems like two types of bootloaders:
  * One built into the board that faciliates flashing over a peripheral, e.g. usb (there is another system bootloader that is same as one below as well?)
  * Name for code that you put into ROM that performs a series of tasks, e.g.
-    - flashing over wirelessly, e.g. phone connected to ear buds
+    - flashing over wirelessly (over-the-air), e.g. phone connected to ear buds
     - security, e.g. verify firmware integrity
     
 MSP and PSP refer to single stack pointer r13, however in different contexts? This way for scheduling?
@@ -15,10 +15,12 @@ The reset handler will init hardware and copy/init variables from rom to ram.
 
 If a bootloader is present, the bootloader will have its own reset handler that when finished doing appropriate tasks,
 will then call the applications reset handler and follow the steps outlined above.
+So, bootloader and application will each have their own vector table.
 
 Although arm says it starts at 0x00, the memory map of an mcu may be different.
 So, typically have boot modes, (i.e. setting boot pin value) to control where the boot address is. 
 e.g. setting to 0 will start from flash at 0x020000. This address will be a memory alias for 0x00.
+Different memory starting regions will have different permissions that allow for read/write/execute  
 
 Dual bank flash allows to erase in one bank while running code in another. Useful for updates.
 
@@ -26,6 +28,9 @@ do two things: copy from ROM to RAM or load from
 peripheral (UART, USB, etc). Could also unpack ELF file, however usually just
 a binary file.
 
+# Modern Program Woes
+STM32CubeMX (this justs generates code, IDE is full fledged) to download, must get link with email
+Once installed, a series of pop-up menus just keep appearing spontaneously as it has to download more to satisfy a simple create project
 
 # Debugger Woes
 Disable optimisation to prevent lines being removed which the debugger won't pick up on.
