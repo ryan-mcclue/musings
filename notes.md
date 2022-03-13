@@ -1,5 +1,10 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+for long range, LoRa or sigfox
+essentially tradeoffs between power and data rate
+ieee 802.11 group for WANs (wifi - high data rate), 802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 802.15.4 low data rate (zigbee implements this standard)
+-------------------------------------------------------------------
+
 Seems like two types of bootloaders:
  * One built into the board that faciliates flashing over a peripheral, e.g. usb (there is another system bootloader that is same as one below as well?)
  * Name for code that you put into ROM that performs a series of tasks, e.g.
