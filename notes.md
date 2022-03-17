@@ -44,10 +44,38 @@ there are thinking about templates/classes etc. not just what does the computer 
 
 WHENEVER UNDERSTANDING CODE EXAMPLES:
 1. COMPILE AND STEP INTO (NOT OVER) IN DEBUGGER AND MAKE HIGH LEVEL STEPS PERFORMED
-look at these steps for duplicated/unecessary work (may pollute cache). could we gather things up in a prepass, i.e. outside of loop?
+look at these steps for duplicated/unecessary work (may pollute cache). (perhaps even asking why was the code written the way it was)
+could we gather things up in a prepass, i.e. outside of loop?
 if allocating memory each cycle that's game over for performance.
 do we actually have to perform the same action to get the same result, e.g. a full raycast is not necessary, just segment on grid
-O(n·m) is multiplicative, not linear O(n)
+O(n·m) is multiplicative, not linear O(n). big oh is just indication of how it scales. could be less given some input threshold
+now, once code reduced, look at minimising number of ops 
+
+cpu front end is figuring out what work it has to do, i.e. instruction decoding
+
+e.g simd struct is 288 bytes, 4.5 cache lines, able to store 8 triangles
+
+understanding assembly language essential in understanding why the code might not be performing well
+
+branch prediction necessary to ensure that the front-end can keep going and not have to wait on the back-end
+
+execution ports execute uops.
+however, the days of assembly language registers actually mapping to real registers is gone.
+instead, the registers from the uops are passed through a register allocation table (if we have say 16 general purpose registers, table has about 192 entries; so a lot more) in the back-end
+this is because in many programs, things can happen in any order. so to take advantage of this, the register allocation table stores dependency chains of operations
+(wikichips.org for diagram)
+from execution port, could be fed back into scheduler or to load/store in actual memory
+
+when looking at assembly, when we say from memory, we actually mean from the L1 cache
+
+xmm is a sse register (4 wide, 16 bytes); m128 is a memory operand of 128 bits
+ymm is 8 wide
+1*p01 + 1*p23 is saying issue 1 microop on either port0 or port1 and one microop on either port2 or port3
+
+microop fusion is where a microop doesn't count for your penalty as it's fused with another. with combined memory ops, e.g. `vsubps ymm8, ymm3, ymmword ptr [rdx]` this is the case 
+so, if a compiler were to separate this out into a mov and then a sub, not only does this put unecessary strain on the front-end decoder it also removes microop fusion as they are now separate microops
+
+godbolt.org good for comparing compiler outputs and possible detecting a spurious load etc.
 
 # Modern Program Woes
 STM32CubeMX (this justs generates code, IDE is full fledged) to download, must get link with email
