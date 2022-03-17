@@ -7,6 +7,48 @@ essentially tradeoffs between power and data rate
 ieee 802.11 group for WANs (wifi - high data rate), 802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 802.15.4 low data rate (zigbee implements this standard)
 -------------------------------------------------------------------
 
+# Modern Software is Slow
+People think that it's slow, but it won't crash (because of interpreter)
+Performance is critical in getting people excited about what you do, e.g. windows ce was laggy, iphone performant but less features changes the market 
+low latency is more desirable, even if less features
+editors for games like building scaffolding; not shipped with game
+noise is randomness. white noise is complete randomness. blue noise (harder to generate) is randomness with limitations on how close together points can be (more uniform)
+not really optimisation, just code change to generate a better distribution
+receptors on retina are arranged in blue noise, so the eye as to less anti-aliasing
+
+count number of math ops in function and control flow logic that is evaluated
+branches can get problematic if they're unpredictable
+
+inspecting measurements of microarchitecture consider latency and throughtput (how much does it cost to start again)
+so, FMUL may have latency of 11, however throughput of 0.5, so can start 2 every cycle (cpus these days are incredibly overlapped)
+
+however, these numbers are all assuming the data is in the chip.
+it's just as important to see how long it takes to get data to the chip.
+look at cache parameters for microarchitecture; how many cycles to get from l1 cache, l2 cache, etc. when get to main memory potentially hundreds of cycles
+bandwidth of L1 cache say is 80 bytes/cycle, so can get 20 floats per cycle (however, based on size of L1 cache, not really sustainable for large data)
+
+(could just shortcut this and just see if flops is recorded for our chip)
+
+so, using these rough numbers we should be able to look at an algorithm (and dissect what operations it's performing, like FMULs), know how much data it's taking,
+and give a rough estimate as to how long it could optimally take (will never hit optimal however)
+IT'S CRITICAL TO KNOW HOW FAST SOMETHING SHOULD RUN
+
+REASONS SOFTWARE IS SLOW:
+1. No back-of-envelope calculations
+2. Reusing code (20LOC is a lot; use things that do what you want to do, but not in the way you want them to be done; 
+often piling up code that is ill-fitting to what the task was, e.g. we know this isn't a regular ray cast, it's a ray cast that is always looking down)
+3. When writing, thinking of goals ancillary to task 
+(not many places taught how to actually write code; all high level abstractions about clean code
+there are thinking about templates/classes etc. not just what does the computer actually have to do to do this task?)
+(there is no metric for clean code; it's just some fictional thing people made up)
+
+WHENEVER UNDERSTANDING CODE EXAMPLES:
+1. COMPILE AND STEP INTO (NOT OVER) IN DEBUGGER AND MAKE HIGH LEVEL STEPS PERFORMED
+look at these steps for duplicated/unecessary work (may pollute cache). could we gather things up in a prepass, i.e. outside of loop?
+if allocating memory each cycle that's game over for performance.
+do we actually have to perform the same action to get the same result, e.g. a full raycast is not necessary, just segment on grid
+O(n·m) is multiplicative, not linear O(n)
+
 # Modern Program Woes
 STM32CubeMX (this justs generates code, IDE is full fledged) to download, must get link with email
 Once installed, a series of pop-up menus just keep appearing spontaneously as it has to download more to satisfy a simple create project
@@ -15,30 +57,20 @@ Once installed, a series of pop-up menus just keep appearing spontaneously as it
 Disable optimisation to prevent lines being removed which the debugger won't pick up on.
 mention QEMU simulator debugging issues
 
+# Embedded Workflow
+Attainment of documentation
 The CPU architecture will have an exception (a cpu interrupt) model. Here, reset behaviour will be defined.
-
-TODO(Ryan): Investigate usage of various binutils programs $(nm), etc. 
-For raw bytes: $(hed, speedcrunch -> kibi), for structure: $(objdump -t main.axf)
-
 the 32 bit arm cortex-m4 has FPU (a application, m for microcontroller, r high performance real time)
-
 TODO(Ryan): avr vs arm vs rsic-v vs x86 vs powerpc vs sparc vs mips
 (what motivations brought about these architectures?)
 as often harvard archicture (why?)
 Von Neumann, RAM (variables, data, stack) + ROM (code/constants) + I/O all on same CPU bus.
 Harvard has ICode bus for ROM, and a SystemBus for RAM + I/O. 
 This allows operations to occur simultaneously. So, why use Von Neumann?
-
 it is labelled as an evaluation board
 different boards use different ICDI (in-circuit debug interfaces) to flash through SWD via usb-b
 e.g. texas instruments use stellaris, stm32 ST-link
-
-twos complement!
-
-precision is number of values
-
 is fixed point used anymore?
-
 TODO(Ryan): Why is a floating pin also called high impedance?
 To avoid power dissipation and unknown state, 
 drive with external source, e.g. ground or voltage.
@@ -47,11 +79,14 @@ Pull-up resistor connected to voltage, pull-down to ground.
 ^^^^^^^^ Embedded
 -------------------------------------------------------------------------------------------------------------------------------------
 
+# Encounters
 so niche and difficult it is neck beard inducing, i.e. lonely person
+
+gravatar requires more memory than retro games on the SNES etc.
 
 gpus have introduced a whole host of undocumented NDA annoyances
 
-# Philosophy
+# Coding Mentality
 when writing 'spec' code, no need to handle all cases; 
 simply note down the edge cases you should handle later on
 stop yourself thinking about whether the code is messy or not. 
@@ -62,23 +97,11 @@ e.g. called multiple times or
 code finalised and improved readability 
 (in which case a tradeoff is made between understanding functionality and semantics)
 
-templates add complexity in the debugger (no actual names). only really useful if you save a ton of code (not much code to just write each implementation)
+templates add complexity in the debugger (no actual names). 
+only really useful if you save a ton of code (not much code to just write each implementation)
 if templates are necessary then just use meta-programming as it is much more powerful.
 
-optimise for worst case (looking out on whole world) not best case (in front of wall, don't render what is behind). we care about highest framerate, not lowest.
-
-virtually never use lookup tables as ram memory is often 100x slower (so unless you can't compute in 100 of instructions)
-
 don't think about memory management, but rather memory usage. if having to worry about freeing etc. done something wrong.
-
-for sparseness think about line mapping and how the data will be stored so as to pick what is the best size to map to this.
-
-focus on craftmanship, knowledge of hardware, low-level, what to focus on is what is important rather than what editor/language using etc.
-
-gravatar requires more memory than retro games on the SNES etc.
-
-being able to draw out debug information is very useful. time spent visualising is never wasted (in debugger expressions also)
-when writing routines with coordinates have to handle out-of-bounds
 
 writing code guides you to the right design, e.g. made same call -> put into function; 
 require args in function -> struct;
@@ -94,16 +117,28 @@ Work threw the error tree one at a time
 Important to throw in asserts for underlying assumptions.
 Also for debugging be aware of 'copy-pasta', e.g. copying variables will have same name for two parameters as didn't replace it
 
-we don't want to orient our code around objects (if anything, algorithmic oriented). its about how you arrive at some code that determines how good it is
+we don't want to orient our code around objects (if anything, algorithmic oriented). 
+its about how you arrive at some code that determines how good it is
 
-excessive pre-planning and setting waypoints is really only useful if you've dont the problem before (which in that case you're not really designing)
+excessive pre-planning and setting waypoints is really only useful if you've done the problem before
+(which in that case you're not really designing)
 instead, we become a good pathfinder, learning to recognise the gradient of each day of the journey.
-when write the simplest thing and loft it out into good design later (in this explorative phase, if we make an changes for efficiency
+when write the simplest thing and loft it out into good design later 
+(in this explorative phase, if we make an changes for efficiency
 reasons we have just introduced the possibilities of bugs with no benefit)
 
-view threading as table. optimal to separate by rows if can (maps to single threaded more easily) day 26: treatise on threading
+# Optimisations
+optimise for worst case (looking out on whole world) 
+not best case (in front of wall, don't render what is behind). 
+we care about highest framerate, not lowest.
 
-when updating, there are update dependencies, so can't just update whatever you loop over first
+virtually never use lookup tables as ram memory is often 100x slower (so unless you can't compute in 100 of instructions)
+
+
+focus on craftmanship, knowledge of hardware, low-level, what to focus on is what is 
+important rather than what editor/language using etc.
+
+being able to draw out debug information is very useful. time spent visualising is never wasted (in debugger expressions also)
 
 immediate mode and retained mode are about lifetimes. for immediate, the caller does not need to know about the lifetime
 of an object.
