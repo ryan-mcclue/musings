@@ -92,6 +92,8 @@ so, although best case say is issue instruction every 4 cycles, this bottleneck 
 # Modern Program Woes
 STM32CubeMX (this justs generates code, IDE is full fledged) to download, must get link with email
 Once installed, a series of pop-up menus just keep appearing spontaneously as it has to download more to satisfy a simple create project
+To download qtcreator well known bug that it selects the wrong mirror, 3MBsp to 30kbs. 
+Have to decipher command line arguments and mirror parsing, e.g. ./qt-unified-linux-x64-4.3.0-1-online.run --mirror http://ftp.jaist.ac.jp/pub/qtproject  
 
 # Debugger Woes
 Disable optimisation to prevent lines being removed which the debugger won't pick up on.
