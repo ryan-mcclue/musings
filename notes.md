@@ -1,5 +1,10 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+set -e (this is important so that ctime incomplete timings are given)
+ctime -begin tra.ctm
+code here
+ctime -end tra.ctm
+
 discovering for linux docs are code and for development may have to add to groups (uinput) and/or modify policies (bluez)
 -------------------------------------------------------------------
 for long range, LoRa or sigfox
@@ -20,7 +25,8 @@ count number of math ops in function and control flow logic that is evaluated
 branches can get problematic if they're unpredictable
 
 inspecting measurements of microarchitecture consider latency and throughtput (how much does it cost to start again)
-so, FMUL may have latency of 11, however throughput of 0.5, so can start 2 every cycle (cpus these days are incredibly overlapped)
+so, FMUL may have latency of 11, however throughput of 0.5, so can start 2 every cycle, i.e. issue again (cpus these days are incredibly overlapped)
+so throughput is more of what we care about for sustained execution, e.g. in a loop
 
 however, these numbers are all assuming the data is in the chip.
 it's just as important to see how long it takes to get data to the chip.
@@ -74,8 +80,14 @@ ymm is 8 wide
 
 microop fusion is where a microop doesn't count for your penalty as it's fused with another. with combined memory ops, e.g. `vsubps ymm8, ymm3, ymmword ptr [rdx]` this is the case 
 so, if a compiler were to separate this out into a mov and then a sub, not only does this put unecessary strain on the front-end decoder it also removes microop fusion as they are now separate microops
+(important to point out that I'm not the world best optimiser, or the worlds best optimisers assistant, so perhaps best not to outrightly say bad codegen, just say makes nervous)
 
 godbolt.org good for comparing compiler outputs and possible detecting a spurious load etc.
+
+macrop fusion is where you have an instruction that the front-end will handle for you, e.g. add and a jne will merge to addjne which will just send the 1 microp of add through 
+
+uica.uops.info gives percentage of time instruction was on a port (this is useful for determining bottle-necks, e.g. series of instructions all require port 1 and 2, so cannot paralleise easily)
+so, although best case say is issue instruction every 4 cycles, this bottleneck will give higher throughput
 
 # Modern Program Woes
 STM32CubeMX (this justs generates code, IDE is full fledged) to download, must get link with email
@@ -128,6 +140,8 @@ code finalised and improved readability
 templates add complexity in the debugger (no actual names). 
 only really useful if you save a ton of code (not much code to just write each implementation)
 if templates are necessary then just use meta-programming as it is much more powerful.
+
+short build times (under 10 seconds) are incredibly important to not decentivness making changes and testing them
 
 don't think about memory management, but rather memory usage. if having to worry about freeing etc. done something wrong.
 
@@ -317,7 +331,7 @@ we want our code to be real (to hardware) so that it can be robust and efficient
 for any non-trival task, scripting languages become a hindrance with no static type checking, no real debugger, slow, not as capable.
 there are complications in software we have wrongly convinced ourselves are necessary, e.g. scripting for hotloading
 hotloading C is far superior, as C is more powerful and can use same debugger (using Lua is a downgrade)
-build systems can be useful as they allow for incremental builds 
+build systems can be useful as they allow for incremental builds (however, in negatively reinforces people to only make small changes)
 (speed increase may only be noticeable for large, complex code base)
 they are also useful for managing cross compilation (libraries have to be pulled in and compile also)
 the idea of incorporating a scripting language into a game was a failed experiment in 2005s.
