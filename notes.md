@@ -89,6 +89,30 @@ macrop fusion is where you have an instruction that the front-end will handle fo
 uica.uops.info gives percentage of time instruction was on a port (this is useful for determining bottle-necks, e.g. series of instructions all require port 1 and 2, so cannot paralleise easily)
 so, although best case say is issue instruction every 4 cycles, this bottleneck will give higher throughput
 
+# Software Architecture
+amdahls law gives the time taken for execution given a number of cogives the time taken for execution given a number of cores.
+for this formula (indeed any formula) we can obtain some property by seeing as function parameter approaches infinity. in this case, the parallelising part drops out.
+brooks law says that simply adding more people to a problem does not necessarily make it faster. if requires great deal of coordination/communication actually slows down.
+
+solving a problem: 1. decide what you are doing (this can't be open-ended.) 2. organise groups to achieve this
+by making these boundaries, we are presupposing that each part is separate, e.g tyres team and engine team; assume tyres and engine cannot be one piece.
+therefore, the boundaries define what products you can make, i.e. you produce products that are copies of yourself or how you are structured
+so, in software if we assign teams for say audio, 2d, 3d we would expect individual APIs for each.
+the org chart is the asymptote, so it's the best case that we make a product as granular as our org chart. it could be far worse and even more granular 
+therefore, communication between teams is more costly than communication within teams.
+takeaway is that low-cost things can be optimised, high-cost can't be (further away on the org chart)
+note that communication in code could just be someone checking something in and you pulling it
+what we are seeing now with modern software is the superposition of orgcharts due to use of legacy codebases
+now we see org charts in software, where people are artifically creating inheritence hierarcies that limit how the program works
+this is very bad. the reason it's done is for people to create mental models that help them solve the problem as they can't keep the complexity in their head. 
+it may be necesary to solve the problem, however it shouldn't be looked at as good.
+however, because it's done due to lack of understanding, the delegation/separation is not done with enough information. so you limit possibilities of the design space.
+so although, libraries, microservices, encapsulation, package managers, engines may be necessary due to our brain capacity (until neuralink or we figure out a better way to do them) they are not good! They limit optimisation as we have already decided separation
+so always be on the lookout for times when you don't have to do these
+most people just download hundreds of libraries because they know it works and they won't be worse than any one else.
+WE MUST BE LEAN AND FLEXIBLE IN ORGCHARTS IN COMPANY AND IN SOFTWARE TO INCREASE DESIGN. THANK YOU MELVIN CONWAY!
+
+
 # Modern Program Woes
 STM32CubeMX (this justs generates code, IDE is full fledged) to download, must get link with email
 Once installed, a series of pop-up menus just keep appearing spontaneously as it has to download more to satisfy a simple create project
