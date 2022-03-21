@@ -1,10 +1,5 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
-set -e (this is important so that ctime incomplete timings are given)
-ctime -begin tra.ctm
-code here
-ctime -end tra.ctm
-
 discovering for linux docs are code and for development may have to add to groups (uinput) and/or modify policies (bluez)
 -------------------------------------------------------------------
 for long range, LoRa or sigfox
@@ -139,6 +134,8 @@ STM32CubeMX (this justs generates code, IDE is full fledged) to download, must g
 Once installed, a series of pop-up menus just keep appearing spontaneously as it has to download more to satisfy a simple create project
 To download qtcreator well known bug that it selects the wrong mirror, 3MBsp to 30kbs. 
 Have to decipher command line arguments and mirror parsing, e.g. ./qt-unified-linux-x64-4.3.0-1-online.run --mirror http://ftp.jaist.ac.jp/pub/qtproject  
+
+QTcreator does not honour system .gdbinit file, have to manually set breakpoints and dissassembly flavour
 
 # Debugger Woes
 Disable optimisation to prevent lines being removed which the debugger won't pick up on.
