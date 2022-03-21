@@ -40,7 +40,8 @@ and give a rough estimate as to how long it could optimally take (will never hit
 IT'S CRITICAL TO KNOW HOW FAST SOMETHING SHOULD RUN
 
 REASONS SOFTWARE IS SLOW:
-1. No back-of-envelope calculations
+1. No back-of-envelope calculations (people aren't concerned that they are running up to 1000 times slower thn what the hardware is capable of)
+These calculations involve say looking at number of math ops to be performed in the algoirthm and comparing that to the perfect hardware limit
 2. Reusing code (20LOC is a lot; use things that do what you want to do, but not in the way you want them to be done; 
 often piling up code that is ill-fitting to what the task was, e.g. we know this isn't a regular ray cast, it's a ray cast that is always looking down)
 3. When writing, thinking of goals ancillary to task 
@@ -89,6 +90,25 @@ macrop fusion is where you have an instruction that the front-end will handle fo
 uica.uops.info gives percentage of time instruction was on a port (this is useful for determining bottle-necks, e.g. series of instructions all require port 1 and 2, so cannot paralleise easily)
 so, although best case say is issue instruction every 4 cycles, this bottleneck will give higher throughput
 
+# Optimisation
+1. Optimisation (this is rarely done due to time involved)
+Do back-of-envelope calculations; look at algorithm to see if wasteful; benchmark to see if hitting theoretical calculations and then use timings etc. to isolate why our code isn't hitting these theoretical numbers
+Very importantly need to know what the theoretical maximum is, which will be dependent on the program, e.g bounded by number of bytes sent to graphics card, kernel stdout etc. 
+2. Non-pessimisation (do this all the time)
+Don't introduce unecessary work (interpreter; complex libraries; constructs like polymorphism/classes people have convinced themselves are necessary) for the CPU to do to solve the problem
+3. Fake optimisation (very bad philosophy)
+Repeating context-specific statements e.g. use memcpy as it's optimised (however the speed of something is so context specific, so non-statement), arrays are faster than linked lists (again, so dependent on what your usage patterns are)
+
+When many people say too much effort involved in optimisation, they are generally thinking of point 1
+
+sometimes things should be running faster than they should, however only so much we can replace
+e.g. the structure of many OSs are based on legacy code, so simply outputting to stdout may go through shell then kernel etc.
+also, may have to deal with pessimised libraries. in these cases:
+* isolate bad code, i.e. draw hard boundary between your code and theirs by caching calls to them
+* do as little modification to the data coming in from them (no need to say put in a string class etc.)
+
+(intel gives us 64 bit index to memory, so effectively give us circular buffers for free?)
+
 # Software Architecture
 amdahls law gives the time taken for execution given a number of cogives the time taken for execution given a number of cores.
 for this formula (indeed any formula) we can obtain some property by seeing as function parameter approaches infinity. in this case, the parallelising part drops out.
@@ -110,7 +130,8 @@ however, because it's done due to lack of understanding, the delegation/separati
 so although, libraries, microservices, encapsulation, package managers, engines may be necessary due to our brain capacity (until neuralink or we figure out a better way to do them) they are not good! They limit optimisation as we have already decided separation
 so always be on the lookout for times when you don't have to do these
 most people just download hundreds of libraries because they know it works and they won't be worse than any one else.
-WE MUST BE LEAN AND FLEXIBLE IN ORGCHARTS IN COMPANY AND IN SOFTWARE TO INCREASE DESIGN. THANK YOU MELVIN CONWAY!
+WE MUST BE LEAN AND FLEXIBLE IN ORGCHARTS IN COMPANY AND IN SOFTWARE TO INCREASE DESIGN.
+some old codebases need to be retired
 
 
 # Modern Program Woes
