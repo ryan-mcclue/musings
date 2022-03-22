@@ -6,6 +6,12 @@ for long range, LoRa or sigfox
 essentially tradeoffs between power and data rate
 ieee 802.11 group for WANs (wifi - high data rate), 802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 802.15.4 low data rate (zigbee implements this standard)
 -------------------------------------------------------------------
+# Raytracer
+CRT introduces unecessary cruft (default conversion between OS line endings, so have to specify binary for fopen)
+Single line error check if don't care, i.e. execution can continue, otherwise wrap in block
+When specifying file type magic value, wants in memory order, so reverse for little-endian
+Determine direction by padding start with particular colour
+static for all functions as generating an export table can slow done compile times
 
 # Modern Software is Slow
 People think that it's slow, but it won't crash (because of interpreter)
@@ -84,6 +90,8 @@ macrop fusion is where you have an instruction that the front-end will handle fo
 
 uica.uops.info gives percentage of time instruction was on a port (this is useful for determining bottle-necks, e.g. series of instructions all require port 1 and 2, so cannot paralleise easily)
 so, although best case say is issue instruction every 4 cycles, this bottleneck will give higher throughput
+
+some levels of abstraction are necessary and good, e.g. higher level languages to assembly
 
 # Optimisation
 1. Optimisation (this is rarely done due to time involved)
