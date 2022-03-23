@@ -7,11 +7,26 @@ essentially tradeoffs between power and data rate
 ieee 802.11 group for WANs (wifi - high data rate), 802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 802.15.4 low data rate (zigbee implements this standard)
 -------------------------------------------------------------------
 # Raytracer
-CRT introduces unecessary cruft (default conversion between OS line endings, so have to specify binary for fopen)
+terminal and debugger breakpoints
+CRT introduces unecessary cruft (default conversion between OS line endings, so have to specify binary for fopen; unecessary buffering; malloc frees behind-the-scenes (supposedly optimised, yet rarely))
 Single line error check if don't care, i.e. execution can continue, otherwise wrap in block
 When specifying file type magic value, wants in memory order, so reverse for little-endian
 Determine direction by padding start with particular colour
 static for all functions as generating an export table can slow done compile times
+nice to work with two windows to always know where things go, e.g. structs/typedefs/defines go into header file
+for structs, use fixed sized ints
+variable array naming convention, i.e. planes/plane_count.
+small variable arrays allocate on stack, i.e. Plane planes[2];
+if multiple ways of accessing data, use union and anonymous structs
+vectors are only struct/unions with lowercase
+when drawing vectors in a physical sense, keep in mind they are rooted at the origin (even if drawings show them across time)
+dot product transpose notation useful for emulating matrix multiplication
+unit circle, x = cosθ
+dot product allows us to project a vector's length onto a unit vector 
+dot product allows us to measure a vector on any axis system we want by setting up two unit vectors that are orthogonal to each other
+simple plane equation with d=0 will be through origin
+cross product gives length of vector that is orthogonal to the plane that the two original vectors lie on 
+use vectors for pairs that only exist together
 
 # Modern Software is Slow
 People think that it's slow, but it won't crash (because of interpreter)
