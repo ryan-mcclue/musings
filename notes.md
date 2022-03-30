@@ -7,6 +7,7 @@ essentially tradeoffs between power and data rate
 ieee 802.11 group for WANs (wifi - high data rate), 802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 802.15.4 low data rate (zigbee implements this standard)
 -------------------------------------------------------------------
 # Raytracer
+READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 terminal and debugger breakpoints
 vector math routines (obtaining cross product from column vector form)
 CRT introduces unecessary cruft (default conversion between OS line endings, so have to specify binary for fopen; unecessary buffering; malloc frees behind-the-scenes (supposedly optimised, yet rarely))
@@ -19,7 +20,7 @@ for structs, use fixed sized ints
 variable array naming convention, i.e. planes/plane_count.
 small variable arrays allocate on stack, i.e. Plane planes[2];
 if multiple ways of accessing data, use union and anonymous structs
-use vectors for pairs that only exist together anywhere in code
+use vectors for pairs that only exist together anywhere in code (points are always vectors!)
 for structs with just assignment constructors, use curly braces
 when drawing vectors in a physical sense, keep in mind they are rooted at the origin (even if drawings show them across time)
 head to tail for vector addition/subtraction (their direction is determined by their sign)
@@ -30,6 +31,8 @@ dot product allows us to measure a vector on any axis system we want by setting 
 simple plane equation with d=0 will be through origin (altering d shifts the plane up/down)
 cross product gives vector that is orthogonal to the plane that the two original vectors lie on (length is |a|·|b|·sinθ). So, really only works in at least 3 dimensions
 with units, e.g. for camera, start with arbitrary 'unit' defintion. later move onto more physical things like metres
+use output_h, output_w single letter prefixes for easy substitution
+when casting from real to int, consider whether truncation/rounding/ceiling is wanted and make it explicit
 
 # Modern Software is Slow
 People think that it's slow, but it won't crash (because of interpreter)
