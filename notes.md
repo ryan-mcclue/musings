@@ -13,7 +13,6 @@ vector math routines (obtaining cross product from column vector form)
 CRT introduces unecessary cruft (default conversion between OS line endings, so have to specify binary for fopen; unecessary buffering; malloc frees behind-the-scenes (supposedly optimised, yet rarely))
 Single line error check if don't care, i.e. execution can continue, otherwise wrap in block
 When specifying file type magic value, wants in memory order, so reverse for little-endian
-Determine direction by padding start with particular colour
 static for all functions so the compiler does not have to put them in a symbol table, thereby speeding up compile times (unity build for speed up also)
 nice to work with two windows to always know where things go, e.g. structs/typedefs/defines go into header file
 use fixed sized ints except for library mandates
@@ -36,8 +35,10 @@ when casting from real to int, consider whether truncation/rounding/ceiling is w
 mapping from pixel space to another space
 for loop separate line style
 by applying a scaling factor to direction vector, can move along it
-comparing floats to zero (or any equality) use a tolerance/epsilon less-than greater-than check
+comparing floats to zero for denominator or negative for square root (or any equality) use a tolerance/epsilon less-than greater-than check
 using bash for scripts as its ubiquitous
+world space coordinates. camera position is based on these. the camera will have its own axis system which we determine what it should be and then use cross product based on what we want
+understanding dot product equivalences
 
 # Modern Software is Slow
 People think that it's slow, but it won't crash (because of interpreter)
