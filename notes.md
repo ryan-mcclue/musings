@@ -32,13 +32,16 @@ cross product gives vector that is orthogonal to the plane that the two original
 with units, e.g. for camera, start with arbitrary 'unit' defintion. later move onto more physical things like metres
 use output_h, output_w single letter prefixes for easy substitution
 when casting from real to int, consider whether truncation/rounding/ceiling is wanted and make it explicit
-mapping from pixel space to another space
+mapping from pixel space to another space 
 for loop separate line style
 by applying a scaling factor to direction vector, can move along it
 comparing floats to zero for denominator or negative for square root (or any equality) use a tolerance/epsilon less-than greater-than check
 using bash for scripts as its ubiquitous
 world space coordinates. camera position is based on these. the camera will have its own axis system which we determine what it should be and then use cross product based on what we want
-understanding dot product equivalences
+understanding dot product equivalence with circle equation
+aspect ratio correction; if one is larger, scale other 
+\r status printer (when mixing floats and ints in arithmetic make sure you know what is what as floats and int return float, e.g. y * 100 / height) 
+printf format specifier is undefined behaviour if wrong
 
 # Modern Software is Slow
 People think that it's slow, but it won't crash (because of interpreter)
