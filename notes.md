@@ -16,7 +16,7 @@ When specifying file type magic value, wants in memory order, so reverse for lit
 Determine direction by padding start with particular colour
 static for all functions so the compiler does not have to put them in a symbol table, thereby speeding up compile times (unity build for speed up also)
 nice to work with two windows to always know where things go, e.g. structs/typedefs/defines go into header file
-for structs, use fixed sized ints
+use fixed sized ints except for library mandates
 variable array naming convention, i.e. planes/plane_count.
 small variable arrays allocate on stack, i.e. Plane planes[2];
 if multiple ways of accessing data, use union and anonymous structs
@@ -33,6 +33,11 @@ cross product gives vector that is orthogonal to the plane that the two original
 with units, e.g. for camera, start with arbitrary 'unit' defintion. later move onto more physical things like metres
 use output_h, output_w single letter prefixes for easy substitution
 when casting from real to int, consider whether truncation/rounding/ceiling is wanted and make it explicit
+mapping from pixel space to another space
+for loop separate line style
+by applying a scaling factor to direction vector, can move along it
+comparing floats to zero (or any equality) use a tolerance/epsilon less-than greater-than check
+using bash for scripts as its ubiquitous
 
 # Modern Software is Slow
 People think that it's slow, but it won't crash (because of interpreter)
