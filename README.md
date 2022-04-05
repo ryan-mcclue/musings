@@ -3,19 +3,10 @@
 # Musings
 > ![Github](https://img.shields.io/github/license/ryan-mcclue/musings)
 
-A [Hugo](https://github.com/gohugoio/hugo) project that hosts my musings relating to programming and technology.
+A project that hosts my musings relating to programming and technology.
 
 ## Executables
+I like to view as a pdf:
 ```
-# Add
-hugo new <musing>.md
-
-# Test
-hugo server
-
-# Build
-hugo 
-
-# Deploy
-sh ./deploy
+pandoc *.md --pdf-engine=xelatex --toc -o musings.pdf
 ```

@@ -1,4 +1,11 @@
 # SPDX-License-Identifier: zlib-acknowledgement
 
-public/
-resources/_gen/
+*
+
+!*/
+
+!.gitignore
+!README.md
+!LICENSE
+
+!*.md
