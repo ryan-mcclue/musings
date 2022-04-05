@@ -6,6 +6,36 @@ for long range, LoRa or sigfox
 essentially tradeoffs between power and data rate
 ieee 802.11 group for WANs (wifi - high data rate), 802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 802.15.4 low data rate (zigbee implements this standard)
 -------------------------------------------------------------------
+# END OF APRIL - EMBEDDED NEWS (memfault and embedded artistry)
+Push for Rust toolchains (ugh...)
+Smart home standards
+Autonomous vehicles
+IC lead times growing, MCU even more so
+
+# The Scripting Awakening
+I decided to try and implement ctime in Bash for pedagogical purposes.
+My first task was to write and read a binary file. Googling how to do this in Bash returned the consensus, "use another language". Often when I read this, I'm not deterred.
+I have encountered similar naysayers before when it comes to directly using Xlib.
+However, when it came to wanting structures to read and write to, I found Bash was empty.
+With this understanding, I realised more generally that the usefulness of scripting languages are limited. 
+Specifically, they should be limited to basic tasks that involve searching, copying or file creation.
+I suppose my biggest use case of Bash is for enhancing my terminal interaction.
+C is a simple language and if you understand it's low-level capabilities, you can do so many things.
+However, despite this recognition, I did come upon certain procedures to follow when working with Bash scripts.
+```bash
+# Checking arguments as callee
+[ ! $# -ge 3 ] && return 1
+[ "$1" = "-arg" ]
+# Checking arguments as caller
+func || exit 1
+# Function returning value
+_FUNC_NAME=val
+# Informative usage information
+printf "App v1.0 by Ryan McClue\n" >&2
+printf "Usage:\n" >&2
+printf "app -arg <value>\n" >&2
+```
+
 # Raytracer
 READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 terminal and debugger breakpoints
@@ -256,18 +286,21 @@ optimise for worst case (looking out on whole world)
 not best case (in front of wall, don't render what is behind). 
 we care about highest framerate, not lowest.
 
-virtually never use lookup tables as ram memory is often 100x slower (so unless you can't compute in 100 of instructions)
+## Knowledge of Hardware
+virtually never use lookup tables as ram memory is often 100x slower 
+(so unless you can't compute in 100 of instructions)
 
+focus on craftmanship, knowledge of hardware, low-level, 
+what to focus on is what is important rather than what editor/language using etc.
 
-focus on craftmanship, knowledge of hardware, low-level, what to focus on is what is 
-important rather than what editor/language using etc.
+being able to draw out debug information is very useful. 
+time spent visualising is never wasted (in debugger expressions also)
 
-being able to draw out debug information is very useful. time spent visualising is never wasted (in debugger expressions also)
+immediate mode and retained mode are about lifetimes. 
+for immediate, the caller does not need to know about the lifetime of an object.
 
-immediate mode and retained mode are about lifetimes. for immediate, the caller does not need to know about the lifetime
-of an object.
-
-another design boundary is resource acquisition. could be 'loading screen' (when game stops and simply loads resources)
+another design boundary is resource acquisition. 
+could be 'loading screen' (when game stops and simply loads resources)
 or streaming (more attainable with modern hardware)
 
 input and update/render (update and render together for cache coherency. input is not performance critical so don't bother)
