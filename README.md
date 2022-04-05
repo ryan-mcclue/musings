@@ -5,8 +5,5 @@
 
 A project that hosts my musings relating to programming and technology.
 
-## Executables
-I like to view as a pdf:
-```
-pandoc *.md --pdf-engine=xelatex --toc -o musings.pdf
-```
+## Executable
+I like to view as a pdf `./generate-pdf`

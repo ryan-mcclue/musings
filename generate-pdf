@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+markdown_files=$(find . -type f \( -name "*.md" -not -name "README.md" -not -name "notes.md" \))
+
+pandoc "$markdown_files" --pdf-engine=xelatex --toc -o musings.pdf
+
+xdg-open ./musings.pdf
