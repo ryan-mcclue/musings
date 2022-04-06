@@ -12,23 +12,13 @@ Smart home standards
 Autonomous vehicles
 IC lead times growing, MCU even more so
 
-# Raytracer
 READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
-terminal and debugger breakpoints
+
+# Raytracer
 vector math routines (obtaining cross product from column vector form)
-CRT introduces unecessary cruft (default conversion between OS line endings, so have to specify binary for fopen; unecessary buffering; malloc frees behind-the-scenes (supposedly optimised, yet rarely))
-Single line error check if don't care, i.e. execution can continue, otherwise wrap in block
-When specifying file type magic value, wants in memory order, so reverse for little-endian
-static for all functions so the compiler does not have to put them in a symbol table, thereby speeding up compile times (unity build for speed up also)
-nice to work with two windows to always know where things go, e.g. structs/typedefs/defines go into header file
-use fixed sized ints except for library mandates
-variable array naming convention, i.e. planes/plane_count.
-small variable arrays allocate on stack, i.e. Plane planes[2];
-if multiple ways of accessing data, use union and anonymous structs
-use vectors for pairs that only exist together anywhere in code (points are always vectors!)
-for structs with just assignment constructors, use curly braces
-when drawing vectors in a physical sense, keep in mind they are rooted at the origin (even if drawings show them across time)
-head to tail for vector addition/subtraction (their direction is determined by their sign)
+when drawing vectors in a physical sense, 
+keep in mind they are rooted at the origin (even if drawings show them across time)
+whenever doing vector addition/subtraction, remember the head-to-tail rule (their direction is determined by their sign)
 dot product transpose notation useful for emulating matrix multiplication
 unit circle, x = cosθ
 dot product allows us to project a vector's length onto a unit vector 
@@ -36,18 +26,9 @@ dot product allows us to measure a vector on any axis system we want by setting 
 simple plane equation with d=0 will be through origin (altering d shifts the plane up/down)
 cross product gives vector that is orthogonal to the plane that the two original vectors lie on (length is |a|·|b|·sinθ). So, really only works in at least 3 dimensions
 with units, e.g. for camera, start with arbitrary 'unit' defintion. later move onto more physical things like metres
-use output_h, output_w single letter prefixes for easy substitution
-when casting from real to int, consider whether truncation/rounding/ceiling is wanted and make it explicit
-mapping from pixel space to another space 
-for loop separate line style
 by applying a scaling factor to direction vector, can move along it
-comparing floats to zero for denominator or negative for square root (or any equality) use a tolerance/epsilon less-than greater-than check
-using bash for scripts as its ubiquitous
 world space coordinates. camera position is based on these. the camera will have its own axis system which we determine what it should be and then use cross product based on what we want
 understanding dot product equivalence with circle equation
-aspect ratio correction; if one is larger, scale other 
-\r status printer (when mixing floats and ints in arithmetic make sure you know what is what as floats and int return float, e.g. y * 100 / height) 
-printf format specifier is undefined behaviour if wrong
 
 # Modern Software is Slow
 People think that it's slow, but it won't crash (because of interpreter)
