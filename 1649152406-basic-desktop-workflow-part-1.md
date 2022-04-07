@@ -15,13 +15,13 @@ The output buffering (and undefined behaviour), hidden malloc 'optimisations', O
 Often better to cut out the middle-man and just use system calls directly.
 To avoid the compiler having to generate a large export table of all functions, make them `static`
 To avoid large amounts of linking, have a unity build.
-For small scale memory allocations, can use the stack, e.g. `Plane planes[2];`
 
 When performing the common task of grouping data, a few practices to keep in mind.
 Use fixed sized types to always know about struct padding (in fact, I like to extend this to all my code)
 If wanting multiple ways of accessing grouped data, use union and anonymous structs.
 Use an int to reference other structs, e.g. `plane_index` 
 If the data being grouped can only exist together (e.g. points), use vectors.
+The ubiquitity of vectors and normalising them pushed processors into optimising square root functionality.
 Put all structs related typedefs inside their own header file for easy access.
 
 As floats are an approximation, when comparing to 0.0f (say for a denominator check) or negative (say for a square root) use a tolerance/epsilon less-than/greater-than check.
@@ -29,7 +29,7 @@ To be clear about float to int casting, use a macro like truncate/round.
 Be aware that mixed integer and float arithmetic will go to float (implications for rounding)
 
 For easy substitution, use single letter prefix names like `output_h` and `output_w`.
-Naming convention for variable arrays, e.g. `planes` and `plane_count`
+Convention for variable arrays, e.g. `Planes plane[1]`, `planes` and `plane_count (use ARRAY_COUNT macro here)` 
 Put for loop statements on separate line to help not be afraid of indentation.
 The ability to map from pixel space to another space is essential (normalisation and lerp)
 Aspect ratio correction is simply rearranging a ratio. If we determine one side is larger, scale other.

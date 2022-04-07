@@ -16,7 +16,21 @@ READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 
 # Raytracer
 1. returning the colour of closest material hit by ray
-2. if hit cast more rays?... (therefore result colour will be an accumulator value)
+2. each individual ray cast consists of many rays that are reflected between materials.
+   colour is returned if ray hits a colour emitter (like the sky, i.e. no material) as oppose to only light reflectors (in code we are doing it in reverse as to what path the light from the sky actually takes) 
+   as we have some degree of randomness in diffuse materials, cast a ray for more than just each pixel and accumulate the values to get a more definite colour
+
+2d games don't really care about gamma correction?
+artist creates in SRGB space (in photoshop) 
+so if we do any math on it (like a lerp), will have to convert it to linear space and then back to srgb for the monitor (if we were to just blit directly, it would be fine)
+to completely emulate the gamma curve, will require lookups. we compromise on r² and √2
+without gamma correction, resultant image will look very dim (due to nature of monitor gamma curve) 
+
+CRT rand() is awful
+
+basic debug and release compiler flags
+
+sum something as a series of...
 
 vector math routines (obtaining cross product from column vector form)
 when drawing vectors in a physical sense, 
