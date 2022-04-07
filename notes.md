@@ -15,10 +15,13 @@ IC lead times growing, MCU even more so
 READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 
 # Raytracer
+1. returning the colour of closest material hit by ray
+2. if hit cast more rays?... (therefore result colour will be an accumulator value)
+
 vector math routines (obtaining cross product from column vector form)
 when drawing vectors in a physical sense, 
 keep in mind they are rooted at the origin (even if drawings show them across time)
-whenever doing vector addition/subtraction, remember the head-to-tail rule (their direction is determined by their sign)
+whenever doing vector addition/subtraction, remember the head-to-tail rule (their direction is determined by their sign). could also think that subtract whenever you want to 'go away' from something
 dot product transpose notation useful for emulating matrix multiplication
 unit circle, x = cosθ
 dot product allows us to project a vector's length onto a unit vector 
@@ -29,6 +32,7 @@ with units, e.g. for camera, start with arbitrary 'unit' defintion. later move o
 by applying a scaling factor to direction vector, can move along it
 world space coordinates. camera position is based on these. the camera will have its own axis system which we determine what it should be and then use cross product based on what we want
 understanding dot product equivalence with circle equation
+for multiplication of vectors, be explicit with a hadamard function
 
 # Modern Software is Slow
 People think that it's slow, but it won't crash (because of interpreter)

@@ -22,6 +22,7 @@ Use fixed sized types to always know about struct padding (in fact, I like to ex
 If wanting multiple ways of accessing grouped data, use union and anonymous structs.
 Use an int to reference other structs, e.g. `plane_index` 
 If the data being grouped can only exist together (e.g. points), use vectors.
+Put all structs related typedefs inside their own header file for easy access.
 
 As floats are an approximation, when comparing to 0.0f (say for a denominator check) or negative (say for a square root) use a tolerance/epsilon less-than/greater-than check.
 To be clear about float to int casting, use a macro like truncate/round.
