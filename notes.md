@@ -30,7 +30,7 @@ so with rgb values, preface with linear or srgb
 if function is expecting a range between, should we clamp to it?
 inclusion of #if 0 #endif
 get some anti-aliasing by jittering over sub-pixel (this only works because we cast multiple rays per pixel to increase image resolution)
-by increasing the rays per pixel, the tracer tends to converge on something
+by increasing the rays per pixel, the tracer tends to converge on something (i.e. higher sampling rate, better image quality)
 raytracers far better than rasterisers for light propagation 
 
 
