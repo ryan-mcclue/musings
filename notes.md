@@ -18,15 +18,24 @@ READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 1. returning the colour of closest material hit by ray
 2. each individual ray cast consists of many rays that are reflected between materials.
    colour is returned if ray hits a colour emitter (like the sky, i.e. no material) as oppose to only light reflectors (in code we are doing it in reverse as to what path the light from the sky actually takes) 
-   as we have some degree of randomness in diffuse materials, cast a ray for more than just each pixel and accumulate the values to get a more definite colour
+   as we have some degree of randomness in diffuse materials, cast a ray for more than just each pixel (i.e. multiple times per pixel) and accumulate the values to get a more definite colour
 
 2d games don't really care about gamma correction?
 artist creates in SRGB space (in photoshop) 
 so if we do any math on it (like a lerp), will have to convert it to linear space and then back to srgb for the monitor (if we were to just blit directly, it would be fine)
-to completely emulate the gamma curve, will require lookups. we compromise on r² and √2
+to emulate complicated curves, could table drive it
+we compromise on r² and √2
 without gamma correction, resultant image will look very dim (due to nature of monitor gamma curve) 
+so with rgb values, preface with linear or srgb
+if function is expecting a range between, should we clamp to it?
+inclusion of #if 0 #endif
+get some anti-aliasing by jittering over sub-pixel (this only works because we cast multiple rays per pixel to increase image resolution)
+by increasing the rays per pixel, the tracer tends to converge on something
+raytracers far better than rasterisers for light propagation 
 
-CRT rand() is awful
+
+CRT rand() is awful.
+the CRT is not multi-threaded (is this way wrap CRT functions?)
 
 basic debug and release compiler flags
 
