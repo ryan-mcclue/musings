@@ -20,6 +20,9 @@ READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
    colour is returned if ray hits a colour emitter (like the sky, i.e. no material) as oppose to only light reflectors (in code we are doing it in reverse as to what path the light from the sky actually takes) 
    as we have some degree of randomness in diffuse materials, cast a ray for more than just each pixel (i.e. multiple times per pixel) and accumulate the values to get a more definite colour
 
+CRT rand() is awful.
+the CRT is not multi-threaded (is this way wrap CRT functions?)
+
 2d games don't really care about gamma correction?
 artist creates in SRGB space (in photoshop) 
 so if we do any math on it (like a lerp), will have to convert it to linear space and then back to srgb for the monitor (if we were to just blit directly, it would be fine)
@@ -32,10 +35,6 @@ inclusion of #if 0 #endif
 get some anti-aliasing by jittering over sub-pixel (this only works because we cast multiple rays per pixel to increase image resolution)
 by increasing the rays per pixel, the tracer tends to converge on something (i.e. higher sampling rate, better image quality)
 raytracers far better than rasterisers for light propagation 
-
-
-CRT rand() is awful.
-the CRT is not multi-threaded (is this way wrap CRT functions?)
 
 basic debug and release compiler flags
 
@@ -56,6 +55,16 @@ by applying a scaling factor to direction vector, can move along it
 world space coordinates. camera position is based on these. the camera will have its own axis system which we determine what it should be and then use cross product based on what we want
 understanding dot product equivalence with circle equation
 for multiplication of vectors, be explicit with a hadamard function
+
+PART 2
+To determine performance must have some stable metric, e.g. ops/sec to compare to
+e.g measure total time and number of operations
+Hyper-threading useful in alleviating memory latency, e.g. one thread is waiting to get content from RAM, the other hyper-thread can execute
+However, as we are not memory bound (just going through pixel by pixel and not generating anything intermediate; will all probably stay in L1 cache), we are probably saturating the core's ALUs, so hyper-threading not as useful
+When making multi-threaded, segregate task by writing prototype function, e.g. `render_tile`
+
+When refactoring, utilise our vimrc <C-F> all files
+
 
 # Modern Software is Slow
 People think that it's slow, but it won't crash (because of interpreter)
