@@ -14,11 +14,20 @@ IC lead times growing, MCU even more so
 
 READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 
-# Raytracer
+# Raytracer (we are updating 'base' project code files as we go)
 1. returning the colour of closest material hit by ray
 2. each individual ray cast consists of many rays that are reflected between materials.
    colour is returned if ray hits a colour emitter (like the sky, i.e. no material) as oppose to only light reflectors (in code we are doing it in reverse as to what path the light from the sky actually takes) 
    as we have some degree of randomness in diffuse materials, cast a ray for more than just each pixel (i.e. multiple times per pixel) and accumulate the values to get a more definite colour
+
+only use const for char * string literals (as modifying them is undefined behaviour) 
+
+no need for division operator as `(* 1.0f / val)`
+
+refactoring just copy code into function that gets it to compile.
+later, worry about passing information in as a parameter
+
+have function wrapper for accessing array when some computation is required?
 
 CRT rand() is awful.
 the CRT is not multi-threaded (is this way wrap CRT functions?)

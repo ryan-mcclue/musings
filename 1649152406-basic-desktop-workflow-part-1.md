@@ -25,7 +25,8 @@ The ubiquitity of vectors and normalising them pushed processors into optimising
 Put all structs related typedefs inside their own header file for easy access.
 
 As floats are an approximation, when comparing to 0.0f (say for a denominator check) or negative (say for a square root) use a tolerance/epsilon less-than/greater-than check.
-To be clear about float to int casting, use a macro like truncate/round.
+In fact whenever dividing should always ask oneself "can the value be zero?"
+To be clear about float to int casting, use a macro like truncate/round (think about what if uneven divide)
 Be aware that mixed integer and float arithmetic will go to float (implications for rounding)
 
 For easy substitution, use single letter prefix names like `output_h` and `output_w`.
