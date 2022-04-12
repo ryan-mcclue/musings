@@ -27,7 +27,8 @@ no need for division operator as `(* 1.0f / val)`
 refactoring just copy code into function that gets it to compile.
 later, worry about passing information in as a parameter
 
-have function wrapper for accessing array when some computation is required?
+
+x_min and one_past_last_max_x naming convention in for loops?
 
 CRT rand() is awful.
 the CRT is not multi-threaded (is this way wrap CRT functions?)
@@ -70,7 +71,15 @@ To determine performance must have some stable metric, e.g. ops/sec to compare t
 e.g measure total time and number of operations
 Hyper-threading useful in alleviating memory latency, e.g. one thread is waiting to get content from RAM, the other hyper-thread can execute
 However, as we are not memory bound (just going through pixel by pixel and not generating anything intermediate; will all probably stay in L1 cache), we are probably saturating the core's ALUs, so hyper-threading not as useful
-When making multi-threaded, segregate task by writing prototype function, e.g. `render_tile`
+When making multi-threaded, segregate task by writing prototype 'chunk' function, e.g. `render_tile`
+Then write a for loop combining these chunk functions
+
+When dividing a whole into pieces, an uneven divisor will give less than what's needed.
+so `(total + divisor - 1) / divisor` to ensure always enough.
+We will want this calculation to be last in counting sequence, e.g. tile_width then tile_count, so use on tile_count
+Later, will have to clamp value to handle adding extra
+For getting proper place in chunk, call function wrapper for pointer location per row
+
 
 When refactoring, utilise our vimrc <C-F> all files
 

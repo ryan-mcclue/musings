@@ -32,7 +32,7 @@ Be aware that mixed integer and float arithmetic will go to float (implications 
 For easy substitution, use single letter prefix names like `output_h` and `output_w`.
 Convention for variable arrays, e.g. `Planes plane[1]`, `planes` and `plane_count (use ARRAY_COUNT macro here)` 
 Put for loop statements on separate line to help not be afraid of indentation.
-The ability to map from pixel space to another space is essential (normalisation and lerp)
+Iterate over pixel space and then convert to say, world space for calculations (normalisation and lerp)
 Aspect ratio correction is simply rearranging a ratio. If we determine one side is larger, scale other.
 Use "\r" ASCII code to print a status indicator.
 
