@@ -15,6 +15,12 @@ IC lead times growing, MCU even more so
 READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 
 # Raytracer (we are updating 'base' project code files as we go)
+TODO(Clock issues - git commit message): Time issues with clock(); pthread vs clone time difference; not as much speed up with threads as expected;
+NOTE(importance of reading programming papers.... after handmade finished)
+
+hyperthreading, architecture specific information becomes more important when in a situation where memory is constrained in relation to the cache
+(hyper-threads share same L1-L2 cache)
+
 1. returning the colour of closest material hit by ray
 2. each individual ray cast consists of many rays that are reflected between materials.
    colour is returned if ray hits a colour emitter (like the sky, i.e. no material) as oppose to only light reflectors (in code we are doing it in reverse as to what path the light from the sky actually takes) 
@@ -31,8 +37,9 @@ later, worry about passing information in as a parameter
 x_min and one_past_last_max_x naming convention in for loops as never actually reach max_x
 val_count naming convention for amount variables
 
-CRT rand() is awful.
-the CRT is not multi-threaded (is this way wrap CRT functions?)
+In general, the CRT is bloated (maybe because it had to adhere to odd C standards... in fact the undefined-behaviour of C results in performance gains)
+CRT rand() is awful; no inlining and huge call stack. replace with xor_shift (literally get a 3x performance benefit not using this one call in CRT)
+the CRT is not multi-threaded (is this why wrap CRT functions?)
 
 2d games don't really care about gamma correction?
 artist creates in SRGB space (in photoshop) 
@@ -89,6 +96,7 @@ For getting proper place in chunk, call function wrapper for pointer location pe
 (May have to inline functions?)
 Next we want to pass each chunk onto a queue and then dequeue them from each logical core?
 So, have a WorkOrder that will store all information required to perform operation on chunk, i.e. all parameters in `render_chunk` function
+(may also store entropy for each chunk, i.e. random number series)
 Then a WorkQueue that contains an array of WorkOrders with total number equalling number of chunks
 So, the original loop iterating of chunks now just populates the WorkOrders 
 Now in a while loop that runs while there are still chunks to execute, we call the `render_chunk` function and pass in the WorkQueue
@@ -110,9 +118,20 @@ it's required for multithreaded, as compiler may not re-read value that it may h
 when incrementing volatiles, must use a locked_add_and_return_previous_value (could return new value, just be clear)
 
 When refactoring, utilise our vimrc <C-F> all files
+Also, just pull code out into desired function and let the compiler errors guide you
+
+Returning multiple values, just return struct
+To reduce large number of function parameters, put into struct
 
 Have example project with ctags generated for glibc
 
+As a possible optimisation, change from pointers to values to avoid aliasing
+
+PART 3: SIMD
+Inspecting the assembly of our most expensive loop, we see that rand() is not inlined and is a call festival. This must be replaced
+Essentially we are looking for mathematical functions that could be inlined and aren't that are in our hot-path.
+When you want something to be fast, it should not be calling anything. If it does, probably made a mistake
+Also note that using SIMD instructions, however not to their widest extent, i.e. single scalar 'ss'. Want to replace with 'ps' packed scalar
 
 # Modern Software is Slow
 People think that it's slow, but it won't crash (because of interpreter)
