@@ -49,11 +49,6 @@ get some anti-aliasing by jittering over sub-pixel (this only works because we c
 by increasing the rays per pixel, the tracer tends to converge on something (i.e. higher sampling rate, better image quality)
 raytracers far better than rasterisers for light propagation 
 
-
-only use const for char * string literals stored in the data segment
-
-no need for division operator as `(* 1.0f / val)`
-
 refactoring just copy code into function that gets it to compile.
 later, worry about passing information in as a parameter
 basic debug and release compiler flags
@@ -131,6 +126,14 @@ Inspecting the assembly of our most expensive loop, we see that rand() is not in
 Essentially we are looking for mathematical functions that could be inlined and aren't that are in our hot-path.
 When you want something to be fast, it should not be calling anything. If it does, probably made a mistake
 Also note that using SIMD instructions, however not to their widest extent, i.e. single scalar 'ss'. Want to replace with 'ps' packed scalar
+Define lane width, and divide with this to get the new loop count
+Go through loop and loft used values e.g. lane_r32, lane_v3, lane_u32
+If parameters to functions, loft them also (not functions? just parameters?)
+If using struct or struct member references, take out values and loft them also
+Remap if statement conditions into a lane_u32 mask and remove enclosing brace hierarchy
+Once lofted all if statements, & all the masks into a single mask
+Then enclose remaining assignments in a conditional assignment function using this single mask?
+SIMD allows divide by zeros by default? (because nature of SIMD have to allow divide by zeroes?)
 
 # Modern Software is Slow
 People think that it's slow, but it won't crash (because of interpreter)
