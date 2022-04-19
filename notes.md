@@ -129,10 +129,13 @@ Also note that using SIMD instructions, however not to their widest extent, i.e.
 Define lane width, and divide with this to get the new loop count
 Go through loop and loft used values e.g. lane_r32, lane_v3, lane_u32
 If parameters to functions, loft them also (not functions? just parameters?)
-If using struct or struct member references, take out values and loft them also
+If using struct or struct member references, take out values and loft them also, e.g. sphere.radius == lane_r32 sphere_r; (group struct remappings together)
 Remap if statement conditions into a lane_u32 mask and remove enclosing brace hierarchy
-Once lofted all if statements, & all the masks into a single mask
-Then enclose remaining assignments in a conditional assignment function using this single mask?
+Once lofted all if statements, & all the masks into a single mask (it seems if there is large amounts of code inside the if statements, you don't want to do it this way and rather check if needing to execute?)
+(IMPORTANT to & dependent masks, e.g. if there is an intermediate if like a pick_mask, then don't include it)  
+Then enclose remaining assignments in a conditional assignment function using this single mask? (conditional_assign(&var, final_mask, value))
+So, by end of this all values operated upon should be a lane type?
+We may have situation where some items in a lane may finish before others. For incrementing, will have to introduce an incrementor value that will be zeroed out for the appropriate lane item that has finished.
 SIMD allows divide by zeros by default? (because nature of SIMD have to allow divide by zeroes?)
 
 # Modern Software is Slow
