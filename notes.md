@@ -102,10 +102,11 @@ Now in a while loop that runs while there are still chunks to execute, we call t
 The `render_chunk` function will increment the next_work_order_index and return true if more to be done
 
 When spawning the actual worker thread functions, have same while loop calling the `render_chunk` function as for core 0
-(the amount of threads to spawn would think should be equal to number of logical cores? however exceeding them increases performance?)
+(the amount of threads to spawn would think should be equal to number of logical cores? however exceeding them may increase performance?)
 (this debate of manually prescribing the core count applies to the chunk size as well. perhaps the sweet-spot for my machine in balancing context switching and drain out
 is to manually prescribe their size as oppose to computing them off the core count)
 (Collating information into the WorkQueue struct helsp for printing out configuration)
+(Setting up this way, we can easily turn multithreading off)
 
 As creating threads will require platform specific, put prototypes in main.h and the implementations in linux_main.cpp
 Then include linux_main.cpp based on macro definition of platform in the build script at the bottom of main.cpp
@@ -121,6 +122,8 @@ when incrementing volatiles, must use a locked_add_and_return_previous_value (co
 
 As a possible optimisation, change from pointers to values to avoid aliasing
 
+The matching main header file will include additional user header files to alleviate main source file including them all
+
 PART 3: SIMD
 Inspecting the assembly of our most expensive loop, we see that rand() is not inlined and is a call festival. This must be replaced
 Essentially we are looking for mathematical functions that could be inlined and aren't that are in our hot-path.
@@ -128,17 +131,25 @@ When you want something to be fast, it should not be calling anything. If it doe
 Also note that using SIMD instructions, however not to their widest extent, i.e. single scalar 'ss'. Want to replace with 'ps' packed scalar
 Define lane width, and divide with this to get the new loop count
 Go through loop and loft used values e.g. lane_r32, lane_v3, lane_u32
+(IMPORTANT at first we are only concerned with getting single values to work, later can worry about n-wide loading of values)
 If parameters to functions, loft them also (not functions? just parameters? however we do random_bilateral_lane() so yes to functions?)
 If using struct or struct member references, take out values and loft them also, e.g. sphere.radius == lane_r32 sphere_r; (group struct remappings together)
 Remap if statement conditions into a lane_u32 mask and remove enclosing brace hierarchy
+(IMPORTANT you can still have if statements if they apply to lanes, e.g. if mask_is_zeroed() break;)
 Once lofted all if statements, & all the masks into a single mask 
 (it seems if there is large amounts of code inside the if statements, you don't want to do it this way and rather check if needing to execute?)
 (IMPORTANT to only & dependent masks, e.g. if there is an intermediate if like a pick_mask or clamp, then don't include it, but do the conditional assign directly on this mask)
-Then enclose remaining assignments in a conditional assignment function using this single mask? (conditional_assign(&var, final_mask, value))
+Then enclose remaining assignments in a conditional assignment function using this single mask? 
+(conditional_assign(&var, final_mask, value); this uses positive mask to get source and negative mask to get dest?)
+(also discover the work around to perform binary operations on floating point numbers)
 So, by end of this all values operated upon should be a lane type?
-We may have situation where some items in a lane may finish before others. 
-So, introduce a lane_mask variable that indicates this. To indicate say a break, we can do (lane_mask = lane_mask & (hit_value == 0));
+We may have situation where some items in a lane may finish before others.  So, introduce a lane_mask variable that indicates this. 
+To indicate say a break, we can do (lane_mask = lane_mask & (hit_value == 0));
 For incrementing, will have to introduce an incrementor value that will be zeroed out for the appropriate lane item that has finished.
+Have horizontal_add()?
+Next once everything remapped create a lane.h. Here, typedef the lane types to their single variants to ensure working before adding actual simd instructions
+Also do simd helper functions like horizontal_add(), mask_is_zeroed() in one dimension first
+
 SIMD allows divide by zeros by default? (because nature of SIMD have to allow divide by zeroes?)
 
 # Modern Software is Slow
