@@ -128,14 +128,17 @@ When you want something to be fast, it should not be calling anything. If it doe
 Also note that using SIMD instructions, however not to their widest extent, i.e. single scalar 'ss'. Want to replace with 'ps' packed scalar
 Define lane width, and divide with this to get the new loop count
 Go through loop and loft used values e.g. lane_r32, lane_v3, lane_u32
-If parameters to functions, loft them also (not functions? just parameters?)
+If parameters to functions, loft them also (not functions? just parameters? however we do random_bilateral_lane() so yes to functions?)
 If using struct or struct member references, take out values and loft them also, e.g. sphere.radius == lane_r32 sphere_r; (group struct remappings together)
 Remap if statement conditions into a lane_u32 mask and remove enclosing brace hierarchy
-Once lofted all if statements, & all the masks into a single mask (it seems if there is large amounts of code inside the if statements, you don't want to do it this way and rather check if needing to execute?)
-(IMPORTANT to & dependent masks, e.g. if there is an intermediate if like a pick_mask, then don't include it)  
+Once lofted all if statements, & all the masks into a single mask 
+(it seems if there is large amounts of code inside the if statements, you don't want to do it this way and rather check if needing to execute?)
+(IMPORTANT to only & dependent masks, e.g. if there is an intermediate if like a pick_mask or clamp, then don't include it, but do the conditional assign directly on this mask)
 Then enclose remaining assignments in a conditional assignment function using this single mask? (conditional_assign(&var, final_mask, value))
 So, by end of this all values operated upon should be a lane type?
-We may have situation where some items in a lane may finish before others. For incrementing, will have to introduce an incrementor value that will be zeroed out for the appropriate lane item that has finished.
+We may have situation where some items in a lane may finish before others. 
+So, introduce a lane_mask variable that indicates this. To indicate say a break, we can do (lane_mask = lane_mask & (hit_value == 0));
+For incrementing, will have to introduce an incrementor value that will be zeroed out for the appropriate lane item that has finished.
 SIMD allows divide by zeros by default? (because nature of SIMD have to allow divide by zeroes?)
 
 # Modern Software is Slow
