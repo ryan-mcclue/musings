@@ -82,6 +82,7 @@ However, as we are not memory bound (just going through pixel by pixel and not g
 When making multi-threaded, segregate task by writing prototype 'chunk' function, e.g. `render_tile`
 Then write a for loop combining these chunk functions
 Before entering the chunk function, good to have a configuration printout, e.g. num chunks, num cores, chunk dim, chunk size, etc.
+(IMPORTANT save out configuration and timing information for various optimisation setups, e.g. ./app > 17-04-2022-image.txt)
  
 Good to print out status of completion for threading? 
 Could be just counting number of chunks retired?
@@ -124,6 +125,11 @@ As a possible optimisation, change from pointers to values to avoid aliasing
 
 The matching main header file will include additional user header files to alleviate main source file including them all
 
+Distinguishing between starting from corner of pixel or centre of pixel
+
+Set platform dependent values as macros and then assign to a variable in source file, e.g. u32 lane_width = LANE_WIDTH
+
+
 PART 3: SIMD
 Inspecting the assembly of our most expensive loop, we see that rand() is not inlined and is a call festival. This must be replaced
 Essentially we are looking for mathematical functions that could be inlined and aren't that are in our hot-path.
@@ -136,6 +142,7 @@ If parameters to functions, loft them also (not functions? just parameters? howe
 If using struct or struct member references, take out values and loft them also, e.g. sphere.radius == lane_r32 sphere_r; (group struct remappings together)
 Remap if statement conditions into a lane_u32 mask and remove enclosing brace hierarchy
 (IMPORTANT you can still have if statements if they apply to lanes, e.g. if mask_is_zeroed() break;)
+(TODO for mask_is_zeroed() we want the masks to be either all 1's or 0's)
 Once lofted all if statements, & all the masks into a single mask 
 (it seems if there is large amounts of code inside the if statements, you don't want to do it this way and rather check if needing to execute?)
 (IMPORTANT to only & dependent masks, e.g. if there is an intermediate if like a pick_mask or clamp, then don't include it, but do the conditional assign directly on this mask)
@@ -149,6 +156,8 @@ For incrementing, will have to introduce an incrementor value that will be zeroe
 Have horizontal_add()?
 Next once everything remapped create a lane.h. Here, typedef the lane types to their single variants to ensure working before adding actual simd instructions
 Also do simd helper functions like horizontal_add(), mask_is_zeroed() in one dimension first
+Wrap the single lane helper functions and types in an if depending on the lane width set
+(IMPORTANT any functions that we are to SIMD, place here. if it comes that we want actual scalar, then rename with func_lane prefix) 
 
 SIMD allows divide by zeros by default? (because nature of SIMD have to allow divide by zeroes?)
 
