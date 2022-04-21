@@ -159,6 +159,14 @@ Also do simd helper functions like horizontal_add(), mask_is_zeroed() in one dim
 Wrap the single lane helper functions and types in an if depending on the lane width set
 (IMPORTANT any functions that we are to SIMD, place here. if it comes that we want actual scalar, then rename with func_lane prefix) 
 
+For bitwise SIMD instructions, the compiler does not need to know how we are segmenting the register, e.g. 4x8, 8x8 etc. 
+as the same result is obtained performing on the entire register at once.
+So they only provide one version of it, i.e. no epi32 only si128
+epi32 is packed 32bit integer, ps is packed float (scalar)
+Overload operators on actual wide lane structs. 
+Also have conversion functions
+Lane agnostic functions go at bottom
+
 SIMD allows divide by zeros by default? (because nature of SIMD have to allow divide by zeroes?)
 
 # Modern Software is Slow
