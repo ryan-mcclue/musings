@@ -138,6 +138,7 @@ Also note that using SIMD instructions, however not to their widest extent, i.e.
 Define lane width, and divide with this to get the new loop count
 Go through loop and loft used values e.g. lane_r32, lane_v3, lane_u32
 (IMPORTANT at first we are only concerned with getting single values to work, later can worry about n-wide loading of values)
+(TODO the current code has the slots for each lane generated, rather than unpacked. look at handmade hero for this unpacking mode)
 If parameters to functions, loft them also (not functions? just parameters? however we do random_bilateral_lane() so yes to functions?)
 If using struct or struct member references, take out values and loft them also, e.g. sphere.radius == lane_r32 sphere_r; (group struct remappings together)
 Remap if statement conditions into a lane_u32 mask and remove enclosing brace hierarchy
@@ -162,10 +163,13 @@ Wrap the single lane helper functions and types in an if depending on the lane w
 For bitwise SIMD instructions, the compiler does not need to know how we are segmenting the register, e.g. 4x8, 8x8 etc. 
 as the same result is obtained performing on the entire register at once.
 So they only provide one version of it, i.e. no epi32 only si128
-epi32 is packed 32bit integer, ps is packed float (scalar)
-Overload operators on actual wide lane structs. 
+Naming convention have types: `__m128 (float), __m128i (integer), __m128d (double)` 
+and names in functions: `epi32/si128 (integer), ps (float), pd (double)`
+Overload operators on actual wide lane structs
+(IMPORTANT remember to do both orders, e.g. (val / scalar) and (scalar / val))
 Also have conversion functions
-Lane agnostic functions go at bottom
+
+Lane agnostic functions go at bottom (like +=, -=, &=, etc.)
 
 SIMD allows divide by zeros by default? (because nature of SIMD have to allow divide by zeroes?)
 
