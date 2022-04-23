@@ -167,6 +167,10 @@ Wrap the single lane helper functions and types in an if depending on the lane w
 (IMPORTANT any functions that we are to SIMD, place here. 
 if it comes that we want actual scalar, then rename with func_lane prefix) 
 
+Debug in single lane, single threaded mode
+
+To get over the fact that C doesn't allow & floating point, reinterpret bit paradigm `*(u32 *)&a` as oppose to cast
+
 For bitwise SIMD instructions, the compiler does not need to know how we are segmenting the register, e.g. 4x8, 8x8 etc. 
 as the same result is obtained performing on the entire register at once.
 So they only provide one version of it, i.e. no epi32 only si128
@@ -181,6 +185,10 @@ Lane agnostic functions go at bottom (like +=, -=, &=, most v3 functionality)
 
 (TODO look at code for GatherF32_macro_and_func())
 macro pattern for type-generic function...
+
+process of casting type to pointer to access individual bytes or containing elements (used in file reading too)
+
+(IMPORTANT masks in SIMD will either be all 1's or 0's. perhaps have a specific name for this to distinguish?)
 
 (IMPORTANT seems that not all operations are provided in SSE, like !=, so have to implement with some bitwise operations)
 
