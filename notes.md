@@ -177,6 +177,12 @@ Overload operators on actual wide lane structs
 Also have conversion functions
 
 Lane agnostic functions go at bottom (like +=, -=, &=, most v3 functionality)
+(IMPORTANT it seems we can replace logical && and || with binary for same functionality in simd)
+
+(TODO look at code for GatherF32_macro_and_func())
+macro pattern for type-generic function...
+
+(IMPORTANT seems that not all operations are provided in SSE, like !=, so have to implement with some bitwise operations)
 
 SIMD allows divide by zeros by default? (because nature of SIMD have to allow divide by zeroes?)
 
