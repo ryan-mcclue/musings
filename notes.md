@@ -14,7 +14,7 @@ IC lead times growing, MCU even more so
 
 READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 
-# Raytracer (we are updating 'base' project code files as we go)
+# Raytracer (we are updating 'base' project code files as we go. also collection of documentation files for each project and machine-specific information)
 CODING WORKFLOW
 MULTITHREADING
 SIMD
@@ -34,7 +34,6 @@ NOTE(importance of reading programming papers.... after handmade finished)
    colour is returned if ray hits a colour emitter (like the sky, i.e. no material) as oppose to only light reflectors (in code we are doing it in reverse as to what path the light from the sky actually takes) 
    as we have some degree of randomness in diffuse materials, cast a ray for more than just each pixel (i.e. multiple times per pixel) and accumulate the values to get a more definite colour
    `final_value += contrib * sample`
-
 
 2d games don't really care about gamma correction?
 artist creates in SRGB space (in photoshop) 
@@ -73,6 +72,7 @@ by applying a scaling factor to direction vector, can move along it
 world space coordinates. camera position is based on these. the camera will have its own axis system which we determine what it should be and then use cross product based on what we want
 understanding dot product equivalence with circle equation
 for multiplication of vectors, be explicit with a hadamard function
+(IMPORTANT have reciprocal square root approximation which is there specifically for normalisation. much faster cycle count and latency than square root)
 
 PART 2
 To determine performance must have some stable metric, e.g. ops/sec to compare to
@@ -123,6 +123,12 @@ when incrementing volatiles, must use a locked_add_and_return_previous_value (co
 
 As a possible optimisation, change from pointers to values to avoid aliasing
 
+clamp can be re-written as min() and max() combination, which are instructions in SSE
+
+Don't be scared of mass name changing!! Before doing so, see all places where name is used
+
+Don't be scared of long list of compiler errors. Work your way through them
+
 The matching main header file will include additional user header files to alleviate main source file including them all
 
 Distinguishing between starting from corner of pixel or centre of pixel
@@ -150,7 +156,7 @@ Once lofted all if statements, & all the masks into a single mask
 Then enclose remaining assignments in a conditional assignment function using this single mask? 
 (conditional_assign(&var, final_mask, value); this uses positive mask to get source and negative mask to get dest?)
 (also discover the work around to perform binary operations on floating point numbers)
-So, by end of this all values operated upon should be a lane type?
+So, by end of this all values operated upon should be a lane type? (can have some scalar types if appropriate)
 We may have situation where some items in a lane may finish before others.  So, introduce a lane_mask variable that indicates this. 
 To indicate say a break, we can do (lane_mask = lane_mask & (hit_value == 0));
 For incrementing, will have to introduce an incrementor value that will be zeroed out for the appropriate lane item that has finished.
@@ -158,7 +164,8 @@ Have horizontal_add()?
 Next once everything remapped create a lane.h. Here, typedef the lane types to their single variants to ensure working before adding actual simd instructions
 Also do simd helper functions like horizontal_add(), mask_is_zeroed() in one dimension first
 Wrap the single lane helper functions and types in an if depending on the lane width set
-(IMPORTANT any functions that we are to SIMD, place here. if it comes that we want actual scalar, then rename with func_lane prefix) 
+(IMPORTANT any functions that we are to SIMD, place here. 
+if it comes that we want actual scalar, then rename with func_lane prefix) 
 
 For bitwise SIMD instructions, the compiler does not need to know how we are segmenting the register, e.g. 4x8, 8x8 etc. 
 as the same result is obtained performing on the entire register at once.
@@ -169,7 +176,7 @@ Overload operators on actual wide lane structs
 (IMPORTANT remember to do both orders, e.g. (val / scalar) and (scalar / val))
 Also have conversion functions
 
-Lane agnostic functions go at bottom (like +=, -=, &=, etc.)
+Lane agnostic functions go at bottom (like +=, -=, &=, most v3 functionality)
 
 SIMD allows divide by zeros by default? (because nature of SIMD have to allow divide by zeroes?)
 
