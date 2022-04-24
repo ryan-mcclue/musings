@@ -135,6 +135,13 @@ Distinguishing between starting from corner of pixel or centre of pixel
 
 Set platform dependent values as macros and then assign to a variable in source file, e.g. u32 lane_width = LANE_WIDTH
 
+When in debugger, go iteratively progress through variable values in function and see if they look right
+We can isolate some area of the code and say this is probably the problem
+Then investigate relevent sub-functions, etc.
+This can be a long process with seemingly little gains.
+The issue could be subtle, e.g. signed/unsignedness size, function called rarely
+
+(IMPORTANT in SIMD cast is reinterpreting bits, so the opposite of cast in C)
 
 PART 3: SIMD
 Inspecting the assembly of our most expensive loop, we see that rand() is not inlined and is a call festival. This must be replaced
@@ -150,6 +157,7 @@ If using struct or struct member references, take out values and loft them also,
 Remap if statement conditions into a lane_u32 mask and remove enclosing brace hierarchy
 (IMPORTANT you can still have if statements if they apply to lanes, e.g. if mask_is_zeroed() break;)
 (TODO for mask_is_zeroed() we want the masks to be either all 1's or 0's)
+(call mask_is_zeroed() on all masks to early out as often as possible to get a speed up)
 Once lofted all if statements, & all the masks into a single mask 
 (it seems if there is large amounts of code inside the if statements, you don't want to do it this way and rather check if needing to execute?)
 (IMPORTANT to only & dependent masks, e.g. if there is an intermediate if like a pick_mask or clamp, then don't include it, but do the conditional assign directly on this mask)
@@ -167,7 +175,8 @@ Wrap the single lane helper functions and types in an if depending on the lane w
 (IMPORTANT any functions that we are to SIMD, place here. 
 if it comes that we want actual scalar, then rename with func_lane prefix) 
 
-Debug in single lane, single threaded mode
+Debug in single lane, single threaded mode (easier and debugger works)
+However, can increase lane width as needed (threading not so much?)
 
 To get over the fact that C doesn't allow & floating point, reinterpret bit paradigm `*(u32 *)&a` as oppose to cast
 
@@ -183,8 +192,12 @@ Also have conversion functions
 Lane agnostic functions go at bottom (like +=, -=, &=, most v3 functionality)
 (IMPORTANT it seems we can replace logical && and || with binary for same functionality in simd)
 
-(TODO look at code for GatherF32_macro_and_func())
+(TODO look at code for GatherF32_macro_and_func() for both single and wide)
 macro pattern for type-generic function...
+
+Although looking at the system monitor shows cpus maxed out, we could be wasting cycles, e.g. not using SIMD
+
+(IMPORTANT simd does not handle unsigned conversions, may have to cut off sign bit, e.g. >> 1)
 
 process of casting type to pointer to access individual bytes or containing elements (used in file reading too)
 
