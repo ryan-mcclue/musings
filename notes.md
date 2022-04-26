@@ -1,6 +1,8 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
-discovering for linux docs are code and for development may have to add to groups (uinput) and/or modify policies (bluez)
+discovering for linux docs are code and for 
+development may have to add to groups (uinput) 
+and/or modify policies (bluez)
 -------------------------------------------------------------------
 for long range, LoRa or sigfox
 essentially tradeoffs between power and data rate
@@ -15,9 +17,16 @@ IC lead times growing, MCU even more so
 READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 
 # Raytracer (we are updating 'base' project code files as we go. also collection of documentation files for each project and machine-specific information)
-CODING WORKFLOW
+With error handling, bad practice is to allow a lot of errors, which brings in error classes etc.
+Instead, if it's something that is actually an error, e.g. missing file, write the code to explicitly handle it.
+
+CODING WORKFLOW/REFACTORING/ETC.
+
 MULTITHREADING
+
 SIMD
+
+Optimise: gather stats -> make estimate -> analyse efficiency...
 
 TODO(Clock issues - git commit message): 
 Time issues with clock(); 
