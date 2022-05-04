@@ -17,8 +17,45 @@ IC lead times growing, MCU even more so
 READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 
 # Raytracer (we are updating 'base' project code files as we go. also collection of documentation files for each project and machine-specific information)
+TACKLING DIFFICULT PROBLEM -- HOTLOADING
+FILE MODIFICATION TIME BEING READ TOO EARLY.
+MISINTERPRETING TIMESPEC NANOSEC
+
+With an undeclared identifier in a unity build, just reorder #includes in main file
+
+Visualising essential for debugging insidious problems...
+Print rows of text aligned
+Conversion from single-state to recording data over time will require memory which we will cast to appropriate state structure, e.g. DebugState 
+Then have CounterState and CounterSnapshot (move per frame data into this)
+Each frame, copy over src to dst (with a rolling buffer)
+In the rendering of the records, to display snapshots, generate statistics like min, max, avg.
+These will be converged into a Statistic struct for each value
+Have helper function for begin, update and end statistic with value
+Now we have max, loop over again to generate graph height scale and say red colour scale
+Alternatively we could have absolute height scale, e.g `total / 0.033f`
+
+(TODO: UI have layout and font information...)
+Drawing have left_edge, top_edge
+Drawing charts, define chart_height, bar_width, bar_spacing etc. in pixels
+Can draw single pixel height reference line
+Cycle through colours with `arr[index % ARRAY_COUNT(arr)]`
+
+Basic parser with at[0], at[1] != '\0' and incrementing inside of loop (relies on short-circuit evaluation)
+
 With error handling, bad practice is to allow a lot of errors, which brings in error classes etc.
 Instead, if it's something that is actually an error, e.g. missing file, write the code to explicitly handle it.
+Handling the error in a sense makes it no longer an error, rather a feature of the program
+
+Understanding macro pasting issues and gcc extension usage with compiler flags
+
+DestRow and DestCursor for subsection rectangle drawing
+
+To make anything alternate over time, just multiply by sine(time);
+
+Draw routines with origin vector and vector axis (basis vectors)
+Axis that aren't perpendicular causes shearing
+
+IMPORTANCE OF RUNNING STEPPING THROUGH IN DEBUGGER WHEN NOT WORKING!!!!!
 
 CODING WORKFLOW/REFACTORING/ETC.
 
@@ -26,7 +63,7 @@ MULTITHREADING
 
 SIMD
 
-Optimise: gather stats -> make estimate -> analyse efficiency...
+Optimise: gather stats -> make estimate -> analyse efficiency and performance
 
 TODO(Clock issues - git commit message): 
 Time issues with clock(); 
