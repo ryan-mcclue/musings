@@ -21,11 +21,28 @@ TACKLING DIFFICULT PROBLEM -- HOTLOADING
 FILE MODIFICATION TIME BEING READ TOO EARLY.
 MISINTERPRETING TIMESPEC NANOSEC
 
+IS IT POSSIBLE THAT AN ASSEMBLY INSTRUCTION LIKE RDTSCP COULD BE TRAPPED BY PROGRAM LOADER?
+
+ASSERT(!"invalid case statement");
+
+Use GLOBAL and global_prefix 
+
+Refactoring with usage code: just write out structures that satisfy the usage code.
+If major rewrite use #if 0 to allow for successful compiling
+ 
+For multithreading, often have to pack into 64 bit value to perform single operation on it,
+e.g. `delta = (val1 << 32 | val2); interlocked_add(&val, delta)`
+
+If casting is occuring, always be explicit about it!
+
+Prefixing functions with sdl2_func() or linux_func() 
+
 With an undeclared identifier in a unity build, just reorder #includes in main file
 
 Visualising essential for debugging insidious problems...
 Print rows of text aligned
 Conversion from single-state to recording data over time will require memory which we will cast to appropriate state structure, e.g. DebugState 
+state structures will have `b32 is_initialised` field which will initialise a memory arena
 Then have CounterState and CounterSnapshot (move per frame data into this)
 Each frame, copy over src to dst (with a rolling buffer)
 In the rendering of the records, to display snapshots, generate statistics like min, max, avg.
