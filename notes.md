@@ -23,6 +23,15 @@ MISINTERPRETING TIMESPEC NANOSEC
 
 IS IT POSSIBLE THAT AN ASSEMBLY INSTRUCTION LIKE RDTSCP COULD BE TRAPPED BY PROGRAM LOADER?
 
+ALMOST ALWAYS CAST TO FLOAT WHEN DOING DIVISIONS LEADING TO FLOAT
+
+DO THE 'MOST CERTAIN' THING FIRST. THIS COULD EITHER BE THE IMPLEMENTATION OR THE USAGE CODE
+
+Drawing just take state, and input.
+After base drawing, look at input and alter if appropriate
+
+When debugging, look through variables and see if anything looks ridiculous
+
 ASSERT(!"invalid case statement");
 
 Use GLOBAL and global_prefix 
@@ -50,6 +59,8 @@ These will be converged into a Statistic struct for each value
 Have helper function for begin, update and end statistic with value
 Now we have max, loop over again to generate graph height scale and say red colour scale
 Alternatively we could have absolute height scale, e.g `total / 0.033f`
+(So in drawing, will typically have 'raw' structures that just have data, and will then
+loop over these again to generate relationships to actually draw from etc.)
 
 (TODO: UI have layout and font information...)
 Drawing have left_edge, top_edge
