@@ -27,6 +27,16 @@ ALMOST ALWAYS CAST TO FLOAT WHEN DOING DIVISIONS LEADING TO FLOAT
 
 DO THE 'MOST CERTAIN' THING FIRST. THIS COULD EITHER BE THE IMPLEMENTATION OR THE USAGE CODE
 
+For lexing, use at[0] for dereferencing
+When eating intermediate chars with !=, check at[0] != '\0' as well
+For enclosing values, once eated intermediate chars, make sure final char is end enclosing value
+
+Typing constructor values repeatedly, another good case for macro
+
+Minimum value starts at max
+
+If debug code (or code that will not be in release) use compile-time macros
+
 Drawing just take state, and input.
 After base drawing, look at input and alter if appropriate
 
