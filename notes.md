@@ -17,6 +17,8 @@ IC lead times growing, MCU even more so
 READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 
 # Raytracer (we are updating 'base' project code files as we go. also collection of documentation files for each project and machine-specific information)
+choose data structures around solving problem
+
 TACKLING DIFFICULT PROBLEM -- HOTLOADING
 FILE MODIFICATION TIME BEING READ TOO EARLY.
 MISINTERPRETING TIMESPEC NANOSEC
