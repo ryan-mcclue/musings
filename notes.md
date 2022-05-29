@@ -17,6 +17,8 @@ IC lead times growing, MCU even more so
 READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 
 # Raytracer (we are updating 'base' project code files as we go. also collection of documentation files for each project and machine-specific information)
+How can software better serve humanity? e.g. bloatware causes slowness for aus post workers
+
 choose data structures around solving problem
 
 TACKLING DIFFICULT PROBLEM -- HOTLOADING
@@ -420,7 +422,7 @@ some old codebases need to be retired
 # Modern Program Woes
 STM32CubeMX (this justs generates code, IDE is full fledged) to download, must get link with email
 Once installed, a series of pop-up menus just keep appearing spontaneously as it has to download more to satisfy a simple create project
-To download qtcreator well known bug that it selects the wrong mirror, 3MBsp to 30kbs. 
+To download qtcreator well known bug that it selects the wrong mirror, 3MBps to 30kbs. 
 Have to decipher command line arguments and mirror parsing, e.g. ./qt-unified-linux-x64-4.3.0-1-online.run --mirror http://ftp.jaist.ac.jp/pub/qtproject  
 
 QTcreator does not honour system .gdbinit file, have to manually set breakpoints and dissassembly flavour
