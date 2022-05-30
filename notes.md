@@ -17,6 +17,8 @@ IC lead times growing, MCU even more so
 READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 
 # Raytracer (we are updating 'base' project code files as we go. also collection of documentation files for each project and machine-specific information)
+Data hiding hides what the CPU is doing, which is what we care about
+
 How can software better serve humanity? e.g. bloatware causes slowness for aus post workers
 
 choose data structures around solving problem
@@ -262,6 +264,8 @@ Also do simd helper functions like horizontal_add(), mask_is_zeroed() in one dim
 Wrap the single lane helper functions and types in an if depending on the lane width set
 (IMPORTANT any functions that we are to SIMD, place here. 
 if it comes that we want actual scalar, then rename with func_lane prefix) 
+
+for simd typically have to organically transition from AOS to SOA
 
 Debug in single lane, single threaded mode (easier and debugger works)
 However, can increase lane width as needed (threading not so much?)
