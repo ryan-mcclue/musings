@@ -31,3 +31,7 @@ When we see what we have done we obtain positive feedback motivation to keep dra
 It's more comforting to draw something small (so if planning on drawing something big, start small. in fact, always start small)
 Patience and consistency is essential for an artist
 Now, move onto original drawing plans
+
+----------------------------------------------------------------------
+
+copying something is more about observational skills rather than drawing skills
