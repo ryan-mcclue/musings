@@ -19,6 +19,9 @@ READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 # Raytracer (we are updating 'base' project code files as we go. also collection of documentation files for each project and machine-specific information)
 Data hiding hides what the CPU is doing, which is what we care about
 
+Use of discriminated unions and type fields for type sharing
+INCLUDE OTHER PROGRAMMING PROCEDURES LEARNED FROM CODE SNIPPETS
+
 How can software better serve humanity? e.g. bloatware causes slowness for aus post workers
 
 choose data structures around solving problem
@@ -424,7 +427,8 @@ some old codebases need to be retired
 
 
 # Modern Program Woes
-STM32CubeMX (this justs generates code, IDE is full fledged) to download, must get link with email
+STM32CubeMX (this justs generates code, IDE is full fledged) to download, must get link with email.
+STM32CubeIDE is woefully slow. Maximising to full screen just blurs out half
 Once installed, a series of pop-up menus just keep appearing spontaneously as it has to download more to satisfy a simple create project
 To download qtcreator well known bug that it selects the wrong mirror, 3MBps to 30kbs. 
 Have to decipher command line arguments and mirror parsing, e.g. ./qt-unified-linux-x64-4.3.0-1-online.run --mirror http://ftp.jaist.ac.jp/pub/qtproject  
@@ -438,7 +442,16 @@ Searching for the appropriate package name to install a missing dependency is wh
 Disable optimisation to prevent lines being removed which the debugger won't pick up on.
 mention QEMU simulator debugging issues
 
+(ADAFRUIT INDUSTRIES LIVE WITH TONY D --> BLE)
+(TAKE THE BLUEPILL LOW LEVEL LEARNING --> OPENOCD)
 # Embedded Workflow
+1. Attainment of BSP.
+With STM32, use STM32CubeMX and set project toolchain to Makefile. 
+Convert this to appropriate build script.
+2. Method of flashing
+Coordinate build software (JLinkExe, stlink, openocd, nrfjprog), probe (JLink, STLink) and board ICDI firmware (stlink, jlink, stellaris)
+
+
 Attainment of documentation
 The CPU architecture will have an exception (a cpu interrupt) model. Here, reset behaviour will be defined.
 the 32 bit arm cortex-m4 has FPU (a application, m for microcontroller, r high performance real time)
