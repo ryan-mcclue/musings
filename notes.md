@@ -445,12 +445,25 @@ mention QEMU simulator debugging issues
 (ADAFRUIT INDUSTRIES LIVE WITH TONY D --> BLE)
 (TAKE THE BLUEPILL LOW LEVEL LEARNING --> OPENOCD)
 # Embedded Workflow
-1. Attainment of BSP.
-With STM32, use STM32CubeMX and set project toolchain to Makefile. 
-Convert this to appropriate build script.
-2. Method of flashing
-Coordinate build software (JLinkExe, stlink, openocd, nrfjprog), probe (JLink, STLink) and board ICDI firmware (stlink, jlink, stellaris)
+2. **Method of debug flashing**
+   Coordinate probe (JLink, STLink) pin-out, flash software (JLinkExe, stlink-tools, openocd, nrfjprog), considering the possible board SWD firmware (stlink, jlink, stellaris)
+1. **Documentation**
+   Generalities such as *Debug Interface* or *Procedure Call Standard*
+   Architecture specifics such as *armv7m*
+   Micro-architecture specifics such as *cortex-m4*
+   Micro-controller specifics such as *stm32f429zi*
+   Board specifics such as pin-out diagram 
+3. **BSP**
+   This can be done via an IDE such as STM32CubeMX to create an example project Makefile.
+   Alternatively can be done via a commond line application such as libopencm3.
+4. ** **
 
+
+openocd -f /usr/share/openocd/scripts/interface/jlink.cfg -f /usr/share/openocd/scripts/target/stm32f4x.cfg
+should open a tcp port on 3333 for gdb
+3. Setup emulator and on-chip unit testing 
+
+Seems that an RTOS is a multiprocessing kernel that allows the user to control its scheduling priority?
 
 Attainment of documentation
 The CPU architecture will have an exception (a cpu interrupt) model. Here, reset behaviour will be defined.
