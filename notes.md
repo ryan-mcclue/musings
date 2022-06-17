@@ -445,23 +445,32 @@ mention QEMU simulator debugging issues
 (ADAFRUIT INDUSTRIES LIVE WITH TONY D --> BLE)
 (TAKE THE BLUEPILL LOW LEVEL LEARNING --> OPENOCD)
 # Embedded Workflow
-2. **Method of debug flashing**
-   Coordinate probe (JLink, STLink) pin-out, flash software (JLinkExe, stlink-tools, openocd, nrfjprog), considering the possible board SWD firmware (stlink, jlink, stellaris)
 1. **Documentation**
    Generalities such as *Debug Interface* or *Procedure Call Standard*
    Architecture specifics such as *armv7m*
    Micro-architecture specifics such as *cortex-m4*
    Micro-controller specifics such as *stm32f429zi*
    Board specifics such as pin-out diagram 
-3. **BSP**
+2. **BSP**
    This can be done via an IDE such as STM32CubeMX to create an example project Makefile.
-   Alternatively can be done via a commond line application such as libopencm3.
-4. ** **
-
+   Alternatively can be done via a command line application such as libopencm3.
+3. **Targets**
+   Disable hardware fpu instructions and enable libgloss for simulator
+   Enable nano libc with no system calls for target
+4. **Flashing and Debugging**
+   Coordinate *JLink/STLink* probe and board pin-outs
+   Ascertain board debug firmware and determine if reflashing required, e.g. *STLinkReflash*
+   Preferable to use debugger software such as *Ozone* that automates flashing.
+   If not, determine flash software such as *JLinkExe*, *stlink-tools*, *openocd*, *nrfjprog* etc.
+   Coordinate debugger software such as *QTCreator* with qemu gdb server
+5. **Hardware Tools**
+Can determine LED forward voltage with DMM?
+   Measure voltage, current, resistance, continuity with multimeter
+   Oscilloscope for ...
+   Logic analyser for, SPI and I2C
 
 openocd -f /usr/share/openocd/scripts/interface/jlink.cfg -f /usr/share/openocd/scripts/target/stm32f4x.cfg
 should open a tcp port on 3333 for gdb
-3. Setup emulator and on-chip unit testing 
 
 Seems that an RTOS is a multiprocessing kernel that allows the user to control its scheduling priority?
 
