@@ -468,6 +468,8 @@ Can determine LED forward voltage with DMM?
    Measure voltage, current, resistance, continuity with multimeter
    Oscilloscope for ...
    Logic analyser for, SPI and I2C
+https://www.youtube.com/watch?v=8LGD5LdOzEM
+https://www.youtube.com/watch?v=zyT5EPqFQXs
 
 openocd -f /usr/share/openocd/scripts/interface/jlink.cfg -f /usr/share/openocd/scripts/target/stm32f4x.cfg
 should open a tcp port on 3333 for gdb
