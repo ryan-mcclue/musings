@@ -14,9 +14,18 @@ Smart home standards
 Autonomous vehicles
 IC lead times growing, MCU even more so
 
+many 'new tech' in web are just sensationalised titles that are different graphical displays of the same idea, e.g. homescreen social media... 
+(e.g. css and js frameworks)
+
+much like the C++ standards committee, Matter standard just bogged down in beurcracy
+
+plastic processors? (example of importance of low-memory programming. techonology advances in situations always arising)
+
 READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 
 # Raytracer (we are updating 'base' project code files as we go. also collection of documentation files for each project and machine-specific information)
+likely() macros for branch prediction compiler optimisations (https://akkadia.org/drepper/cpumemory.pdf, pg 56)
+
 Data hiding hides what the CPU is doing, which is what we care about
 
 Use of discriminated unions and type fields for type sharing
