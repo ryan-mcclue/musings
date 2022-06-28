@@ -443,9 +443,11 @@ To download qtcreator well known bug that it selects the wrong mirror, 3MBps to 
 Have to decipher command line arguments and mirror parsing, e.g. ./qt-unified-linux-x64-4.3.0-1-online.run --mirror http://ftp.jaist.ac.jp/pub/qtproject  
 
 QTcreator does not honour system .gdbinit file, have to manually set breakpoints and dissassembly flavour
+QTCreator doesn't show console output. Tick 'run in terminal' crashes on startup
 
 Before even using the program, installing is bad. Install pandoc. It requires a pdf engine, e.g. xelatex that must be separately installed
 Searching for the appropriate package name to install a missing dependency is what I use ubuntu stack exchange mostly for.....
+
 
 # Debugger Woes
 Disable optimisation to prevent lines being removed which the debugger won't pick up on.
@@ -459,7 +461,7 @@ mention QEMU simulator debugging issues
    Architecture specifics such as *armv7m*
    Micro-architecture specifics such as *cortex-m4*
    Micro-controller specifics such as *stm32f429zi*
-   Board specifics such as pin-out diagram 
+   Board specifics such as pin-out diagram and schematic
 2. **BSP**
    This can be done via an IDE such as STM32CubeMX to create an example project Makefile.
    Alternatively can be done via a command line application such as libopencm3.
@@ -473,12 +475,12 @@ mention QEMU simulator debugging issues
    If not, determine flash software such as *JLinkExe*, *stlink-tools*, *openocd*, *nrfjprog* etc.
    Coordinate debugger software such as *QTCreator* with qemu gdb server
 5. **Hardware Tools**
-Can determine LED forward voltage with DMM?
-   Measure voltage, current, resistance, continuity with multimeter
+   Measure voltage, current, resistance/continuity/diode with multimeter
    Oscilloscope for ...
    Logic analyser for, SPI and I2C
-https://www.youtube.com/watch?v=8LGD5LdOzEM
-https://www.youtube.com/watch?v=zyT5EPqFQXs
+
+6. **Protocol**
+  USB port probably in-built serial port
 
 openocd -f /usr/share/openocd/scripts/interface/jlink.cfg -f /usr/share/openocd/scripts/target/stm32f4x.cfg
 should open a tcp port on 3333 for gdb
