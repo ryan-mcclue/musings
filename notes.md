@@ -466,7 +466,7 @@ mention QEMU simulator debugging issues
    This can be done via an IDE such as STM32CubeMX to create an example project Makefile.
    Alternatively can be done via a command line application such as libopencm3.
 3. **Targets**
-   Disable hardware fpu instructions and enable libgloss for simulator
+   Disable hardware fpu instructions and enable libgloss for simulator. Ensure main() call ordering mock test working 
    Enable nano libc with no system calls for target
 4. **Flashing and Debugging**
    Coordinate *JLink/STLink* probe and board pin-outs
@@ -475,7 +475,7 @@ mention QEMU simulator debugging issues
    If not, determine flash software such as *JLinkExe*, *stlink-tools*, *openocd*, *nrfjprog* etc.
    Coordinate debugger software such as *QTCreator* with qemu gdb server
 5. **Hardware Tools**
-   Measure voltage, current, resistance/continuity/diode with multimeter
+   Measure voltage, current, resistance/continuity/diode with multimeter?
    Oscilloscope for ...
    Logic analyser for, SPI and I2C
 
