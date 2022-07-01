@@ -14,6 +14,8 @@ Smart home standards
 Autonomous vehicles
 IC lead times growing, MCU even more so
 
+plugins just be .so files that are loaded with dlsym()
+
 many 'new tech' in web are just sensationalised titles that are different graphical displays of the same idea, e.g. homescreen social media... 
 (e.g. css and js frameworks)
 
