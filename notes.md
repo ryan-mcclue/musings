@@ -22,9 +22,11 @@ many 'new tech' in web are just sensationalised titles that are different graphi
 much like the C++ standards committee, Matter standard just bogged down in beurcracy
 
 instead of feature, we introduce a patented terminology like user stories to have someone teach you them. slows down development
+business logic .... just means high-order operations in say main()
 
 Incessent unit-testing, why not test startup assembly then. Falls apart
 Introducing formulas to determine whether or not to automate something....
+
 
 plastic processors? (example of importance of low-memory programming. techonology advances in situations always arising)
 
