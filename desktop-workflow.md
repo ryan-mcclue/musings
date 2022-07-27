@@ -1,16 +1,29 @@
-# Basic Desktop Workflow - Part 1 ()
+# Desktop Workflow
+time -p; getrusage();
+
+Git usage
+Terminal + Editor + Window manager
+
+Configuration files should be copied, not generated (becomes too messy)
+
 I wanted to expose myself to a basic desktop application workflow.
-This would include generic programming structures as well as modern hardware usage.
+This would include generic programming structures 
+as well as modern hardware usage.
+
 The application is a ray caster.
 
 To begin, I ensured that I had a debugger 
 from which I could easily step through the application's execution.
 In code, I was able to programmatically set system and user breakpoints.
+
 (expand upon the essential code libraries for most projects)
+
+(mocking of syscalls for unit testing with file i/o)
 
 For handling non-fatal errors, single line check. 
 For fatal errors, nest all preceding code 
 (I have learnt to not be afraid of indentation in this manner).
+(error handling in general, i.e. reduce 'errors' by making them part of normal execution flow)
 
 Following the basic principles of non-pessimisation, 
 I make a note of the huge amount of cruft in the CRT.
@@ -28,9 +41,12 @@ make them `static`
 To avoid large amounts of linking, have a unity build.
 
 When performing the common task of grouping data, a few practices to keep in mind.
-Use fixed sized types to always know about struct padding (in fact, I like to extend this to all my code)
+Use fixed sized types to always know about struct padding 
+(in fact, I like to extend this to all my code)
+
 If wanting multiple ways of accessing grouped data, use union and anonymous structs.
 Use an int to reference other structs, e.g. `plane_index` 
+
 If the data being grouped can only exist together (e.g. points), use vectors.
 The ubiquitity of vectors and normalising them pushed processors
 into optimising square root functionality.

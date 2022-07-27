@@ -1,5 +1,7 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+gettime() and getrusage()?
+
 discovering for linux docs are code and for 
 development may have to add to groups (uinput) 
 and/or modify policies (bluez)
