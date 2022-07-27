@@ -8,7 +8,8 @@ simd
 
 caching
 https://akkadia.org/drepper/cpumemory.pdf
-handmade hero
+importance of knowing cache line sizes
+
 
 inline assembly (raw syscalls from github)
 

@@ -36,12 +36,13 @@ business logic .... just means high-order operations in say main()
 
 plastic processors? (example of importance of low-memory programming. techonology advances in situations always arising)
 
-# Raytracer (we are updating 'base' project code files as we go.  also collection of documentation files for each project and machine-specific information)
-  likely() macros for branch prediction compiler optimisations 
-  (https://akkadia.org/drepper/cpumemory.pdf, pg 56)
 certain 'design pattern' enforce really long names to conform to pattern. 
 any competent programmer can read use-case specific functions with clearer names
 "test_CommandHardware_CheckForMsg_Should_GetCharAndAddToPacker_When_BytesAvailable"
+
+# Raytracer (we are updating 'base' project code files as we go.  also collection of documentation files for each project and machine-specific information)
+  likely() macros for branch prediction compiler optimisations 
+  (https://akkadia.org/drepper/cpumemory.pdf, pg 56)
 
 READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 
@@ -132,10 +133,6 @@ Axis that aren't perpendicular causes shearing
 IMPORTANCE OF RUNNING STEPPING THROUGH IN DEBUGGER WHEN NOT WORKING!!!!!
 
 CODING WORKFLOW/REFACTORING/ETC.
-
-MULTITHREADING
-
-SIMD
 
 Optimise: gather stats -> make estimate -> analyse efficiency and performance
 
@@ -794,6 +791,10 @@ not going to go 50 rounds arguing
 pie in the sky
 but unfortunately I don't rule the world
 learn to crawl before we can walk
+
+MULTITHREADING
+
+SIMD
 
 it's not the programming practice but the dogma that gets you. when you start to name things it almost
 always becomes bad. almost all programming practices have a place, just not used often
