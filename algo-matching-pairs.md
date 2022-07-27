@@ -1,4 +1,6 @@
-# Matching Pairs (29/05/2022)
+# Matching Pairs
+Stretchy buf and interning
+
 Given an array, I'm tasked with finding pairs within this array. 
 In this context, a pair is any two numbers that add up to a target sum.
 One first iteration, a quadratically scaling solution is found.

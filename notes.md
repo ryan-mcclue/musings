@@ -8,9 +8,11 @@ and/or modify policies (bluez)
 -------------------------------------------------------------------
 for long range, LoRa or sigfox
 essentially tradeoffs between power and data rate
-ieee 802.11 group for WANs (wifi - high data rate), 802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 802.15.4 low data rate (zigbee implements this standard)
+ieee 802.11 group for WANs (wifi - high data rate), 
+802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 
+802.15.4 low data rate (zigbee implements this standard)
 -------------------------------------------------------------------
-# END OF APRIL - EMBEDDED NEWS (memfault and embedded artistry)
+# END OF APRIL - EMBEDDED NEWS (memfault, embedded artistry, tldr)
 Push for Rust toolchains (ugh...)
 Smart home standards
 Autonomous vehicles
@@ -18,7 +20,8 @@ IC lead times growing, MCU even more so
 
 plugins just be .so files that are loaded with dlsym()
 
-many 'new tech' in web are just sensationalised titles that are different graphical displays of the same idea, e.g. homescreen social media... 
+many 'new tech' in web are just sensationalised titles 
+that are different graphical displays of the same idea, e.g. homescreen social media... 
 (e.g. css and js frameworks)
 
 much like the C++ standards committee, Matter standard just bogged down in beurcracy
@@ -29,13 +32,11 @@ business logic .... just means high-order operations in say main()
 Incessent unit-testing, why not test startup assembly then. Falls apart
 Introducing formulas to determine whether or not to automate something....
 
-
 plastic processors? (example of importance of low-memory programming. techonology advances in situations always arising)
 
-READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
-
-# Raytracer (we are updating 'base' project code files as we go. also collection of documentation files for each project and machine-specific information)
-likely() macros for branch prediction compiler optimisations (https://akkadia.org/drepper/cpumemory.pdf, pg 56)
+# Raytracer (we are updating 'base' project code files as we go.  also collection of documentation files for each project and machine-specific information)
+likely() macros for branch prediction compiler optimisations 
+(https://akkadia.org/drepper/cpumemory.pdf, pg 56)
 
 Data hiding hides what the CPU is doing, which is what we care about
 
@@ -56,7 +57,6 @@ ALMOST ALWAYS CAST TO FLOAT WHEN DOING DIVISIONS LEADING TO FLOAT
 
 DO THE 'MOST CERTAIN' THING FIRST. THIS COULD EITHER BE THE IMPLEMENTATION OR THE USAGE CODE
 
-For lexing, use at[0] for dereferencing
 When eating intermediate chars with !=, check at[0] != '\0' as well
 For enclosing values, once eated intermediate chars, make sure final char is end enclosing value
 
@@ -141,11 +141,14 @@ TODO(do the STL of other languages suffer the same issues as in C?):
 
 NOTE(importance of reading programming papers.... after handmade finished)
 
-
 1. returning the colour of closest material hit by ray
 2. each individual ray cast consists of many rays that are reflected between materials.
-   colour is returned if ray hits a colour emitter (like the sky, i.e. no material) as oppose to only light reflectors (in code we are doing it in reverse as to what path the light from the sky actually takes) 
-   as we have some degree of randomness in diffuse materials, cast a ray for more than just each pixel (i.e. multiple times per pixel) and accumulate the values to get a more definite colour
+   colour is returned if ray hits a colour emitter (like the sky, i.e. no material) 
+   as oppose to only light reflectors (in code we are doing it in reverse as 
+   to what path the light from the sky actually takes) 
+   as we have some degree of randomness in diffuse materials, 
+   cast a ray for more than just each pixel (i.e. multiple times per pixel) 
+   and accumulate the values to get a more definite colour
    `final_value += contrib * sample`
 
 2d games don't really care about gamma correction?
