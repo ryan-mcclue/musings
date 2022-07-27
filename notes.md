@@ -2,41 +2,48 @@
 
 gettime() and getrusage()?
 
-discovering for linux docs are code and for 
-development may have to add to groups (uinput) 
+  discovering for linux docs are code and for 
+  development may have to add to groups (uinput) 
 and/or modify policies (bluez)
--------------------------------------------------------------------
-for long range, LoRa or sigfox
-essentially tradeoffs between power and data rate
-ieee 802.11 group for WANs (wifi - high data rate), 
-802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 
-802.15.4 low data rate (zigbee implements this standard)
--------------------------------------------------------------------
+  -------------------------------------------------------------------
+  for long range, LoRa or sigfox
+  essentially tradeoffs between power and data rate
+  ieee 802.11 group for WANs (wifi - high data rate), 
+  802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 
+  802.15.4 low data rate (zigbee implements this standard)
+  -------------------------------------------------------------------
 # END OF APRIL - EMBEDDED NEWS (memfault, embedded artistry, tldr)
 Push for Rust toolchains (ugh...)
-Smart home standards
-Autonomous vehicles
-IC lead times growing, MCU even more so
+  Smart home standards
+  Autonomous vehicles
+  IC lead times growing, MCU even more so
+
+  source and unit tests are documentation in many linux sources
 
 plugins just be .so files that are loaded with dlsym()
 
-many 'new tech' in web are just sensationalised titles 
-that are different graphical displays of the same idea, e.g. homescreen social media... 
+  many 'new tech' in web are just sensationalised titles 
+  that are different graphical displays of the same idea, e.g. homescreen social media... 
 (e.g. css and js frameworks)
 
-much like the C++ standards committee, Matter standard just bogged down in beurcracy
+  much like the C++ standards committee, Matter standard just bogged down in beurcracy
 
-instead of feature, we introduce a patented terminology like user stories to have someone teach you them. slows down development
+  instead of feature, we introduce a patented terminology like user stories to have someone teach you them. slows down development
 business logic .... just means high-order operations in say main()
 
-Incessent unit-testing, why not test startup assembly then. Falls apart
-Introducing formulas to determine whether or not to automate something....
+  Incessent unit-testing, why not test startup assembly then. Falls apart... What not to test, e.g. assume that hex_to_bin() simple enough to work?
+  Introducing formulas to determine whether or not to automate something....
 
 plastic processors? (example of importance of low-memory programming. techonology advances in situations always arising)
 
 # Raytracer (we are updating 'base' project code files as we go.  also collection of documentation files for each project and machine-specific information)
-likely() macros for branch prediction compiler optimisations 
-(https://akkadia.org/drepper/cpumemory.pdf, pg 56)
+  likely() macros for branch prediction compiler optimisations 
+  (https://akkadia.org/drepper/cpumemory.pdf, pg 56)
+certain 'design pattern' enforce really long names to conform to pattern. 
+any competent programmer can read use-case specific functions with clearer names
+"test_CommandHardware_CheckForMsg_Should_GetCharAndAddToPacker_When_BytesAvailable"
+
+READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
 
 Data hiding hides what the CPU is doing, which is what we care about
 
