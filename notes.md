@@ -2,23 +2,15 @@
 
 gettime() and getrusage()?
 
-  discovering for linux docs are code and for 
-  development may have to add to groups (uinput) 
-and/or modify policies (bluez)
-  -------------------------------------------------------------------
-  for long range, LoRa or sigfox
-  essentially tradeoffs between power and data rate
-  ieee 802.11 group for WANs (wifi - high data rate), 
-  802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 
-  802.15.4 low data rate (zigbee implements this standard)
-  -------------------------------------------------------------------
-# END OF APRIL - EMBEDDED NEWS (memfault, embedded artistry, tldr)
+# NEWS OF THE MONTH
 Push for Rust toolchains (ugh...)
-  Smart home standards
-  Autonomous vehicles
-  IC lead times growing, MCU even more so
 
-  source and unit tests are documentation in many linux sources
+Smart home standards
+much like the C++ standards committee, Matter standard just bogged down in beurcracy
+
+  Autonomous vehicles
+
+  IC lead times growing, MCU even more so
 
 plugins just be .so files that are loaded with dlsym()
 
@@ -26,7 +18,6 @@ plugins just be .so files that are loaded with dlsym()
   that are different graphical displays of the same idea, e.g. homescreen social media... 
 (e.g. css and js frameworks)
 
-  much like the C++ standards committee, Matter standard just bogged down in beurcracy
 
   instead of feature, we introduce a patented terminology like user stories to have someone teach you them. slows down development
 business logic .... just means high-order operations in say main()
