@@ -22,14 +22,18 @@ i.e. understand what you operate on frequently. may also have to align struct
 3. simple, linear access patterns (or prefetch instructions) for things larger than cache size 
 
 inline assembly (raw syscalls from github)
+HAVE TO INSPECT/VERIFY ASSEMBLY IS SANE FIRST THEN LOOK AT TIMING INFORMATION
 inspecting compiler generated assembly loops, look for JMP to ascertain looping condition
 due to macro-op fusion (relevent to say Skylake), e.g. cmp-jmp non-programmable instructions could be executed by the cpu
+similarly, instructions that only exist on the frontend but exist programmatically e.g. xmm to xmm might just be a renaming in register allocation table
 also due to concurrent port usage, can identify parts of code as relatively 'free'
 struct access typically off a [base pointer]
 in assembly, 1.0f might be large number e.g. 1065353216
+in assembly loop, repeated instructions may be due to loop unrolling
 we might see:
 * superfluous loading of values off stack
-* more instructions required, e.g not efficiently using SIMD
+* more instructions required, e.g not efficiently using SIMD 
+(often this exposes the misconception that compilers are better than programmers; so better to handwrite intrinsics)
 
 
 comparing unoptimised assembly to 'wc' see noticeable speed increase.

@@ -12,4 +12,3 @@ source and unit tests are documentation in many linux sources
 
 xor with itself sets to 0
 
-in assembly, 1.0f might be large number e.g. 1065353216
