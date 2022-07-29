@@ -386,6 +386,7 @@ when looking at assembly, when we say from memory, we actually mean from the L1 
 xmm is a sse register (4 wide, 16 bytes); m128 is a memory operand of 128 bits
 ymm is 8 wide
 1*p01 + 1*p23 is saying issue 1 microop on either port0 or port1 and one microop on either port2 or port3
+so, we could issue the same instruction multiple times, i.e. throughput of 0.5
 
 microop fusion is where a microop doesn't count for your penalty as it's fused with another. with combined memory ops, e.g. `vsubps ymm8, ymm3, ymmword ptr [rdx]` this is the case 
 so, if a compiler were to separate this out into a mov and then a sub, not only does this put unecessary strain on the front-end decoder it also removes microop fusion as they are now separate microops

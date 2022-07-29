@@ -16,11 +16,21 @@ simd
 
 caching
 https://akkadia.org/drepper/cpumemory.pdf
-importance of knowing cache line sizes
-
+1. know cache sizes to have data fit in it
+2. know cache line sizes to ensure data is close together (may have to separate components of structs to allow loops to access less cache lines) 
+i.e. understand what you operate on frequently. may also have to align struct 
+3. simple, linear access patterns (or prefetch instructions) for things larger than cache size 
 
 inline assembly (raw syscalls from github)
 inspecting compiler generated assembly loops, look for JMP to ascertain looping condition
+due to macro-op fusion (relevent to say Skylake), e.g. cmp-jmp non-programmable instructions could be executed by the cpu
+also due to concurrent port usage, can identify parts of code as relatively 'free'
+struct access typically off a [base pointer]
+in assembly, 1.0f might be large number e.g. 1065353216
+we might see:
+* superfluous loading of values off stack
+* more instructions required, e.g not efficiently using SIMD
+
 
 comparing unoptimised assembly to 'wc' see noticeable speed increase.
 example of non-pessimisation
