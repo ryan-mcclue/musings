@@ -3,29 +3,40 @@
 gettime() and getrusage()?
 
 # NEWS OF THE MONTH
-Push for Rust toolchains (ugh...)
+Push for Rust toolchains on embedded (ugh... they explicitly say tech will always be political.
+they are technology, nothing to do with politics. don't want to get involved with something like FSF - everyone must (instead of could) get in line - cultural revolution)
+I'm not trying to be ad hominem
+they are all polite until their not
+e.g. explicit mentioning of pronouns for mascot)
+
+Politics in tech, e.g. NASA Artemis accords primary focus on women and person of colour on Moon instead of cooperative
 
 Smart home standards
-much like the C++ standards committee, Matter standard just bogged down in beurcracy
+Much like the C++ standards committee, concerns of 'ivory tower' nature of Matter standards
 
-  Autonomous vehicles
+  IC lead times growing, MCU even more so (silicon -> transistors)
+  automotive industry has required more silicon (autonomous vehicles, Tesla phantom breaking and pedestrian cross-walking issues with software)
+  large dependence on foundries in Taiwan
+  smart homes (Insteon)
 
-  IC lead times growing, MCU even more so
+  annoyance to web is seemingly lack of awareness of bloated infrastructure
+  many 'new tech' in web are just sensationalised titles that are different graphical displays of the same idea, 
+  e.g. homescreen social media..., endless css and js frameworks of the same thing
 
-plugins just be .so files that are loaded with dlsym()
+  plastic sub-penny processors starting at 4bit (example of importance of low-memory programming)
+  techonology advances in situations always arising, e.g. arcade machines -> consoles -> phones -> watches etc.
 
-  many 'new tech' in web are just sensationalised titles 
-  that are different graphical displays of the same idea, e.g. homescreen social media... 
-(e.g. css and js frameworks)
+  EU lawmakers want USB-C for all mobile devices to reduce e-waste. Are they most qualified?
 
+-------------------------------------------------------
+  a 'revolution' just sees a new power structure that thinks it can do whatever it wants in the name of the people 'Bolshevik', 'French Revolution'
 
   instead of feature, we introduce a patented terminology like user stories to have someone teach you them. slows down development
-business logic .... just means high-order operations in say main()
+  business logic .... just means high-order operations in say main()
 
   Incessent unit-testing, why not test startup assembly then. Falls apart... What not to test, e.g. assume that hex_to_bin() simple enough to work?
   Introducing formulas to determine whether or not to automate something....
 
-plastic processors? (example of importance of low-memory programming. techonology advances in situations always arising)
 
 certain 'design pattern' enforce really long names to conform to pattern. 
 any competent programmer can read use-case specific functions with clearer names
