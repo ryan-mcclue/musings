@@ -1,5 +1,23 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+the constellation we can't see as it's blocked by the sign is the zodiac sign for that month
+not new territory to regain interest in the past, e.g. renaissance grew interest in ancient greek astrology
+zodiac latinized of zodiakos, meaning circle of animals (all zodiac names latinized greek)
+vernal is beginning of astronomical year; daylight starts getting longer until summer solstice.
+hence, spring is when zodiac starts
+aries (march 20th) -> ram
+taurus (april) -> bull
+gemini (may) -> twin brothers
+cancer (june) -> crab
+leo (july) -> lion
+virgo (august) -> woman
+libra (september) -> scales of justice
+scorpio (october) -> scorpion
+sagittarius (november) -> archer's arrow
+capricorn (december) -> goat 
+aquarius (january) -> water bearer
+pisces (feburary) -> opposing fish
+
 gettime() and getrusage()?
 
 # NEWS OF THE MONTH
