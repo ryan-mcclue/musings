@@ -12,6 +12,8 @@ source and unit tests are documentation in many linux sources
 
 xor with itself sets to 0
 
+"1's and 0's" + matej
+
 
 https://embeddedartistry.com/blog/2018/06/04/demystifying-microcontroller-gpio-settings/?mc_cid=c443ecbc14&mc_eid=UNIQID
 https://embeddedartistry.com/blog/2019/04/08/a-general-overview-of-what-happens-before-main/?mc_cid=c443ecbc14&mc_eid=UNIQID

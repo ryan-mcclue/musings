@@ -1,5 +1,9 @@
 time -p; getrusage();
 
+file size
+https://justine.lol/sizetricks
+https://codegolf.stackexchange.com/questions/215216/high-throughput-fizz-buzz/236630#236630
+
 more important to understand how CPU and memory work than language involved
 in an OS, you will get given a zero-page due to security concerns
 
@@ -10,6 +14,7 @@ if we want to determine best possible time if all caches align etc. 'hunt for mi
 alternatively, we could develop a statistical breakdown of values (could see moments when kernel switches us out etc.)
 
 
+agnerfog optimise website 'what's a creel'
 
 threading
 simd

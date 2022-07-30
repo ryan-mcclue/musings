@@ -11,6 +11,13 @@ e.g. explicit mentioning of pronouns for mascot)
 
 Politics in tech, e.g. NASA Artemis accords primary focus on women and person of colour on Moon instead of cooperative
 
+'the line' evidence of ridiculous wealth
+
+talks of metaverse, a very slow transition to 'ready player one'
+
+companies become ever encroaching, e.g. tiktok encroach facebook, instagram, now spotify with tiktok music.
+what next, tiktok food?
+
 Smart home standards
 Much like the C++ standards committee, concerns of 'ivory tower' nature of Matter standards
 
@@ -27,6 +34,9 @@ Much like the C++ standards committee, concerns of 'ivory tower' nature of Matte
   techonology advances in situations always arising, e.g. arcade machines -> consoles -> phones -> watches etc.
 
   EU lawmakers want USB-C for all mobile devices to reduce e-waste. Are they most qualified?
+
+  xtensa in esp32
+  arm became so dominant as open-model allowed vendors to implement custom arm CPUs (MIPS, avr etc. still had same reduced power. marketing model main reason)
 
 -------------------------------------------------------
   a 'revolution' just sees a new power structure that thinks it can do whatever it wants in the name of the people 'Bolshevik', 'French Revolution'
