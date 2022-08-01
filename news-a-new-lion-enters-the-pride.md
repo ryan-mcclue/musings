@@ -5,30 +5,25 @@ Politics are infiltrating areas of technology:
 Leads down the path of FSF, and in fact any cultural revolution which thinks it can do whatever it wants in the name of the people.
 Although perhaps ad hominem, experience has shown that they're all polite until they're not.
 
+Seems in with big-tech, marketing is often more important than the underlying technology.
+170km 'The Line' ecotopia, metaverse, telsa etc.
+They make wild claims and the general public has no way of knowing the facts behind them (perception vs reality)
+A scary thought is that in this age, possible for self-sustaining narratives capable of deflecting facts
 
-'The Line' evidence of ridiculous wealth
+ARMs open-model allowed vendors to implement custom MPUs that saw in gain dominance over oher RISCs like MIPS and AVR.
 
-talks of metaverse, a very slow transition to 'ready player one'
+Tech companies becoming conglomerate monopolies, e.g. tiktok music, apple tv etc.
 
-companies become ever encroaching, e.g. tiktok encroach facebook, instagram, now spotify with tiktok music.
-what next, tiktok food?
+Much like the C++ standards committee, concerns of 'ivory tower' nature of smart home Matter standards
 
-Smart home standards
-Much like the C++ standards committee, concerns of 'ivory tower' nature of Matter standards
+Seeing consequences of covid semiconductor demand in chip shortages.
+Exacerbated by increase usage in automotive industry and large dependence on foundries in Taiwan
 
-  IC lead times growing, MCU even more so (silicon -> transistors)
-  automotive industry has required more silicon (autonomous vehicles, Tesla phantom breaking and pedestrian cross-walking issues with software)
-  large dependence on foundries in Taiwan
-  smart homes (Insteon)
+Annoyed at the web:
+ * Seemingly lack of awareness of bloated and abstracted infrastructure
+ * New technologies in the sphere are just sensationalised titles with little substance e.g. homescreen social media, css layout model and js frameworks
 
-  annoyance to web is seemingly lack of awareness of bloated infrastructure
-  many 'new tech' in web are just sensationalised titles that are different graphical displays of the same idea, 
-  e.g. homescreen social media..., endless css and js frameworks of the same thing
+The importance of programming to a physical machine is paramount.
+The underlying technology is always changing, e.g. arcade machines, consoles, phones, watches, plastic 4bit processors 
 
-  plastic sub-penny processors starting at 4bit (example of importance of low-memory programming)
-  techonology advances in situations always arising, e.g. arcade machines -> consoles -> phones -> watches etc.
-
-  EU lawmakers want USB-C for all mobile devices to reduce e-waste. Are they most qualified?
-
-  xtensa in esp32
-  arm became so dominant as open-model allowed vendors to implement custom arm CPUs (MIPS, avr etc. still had same reduced power. marketing model main reason)
+EU lawmakers want USB-C for all mobile devices to reduce e-waste. Makes me postulate a technocracy.
