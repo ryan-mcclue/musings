@@ -1,0 +1,3 @@
+# Language of the People
+
+Simple single line parser just test at[0] != '\0' && at[0] == 'a', etc.

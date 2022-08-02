@@ -22,9 +22,6 @@ pisces (feburary) -> opposing fish
 
 IS IT POSSIBLE THAT AN ASSEMBLY INSTRUCTION LIKE RDTSCP COULD BE TRAPPED BY PROGRAM LOADER?
 
-When eating intermediate chars with !=, check at[0] != '\0' as well
-For enclosing values, once eated intermediate chars, make sure final char is end enclosing value
-Basic parser with at[0], at[1] != '\0' and incrementing inside of loop (relies on short-circuit evaluation)
 
 With an undeclared identifier in a unity build, just reorder #includes in main file
 
@@ -34,32 +31,11 @@ TODO(do the STL of other languages suffer the same issues as in C?):
 NOTE(importance of reading programming papers.... after handmade finished)
 
 
-2d games don't really care about gamma correction?
-artist creates in SRGB space (in photoshop) 
-so if we do any math on it (like a lerp), will have to convert it to linear space and then back to srgb for the monitor (if we were to just blit directly, it would be fine)
-to emulate complicated curves, could table drive it
-we compromise on r² and √2
-without gamma correction, resultant image will look very dim (due to nature of monitor gamma curve) 
-so with rgb values, preface with linear or srgb
-if function is expecting a range between, should we clamp to it?
-inclusion of #if 0 #endif
-get some anti-aliasing by jittering over sub-pixel (this only works because we cast multiple rays per pixel to increase image resolution)
-by increasing the rays per pixel, the tracer tends to converge on something (i.e. higher sampling rate, better image quality)
-raytracers far better than rasterisers for light propagation 
-
-refactoring just copy code into function that gets it to compile.
-later, worry about passing information in as a parameter
-basic debug and release compiler flags
-When refactoring, utilise our vimrc <C-F> all files
-Also, just pull code out into desired function and let the compiler errors guide you
-Returning multiple values, just return struct
-To reduce large number of function parameters, put into struct
-Have example project with ctags generated for glibc
-
 vector math routines (obtaining cross product from column vector form)
 when drawing vectors in a physical sense, 
 keep in mind they are rooted at the origin (even if drawings show them across time)
-whenever doing vector addition/subtraction, remember the head-to-tail rule (their direction is determined by their sign). could also think that subtract whenever you want to 'go away' from something
+whenever doing vector addition/subtraction, remember the head-to-tail rule (their direction is determined by their sign).
+could also think that subtract whenever you want to 'go away' from something
 dot product transpose notation useful for emulating matrix multiplication
 unit circle, x = cosθ
 dot product allows us to project a vector's length onto a unit vector 
@@ -71,142 +47,8 @@ by applying a scaling factor to direction vector, can move along it
 world space coordinates. camera position is based on these. the camera will have its own axis system which we determine what it should be and then use cross product based on what we want
 understanding dot product equivalence with circle equation
 for multiplication of vectors, be explicit with a hadamard function
-(IMPORTANT have reciprocal square root approximation which is there specifically for normalisation. much faster cycle count and latency than square root)
-
-PART 2
-To determine performance must have some stable metric, e.g. ops/sec to compare to
-e.g measure total time and number of operations
-Hyper-threading useful in alleviating memory latency, e.g. one thread is waiting to get content from RAM, the other hyper-thread can execute
-However, as we are not memory bound (just going through pixel by pixel and not generating anything intermediate; will all probably stay in L1 cache), we are probably saturating the core's ALUs, so hyper-threading not as useful
-When making multi-threaded, segregate task by writing prototype 'chunk' function, e.g. `render_tile`
-Then write a for loop combining these chunk functions
-Before entering the chunk function, good to have a configuration printout, e.g. num chunks, num cores, chunk dim, chunk size, etc.
-(IMPORTANT save out configuration and timing information for various optimisation setups, e.g. ./app > 17-04-2022-image.txt)
- 
-Good to print out status of completion for threading? 
-Could be just counting number of chunks retired?
-
-When dividing a whole into pieces, an uneven divisor will give less than what's needed.
-so `(total + divisor - 1) / divisor` to ensure always enough.
-We will want this calculation to be in the last dividing operation, e.g. tile_width then tile_count calculated, so use on tile_count
-Associated with this calculation is clamping to handle adding extra exceeding original dimensions
-For getting proper place in chunk, call function wrapper for pointer location per row
-
-(May have to inline functions?)
-Next we want to pass each chunk onto a queue and then dequeue them from each logical core?
-So, have a WorkOrder that will store all information required to perform operation on chunk, i.e. all parameters in `render_chunk` function
-(may also store entropy for each chunk, i.e. random number series)
-Then a WorkQueue that contains an array of WorkOrders with total number equalling number of chunks
-So, the original loop iterating of chunks now just populates the WorkOrders 
-Now in a while loop that runs while there are still chunks to execute, we call the `render_chunk` function and pass in the WorkQueue
-The `render_chunk` function will increment the next_work_order_index and return true if more to be done
-
-When spawning the actual worker thread functions, have same while loop calling the `render_chunk` function as for core 0
-(the amount of threads to spawn would think should be equal to number of logical cores? however exceeding them may increase performance?)
-(this debate of manually prescribing the core count applies to the chunk size as well. perhaps the sweet-spot for my machine in balancing context switching and drain out
-is to manually prescribe their size as oppose to computing them off the core count)
-(Collating information into the WorkQueue struct helsp for printing out configuration)
-(Setting up this way, we can easily turn multithreading off)
-
-As creating threads will require platform specific, put prototypes in main.h and the implementations in linux_main.cpp
-Then include linux_main.cpp based on macro definition of platform in the build script at the bottom of main.cpp
-
-hyperthreading, architecture specific information becomes more 
-important when in a situation where memory is constrained in relation to the cache
-(hyper-threads share same L1-L2 cache)
-
-TREATISE ON VOLATILE:
-volatile says code other than what is generated by this compiler run, could modify this value.
-it's required for multithreaded, as compiler may not re-read value that it may have cached in a register if changed elsewhere
-when incrementing volatiles, must use a locked_add_and_return_previous_value (could return new value, just be clear)
-
-As a possible optimisation, change from pointers to values to avoid aliasing
-
-clamp can be re-written as min() and max() combination, which are instructions in SSE
-
-Don't be scared of mass name changing!! Before doing so, see all places where name is used
-
-Don't be scared of long list of compiler errors. Work your way through them
-
-The matching main header file will include additional user header files to alleviate main source file including them all
-
-Distinguishing between starting from corner of pixel or centre of pixel
-
-Set platform dependent values as macros and then assign to a variable in source file, e.g. u32 lane_width = LANE_WIDTH
-
-When in debugger, go iteratively progress through variable values in function and see if they look right
-We can isolate some area of the code and say this is probably the problem
-Then investigate relevent sub-functions, etc.
-This can be a long process with seemingly little gains.
-The issue could be subtle, e.g. signed/unsignedness size, function called rarely
-
-(IMPORTANT in SIMD cast is reinterpreting bits, so the opposite of cast in C)
-
-PART 3: SIMD
-Inspecting the assembly of our most expensive loop, we see that rand() is not inlined and is a call festival. This must be replaced
-Essentially we are looking for mathematical functions that could be inlined and aren't that are in our hot-path.
-When you want something to be fast, it should not be calling anything. If it does, probably made a mistake
-Also note that using SIMD instructions, however not to their widest extent, i.e. single scalar 'ss'. Want to replace with 'ps' packed scalar
-Define lane width, and divide with this to get the new loop count
-Go through loop and loft used values e.g. lane_r32, lane_v3, lane_u32
-(IMPORTANT at first we are only concerned with getting single values to work, later can worry about n-wide loading of values)
-(TODO the current code has the slots for each lane generated, rather than unpacked. look at handmade hero for this unpacking mode)
-If parameters to functions, loft them also (not functions? just parameters? however we do random_bilateral_lane() so yes to functions?)
-If using struct or struct member references, take out values and loft them also, e.g. sphere.radius == lane_r32 sphere_r; (group struct remappings together)
-Remap if statement conditions into a lane_u32 mask and remove enclosing brace hierarchy
-(IMPORTANT you can still have if statements if they apply to lanes, e.g. if mask_is_zeroed() break;)
-(TODO for mask_is_zeroed() we want the masks to be either all 1's or 0's)
-(call mask_is_zeroed() on all masks to early out as often as possible to get a speed up)
-Once lofted all if statements, & all the masks into a single mask 
-(it seems if there is large amounts of code inside the if statements, you don't want to do it this way and rather check if needing to execute?)
-(IMPORTANT to only & dependent masks, e.g. if there is an intermediate if like a pick_mask or clamp, then don't include it, but do the conditional assign directly on this mask)
-Then enclose remaining assignments in a conditional assignment function using this single mask? 
-(conditional_assign(&var, final_mask, value); this uses positive mask to get source and negative mask to get dest?)
-(also discover the work around to perform binary operations on floating point numbers)
-So, by end of this all values operated upon should be a lane type? (can have some scalar types if appropriate)
-We may have situation where some items in a lane may finish before others.  So, introduce a lane_mask variable that indicates this. 
-To indicate say a break, we can do (lane_mask = lane_mask & (hit_value == 0));
-For incrementing, will have to introduce an incrementor value that will be zeroed out for the appropriate lane item that has finished.
-Have horizontal_add()?
-Next once everything remapped create a lane.h. Here, typedef the lane types to their single variants to ensure working before adding actual simd instructions
-Also do simd helper functions like horizontal_add(), mask_is_zeroed() in one dimension first
-Wrap the single lane helper functions and types in an if depending on the lane width set
-(IMPORTANT any functions that we are to SIMD, place here. 
-if it comes that we want actual scalar, then rename with func_lane prefix) 
-
-for simd typically have to organically transition from AOS to SOA
-
-Debug in single lane, single threaded mode (easier and debugger works)
-However, can increase lane width as needed (threading not so much?)
-
-To get over the fact that C doesn't allow & floating point, reinterpret bit paradigm `*(u32 *)&a` as oppose to cast
-
-For bitwise SIMD instructions, the compiler does not need to know how we are segmenting the register, e.g. 4x8, 8x8 etc. 
-as the same result is obtained performing on the entire register at once.
-So they only provide one version of it, i.e. no epi32 only si128
-Naming convention have types: `__m128 (float), __m128i (integer), __m128d (double)` 
-and names in functions: `epi32/si128 (integer), ps (float), pd (double)`
-Overload operators on actual wide lane structs
-(IMPORTANT remember to do both orders, e.g. (val / scalar) and (scalar / val))
-Also have conversion functions
-
-Lane agnostic functions go at bottom (like +=, -=, &=, most v3 functionality)
-(IMPORTANT it seems we can replace logical && and || with binary for same functionality in simd)
-
-(TODO look at code for GatherF32_macro_and_func() for both single and wide)
-macro pattern for type-generic function...
-
-Although looking at the system monitor shows cpus maxed out, we could be wasting cycles, e.g. not using SIMD
-
-(IMPORTANT simd does not handle unsigned conversions, may have to cut off sign bit, e.g. >> 1)
-
-process of casting type to pointer to access individual bytes or containing elements (used in file reading too)
-
-(IMPORTANT masks in SIMD will either be all 1's or 0's. perhaps have a specific name for this to distinguish?)
-
-(IMPORTANT seems that not all operations are provided in SSE, like !=, so have to implement with some bitwise operations)
-
-SIMD allows divide by zeros by default? (because nature of SIMD have to allow divide by zeroes?)
+(IMPORTANT have reciprocal square root approximation which is there specifically for normalisation. 
+much faster cycle count and latency than square root)
 
 # Modern Software is Slow
 People think that it's slow, but it won't crash (because of interpreter)

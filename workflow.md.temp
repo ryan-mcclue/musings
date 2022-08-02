@@ -1,4 +1,5 @@
 # Workflow
+Preparation Mentality:
 Git usage
 
 Terminal + Editor + Window manager
@@ -12,6 +13,8 @@ To make anything alternate over time, just multiply by sine(time);
 Data hiding hides what the CPU is doing, which is what we care about
 
 Require machine-specific documentation files to understand system we are on
+System specific ctags template projects, e.g. linux kernel, glibc, etc.
+If using library, have ctags for that project
 
 ALMOST ALWAYS CAST TO FLOAT WHEN DOING DIVISIONS LEADING TO FLOAT
 
@@ -29,13 +32,32 @@ With error handling, bad practice is to allow a lot of errors, which brings in e
 Instead, if it's something that is actually an error, e.g. missing file, write the code to explicitly handle it.
 Handling the error in a sense makes it no longer an error, rather a feature of the program
 
+if function is expecting a range between, should we clamp to it?
+
 Refactoring Mentality:
+Don't be scared of mass name changing!! Before doing so, see all places where name is used
+Don't be scared of long list of compiler errors. Work your way through them
+
 Refactoring with usage code: just write out structures that satisfy the usage code.
-If major rewrite use #if 0 to allow for successful compiling
+If major rewrite use #if 0 #endif to allow for successful compiling
+
+refactoring just copy code into function that gets it to compile.
+later, worry about passing information in as a parameter
+basic debug and release compiler flags
+When refactoring, utilise our vimrc <C-F> all files
+Also, just pull code out into desired function and let the compiler errors guide you
+Returning multiple values, just return struct
+To reduce large number of function parameters, put into struct
 
 
 Debugging Mentality:
 When debugging, look through variables and see if anything looks ridiculous
+
+When in debugger, go iteratively progress through variable values in function and see if they look right
+We can isolate some area of the code and say this is probably the problem
+Then investigate relevent sub-functions, etc.
+This can be a long process with seemingly little gains.
+The issue could be subtle, e.g. signed/unsignedness size, function called rarely
 
 
 Configuration files should be copied, not generated (becomes too messy)
