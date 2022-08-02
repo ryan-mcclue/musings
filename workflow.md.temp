@@ -3,6 +3,41 @@ Git usage
 
 Terminal + Editor + Window manager
 
+Programming Mentality:
+DO THE 'MOST CERTAIN' THING FIRST. THIS COULD EITHER BE THE IMPLEMENTATION OR THE USAGE CODE
+choose data structures around solving problem
+
+To make anything alternate over time, just multiply by sine(time);
+
+Data hiding hides what the CPU is doing, which is what we care about
+
+Require machine-specific documentation files to understand system we are on
+
+ALMOST ALWAYS CAST TO FLOAT WHEN DOING DIVISIONS LEADING TO FLOAT
+
+Minimum value starts at max
+
+Spreading out randomness: `final_value += contrib * sample`
+
+If debug code (or code that will not be in release) use compile-time macros
+
+Use GLOBAL and global_prefix 
+If casting is occuring, always be explicit about it!
+Prefixing functions with sdl2_func() or linux_func() 
+
+With error handling, bad practice is to allow a lot of errors, which brings in error classes etc.
+Instead, if it's something that is actually an error, e.g. missing file, write the code to explicitly handle it.
+Handling the error in a sense makes it no longer an error, rather a feature of the program
+
+Refactoring Mentality:
+Refactoring with usage code: just write out structures that satisfy the usage code.
+If major rewrite use #if 0 to allow for successful compiling
+
+
+Debugging Mentality:
+When debugging, look through variables and see if anything looks ridiculous
+
+
 Configuration files should be copied, not generated (becomes too messy)
 Symlink to template files from projects
 

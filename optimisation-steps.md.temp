@@ -1,5 +1,7 @@
 time -p; getrusage();
 
+Optimise: gather stats -> make estimate -> analyse efficiency and performance
+
 file size
 https://justine.lol/sizetricks
 https://codegolf.stackexchange.com/questions/215216/high-throughput-fizz-buzz/236630#236630
@@ -7,6 +9,9 @@ https://codegolf.stackexchange.com/questions/215216/high-throughput-fizz-buzz/23
 more important to understand how CPU and memory work than language involved
 in an OS, you will get given a zero-page due to security concerns
 
+
+likely() macros for branch prediction compiler optimisations 
+(https://akkadia.org/drepper/cpumemory.pdf, pg 56)
 
 recording information:
 we have the option of constructor/destructor pairs
@@ -17,6 +22,9 @@ alternatively, we could develop a statistical breakdown of values (could see mom
 agnerfog optimise website 'what's a creel'
 
 threading
+For multithreading, often have to pack into 64 bit value to perform single operation on it,
+e.g. `delta = (val1 << 32 | val2); interlocked_add(&val, delta)`
+
 simd
 
 caching

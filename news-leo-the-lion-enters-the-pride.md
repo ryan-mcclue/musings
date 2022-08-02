@@ -1,4 +1,4 @@
-# NEWS - A New Lion Enters the Pride
+# NEWS - Leo the Lion Enters the Pride
 Politics are infiltrating areas of technology:
  * Rust toolchains on embedded. Rust developers have explicitly tweeted saying technology will always be political
  * NASA Artemis Accords have first line stating primary focus on women and person of colour on Moon

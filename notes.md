@@ -18,138 +18,21 @@ capricorn (december) -> goat
 aquarius (january) -> water bearer
 pisces (feburary) -> opposing fish
 
-gettime() and getrusage()?
-
-# NEWS OF THE MONTH
-
--------------------------------------------------------
-  a 'revolution' just sees a new power structure that thinks it can do whatever it wants in the name of the people 'Bolshevik', 'French Revolution'
-
-  instead of feature, we introduce a patented terminology like user stories to have someone teach you them. slows down development
-  business logic .... just means high-order operations in say main()
-
-  Incessent unit-testing, why not test startup assembly then. Falls apart... What not to test, e.g. assume that hex_to_bin() simple enough to work?
-  Introducing formulas to determine whether or not to automate something....
-
-
-certain 'design pattern' enforce really long names to conform to pattern. 
-any competent programmer can read use-case specific functions with clearer names
-"test_CommandHardware_CheckForMsg_Should_GetCharAndAddToPacker_When_BytesAvailable"
-
-# Raytracer (we are updating 'base' project code files as we go.  also collection of documentation files for each project and machine-specific information)
-  likely() macros for branch prediction compiler optimisations 
-  (https://akkadia.org/drepper/cpumemory.pdf, pg 56)
-
-READ THROUGH MMOZEIKO HANDMADE NETWORK POSTS
-
-Data hiding hides what the CPU is doing, which is what we care about
-
-Use of discriminated unions and type fields for type sharing
-INCLUDE OTHER PROGRAMMING PROCEDURES LEARNED FROM CODE SNIPPETS
-
-How can software better serve humanity? e.g. bloatware causes slowness for aus post workers
-
-choose data structures around solving problem
-
-TACKLING DIFFICULT PROBLEM -- HOTLOADING
-FILE MODIFICATION TIME BEING READ TOO EARLY.
-MISINTERPRETING TIMESPEC NANOSEC
+# Raytracer
 
 IS IT POSSIBLE THAT AN ASSEMBLY INSTRUCTION LIKE RDTSCP COULD BE TRAPPED BY PROGRAM LOADER?
 
-ALMOST ALWAYS CAST TO FLOAT WHEN DOING DIVISIONS LEADING TO FLOAT
-
-DO THE 'MOST CERTAIN' THING FIRST. THIS COULD EITHER BE THE IMPLEMENTATION OR THE USAGE CODE
-
 When eating intermediate chars with !=, check at[0] != '\0' as well
 For enclosing values, once eated intermediate chars, make sure final char is end enclosing value
-
-Typing constructor values repeatedly, another good case for macro
-
-Minimum value starts at max
-
-If debug code (or code that will not be in release) use compile-time macros
-
-Drawing just take state, and input.
-After base drawing, look at input and alter if appropriate
-
-When debugging, look through variables and see if anything looks ridiculous
-
-ASSERT(!"invalid case statement");
-
-Use GLOBAL and global_prefix 
-
-Refactoring with usage code: just write out structures that satisfy the usage code.
-If major rewrite use #if 0 to allow for successful compiling
- 
-For multithreading, often have to pack into 64 bit value to perform single operation on it,
-e.g. `delta = (val1 << 32 | val2); interlocked_add(&val, delta)`
-
-If casting is occuring, always be explicit about it!
-
-Prefixing functions with sdl2_func() or linux_func() 
+Basic parser with at[0], at[1] != '\0' and incrementing inside of loop (relies on short-circuit evaluation)
 
 With an undeclared identifier in a unity build, just reorder #includes in main file
 
-Visualising essential for debugging insidious problems...
-Print rows of text aligned
-Conversion from single-state to recording data over time will require memory which we will cast to appropriate state structure, e.g. DebugState 
-state structures will have `b32 is_initialised` field which will initialise a memory arena
-Then have CounterState and CounterSnapshot (move per frame data into this)
-Each frame, copy over src to dst (with a rolling buffer)
-In the rendering of the records, to display snapshots, generate statistics like min, max, avg.
-These will be converged into a Statistic struct for each value
-Have helper function for begin, update and end statistic with value
-Now we have max, loop over again to generate graph height scale and say red colour scale
-Alternatively we could have absolute height scale, e.g `total / 0.033f`
-(So in drawing, will typically have 'raw' structures that just have data, and will then
-loop over these again to generate relationships to actually draw from etc.)
-
-(TODO: UI have layout and font information...)
-Drawing have left_edge, top_edge
-Drawing charts, define chart_height, bar_width, bar_spacing etc. in pixels
-Can draw single pixel height reference line
-Cycle through colours with `arr[index % ARRAY_COUNT(arr)]`
-
-Basic parser with at[0], at[1] != '\0' and incrementing inside of loop (relies on short-circuit evaluation)
-
-With error handling, bad practice is to allow a lot of errors, which brings in error classes etc.
-Instead, if it's something that is actually an error, e.g. missing file, write the code to explicitly handle it.
-Handling the error in a sense makes it no longer an error, rather a feature of the program
-
-Understanding macro pasting issues and gcc extension usage with compiler flags
-
-DestRow and DestCursor for subsection rectangle drawing
-
-To make anything alternate over time, just multiply by sine(time);
-
-Draw routines with origin vector and vector axis (basis vectors)
-Axis that aren't perpendicular causes shearing
-
-IMPORTANCE OF RUNNING STEPPING THROUGH IN DEBUGGER WHEN NOT WORKING!!!!!
-
-CODING WORKFLOW/REFACTORING/ETC.
-
-Optimise: gather stats -> make estimate -> analyse efficiency and performance
-
-TODO(Clock issues - git commit message): 
-Time issues with clock(); 
-pthread vs clone time difference; 
-not as much speed up with threads as expected;
 
 TODO(do the STL of other languages suffer the same issues as in C?):
 
 NOTE(importance of reading programming papers.... after handmade finished)
 
-1. returning the colour of closest material hit by ray
-2. each individual ray cast consists of many rays that are reflected between materials.
-   colour is returned if ray hits a colour emitter (like the sky, i.e. no material) 
-   as oppose to only light reflectors (in code we are doing it in reverse as 
-   to what path the light from the sky actually takes) 
-   as we have some degree of randomness in diffuse materials, 
-   cast a ray for more than just each pixel (i.e. multiple times per pixel) 
-   and accumulate the values to get a more definite colour
-   `final_value += contrib * sample`
 
 2d games don't really care about gamma correction?
 artist creates in SRGB space (in photoshop) 

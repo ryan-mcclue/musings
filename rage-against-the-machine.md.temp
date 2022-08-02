@@ -1,0 +1,14 @@
+# Rage Against the Machine
+
+  instead of feature, we introduce a patented terminology like user stories to have someone teach you them. slows down development
+  business logic .... just means high-order operations in say main()
+
+  Incessent unit-testing, why not test startup assembly then. Falls apart... What not to test, e.g. assume that hex_to_bin() simple enough to work?
+  Introducing formulas to determine whether or not to automate something....
+
+
+certain 'design pattern' enforce really long names to conform to pattern. 
+any competent programmer can read use-case specific functions with clearer names
+"test_CommandHardware_CheckForMsg_Should_GetCharAndAddToPacker_When_BytesAvailable"
+
+How can software better serve humanity? e.g. bloatware causes slowness for aus post workers
