@@ -3,3 +3,5 @@
 TACKLING DIFFICULT PROBLEM -- HOTLOADING
 FILE MODIFICATION TIME BEING READ TOO EARLY.
 MISINTERPRETING TIMESPEC NANOSEC
+
+linux raw ALSA can fall into the trap of being so niche and difficult it is neck beard inducing

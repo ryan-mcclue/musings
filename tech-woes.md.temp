@@ -1,0 +1,15 @@
+STM32CubeMX (this justs generates code, IDE is full fledged) to download, must get link with email.
+STM32CubeIDE is woefully slow. Maximising to full screen just blurs out half
+Once installed, a series of pop-up menus just keep appearing spontaneously as it has to download more to satisfy a simple create project
+To download qtcreator well known bug that it selects the wrong mirror, 3MBps to 30kbs. 
+Have to decipher command line arguments and mirror parsing, e.g. ./qt-unified-linux-x64-4.3.0-1-online.run --mirror http://ftp.jaist.ac.jp/pub/qtproject  
+
+QTcreator does not honour system .gdbinit file, have to manually set breakpoints and dissassembly flavour
+QTCreator doesn't show console output. Tick 'run in terminal' crashes on startup
+
+Before even using the program, installing is bad. Install pandoc. It requires a pdf engine, e.g. xelatex that must be separately installed
+Searching for the appropriate package name to install a missing dependency is what I use ubuntu stack exchange mostly for.....
+
+Firefox just forces restart
+
+gpus have introduced a whole host of undocumented NDA annoyances

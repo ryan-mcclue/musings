@@ -1,3 +1,52 @@
+# Embedded Workflow
+1. **Documentation**
+   Generalities such as *Debug Interface* or *Procedure Call Standard*
+   Architecture specifics such as *armv7m*
+   Micro-architecture specifics such as *cortex-m4*
+   Micro-controller specifics such as *stm32f429zi*
+   Board specifics such as pin-out diagram and schematic
+2. **BSP**
+   This can be done via an IDE such as STM32CubeMX to create an example project Makefile.
+   Alternatively can be done via a command line application such as libopencm3.
+3. **Targets**
+   Disable hardware fpu instructions and enable libgloss for simulator. Ensure main() call ordering mock test working 
+   Enable nano libc with no system calls for target
+4. **Flashing and Debugging**
+   Coordinate *JLink/STLink* probe and board pin-outs
+   Ascertain board debug firmware and determine if reflashing required, e.g. *STLinkReflash*
+   Preferable to use debugger software such as *Ozone* that automates flashing.
+   If not, determine flash software such as *JLinkExe*, *stlink-tools*, *openocd*, *nrfjprog* etc.
+   Coordinate debugger software such as *QTCreator* with qemu gdb server
+5. **Hardware Tools**
+   Measure voltage, current, resistance/continuity/diode with multimeter?
+   Oscilloscope for ...
+   Logic analyser for, SPI and I2C
+
+6. **Protocol**
+  USB port probably in-built serial port
+
+openocd -f /usr/share/openocd/scripts/interface/jlink.cfg -f /usr/share/openocd/scripts/target/stm32f4x.cfg
+should open a tcp port on 3333 for gdb
+
+Seems that an RTOS is a multiprocessing kernel that allows the user to control its scheduling priority?
+
+The CPU architecture will have an exception (a cpu interrupt) model. Here, reset behaviour will be defined.
+the 32 bit arm cortex-m4 has FPU (a application, m for microcontroller, r high performance real time)
+TODO(Ryan): avr vs arm vs rsic-v vs x86 vs powerpc vs sparc vs mips
+(what motivations brought about these architectures?)
+as often harvard archicture (why?)
+Von Neumann, RAM (variables, data, stack) + ROM (code/constants) + I/O all on same CPU bus.
+Harvard has ICode bus for ROM, and a SystemBus for RAM + I/O. 
+This allows operations to occur simultaneously. So, why use Von Neumann?
+it is labelled as an evaluation board
+different boards use different ICDI (in-circuit debug interfaces) to flash through SWD via usb-b
+e.g. texas instruments use stellaris, stm32 ST-link
+is fixed point used anymore?
+TODO(Ryan): Why is a floating pin also called high impedance?
+To avoid power dissipation and unknown state, 
+drive with external source, e.g. ground or voltage.
+Pull-up resistor connected to voltage, pull-down to ground.
+
 the sparsity of linux can make configuration vary
 e.g bluez stack -> modify policies
 

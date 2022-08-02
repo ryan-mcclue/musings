@@ -12,3 +12,49 @@ any competent programmer can read use-case specific functions with clearer names
 "test_CommandHardware_CheckForMsg_Should_GetCharAndAddToPacker_When_BytesAvailable"
 
 How can software better serve humanity? e.g. bloatware causes slowness for aus post workers
+
+With UML if doing sufficiently complex to the same level as a blueprint, may as well have just written the program
+the idea of iterative design would be followed by literal architects, however too costly and time consuming.
+with software, we have the ability to do this.
+1. design (urban planner): separation of code (mental clarity and division of labour)
+design metrics are temporal coupling (physics outputs data to renderer, so format is important), 
+layout coupling (renderer inherits from opengl), idealogical coupling (threading, width, memory), fluidity (one change to system causes a major crash)
+2. programming (architect)
+3. compiler (builder)
+
+Most design patterns are just utility classes rather than a way to architect a program
+
+I don't want to fight the language (Java). Higher level languages should allow you to easily express cpu instructions
+
+reject the idea of TDD driving good design. accept that tests validate design.
+tdd and bdd have good elements in them, but the dogma is not effective.
+
+code shouldn't take longer than 10 seconds to compile.
+
+in general we don't add security threats that weren't already present, e.g. loading from shared object could just as easily override binary if have write priveleges to both
+
+even though a 'new' language won't crash, it can still have buffer overruns.
+NullPtrExceptions 
+
+c++ struct functions implicitly have a this pointer.
+virtual functions will result in a vtable (array of function pointers) to be generated for that struct.
+therefore, virtual function will first go to vtable, then lookup in function, so double indirection (so not a zero-cost abstraction)
+normal function call just call 0x1234, however with vtable mov rax, qword ptr [rsp + 20] etc. (dereferencing pointers)
+
+an engine makes things that aren't likely to be difficult easy (except for linux...)
+important to know low-level to write new tools. we don't have a wheel yet.
+
+for any non-trival task, scripting languages become a hindrance with no static type checking, no real debugger, slow, not as capable.
+there are complications in software we have wrongly convinced ourselves are necessary, e.g. scripting for hotloading
+hotloading C is far superior, as C is more powerful and can use same debugger (using Lua is a downgrade)
+build systems can be useful as they allow for incremental builds (however, in negatively reinforces people to only make small changes)
+(speed increase may only be noticeable for large, complex code base)
+they are also useful for managing cross compilation (libraries have to be pulled in and compile also)
+the idea of incorporating a scripting language into a game was a failed experiment in 2005s.
+things like a visual based interface is fine as it is constrained
+
+with closed source it is often the case that a company employs someone to oversee the experience of the software and have q+a 
+therefore, better quality with this higher layer of checking than open source.
+
+the best bet in safeguarding security is to reduce the attack surface, which means to reduce the number of lines of code.
+

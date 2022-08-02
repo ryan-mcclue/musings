@@ -18,13 +18,9 @@ capricorn (december) -> goat
 aquarius (january) -> water bearer
 pisces (feburary) -> opposing fish
 
-# Raytracer
-
 IS IT POSSIBLE THAT AN ASSEMBLY INSTRUCTION LIKE RDTSCP COULD BE TRAPPED BY PROGRAM LOADER?
 
-
 With an undeclared identifier in a unity build, just reorder #includes in main file
-
 
 TODO(do the STL of other languages suffer the same issues as in C?):
 
@@ -50,210 +46,7 @@ for multiplication of vectors, be explicit with a hadamard function
 (IMPORTANT have reciprocal square root approximation which is there specifically for normalisation. 
 much faster cycle count and latency than square root)
 
-# Modern Software is Slow
-People think that it's slow, but it won't crash (because of interpreter)
-Performance is critical in getting people excited about what you do, e.g. windows ce was laggy, iphone performant but less features changes the market 
-low latency is more desirable, even if less features
-editors for games like building scaffolding; not shipped with game
 noise is randomness. white noise is complete randomness. blue noise (harder to generate) is randomness with limitations on how close together points can be (more uniform)
-not really optimisation, just code change to generate a better distribution
-receptors on retina are arranged in blue noise, so the eye as to less anti-aliasing
-
-count number of math ops in function and control flow logic that is evaluated
-branches can get problematic if they're unpredictable
-
-inspecting measurements of microarchitecture consider latency and throughtput (how much does it cost to start again)
-so, FMUL may have latency of 11, however throughput of 0.5, so can start 2 every cycle, i.e. issue again (cpus these days are incredibly overlapped)
-so throughput is more of what we care about for sustained execution, e.g. in a loop
-
-however, these numbers are all assuming the data is in the chip.
-it's just as important to see how long it takes to get data to the chip.
-look at cache parameters for microarchitecture; how many cycles to get from l1 cache, l2 cache, etc. when get to main memory potentially hundreds of cycles
-bandwidth of L1 cache say is 80 bytes/cycle, so can get 20 floats per cycle (however, based on size of L1 cache, not really sustainable for large data)
-
-(could just shortcut this and just see if flops is recorded for our chip)
-
-so, using these rough numbers we should be able to look at an algorithm (and dissect what operations it's performing, like FMULs), know how much data it's taking,
-and give a rough estimate as to how long it could optimally take (will never hit optimal however)
-IT'S CRITICAL TO KNOW HOW FAST SOMETHING SHOULD RUN
-
-REASONS SOFTWARE IS SLOW:
-1. No back-of-envelope calculations (people aren't concerned that they are running up to 1000 times slower thn what the hardware is capable of)
-These calculations involve say looking at number of math ops to be performed in the algoirthm and comparing that to the perfect hardware limit
-2. Reusing code (20LOC is a lot; use things that do what you want to do, but not in the way you want them to be done; 
-often piling up code that is ill-fitting to what the task was, e.g. we know this isn't a regular ray cast, it's a ray cast that is always looking down)
-3. When writing, thinking of goals ancillary to task 
-(not many places taught how to actually write code; all high level abstractions about clean code
-there are thinking about templates/classes etc. not just what does the computer actually have to do to do this task?)
-(there is no metric for clean code; it's just some fictional thing people made up)
-
-WHENEVER UNDERSTANDING CODE EXAMPLES:
-1. COMPILE AND STEP INTO (NOT OVER) IN DEBUGGER AND MAKE HIGH LEVEL STEPS PERFORMED
-look at these steps for duplicated/unecessary work (may pollute cache). (perhaps even asking why was the code written the way it was)
-could we gather things up in a prepass, i.e. outside of loop?
-if allocating memory each cycle that's game over for performance.
-do we actually have to perform the same action to get the same result, e.g. a full raycast is not necessary, just segment on grid
-O(n·m) is multiplicative, not linear O(n). big oh is just indication of how it scales. could be less given some input threshold
-now, once code reduced, look at minimising number of ops 
-
-cpu front end is figuring out what work it has to do, i.e. instruction decoding
-
-e.g simd struct is 288 bytes, 4.5 cache lines, able to store 8 triangles
-
-understanding assembly language essential in understanding why the code might not be performing well
-
-branch prediction necessary to ensure that the front-end can keep going and not have to wait on the back-end
-
-execution ports execute uops.
-however, the days of assembly language registers actually mapping to real registers is gone.
-instead, the registers from the uops are passed through a register allocation table (if we have say 16 general purpose registers, table has about 192 entries; so a lot more) in the back-end
-this is because in many programs, things can happen in any order. so to take advantage of this, the register allocation table stores dependency chains of operations
-(wikichips.org for diagram)
-from execution port, could be fed back into scheduler or to load/store in actual memory
-
-when looking at assembly, when we say from memory, we actually mean from the L1 cache
-
-xmm is a sse register (4 wide, 16 bytes); m128 is a memory operand of 128 bits
-ymm is 8 wide
-1*p01 + 1*p23 is saying issue 1 microop on either port0 or port1 and one microop on either port2 or port3
-so, we could issue the same instruction multiple times, i.e. throughput of 0.5
-
-microop fusion is where a microop doesn't count for your penalty as it's fused with another. with combined memory ops, e.g. `vsubps ymm8, ymm3, ymmword ptr [rdx]` this is the case 
-so, if a compiler were to separate this out into a mov and then a sub, not only does this put unecessary strain on the front-end decoder it also removes microop fusion as they are now separate microops
-(important to point out that I'm not the world best optimiser, or the worlds best optimisers assistant, so perhaps best not to outrightly say bad codegen, just say makes nervous)
-
-godbolt.org good for comparing compiler outputs and possible detecting a spurious load etc.
-
-macrop fusion is where you have an instruction that the front-end will handle for you, e.g. add and a jne will merge to addjne which will just send the 1 microp of add through 
-
-uica.uops.info gives percentage of time instruction was on a port (this is useful for determining bottle-necks, e.g. series of instructions all require port 1 and 2, so cannot paralleise easily)
-so, although best case say is issue instruction every 4 cycles, this bottleneck will give higher throughput
-
-some levels of abstraction are necessary and good, e.g. higher level languages to assembly
-
-# Optimisation
-1. Optimisation (this is rarely done due to time involved)
-Do back-of-envelope calculations; look at algorithm to see if wasteful; benchmark to see if hitting theoretical calculations and then use timings etc. to isolate why our code isn't hitting these theoretical numbers
-Very importantly need to know what the theoretical maximum is, which will be dependent on the program, e.g bounded by number of bytes sent to graphics card, kernel stdout etc. 
-2. Non-pessimisation (do this all the time)
-Don't introduce unecessary work (interpreter; complex libraries; constructs like polymorphism/classes people have convinced themselves are necessary) for the CPU to do to solve the problem
-3. Fake optimisation (very bad philosophy)
-Repeating context-specific statements e.g. use memcpy as it's optimised (however the speed of something is so context specific, so non-statement), arrays are faster than linked lists (again, so dependent on what your usage patterns are)
-
-When many people say too much effort involved in optimisation, they are generally thinking of point 1
-
-sometimes things should be running faster than they should, however only so much we can replace
-e.g. the structure of many OSs are based on legacy code, so simply outputting to stdout may go through shell then kernel etc.
-also, may have to deal with pessimised libraries. in these cases:
-* isolate bad code, i.e. draw hard boundary between your code and theirs by caching calls to them
-* do as little modification to the data coming in from them (no need to say put in a string class etc.)
-
-(intel gives us 64 bit index to memory, so effectively give us circular buffers for free?)
-
-# Software Architecture
-amdahls law gives the time taken for execution given a number of cogives the time taken for execution given a number of cores.
-for this formula (indeed any formula) we can obtain some property by seeing as function parameter approaches infinity. in this case, the parallelising part drops out.
-brooks law says that simply adding more people to a problem does not necessarily make it faster. if requires great deal of coordination/communication actually slows down.
-
-solving a problem: 1. decide what you are doing (this can't be open-ended.) 2. organise groups to achieve this
-by making these boundaries, we are presupposing that each part is separate, e.g tyres team and engine team; assume tyres and engine cannot be one piece.
-therefore, the boundaries define what products you can make, i.e. you produce products that are copies of yourself or how you are structured
-so, in software if we assign teams for say audio, 2d, 3d we would expect individual APIs for each.
-the org chart is the asymptote, so it's the best case that we make a product as granular as our org chart. it could be far worse and even more granular 
-therefore, communication between teams is more costly than communication within teams.
-takeaway is that low-cost things can be optimised, high-cost can't be (further away on the org chart)
-note that communication in code could just be someone checking something in and you pulling it
-what we are seeing now with modern software is the superposition of orgcharts due to use of legacy codebases
-now we see org charts in software, where people are artifically creating inheritence hierarcies that limit how the program works
-this is very bad. the reason it's done is for people to create mental models that help them solve the problem as they can't keep the complexity in their head. 
-it may be necesary to solve the problem, however it shouldn't be looked at as good.
-however, because it's done due to lack of understanding, the delegation/separation is not done with enough information. so you limit possibilities of the design space.
-so although, libraries, microservices, encapsulation, package managers, engines may be necessary due to our brain capacity (until neuralink or we figure out a better way to do them) they are not good! They limit optimisation as we have already decided separation
-so always be on the lookout for times when you don't have to do these
-most people just download hundreds of libraries because they know it works and they won't be worse than any one else.
-WE MUST BE LEAN AND FLEXIBLE IN ORGCHARTS IN COMPANY AND IN SOFTWARE TO INCREASE DESIGN.
-some old codebases need to be retired
-
-
-# Modern Program Woes
-STM32CubeMX (this justs generates code, IDE is full fledged) to download, must get link with email.
-STM32CubeIDE is woefully slow. Maximising to full screen just blurs out half
-Once installed, a series of pop-up menus just keep appearing spontaneously as it has to download more to satisfy a simple create project
-To download qtcreator well known bug that it selects the wrong mirror, 3MBps to 30kbs. 
-Have to decipher command line arguments and mirror parsing, e.g. ./qt-unified-linux-x64-4.3.0-1-online.run --mirror http://ftp.jaist.ac.jp/pub/qtproject  
-
-QTcreator does not honour system .gdbinit file, have to manually set breakpoints and dissassembly flavour
-QTCreator doesn't show console output. Tick 'run in terminal' crashes on startup
-
-Before even using the program, installing is bad. Install pandoc. It requires a pdf engine, e.g. xelatex that must be separately installed
-Searching for the appropriate package name to install a missing dependency is what I use ubuntu stack exchange mostly for.....
-
-
-# Debugger Woes
-Disable optimisation to prevent lines being removed which the debugger won't pick up on.
-mention QEMU simulator debugging issues
-
-(ADAFRUIT INDUSTRIES LIVE WITH TONY D --> BLE)
-(TAKE THE BLUEPILL LOW LEVEL LEARNING --> OPENOCD)
-# Embedded Workflow
-1. **Documentation**
-   Generalities such as *Debug Interface* or *Procedure Call Standard*
-   Architecture specifics such as *armv7m*
-   Micro-architecture specifics such as *cortex-m4*
-   Micro-controller specifics such as *stm32f429zi*
-   Board specifics such as pin-out diagram and schematic
-2. **BSP**
-   This can be done via an IDE such as STM32CubeMX to create an example project Makefile.
-   Alternatively can be done via a command line application such as libopencm3.
-3. **Targets**
-   Disable hardware fpu instructions and enable libgloss for simulator. Ensure main() call ordering mock test working 
-   Enable nano libc with no system calls for target
-4. **Flashing and Debugging**
-   Coordinate *JLink/STLink* probe and board pin-outs
-   Ascertain board debug firmware and determine if reflashing required, e.g. *STLinkReflash*
-   Preferable to use debugger software such as *Ozone* that automates flashing.
-   If not, determine flash software such as *JLinkExe*, *stlink-tools*, *openocd*, *nrfjprog* etc.
-   Coordinate debugger software such as *QTCreator* with qemu gdb server
-5. **Hardware Tools**
-   Measure voltage, current, resistance/continuity/diode with multimeter?
-   Oscilloscope for ...
-   Logic analyser for, SPI and I2C
-
-6. **Protocol**
-  USB port probably in-built serial port
-
-openocd -f /usr/share/openocd/scripts/interface/jlink.cfg -f /usr/share/openocd/scripts/target/stm32f4x.cfg
-should open a tcp port on 3333 for gdb
-
-Seems that an RTOS is a multiprocessing kernel that allows the user to control its scheduling priority?
-
-Attainment of documentation
-The CPU architecture will have an exception (a cpu interrupt) model. Here, reset behaviour will be defined.
-the 32 bit arm cortex-m4 has FPU (a application, m for microcontroller, r high performance real time)
-TODO(Ryan): avr vs arm vs rsic-v vs x86 vs powerpc vs sparc vs mips
-(what motivations brought about these architectures?)
-as often harvard archicture (why?)
-Von Neumann, RAM (variables, data, stack) + ROM (code/constants) + I/O all on same CPU bus.
-Harvard has ICode bus for ROM, and a SystemBus for RAM + I/O. 
-This allows operations to occur simultaneously. So, why use Von Neumann?
-it is labelled as an evaluation board
-different boards use different ICDI (in-circuit debug interfaces) to flash through SWD via usb-b
-e.g. texas instruments use stellaris, stm32 ST-link
-is fixed point used anymore?
-TODO(Ryan): Why is a floating pin also called high impedance?
-To avoid power dissipation and unknown state, 
-drive with external source, e.g. ground or voltage.
-Pull-up resistor connected to voltage, pull-down to ground.
-
-^^^^^^^^ Embedded
--------------------------------------------------------------------------------------------------------------------------------------
-
-# Encounters
-so niche and difficult it is neck beard inducing, i.e. lonely person
-
-gravatar requires more memory than retro games on the SNES etc.
-
-gpus have introduced a whole host of undocumented NDA annoyances
 
 # Coding Mentality
 when writing 'spec' code, no need to handle all cases; 
@@ -298,21 +91,7 @@ when write the simplest thing and loft it out into good design later
 (in this explorative phase, if we make an changes for efficiency
 reasons we have just introduced the possibilities of bugs with no benefit)
 
-# Optimisations
-optimise for worst case (looking out on whole world) 
-not best case (in front of wall, don't render what is behind). 
-we care about highest framerate, not lowest.
-
 ## Knowledge of Hardware
-virtually never use lookup tables as ram memory is often 100x slower 
-(so unless you can't compute in 100 of instructions)
-
-focus on craftmanship, knowledge of hardware, low-level, 
-what to focus on is what is important rather than what editor/language using etc.
-
-being able to draw out debug information is very useful. 
-time spent visualising is never wasted (in debugger expressions also)
-
 immediate mode and retained mode are about lifetimes. 
 for immediate, the caller does not need to know about the lifetime of an object.
 
@@ -323,48 +102,11 @@ or streaming (more attainable with modern hardware)
 input and update/render (update and render together for cache coherency. input is not performance critical so don't bother)
 render is really 'render prep' as it is just filling in buffers
 
-With UML if doing sufficiently complex to the same level as a blueprint, may as well have just written the program
-the idea of iterative design would be followed by literal architects, however too costly and time consuming.
-with software, we have the ability to do this.
-1. design (urban planner): separation of code (mental clarity and division of labour)
-design metrics are temporal coupling (physics outputs data to renderer, so format is important), 
-layout coupling (renderer inherits from opengl), idealogical coupling (threading, width, memory), fluidity (one change to system causes a major crash)
-2. programming (architect)
-3. compiler (builder)
+unlike windows msdn, linux documentation is mostly source code (not good as if not fast/easy, not used). 
+so, essential to have something like ctags and compile from source (sed -e "s/-Werror//g" -i *.make)
 
-Most design patterns are just utility classes rather than a way to architect a program
-
-I don't want to fight the language (Java). Higher level languages should allow you to easily express cpu instructions
-
-as the working directory can change, better to use absolute file paths from the binary directory
-
-reject the idea of TDD driving good design. accept that tests validate design.
-
-code shouldn't take longer than 10 seconds to compile.
-
-in general we don't add security threats that weren't already present, e.g. loading from shared object could just as easily override binary if have write priveleges to both
-
-we can create a psuedo vtable in C and not have it be C++ and all weird. we can see it and do what we want with it.
-
-tdd and bdd have good elements in them, but the dogma is not effective.
-
-compression orientated programming is you code what you need at the time (breaking out into function, combining into struct, etc.) 
-over time the code marches towards a better overall quality
-
-debugging stepping through pass-by-pass. 
-inspecting all variables and parameters and verifying state of particular ones.
-make deductions about state of variables, e.g overflowed, uninitialised, etc.
-drop in asserts
-draw it out
-
-unlike windows msdn, linux documentation is mostly source code (not good as if not fast/easy, not used). so, essential to have something like
-ctags and compile from source (sed -e "s/-Werror//g" -i *.make)
-
-functional programming although more readable is very restrictive (you can't use many of the cpu features)
-however, if can go functional without sacrificing, saves you complexity down the road.
+if can go functional without sacrificing, saves you complexity down the road.
 oftentimes simply utilising elements of functional programming is good, e.g. no global state, only operating on parameters etc.
-
-streaming i/o is almost never a good choice (hard drive slowest, more errors)
 
 we see contiguous memory in virtual memory, however in physical memory it is almost certainly going to be fragmented
 
@@ -377,7 +119,6 @@ not a fan of allocation festivals.
 we can create our application with minimal failure cases (cannot do this with the platform layer).
 
 many javascript/python people will just willy-nilly do .slice() which actually copies the array, O(n)
-amortize is reduce over a period of time; so must consider start and end point. (for array appending, converges to 2n)
 
 unless playing at EVO with some maxed out razer device, not feasible to hit that hard
 
@@ -389,7 +130,6 @@ write usage code first.
 
 mostly use c but have access to cpp features when we want them, e.g. function overloading (same name, different signature)
 
-even though a 'new' language won't crash, it can still have buffer overruns
 
 note that >> will perform arithmetic shift, so not the same as a divide.
 
@@ -432,24 +172,9 @@ so, floats will be twice as fast as doubles (more space, even though same latenc
 
 important to know hardware as if we don't have 64bit registers, may have to emulate them which is expensive
 
-with pure compiler optimisations, i.e. code we have not optimised ourselves, a 2x increase is not unexpected.
-(code we optimised not as much)
-
 oh no, we had a security bug in our development version! (printf and friends. printf %f defaults to double)
 
 when programming some days you are off. this just means you're going to be debugging a lot
-
-c++ struct functions implicitly have a this pointer.
-virtual functions will result in a vtable (array of function pointers) to be generated for that struct.
-therefore, virtual function will first go to vtable, then lookup in function, so double indirection (so not a zero-cost abstraction)
-normal function call just call 0x1234, however with vtable mov rax, qword ptr [rsp + 20] etc. (dereferencing pointers)
-
-an engine makes things that aren't likely to be difficult easy.
-important to know low-level to write new tools. we don't have a wheel yet.
-
-optimising is a very precise process. only do when you have code that is working and you know will keep.
-games by their very nature are about responsiveness, so optimisation and low-latency is important.
-I like programming with this as a mentality.
 
 we want it to be clear what our code can and cannot touch. global variables make this hard (however, can add _ to see where they are all used)
 however, as many OSs are rather janky and most code will live outside this, it is ok to have some globals here
@@ -457,17 +182,6 @@ globals are fine in development. can repackage into a structure later.
 
 clock speed not as relevent as improvements in microarchitecture and number of cores means can be more efficient under less duress.
 also, lower clock speed may be because want to draw less power.
-
-we want our code to be real (to hardware) so that it can be robust and efficient; so no scripting language
-(many applications like MS Word have built-in scripting languages, which means that they can contain malware)
-for any non-trival task, scripting languages become a hindrance with no static type checking, no real debugger, slow, not as capable.
-there are complications in software we have wrongly convinced ourselves are necessary, e.g. scripting for hotloading
-hotloading C is far superior, as C is more powerful and can use same debugger (using Lua is a downgrade)
-build systems can be useful as they allow for incremental builds (however, in negatively reinforces people to only make small changes)
-(speed increase may only be noticeable for large, complex code base)
-they are also useful for managing cross compilation (libraries have to be pulled in and compile also)
-the idea of incorporating a scripting language into a game was a failed experiment in 2005s.
-things like a visual based interface is fine as it is constrained
 
 power of whitespace in shell! IFS and quoting!
 
@@ -480,13 +194,6 @@ don't make changes for conceptual cleanliness. end of the day, want to make perf
 in the shortest amount of time.
 
 c runtime library way of packing return fail information is the reason for inverse truthniess
-
-with closed source it is often the case that a company employs someone to oversee the experience of the software and have q+a 
-therefore, better quality with this higher layer of checking than open source.
-however, the same can be acheived in open source. to prevent bugs entering, open source should not be open for contributions.
-in open source you just have to create a feature that makes lots of changes to introduce backdoors
-in essence, this is a problem for closed source and open source. the best bet in safeguarding is to reduce the attack surface, which
-means to reduce the number of lines of code.
 
 if only eclispe cdt debugger was good. it terminates for no reason when running (can sometimes be fixed by switching to run mode and then back to debug). sometimes have to restart to fix. 
 run-to-line doesn't work when inside sub-routine. memory browser crashes on entering address.
@@ -514,14 +221,6 @@ pie in the sky
 but unfortunately I don't rule the world
 learn to crawl before we can walk
 
-MULTITHREADING
-
-SIMD
-
-it's not the programming practice but the dogma that gets you. when you start to name things it almost
-always becomes bad. almost all programming practices have a place, just not used often
-so RAII people, in case of things that must be released, e.g DeviceContext, ok to use a constructor/destructor
-pair. I'll throw you a bone there
 
 modifying (parse as pointer arg), returning (result struct).
 it is best to put simple types are arguments rather than a group struct to allow for maximum code reuse.
