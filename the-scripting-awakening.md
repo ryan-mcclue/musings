@@ -1,4 +1,4 @@
-# The Scripting Awakening (05/04/2022)
+# The Scripting Awakening
 I decided to try and implement ctime in Bash for pedagogical purposes.
 My first task was to write and read a binary file. Googling how to do this in Bash returned the consensus, "use another language". Often when I read this, I'm not deterred.
 I have encountered similar naysayers before when it comes to directly using Xlib.
