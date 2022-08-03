@@ -2,6 +2,10 @@
 hotloading
 metaprogramming
 
+
+immediate mode and retained mode are about lifetimes. 
+for immediate, the caller does not need to know about the lifetime of an object.
+
 discovering for linux docs (xlib, alsa) are code and for 
 development may have to add to groups (uinput) 
 

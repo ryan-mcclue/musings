@@ -57,6 +57,8 @@ ieee 802.11 group for WANs (wifi - high data rate),
 802.15.4 low data rate (zigbee implements this standard)
 
 
+unlike windows msdn, linux documentation is mostly source code (not good as if not fast/easy, not used). 
+so, essential to have something like ctags and compile from source (sed -e "s/-Werror//g" -i *.make)
 source and unit tests are documentation in many linux sources
 
 xor with itself sets to 0

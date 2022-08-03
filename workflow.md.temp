@@ -4,7 +4,77 @@ Git usage
 
 Terminal + Editor + Window manager
 
+const is only useful if you find it catches bugs for you (maybe for globals instead of using #defines)
+however, in terms of optimsations, const is useless as you can cast const away.
+therefore, for me, const is mostly just a waste of typing.
+
+distinct areas of memory in assembly are stack, heap and data (globals)
+
+direction of stack growth is often determined by CPU. if selectable, then OS. eg. x86 is downwards
+ulimit -s for stack size
+
+good practice to assign variable for syntatical reasons, i.e. more readable, e.g
+Controller *controller = &evdev_input_device.controller;
+
+getconf can list POSIX system configurable variables
+
+don't go through a ton of unecessary stdlib. 
+malloc probably more optimised for small memory size requests
+relative to overall code base, interfacing with system calls is not that much code (and can be reused)
+
+if we try to access memory from an invalid page (not reserved or comitted) will get segfault.
+only have to worry about errors that don't manifest themselves on every run of the program.
+
+faster to write 32bit than 8bits, i.e word size (ask question, look at assembly?)
+
+don't make changes for conceptual cleanliness. end of the day, want to make performant, bug free code
+in the shortest amount of time.
+
+when programming some days you are off. this just means you're going to be debugging a lot
+
+we want it to be clear what our code can and cannot touch. global variables make this hard (however, can add _ to see where they are all used)
+however, as many OSs are rather janky and most code will live outside this, it is ok to have some globals here
+globals are fine in development. can repackage into a structure later.
+
+clock speed not as relevent as improvements in microarchitecture and number of cores means can be more efficient under less duress.
+also, lower clock speed may be because want to draw less power.
+
+short build times (under 10 seconds) are incredibly important to not decentivness making changes and testing them
+
+function overloading, generalised operator overloading and default arguments are c++ features that can't easily be implemented with gcc extensions
+
+note that >> will typically (implementation defined) perform arithmetic shift on signed, so not always the same as a divide.
+
+for large cross-platform projects, best to differentiate with filenames, rather than ifdefs.
+this also gives the ability to have different control flows across the different platforms (essential)
+
+for a game, better to have the game as a service to the OS (not the other way round).
+this is becuase the game does not need to know/perform the myriad of possible operations the OS can perform.
+
+most modern cpus have a floating point unit, making them faster than ints (same latency), 
+e.g. a multiply is one instruction where ints is two (multiply and shift)
+x87 is the FPU instructions for x86 (also have SSE instructions which is want you ultimately want)
+however, for multiplayer games, optimisers can give different results when using floating point,
+e.g a platform that has operator fusion like a MULADD may give different result when rounding then a 
+platform that has do it separate. (fixed point could solve this)
+
 Programming Mentality:
+always important to know when coding what is your goal. premature optimisation and design are bad.
+your goal dictactes the quality of the code you write, e.g. allowed to be janky as first pass on API.
+write usage code first.
+
+often when having a variable lengthed array, ask ourselves do we really need that?
+
+asserts are part of debug program that are used to check that things work that should always work.
+use them for a condition that must be true that is not explicitly present
+
+don't think about memory management, but rather memory usage. if having to worry about freeing etc. done something wrong.
+
+when writing 'spec' code, no need to handle all cases; 
+simply note down the edge cases you should handle later on
+stop yourself thinking about whether the code is messy or not. 
+only care once problem is solved!
+
 it's not the programming practice but the dogma that gets you. when you start to name things it almost
 always becomes bad. almost all programming practices have a place, just not used often
 so RAII people, in case of things that must be released, e.g DeviceContext, ok to use a constructor/destructor
@@ -74,6 +144,43 @@ Handling the error in a sense makes it no longer an error, rather a feature of t
 if function is expecting a range between, should we clamp to it?
 
 Refactoring Mentality:
+modifying (parse as pointer arg), returning (result struct).
+it is best to put simple types are arguments rather than a group struct to allow for maximum code reuse.
+only put group struct as arguments if must be put together
+(in general don't pack so don't force user to create a struct when they may already have the values)
+
+if can go functional without sacrificing, saves you complexity down the road.
+oftentimes simply utilising elements of functional programming is good, e.g. no global state, only operating on parameters etc.
+
+writing code guides you to the right design, e.g. made same call -> put into function; 
+require args in function -> struct;
+many related functions together -> organise related functions into own file; (if thinking could be moved to another file, make comment sections outlining code blocks to ease this process later on)
+etc. (these are simple, compression changes), 
+complex api -> transient struct, overload functions for internal/external use
+There are also large changes that are more difficult, e.g. 
+sections of single value interpreted differently -> pack 2 variables into 1 (_ technique useful here)
+same operations performed on pairs of variables -> vectors (as oppose to working with them as scalars)
+vectors are particularly useful as without them repeated actions quickly become intractable
+It can get messy at times, but always know that a clean solution is out there and you will refine towards it
+Work threw the error tree one at a time
+Important to throw in asserts for underlying assumptions.
+Also for debugging be aware of 'copy-pasta', e.g. copying variables will have same name for two parameters as didn't replace it
+
+we don't want to orient our code around objects (if anything, algorithmic oriented). 
+its about how you arrive at some code that determines how good it is
+
+excessive pre-planning and setting waypoints is really only useful if you've done the problem before
+(which in that case you're not really designing)
+instead, we become a good pathfinder, learning to recognise the gradient of each day of the journey.
+when write the simplest thing and loft it out into good design later 
+(in this explorative phase, if we make an changes for efficiency
+reasons we have just introduced the possibilities of bugs with no benefit)
+
+only break into function when you know what you want, 
+e.g. called multiple times or 
+code finalised and improved readability 
+(in which case a tradeoff is made between understanding functionality and semantics)
+
 Don't be scared of mass name changing!! Before doing so, see all places where name is used
 Don't be scared of long list of compiler errors. Work your way through them
 

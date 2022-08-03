@@ -58,3 +58,30 @@ therefore, better quality with this higher layer of checking than open source.
 
 the best bet in safeguarding security is to reduce the attack surface, which means to reduce the number of lines of code.
 
+Don't restrict right side of bell curve
+Let your aces be aces
+Being an ace involves having an opinion
+Most influential software written largely by one person, e.g Linux, Unix, git etc. Then a team is assigned to maintain it. Fallacy about solo programmer productivity requiring large teams.
+Design by committee pushes design to middle of bell curve as opposing views average out
+
+templates add complexity in the debugger (no actual names). 
+only really useful if you save a ton of code (not much code to just write each implementation)
+if templates are necessary then just use meta-programming as it is much more powerful.
+
+many programs treat memory as an infinite resource. allocating memory is introducing a failure case and making
+not a fan of allocation festivals.
+we can create our application with minimal failure cases (cannot do this with the platform layer).
+
+uml and diagrams in general are a waste of time (its just code you would write and often fails to capture subtleties)
+you should become more proficient at reading code and understanding its relationship.
+
+oh no, we had a security bug in our development version! (printf and friends. printf %f defaults to double)
+
+understanding history is important; c runtime library way of packing return fail information is the reason for inverse truthniess
+
+downloading unverified external tool, always good to get more viruses on my machine...
+unless playing at EVO with some maxed out razer device, not feasible to hit that hard
+I guess RTFM is the answer to that...
+
+
+build tools are more of a hindrance! always asking yourself what flags are being passed (linker and compiling separate steps), what files are it picking up, what is the CWD, etc.

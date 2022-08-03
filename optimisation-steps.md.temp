@@ -1,5 +1,19 @@
 time -p; getrusage();
 
+stack and heap memory are the same physical thing, so only more efficient if memory was hot, i.e. recently touched
+
+may be easier for optimising compiler to work with things passed by value as oppose to pointer.
+so, if need to modify something may have to return the value in a functional programming style.
+however, this is error prone.
+compiler cannot optimise pointers, e.g. if setting two values to same pointer, compiler cannot say that both the values are the same
+as another pointer may point to the same address.
+this is aliasing.
+
+we see contiguous memory in virtual memory, however in physical memory it is almost certainly going to be fragmented
+
+compilers can auto-vectorize loops for us (and other operations if we perform say 20 of them).
+so, floats will be twice as fast as doubles (more space, even though same latency and throughput)
+
 optimising is a very precise process. only do when you have code that is working and you know will keep.
 games by their very nature are about responsiveness, so optimisation and low-latency is important.
 I like programming with this as a mentality.
