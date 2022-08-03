@@ -4,6 +4,30 @@ Git usage
 
 Terminal + Editor + Window manager
 
+Floating point math faster than integers
+
+my style of programming and problems enjoy solving found in embedded, e.g your constrained with the silicon not like in web where you just build another data centre
+
+Compiler works on file by file, so knows nothing about calls across files. 
+Therefore it generates object files which are partially executable machine code with unresolved symbols. 
+Linker merges these object files and also adds extra header information so that the OS can load our executable (or more specifically a kernel, e.g. linux)
+
+Complete code coverage on the one hand is very thorough, however don't get a lot of engineering output. 
+Furthermore, most bugs appear in between systems not in units. 
+
+Best way to test is to release on early access.
+This checks hardware and software, user may be running adobe acrobat which hogs cpu so instruct them to kill it before running your game. 
+Or maybe 20000 chrome plugins. This is something a hardware lab can't tell you
+
+Process is allocated virtual memory space
+OS has mapping table that converts these to physical addresses. 
+Part of our processes address space is pre-populated by the kernel program loader, e.g. 
+linux-vdso, environment variables, etc.
+Kernel tunables: sudo sh -c 'echo kernel.perf_event_paranoid=0 >> /etc/sysctl.d/local.conf' (sysctl)
+User tunables: ulimit -a
+In virtual address space, have user space and kernel space address ranges. 
+A virtual address is mostly relating to page table indexes and the last bit is a static offset (as for security addresses are randomized)
+
 To make an installer just fwrite your executable and then data files appended with footer. 
 Inside the exe, fread the exe and fseek based on the static offset of the appended resources
 Bake resources in for reliability only really
@@ -152,6 +176,9 @@ Handling the error in a sense makes it no longer an error, rather a feature of t
 if function is expecting a range between, should we clamp to it?
 
 Refactoring Mentality:
+You can abstract/encapsulate anything at anytime, so why not do it later when you know what you are doing?
+We want file format to be simple and binary, unlike json which is general purpose and string
+
 modifying (parse as pointer arg), returning (result struct).
 it is best to put simple types are arguments rather than a group struct to allow for maximum code reuse.
 only put group struct as arguments if must be put together

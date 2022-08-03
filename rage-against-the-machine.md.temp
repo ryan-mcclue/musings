@@ -104,3 +104,16 @@ e.g. time visual studio users think is fast is less than 10 seconds?!
 Const rarely finds bugs that I have, i.e..writing to a variable a shouldn't. In saying that, you should use features of language that helps you catch bugs. 
 
 Apple store is hardly a free marketplace. They can just block your app for any reason
+
+DRM and engine usage make using games in the future difficult (e.g. museum)
+
+Also, the excessive testing is pushed by web where the poor languages dictate heavy testing. Testing first makes no sense as the app may change
+
+Audiophiles think they hear things that aren't there
+
+Much like the food industry has organic vs processed, we need a term for games that are made by people who love games and care about the experience as opposed to 
+large companies concerned with making money (indie vs triple a)
+
+Sometimes crashing is good because it signifies the serious problem that can be rectified immediately rather than some other Insidious hidden bug
+The problem is not mapping id/pointer (or whatever std:: c++ people would use) to an entity correctly (i.e. correspondence problem).
+the symptom of this problem will be different depending on the implementation, e.g. pointer will crash program.

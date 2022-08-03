@@ -1,5 +1,11 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+QUESTIONS:
+Shipping on linux is very time consuming and not worth it monetarily?
+why writing by words faster?
+Linux desktop suffers from binary compatibility nightmare, e.g. 15 binaries to support all. 
+This is because libraries like glibc are happy to break abi to get minor improvements, e.g spec says this so let's do it even though no one cares
+
 the constellation we can't see as it's blocked by the sign is the zodiac sign for that month
 not new territory to regain interest in the past, e.g. renaissance grew interest in ancient greek astrology
 zodiac latinized of zodiakos, meaning circle of animals (all zodiac names latinized greek)
@@ -54,81 +60,45 @@ have our cake and eat it too
 ad infinatum
 
 
-Shipping on linux is very time consuming and not worth it monetarily
-Exe contains header for sections and relocation tables
-
-Conceptual resource is what we assign meaning to a collection of bits, e.g a bitmap buffer. A physical resource is like a file, which may contain conceptual resources in it
-Most OSs give 64bit control over files, it's the filesystem that imposes the limits
-Memory mapped files say if you write/read to a designated area in memory, do the same to a file on disk, I.e.range of memory to range of bytes on file
-Process is allocated virtual memory space? We can configure the system value of this? OS has mapping table that converts these to physical addresses. In part of our processes address space is partitioned up by what OS thinks it will need on our behalf, e.g. gpu, hardware, file handles, dlls we can call into including kernel. This means max size of memory mapped file onx86 is about 2gb as our user process address space is smaller than max.
-So, can talk about our process address space over memory.
-Malloc is just reserving virtual memory range? Uses physical only when necessary?
-Passion for games evident in prosperity points, e.g. in a museum. Drm makes this difficult as well as using an engine
-Best way to test is to release on early access. This checks hardware and software, user may be running adobe acrobat which hogs cpu so instruct them to kill it before running your game. Or maybe 20000 chrome plugins. This is something a hardware lab can't tell you
-Old days made intentional defects on CD so that reading a sector multiple times gives different data. This determined if using legit
-Complete code coverage on the one hand is very thorough, however don't get a lot of engineering output. Furthermore, most bugs appear in between systems not in units. Also, the excessive testing is pushed by web where the poor languages dictate heavy testing. Testing first makes no sense as the app may change
-Now checks for drm are distributed throughout code not a single easily patchable if
-Compiler works on file by file, so knows nothing about calls across files. Therefore it generates object files which are partially executable machine code with unresolved symbols. Linker merges these object files and also adds extra header information so that the OS can load our executable (or more specifically a kernel, e.g. linux)
-Sgx is an instruction set where the private key is stored on the cup directly. So, to break would require hardware hacking rather than software as it is currently. The provided public key is signed by Intel, so you can't forge one. In reality, NSA would rubberhose Intel for this key. This is very bad as now corporations determines who can buy/run what software. Drm gives up control of computer. Perhaps only until the video game industry is collapsing could this sacrifice be considered
-OS determines usage of particular instructions, like sgx?
-Program running in its own ring level? So no privilege escalation. Rootkit could be run in ring 0?
-Use escrow to determine if selling cpu is blacklisted?
-Ios already imposes users to sign things before running. This could be future
-Before performance characteristics of graphics different to today's cache usages, memory footprint, instruction parallelism, multithreading, fast floating point multiplication. Then they were just minimising number of operations linearly
-Can turn a calculation problem into a decision problem, e.g move vertically or horizontally based on error calculation
-Floating point math faster than integers
-Implicit function does not give an exact point, e.g equation of circle. Useful for determining error when the equation is arranged to equal zero and compare abs() sign. Also consider that drawing a circle is symmetrical, so only have to compute a quadrant and apply to others
-Zii is having zero or one as state and offsetting to a value needed. This is more efficient then having to pull in values into the cache for initialization. Also, most OSs give you a zero page anyway for security concerns
-my Style of programming and problems enjoy solving found in embedded, e.g your constrained with the silicon not like in web where you just build another data centre
-Audiophiles think they hear things that aren't there
--------------------------------------------------------------------------------------------------------------------------------------
-In virtual address space, have user space and kernel space address ranges. A virtual address is mostly relating to page table indexes and the last bit is a static offset (as for security addresses are randomized)
-Gdb uses ptrace which acts as a parent process.
-Much like the food industry has organic vs processed, we need a term for games that are made by people who love games and care about the experience as opposed to large companies concerned with making money (indie vs triple a)
-
-You can abstract/encapsulate anything at anytime, so why not do it later when you know what you are doing?
-We want file format to be simple and binary, unlike json which is general purpose and string
-
-Sometimes crashing is good because it signifies the serious problem that can be rectified immediately rather than some other Insidious hidden bug
-The problem is not mapping id/pointer (or whatever std:: c++ people would use) to an entity correctly (i.e. correspondence problem) .the symptom of this problem will be different depending on the implementation, e.g. pointer will crash program.
-
 Crazy nuttiness of command line parsing UNIX. No one remembers single commands except privileged ls. 
 Plus sign turning off, minus on, etc.
+
 To make computers better to use, have to simplify them on all levels
+
 Faster cpu like Apple's m1 are irrelevant if software bad
 Optimiser allows for lexical scoping of stack variables. However, for optimiser to inline will have to get rid of pointers to prevent aliasing
+
 Games about mechanical genre, e.g rts, fps. However think about what emotions you want to impart, e.g discovery, respect their intelligence, challenging, empowering, etc.
+
 It's annoying with all gpu 'not documented' like raspberry pi. Hopefully risc-v will alleviate this
-When learning proceed with little, verifiable steps. (MUST HAVE CONCRETE IDEA OF WHAT ARE VERIFYING!) 
-x.func() for bash function names?
-Can preserve information on reset by setting register values that will be read on reset?
-Not really bare metal as gpu bootloader. We can ignore having to set uuid for Linux partition
+
 The flip side of hugh level languages is loss of capability in controlling the cpu
-
-Refactoring is essential. You must know what you are trying to achieve so you have some notion of progress, e.g. adding a constraint to the system. (Replacing variable type in scope gives us all locations where variable was used, including macros. This us where dynamic lnguages fail as you don't know if you broke something) 
 Run time languages are slower and more complex
+Most scripting languages aren't designed for modern hardware, e.g. simd, threads
 
-Normal mapping is storing normal, I.e direction. Very good interior for low res, only difference is contour edges
-Every new idea was a frontier that people needed to figure out how to use.
-For say matrix multiplication, the underlying math doesn't change but how we interpret the numbers does change based on use case
+Refactoring is essential. You must know what you are trying to achieve so you have some notion of progress, e.g. adding a constraint to the system. 
+(Replacing variable type in scope gives us all locations where variable was used, including macros. This us where dynamic lnguages fail as you don't know if you broke something) 
+
 Scripting once, deploying everywhere is broken. You must test what you write on each machine. Computers aren't wonderful abstractions we wish they were
 
-C was created to solve the problem of a portable high level assembly language for UNIX. C++ is a frankenstein languAge with bjarne just adding features in, e.g. he just wanted c with classes. Go and rust were designed for specific purposes, although I don't care about safe memory features or want garbage collection.
+C was created to solve the problem of a portable high level assembly language for UNIX. 
+C++ is a frankenstein languAge with bjarne just adding features in, e.g. he just wanted c with classes. 
+
+Go and rust were designed for specific purposes, although I don't care about safe memory features or want garbage collection.
+
 Complexity creates bugs. C++ incredibly complex. People just stick to a subset of c++, which may be different to yours. 
+
 Exceptions defer error handling and also bring about an ethos of more errors when they should just be states of your program.
-Defer statement handles destructors with error handling and is cleaner.
-Static duck typing, e.g. at compile time check type of operands is clean way
-C++ lambda functions, default arguments are useful also. Basic namespaces (not like boost crazy nesting) as well. 
-Most languages aren't designed for modern hardware, e.g. simd, threads (jai is)
 
-Linux desktop suffers from binary compatibility nightmare, e.g. 15 binaries to support all. This is because libraries like glibc are happy to break abi to get minor improvements, e.g spec says this so let's do it even though no one cares
+roughly 90% of games played on PC games are pirated.
+however intensive anti-piracy makes it harder for people to play your game
+yet, in line with this is, there is no code of ethics in computer science for wasting peoples time. so, get more respect from community?
 
-In virtual address space, have user space and kernel space address ranges. A virtual address is mostly relating to page table indexes and the last bit is a static offset (as for security addresses are randomized)
-Gdb uses ptrace which acts as a parent process.
-Much like the food industry has organic vs processed, we need a term for games that are made by people who love games and care about the experience as opposed to large companies concerned with making money (indie vs triple a)
 
-The backbone of web tcp/ip has scaled tremendously well over 60 years. The web software stack is opposite. Browsers rev every 15 minutes, everything is worse than it was before, JavaScript slower than anything before it.
-Nodejs, php etc. Bourne out of good idea to mAke a particular type of software development rapid. However they fail to effectively utilise system resources to solve a problem that would be easy in C.
+The backbone of web tcp/ip has scaled tremendously well over 60 years. The web software stack is opposite. 
+Browsers rev every 15 minutes, everything is worse than it was before, JavaScript slower than anything before it.
+Nodejs, php etc. Bourne out of good idea to mAke a particular type of software development rapid. 
+However they fail to effectively utilise system resources to solve a problem that would be easy in C.
 Often people are only concerned with how fast they can write this, without caring about quality.
 In the web sphere google, Facebook etc. Know their competitors aren't going to be concerned with quality, e.g. gmail is incredibly slow and littered with bugs (typing in a name gives wrong result as it hasn't finished time to server) so they use these technologies that help to get something working quickly but will be janky. 
 I want to write software where quality matters a nd software is enjoyable to use. Web needs to acknowledge this. They have different thinking, e.g. network latency so we don't have to care about performance, no you need more effort to avoid this latency!
