@@ -93,6 +93,8 @@ Exceptions defer error handling and also bring about an ethos of more errors whe
 roughly 90% of games played on PC games are pirated.
 however intensive anti-piracy makes it harder for people to play your game
 yet, in line with this is, there is no code of ethics in computer science for wasting peoples time. so, get more respect from community?
+drm just introduces another way for the software to waste people's time (however, may come a day when it's required...)
+
 
 
 The backbone of web tcp/ip has scaled tremendously well over 60 years. The web software stack is opposite. 
@@ -166,52 +168,8 @@ Msdos could see all physical memory
 Virtual memory; paging uses fixed sizes memory blocks, segmentation variable. Frames are sections of physical memory
 Modern cpus have mmu
 
-Programming about solving problem.overlooked by design philosophies. If you don't have any functionality, you don't have a structural problem
-Computer faster than you think, e.g instructions, clock cycles, cores. Very large
-Many online communities are anti-engineering in that they don't embrace criticism. In reality, only core devs would be able to answer your question thoroughly
-Go against merge requests from strangers and just auto let a group of trusted people.
-Do anything on web takes a lot longer than it should dealing with a myriad of software with different odd conventions. Lack of functionality will lead to collapse
-Many features lacking like type try to emulate. Many features have like garbage collection try to avoid.
-Script cause heap fragmentation?
-Script can't share with anything
-Why just use a real language as we want robustness and checking
-Loading thousands of dlls, spurious socket checks, sql server setup etc. With M2 drive should be quick
-C standards and visual studio blocking us
-Fundamental lack of awareness that there is a better way to program. We all make slow because of lack of time however. The cultural differences make it a fool's errand to try and get these people to program correctly
-The time visual studio conceives of is less than 10 seconds?!
-Before cpus increased in single thread execution speed. Now more cores. It's a topic of research to convert single threaded into multithreaded for emulation. This is why emulation of something like the GameCube (powerpc.altivec) is slow. Furthermore, hardware doesn't completely mirror spec. There will be irregularities like cache, register clearing, etc. That these programs rely on. So, you have to emulate a lot more than just the spec, but all the irregularities that the software ran on. Therefore in emulation may take hundreds of instructions, where is the actual device took one. If actually a simple translation, then should run close to native speed. This is reality of emulating hardware with hardware
-Const rarely finds bugs that I have, i.e..writing to a variable a shouldn't. In saying that, you should use features of language that helps you catch bugs. Const rarely ever optimises as const-cast is a thing
-Apple store is hardly a free marketplace. They can just block your app for any reason
-Shipping on linux is very time consuming and not worth it monetarily
-Exe contains header for sections and relocation tables
-Packed files better as less OS operations performing expensive file handles etc.
-Linker can read resource files as well as a object files. To make an installer just fwrite your executable and then data files appended with footer. Inside exe just check last bytes to see where data files are
-Bake resources in for reliability only really
-A file for every class will lead to awful build times
-Conceptual resource is what we assign meaning to a collection of bits, e.g a bitmap buffer. A physical resource is like a file, which may contain conceptual resources in it
-Most OSs give 64bit control over files, it's the filesystem that imposes the limits
-Memory mapped files say if you write/read to a designated area in memory, do the same to a file on disk, I.e.range of memory to range of bytes on file
-Process is allocated virtual memory space? We can configure the system value of this? OS has mapping table that converts these to physical addresses. In part of our processes address space is partitioned up by what OS thinks it will need on our behalf, e.g. gpu, hardware, file handles, dlls we can call into including kernel. This means max size of memory mapped file onx86 is about 2gb as our user process address space is smaller than max.
-So, can talk about our process address space over memory.
-Malloc is just reserving virtual memory range? Uses physical only when necessary?
-Passion for games evident in prosperity points, e.g. in a museum. Drm makes this difficult as well as using an engine
-Best way to test is to release on early access. This checks hardware and software, user may be running adobe acrobat which hogs cpu so instruct them to kill it before running your game. Or maybe 20000 chrome plugins. This is something a hardware lab can't tell you
-Old days made intentional defects on CD so that reading a sector multiple times gives different data. This determined if using legit
-Complete code coverage on the one hand is very thorough, however don't get a lot of engineering output. Furthermore, most bugs appear in between systems not in units. Also, the excessive testing is pushed by web where the poor languages dictate heavy testing. Testing first makes no sense as the app may change
-Now checks for drm are distributed throughout code not a single easily patchable if
-Compiler works on file by file, so knows nothing about calls across files. Therefore it generates object files which are partially executable machine code with unresolved symbols. Linker merges these object files and also adds extra header information so that the OS can load our executable (or more specifically a kernel, e.g. linux)
-Sgx is an instruction set where the private key is stored on the cup directly. So, to break would require hardware hacking rather than software as it is currently. The provided public key is signed by Intel, so you can't forge one. In reality, NSA would rubberhose Intel for this key. This is very bad as now corporations determines who can buy/run what software. Drm gives up control of computer. Perhaps only until the video game industry is collapsing could this sacrifice be considered
-OS determines usage of particular instructions, like sgx?
 Program running in its own ring level? So no privilege escalation. Rootkit could be run in ring 0?
-Use escrow to determine if selling cpu is blacklisted?
-Ios already imposes users to sign things before running. This could be future
-Before performance characteristics of graphics different to today's cache usages, memory footprint, instruction parallelism, multithreading, fast floating point multiplication. Then they were just minimising number of operations linearly
-Can turn a calculation problem into a decision problem, e.g move vertically or horizontally based on error calculation
-Floating point math faster than integers
-Implicit function does not give an exact point, e.g equation of circle. Useful for determining error when the equation is arranged to equal zero and compare abs() sign. Also consider that drawing a circle is symmetrical, so only have to compute a quadrant and apply to others
-Zii is having zero or one as state and offsetting to a value needed. This is more efficient then having to pull in values into the cache for initialization. Also, most OSs give you a zero page anyway for security concerns
-my Style of programming and problems enjoy solving found in embedded, e.g your constrained with the silicon not like in web where you just build another data centre
-Audiophiles think they hear things that aren't there
+
 Interview ability to explain problems you have encountered on projects
 Unless your in web where everything takes years to load, as single threaded performance is largely stagnant you will have to utilise parallelism if want performance. This is very difficult and like single threaded code generic libraries which can actually be very specific will create bloated in performing code based.
 Multithreading is building up a new discipline to single threaded. There are a lot of pitfalls for performance (balancing want things local, however must share to utilise)
