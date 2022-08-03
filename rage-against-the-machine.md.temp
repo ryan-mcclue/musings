@@ -11,6 +11,8 @@ certain 'design pattern' enforce really long names to conform to pattern.
 any competent programmer can read use-case specific functions with clearer names
 "test_CommandHardware_CheckForMsg_Should_GetCharAndAddToPacker_When_BytesAvailable"
 
+file for every test, file for every class. leads to awful build times
+
 How can software better serve humanity? e.g. bloatware causes slowness for aus post workers
 
 With UML if doing sufficiently complex to the same level as a blueprint, may as well have just written the program
@@ -83,5 +85,22 @@ downloading unverified external tool, always good to get more viruses on my mach
 unless playing at EVO with some maxed out razer device, not feasible to hit that hard
 I guess RTFM is the answer to that...
 
-
 build tools are more of a hindrance! always asking yourself what flags are being passed (linker and compiling separate steps), what files are it picking up, what is the CWD, etc.
+
+Go against merge requests from strangers and just auto let a group of trusted people.
+This avoids the problem where you work for hours only to have it blocked
+
+Many online communities are anti-engineering in that they don't embrace criticism. 
+
+Do anything on web takes a lot longer than it should dealing with a myriad of software with different odd conventions. Lack of functionality/integration with hardware will lead to collapse
+Many features lacking like type system, try to emulate. Many features have like garbage collection try to avoid.
+
+Scripting languages can cause heap fragmentation. Why just use a real language as we want robustness (scripting languages dependent on interpreter speed) and type checking
+
+Fundamental lack of awareness that there is a better way to program. We all make slow because of lack of time however to say it can't be done is a fallacy.
+The cultural differences with these people make it a fool's errand to try and get these people to program correctly
+e.g. time visual studio users think is fast is less than 10 seconds?!
+
+Const rarely finds bugs that I have, i.e..writing to a variable a shouldn't. In saying that, you should use features of language that helps you catch bugs. 
+
+Apple store is hardly a free marketplace. They can just block your app for any reason

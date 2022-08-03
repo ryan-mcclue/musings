@@ -1,0 +1,4 @@
+Before cpus increased in single thread execution speed. Now more cores. It's a topic of research to convert single threaded into multithreaded for emulation. 
+This is why emulation of something like the GameCube (powerpc) is slow. 
+Furthermore, due to hardware irregularities that programs relied on may take hundreds of instructions to emulate
+If actually a simple translation, then should run close to native speed. This is reality of emulating hardware with hardware

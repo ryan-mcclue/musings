@@ -4,6 +4,14 @@ Git usage
 
 Terminal + Editor + Window manager
 
+To make an installer just fwrite your executable and then data files appended with footer. 
+Inside the exe, fread the exe and fseek based on the static offset of the appended resources
+Bake resources in for reliability only really
+
+Packed files better as less OS operations performing expensive file handles etc.
+
+Programming about solving problem. overlooked by design philosophies. If you don't have any functionality, you don't have a structural problem
+
 const is only useful if you find it catches bugs for you (maybe for globals instead of using #defines)
 however, in terms of optimsations, const is useless as you can cast const away.
 therefore, for me, const is mostly just a waste of typing.

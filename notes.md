@@ -53,28 +53,10 @@ six of one, half a dozen of the other.
 have our cake and eat it too
 ad infinatum
 
-Programming about solving problem.overlooked by design philosophies. If you don't have any functionality, you don't have a structural problem
-Computer faster than you think, e.g instructions, clock cycles, cores. Very large
-Many online communities are anti-engineering in that they don't embrace criticism. In reality, only core devs would be able to answer your question thoroughly
-Go against merge requests from strangers and just auto let a group of trusted people.
-Do anything on web takes a lot longer than it should dealing with a myriad of software with different odd conventions. Lack of functionality will lead to collapse
-Many features lacking like type try to emulate. Many features have like garbage collection try to avoid.
-Script cause heap fragmentation?
-Script can't share with anything
-Why just use a real language as we want robustness and checking
-Loading thousands of dlls, spurious socket checks, sql server setup etc. With M2 drive should be quick
-C standards and visual studio blocking us
-Fundamental lack of awareness that there is a better way to program. We all make slow because of lack of time however. The cultural differences make it a fool's errand to try and get these people to program correctly
-The time visual studio conceives of is less than 10 seconds?!
-Before cpus increased in single thread execution speed. Now more cores. It's a topic of research to convert single threaded into multithreaded for emulation. This is why emulation of something like the GameCube (powerpc.altivec) is slow. Furthermore, hardware doesn't completely mirror spec. There will be irregularities like cache, register clearing, etc. That these programs rely on. So, you have to emulate a lot more than just the spec, but all the irregularities that the software ran on. Therefore in emulation may take hundreds of instructions, where is the actual device took one. If actually a simple translation, then should run close to native speed. This is reality of emulating hardware with hardware
-Const rarely finds bugs that I have, i.e..writing to a variable a shouldn't. In saying that, you should use features of language that helps you catch bugs. Const rarely ever optimises as const-cast is a thing
-Apple store is hardly a free marketplace. They can just block your app for any reason
+
 Shipping on linux is very time consuming and not worth it monetarily
 Exe contains header for sections and relocation tables
-Packed files better as less OS operations performing expensive file handles etc.
-Linker can read resource files as well as a object files. To make an installer just fwrite your executable and then data files appended with footer. Inside exe just check last bytes to see where data files are
-Bake resources in for reliability only really
-A file for every class will lead to awful build times
+
 Conceptual resource is what we assign meaning to a collection of bits, e.g a bitmap buffer. A physical resource is like a file, which may contain conceptual resources in it
 Most OSs give 64bit control over files, it's the filesystem that imposes the limits
 Memory mapped files say if you write/read to a designated area in memory, do the same to a file on disk, I.e.range of memory to range of bytes on file

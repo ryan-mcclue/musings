@@ -43,3 +43,6 @@ run-to-line doesn't work when inside sub-routine. memory browser crashes on ente
 doesn't give information on stack overflows.
 
 firefox will unexpectanctly say we updated in the background and you must restart or tab crashed etc.
+
+Online help forums for QTCreator useless. In reality, only core devs would be able to answer your question thoroughly
+

@@ -2,6 +2,9 @@ time -p; getrusage();
 
 stack and heap memory are the same physical thing, so only more efficient if memory was hot, i.e. recently touched
 
+Computer faster than you think, e.g instructions, clock cycles, cores. Very large
+With M2 drive should be quick
+
 may be easier for optimising compiler to work with things passed by value as oppose to pointer.
 so, if need to modify something may have to return the value in a functional programming style.
 however, this is error prone.
