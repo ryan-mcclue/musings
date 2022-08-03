@@ -1,5 +1,14 @@
 time -p; getrusage();
 
+Unless your in web where everything takes years to load, as single threaded performance is largely stagnant you will have to utilise parallelism if want performance. 
+This is very difficult and like single threaded code generic libraries which can actually be very specific will create bloated in performing code based.
+Multithreading is building up a new discipline to single threaded. There are a lot of pitfalls for performance (balancing want things local, however must share to utilise)
+If you care about performance for anything, you should care about cache misses
+Memory bandwidth and caches are major reasons for a cup attaining performance. You have to think about where does memory actually live and how is it transferred around
+
+Optimiser allows for lexical scoping of stack variables. 
+However, for optimiser to inline will have to get rid of pointers to prevent aliasing
+
 stack and heap memory are the same physical thing, so only more efficient if memory was hot, i.e. recently touched
 
 Computer faster than you think, e.g instructions, clock cycles, cores. Very large

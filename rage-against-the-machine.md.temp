@@ -117,3 +117,56 @@ large companies concerned with making money (indie vs triple a)
 Sometimes crashing is good because it signifies the serious problem that can be rectified immediately rather than some other Insidious hidden bug
 The problem is not mapping id/pointer (or whatever std:: c++ people would use) to an entity correctly (i.e. correspondence problem).
 the symptom of this problem will be different depending on the implementation, e.g. pointer will crash program.
+
+Crazy nuttiness of command line parsing UNIX. No one remembers single commands except privileged ls. 
+Plus sign turning off, minus on, etc.
+
+The flip side of high level languages is loss of capability in controlling the cpu
+Run time languages are slower and more complex
+Most scripting languages aren't designed for modern hardware, e.g. simd, threads
+
+Scripting once, deploying everywhere is broken. You must test what you write on each machine. Computers aren't wonderful abstractions we wish they were
+
+C was created to solve the problem of a portable high level assembly language for UNIX. 
+C++ is a frankenstein languAge with bjarne just adding features in, e.g. he just wanted c with classes. 
+Go and rust were designed for specific purposes, although I don't care about safe memory features or want garbage collection.
+Complexity creates bugs. C++ incredibly complex. People just stick to a subset of c++, which may be different to yours. 
+Exceptions defer error handling and also bring about an ethos of more errors when they should just be states of your program.
+
+roughly 90% of games played on PC games are pirated.
+however intensive anti-piracy makes it harder for people to play your game
+yet, in line with this is, there is no code of ethics in computer science for wasting peoples time. so, get more respect from community?
+drm just introduces another way for the software to waste people's time (however, may come a day when it's required...)
+
+Successful ideas are higher level languages to assembly and compile time type checking
+Success is solving a problem people have talked themselves out of solving
+Why does Twitter need 4000 employees? Spacex is roughly the same and the put rockets on mars!
+They make problems difficult by the engineering culture they create. 18000 classes overflowed java function pointer buffer, they are deluded in thinking this way
+Over concerned with Uml, state diagrams, acronyms, etc. Nightmarish distractions/unproductive
+
+High level don't worry about implementation details - chrome c++ entering a 1 char created 25000 memory allocations with std::strong
+Abstractions - more code makes program as a whole more difficult to understand. Abstractions are just hiding low level which is the most important part and will constrain the system. Java huge call stack to make a http request. Make lightweight abstractions only
+Functional programming - Haskell around since 1990 hasn't taken over. Imperative more clear. Functional breaks down over non trivial work
+Data hiding - poor cache performance, redundant code
+Excessive inheritance - poor cache performance
+Exceptions - constant cognitive tax on remembering what throws what and huge verbosity doing so. Also don't know what program will throw during some time
+Commenting - write good comments and garden them as they can rot easily
+Re-use - only effective when used to small extent, humans are bad at understanding layers upon layers. You don't make something better by making it more complicated
+All aforementioned ideas can be contextually useful
+
+The backbone of web tcp/ip has scaled tremendously well over 60 years. 
+The web software stack is opposite. 
+Browsers rev every 15 minutes, everything is worse than it was before, JavaScript slower than anything before it.
+Nodejs, php etc. Bourne out of good idea to mAke a particular type of software development rapid. 
+However they fail to effectively utilise system resources to solve a problem that would be easy in C.
+Often people are only concerned with how fast they can write this, without caring about quality.
+In the web sphere google, Facebook etc. Know their competitors aren't going to be concerned with quality, 
+e.g. gmail is incredibly slow and littered with bugs (typing in a name gives wrong result as it hasn't finished time to server) 
+so they use these technologies that help to get something working quickly but will be janky. 
+I want to write software where quality matters and software is enjoyable to use. 
+Web needs to acknowledge this. They have different thinking, e.g. network latency so we don't have to care about performance, no you need more effort to avoid this latency!
+Although different tradeoffs made for different contexts, on a whole programming is programming.
+The web is almost impossible to write good software as have to deal with complexities that don't have to be there. Best minds are being put to make people click ads
+
+Why is it big news regarding command prompt. Battlefield orders of magnitude complex and runs faster
+Msdos could see all physical memory; Modern cpus have mmu

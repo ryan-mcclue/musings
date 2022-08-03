@@ -4,6 +4,46 @@ Git usage
 
 Terminal + Editor + Window manager
 
+Polymorphism is a single object that can be interpreted as having various types. This can simply be a struct with unions and a type field.
+
+Never use setters/getters unless actually doing something. You're spending your entire day typing. If needing, replace variable name with name_ to see where it was used.
+
+You need to be self critical to be a good engineer
+
+Caches are a way of minimising roundtrip time of RAM by putting memory as close to the core that thinks will need it
+L1 closest, 1/2 cycles, 32k. Wikichip for more info
+Cpu will go to caches first
+
+L1 can supply 2 cache lines per clock
+Instructions per clock, number of work components, e.g. number of add components, cache line per cycles, cache latency, agu (address resolver units) impose restrictions
+A cache miss is simply stalling for an instruction. 
+However, this may not be an issue if we do other work, e.g. complex algorithm takes many instructions hiding memory access for out of order cpu. 
+If hyper threading with two schedulers, if cache miss on one, just switch to the other.
+Can really only know if a cache miss incurs a performance penalty by looking at raw numbers from vtune, etc. Because of the scheduler, it's not as simple as just looking at memory sizes
+So, due to complex overlapped/scheduling nature of modern CPUs can really only know if cache miss incurs penalty with vtune
+Uop website displays table for instructions
+
+Currently good that most things are little endian with 64 byte cAche lines, however some hardware guys Is going to come along and change it back to big endian
+
+Should be code of ethics in software to not create bugs/inconveniences for users that couldve been avoided
+
+An instruction of throughput 1 means issued every clock. As many instructions take longer than 1 cycle, each core requires a scheduler to see if it can execute something.
+View cpu as sections where there is some distance to communicate.
+
+Making some thing good takes time. However, if you have crazy design practices it will also take longer
+You have to be reality based when programming. That is in an engineering sense, to design something that solves the problem you have
+People become attached to a way of programming which doesn't focus on solving the problem. They want to build rube-goldberg machines
+Selectively attacking problems seriously means you have a functional program quicker, whereby you can actually decide if those other problems need to be addressed. 
+Can defer hard decisions later as they will be made better as you will have more technical expertise and more context to work with
+
+Testing is important. If you don't write tests, your software doesn't work. However, write higher level system tests, not excessive unit tests. 
+More efficient and this is where bugs are likely to be. You often have to remove code, so having unit tests just increases the volume of code you have to write. 
+Huge drain on productivity. Maybe for NASA. A new paradigm should weigh up cost-benefit. Almost always the cost is ignored and people gobble them up
+
+To make computers better to use, have to simplify them on all levels
+
+Faster cpu like Apple's m1 are irrelevant if software bad
+
 Floating point math faster than integers
 
 my style of programming and problems enjoy solving found in embedded, e.g your constrained with the silicon not like in web where you just build another data centre
@@ -176,6 +216,9 @@ Handling the error in a sense makes it no longer an error, rather a feature of t
 if function is expecting a range between, should we clamp to it?
 
 Refactoring Mentality:
+Refactoring is essential. You must know what you are trying to achieve so you have some notion of progress, e.g. adding a constraint to the system. 
+(Replacing variable type in scope gives us all locations where variable was used, including macros. This us where dynamic lnguages fail as you don't know if you broke something) 
+
 You can abstract/encapsulate anything at anytime, so why not do it later when you know what you are doing?
 We want file format to be simple and binary, unlike json which is general purpose and string
 
