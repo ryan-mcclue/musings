@@ -2,10 +2,17 @@
 
 QUESTIONS:
 Shipping on linux is very time consuming and not worth it monetarily?
-why writing by words faster?
 Linux desktop suffers from binary compatibility nightmare, e.g. 15 binaries to support all. 
 This is because libraries like glibc are happy to break abi to get minor improvements, e.g spec says this so let's do it even though no one cares
+
+why writing by words faster?
+
 Do the STL of other languages suffer the same issues as in C?
+
+
+security so vast and not something I want to devote time to:
+https://leveleffect.referralrock.com/l/JOHNHAMMON07/
+
 
 the constellation we can't see as it's blocked by the sign is the zodiac sign for that month
 not new territory to regain interest in the past, e.g. renaissance grew interest in ancient greek astrology
