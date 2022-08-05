@@ -207,7 +207,7 @@ If debug code (or code that will not be in release) use compile-time macros
 
 Use GLOBAL and global_prefix 
 If casting is occuring, always be explicit about it!
-Prefixing functions with sdl2_func() or linux_func() 
+Prefixing functions with sdl2_func() or linux_func() only if intending to be cross-platform
 
 With error handling, bad practice is to allow a lot of errors, which brings in error classes etc.
 Instead, if it's something that is actually an error, e.g. missing file, write the code to explicitly handle it.

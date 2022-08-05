@@ -1,3 +1,13 @@
 # Language of the People
 
 Simple single line parser just test at[0] != '\0' && at[0] == 'a', etc.
+
+Garbage collection replaces us with a 'search' of our memory and decides when to free
+So really only use if you can't figure out when to free something
+This search is not free
+
+No language implements a feature that determines a memory footprint, i.e. how much memory we use
+
+PushStruct()
+
+simple_preprocessor.cpp: day 206
