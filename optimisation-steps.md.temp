@@ -1,5 +1,13 @@
 time -p; getrusage();
 
+// undefined behaviour if not true
+ALWAYS_INLINE void assume(bool cond)
+{
+if(!(c)) {__builtin_unreachable()};
+}
+times when manual inlining is required: 
+https://www.youtube.com/watch?v=B2BFbs0DJzw
+
 Unless your in web where everything takes years to load, as single threaded performance is largely stagnant you will have to utilise parallelism if want performance. 
 This is very difficult and like single threaded code generic libraries which can actually be very specific will create bloated in performing code based.
 Multithreading is building up a new discipline to single threaded. There are a lot of pitfalls for performance (balancing want things local, however must share to utilise)
