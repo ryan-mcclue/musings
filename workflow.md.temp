@@ -33,6 +33,10 @@ Intel clock frequency is often changed by OS?
 
 Is cortex-m4 microarchitecture? How does this relate to intel naming? AMD also?
 
+also have uOP cache considered L0
+
+$(getconf LEVEL1_DCACHE_LINESIZE)
+
 $(sudo lshw -html > info.html) for RAM, harddrive and drivers of things
 
 SATA ssd is the lowest grade ssd (however still 4 times bandwidth)
@@ -40,6 +44,15 @@ SATA ssd is the lowest grade ssd (however still 4 times bandwidth)
 storage devices: form factor (M.2 keying, PCIe), interface (SATAIII, NVMe, PCIe), technology
 a single form factor may support multiple interfaces, so ensure motherboard has
 appropriate chipset
+
+DRAM refreshed periodically. SDRAM (synchronises clock speed with memory speed).
+SDRAM. LPDDR4 (low-power; double pumping on rising and falling edge of clock)
+
+SRAM more expensive, faster, not refreshed, larger die size.
+
+DIIM (dual in-line memory module) is form factor (wider bus)
+SODIMM (small outline)
+
 
 
 From $(cpuinfo) see that although 64bit cpu this is just what the instruction set supports.
