@@ -13,3 +13,6 @@ xlib scaled, vsync, refresh rate
 ell library
 
 linux input analysing SDL2 source
+
+polling multiple keyboards lag due to bug in gnome. inspect gnome git
+switched to desktop environment to lxfe 4. also makes creating shortcuts a breeze

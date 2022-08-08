@@ -4,6 +4,61 @@ Git usage
 
 Terminal + Editor + Window manager
 
+-----
+Don't restrict right side of bell curve
+Let your aces be aces
+Being an ace involves having an opinion
+Most influential software written largely by one person, e.g Linux, Unix, git etc. Then a team is assigned to maintain it. Fallacy about solo programmer productivity requiring large teams.
+Design by committee pushes design to middle of bell curve as opposing views average out
+
+Cpu try to guess what instructions ahead (preemptive). Cost of incorrect reflushing expensive. So want to get rid of conditional jumps. Ideally replace with conditional movs or arithmetic branch less techniques.
+Endianness (register view), twos complement (-1 all 1s)
+Branch less programming is essentially SIMD
+
+What simd instructions available to cpu?
+If variable clock speed, cpu could detect not using all cores and increase single core clock
+
+Flops calculated with best instruction set?
+Not memory bound is best case for hyper threading
+Intel speeds optimised for gpr arithmetic, boolean and flops
+Why is Intel shr instruction so slow?
+Intel deliberately makes mmx slow
+-----
+
+For intel CPUs, i3-i7 of same generation will have same micro-architecture.
+Just more cache, hyperthreading, cores, die size etc. 
+
+Intel clock frequency is often changed by OS?
+
+Is cortex-m4 microarchitecture? How does this relate to intel naming? 
+
+From $(cpuinfo) see that although 64bit cpu this is just what the instruction set supports.
+As we have no need for 16 exabytes (tera, peta, exa), the physical address size may be
+39bits, and virtual size 48bits to save on unused transistors
+$(cpu-x)
+
+NUMA node relationship between CPU socket (location on motherboard) and memory banks.
+So, say 2 sockets will probably have 2 NUMA nodes.
+Therefore, not all physical memory directly accessible from 1 cpu socket;
+will have to go through other socket to get it
+
+Hyperthreads don't increase number of instructions per second, rather number of instructions
+that can be queued (so hyperthread like a queue)
+
+Caches, are instruction and data caches combined?
+What distinct features in a core, e.g. shared caches? 
+What additional features on one capable of hyperthreading?
+
+CPU could implement VT-x, but motherboard and bios must support this as well?
+What additional features are present when CPU supports this?
+
+Cache probably 8-way as compromise between lookup and copy speed.
+Flow of cache, is it check if from 8-way copy then L2 8-way or finish L1 entirely?
+If found, in L2 does it copy to L1?
+
+
+
+
 Polymorphism is a single object that can be interpreted as having various types. This can simply be a struct with unions and a type field.
 
 Never use setters/getters unless actually doing something. You're spending your entire day typing. If needing, replace variable name with name_ to see where it was used.
