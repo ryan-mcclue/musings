@@ -21,3 +21,5 @@ Are big-tech companies realising the flaws in their 'Simplicity Sprints' culture
 BCI (brain computer interfaces) are a real future
 
 Unfortunate that 'true security' makes things more complex and inconvenient, e.g. yubikey 
+
+Physics head-scratcher: dark matter makes up 80% of universe, yet we can't detect it? 

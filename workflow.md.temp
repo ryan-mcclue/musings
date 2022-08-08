@@ -97,7 +97,9 @@ relative to overall code base, interfacing with system calls is not that much co
 if we try to access memory from an invalid page (not reserved or comitted) will get segfault.
 only have to worry about errors that don't manifest themselves on every run of the program.
 
-faster to write 32bit than 8bits, i.e word size (ask question, look at assembly?)
+on x86, writing by 32bit faster than 8bit as less instructions
+in general, the fastest way is to use the widest possible register that can be operated on at once
+the speed of accessing the memory from cache is pretty cheap for nearby regions
 
 don't make changes for conceptual cleanliness. end of the day, want to make performant, bug free code
 in the shortest amount of time.
