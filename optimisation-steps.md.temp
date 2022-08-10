@@ -1,6 +1,16 @@
 time -p; getrusage();
 
+if apple computers use RISC ARM in M1, why CISC necessary? (only because on Intel?)
+emphasis of CISC simplify assembly (e.g. more addressing modes), thereby reducing size of binary? (reduce instructions)
+RISC will require less transistors to implement complex hardware but will make
+optimising harder for compiler? single cycle instructions (reduce cycles per instruction)
 
+
+when viewing from application in a sandboxed environment like a phone, 
+total RAM less than installed as portion reserved for kernel
+
+simplistically RAM 50ns and HDD 10µs?
+faster to read than write
 
 2.5bln * 8 (simd) * n (execution units) * 2 (cores)
 assuming instructions have throughput of 1
