@@ -1,5 +1,7 @@
 time -p; getrusage();
 
+
+
 2.5bln * 8 (simd) * n (execution units) * 2 (cores)
 assuming instructions have throughput of 1
 so 64 / 4 gives how many floats per second from L1 cache

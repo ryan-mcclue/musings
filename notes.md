@@ -1,6 +1,25 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
 QUESTIONS:
+May compile for different architectures in embedded for different product lines e.g. low-end fit bit, high-end fitbit
+
+Compile with different compilers to see performance benefits at end.
+Also possible may have to use a particular compiler for specific hardware.
+
+In reality, don't want an RTOS if timing very critical.
+Most MCU don't even have multiple cores so adding software overhead (or are there additional hardware to emulate cores?)
+Even without RTOS, will most likely have some timer and separation of tasks.
+Main overall benefit of RTOS is consistent driver interfaces across multiple mcus (useful for say complex bluetooth/ethernet stacks etc.)
+Most mcus are overpowered for what they do, so using an RTOS is probably a good idea.
+
+
+tamper response usually done with a button on the board that gets activated when case opens
+this will trigger an interrupt handled by RTC (real time clock)
+
+cpu has modes like Stop mode that is a power saving mode.
+
+
+
 Linux issues: 1. runtime configurability (difficult part not API, but what to do when settings aren't exact, i.e. what to fall back on when abstraction not there). 2. multiple binaries
 Although possible to dynamically load core libraries like xlib/wayland/alsa and support
 a minimum set of APIs, this is essentially what SDL does.

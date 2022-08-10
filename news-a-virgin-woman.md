@@ -29,3 +29,6 @@ Meta releasing AI chatbot to wild has again resulted in racist and sexist commen
 More evidence of contrasting quality between modern hardware and software with worldwide Google outage caused by software update
 
 Oncall software engineers akin to casual teachers
+
+What are FPGAs and how do they allow the creation of hardware for emulating old games like GBA?
+

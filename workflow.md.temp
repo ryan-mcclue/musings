@@ -2,7 +2,39 @@
 Preparation Mentality:
 Git usage
 
+Github issue and pull request template files (https://embeddedartistry.com/blog/2017/08/04/a-github-pull-request-template-for-your-projects/?mc_cid=a5a0d2dbbf&mc_eid=UNIQID)
+
 Terminal + Editor + Window manager
+
+(Serial Advanced Technology Attachment)
+important that these are sustained speeds, so for small file sizes expect a lot less as seconds smaller
+note that storage space advertised with S.I units, whilst OS works with binary
+
+RAM potentially hundreds of cycles (CAS latency and cache retrieval process)
+(important to note that RAM CAS is only say 20% of total latency as will 
+check traverse cache and than copy it to cache)
+https://sites.utexas.edu/jdm4372/2011/03/10/memory-latency-components/
+In general:
+check if in L1. If not go check in L2 and mark least recently accessed L1 for
+move to L2. bubbles up to L3 until need for memory access which will go to memory
+controller etc.
+
+so, ram frequency gives max. throughput
+however latency of ram also important
+
+(cache latency from wikichip)
+
+generic is referencing Ubuntu specific kernel compilation (could also have -lowlatency etc.) 
+(generic does not include a lot of modules in kernel to alleviate RAM, so use modprobe)
+(-41 is build number, i.e how many times compiled)
+(the compiler, linker, libc are all specific to linux OS used, e.g. compiled with different settings, different versions, etc.)
+
+$(grub-install -V)
+/etc/default/grub (GRUB_CMDLINE_LINUX_DEFAULT=""); $(update-grub); $(cat /proc/cmdline)
+(acpi_enforce_resources=lax boot parameter to allow decode-dimms to find ram chip)
+Tentative to make boot changes, e.g. kernel parameters due to previous issues whereby
+performing a grub install on a loopback device affected the system's existing EFI GUID.
+To alleviate these concerns, carry copy of ubuntu on USB to mount and backup regularly
 
 -----
 Don't restrict right side of bell curve

@@ -6,10 +6,13 @@ Once installed, a series of pop-up menus just keep appearing spontaneously as it
 To download qtcreator well known bug that it selects the wrong mirror, 3MBps to 30kbs. 
 Have to decipher command line arguments and mirror parsing, e.g. ./qt-unified-linux-x64-4.3.0-1-online.run --mirror http://ftp.jaist.ac.jp/pub/qtproject  
 
+My god, installing cubemx is awful. require email. password setting for account fails.
+
 QTcreator does not honour system .gdbinit file, have to manually set breakpoints and dissassembly flavour
 QTCreator doesn't show console output. Tick 'run in terminal' crashes on startup
 
 Before even using the program, installing is bad. Install pandoc. It requires a pdf engine, e.g. xelatex that must be separately installed
+Which name is not found with traditional `sudo apt install xelatex`, it's in `texlive-xetex` and is 100MB...
 Searching for the appropriate package name to install a missing dependency is what I use ubuntu stack exchange mostly for.....
 
 Firefox just forces restart
