@@ -29,6 +29,8 @@ For intel CPUs, i3-i7 of same generation will have same micro-architecture.
 Just more cache, hyperthreading, cores, die size etc. 
 
 
+$(grub-)
+
 Intel clock frequency is often changed by OS?
 
 Is cortex-m4 microarchitecture? How does this relate to intel naming? AMD also?
@@ -38,6 +40,8 @@ also have uOP cache considered L0
 $(getconf LEVEL1_DCACHE_LINESIZE)
 
 $(sudo lshw -html > info.html) for RAM, harddrive and drivers of things
+$(ldd --version) 
+$(lsb_release -a), $(cat /etc/debian_version)
 
 SATA ssd is the lowest grade ssd (however still 4 times bandwidth)
 

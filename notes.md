@@ -1,14 +1,22 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
 QUESTIONS:
-Shipping on linux is very time consuming and not worth it monetarily?
+Linux issues: 1. runtime configurability (difficult part not API, but what to do when settings aren't exact, i.e. what to fall back on when abstraction not there). 2. multiple binaries
+Although possible to dynamically load core libraries like xlib/wayland/alsa and support
+a minimum set of APIs, this is essentially what SDL does.
+However, system/user configurability is huge in linux. There is simply too much
+runtime variability to test for all users.
+Furthermore, multiple CRT to support, e.g. muslc for Alpine
+
+One way to solve variability is to use the Steam Runtime, which is a collection of .so files and configuration that is less subject to user configuration
+
 Linux desktop suffers from binary compatibility nightmare, e.g. 15 binaries to support all. 
 This is because libraries like glibc are happy to break abi to get minor improvements, e.g spec says this so let's do it even though no one cares
 
+C STL has one version for each compiler + os. 
+also, some compilers might not fully implement the STL feature
+
 why writing by words faster?
-
-Do the STL of other languages suffer the same issues as in C?
-
 
 security so vast and not something I want to devote time to:
 https://leveleffect.referralrock.com/l/JOHNHAMMON07/

@@ -23,3 +23,9 @@ BCI (brain computer interfaces) are a real future
 Unfortunate that 'true security' makes things more complex and inconvenient, e.g. yubikey 
 
 Physics head-scratcher: dark matter makes up 80% of universe, yet we can't detect it? 
+
+Meta releasing AI chatbot to wild has again resulted in racist and sexist comments
+
+More evidence of contrasting quality between modern hardware and software with worldwide Google outage caused by software update
+
+Oncall software engineers akin to casual teachers
