@@ -31,4 +31,7 @@ More evidence of contrasting quality between modern hardware and software with w
 Oncall software engineers akin to casual teachers
 
 What are FPGAs and how do they allow the creation of hardware for emulating old games like GBA?
+EU enforcing USB-C forces Apple to switch to USB-C. Yay!
+
+Oh dear, Java is not dying out  (state of the octoverse)
 
