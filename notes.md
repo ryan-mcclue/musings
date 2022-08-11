@@ -1,5 +1,10 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+algorithm interview questions important not to belittle question
+
+computer science papers
+https://blog.acolyer.org/
+
 QUESTIONS:
 May compile for different architectures in embedded for different product lines e.g. low-end fit bit, high-end fitbit
 

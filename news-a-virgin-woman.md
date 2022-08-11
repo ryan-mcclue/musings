@@ -36,3 +36,4 @@ EU enforcing USB-C forces Apple to switch to USB-C. Yay!
 Oh dear, Java is not dying out  (state of the octoverse)
 
 Realise I'm highly misanthropic
+Frequent STMicroelectronics newsletter coverage of IoT (and the many, many protocols) and machine learning indicative of trend in industry
