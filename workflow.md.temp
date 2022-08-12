@@ -2,6 +2,9 @@
 Preparation Mentality:
 Git usage
 
+Switching between laptop and desktop as uni student meant merge conflicts were common.
+So, know how to fix with $(git mergetool) and have it as a rebase
+
 Github issue and pull request template files (https://embeddedartistry.com/blog/2017/08/04/a-github-pull-request-template-for-your-projects/?mc_cid=a5a0d2dbbf&mc_eid=UNIQID)
 
 Terminal + Editor + Window manager
