@@ -37,3 +37,14 @@ Oh dear, Java is not dying out  (state of the octoverse)
 
 Realise I'm highly misanthropic
 Frequent STMicroelectronics newsletter coverage of IoT (and the many, many protocols) and machine learning indicative of trend in industry
+
+Hi-fi audio. Newer terms to mean higher fidelity/data resolution 
+new OLED TVs
+5.1 means 5 speakers, 1 subwoofer
+woofer, subwoofer, speaker, tweeter
+
+blockchain, crypto at some stage... why it's nonsense
+
+Things getting smaller and more data, e.g. 'normal' sized VR headsets
+
+I really don't see fold phones as necessary...

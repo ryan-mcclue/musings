@@ -5,6 +5,9 @@ emphasis of CISC simplify assembly (e.g. more addressing modes), thereby reducin
 RISC will require less transistors to implement complex hardware but will make
 optimising harder for compiler? single cycle instructions (reduce cycles per instruction)
 
+when looking at a pointer, to optimise compiler must know whether
+it can assume it points to a local var or not.
+so, easier to eliminate aliasing with non-pointers
 
 when viewing from application in a sandboxed environment like a phone, 
 total RAM less than installed as portion reserved for kernel

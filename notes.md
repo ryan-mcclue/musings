@@ -6,6 +6,11 @@ computer science papers
 https://blog.acolyer.org/
 
 QUESTIONS:
+Understand memory alignment and cost of unaligned accesses? (is it due to common programmer workflows and less transistors required?)
+
+Understand cycle hits for accessing harddrive?
+Are cache cycle timings cumulative?
+
 May compile for different architectures in embedded for different product lines e.g. low-end fit bit, high-end fitbit
 
 Compile with different compilers to see performance benefits at end.
@@ -22,7 +27,6 @@ tamper response usually done with a button on the board that gets activated when
 this will trigger an interrupt handled by RTC (real time clock)
 
 cpu has modes like Stop mode that is a power saving mode.
-
 
 
 Linux issues: 1. runtime configurability (difficult part not API, but what to do when settings aren't exact, i.e. what to fall back on when abstraction not there). 2. multiple binaries
