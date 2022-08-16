@@ -48,3 +48,9 @@ blockchain, crypto at some stage... why it's nonsense
 Things getting smaller and more data, e.g. 'normal' sized VR headsets
 
 I really don't see fold phones as necessary...
+
+Are we moving down the road of homogenous, e.g. specifically target CPU or GPU or hetereogenous programming, e.g. CUDA  
+
+Although a update pathway is provided from 20.04 to 22.04, I'm reluctant to do so due to possible configuration issues.  
+
+Interesting maglev trains reach amazing speeds and produce minimal noise due to lack of friction
