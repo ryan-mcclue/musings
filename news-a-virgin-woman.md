@@ -58,3 +58,8 @@ Interesting blood transfusions from older mice to younger mice, the younger mice
 
 Bitcoin is a Ponzi scheme as almost no one actually uses it in transactions, and is purely speculative.
 Does not create anything. Interesting manifestation of capitalism.
+
+Moore's law number of transistors doubles every 2 years. Although not strictly true, general trend is holding. 
+Proebsting's law states that compiler improvements will double program performance every 18 years. 
+Therefore, cautious about the performance benefits a compiler brings. Focusing on programmer productivity is more fruitful
+In general, newer compilers take longer to compile, but produce slightly faster code maybe 20% faster.

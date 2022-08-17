@@ -1,5 +1,10 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+240V/50Hz mains.
+oscilloscope default noise is mains (200MHz, 1Gsamples/sec as oppose to multimeter which is maybe 10samples/sec so really only applicable for perhaps a logic gate or 0.1hz square wave)
+can debug PWM, I2C
+BNC connector
+
 algorithm interview questions important not to belittle question
 
 computer science papers

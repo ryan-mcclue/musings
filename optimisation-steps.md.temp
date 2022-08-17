@@ -1,5 +1,8 @@
 time -p; getrusage();
 
+using genetic algorithm/machine learning to optimise for us
+https://zeux.io/2020/01/22/learning-from-data/
+
 if apple computers use RISC ARM in M1, why CISC necessary? (only because on Intel?)
 emphasis of CISC simplify assembly (e.g. more addressing modes), thereby reducing size of binary? (reduce instructions)
 RISC will require less transistors to implement complex hardware but will make

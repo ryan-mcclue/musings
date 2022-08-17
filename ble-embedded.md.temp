@@ -26,6 +26,10 @@ https://www.udemy.com/course/microcontroller-dma-programming-fundamentals-to-adv
 https://www.udemy.com/course/mastering-rtos-hands-on-with-freertos-arduino-and-stm32fx/?ranMID=39197&ranEAID=YuKpx7UHSEk&ranSiteID=YuKpx7UHSEk-qjeQee0Iel.PZ6z63nXsmw&LSNPUBID=YuKpx7UHSEk&utm_source=aff-campaign&utm_medium=udemyads
 
 
+memory align up:
+sbrk((x + 7) & ~7); sbrk() is system call malloc uses?
+
+
 1. **Documentation**
    Generalities such as *Debug Interface* or *Procedure Call Standard*
    Architecture specifics such as *armv7m*
