@@ -1,5 +1,7 @@
 # Language of the People
 
+https://drh.github.io/lcc/
+
 Garbage collection replaces us with a 'search' of our memory and decides when to free
 So really only use if you can't figure out when to free something
 This search is not free

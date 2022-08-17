@@ -39,7 +39,7 @@ Realise I'm highly misanthropic
 Frequent STMicroelectronics newsletter coverage of IoT (and the many, many protocols) and machine learning indicative of trend in industry
 
 Hi-fi audio. Newer terms to mean higher fidelity/data resolution 
-new OLED TVs
+new OLED TVs. QLED is a variation of the white backlight LED LCD sandwich
 5.1 means 5 speakers, 1 subwoofer
 woofer, subwoofer, speaker, tweeter
 
@@ -51,6 +51,10 @@ I really don't see fold phones as necessary...
 
 Are we moving down the road of homogenous, e.g. specifically target CPU or GPU or hetereogenous programming, e.g. CUDA  
 
-Although a update pathway is provided from 20.04 to 22.04, I'm reluctant to do so due to possible configuration issues.  
+Although a update pathway is provided from 20.04 to 22.04, I'm reluctant to do so due to possible configuration issues.
+Why I chose LTS 5 year support (2025)
 
 Interesting maglev trains reach amazing speeds and produce minimal noise due to lack of friction
+
+Interesting blood transfusions from older mice to younger mice, the younger mice display characteristics of old mice 
+
