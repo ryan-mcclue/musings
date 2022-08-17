@@ -43,8 +43,6 @@ new OLED TVs. QLED is a variation of the white backlight LED LCD sandwich
 5.1 means 5 speakers, 1 subwoofer
 woofer, subwoofer, speaker, tweeter
 
-blockchain, crypto at some stage... why it's nonsense
-
 Things getting smaller and more data, e.g. 'normal' sized VR headsets
 
 I really don't see fold phones as necessary...
@@ -58,3 +56,5 @@ Interesting maglev trains reach amazing speeds and produce minimal noise due to 
 
 Interesting blood transfusions from older mice to younger mice, the younger mice display characteristics of old mice 
 
+Bitcoin is a Ponzi scheme as almost no one actually uses it in transactions, and is purely speculative.
+Does not create anything. Interesting manifestation of capitalism.
