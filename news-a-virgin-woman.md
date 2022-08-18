@@ -63,3 +63,9 @@ Moore's law number of transistors doubles every 2 years. Although not strictly t
 Proebsting's law states that compiler improvements will double program performance every 18 years. 
 Therefore, cautious about the performance benefits a compiler brings. Focusing on programmer productivity is more fruitful
 In general, newer compilers take longer to compile, but produce slightly faster code maybe 20% faster.
+
+Cyberdecks are evidence that the trend of going smaller isn't always aesthetic
+
+Growing trend to have workstations operate in the cloud or containerisation. For testing yes, for development however?
+
+Works to 

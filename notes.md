@@ -3,7 +3,22 @@
 240V/50Hz mains.
 oscilloscope default noise is mains (200MHz, 1Gsamples/sec as oppose to multimeter which is maybe 10samples/sec so really only applicable for perhaps a logic gate or 0.1hz square wave)
 can debug PWM, I2C
-BNC connector
+Ensure BNC connector is plugged in correctly (affect probe compensation; similar to banana plugs in multimeter not being plugged in correctly)
+Continous triggering enables us to view from start point, i.e. static image not free flowing. Will show before and after trigger point, i.e. start in centre of screen
+No real issue with oscilloscope blowing up if testing battery powered/isolated DC power supply.
+With USB powered, ground must be on ground! Otherwise will short USB and that port will probably break
+
+ensure offset dials are correct first, i.e. at 0
+
+single-shot triggering contact bounce first then ringing as stablises (makes it a balancing act between selecting triggering level for button press and release)
+
+Multimeter measure power consumption of MCU?
+
+verify signal ringing (e.g. clock signal), i.e. inspect ramp-up/down (measure time to completely bottom out)
+
+As well as headers, just insert hook onto a male-male wire
+Oscilloscope wiring:
+UART: just see peaks to verify data is being sent
 
 algorithm interview questions important not to belittle question
 
