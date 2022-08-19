@@ -68,4 +68,5 @@ Cyberdecks are evidence that the trend of going smaller isn't always aesthetic
 
 Growing trend to have workstations operate in the cloud or containerisation. For testing yes, for development however?
 
-Works to 
+Strive towards much more potent nuclear fusion reactors as oppose to nuclear fission (neutron splits Uranium, same as original nuclear bombs)
+

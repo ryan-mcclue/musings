@@ -8,6 +8,11 @@ Continous triggering enables us to view from start point, i.e. static image not 
 No real issue with oscilloscope blowing up if testing battery powered/isolated DC power supply.
 With USB powered, ground must be on ground! Otherwise will short USB and that port will probably break
 
+Normal-mode triggering the best of both worlds
+
+Using decoder functionality:
+https://www.youtube.com/watch?v=SarsWOCMvjg&t=76s
+
 ensure offset dials are correct first, i.e. at 0
 
 single-shot triggering contact bounce first then ringing as stablises (makes it a balancing act between selecting triggering level for button press and release)

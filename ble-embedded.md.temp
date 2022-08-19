@@ -8,6 +8,7 @@ https://interrupt.memfault.com/blog/ota-delta-updates?utm_campaign=Interrupt%20B
 automated crash reporting:
 https://lance.handmade.network/blog/p/8491-automated_crash_reporting_in_basically_one_400-line_function#26634
 
+
 something related to systems testing with aardvark SPI/I2C adapter
 
 bit twiddling:
@@ -15,6 +16,19 @@ http://graphics.stanford.edu/~seander/bithacks.html
 
 interesting courses:
 https://pikuma.com/courses
+
+is power profiler kit specific to each board necessary, e.g. nordic, stm32?
+
+blogs:
+https://dmitry.gr/?r=05.Projects
+https://tratt.net/laurie/blog/
+
+Seems that IAR compiler produces smaller, faster code than gcc?
+
+Fallback to: https://grep.app/search when searching for code snippets on github?
+
+UART is protocol for sending/recieving bits. 
+RS232 specifies voltage levels
 
 DSP:
 https://www.youtube.com/playlist?list=PLTNEB0-EzPluXh0d_5zRprbgRfgkrYxfO
