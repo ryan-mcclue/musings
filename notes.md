@@ -1,5 +1,7 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+OsciStudio to generate patterns?
+
 240V/50Hz mains.
 oscilloscope default noise is mains (200MHz, 1Gsamples/sec as oppose to multimeter which is maybe 10samples/sec so really only applicable for perhaps a logic gate or 0.1hz square wave)
 can debug PWM, I2C
@@ -10,8 +12,9 @@ With USB powered, ground must be on ground! Otherwise will short USB and that po
 
 Normal-mode triggering the best of both worlds
 
-Using decoder functionality:
+Using RS232 decoder functionality (there is also SPI/I2C decoding).
 https://www.youtube.com/watch?v=SarsWOCMvjg&t=76s
+Also investigate PWM  
 
 ensure offset dials are correct first, i.e. at 0
 
