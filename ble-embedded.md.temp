@@ -8,7 +8,6 @@ https://interrupt.memfault.com/blog/ota-delta-updates?utm_campaign=Interrupt%20B
 automated crash reporting:
 https://lance.handmade.network/blog/p/8491-automated_crash_reporting_in_basically_one_400-line_function#26634
 
-
 something related to systems testing with aardvark SPI/I2C adapter
 
 bit twiddling:
@@ -45,10 +44,11 @@ https://www.udemy.com/course/mastering-microcontroller-with-peripheral-driver-de
 https://www.udemy.com/course/microcontroller-dma-programming-fundamentals-to-advanced/?ranMID=39197&ranEAID=YuKpx7UHSEk&ranSiteID=YuKpx7UHSEk-85NcF8rkTsNIoMCfETBU3g&LSNPUBID=YuKpx7UHSEk&utm_source=aff-campaign&utm_medium=udemyads
 https://www.udemy.com/course/mastering-rtos-hands-on-with-freertos-arduino-and-stm32fx/?ranMID=39197&ranEAID=YuKpx7UHSEk&ranSiteID=YuKpx7UHSEk-qjeQee0Iel.PZ6z63nXsmw&LSNPUBID=YuKpx7UHSEk&utm_source=aff-campaign&utm_medium=udemyads
 
-
 memory align up:
 sbrk((x + 7) & ~7); sbrk() is system call malloc uses?
 
+silicon mainly obtained from quartz. 
+electric arc when insulator air is supplied enough energy to ionise
 
 1. **Documentation**
    Generalities such as *Debug Interface* or *Procedure Call Standard*
@@ -75,6 +75,9 @@ sbrk((x + 7) & ~7); sbrk() is system call malloc uses?
 
 6. **Protocol**
   USB port probably in-built serial port
+
+Max out the HCLK in the clock diagram as we are not running off battery.
+Will have clock sources, e.g. HSI, HSE, PLL. output of these is SYSCLK.
 
 openocd -f /usr/share/openocd/scripts/interface/jlink.cfg -f /usr/share/openocd/scripts/target/stm32f4x.cfg
 should open a tcp port on 3333 for gdb
