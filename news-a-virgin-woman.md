@@ -70,3 +70,6 @@ Growing trend to have workstations operate in the cloud or containerisation. For
 
 Strive towards much more potent nuclear fusion reactors as oppose to nuclear fission (neutron splits Uranium, same as original nuclear bombs)
 
+Amazing that certain old rpm harddrives were susceptible to crashing when 'Rhythm Nation' played as the resonant frequency was the same
+
+Streaming outnumbering cable and broadcast TV
