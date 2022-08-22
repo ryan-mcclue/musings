@@ -73,3 +73,6 @@ Strive towards much more potent nuclear fusion reactors as oppose to nuclear fis
 Amazing that certain old rpm harddrives were susceptible to crashing when 'Rhythm Nation' played as the resonant frequency was the same
 
 Streaming outnumbering cable and broadcast TV
+
+ripgrep a much faster and user friendly grep!
+unar will automatically handle pesky non-folder archives

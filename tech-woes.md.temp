@@ -59,3 +59,5 @@ Unfortunate just resign yourself to choosing the software with fewest or managea
 
 How on earth can something so frequently used like TeX have such poor/cryptic parsing error information
 Furthermore, pandoc doesn't treat text as text. If different file extension, will perform different parsing e.g. inserts 'hidden' YAML header if markdown file
+
+FreeCAD have to click in particular order for symmetry, e.g. point-line-point
