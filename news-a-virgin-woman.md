@@ -76,3 +76,13 @@ Streaming outnumbering cable and broadcast TV
 
 ripgrep a much faster and user friendly grep!
 unar will automatically handle pesky non-folder archives
+
+Interesting to see if mir wayland will take over xlib x11
+
+Although the open nature of RISC-V gives it some economical advantages, historically the ISA
+has not been the major driving factor in widespread adoption. Rather, who invests the most in
+R&D, e.g. many places will develop ARM, with RISC-V go on your own.  
+
+Security an ever present issue, e.g. every Ubuntu weekly newsletter get a list a security updates
+
+TikTok browser records keystrokes. How is this legal?
