@@ -85,4 +85,7 @@ R&D, e.g. many places will develop ARM, with RISC-V go on your own.
 
 Security an ever present issue, e.g. every Ubuntu weekly newsletter get a list a security updates
 
-TikTok browser records keystrokes. How is this legal?
+Privacy laws prevent recording keystrokes in app, however can record other information like time between keypresses etc. to identify you, e.g. TikTok
+
+Chiplets connection of chips. So, can build chiplets that aren't SoC, e.g. just CPUs and SoCs without chiplets
+Intel R&D into chiplet technology stacking presents it as a future possibility (Apple already uses it with two M1 max chips to M1 ultra)
