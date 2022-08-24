@@ -16,11 +16,15 @@ Using RS232 decoder functionality (there is also SPI/I2C decoding).
 https://www.youtube.com/watch?v=SarsWOCMvjg&t=76s
 Also investigate PWM  
 
-ensure offset dials are correct first, i.e. at 0
+IMPORTANT: ensure offset dials are correct first, i.e. at 0 so 0 is centre
+with menu, end-arrows can still be pressed even if not visible
+change to 24mega points for memory when just wanting wave length (not zooming in?)
+
+math -> decoder on; event table on (make sure zoomed out enough to view multiple packets (this will increase memory automatically?); increase baud also)
 
 single-shot triggering contact bounce first then ringing as stablises (makes it a balancing act between selecting triggering level for button press and release)
 
-Multimeter measure power consumption of MCU?
+Multimeter measure power consumption of MCU? (stm32 nucleo boards have convenient IDD jumper)
 
 verify signal ringing (e.g. clock signal), i.e. inspect ramp-up/down (measure time to completely bottom out)
 
