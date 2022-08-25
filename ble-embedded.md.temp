@@ -6,6 +6,8 @@ https://www.youtube.com/playlist?list=PLJTMHMAVxQmvTGatIj-X2rJrN8aGJEaQD
 
 want to make something like stargate wheel
 
+first step in embedded debugging commandments; thou shalt check voltage (e.g. check 5V going to LCD by placing multimeter on soldered pin heads)
+
 we can see in x86 (wikichips), instruction and data separate from L2 cache
 arm SoC block diagram (datasheet), see d-bus and i-bus to RAM
 introduce things like CCM (core coupled cache) and ART (adaptive real-time accelerator) that add some more harvard like instruction things
@@ -37,6 +39,10 @@ https://lance.handmade.network/blog/p/8491-automated_crash_reporting_in_basicall
 in embedded, how are metrics transmitted remotely, i.e. via bluetooth to phone than web? too much power if directly to web?
 
 something related to systems testing with aardvark SPI/I2C adapter (more tutorials with bus pirate)
+10:00 mark: https://www.youtube.com/watch?v=N60WSQc-G_8&list=PLTG9uzDd_HQ84wVz0DwQ5_mwf1GnpY6LB&index=11
+seems indepth bus pirate manual is on git?
+http://dangerousprototypes.com/docs/Bus_Pirate
+https://learn.sparkfun.com/tutorials/bus-pirate-v36a-hookup-guide/all
 
 seems that RMII (reduced media-independent interface) is a pin layout to connect MAC devices (flexible in implementation). Can be implemented to support say an RJ45 connector
 
