@@ -2,7 +2,13 @@
 Preparation Mentality:
 Git usage
 
-something about 2s complement
+combinations: 2ⁿ-1, max: 2ⁿ
+introducing negatives we effectively remove one bit
+numbers represented in twos complement to handle addition/subtraction of negatives and positives.
+not because of representation, e.g. sign bit would work fine
+when saying complement, it's with respect to negative number handling:
+ones ➞ invert all bits in positive number to get negative. therefore have -0
+twos ➞ adding a positive and its negative will get a 2 in each place. think about the MSB as the negative place, hence why -1 is all 1s
 
 FPGA (matrix of CLBs) reprogrammable (as oppose to ASIC) IC with HDL.
 Better for parallel processing?
