@@ -9,8 +9,21 @@ want to make something like stargate wheel
 we can see in x86 (wikichips), instruction and data separate from L2 cache
 arm SoC block diagram (datasheet), see d-bus and i-bus to RAM
 introduce things like CCM (core coupled cache) and ART (adaptive real-time accelerator) that add some more harvard like instruction things
-essentially, more busses instead of more cores like in x86
+essentially, more busses instead of more cores like in x86, (i.e. a lot more than just a CPU to be concerned with)
 also have more debug hardware
+don't really know why cortex-m4 has MPU
+
+AXIM, AHB and APB ARM specific
+will have a bus matrix (which allows different peripherals to communicate via master and slave ports by requesting and sending data)
+off this, have AHB (higher frequency and higher bandwidth).
+like to think of AHB as host bus as it feeds into APBs via a bridge. APB1 normally half frequency of APB2
+we can see that DMA can go directly to APB without going through bus matrix
+So, relevent for speed and clock concerns going through which bus?
+Also to know if we are DMA'ing something and CPUing something, they
+are not going to be fighting on the same bus, i.e. spread out load
+lower power peripherals on lower frequency busses?
+this level of knowledge further emphasises need to know hardware to understand what is going on
+
 
 # Embedded Workflow
 https://go.memfault.com/debugging-embedded-devices-in-production-virtual-panel?mc_cid=32b3cae3e7&mc_eid=UNIQID
@@ -29,6 +42,8 @@ seems that RMII (reduced media-independent interface) is a pin layout to connect
 
 stm32 datasheet and reference manual (documents of different depths about same mcu) nomenclature
 will have 'Application Notes' that detail specific features like CCM RAM
+datasheet will often be related to a family, e.g. stm32f429xx.
+therefore, at the front will have a table comparing memory, number of gpios, etc. for particulars
 
 bit twiddling:
 http://graphics.stanford.edu/~seander/bithacks.html
@@ -113,7 +128,7 @@ PLL is type of clock circuit that allows for high frequency, reliable clock gene
 So, PLL system could have RC or crystal input
 Feeding into it is a reference input (typically a crystal oscillator) which goes into a voltage controlled oscillator to output frequency
 The feedback of the output frequency into the initial phase detector can be changed
-Adding dividers into this circuit allows to get programmable voltage.
+Adding dividers/pre-scalers into this circuit allows to get programmable voltage.
 So, a combination of stable crystal (however generate relatively slow signal, e.g. 100MHz) and high frequency RC oscillators (a type of VCO; voltage controlled oscillator)
 
 openocd -f /usr/share/openocd/scripts/interface/jlink.cfg -f /usr/share/openocd/scripts/target/stm32f4x.cfg
