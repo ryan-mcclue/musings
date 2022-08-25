@@ -89,3 +89,12 @@ Privacy laws prevent recording keystrokes in app, however can record other infor
 
 Chiplets connection of chips. So, can build chiplets that aren't SoC, e.g. just CPUs and SoCs without chiplets
 Intel R&D into chiplet technology stacking presents it as a future possibility (Apple already uses it with two M1 max chips to M1 ultra)
+
+ACM (Association for Computing Machinery) Turing Award is essentially Nobel Prize for Computer Science.
+Not applicable for me as awards largely for academic contributions like papers/reports published e.g data abstraction (Liskov substitution, Byzantine fault tolerance), parallel computing (OpenMP standard).
+I'm more concerned with engineering feats in software products. 
+
+An unfortunate reality of open tech, AI being used to make paywalls 'smarter' 
+
+Read a Google research project on removing noise in photos. Investigate source to test and am completely put off by the amount of
+dependencies involved: conda, python, jax for TPU (python to tensor processing unit), external repositories

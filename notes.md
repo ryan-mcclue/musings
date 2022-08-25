@@ -1,7 +1,5 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
-OsciStudio to generate patterns?
-
 240V/50Hz mains.
 oscilloscope default noise is mains (200MHz, 1Gsamples/sec as oppose to multimeter which is maybe 10samples/sec so really only applicable for perhaps a logic gate or 0.1hz square wave)
 can debug PWM, I2C
@@ -29,8 +27,6 @@ Multimeter measure power consumption of MCU? (stm32 nucleo boards have convenien
 verify signal ringing (e.g. clock signal), i.e. inspect ramp-up/down (measure time to completely bottom out)
 
 As well as headers, just insert hook onto a male-male wire
-Oscilloscope wiring:
-UART: just see peaks to verify data is being sent
 
 algorithm interview questions important not to belittle question
 
@@ -75,8 +71,6 @@ This is because libraries like glibc are happy to break abi to get minor improve
 
 C STL has one version for each compiler + os. 
 also, some compilers might not fully implement the STL feature
-
-why writing by words faster?
 
 security so vast and not something I want to devote time to:
 https://leveleffect.referralrock.com/l/JOHNHAMMON07/

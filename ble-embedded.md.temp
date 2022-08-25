@@ -1,3 +1,9 @@
+3D printing ideas:
+https://www.youtube.com/c/3DSage/videos
+
+lego technics for gear ideas:
+https://www.youtube.com/playlist?list=PLJTMHMAVxQmvTGatIj-X2rJrN8aGJEaQD
+
 # Embedded Workflow
 https://go.memfault.com/debugging-embedded-devices-in-production-virtual-panel?mc_cid=32b3cae3e7&mc_eid=UNIQID
 https://go.memfault.com/embedded-device-observability-metrics-panel-recording?mc_cid=32b3cae3e7&mc_eid=UNIQID
@@ -7,8 +13,13 @@ https://interrupt.memfault.com/blog/ota-delta-updates?utm_campaign=Interrupt%20B
 
 automated crash reporting:
 https://lance.handmade.network/blog/p/8491-automated_crash_reporting_in_basically_one_400-line_function#26634
+in embedded, how are metrics transmitted remotely, i.e. via bluetooth to phone than web? too much power if directly to web?
 
-something related to systems testing with aardvark SPI/I2C adapter
+something related to systems testing with aardvark SPI/I2C adapter (more tutorials with bus pirate)
+
+seems that RMII (reduced media-independent interface) is a pin layout to connect MAC devices (flexible in implementation). Can be implemented to support say an RJ45 connector
+
+stm32 user manual and reference manual (documents of different depths about same mcu) nomenclature
 
 bit twiddling:
 http://graphics.stanford.edu/~seander/bithacks.html
@@ -76,8 +87,25 @@ electric arc when insulator air is supplied enough energy to ionise
 6. **Protocol**
   USB port probably in-built serial port
 
+astable means no stable states, i.e. is not predominatley low or high, e.g. square wave, sine wave etc.
+oscillator generates wave (could be for carrier or clock)
+
+RC (resistor-capacitor) oscillator generates sine wave by charging and discharging periodically (555 astable timer)
+internal mcu oscillators typically RC, so subject to frequency variability
+
 Max out the HCLK in the clock diagram as we are not running off battery.
 Will have clock sources, e.g. HSI, HSE, PLL. output of these is SYSCLK.
+SYSCLK is what would use to calculate cpu instruction cycles.
+
+a clock is an oscillator with a counter that records number of cycles since being initialised
+
+Crystal generates stable frequency
+PLL is type of clock circuit that allows for high frequency, reliable clock generation (setup also affords easy clock duplication and clock manipulation)
+So, PLL system could have RC or crystal input
+Feeding into it is a reference input (typically a crystal oscillator) which goes into a voltage controlled oscillator to output frequency
+The feedback of the output frequency into the initial phase detector can be changed
+Adding dividers into this circuit allows to get programmable voltage.
+So, a combination of stable crystal (however generate relatively slow signal, e.g. 100MHz) and high frequency RC oscillators (a type of VCO; voltage controlled oscillator)
 
 openocd -f /usr/share/openocd/scripts/interface/jlink.cfg -f /usr/share/openocd/scripts/target/stm32f4x.cfg
 should open a tcp port on 3333 for gdb
