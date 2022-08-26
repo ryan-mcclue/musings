@@ -39,10 +39,12 @@ https://lance.handmade.network/blog/p/8491-automated_crash_reporting_in_basicall
 in embedded, how are metrics transmitted remotely, i.e. via bluetooth to phone than web? too much power if directly to web?
 
 something related to systems testing with aardvark SPI/I2C adapter (more tutorials with bus pirate)
-10:00 mark: https://www.youtube.com/watch?v=N60WSQc-G_8&list=PLTG9uzDd_HQ84wVz0DwQ5_mwf1GnpY6LB&index=11
+10:00 time mark: https://www.youtube.com/watch?v=N60WSQc-G_8&list=PLTG9uzDd_HQ84wVz0DwQ5_mwf1GnpY6LB&index=11
 seems indepth bus pirate manual is on git?
 http://dangerousprototypes.com/docs/Bus_Pirate
 https://learn.sparkfun.com/tutorials/bus-pirate-v36a-hookup-guide/all
+(look for device specific tutorials on bus pirate website)
+http://www.starlino.com/bus_pirate_i2c_tutorial.html
 
 seems that RMII (reduced media-independent interface) is a pin layout to connect MAC devices (flexible in implementation). Can be implemented to support say an RJ45 connector
 

@@ -98,3 +98,6 @@ An unfortunate reality of open tech, AI being used to make paywalls 'smarter'
 
 Read a Google research project on removing noise in photos. Investigate source to test and am completely put off by the amount of
 dependencies involved: conda, python, jax for TPU (python to tensor processing unit), external repositories
+
+AI for everything dogma is becomming more pervasive with 'clusters' to train model.
+Although Tesla can build a supercomputer to train, like all dogmas, not applicable to everything (readability, debugging goes down) 

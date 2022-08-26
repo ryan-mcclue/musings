@@ -1,5 +1,26 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+chefgood: 20 x $209
+mymusclechef: 20 x $219
+
+dinner + lunch: $220
+breakfast: $100
+rent: $345
+
+leftover: $335
+
+salary: ≈$52,000 
+
+fortnightly: $1400
++
+quarterly: $4000
+=
+weekly: $1000 
+
+communicating with busy people:
+https://threadreaderapp.com/thread/1562510420644343810.html
+
+
 creative commons is a set of licenses that make explicit requirements for users, e.g. CC BY-NC, CC BY-SA, etc.
 unlike MIT, Apache includes a user non-litigation, so users can't initiate litigation if the creators decide to patent something
 
