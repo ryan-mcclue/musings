@@ -1,5 +1,7 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+TODO: favourites tab for morning viewing
+
 chefgood: 20 x $209
 mymusclechef: 20 x $219
 

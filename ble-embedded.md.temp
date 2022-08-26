@@ -1,3 +1,10 @@
+robot ➞ renode (why not just qemu with shell scripts perhaps?)
+seems that robot/renode parsing of UART cleaner?
+
+qemu useful over native for when word-size different. also, assembly inspection
+
+ARM, RISC-V, xtensa
+
 # Language of the People
 
 https://drh.github.io/lcc/
