@@ -20,6 +20,11 @@ weekly: $1000
 communicating with busy people:
 https://threadreaderapp.com/thread/1562510420644343810.html
 
+Before cpus increased in single thread execution speed. Now more cores. It's a topic of research to convert single threaded into multithreaded for emulation. 
+This is why emulation of something like the GameCube (powerpc) is slow. 
+Furthermore, due to hardware irregularities that programs relied on may take hundreds of instructions to emulate
+If actually a simple translation, then should run close to native speed. This is reality of emulating hardware with hardware
+
 
 creative commons is a set of licenses that make explicit requirements for users, e.g. CC BY-NC, CC BY-SA, etc.
 unlike MIT, Apache includes a user non-litigation, so users can't initiate litigation if the creators decide to patent something

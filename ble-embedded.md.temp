@@ -1,5 +1,33 @@
+# Language of the People
+
+https://drh.github.io/lcc/
+
+Garbage collection replaces us with a 'search' of our memory and decides when to free
+So really only use if you can't figure out when to free something
+This search is not free
+
+No language implements a feature that determines a memory footprint, i.e. how much memory we use
+
+Know OS specific forking (process launching), file checking/reading/writing, IPCs
+
+Steps for adding new feature: 
+create a new file, e.g. commands.c and include it in main.c (order it before things that will use it) 
+then do a git commit.
+This gets us off on a nice feeling
+In new file, create function with barebones functionality that can then be inserted into location and called/tested
+
+Simple word parser use `at[1] != '\0' && at[1] == 'a'`
+
+Simple single line parser:
+First separate by whitespace with `while (at[0] != '\0'); break` and `eat_spaces(), find_ch_from_left()`
+
+
+
 3D printing ideas:
 https://www.youtube.com/c/3DSage/videos
+
+https://blog.golioth.io/taking-the-next-step-debugging-with-segger-ozone-and-systemview-on-zephyr/
+martin-schroder-zephyr-acceptance-testing
 
 lego technics for gear ideas:
 https://www.youtube.com/playlist?list=PLJTMHMAVxQmvTGatIj-X2rJrN8aGJEaQD
