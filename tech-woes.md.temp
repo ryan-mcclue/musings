@@ -49,7 +49,9 @@ doesn't give information on stack overflows.
 
 firefox will unexpectanctly say we updated in the background and you must restart or tab crashed etc.
 
-Online help forums for QTCreator useless. In reality, only core devs would be able to answer your question thoroughly
+Online help forums for QTCreator useless. 
+In reality, only core devs would be able to answer your question thoroughly
+So, this is where I see the benefit of mailing lists
 
 Often Ubuntu audio mixer just stops working and generates fuzz and have to restart 
 
@@ -61,3 +63,5 @@ How on earth can something so frequently used like TeX have such poor/cryptic pa
 Furthermore, pandoc doesn't treat text as text. If different file extension, will perform different parsing e.g. inserts 'hidden' YAML header if markdown file
 
 FreeCAD have to click in particular order for symmetry, e.g. point-line-point
+
+QTcreator so complicated to run cross-debugger, have to write down steps
