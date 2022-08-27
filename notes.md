@@ -1,6 +1,9 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
 TODO: favourites tab for morning viewing
+videos: common sense skeptic; techquickie; handmade podcast; network next
+
+TODO: gather notes in ~/Pictures to a wallpaper-aware.md.temp
 
 chefgood: 20 x $209
 mymusclechef: 20 x $219
@@ -18,6 +21,8 @@ fortnightly: $1400
 quarterly: $4000
 =
 weekly: $1000 
+
+how does quantum computing work?
 
 communicating with busy people:
 https://threadreaderapp.com/thread/1562510420644343810.html
