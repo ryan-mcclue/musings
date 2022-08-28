@@ -27,6 +27,34 @@ how does quantum computing work?
 communicating with busy people:
 https://threadreaderapp.com/thread/1562510420644343810.html
 
+thread local storage could be implemented hyper-threaded cpu?
+
+memory model: visibility and consistency of changes to data stored in memory
+necessary for understanding multiple thread execution 
+
+hardware (from machine code to execution on the CPU):
+* sequential consistency (ideal as easy to understand, however doesn't maximise hardware speed)
+* x86-TSO (total store order). 
+each processor reads from shared memory
+all processors agree upon the order in which their write queues are written to memory
+write queue is FIFO, so write queue is flushed in same order as seen by the processor
+however, when the write queue is flushed is up to the CPU
+therefore, to enforce stronger memory ordering, architecture supplies memory barriers/fences 
+(in a sense to enforce sequentially consistent behaviours)
+to ensure write queue is flushed before any future reads occur
+(without fences, I suppose write queue length would determine whether certain synchronisation problems occur more frequently)
+* ARM (most relaxed)
+each processor reads and writes from its own copy of memory
+writes propagate to other processors independently, i.e not all update at same time
+furthermore, the order of the writes can be reordered
+furthermore, processors are allowed to delay reads until writes later in the instruction stream
+
+language (from source to machine code)
+so, C11 memory model is in relation to rearranging of loads/stores in assembly for optimisations? (so is a weak model?)
+mainly in reference to the behaviour of atomics to synchronise programs
+
+
+
 Before cpus increased in single thread execution speed. Now more cores. It's a topic of research to convert single threaded into multithreaded for emulation. 
 This is why emulation of something like the GameCube (powerpc) is slow. 
 Furthermore, due to hardware irregularities that programs relied on may take hundreds of instructions to emulate

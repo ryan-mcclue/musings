@@ -3,6 +3,8 @@ seems that robot/renode parsing of UART cleaner?
 
 qemu useful over native for when word-size different. also, assembly inspection
 
+also need to do some DSP + RTOS work
+
 ARM, RISC-V, xtensa
 
 # Language of the People
