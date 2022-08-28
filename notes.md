@@ -27,6 +27,13 @@ how does quantum computing work?
 communicating with busy people:
 https://threadreaderapp.com/thread/1562510420644343810.html
 
+battery balancing relevent to multiple cells
+TP4056 Lithium Battery Charging Board?
+
+is distinction between a unicast (device to device), multicast (device to some devices), broadcast (device to all devices)
+only discernable in packet format, i.e. must be parsed by network card first?
+are signal strength changed?
+
 thread local storage could be implemented hyper-threaded cpu?
 
 memory model: visibility and consistency of changes to data stored in memory
@@ -52,6 +59,7 @@ furthermore, processors are allowed to delay reads until writes later in the ins
 language (from source to machine code)
 so, C11 memory model is in relation to rearranging of loads/stores in assembly for optimisations? (so is a weak model?)
 mainly in reference to the behaviour of atomics to synchronise programs
+https://research.swtch.com/plmm
 
 
 

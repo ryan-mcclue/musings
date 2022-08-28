@@ -3,7 +3,9 @@ seems that robot/renode parsing of UART cleaner?
 
 qemu useful over native for when word-size different. also, assembly inspection
 
-also need to do some DSP + RTOS work
+TODO: DSP, RTOS, wireless + IoT, battery/power, peripheral protocols (USB, LCD, etc.), CODECS,
+optimisations particular to MCUs, assembly knowledge, sql, c++ stl, python systems testing,
+bootloaders
 
 ARM, RISC-V, xtensa
 

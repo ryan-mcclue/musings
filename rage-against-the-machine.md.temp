@@ -178,3 +178,12 @@ wish security wasn't an issue
 https://github.com/KULeuven-COSIC/Starlink-FI/
 
 various daughterboard accoutrement nomenclature, e.g. arduino shield, beaglebone cape, raspberry pi hat etc.
+
+discordant packaging naming in ubuntu 'dummy packages', e.g. qemu is package name, however binaries are named differently.
+
+still installing an OS is a cross-your-fingers exercise. A single USB presents multiple boot options.
+choosing between uefi 1.0 and 1.0 one will give you WIFI during install
+ubuntu forums have contemporary posts mentioning install issues
+this finicky nature means just have barebones things
+chose xcfe4 for gnome-repeat-bug and easy shortcuts
+
