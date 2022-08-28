@@ -105,3 +105,5 @@ AI for everything dogma is becomming more pervasive with 'clusters' to train mod
 Although Tesla can build a supercomputer to train, like all dogmas, not applicable to everything (readability, debugging goes down) 
 
 Even air-gapped computers are not safe from sniffing
+
+Seems that any in-demand tech device subject to bot scalping

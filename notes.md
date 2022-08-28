@@ -1,5 +1,8 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+what are laws for misinformation, e.g. tesla, '4k' dash cams, stats misleading: M1 chip faster (only faster than Intel based macs),
+we don't track in 'traditional' ways, tiktok keylogger technology exists but not using
+
 TODO: favourites tab for morning viewing
 videos: common sense skeptic; techquickie; handmade podcast; network next
 
@@ -82,7 +85,7 @@ With USB powered, ground must be on ground! Otherwise will short USB and that po
 
 Normal-mode triggering the best of both worlds
 
-Using RS232 decoder functionality (there is also SPI/I2C decoding).
+Using RS232 (recommended standard) decoder functionality (there is also SPI/I2C decoding).
 https://www.youtube.com/watch?v=SarsWOCMvjg&t=76s
 Also investigate PWM  
 

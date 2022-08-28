@@ -184,6 +184,7 @@ discordant packaging naming in ubuntu 'dummy packages', e.g. qemu is package nam
 still installing an OS is a cross-your-fingers exercise. A single USB presents multiple boot options.
 choosing between uefi 1.0 and 1.0 one will give you WIFI during install
 ubuntu forums have contemporary posts mentioning install issues
-this finicky nature means just have barebones things
+this finicky nature means just have barebones things and install separate OS in virtual machine
 chose xcfe4 for gnome-repeat-bug and easy shortcuts
 
+the lack of type systems in Javascript and Python leads to extensions with it

@@ -1,5 +1,50 @@
+IMPORTANT: ALWAYS PROVIDE EXAMPLE!
+
+note, if using newlib, will still have a _start
+
+we want performant, reliable software.
+
+testing should have coverage information also
+
+verification: requirements
+validation: does it solve problem
+authenticate: identity
+authorise: privelege
+token something used to authorise 
+
+HTML not turing-complete, i.e. can't perform data manipulations
+
+working with new ISA think about registers and addressing modes
+
 robot ➞ renode (why not just qemu with shell scripts perhaps?)
 seems that robot/renode parsing of UART cleaner?
+
+https://www.youtube.com/watch?v=-Ecf7lb4aZ0
+latches ➞ flip flops (or latches are a type of flip-flop?)
+several latches combined together form a register
+D-type latch in SRAM (caches)
+DRAM uses transistor and capacitor
+
+embedded systems special purpose, constrained, often real time
+challenges are testabilty and software/hardware comprimises for optimisation problem solving, e.g. bit-banging or cheap mcu, external timer or in-built timer
+
+what would a segfault ➞ coredump look like on bare-metal?
+
+C type qualifiers are idempotent, e.g. `const const const int` is fine
+sparse + smatch static analysis tools that give named address spaces (near, far pointers)
+
+synchronisation constructs:
+* lock (only one thread access at a time)
+* mutex (lock that can be shared by multiple processes)
+* semaphore (can allow many threads access at a time)
+
+is ARM nested interrupt by default?
+
+C atomics just insert barriers?
+
+function reentrant if can be swapped out and its execution rentered
+functions that operate on global structures and employ lock-based sychronisation (could encounter deadlocks if called from signal handler) (and are thread-safe)
+like malloc and printf are not reentrant 
 
 qemu useful over native for when word-size different. also, assembly inspection
 

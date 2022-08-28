@@ -7,7 +7,7 @@ However, as we know every match is unique, linearly scaling solution obtained wi
 Important to keep in mind we are executing on a physical machine and that
 Big-Oh is a 'zero-cost abstraction' world.
 For example, the extra overhead of introducing a hashmap (memory allocations/copies) will result 
-in this being slower for small lists.
+in this being slower for small lists (also way no dynamic memory allocations in ISR)
 
 ## Sorting Squared Array
 Insertion/bubble sort preferable for small lists.
