@@ -1,5 +1,11 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+telecommunications standards:
+* GSM (global system for mobile communications) - uses SIM (subscriber identification module) cards to authenticate and authorise access
+I suppose eSIM would make SIM-locking easier to overcome 
+Phone number linked/contained within SIM, however can be reassigned
+* CDMA (code division multiple access) - uses ESN (electronic serial number) 
+
 Loss of generational knowledge (chip manufacturing, BIOS grey beards) 
 Machine learning due to quantity of computation available. Localised improvements, overall degradation (rendering, input etc. far more involved) 
 Wrong perception that performance takes too much time, so we want do it but we could do it. However, if they have never done it, how could they say they could?
@@ -22,66 +28,27 @@ Systemd a collection of binaries,  so not exactly violating Unix philosphy
 Some disparity between systemd idea and its inplementation
 Major component of systemd is service manager,  I.e init system to bootstrap user space
 
-Internal driver magic nvdia Ray tracing hardware interface (however will increase power consumption when other rasterisation techniques fairly good)
 
-Any overarching idelogoy like everything is objects, everything is data is pretty arbitrary. Certain approaches are useful for particular problems.
+Distinction between game companies like Activision Blizzard, EA, Take-Two and publishing labels 
+like Rockstar, Treyarch, 2K
 
-Call state filter vs....?
 
-Frameworks change all the time,  fundamentals not so much,  e.g how things glue together
-
-Starting from scratch,  try to avoid analysis paralysis
-
-I'm sensiiltive to Input lag in text editor,  so use vim.  Intellisense pop ups slow
-
-Stack based machine easier to generate code gen for than register based VM as models AST
-
-Opengl api more added on so lots of corner cases,  I.e  don't have consistent performance characteristics
-
-Vulkan like filling in a centrelink form,  so much setup
-
-Automotive main. 
-Mentored from contributing to open source projects? 
-
-Cycle Shaving on virtual Cpu games? 
-
-Data structures don't correspond to layout in memory, e.g. When would you want awful cache locality of linked list
-
-Cross platform naming,  e.g. With libc,  libraries is more of a discipline thing 
-
-There are no absolutes,  just tradeoffs for solving your problem, e.g raw vs smart pointers
-
-Often issue is not hard code,  it's because the problem is messy,  I. E.  Unwritten assumptions,  external constraints, users want lots of generic functionality. So often interesting at the same time,  very annoying. 
-This extends to all software companies.  Do a lot of good things,  but will always have things that are dysfunctional at,  e.g documentation, disparate build systems,  non uniform design practices
-
-Pragmas and binary searching codebase to check where compiler optimises routine wrong
-
-Common for bing game companies with annual releases to leapfrog between developers,  e. G.  Activision switches between trey arch and infinity ward
-
-Networking send world state with timestamps to verify that things happen in right order (quake > unreal) 
-
-Udp (head of line blocking) + interpolation + snapshot state + client server (p2p unreliable as internet path optimised for cost/closest exchange point) + dedicated (peoples home Internet don't normally have high upload rates) 
-Matchmaking,  host migration difficult as hard to measure what user has good connection,  e. G.  Whats there NAT type?
-Mix of cloud (flexible to just turn up and down, high egress bandwidth charge) and bare metal (fixed bandwidth rate set into price) 
-
-That's a heavy lift,  lol. 
-
+Udp (head of line blocking) +
+client server (p2p unreliable as internet path optimised for cost/closest exchange point) 
++ dedicated (peoples home Internet don't normally have high upload rates); Mix of cloud (flexible to just turn up and down, high egress bandwidth charge) and bare metal (fixed bandwidth rate set into price) 
+Matchmaking,  host migration difficult as hard to measure what user has good connection,  
+e.g. Whats there NAT type?
 
 
 Software laws,  e. G.  Have 4k in name,  but image quality 1080p, Elon musk making false claims, 
 Most dash cams same SoC,  and image sensor,  just different housing 
 Garmon products to use must sign up for garmin account and agree to collection of data
-Have to usr
 
-54:35
 
-Don't restrict right side of bell curve
-Let your aces be aces
-Being an ace involves having an opinion
-Most influential software written largely by one person, e.g Linux, Unix, git etc. Then a team is assigned to maintain it. Fallacy about solo programmer productivity requiring large teams.
-Design by committee pushes design to middle of bell curve as opposing views average out
-
-Cpu try to guess what instructions ahead (preemptive). Cost of incorrect reflushing expensive. So want to get rid of conditional jumps. Ideally replace with conditional movs or arithmetic branch less techniques.
+Cpu try to guess what instructions ahead (preemptive). 
+Cost of incorrect reflushing expensive. 
+So want to get rid of conditional jumps. 
+Ideally replace with conditional movs or arithmetic branch less techniques.
 Endianness (register view), twos complement (-1 all 1s)
 Branch less programming is essentially SIMD
 

@@ -2,6 +2,17 @@
 Preparation Mentality:
 Git usage
 
+Cross platform naming, e.g. With libc,  libraries is more of a discipline thing 
+There are no absolutes, just tradeoffs for solving your problem, e.g raw vs smart pointers
+Often issue is not hard code, it's because the problem is messy,  I. E.  Unwritten assumptions,  
+external constraints, users want lots of generic functionality. 
+So often interesting at the same time, very annoying. 
+
+Data structures don't correspond to layout in memory, 
+e.g. When would you want awful cache locality of linked list
+
+Frameworks change all the time,  fundamentals not so much, e.g how things glue together
+
 compression orientated program think about concept compression, rather than code compression.
 e.g. might be at such a small code size that there is no concept to really compress
 

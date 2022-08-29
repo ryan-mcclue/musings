@@ -2,6 +2,8 @@
 hotloading
 metaprogramming
 
+Often legacy supported code adds lots of corner cases, e.g. opengl
+i.e  don't have consistent performance characteristics
 
 immediate mode and retained mode are about lifetimes. 
 for immediate, the caller does not need to know about the lifetime of an object.
