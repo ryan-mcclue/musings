@@ -32,12 +32,11 @@ A QR code is just a 2d barcode with more bandwidth. Laser readers quicker.
 NFC for low-power data transfer. NFC tag. (payment systems)
 
 TV standards
-Americas: NTSC (30fps, less scanlines per frame)
-Europe, Asia: PAL (25fps) 
+Americas: NTSC (30fps, less scanlines per frame) 4.4MHz
+Europe, Asia, Australia: PAL (Phase alternate line) (25fps) 2.5MHz
 
 sound waves 20Hz - 20kHz (sonar; sound navigation and ranging)
 ultrasonic
-
 
 more easily focused as longer wavelength to not bend around corners
 radio waves 10Hz - 300GHz (true radio would be FM radio)
@@ -46,16 +45,21 @@ radio waves bounce off ionosphere (long range)
 
 microwaves make up majority of the spectrum of radio waves
 microwaves 300MHz - 300GHz (radar)
+divided into bands, e.g. C-band, L-band, etc.
 
-infrared waves ... 
+infrared waves 300GHz - 300THz (object detection)
+heat emission
 
-visible light ... (lasers) 
+visible light (lasers; weather dependent) 
+lidar
 
-UV ...
+UV
 
 ionising x-rays
 
 ionising gamma-rays
+
+ISM (industrial, scientific and medical) bands exclude telecommunication frequencies
 
 4G (generation) type of cellular technology. define min/max upload/download rates
 as many cell towers cannot fully support the bandwidth capabilities outlined by

@@ -2,6 +2,9 @@
 
 * how does quantum computing work?
 
+* what frequencies/technologies are regulated like in ISM; by extension
+what other regulations are there?
+
 * why floating point inaccuracies
 
 * examples of hardware virtualisation instructions/codecs? (e.g. multiway MMU?)
