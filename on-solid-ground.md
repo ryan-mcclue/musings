@@ -19,12 +19,14 @@ different for say television and projection industry
 plasma is superheated matter, i.e. ionised gas
 
 LED is the backlight, as oppose to fluorescent (LCD still used within this).
-so really LED LCD. IPS (in-plane switching), TFT (thin film transistor) are examples of LCD panel technology
+so really LED LCD. IPS (in-plane switching), TFT (thin film transistor) 
+are examples of LCD panel technology
 OLED produces own light, i.e. current passed through an OLED diode to produce light
 
 
 ## Wireless
-RFID (radio frequency identification) no line of sight required (can read through objects unlike barcode) 
+RFID (radio frequency identification) no line of sight required 
+(can read through objects unlike barcode) 
 Also read multiple objects at once. RFID tag. Greater read range (shop security)
 A QR code is just a 2d barcode with more bandwidth. Laser readers quicker.
 NFC for low-power data transfer. NFC tag. (payment systems)
@@ -33,11 +35,27 @@ TV standards
 Americas: NTSC (30fps, less scanlines per frame)
 Europe, Asia: PAL (25fps) 
 
-radio waves 3kHz - 300GHz
+sound waves 20Hz - 20kHz (sonar; sound navigation and ranging)
+ultrasonic
+
+
+more easily focused as longer wavelength to not bend around corners
+radio waves 10Hz - 300GHz (true radio would be FM radio)
 higher frequency means more information can be conveyed
 radio waves bounce off ionosphere (long range)
-microwaves more easily focused (radar)
-ionising from UV onwards
+
+microwaves make up majority of the spectrum of radio waves
+microwaves 300MHz - 300GHz (radar)
+
+infrared waves ... 
+
+visible light ... (lasers) 
+
+UV ...
+
+ionising x-rays
+
+ionising gamma-rays
 
 4G (generation) type of cellular technology. define min/max upload/download rates
 as many cell towers cannot fully support the bandwidth capabilities outlined by
