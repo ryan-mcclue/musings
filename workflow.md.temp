@@ -2,6 +2,9 @@
 Preparation Mentality:
 Git usage
 
+compression orientated program think about concept compression, rather than code compression.
+e.g. might be at such a small code size that there is no concept to really compress
+
 combinations: 2ⁿ-1, max: 2ⁿ
 introducing negatives we effectively remove one bit
 numbers represented in twos complement to handle addition/subtraction of negatives and positives.
