@@ -2,8 +2,25 @@
 
 * how does quantum computing work?
 
+* why floating point inaccuracies
+
+* examples of hardware virtualisation instructions/codecs? (e.g. multiway MMU?)
+
+* vulkan renderer:
+https://www.youtube.com/watch?v=BR2my8OE1Sc&list=PL0JVLUVCkk-l7CWCn3-cdftR0oajugYvd&index=1
+
+* how does something like red hat and android get around gplv2 of linux kernel
+
+* the SIG introduces bluetooth 5 which states higher data rate, long range BLE etc.
+are their decisions informed on techonology advances (seems not to be the case with 4G LTE...)
+
 * Understand memory alignment and cost of unaligned accesses? 
 (is it due to common programmer workflows and less transistors required?)
+for modern hardware, trying to read data from an unaligned memory access
+can result in 2 reads and a combine
+so, there are custom compiler options to specify alignment (declspec() for stack, aligned_malloc for heap)
+why not just always automatically align things? conserve space?
+when to use these alignment extensions? when doing performance timing/tuning?
 
 * is distinction between a unicast (device to device), multicast (device to some devices), broadcast (device to all devices)
 only discernable in packet format, i.e. must be parsed by network card first?

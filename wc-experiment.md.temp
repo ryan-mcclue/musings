@@ -5,6 +5,11 @@ This is why emulation of something like the GameCube (powerpc) is slow.
 Furthermore, due to hardware irregularities that programs relied on may take hundreds of instructions to emulate
 If actually a simple translation, then should run close to native speed. This is reality of emulating hardware with hardware
 
+CISC gives reduced cache pressure for high-intensive, sustained loops
+
+log2(n) number of bits for decimal
+https://en.algorithmica.org/hpc/cpu-cache/associativity/
+
 using genetic algorithm/machine learning to optimise for us
 https://zeux.io/2020/01/22/learning-from-data/
 
