@@ -101,7 +101,7 @@ we don't track in 'traditional' ways, tiktok keylogger technology exists but not
 TODO: favourites tab for morning viewing
 videos: common sense skeptic; techquickie; handmade podcast; network next
 
-TODO: gather notes in ~/Pictures to a wallpaper-aware.md.temp
+TODO: gather in-depth notes in ~/Pictures to a wallpaper-aware.md.temp
 
 chefgood: 20 x $209
 mymusclechef: 20 x $219
@@ -109,8 +109,9 @@ mymusclechef: 20 x $219
 dinner + lunch: $220
 breakfast: $100
 rent: $345
+phone: $70
 
-leftover: $335
+leftover: $265
 
 salary: ≈$52,000 
 
