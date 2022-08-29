@@ -1,7 +1,33 @@
 time -p; getrusage();
 
+Before cpus increased in single thread execution speed. Now more cores. It's a topic of research to convert single threaded into multithreaded for emulation. 
+This is why emulation of something like the GameCube (powerpc) is slow. 
+Furthermore, due to hardware irregularities that programs relied on may take hundreds of instructions to emulate
+If actually a simple translation, then should run close to native speed. This is reality of emulating hardware with hardware
+
 using genetic algorithm/machine learning to optimise for us
 https://zeux.io/2020/01/22/learning-from-data/
+
+Cpu try to guess what instructions ahead (preemptive). 
+Cost of incorrect reflushing expensive. 
+So want to get rid of conditional jumps. 
+Ideally replace with conditional movs or arithmetic branch less techniques.
+Endianness (register view), twos complement (-1 all 1s)
+Branch less programming is essentially SIMD
+
+If variable clock speed, cpu could detect not using all cores and increase single core clock
+
+Not memory bound is best case for hyper threading
+Intel speeds optimised for GPR arithmetic, boolean and flops
+Intel deliberately makes mmx slow
+
+Low cache associativity means fast lookup but a lot of misses and 
+thus eviction policy like LRU
+
+Count cycles to counteract possible thermal throttling
+Hyperthreads useful only if different execution unit
+Cpu reads memory from cache and ram in cache lines (due to programmer access patterns).
+Each item in cache set is cache line size
 
 if apple computers use RISC ARM in M1, why CISC necessary? (only because on Intel?)
 emphasis of CISC simplify assembly (e.g. more addressing modes), thereby reducing size of binary? (reduce instructions) and increase cache coherency

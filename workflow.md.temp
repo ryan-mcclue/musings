@@ -2,6 +2,27 @@
 Preparation Mentality:
 Git usage
 
+Working with modern software is going to be a pain at some point.
+Have to stay strong and not belittle situation, rather accept it and move on.
+At times, have to get off high horse and roll up your sleeves.
+
+Linux issues: 1. runtime configurability (difficult part not API, but what to do when settings aren't exact, i.e. what to fall back on when abstraction not there). 2. multiple binaries
+Although possible to dynamically load core libraries like xlib/wayland/alsa and support
+a minimum set of APIs, this is essentially what SDL does.
+However, system/user configurability is huge in linux. There is simply too much
+runtime variability to test for all users.
+Furthermore, multiple CRT to support, e.g. muslc for Alpine
+
+One way to solve variability is to use the Steam Runtime, which is a collection of .so files and configuration that is less subject to user configuration
+
+Linux desktop suffers from binary compatibility nightmare, e.g. 15 binaries to support all. 
+This is because libraries like glibc are happy to break abi to get minor improvements, e.g spec says this so let's do it even though no one cares
+
+C STL has one version for each compiler + os. 
+also, some compilers might not fully implement the STL feature
+
+With an undeclared identifier in a unity build, just reorder #includes in main file
+
 Cross platform naming, e.g. With libc,  libraries is more of a discipline thing 
 There are no absolutes, just tradeoffs for solving your problem, e.g raw vs smart pointers
 Often issue is not hard code, it's because the problem is messy,  I. E.  Unwritten assumptions,  

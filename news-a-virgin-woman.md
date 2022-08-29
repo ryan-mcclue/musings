@@ -92,6 +92,7 @@ Intel R&D into chiplet technology stacking presents it as a future possibility (
 
 ACM (Association for Computing Machinery) Turing Award is essentially Nobel Prize for Computer Science.
 Not applicable for me as awards largely for academic contributions like papers/reports published e.g data abstraction (Liskov substitution, Byzantine fault tolerance), parallel computing (OpenMP standard).
+In some sense, the modern day Booles and Babbages
 I'm more concerned with engineering feats in software products. 
 
 An unfortunate reality of open tech, AI being used to make paywalls 'smarter' 
