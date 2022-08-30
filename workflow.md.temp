@@ -1,6 +1,12 @@
 # Workflow
 Preparation Mentality:
-Git usage
+## Git usage:
+**locate commit where file deleted**: `git log --full-history -1 -- [file path]`
+**merge commit with previous commit**: `git rebase -i HEAD~n`
+a standard rebase will apply commits on top of 
+interactive rebase to perform squashing on most recent
+**merge conflict resolution**: `git mergetool`
+
 
 Working with modern software is going to be a pain at some point.
 Have to stay strong and not belittle situation, rather accept it and move on.

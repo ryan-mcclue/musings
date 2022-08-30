@@ -7,14 +7,21 @@ Adventures in Creation
 can import .stl files and make basic extrusions/pockets
 
 rpi4-case:
-  * container
+  * container part
     - container_body
       · container_body_base: (centrifically locked; select outer points first)
       · inlet: vertically constrain construction line to external geometry
-  * lid
+  * lid part
    · make container sketches visible
    · defining geometry  
 (link -> union -> transform/create-mesh-shape -> move)
+
+shaft-in-wheel:
+  * revolution pad tool
+  * polar pattern for duplicating holes around centre
+domino:
+  * symmetry sketch around centre line
+  * mirror feature for say entire pad mirroring
 
 when creating lid lips, factor in printer tolerance, say 0.4mm
 also, add chamfer/fillet to lip edge
