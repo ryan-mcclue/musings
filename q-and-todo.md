@@ -1,5 +1,9 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+* cool idea of SDR (software defined radio) and RF analyser
+https://greatscottgadgets.com/sdr/1/
+https://github.com/ainfosec/FISSURE
+
 * how does quantum computing work?
 
 * what frequencies/technologies are regulated like in ISM; by extension

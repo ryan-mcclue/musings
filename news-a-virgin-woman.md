@@ -108,3 +108,6 @@ Although Tesla can build a supercomputer to train, like all dogmas, not applicab
 Even air-gapped computers are not safe from sniffing
 
 Seems that any in-demand tech device subject to bot scalping
+
+As Moore's law is widening, i.e. was 2 years now 4 years, companies creating own hardware, e.g.
+YouTube chip to handle transcoding

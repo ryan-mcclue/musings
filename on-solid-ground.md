@@ -104,8 +104,11 @@ lipo more expensive, shorter lifespan, less energy, more robust
 ## Memory
 eMMC is the interface as well
 eMMC precursor to SD.
+TF (transflash) more commonly known as micro-SD card
 cheaper than SSD, yet slower
 still uses NAND flash technology
+
+QSPI can be used without CPU with data queues
 
 ## Bootstrap 
 UEFI (interface between firmwire and system; essentially interface to boot into things) ACPI (data format to convey firmwire information)
@@ -230,6 +233,7 @@ furthermore, processors are allowed to delay reads until writes later in the ins
 language (from source to machine code)
 so, C11 memory model is in relation to rearranging of loads/stores in assembly for optimisations? (so is a weak model?)
 mainly in reference to the behaviour of atomics to synchronise programs
+so, language memory model will abstract away hardware memory model?
 https://research.swtch.com/plmm
 
 ## ARM
