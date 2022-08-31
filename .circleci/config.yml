@@ -21,12 +21,9 @@ jobs:
             apt install -y git
             git config --global user.email "builds@circleci.com"
             git config --global user.name "CircleCI"
-
-            git clone https://${GH_TOKEN}@github.com/ryan-mcclue.github.io.git musings
-
+            git clone https://${GH_TOKEN}@github.com/ryan-mcclue.github.io.git musings > /dev/null
             cd musings
             mv ../musings.html .
-
             git add .
             git commit -m "CircleCI build $CIRCLE_BUILD_NUM pushed to Github Pages"
             git push origin master
