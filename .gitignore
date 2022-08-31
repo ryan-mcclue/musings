@@ -9,6 +9,5 @@
 !LICENSE
 
 !*.md
-!*.temp
 
-!generate-pdf
+!generate-web
