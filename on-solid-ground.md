@@ -1,5 +1,6 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
+
 ## Screens
 Touch screen types need some external input to complete circuit
 Resistive works by pressure pushing down plastic<-electric coating->glass

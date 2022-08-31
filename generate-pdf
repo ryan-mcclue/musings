@@ -2,8 +2,8 @@
 
 set -e
 
-markdown_files=$(find ~+ -type f \( -name "*.md" -not -name "README.md" -not -name "notes.md" \) -exec ls -tr {} +)
+markdown_files=$(find ~+ -type f \( -name "*.md" -not -name "README.md" \) -exec ls -tr {} +)
 
-printf "$markdown_files" | xargs pandoc --pdf-engine=xelatex --toc -o musings.pdf
-
-xdg-open ./musings.pdf
+printf "$markdown_files" | xargs \
+  pandoc -s --metadata title="Musings" --toc \
+    -f markdown -t html -o musings.html
