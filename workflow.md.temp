@@ -1,6 +1,10 @@
 # Workflow
 Preparation Mentality:
-## Git usage:
+## Git usage: TODO(Ryan): collate into bash aliases 
+* git commit aliases showing diff
+* locate file content: `git log -S'content' -- file_name | tr '\n' ' '`
+* locate file names
+* previous commit messages: `git show --color -s --format='%C(yellow)(%as)%C(reset) %s' -5 | tr '~' ' '`
 **locate commit where file deleted**: `git log --full-history -1 -- [file path]`
 **merge commit with previous commit**: `git rebase -i HEAD~n`
 a standard rebase will apply commits on top of 
