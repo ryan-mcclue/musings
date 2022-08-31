@@ -26,7 +26,7 @@ jobs:
             mv ../musings.html .
             git add .
             git commit -m "CircleCI build $CIRCLE_BUILD_NUM pushed to Github Pages"
-            git push origin master
+            git push -f origin master
 
 workflows:
   musings:
