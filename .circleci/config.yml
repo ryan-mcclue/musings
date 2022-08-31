@@ -21,7 +21,7 @@ jobs:
             apt install -y git
             git config --global user.email "builds@circleci.com"
             git config --global user.name "CircleCI"
-            git clone https://${GH_TOKEN}@github.com/ryan-mcclue.github.io.git musings > /dev/null
+            git clone https://${GH_TOKEN}@github.com/ryan-mcclue/ryan-mcclue.github.io musings
             cd musings
             mv ../musings.html .
             git add .
