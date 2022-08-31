@@ -3,6 +3,7 @@ Preparation Mentality:
 ## Git usage: TODO(Ryan): collate into bash aliases 
 * use gcd function enter habit to know if out of date
 * git commit aliases showing diff
+* find parents of hash: `git rev-list --parents -n 1 <hash>` 
 * locate file content: `git log -S'content' -- file_name | tr '\n' ' '`
 * locate file added/deleted/modified/renamed: `git log --diff-filter=A -- foo.js`
 * previous commit messages: `git show --color -s --format='%C(yellow)(%as)%C(reset) %s' -5 | tr '~' ' '`
