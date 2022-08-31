@@ -2,6 +2,7 @@
 
 # Musings
 > ![Github](https://img.shields.io/github/license/ryan-mcclue/musings)
+> ![CircleCI](https://circleci.com/gh/ryan-mcclue/musings.svg?style=svg)
 
 A project that hosts my personal musings relating to programming and technology.
 
