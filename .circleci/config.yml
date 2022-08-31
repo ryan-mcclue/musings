@@ -23,10 +23,10 @@ jobs:
             git config --global user.name "CircleCI"
             git clone https://${GH_TOKEN}@github.com/ryan-mcclue/ryan-mcclue.github.io musings
             cd musings
-            mv ../musings.html .
+            mv ../musings.html index.html
             git add .
             git commit -m "CircleCI build $CIRCLE_BUILD_NUM pushed to Github Pages"
-            git push -f origin master
+            git push origin master
 
 workflows:
   musings:
