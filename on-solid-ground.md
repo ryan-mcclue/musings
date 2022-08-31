@@ -36,7 +36,7 @@ Americas: NTSC (30fps, less scanlines per frame) 4.4MHz
 Europe, Asia, Australia: PAL (Phase alternate line) (25fps) 2.5MHz
 
 sound waves 20Hz - 20kHz (sonar; sound navigation and ranging)
-ultrasonic
+ultrasonic (radio waves largely absorbed in seawater due conductiveness)
 
 more easily focused as longer wavelength to not bend around corners
 radio waves 10Hz - 300GHz (true radio would be FM radio)

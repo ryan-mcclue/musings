@@ -1,5 +1,8 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+TODO: working with thumb instructions
+TODO: best practices monitoring systems in the field
+
 note, if using newlib, will still have a _start
 
 May compile for different architectures in embedded for different product lines 

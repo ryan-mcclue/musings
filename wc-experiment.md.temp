@@ -1,5 +1,8 @@
 time -p; getrusage();
 
+adding `restrict` also useful to prevent aliasing and thereby might allow
+compiler to vectorise say array loops
+
 Before cpus increased in single thread execution speed. Now more cores. It's a topic of research to convert single threaded into multithreaded for emulation. 
 This is why emulation of something like the GameCube (powerpc) is slow. 
 Furthermore, due to hardware irregularities that programs relied on may take hundreds of instructions to emulate
