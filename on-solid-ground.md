@@ -2,6 +2,7 @@
 
 OAuth (open authentication) exchanges tokens to authorise access;
 specifically use personal access token with OAuth scope 'repo' for github to grant circleci push priveleges
+(have to add this add environment variable to circleci)
 
 ## Screens
 Touch screen types need some external input to complete circuit
