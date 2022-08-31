@@ -22,7 +22,7 @@ jobs:
             git config --global user.email "builds@circleci.com"
             git config --global user.name "CircleCI"
 
-            git clone https://${GH_TOKEN}@github.com/ryan-mcclue.github.io musings
+            git clone https://${GH_TOKEN}@github.com/ryan-mcclue.github.io.git musings
 
             cd musings
             mv ../musings.html .
