@@ -69,3 +69,5 @@ QTcreator so complicated to run cross-debugger, have to write down steps
 Tim Berners-Lee envisioned a universal place for information exchange. 
 Unfortunately the freedom of creativity has resulted in much of the Web being intrusive 
 and hindering
+
+Order of arguments matter in docker, for some reason --rm must be before -it
