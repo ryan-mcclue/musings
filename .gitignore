@@ -8,6 +8,8 @@
 !README.md
 !LICENSE
 
+!.circleci/config.yml
+
 !*.md
 
 !generate-web

@@ -1,0 +1,36 @@
+# NOTE(Ryan): Verify locally:
+# $(circleci config validate)
+# $(circleci local execute)
+
+version: 2
+
+jobs:
+  build_and_deploy:
+    docker:
+      - image: pandoc/core:latest-ubuntu
+    steps:
+      - checkout
+      - run:
+          name: Build
+          command: |
+            bash ./generate-web
+      - run:
+          name: Deploy
+          command: |
+            git config --global user.email "builds@circleci.com"
+            git config --global user.name "CircleCI"
+
+            git clone https://${GH_TOKEN}@github.com/ryan-mcclue.github.io musings
+
+            cd musings
+            mv ../musings.html .
+
+            git add .
+            git commit -m "CircleCI build $CIRCLE_BUILD_NUM pushed to Github Pages"
+            git push origin master
+
+workflows:
+  musings:
+    jobs:
+      - build_and_deploy
+
