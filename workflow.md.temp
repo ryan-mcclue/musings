@@ -1,11 +1,11 @@
 # Workflow
 Preparation Mentality:
 ## Git usage: TODO(Ryan): collate into bash aliases 
+* use gcd function enter habit to know if out of date
 * git commit aliases showing diff
 * locate file content: `git log -S'content' -- file_name | tr '\n' ' '`
-* locate file names
+* locate file added/deleted/modified/renamed: `git log --diff-filter=A -- foo.js`
 * previous commit messages: `git show --color -s --format='%C(yellow)(%as)%C(reset) %s' -5 | tr '~' ' '`
-**locate commit where file deleted**: `git log --full-history -1 -- [file path]`
 **merge commit with previous commit**: `git rebase -i HEAD~n`
 a standard rebase will apply commits on top of 
 interactive rebase to perform squashing on most recent
