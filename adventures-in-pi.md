@@ -55,3 +55,49 @@ put supports everywhere by default? (perhaps add blockers to this?)
 maybe just use everywhere to get a feel for it, then manually add enforcers?
 
 can also use printrun usb-b interface to print without SD card?
+
+
+--------------------------------------------------------------------------
+most solder has flux core (typically rosin) to allow easier adherence to materials
+Sn/Pb (60/40) lower boiling point and better wetting (cone shaped finish) then non-leaded.
+fumes are flux as boiling point of lead (≈1700°C) much higher 
+fume extractor at top
+
+lead is if course bad if ingested
+lead-free developed due to landfill leeching of disposed electronics
+
+wire guage is diametre
+
+silicon mat, brass wool (routinely removing stuck solder debris and rust), 
+chisel-head (conical head other 10%),
+gloves, glasses
+
+iron temp. of 350°C good compromise
+
+rusting is a form of corrosion (damage slowy by chemical reaction)
+as rust is technically iron oxide, only iron can rust (giving electrons)
+however, other metals can corrode
+e.g. less reactive copper corrodes more slowly
+e.g. more reactive aluminium corrodes, however the oxide is tough and not flaky
+
+when heated, oxidation of solder iron tip is greatly accelerated thereby losing conductivity, wetting, etc.
+
+TODO: HOW TO TIN?
+tin regularly (however, not so often as thrusting)
+could tin by just touching tip with solder or stick in a tip tinner until all tip covered
+
+
+heat materials with iron and apply solder to junction
+soldering station has feedback/adjustable/regulated temperature
+tin the tip every session
+
+## THT
+1mm gauges
+components typically higher temperature
+
+## SMD
+flux pen
+0.6mm gauge
+
+grounding strap with 1Mohm resistor to ensure same potential as board for sensitive electronics
+(not really necessary for dev-boards)
