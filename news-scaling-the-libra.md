@@ -27,6 +27,12 @@ things like database accelerator library indicative of normal software not being
 
 where are MOSFETs used?
 
+USB-4 on the horizon?
+
+float-toy nice web visualistion tool
+
+interestingly CRT can scale better than fixed-set resolution LCD
+
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
 in effect, most people's journey to learning is bespoke
