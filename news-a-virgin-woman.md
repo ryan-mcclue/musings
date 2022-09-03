@@ -100,6 +100,7 @@ An unfortunate reality of open tech, AI being used to make paywalls 'smarter'
 Read a Google research project on removing noise in photos. 
 Investigate source to test and am completely put off by the amount of
 dependencies involved: conda (why not just whole hog and docker), python, jax for TPU (python to tensor processing unit), external repositories
+This also applied to the 'amazing' AI image generator Stable Diffusion (I suppose high VRAM requirements also)
 Docker has uses in CI
 
 AI for everything dogma is becomming more pervasive with 'clusters' to train model.

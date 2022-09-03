@@ -1,7 +1,18 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+DC motor: raw PWM signal and ground
+signal controls speed
+high rpm, continous rotation (e.g. fans, cars)
+servo: dc-motor + gearing set + control circuit + position sensor
+signal controls position
+limited to 180°
+accurate rotation (e.g. robot arms)
+stepper:
+can be made to move precise well defined 'steps', i.e. jumps between electromagnets
+position fundamental (e.g. 3D printers)
+
 TODO: working with thumb instructions
-TODO: best practices monitoring systems in the field
+TODO: best practices monitoring systems in the field (4G?)
 
 note, if using newlib, will still have a _start
 
@@ -138,7 +149,8 @@ this level of knowledge further emphasises need to know hardware to understand w
 # Embedded Workflow
 https://go.memfault.com/debugging-embedded-devices-in-production-virtual-panel?mc_cid=32b3cae3e7&mc_eid=UNIQID
 https://go.memfault.com/embedded-device-observability-metrics-panel-recording?mc_cid=32b3cae3e7&mc_eid=UNIQID
-https://academy.novelbits.io/register/annual-membership?_gl=1*15qz5rp*_ga*NzM2MjQ4ODUzLjE2NTY0OTIwNjc.*_ga_FTRKLL78BY*MTY1OTU3OTAxNS4xLjEuMTY1OTU3OTIyMy4w&_ga=2.149910452.341656361.1659579015-736248853.1656492067
+
+use specifically for understanding mesh networks in context of bluetooth?: https://academy.novelbits.io/register/annual-membership?_gl=1*15qz5rp*_ga*NzM2MjQ4ODUzLjE2NTY0OTIwNjc.*_ga_FTRKLL78BY*MTY1OTU3OTAxNS4xLjEuMTY1OTU3OTIyMy4w&_ga=2.149910452.341656361.1659579015-736248853.1656492067
 
 https://interrupt.memfault.com/blog/ota-delta-updates?utm_campaign=Interrupt%20Blog&utm_medium=email&_hsmi=222505339&_hsenc=p2ANqtz-9kmqPywlKxifduWJneXhUh1h_RQ4bf-v41o2qF8iBciZYc9beFlhwM4EiOVbP3DKUl8kxc_4GOIdpzvkJi5iOGzgwSWA&utm_content=222505339&utm_source=hs_email
 
