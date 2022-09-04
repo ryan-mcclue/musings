@@ -49,6 +49,7 @@ videos: common sense skeptic; techquickie; handmade podcast; network next
 
 chefgood: 20 x $209
 mymusclechef: 20 x $219
+WELCOME20
 
 dinner + lunch: $220
 breakfast: $100

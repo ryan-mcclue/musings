@@ -3,7 +3,10 @@
 ## Matching Pairs
 A quadratically scaling solution is intuitive
 However, as we know every match is unique, linearly scaling solution obtained with a hash map.
-`(x >> 4 + 12) & (size - 1)`
+C++ STL implementation of hash tables are sets (just keys) and maps
+Unordered variants are raw hash maps
+Ordered use self-balancing red-black-tree yielding logarithmic time
+Simplest hashing function `(x >> 4 + 12) & (size - 1)`
 Important to keep in mind we are executing on a physical machine and that
 Big-Oh is a 'zero-cost abstraction' world.
 For example, the extra overhead of introducing a hashmap (memory allocations/copies) will result 
