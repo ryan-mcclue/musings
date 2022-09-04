@@ -62,6 +62,7 @@ DRAM uses transistor and capacitor
 
 embedded systems special purpose, constrained, often real time (product may be released in regulated environment standardsd, e.g. automotive, rail, defence, medical etc.)
 challenges are testabilty and software/hardware comprimises for optimisation problem solving, e.g. bit-banging or cheap mcu, external timer or in-built timer, adding hardware increases power consumption, e.g. ray tracing card or just rasterisation, big.LITTLE clusters
+1/4 scalar performance for 1/2 power consumption good tradeoff
 
 what would a segfault ➞ coredump look like on bare-metal?
 

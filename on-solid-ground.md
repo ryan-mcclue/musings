@@ -4,6 +4,8 @@ OAuth (open authentication) exchanges tokens to authorise access;
 specifically use personal access token with OAuth scope 'repo' for github to grant circleci push priveleges
 (have to add this add environment variable to circleci)
 
+PCI usually for attaching peripherals to motherboards, e.g. network/audio/usb controller cards
+
 ## Screens
 Touch screen types need some external input to complete circuit
 Resistive works by pressure pushing down plastic<-electric coating->glass
@@ -263,6 +265,9 @@ IEC power cords (kettleplug, cloverleaf)
 DC barrel jack
 
 ## Legalities
+anti-trust laws don't prevent monopolies, they prevent attempting to
+monopolise illegal, e.g. Microsoft attempting to monopolise browser market
+
 permissive (MIT, BSD, Apache, zlib) gives users more freedom to say relicense, 
 include closed source software, etc.
 generally just attribution licenses (in that this is only enforcement)

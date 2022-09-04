@@ -58,21 +58,22 @@ can also use printrun usb-b interface to print without SD card?
 
 
 --------------------------------------------------------------------------
-most solder has flux core (typically rosin) to allow easier adherence to materials
-Sn/Pb (60/40) lower boiling point and better wetting (cone shaped finish) then non-leaded.
+most solder has flux core (typically rosin) to remove oxide films, i.e. wetting the metal
+(to remove dirt/grease will require cloth or steel brush) 
+Sn/Pb (60/40) lower boiling point and shinier finish (cone shaped) then non-leaded.
 fumes are flux as boiling point of lead (≈1700°C) much higher 
 fume extractor at top
+
+like most metal products, the iron has core (Cu, Fe) and plating metals (Cr, Sn)
 
 lead is if course bad if ingested
 lead-free developed due to landfill leeching of disposed electronics
 
 wire guage is diametre
+use solid wire as easier to work with than stranded (which handles flexing better, so better for final projects)
 
-silicon mat, brass wool (routinely removing stuck solder debris and rust), 
-chisel-head (conical head other 10%),
-gloves, glasses
-
-iron temp. of 350°C good compromise
+when heated, oxidation of solder iron tip is greatly accelerated thereby losing conductivity, 
+wetting, etc.
 
 rusting is a form of corrosion (damage slowy by chemical reaction)
 as rust is technically iron oxide, only iron can rust (giving electrons)
@@ -80,12 +81,17 @@ however, other metals can corrode
 e.g. less reactive copper corrodes more slowly
 e.g. more reactive aluminium corrodes, however the oxide is tough and not flaky
 
-when heated, oxidation of solder iron tip is greatly accelerated thereby losing conductivity, wetting, etc.
+silicon mat, brass wool (routinely removing stuck solder debris and rust), 
+chisel-head (conical head other 10%),
+gloves, glasses
 
-TODO: HOW TO TIN?
-tin regularly (however, not so often as thrusting)
-could tin by just touching tip with solder or stick in a tip tinner until all tip covered
+300°C-350°C: lead
+350°C-400°C: non-lead
 
+iron temp. of 325°C good compromise
+
+tin by touching tip with solder and thrusting into wool. repeat twice
+tin regularly 
 
 heat materials with iron and apply solder to junction
 soldering station has feedback/adjustable/regulated temperature
@@ -93,7 +99,7 @@ tin the tip every session
 
 ## THT
 1mm gauges
-components typically higher temperature
+components typically higher thermal capacity, ∴ higher temperature
 
 ## SMD
 flux pen

@@ -39,7 +39,9 @@ Realise I'm highly misanthropic
 Frequent STMicroelectronics newsletter coverage of IoT (and the many, many protocols) and machine learning indicative of trend in industry
 
 Hi-fi audio. Newer terms to mean higher fidelity/data resolution 
-new OLED TVs. QLED is a variation of the white backlight LED LCD sandwich
+new OLED TVs (contrast, blacks). 
+QLED/QNED (brightness) is a adding a 'quantom dot' layer into the white LED backlight LCD sandwich
+
 5.1 means 5 speakers, 1 subwoofer
 woofer, subwoofer, speaker, tweeter
 
