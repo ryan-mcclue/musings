@@ -9,25 +9,15 @@ Ordered use self-balancing red-black-tree yielding logarithmic time
 Simplest hashing function `(x >> 4 + 12) & (size - 1)`
 Important to keep in mind we are executing on a physical machine and that
 Big-Oh is a 'zero-cost abstraction' world.
-For example, the extra overhead of introducing a hashmap (memory allocations/copies) will result 
-in this being slower for small lists (also way no dynamic memory allocations in ISR)
+For example, the extra overhead of introducing a hashmap (memory allocations/copies) 
+will result in this being slower for small lists (also no dynamic memory allocations in ISR)
+This is why C++ STL uses hybrid introsort
 
 ## Sorting Squared Array
-Insertion/bubble sort preferable for small lists.
-Medium we want divide-and-conquer merge/quick.
-Large we want radix
-A naive approach will achieve loglinear from divide-and-conquer sorting.
-However, we can take advantage of the fact that the array is already sorted 
-and achieve a linear solution by ... 
+Quadratic insertion/bubble sort preferable for small lists
+Loglinear divide-and-conquer merge/quick for medium
+Linear radix for large
 
 ## Tournament Winner
 In cases space and size parameters different
 Can join linear operations populate and min/max determination
-
-
-
-premptive scheduler will interrupt based on priority
-non-premptive cannot interrupt task unless task manually relinquishes (high response time)
-within these we have priority scheduling, i.e. assigning priority to task as oppose to say estimated execution time
-round-robin has each task run for a predefined time slice and swapped out if necessary  
-(Seems most are round-robin like, with variations on determining time slice quanta)

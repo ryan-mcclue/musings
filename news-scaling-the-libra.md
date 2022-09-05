@@ -1,5 +1,4 @@
 # NEWS - Scaling the Libra
-
 Xcode cloud subscription. oh no
 wasting so much time on naming of new processes, e.g. 'Developer Experience Infrastructure', 
 
@@ -41,9 +40,10 @@ new TV monitor combination QD-OLED
 curved monitors less fatiguing as physically matches our eye's shape
 flexible/bendable monitors no one asked for...
 
+cool looking completely submerged server desktops. 
+pure water is a very good insulator (our tap water will have chlorine for example)
+
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
 in effect, most people's journey to learning is bespoke
 my engineering mind (which has been molded by experience) results in largely ad hoc responses 
-
-

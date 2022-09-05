@@ -172,6 +172,12 @@ this allows concurrent modification of the file
 
 UUID/GUID (universally/globally) 16bytes
 
+premptive scheduler will swap processes based on specific criteria.
+most are round-robin, i.e. has process is run for a predefined time slice 
+CFS does not use heuristics (ad hoc guide), ∴ more straightforward
+uses rb-tree. so, as task inserted onto this is logarithmic, ∴ this is cost of context switch
+each node key is `(time process as run on CPU) * (process niceness)`
+
 ## CPU
 cpu contains clock. each tick marks a step in the 
 fetch(signal sent along address bus as specified by PC; instruction or data sent along data bus)-

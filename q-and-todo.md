@@ -47,6 +47,12 @@ we don't track in 'traditional' ways, tiktok keylogger technology exists but not
 TODO: favourites tab for morning viewing
 videos: common sense skeptic; techquickie; handmade podcast; network next
 
+Resident Name
+Unit Number / 17 High Street
+University Terraces
+Kensington NSW 2033
+Australia
+
 chefgood: 20 x $209
 mymusclechef: 20 x $219
 WELCOME20
