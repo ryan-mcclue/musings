@@ -43,6 +43,16 @@ flexible/bendable monitors no one asked for...
 cool looking completely submerged server desktops. 
 pure water is a very good insulator (our tap water will have chlorine for example)
 
+the Nintendo DSi implemented augmented reality
+virtual reality is completely immersive
+
+interesting wireless charging...
+
+trie -> gzip. still have to decode and resulting memory same as before compression
+succinct data structures are designed to not have to be decoded,
+i.e. everything is stored as bits.
+∴ uses a lot less memory (however, only for larger datasets)
+
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
 in effect, most people's journey to learning is bespoke

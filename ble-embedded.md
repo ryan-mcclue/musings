@@ -11,6 +11,8 @@ stepper:
 can be made to move precise well defined 'steps', i.e. jumps between electromagnets
 position fundamental (e.g. 3D printers)
 
+AVR used in lower-end (8bit) as less complex, cheaper than ARM
+
 TODO: working with thumb instructions
 TODO: best practices monitoring systems in the field (4G?)
 
@@ -185,6 +187,7 @@ is power profiler kit specific to each board necessary, e.g. nordic, stm32?
 blogs:
 https://dmitry.gr/?r=05.Projects
 https://tratt.net/laurie/blog/
+http://stevehanov.ca/blog/
 
 Seems that IAR compiler produces smaller, faster code than gcc?
 
