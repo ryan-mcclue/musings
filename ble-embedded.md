@@ -161,6 +161,9 @@ automated crash reporting:
 https://lance.handmade.network/blog/p/8491-automated_crash_reporting_in_basically_one_400-line_function#26634
 in embedded, how are metrics transmitted remotely, i.e. via bluetooth to phone than web? too much power if directly to web?
 
+something related to HIL (hardware-in-loop testing)
+https://blog.golioth.io/golioth-hil-testing-part1/?mc_cid=da33e3796b&mc_eid=UNIQID
+
 something related to systems testing with aardvark SPI/I2C adapter (more tutorials with bus pirate)
 10:00 time mark: https://www.youtube.com/watch?v=N60WSQc-G_8&list=PLTG9uzDd_HQ84wVz0DwQ5_mwf1GnpY6LB&index=11
 seems indepth bus pirate manual is on git?
@@ -188,6 +191,11 @@ blogs:
 https://dmitry.gr/?r=05.Projects
 https://tratt.net/laurie/blog/
 http://stevehanov.ca/blog/
+https://thephd.dev/
+https://www.embeddedrelated.com/blogs.php
+memfault
+
+https://embeddedartistry.com/fieldatlas/embedded-software-development-maturity-model/?mc_cid=da33e3796b&mc_eid=UNIQID
 
 Seems that IAR compiler produces smaller, faster code than gcc?
 
