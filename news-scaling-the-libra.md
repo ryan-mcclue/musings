@@ -46,7 +46,7 @@ pure water is a very good insulator (our tap water will have chlorine for exampl
 the Nintendo DSi implemented augmented reality
 virtual reality is completely immersive
 
-interesting wireless charging...
+how does wireless charging work without a pad, i.e. no induction charging?
 
 trie -> gzip. still have to decode and resulting memory same as before compression
 succinct data structures are designed to not have to be decoded,
@@ -89,6 +89,12 @@ excessive heap usage bad for performance if on an OS
 note there is static, stack and heap memory areas
 
 lol, killedbygoogle.com. perhaps not wise to rely on new services
+
+is self-administration the only benefit of an inhaled COVID vaccine?
+
+doesn't seem like quantum computers will be able to solve any practical tasks
+
+cloud computing with containers growing, e.g. AWS/Azure ➞ Kubernetes ➞ docker
 
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking

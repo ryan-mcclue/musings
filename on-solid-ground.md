@@ -1,6 +1,8 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
-WHAT ARE RFCS?
+RFC documents contain technical specifications for Internet techologies, e.g. IP, UDP, etc.
+
+Data deduplication means to remove duplicates
 
 OAuth (open authentication) exchanges tokens to authorise access;
 specifically use personal access token with OAuth scope 'repo' for github to grant circleci push priveleges

@@ -409,4 +409,5 @@ This is true for STLs in general across all languages.
 Some may have bloatness from other areas, e.g. C++ templates
 To avoid the compiler having to generate a large export table of all functions, 
 make them `static`
-To avoid large amounts of linking, have a unity build.
+To avoid large amounts of linking and ∴ increase compilation time, have a unity build.
+(issues may occur with slower incremental builds when including 3rd party libraries; yet, can still work around this)
