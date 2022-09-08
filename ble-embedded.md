@@ -1,5 +1,12 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+databases useful for tracking time series IoT sensor data 
+
+how to overclock and underclock?
+how are these different to adjusting clock scalers?
+
+investigate cpu fault handling: https://github.com/tobermory/faultHandling-cortex-m
+
 DC motor: raw PWM signal and ground
 signal controls speed
 high rpm, continous rotation (e.g. fans, cars)
@@ -193,6 +200,8 @@ https://tratt.net/laurie/blog/
 http://stevehanov.ca/blog/
 https://thephd.dev/
 https://www.embeddedrelated.com/blogs.php
+https://lemon.rip/
+https://jpieper.com/
 memfault
 
 https://embeddedartistry.com/fieldatlas/embedded-software-development-maturity-model/?mc_cid=da33e3796b&mc_eid=UNIQID
@@ -247,6 +256,8 @@ electric arc when insulator air is supplied enough energy to ionise
    Measure voltage, current, resistance/continuity/diode with multimeter?
    Oscilloscope for ...
    Logic analyser for, SPI and I2C
+
+(HSPI is high speed parallel interface)
 
 6. **Protocol**
   USB port probably in-built serial port

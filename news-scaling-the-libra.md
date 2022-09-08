@@ -47,6 +47,7 @@ the Nintendo DSi implemented augmented reality
 virtual reality is completely immersive
 
 how does wireless charging work without a pad, i.e. no induction charging?
+interesting power sharing from phone to watch
 
 trie -> gzip. still have to decode and resulting memory same as before compression
 succinct data structures are designed to not have to be decoded,
@@ -95,6 +96,21 @@ is self-administration the only benefit of an inhaled COVID vaccine?
 doesn't seem like quantum computers will be able to solve any practical tasks
 
 cloud computing with containers growing, e.g. AWS/Azure ➞ Kubernetes ➞ docker
+
+it's sad, but you really could do a stand-up of modern software projects, e.g.
+"introducing Goliath, an automatic external dependency manager. 
+under the hood we use a Nextrus package manager.
+can be scripted with Freasy language extension of Frosty core language"
+
+seems a lot of phones adding satellite connectivity even though it's much slower
+
+although space travel seems like the future, how to cope with serious health affects like space radiation
+
+opening up web pages from tech news sites just awful.
+inudated with floating content-blocking video ads, 
+permanent marquee ads embedded beween paragraphs and
+browser title bar flashing with bot message notification,
+bot message popup, cookies accept bar, ...
 
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking

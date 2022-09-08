@@ -1,5 +1,7 @@
 # Rage Against the Machine
 
+https://c3.handmade.network/blog/p/8486-the_case_against_a_c_alternative
+
   instead of feature, we introduce a patented terminology like user stories to have someone teach you them. slows down development
   business logic .... just means high-order operations in say main()
 

@@ -1,5 +1,8 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
+5ATM is 5 atmospheres. 1 atmosphere is about 10m (however calculated when motionless)
+50m for 10 minutes
+
 RFC documents contain technical specifications for Internet techologies, e.g. IP, UDP, etc.
 
 Data deduplication means to remove duplicates
@@ -85,6 +88,8 @@ LED is the backlight, as oppose to fluorescent (LCD still used within this).
 so really LED LCD. IPS (in-plane switching), TFT (thin film transistor) 
 are examples of LCD panel technology
 OLED produces own light, i.e. current passed through an OLED diode to produce light
+
+e-ink less power than LCD as only uses power when arrangment of colours changes
 
 
 ## Wireless
@@ -306,7 +311,7 @@ so, language memory model will abstract away hardware memory model?
 https://research.swtch.com/plmm
 
 ## ARM
-cortex-a53 is a synthesisable IP core sold to other semiconductor companies
+cortex-a53 is a synthesisable IP core sold to other semiconductor companies (stm, nxp, etc.)
 as licensed IP core, the amount of cache will vary e.g. 8-64Kb?
 
 FPU is a VFPv3-D16 implementation of the ARMv7 floating-point architecture
