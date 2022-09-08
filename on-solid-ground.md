@@ -91,8 +91,10 @@ OLED produces own light, i.e. current passed through an OLED diode to produce li
 
 e-ink less power than LCD as only uses power when arrangment of colours changes
 
-
 ## Wireless
+cloudflare (what are they?) ban kiwi farms forums, so they move to Russian servers.
+how does this help?
+
 RFID (radio frequency identification) no line of sight required 
 (can read through objects unlike barcode) 
 Also read multiple objects at once. RFID tag. Greater read range (shop security)
@@ -192,6 +194,10 @@ ext4 for system (supports larger file sizes)
 most filesystems will use a self-balancing tree to index files
 
 ## Unix
+KVM kernel based virtual machine allows linux kernel to act as hypervisor
+∴ type 1 hypervisor (virtualbox type 2, i.e. run atop an OS)
+Often see with KVM/QEMU (virt-manager)
+
 Contempt culture (language wars)-change-systemd
 Original Unix borne out of want for simplicity over competing systems
 Terminal type writer something you should ask your grandfather about

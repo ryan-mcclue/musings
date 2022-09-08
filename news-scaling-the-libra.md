@@ -1,6 +1,6 @@
 # NEWS - Scaling the Libra
 Xcode cloud subscription. oh no
-wasting so much time on naming of new processes, e.g. 'Developer Experience Infrastructure', 
+wasting so much time on naming of new processes, e.g. 'Developer Experience Infrastructure'
 
 Another billionaire investing in a 'utopian cities' seems more dystopic than anything.
 
@@ -53,7 +53,6 @@ trie -> gzip. still have to decode and resulting memory same as before compressi
 succinct data structures are designed to not have to be decoded,
 i.e. everything is stored as bits.
 ∴ uses a lot less memory (however, only for larger datasets)
-
 
 compound literals issues with debugger and maintanence
 
