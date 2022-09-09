@@ -111,6 +111,8 @@ permanent marquee ads embedded beween paragraphs and
 browser title bar flashing with bot message notification,
 bot message popup, cookies accept bar, ...
 
+asciinema useful terminal recording tool with website to host
+
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
 in effect, most people's journey to learning is bespoke

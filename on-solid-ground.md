@@ -1,5 +1,7 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
+CSESoc cochlear is a principal sponsor. how does this differ to major and minor sponsors?
+
 5ATM is 5 atmospheres. 1 atmosphere is about 10m (however calculated when motionless)
 50m for 10 minutes
 
@@ -92,6 +94,12 @@ OLED produces own light, i.e. current passed through an OLED diode to produce li
 e-ink less power than LCD as only uses power when arrangment of colours changes
 
 ## Wireless
+SMS are stored as clear text by provider
+SS7 (signaling system number 7) protocol connects various phone networks across the world
+This protocol is old and has been attacked many times
+
+leaked emails from large companies, probably from internal mail server? 
+
 cloudflare (what are they?) ban kiwi farms forums, so they move to Russian servers.
 how does this help?
 

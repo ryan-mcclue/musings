@@ -70,7 +70,7 @@ Cyberdecks are evidence that the trend of going smaller isn't always aesthetic
 
 Growing trend to have workstations operate in the cloud or containerisation. For testing yes, for development however?
 
-Strive towards much more potent nuclear fusion reactors as oppose to nuclear fission (neutron splits Uranium, same as original nuclear bombs)
+Strive towards much more potent nuclear fusion (100million°C) reactors as oppose to nuclear fission (neutron splits Uranium, same as original nuclear bombs)
 
 Amazing that certain old rpm harddrives were susceptible to crashing when 'Rhythm Nation' played as the resonant frequency was the same
 
