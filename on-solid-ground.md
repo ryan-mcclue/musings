@@ -1,5 +1,9 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
+GNUPlot:
+https://unix.stackexchange.com/questions/190337/how-can-i-make-a-graphical-plot-of-a-sequence-of-numbers-from-the-standard-input
+https://asciinema.org/a/421164
+
 CSESoc cochlear is a principal sponsor. how does this differ to major and minor sponsors?
 
 5ATM is 5 atmospheres. 1 atmosphere is about 10m (however calculated when motionless)

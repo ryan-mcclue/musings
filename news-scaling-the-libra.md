@@ -3,6 +3,7 @@ Xcode cloud subscription. oh no
 wasting so much time on naming of new processes, e.g. 'Developer Experience Infrastructure'
 
 Another billionaire investing in a 'utopian cities' seems more dystopic than anything.
+Promulgation of venture capitalists, angel investors, etc. 
 
 PIC have weird instruction set, so generally have to use with assembly over C compiler (no good free compiler)
 So, use AVR for low-end like just LED driving?

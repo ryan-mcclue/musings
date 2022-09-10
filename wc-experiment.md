@@ -1,5 +1,7 @@
 time -p; getrusage();
 
+Frequent context-switching will give terrible cache coherency
+
 adding `restrict` also useful to prevent aliasing and thereby might allow
 compiler to vectorise say array loops
 
@@ -410,4 +412,5 @@ Some may have bloatness from other areas, e.g. C++ templates
 To avoid the compiler having to generate a large export table of all functions, 
 make them `static`
 To avoid large amounts of linking and ∴ increase compilation time, have a unity build.
+Furthermore, garunteed ability to inline functions (as with multiple translation units, possible one might only have function declaration and not definition)
 (issues may occur with slower incremental builds when including 3rd party libraries; yet, can still work around this)

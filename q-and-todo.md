@@ -2,13 +2,6 @@
 https://greatscottgadgets.com/sdr/1/
 https://github.com/ainfosec/FISSURE
 
-* if COMP3331 largely theoretical.
-apply to calculating speed differences for our Internet connection,
-e.g. WiFi vs Ethernet. DSL vs FTTN vs FTTP.
-when does it reach trans-alantic-cable.
-wherein the packet flow is the largest bottleneck? 
-is it just geographic distance from Australia?
-
 * how does quantum computing work?
 
 * what frequencies/technologies are regulated like in ISM; by extension
