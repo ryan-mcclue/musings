@@ -220,3 +220,5 @@ Growth of startups are just finding a niche, rather than writing revolutionary s
 
 Testing nomenclature so diverse, yet could be boiled down to a handful of terms, e.g.
 Regression testing just re-running tests on new changes, which is something you do implicitly
+
+JSON is not even robust enough to allow trailing commas that even C89 arrays support ...
