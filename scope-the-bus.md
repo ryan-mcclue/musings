@@ -21,3 +21,5 @@ math -> decoder on; event table on (make sure zoomed out enough to view multiple
 single-shot triggering contact bounce first then ringing as stablises (makes it a balancing act between selecting triggering level for button press and release)
 Multimeter measure power consumption of MCU? (stm32 nucleo boards have convenient IDD jumper)
 verify signal ringing (e.g. clock signal), i.e. inspect ramp-up/down (measure time to completely bottom out)
+
+Bus Pirate has PIC as a SOIC (surface outline integrated circuit) package

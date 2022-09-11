@@ -114,6 +114,9 @@ bot message popup, cookies accept bar, ...
 
 asciinema useful terminal recording tool with website to host
 
+potential for sim-locking being a thing of the past with a push to eSIM cards
+quad pixel camera sensor
+
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
 in effect, most people's journey to learning is bespoke

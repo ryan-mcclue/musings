@@ -93,7 +93,10 @@ plasma is superheated matter, i.e. ionised gas
 LED is the backlight, as oppose to fluorescent (LCD still used within this).
 so really LED LCD. IPS (in-plane switching), TFT (thin film transistor) 
 are examples of LCD panel technology
-OLED produces own light, i.e. current passed through an OLED diode to produce light
+OLED produces own light, i.e. current passed through an OLED diode to produce light. LTPO (low-temperature polycrystalline oxide)
+
+nit is a measure of luminance, i.e. intensity of light (brightness is how we percieve luminance ∴ subjective).
+higher nit display are more easily viewable in a wider array of lighting conditions (e.g. combat the sun's light reflecting off the surface)
 
 e-ink less power than LCD as only uses power when arrangment of colours changes
 

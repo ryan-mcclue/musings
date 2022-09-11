@@ -5,6 +5,9 @@ databases useful for tracking time series IoT sensor data
 how to overclock and underclock?
 how are these different to adjusting clock scalers?
 
+awesome escape puzzles:
+https://www.youtube.com/c/PlayfulTechnology
+
 investigate cpu fault handling: https://github.com/tobermory/faultHandling-cortex-m
 
 DC motor: raw PWM signal and ground
