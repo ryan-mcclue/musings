@@ -93,7 +93,8 @@ lol, killedbygoogle.com. perhaps not wise to rely on new services
 
 is self-administration the only benefit of an inhaled COVID vaccine?
 
-doesn't seem like quantum computers will be able to solve any practical tasks
+doesn't seem like quantum computers will be able to solve any practical tasks 
+(unless program exploits quantum parrelism to a large extent)
 
 cloud computing with containers growing, e.g. AWS/Azure ➞ Kubernetes ➞ docker
 
