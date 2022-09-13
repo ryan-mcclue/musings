@@ -300,7 +300,8 @@ short build times (under 10 seconds) are incredibly important to not decentivnes
 
 function overloading, generalised operator overloading and default arguments are c++ features that can't easily be implemented with gcc extensions
 
-note that >> will typically (implementation defined) perform arithmetic shift on signed, so not always the same as a divide.
+note that >> will typically (implementation defined) perform arithmetic shift (fill in with 1's) on signed, so not always the same as a divide.
+similarly, sign-extension just fills in the new MSBs with 1's
 
 for large cross-platform projects, best to differentiate with filenames, rather than ifdefs.
 this also gives the ability to have different control flows across the different platforms (essential)
