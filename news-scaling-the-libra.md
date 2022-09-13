@@ -116,7 +116,17 @@ bot message popup, cookies accept bar, ...
 asciinema useful terminal recording tool with website to host
 
 potential for sim-locking being a thing of the past with a push to eSIM cards
-quad pixel camera sensor
+
+New AI that can edit videos with textual prompts
+The dramatic shift in technology that mobile and cloud devices have brought is being realised by natural language processing
+As text is seen as a universal input in a lot of Unix programs, interesting possibilities.
+
+eyes convert photons to electrochemical signal
+transduction converts one energy form to another
+CCD (charged couple device; less noise, more power, lower speed) and CMOS (consumer grade) common camera sensors
+digital cameras convert photons to array of pixels, represented as voltage levels
+quad pixel camera sensor combines four adjacent pixels in this array
+
 
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
