@@ -127,6 +127,12 @@ CCD (charged couple device; less noise, more power, lower speed) and CMOS (consu
 digital cameras convert photons to array of pixels, represented as voltage levels
 quad pixel camera sensor combines four adjacent pixels in this array
 
+round design of new Nvidia GPU may be evidence for the 20-year cyclical nature of fashion
+
+amazing new 6GHz stock speed Intel CPU
+
+although all crypto is ponzi scheme, it seems the goals of Ethereum to perform secure financial transactions is headed in a better
+direction than BitCoin
 
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
