@@ -1,5 +1,7 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+investigate automated 'agriculture', e.g smart argicultural kit, automatic pot plant watering, etc.
+
 databases useful for tracking time series IoT sensor data 
 
 how to overclock and underclock?
