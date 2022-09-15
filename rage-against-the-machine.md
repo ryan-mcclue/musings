@@ -225,3 +225,4 @@ JSON is not even robust enough to allow trailing commas that even C89 arrays sup
 
 Now have 'memory leak' finder tools for interpreted languages like Javascript...
 
+IPv6 classic example of second-system effect 

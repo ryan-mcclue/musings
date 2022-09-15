@@ -138,6 +138,8 @@ avx512 cant actually get performance stated by Intel 'marketing' as it causes he
 
 good to see some work being done on the interopability of digital wallets
 
+in general, Occum's razor approach to muscular issues
+
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
 in effect, most people's journey to learning is bespoke
