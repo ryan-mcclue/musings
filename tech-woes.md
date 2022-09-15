@@ -71,3 +71,5 @@ Unfortunately the freedom of creativity has resulted in much of the Web being in
 and hindering
 
 Order of arguments matter in docker, for some reason --rm must be before -it
+
+default firefox credential store overwrote bitwarden password. ugh
