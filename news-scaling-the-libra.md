@@ -132,13 +132,20 @@ round design of new Nvidia GPU may be evidence for the 20-year cyclical nature o
 amazing new 6GHz stock speed Intel CPU
 
 although all crypto is ponzi scheme, it seems the goals of Ethereum to perform secure financial transactions is headed in a better
-direction than BitCoin
+direction than BitCoin (the process of mining, i.e solving algorithms is very power hungry)
 
 avx512 cant actually get performance stated by Intel 'marketing' as it causes heat up and cpu thermal throttles
 
 good to see some work being done on the interopability of digital wallets
 
 in general, Occum's razor approach to muscular issues
+
+smart power homes whereby the source of the power can be discerned, i.e. if it's clean or not. 
+extends to phone chargers with knowledge of this
+
+interesting Github Copilot Labs able to do rough translations between languages
+
+good to see (in some ways) hardware vendors pushing for AI standards to allow for greater optimisation
 
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
