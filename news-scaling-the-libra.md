@@ -132,7 +132,8 @@ round design of new Nvidia GPU may be evidence for the 20-year cyclical nature o
 amazing new 6GHz stock speed Intel CPU
 
 although all crypto is ponzi scheme, it seems the goals of Ethereum to perform secure financial transactions is headed in a better
-direction than BitCoin (the process of mining, i.e solving algorithms is very power hungry)
+direction than BitCoin.
+furthermore following The Merge, it does not rely on power hungry mining 
 
 avx512 cant actually get performance stated by Intel 'marketing' as it causes heat up and cpu thermal throttles
 
@@ -146,6 +147,10 @@ extends to phone chargers with knowledge of this
 interesting Github Copilot Labs able to do rough translations between languages
 
 good to see (in some ways) hardware vendors pushing for AI standards to allow for greater optimisation
+
+ATM machines can be targeted for card-skimmers
+
+possibility of sprite animation in terminal using chafa tool to create ascii block art
 
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
