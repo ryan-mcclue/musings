@@ -152,6 +152,10 @@ ATM machines can be targeted for card-skimmers
 
 possibility of sprite animation in terminal using chafa tool to create ascii block art
 
+Intel new naming scheme confusing using brand name as category, i.e. 'Intel Processor' instead of 'Pentium'
+
+YouTube no respect for customers, running clandenstine experiment running up to 5 ads at the start instead of spacing them out
+
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
 in effect, most people's journey to learning is bespoke
