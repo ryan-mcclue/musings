@@ -1,5 +1,8 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+use time-series database where everything is stored ordered 
+(as oppose to relational based on set thoery whose order is determined in clauses. also get full SQL support here and can store more data types)
+
 investigate automated 'agriculture', e.g smart argicultural kit, automatic pot plant watering, etc.
 
 databases useful for tracking time series IoT sensor data 

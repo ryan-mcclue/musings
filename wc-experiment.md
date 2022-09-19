@@ -1,5 +1,9 @@
 time -p; getrusage();
 
+Can pin a thread to a core
+
+Can run programs in kernel space with eBPF 
+
 Frequent context-switching will give terrible cache coherency
 
 adding `restrict` also useful to prevent aliasing and thereby might allow
