@@ -158,6 +158,12 @@ YouTube no respect for customers, running clandenstine experiment running up to 
 
 Growing space economy with NASA ISS becoming privatised
 
+Gaming phones with extended fans/cooling and amenable gripping features 
+
+I suppose it would be kind of cool to travel in a plane going Mach 1
+
+There can be such extremes in software, e.g. from programming hardware in FPGA to writing natural-language descriptions for an AI to convert to code
+
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
 in effect, most people's journey to learning is bespoke

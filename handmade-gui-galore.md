@@ -2,6 +2,8 @@
 hotloading
 metaprogramming
 
+X11 copy and paste: https://handmade.network/forums/articles/t/8544-implementing_copy_paste_in_x11
+
 Often legacy supported code adds lots of corner cases, e.g. opengl
 i.e  don't have consistent performance characteristics
 
