@@ -155,6 +155,7 @@ possibility of sprite animation in terminal using chafa tool to create ascii blo
 Intel new naming scheme confusing using brand name as category, i.e. 'Intel Processor' instead of 'Pentium'
 
 YouTube no respect for customers, running clandenstine experiment running up to 5 ads at the start instead of spacing them out
+Furthermore, Mozilla researchers found that buttons like 'Stop recommending', 'Dislike' have next to no effect
 
 Growing space economy with NASA ISS becoming privatised
 
@@ -163,6 +164,14 @@ Gaming phones with extended fans/cooling and amenable gripping features
 I suppose it would be kind of cool to travel in a plane going Mach 1
 
 There can be such extremes in software, e.g. from programming hardware in FPGA to writing natural-language descriptions for an AI to convert to code
+
+Cool 3D printing pens, although slow, can be used to say repair a chipped brick
+
+Cool USB SAMD boards (possible malware creation)
+
+Amazing creations from AI from still images, videos, digital assistants: https://threadreaderapp.com/thread/1572210382944538624.html 
+AI used in UI testing
+GPU DLSS (deep learning super sampling)
 
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking

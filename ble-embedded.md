@@ -1,5 +1,7 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+TODO: how to calculate: "Its power supply system can supply up to 4200 mAh and run for more than 5 hours"
+
 use time-series database where everything is stored ordered 
 (as oppose to relational based on set thoery whose order is determined in clauses. also get full SQL support here and can store more data types)
 

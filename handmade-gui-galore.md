@@ -3,6 +3,7 @@ hotloading
 metaprogramming
 
 X11 copy and paste: https://handmade.network/forums/articles/t/8544-implementing_copy_paste_in_x11
+font rasteriser: https://handmade.network/forums/wip/t/7610-reading_ttf_files_and_rasterizing_them_using_a_handmade_approach 
 
 Often legacy supported code adds lots of corner cases, e.g. opengl
 i.e  don't have consistent performance characteristics
