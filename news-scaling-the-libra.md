@@ -171,7 +171,18 @@ Cool USB SAMD boards (possible malware creation)
 
 Amazing creations from AI from still images, videos, digital assistants: https://threadreaderapp.com/thread/1572210382944538624.html 
 AI used in UI testing
-GPU DLSS (deep learning super sampling)
+GPU DLSS (deep learning super sampling) is AI upscaling
+
+Finally, alleviating ambigious USB 4.0 v2.0 naming scheme with devices having clear
+USB 40Gbps, 240W printed on them
+
+Compelled to investigate a service like paperspace in order to run OpenAI and other AI projects
+
+Promising Framework laptop build to easily repair in mind. However, subpar experience
+
+Teachers are fired for moonlighting
+
+Record breaking DDos attacks, 17.2million requests per second, 3.4terabits per second, 809million packets per second
 
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
