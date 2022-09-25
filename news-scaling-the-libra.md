@@ -31,6 +31,7 @@ different transistors for say quick-switching, low signal, high frequency, ampli
 USB-4, PCI5, DDR5 emerging standards.
 
 Could buy a GPU for running interesting machine learning applications like Stable Diffusion (prompt engineers, oh dear...)
+https://www.krea.ai/
 GPU structure similar to CPUs, e.g have cache, GDDR6 memory (more simple parrellisation)
 
 float-toy nice web visualistion tool
@@ -170,6 +171,7 @@ Cool 3D printing pens, although slow, can be used to say repair a chipped brick
 Cool USB SAMD boards (possible malware creation)
 
 Amazing creations from AI from still images, videos, digital assistants: https://threadreaderapp.com/thread/1572210382944538624.html 
+Companies like DeepMind, OpenAI chatbot
 AI used in UI testing
 GPU DLSS (deep learning super sampling) is AI upscaling
 
@@ -183,6 +185,12 @@ Promising Framework laptop build to easily repair in mind. However, subpar exper
 Teachers are fired for moonlighting
 
 Record breaking DDos attacks, 17.2million requests per second, 3.4terabits per second, 809million packets per second
+
+Google have size to challenge Dolby with new HD audio standard 
+
+Interesting Domain Brokerage services to allow you to get already used domains
+
+Amount limiting will not work to prevent MFA fatigue attacks
 
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
