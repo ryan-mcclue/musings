@@ -1,5 +1,7 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+network game (with some testing tools): https://github.com/TheSandvichMaker/netgame 
+
 TODO: how to calculate: "Its power supply system can supply up to 4200 mAh and run for more than 5 hours"
 
 use time-series database where everything is stored ordered 
