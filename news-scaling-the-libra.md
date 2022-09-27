@@ -44,6 +44,7 @@ flexible/bendable monitors no one asked for...
 
 cool looking completely submerged server desktops. 
 pure water is a very good insulator (our tap water will have chlorine for example)
+obtained via ozone treatment
 
 the Nintendo DSi implemented augmented reality
 virtual reality is completely immersive
@@ -186,11 +187,19 @@ Teachers are fired for moonlighting
 
 Record breaking DDos attacks, 17.2million requests per second, 3.4terabits per second, 809million packets per second
 
-Google have size to challenge Dolby with new HD audio standard 
+Google have size to challenge Dolby with new HD audio standard.
+However, whilst seeming altruistic, is just so they don't have to pay Dolby licensing fees in their hardware 
 
 Interesting Domain Brokerage services to allow you to get already used domains
 
 Amount limiting will not work to prevent MFA fatigue attacks
+
+Record-breaking figures acheived with overclocking can be decieving as may employ high-end coolers or even liquid nitrogen 
+
+Still Windows updates break things, e.g. NVidia drivers
+
+The inundation of Javascript web frameworks has provided a learning point for adopting new technologies.
+In general, stick to familiar technologies and only adopted bleeding edge later
 
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
