@@ -56,4 +56,26 @@ also install cuda not from apt repository
 as python concept of CWD is strange, must run from outside directory
 
 --------
+Based on what was trained (LAION 400M internet scraped image-text pairs), output may bias, e.g. nerd might bias towards wearing glasses 
+
+txt2img:
+word:weight, word:weight (must weights to proceeding works as well to not override)
+steampunk rodent, intricate, pen and ink/canon m50, concept art, aerial
+
+scale is how close to original?
+batch/iterations is how many images to create? Or do we use a custom script? https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts
+seems that there are a variety of Stable Diffusion scripts to use, e.g. https://github.com/jquesnelle/txt2imghd 
+
+img2img:
 Euler, lower CFG scale makes image more honest to original
+--> is textual inversion just a variant of img2img keeping likeness?
+
+interpolated videos:
+timelapse between prompts
+
+outpainting:
+
+
+inpainting:
+generate mask by going into gimp and covering areas to be removed with white and then save that image as a mask
+
