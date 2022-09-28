@@ -1,5 +1,5 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
-YouTube: NerdyRodent
+person image to 3d model: https://www.youtube.com/watch?v=6DOsWaxcHEM 
 
 sudo apt-get update
 sudo apt-get -y upgrade
@@ -44,6 +44,8 @@ sudo apt-get -y install cuda
 
 ssh-add -L or simply look in ~/.ssh directory (this is essential for private key)
 
+is command line a lot faster than gradio (gradio restricts VRAM usage?)
+
 seems that packaged things in the cloud aren't all that flexible, e.g. ML-in-a-box cannot have independent components updated
 
 important to run apt update on first running
@@ -60,7 +62,7 @@ Based on what was trained (LAION 400M internet scraped image-text pairs), output
 
 txt2img:
 word:weight, word:weight (must weights to proceeding works as well to not override)
-steampunk rodent, intricate, pen and ink/canon m50, concept art, aerial
+steampunk/low-poly 3D/minecraft rodent, intricate, pen and ink/canon m50, concept art, aerial
 
 scale is how close to original?
 batch/iterations is how many images to create? Or do we use a custom script? https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts
@@ -78,4 +80,3 @@ outpainting:
 
 inpainting:
 generate mask by going into gimp and covering areas to be removed with white and then save that image as a mask
-

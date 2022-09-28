@@ -135,7 +135,8 @@ amazing new 6GHz stock speed Intel CPU
 
 although all crypto is ponzi scheme, it seems the goals of Ethereum to perform secure financial transactions is headed in a better
 direction than BitCoin.
-furthermore following The Merge, it does not rely on power hungry mining 
+furthermore following The Merge, it does not rely on power hungry mining.
+this is in term has led to a lot of 2nd-hand GPUs flooding the market
 
 avx512 cant actually get performance stated by Intel 'marketing' as it causes heat up and cpu thermal throttles
 
@@ -200,6 +201,10 @@ Still Windows updates break things, e.g. NVidia drivers
 
 The inundation of Javascript web frameworks has provided a learning point for adopting new technologies.
 In general, stick to familiar technologies and only adopted bleeding edge later
+
+Cool application of IoT: https://hackaday.com/2015/11/24/building-the-infinite-matrix-of-tamagotchis/
+
+Although lower-res, CDs aren't lossy compressed like Bluetooth or spotify.
 
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
