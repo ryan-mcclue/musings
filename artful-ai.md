@@ -1,6 +1,8 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 person image to 3d model: https://www.youtube.com/watch?v=6DOsWaxcHEM 
 
+OhMyPrints WallApp, canvas photo prints
+
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y install \
@@ -63,6 +65,8 @@ Based on what was trained (LAION 400M internet scraped image-text pairs), output
 txt2img:
 word:weight, word:weight (must weights to proceeding works as well to not override)
 steampunk/low-poly 3D/minecraft rodent, intricate, pen and ink/canon m50, concept art, aerial
+in reality, will have different prompt formats for particular, e.g. architecture
+https://www.youtube.com/watch?v=oIAM3loi51s&t=184s
 
 scale is how close to original?
 batch/iterations is how many images to create? Or do we use a custom script? https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts
