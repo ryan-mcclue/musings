@@ -73,7 +73,12 @@ batch/iterations is how many images to create? Or do we use a custom script? htt
 seems that there are a variety of Stable Diffusion scripts to use, e.g. https://github.com/jquesnelle/txt2imghd 
 
 img2img:
-Euler, lower CFG scale makes image more honest to original
+Maintaining likeness:
+* Euler over Eular A
+* Sampling steps removes noise, 15-30
+* CFG scale 0.3-0.6
+* Denoise strength 1
+* lower CFG scale makes image more honest to original
 --> is textual inversion just a variant of img2img keeping likeness?
 
 interpolated videos:
