@@ -206,6 +206,14 @@ Cool application of IoT: https://hackaday.com/2015/11/24/building-the-infinite-m
 
 Although lower-res, CDs aren't lossy compressed like Bluetooth or spotify.
 
+Amazing gigabit speeds being sold for ISPs
+
+Sad that bariatrics is even a field of medicine
+
+Serverless is just a term for a caching server closer to clients
+
+In the same unrequested vein as foldable PCs, now have slidable PCs
+
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
 in effect, most people's journey to learning is bespoke
