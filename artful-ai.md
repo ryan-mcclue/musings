@@ -3,6 +3,8 @@ person image to 3d model: https://www.youtube.com/watch?v=6DOsWaxcHEM
 better auto-rigging: https://www.youtube.com/watch?v=XsAT3s8nrPE
 better person prints: https://www.youtube.com/watch?v=xSkyLuRnt4g
 
+HEGEMONY
+
 OhMyPrints WallApp, canvas photo prints
 
 sudo apt-get update
