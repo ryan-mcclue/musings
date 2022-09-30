@@ -72,6 +72,16 @@ steampunk/low-poly 3D/minecraft rodent, intricate, pen and ink/canon m50, concep
 in reality, will have different prompt formats for particular, e.g. architecture
 https://www.youtube.com/watch?v=oIAM3loi51s&t=184s
 
+    "a cute magical flying dog, fantasy art, "
+    "golden color, high quality, highly detailed, elegant, sharp focus, "
+    "concept art, character concepts, digital painting, mystery, adventure",
+    batch_size=3,
+
+    "A mysterious dark stranger visits the great pyramids of egypt, "
+    "high quality, highly detailed, elegant, sharp focus, "
+    "concept art, character concepts, digital painting",
+
+
 scale is how close to original?
 batch/iterations is how many images to create? Or do we use a custom script? https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts
 seems that there are a variety of Stable Diffusion scripts to use, e.g. https://github.com/jquesnelle/txt2imghd 
@@ -88,8 +98,5 @@ Maintaining likeness:
 interpolated videos:
 timelapse between prompts
 
-outpainting:
-
-
-inpainting:
-generate mask by going into gimp and covering areas to be removed with white and then save that image as a mask
+outpainting/inpainting:
+dalle-2 much better here for photos

@@ -216,6 +216,10 @@ In the same unrequested vein as foldable PCs, now have slidable PCs
 
 Perhaps the going through graphical ASMR programming videos the 'enjoyable' remedy
 
+More encompassing/combined sensors, e.g. AI vision sensor, gesture detection sensor
+
+Increased power of technology, developing perhaps faster interfaces, e.g. search by photo, speech, etc. 
+
 sextempber cornucopia of condoms
 don't have to be nostradamus to work out parents parking
 in effect, most people's journey to learning is bespoke
