@@ -2,6 +2,7 @@
 person image to 3d model: https://www.youtube.com/watch?v=6DOsWaxcHEM 
 better auto-rigging: https://www.youtube.com/watch?v=XsAT3s8nrPE
 better person prints: https://www.youtube.com/watch?v=xSkyLuRnt4g
+MonsterMash 2d-3d animation
 
 HEGEMONY
 
@@ -77,9 +78,9 @@ https://www.youtube.com/watch?v=oIAM3loi51s&t=184s
     "concept art, character concepts, digital painting, mystery, adventure",
     batch_size=3,
 
-    "A mysterious dark stranger visits the great pyramids of egypt, "
-    "high quality, highly detailed, elegant, sharp focus, "
-    "concept art, character concepts, digital painting",
+    A mysterious dark stranger visits the great pyramids of egypt, 
+    high quality, highly detailed, elegant, sharp focus, 
+    concept art, character concepts, digital painting,
 
 
 scale is how close to original?
