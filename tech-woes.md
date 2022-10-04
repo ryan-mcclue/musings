@@ -73,3 +73,9 @@ and hindering
 Order of arguments matter in docker, for some reason --rm must be before -it
 
 default firefox credential store overwrote bitwarden password. ugh
+
+Have so many Ubuntu variants when in reality just different packages installed (possibly different kernel parameters), e.g. mate, xubuntu, lbuntu, studio
+
+Ad division of companies seem to have greatest control over design
+
+Go on a news website and try to watch a video. after watching an obtrusive ad, video starts, skip to 30% of way, the same ad repeats...

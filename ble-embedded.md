@@ -1,5 +1,14 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+https://embeddedartistry.com/blog/2019/04/08/a-general-overview-of-what-happens-before-main/?mc_cid=3835da293a&mc_eid=UNIQID
+
+Go through talks on memfault.com blog 
+
+Simulator testing gives much faster turn-around times, can add sanitisers without memory concerns, pass peripheral data in from file, draw to window instead of display etc. 
+
+For memory allocator, set to 0 on free in debug builds?
+Investigate gcc tunables, e.g. in debug build: export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
+
 network game (with some testing tools): https://github.com/TheSandvichMaker/netgame 
 
 TODO: how to calculate: "Its power supply system can supply up to 4200 mAh and run for more than 5 hours"
@@ -214,6 +223,11 @@ https://thephd.dev/
 https://www.embeddedrelated.com/blogs.php
 https://lemon.rip/
 https://jpieper.com/
+https://www.embeddedrelated.com/
+https://patternsinthemachine.net/category/general/
+https://embeddeduse.com/
+https://martinfowler.com/articles/patterns-of-distributed-systems/?mc_cid=3835da293a&mc_eid=UNIQID
+
 memfault
 
 https://embeddedartistry.com/fieldatlas/embedded-software-development-maturity-model/?mc_cid=da33e3796b&mc_eid=UNIQID

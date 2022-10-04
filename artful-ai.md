@@ -2,6 +2,11 @@
 person image to 3d model: https://www.youtube.com/watch?v=6DOsWaxcHEM 
 better auto-rigging: https://www.youtube.com/watch?v=XsAT3s8nrPE
 better person prints: https://www.youtube.com/watch?v=xSkyLuRnt4g
+
+can put ourselves into images, but have to train with ≈20GB VRAM using diffusers
+
+text to human animation: https://github.com/GuyTevet/motion-diffusion-model 
+
 MonsterMash 2d-3d animation
 
 HEGEMONY
