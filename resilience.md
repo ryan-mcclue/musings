@@ -22,3 +22,5 @@ Starting from scratch, try to avoid analysis paralysis
 Pragmas and binary searching codebase to check where compiler optimises routine wrong
 
 signed comparison specifics and code flow in assembly
+
+copy-pasta from UDP socket attempting to access like a TCP. doesn't fail, just hangs on read()
