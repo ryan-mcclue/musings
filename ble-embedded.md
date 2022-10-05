@@ -1,5 +1,9 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+DSP: http://www.dspguide.com/pdfbook.htm
+
+circuit design in software (perhaps parallel with Robert Feranc?): https://www.jitx.com/  
+
 https://embeddedartistry.com/blog/2019/04/08/a-general-overview-of-what-happens-before-main/?mc_cid=3835da293a&mc_eid=UNIQID
 
 Go through talks on memfault.com blog 

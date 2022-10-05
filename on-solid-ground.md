@@ -1,5 +1,7 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
+data science: https://tigyog.app/d/C-I1weB9CpTH/r/everyday-data-science
+
 GNUPlot:
 https://unix.stackexchange.com/questions/190337/how-can-i-make-a-graphical-plot-of-a-sequence-of-numbers-from-the-standard-input
 https://asciinema.org/a/421164
