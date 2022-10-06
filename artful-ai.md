@@ -4,6 +4,16 @@ better auto-rigging: https://www.youtube.com/watch?v=XsAT3s8nrPE
 better person prints: https://www.youtube.com/watch?v=xSkyLuRnt4g
 
 can put ourselves into images, but have to train with ≈20GB VRAM using diffusers
+20 photos (of various emotions) in 1:1 aspect ratio:
+* 3 images full body 
+* 5 naval upwards
+* 12 face
+set class to person
+we save model weights, which can then be supplied to the webui?
+in prompts use token and class, e.g. RYan person
+low 'guidance scale' is more detailed?
+
+HuggingFace hosts CompVis stable diffusion models? accept license agreement and use account access token
 
 text to human animation: https://github.com/GuyTevet/motion-diffusion-model 
 
