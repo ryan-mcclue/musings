@@ -1,5 +1,12 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+TODO: amplifiers, e.g. class-D etc.
+
+Analog LED is single colour
+Digital LED allows controlling each colour separately. This is done through an LED chip (think WS2812B LED chip for NeoPixel)
+
+A channel in a sensor is quantity measured. So an acceleration sensor could have 3 channels, 1 for each axes
+
 DSP: http://www.dspguide.com/pdfbook.htm
 
 circuit design in software (perhaps parallel with Robert Feranc?): https://www.jitx.com/  
@@ -332,7 +339,9 @@ is fixed point used anymore?
 TODO(Ryan): Why is a floating pin also called high impedance?
 To avoid power dissipation and unknown state, 
 drive with external source, e.g. ground or voltage.
-Pull-up resistor connected to voltage, pull-down to ground.
+
+Pull-up/down resistors are to used for unconnected input pins to avoid floating state
+So, a pull-down will have the pin (when in an unconnected state) to ground, i.e. 0V when switch is not on
 
 the sparsity of linux can make configuration vary
 e.g bluez stack -> modify policies
