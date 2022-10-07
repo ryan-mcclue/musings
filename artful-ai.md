@@ -80,7 +80,7 @@ also install cuda not from apt repository
 as python concept of CWD is strange, must run from outside directory
 
 --------
-Based on what was trained (LAION 400M internet scraped image-text pairs), output may bias, e.g. nerd might bias towards wearing glasses 
+Based on what was trained (LAION 400M internet scraped image-text pairs, which contains violent and sexual images (as oppose to DALLE-2)), output may bias, e.g. nerd might bias towards wearing glasses 
 
 txt2img:
 word:weight, word:weight (must weights to proceeding works as well to not override)
@@ -96,6 +96,9 @@ https://www.youtube.com/watch?v=oIAM3loi51s&t=184s
     A mysterious dark stranger visits the great pyramids of egypt, 
     high quality, highly detailed, elegant, sharp focus, 
     concept art, character concepts, digital painting,
+
+"a pirate ship, clean line art, drawing, sketching, kitbash 3 d, art by hebron ppg"
+https://lexica.art/?q=2ea3ae2a-4c8b-4d64-9c24-0924da5c759d
 
 
 scale is how close to original?

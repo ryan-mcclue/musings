@@ -1,6 +1,10 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
-TODO: amplifiers, e.g. class-D etc.
+Might see GNSS + INS (inertial navigation system; i.e using IMU as well)
+
+Perhaps if gaffer low-level correctness, searching for web API design message types?
+
+TODO: amplifiers, e.g. class-D etc. MEMs accelerometers for vibration detection in cars
 
 Analog LED is single colour
 Digital LED allows controlling each colour separately. This is done through an LED chip (think WS2812B LED chip for NeoPixel)
@@ -8,6 +12,7 @@ Digital LED allows controlling each colour separately. This is done through an L
 A channel in a sensor is quantity measured. So an acceleration sensor could have 3 channels, 1 for each axes
 
 DSP: http://www.dspguide.com/pdfbook.htm
+terms like THD (total harmonic distribution), PFC (power factor correction), HV (high voltage)
 
 circuit design in software (perhaps parallel with Robert Feranc?): https://www.jitx.com/  
 
@@ -23,6 +28,8 @@ Investigate gcc tunables, e.g. in debug build: export MALLOC_PERTURB_=$(($RANDOM
 network game (with some testing tools): https://github.com/TheSandvichMaker/netgame 
 
 TODO: how to calculate: "Its power supply system can supply up to 4200 mAh and run for more than 5 hours"
+SiC (silicon carbide) power module
+Whole area in power management (also leads onto safety regulations, e.g. SIL) 
 
 use time-series database where everything is stored ordered 
 (as oppose to relational based on set thoery whose order is determined in clauses. also get full SQL support here and can store more data types)
@@ -227,6 +234,7 @@ https://pikuma.com/courses
 is power profiler kit specific to each board necessary, e.g. nordic, stm32?
 
 blogs:
+https://blog.st.com/
 https://dmitry.gr/?r=05.Projects
 https://tratt.net/laurie/blog/
 http://stevehanov.ca/blog/

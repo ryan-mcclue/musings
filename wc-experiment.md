@@ -1,5 +1,7 @@
 time -p; getrusage();
 
+use $(time) for single line, use $(ctime)
+
 Can pin a thread to a core
 
 Can run programs in kernel space with eBPF 
