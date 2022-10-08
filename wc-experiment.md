@@ -1,8 +1,10 @@
 time -p; getrusage();
 
-Saying one instruction is faster than the other is limiting.
-Every instruction is executed in the context of solving a problem,
-so it's how you use it, e.g. mul and add same latency
+Saying one instruction is faster than the other ignores context of execution.
+e.g. mul and add same latency, however due to pipelining mul execution unit might be full
+TLS vs atomics, e.g. TLS is series of instructions determined by OS and compiler.
+Atomics depend on how other cores are run and synchronising necessary with other cores
+So, must measure which is faster for particular situation
 
 use $(time) for single line, use $(ctime)
 
