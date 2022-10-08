@@ -24,3 +24,6 @@ Pragmas and binary searching codebase to check where compiler optimises routine 
 signed comparison/branching/add/sub specifics and code flow jumps in assembly
 
 copy-pasta from UDP socket attempting to access like a TCP. doesn't fail, just hangs on read()
+
+break inside of for loop thinking inside of switch
+having a assignment instead of comparison inside of if
