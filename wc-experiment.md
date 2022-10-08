@@ -1,5 +1,9 @@
 time -p; getrusage();
 
+Saying one instruction is faster than the other is limiting.
+Every instruction is executed in the context of solving a problem,
+so it's how you use it, e.g. mul and add same latency
+
 use $(time) for single line, use $(ctime)
 
 Can pin a thread to a core

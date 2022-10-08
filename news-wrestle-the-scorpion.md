@@ -32,3 +32,5 @@ Will it be common place for actors to sell likeness for deepfakes?
 Again, YouTube offers another thorn; restricting 4K access to subscribers
 
 MCUs that support OTA firmware updates will typically have built-in key storage
+
+Although decentralisation sounds good (own cell network etc.), it requires user maintenance which people will pay others to do and we're back to square one in a way
