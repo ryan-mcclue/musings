@@ -34,3 +34,7 @@ Again, YouTube offers another thorn; restricting 4K access to subscribers
 MCUs that support OTA firmware updates will typically have built-in key storage
 
 Although decentralisation sounds good (own cell network etc.), it requires user maintenance which people will pay others to do and we're back to square one in a way
+
+How does Google Tensor G2 chip with various CPU architectures, e.g. Cortex-A78, Cortex-A55, Cortex-X1 work?
+
+OS's designed for wearables, e.g. WearOS for Android. I suppose wearables have become an established device class target?
