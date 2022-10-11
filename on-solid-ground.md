@@ -1,6 +1,6 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
-always in software development have 
+How do containerised/sandboxed applications like Flatpak work on linux?
 
 data science: https://tigyog.app/d/C-I1weB9CpTH/r/everyday-data-science
 

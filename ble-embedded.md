@@ -1,5 +1,11 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+CFFI to create a python interface for C for something say like a console session?
+
+TODO: Perhaps for a machine just targeting embedded development, use WSL to easily use GUI debugger apps?
+
+TODO: Essentials of putting metadata section in firmware binary, such as version string! (particularly so test runners can utilise this information)
+
 Might see GNSS + INS (inertial navigation system; i.e using IMU as well)
 
 Perhaps if gaffer low-level correctness, searching for web API design message types?

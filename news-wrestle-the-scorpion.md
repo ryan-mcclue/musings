@@ -38,3 +38,20 @@ Although decentralisation sounds good (own cell network etc.), it requires user 
 How does Google Tensor G2 chip with various CPU architectures, e.g. Cortex-A78, Cortex-A55, Cortex-X1 work?
 
 OS's designed for wearables, e.g. WearOS for Android. I suppose wearables have become an established device class target?
+
+It really isn't tinfoil hat mentality to be wary of updating unless necessary, e.g. most recent kernel patch affected Intel graphics displays
+
+Floating pod homes in Panama no one asked for. 
+
+In a literal sense Moore's law is dead, however chiplets pose interesting alternatives
+
+Character.ai chatbot creator.
+In fact, AI editor/generators for most artforms seems to exist (video runwayml
+
+The fluidity of OSs continues with new Ubuntu 22.04 replacing PulseAudio with PipeWire, X11 with Wayland.
+
+Having a live session USB is essential to always give root access to filesystem
+
+Can now get Ubuntu Pro for free, which is just extends LTS to 10 years
+
+Fast GUI file searching with fsearch 

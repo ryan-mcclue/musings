@@ -12,8 +12,10 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+TODO: some sort of code review on merge requests
+
 always in software development will have things that aren't working optimally. know they are there.
-will later go back and fix them when required. just know this will always happen
+will later go back and fix them when required (e.g. when in quality improving mode). just know this will always happen
 
 Working with modern software is going to be a pain at some point.
 Have to stay strong and not belittle situation, rather accept it and move on.
