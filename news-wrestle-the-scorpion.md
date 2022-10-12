@@ -27,7 +27,8 @@ Is a smart ring really any better than a smart watch?
 
 As you would expect, Raptor Lake CPUs faster single thread speed at a lower wattage
 
-Will it be common place for actors to sell likeness for deepfakes?
+Will it be common place for impaired actors like Bruce Willis to sell likeness for deepfakes?
+In China, using virtual influencers.
 
 Again, YouTube offers another thorn; restricting 4K access to subscribers
 
@@ -55,3 +56,12 @@ Having a live session USB is essential to always give root access to filesystem
 Can now get Ubuntu Pro for free, which is just extends LTS to 10 years
 
 Fast GUI file searching with fsearch 
+
+Xbox streaming game console. High network speeds seems to make cloud gaming more affordable. 
+However, don't like the idea of constant network connectivity and the power of the provider to shut you out.
+
+15th Century greatest appearance of 'geniuses'. Despite access to information, genius declined.
+Seems that require proffesional tutors at young age to instill a human social engagement
+
+Thanks to TCC compiler, can compile C in memory and load it, hence using it in some way like a scripting language
+However, this can create serious security holes. This is why WASM exists 

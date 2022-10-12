@@ -1,5 +1,15 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
+(sign) (exponent) (significand/mantissa)
+1 *     2² *      0.1234
+
+Required software developer traits: https://adamj.eu/tech/2022/06/17/mike-actons-expectations-of-professional-software-engineers/?utm_source=tldrnewsletter
+
+Debugger stepping into kernel functions?
+
+RAID is method of combining multiple disks together so appear like one disk called an array.
+Various types, e.g. RAID0 (striping) some parts of file in multiple disks, RAID1 (mirroring) each disk is duplicate so could give speed increase etc.
+
 How do containerised/sandboxed applications like Flatpak work on linux?
 
 data science: https://tigyog.app/d/C-I1weB9CpTH/r/everyday-data-science
