@@ -230,3 +230,5 @@ IPv6 classic example of second-system effect
 Windows have to enable hidden file extensions to not enter a .txt file
 
 Although I'm in favour of an OS wrapper, these don't give you all the control you need and you end up having to write your own OS specific code
+
+Unfortunately can't even use modern GNU AVR assembly with numbered labels, advanced macros and location counter

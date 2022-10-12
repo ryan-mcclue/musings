@@ -11,6 +11,7 @@ use of set -x in bash scripts will exit if subprocess returns an error, even if 
 xlib scaled, vsync, refresh rate
 
 ell library
+read test files for documentation
 
 linux input analysing SDL2 source
 

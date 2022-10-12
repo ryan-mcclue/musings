@@ -1,5 +1,11 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+TODO: Hackaday for project inspiration
+
+Marketing refers to some MCU work as physical computing
+
+TODO: investigate both github and gists: https://github.com/BobBurns 
+
 CFFI to create a python interface for C for something say like a console session?
 
 TODO: Perhaps for a machine just targeting embedded development, use WSL to easily use GUI debugger apps?
@@ -13,7 +19,8 @@ Perhaps if gaffer low-level correctness, searching for web API design message ty
 TODO: amplifiers, e.g. class-D etc. MEMs accelerometers for vibration detection in cars
 
 Analog LED is single colour
-Digital LED allows controlling each colour separately. This is done through an LED chip (think WS2812B LED chip for NeoPixel)
+Digital LED allows controlling each colour separately (so, a.k.a e.g addressable APA102 LEDs)
+This is done through an LED chip (think WS2812B LED chip for NeoPixel)
 
 A channel in a sensor is quantity measured. So an acceleration sensor could have 3 channels, 1 for each axes
 

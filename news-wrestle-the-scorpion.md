@@ -47,7 +47,7 @@ Floating pod homes in Panama no one asked for.
 In a literal sense Moore's law is dead, however chiplets pose interesting alternatives
 
 Character.ai chatbot creator.
-In fact, AI editor/generators for most artforms seems to exist (video runwayml
+In fact, AI editor/generators for most artforms seems to exist (video runwayml)
 
 The fluidity of OSs continues with new Ubuntu 22.04 replacing PulseAudio with PipeWire, X11 with Wayland.
 
@@ -64,4 +64,7 @@ However, don't like the idea of constant network connectivity and the power of t
 Seems that require proffesional tutors at young age to instill a human social engagement
 
 Thanks to TCC compiler, can compile C in memory and load it, hence using it in some way like a scripting language
-However, this can create serious security holes. This is why WASM exists 
+However, this can create serious security holes. Could still use in a sandboxed process, e.g. with libseccomp
+WASM allows to run a subset of C++/C in browser as a sandbox.
+
+With the steady proliferation of VR gaming, it's a good thing I was not young during this time
