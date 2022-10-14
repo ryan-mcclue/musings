@@ -65,6 +65,10 @@ Seems that require proffesional tutors at young age to instill a human social en
 
 Thanks to TCC compiler, can compile C in memory and load it, hence using it in some way like a scripting language
 However, this can create serious security holes. Could still use in a sandboxed process, e.g. with libseccomp
-WASM allows to run a subset of C++/C in browser as a sandbox.
+WASM allows to run a subset of C++/C (and well anything that compiles to webassembly) in browser as a sandbox. Could use with wasmer library
+Indeed, with WASM, can compile a native library and use it on the browser like SQLite3
 
 With the steady proliferation of VR gaming, it's a good thing I was not young during this time
+
+DynamicPixelTuning (DPT) promises to make every pixel capable of outputting all colours.
+Therefore, get 3 times resolution than having combined rgb pixels

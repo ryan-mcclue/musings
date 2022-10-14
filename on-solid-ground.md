@@ -390,3 +390,15 @@ although android technically open-source, most of the software run on it isn't
 
 creative commons is a set of licenses that make explicit requirements for users, e.g. CC BY-NC, CC BY-SA, etc.
 unlike MIT, Apache includes a user non-litigation, so users can't initiate litigation if the creators decide to patent something
+
+RENDERING:
+rendering is the process of creating the 2D/3D model, i.e. the drawing onto the monitor
+ray tracing solves transparency issues, it's just substantially slower than standard projection rasterisation (so future is ray tracing)
+
+3D works by emulating a simplified model of how a single human eye views space
+
+A single point of light from the sun hitting a single object will reflect in multiple straight line directions/paths
+
+rasterisation is taking polygon and converting to pixels
+eventually will have to convert say 3D position to 2D (as all rendering is fundamentally this)
+
