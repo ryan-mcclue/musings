@@ -72,3 +72,5 @@ With the steady proliferation of VR gaming, it's a good thing I was not young du
 
 DynamicPixelTuning (DPT) promises to make every pixel capable of outputting all colours.
 Therefore, get 3 times resolution than having combined rgb pixels
+
+Very helpful ranger preview in conjunction with `rc.conf` and `scope.sh`  

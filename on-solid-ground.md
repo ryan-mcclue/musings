@@ -1,5 +1,9 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
+CMAKE:
+1. inclusive library (`add_subdirectory()`, `include_directories()`, `target_link_libraries()`)
+2. standalone library
+
 investigate structure of (C libraries used etc.): 
 https://whitebox.handmade.network/
 https://azmr.itch.io/whitebox

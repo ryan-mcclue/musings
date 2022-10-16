@@ -236,3 +236,5 @@ Unfortunately can't even use modern GNU AVR assembly with numbered labels, advan
 C stdlib BUFSIZ macro vastly different across OSs, e.g. 1K, 8K, 512bytes
 
 Concept of non-daemonic and daemonic 'threads' in python
+
+w3m-img installs to non default path /usr/lib
