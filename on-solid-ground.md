@@ -1,5 +1,13 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
+investigate structure of (C libraries used etc.): 
+https://whitebox.handmade.network/
+https://azmr.itch.io/whitebox
+
+rmgui?: https://www.youtube.com/watch?v=k4Xd59kzouI
+
+font-rendering with stb: https://todool.handmade.network/blog/p/8561-rendering_glyphs_from_a_storage_buffer#26937
+
 (sign) (exponent) (significand/mantissa)
 1 *     2² *      0.1234
 
@@ -401,4 +409,8 @@ A single point of light from the sun hitting a single object will reflect in mul
 
 rasterisation is taking polygon and converting to pixels
 eventually will have to convert say 3D position to 2D (as all rendering is fundamentally this)
+
+lens refract light to central focal point
+
+1. perspective projection (assume viewer is some distance away from screen, similar triangles)
 
