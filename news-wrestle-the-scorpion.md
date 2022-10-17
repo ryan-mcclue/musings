@@ -74,3 +74,22 @@ DynamicPixelTuning (DPT) promises to make every pixel capable of outputting all 
 Therefore, get 3 times resolution than having combined rgb pixels
 
 Very helpful ranger preview in conjunction with `rc.conf` and `scope.sh`  
+
+Apple more like a bank with savings account for Apple Card
+
+Interesting new Danish political party with decisions made by AI.
+I think AI as a collaborator is promising
+
+Despite new phones offering a plethora of new features, don't assume that they are bug-free, e.g. pixel phone crash detection malfunctioning on roller coaster, not allowing dialling to 000, etc.
+
+Realise you can overclock RAM with Intel XMP (extreme memory profile)
+
+Although you hear new Apple and Microsoft chips, almost certainly ARM under the hood
+
+Intel NUC (next-unit-computing) just marketing term for small form factors
+
+Although largely unecessary now, Nvidia has lite hash rate which impedes peformance in order to get GPUs into hands of gamers
+
+The decline of the lone app, as Microsoft 365 leviathan
+
+I see AR being more useful than VR, e.g. hololens for soldiers

@@ -237,4 +237,7 @@ C stdlib BUFSIZ macro vastly different across OSs, e.g. 1K, 8K, 512bytes
 
 Concept of non-daemonic and daemonic 'threads' in python
 
-w3m-img installs to non default path /usr/lib
+w3m-img installs to non default path /usr/lib. Have to resort to X11 python ueberzug
+
+difference in size between C and CPP header files for vulkan SDK is huge, leads to much slower compile times.
+contains some useful things, but not that useful

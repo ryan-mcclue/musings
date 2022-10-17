@@ -1,5 +1,7 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
+TODO: vulkan compute shader vs CUDA?
+
 CMAKE:
 1. inclusive library (`add_subdirectory()`, `include_directories()`, `target_link_libraries()`)
 2. standalone library

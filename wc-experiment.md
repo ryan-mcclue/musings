@@ -1,5 +1,7 @@
 time -p; getrusage();
 
+callbacks less CPU intensive than polling
+
 Saying one instruction is faster than the other ignores context of execution.
 e.g. mul and add same latency, however due to pipelining mul execution unit might be full
 TLS vs atomics, e.g. TLS is series of instructions determined by OS and compiler.
