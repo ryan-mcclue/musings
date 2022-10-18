@@ -241,3 +241,5 @@ w3m-img installs to non default path /usr/lib. Have to resort to X11 python uebe
 
 difference in size between C and CPP header files for vulkan SDK is huge, leads to much slower compile times.
 contains some useful things, but not that useful
+
+Unfortunately software like npm is poorly designed so will inevitable get 'fast/lightweight' variants

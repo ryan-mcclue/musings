@@ -93,3 +93,5 @@ Although largely unecessary now, Nvidia has lite hash rate which impedes peforma
 The decline of the lone app, as Microsoft 365 leviathan
 
 I see AR being more useful than VR, e.g. hololens for soldiers
+
+Meta headset will use eye-tracking to position ads

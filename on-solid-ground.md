@@ -1,5 +1,7 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
+red team is security offensive, blue is defensive
+
 TODO: vulkan compute shader vs CUDA?
 
 CMAKE:
