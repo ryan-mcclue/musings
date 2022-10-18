@@ -270,6 +270,8 @@ Programming about solving problem. overlooked by design philosophies. If you don
 const is only useful if you find it catches bugs for you (maybe for globals instead of using #defines)
 however, in terms of optimsations, const is useless as you can cast const away.
 therefore, for me, const is mostly just a waste of typing.
+however, have to use for strings in C++
+In a similar vein, VLAs useful here (note that sizeof(array) and sizeof(pointer) for calculating string array count)
 
 distinct areas of memory in assembly are stack, heap and data (globals)
 
