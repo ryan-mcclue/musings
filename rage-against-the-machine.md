@@ -243,3 +243,5 @@ difference in size between C and CPP header files for vulkan SDK is huge, leads 
 contains some useful things, but not that useful
 
 Unfortunately software like npm is poorly designed so will inevitable get 'fast/lightweight' variants
+
+Many tutorials on low-level like Vulkan, X11 can be wrong so need to understand spec

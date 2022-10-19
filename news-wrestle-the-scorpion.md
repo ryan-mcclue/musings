@@ -95,3 +95,13 @@ The decline of the lone app, as Microsoft 365 leviathan
 I see AR being more useful than VR, e.g. hololens for soldiers
 
 Meta headset will use eye-tracking to position ads
+
+Perhaps an emeritus professor I'm more willing to listen to.
+
+What I used to take as prima facie from news outlets, now no longer
+
+Unfortantely UNSW basketball CC'd not BCC'd 
+
+To no one's surprise, Windows updates nerf ryzen performance
+
+Marketing plug for cloud gaming consoles when in fact standard phones can do the same thing  

@@ -1,10 +1,15 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+TODO: is something like SerialStudio necessary for visualisation? 
+Could not live stream gnuplot?
+
+TODO: domestica course on creative coding
+
 TODO: Hackaday for project inspiration
 
 Marketing refers to some MCU work as physical computing
 
-TODO: investigate both github and gists: https://github.com/BobBurns 
+TODO: investigate both AVR github and gists: https://github.com/BobBurns 
 
 CFFI to create a python interface for C for something say like a console session?
 

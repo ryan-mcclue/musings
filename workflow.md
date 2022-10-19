@@ -12,6 +12,8 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+When working with array, always check if length > 0
+
 For production, probably want to `dlopen()` to provide fallbacks for missing libraries 
 
 TODO: some sort of code review on merge requests
