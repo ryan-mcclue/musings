@@ -1,4 +1,7 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
+
+resilio sync video downloads: https://hero.handmade.network/forums/code-discussion/t/3242-downloading_videos_using_resilio_sync_formerly_bittorrent_sync
+
 hotloading
 metaprogramming
 
