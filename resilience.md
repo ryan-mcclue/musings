@@ -28,3 +28,4 @@ copy-pasta from UDP socket attempting to access like a TCP. doesn't fail, just h
 
 break inside of for loop thinking inside of switch
 having a assignment instead of comparison inside of if
+unsigned - value causing overflow thereby giving larger than actual
