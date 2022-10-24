@@ -1,12 +1,15 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+
 Digital laser dust sensor (particulates in the air). PM1 being worst as most fine
 TODO: DC vs stepper motor?
 
 Growth of 'enviro sensor kits', i.e. test air quality etc. to create smart home or garden
 Growth of 'IoT' sensor kits
+Growth of 'AI sensors'
 
 H-bridge is IC that switches voltage polarity, e.g. run DC motors forwards or backwards
+Rectifier converts AC to DC (transformer is high voltage AC to low voltage AC)
 
 TODO: is something like SerialStudio necessary for visualisation? 
 Could not live stream gnuplot?
