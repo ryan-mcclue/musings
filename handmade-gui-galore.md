@@ -1,5 +1,8 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+TODO: Windows WM_PAINT when window moved/obscured, main loop otherwise
+therefore, 2 places to possibly draw. does X11 have this also?
+
 resilio sync video downloads: https://hero.handmade.network/forums/code-discussion/t/3242-downloading_videos_using_resilio_sync_formerly_bittorrent_sync
 
 hotloading

@@ -105,3 +105,7 @@ Unfortantely UNSW basketball CC'd not BCC'd
 To no one's surprise, Windows updates nerf ryzen performance
 
 Marketing plug for cloud gaming consoles when in fact standard phones can do the same thing  
+
+With improved network performance, perhaps cheaper to offload calculations to powerful servers (VDI: virtual desktop infrastructure)
+
+NB-IoT (narrowband, i.e. low power). Also have CoAP (constrained application protocol) for embedded devices to access Internet 

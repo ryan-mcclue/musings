@@ -1,5 +1,10 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+TODO: TPM (trusted platform module) for embedded 
+https://www.amazon.com/Trusted-Platform-Module-Basics-Technology/dp/0750679603
+
+TODO: freeRTOS
+https://www.digikey.com/en/maker/projects/getting-started-with-stm32-introduction-to-freertos/ad275395687e4d85935351e16ec575b1
 
 Digital laser dust sensor (particulates in the air). PM1 being worst as most fine
 TODO: DC vs stepper motor?
