@@ -1,5 +1,14 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+TODO: outdoor project: https://hackaday.io/project/186064-green-detect
+look into further hackaday.io/projects
+
+TODO: embed LEDs onto 3D printed board
+
+contrasting telephoto and wide angle lens
+
+TODO: differences between ribbon cable and normal
+
 TODO: TPM (trusted platform module) for embedded 
 https://www.amazon.com/Trusted-Platform-Module-Basics-Technology/dp/0750679603
 
@@ -10,8 +19,9 @@ Digital laser dust sensor (particulates in the air). PM1 being worst as most fin
 TODO: DC vs stepper motor?
 
 Growth of 'enviro sensor kits', i.e. test air quality etc. to create smart home or garden
-Growth of 'IoT' sensor kits
+Growth of 'IoT' sensor kits/smart home
 Growth of 'AI sensors'
+(Perhaps more relevent to me is power/energy and automation and sensing)
 
 H-bridge is IC that switches voltage polarity, e.g. run DC motors forwards or backwards
 Rectifier converts AC to DC (transformer is high voltage AC to low voltage AC)
