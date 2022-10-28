@@ -12,6 +12,14 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+
+TODO: write more comments on code that is 'exploratory', e.g. ASSUMES static size, 
+IGNORES clearing other fields, etc.
+
+Good error messages say what happened and why, 
+provide reassurance, are empathetic, 
+and help users fix the problem.
+
 When working with array, always check if length > 0
 
 For production, probably want to `dlopen()` to provide fallbacks for missing libraries 

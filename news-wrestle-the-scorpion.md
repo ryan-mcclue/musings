@@ -112,4 +112,16 @@ NB-IoT (narrowband, i.e. low power). Also have CoAP (constrained application pro
 
 Easy to fall prey to the act of not adding anything useful to a product, but simply adding IoT and calling it smart, e.g. smart condom
 
-HDR (high dynamic range), implemented in technologies such as Dobly Vision (also have Dolby Atmos)
+HDR (high dynamic range) refers to colour spectrum. Implemented in technologies such as Dobly Vision 
+Dolby Atmos is a surround sound technology
+
+RCS seems to be better than SMS
+
+Not really decentralisation with cloud, as many services just operated by a handful of large companies
+Cloud is really just reduced complexity.
+It excels when application simple and low traffic (managing a large application in the cloud is just as difficult as on bare metal)
+Or, your traffic patterns are unpredictable
+Otherwise, paying an unjustified premium
+Sold as computing on demand (no complexity) when in reality, just renting computers at a higher premium 
+Let your talents to your own machines, rather than Amazon or Google
+

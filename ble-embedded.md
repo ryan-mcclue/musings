@@ -39,7 +39,8 @@ Rectifier converts AC to DC (transformer is high voltage AC to low voltage AC)
 TODO: is something like SerialStudio necessary for visualisation? 
 Could not live stream gnuplot?
 
-TODO: domestica course on creative coding
+TODO: domestica course on creative coding.
+css, html graphics also for 2D animations?
 
 TODO: Hackaday for project inspiration
 

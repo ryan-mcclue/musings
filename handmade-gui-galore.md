@@ -1,5 +1,8 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+niagara renderer first
+3D game: https://www.pardcode.com/cpp-3d-game-tutorial-series
+
 TODO: Windows WM_PAINT when window moved/obscured, main loop otherwise
 therefore, 2 places to possibly draw. does X11 have this also?
 
