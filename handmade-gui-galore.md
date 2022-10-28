@@ -1,5 +1,10 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+`!!` operator to 0 or 1: `t += ((F32)!!(flags & flag) - t) * rate;` 
+
+IMPORTANT: dlclose() will only unload if reference count 0. So, with thread_local variables
+will not actually unload
+
 niagara renderer first
 3D game: https://www.pardcode.com/cpp-3d-game-tutorial-series
 

@@ -245,3 +245,6 @@ contains some useful things, but not that useful
 Unfortunately software like npm is poorly designed so will inevitable get 'fast/lightweight' variants
 
 Many tutorials on low-level like Vulkan, X11 can be wrong so need to understand spec
+
+Fibres are green threads, i.e. not OS or hardware threads so not actually faster.
+They just allow interleaved execution which is used in web to not freeze UI on large linear execution

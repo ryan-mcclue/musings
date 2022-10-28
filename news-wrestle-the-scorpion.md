@@ -117,7 +117,7 @@ Dolby Atmos is a surround sound technology
 
 RCS seems to be better than SMS
 
-Not really decentralisation with cloud, as many services just operated by a handful of large companies
+Not really decentralisation with cloud, as many services just operated by a handful of large companies (not what DARPA intended!)
 Cloud is really just reduced complexity.
 It excels when application simple and low traffic (managing a large application in the cloud is just as difficult as on bare metal)
 Or, your traffic patterns are unpredictable
@@ -134,3 +134,7 @@ Are the petabit speeds of research optical chip really that useful if hardware c
 Probably better to use url-shortener service for sharing links
 
 Perhaps explainpaper.com could break into reading programming papers
+
+More firm on not using Apple, e.g. Apple not allowing other app-stores, taking revenue percentage of adds on apps, etc. 
+
+Bioengineered plants seem promising in say absorbing air pollutants
