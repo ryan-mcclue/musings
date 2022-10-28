@@ -15,6 +15,14 @@ https://www.amazon.com/Trusted-Platform-Module-Basics-Technology/dp/0750679603
 TODO: freeRTOS
 https://www.digikey.com/en/maker/projects/getting-started-with-stm32-introduction-to-freertos/ad275395687e4d85935351e16ec575b1
 
+TODO: bootlin courses
+
+TODO: relay connected to a maglock
+
+TODO: GPS tracking, LORAwan (long range, low power), satelitte connection, etc.
+
+TODO: 3D printing; outdoor case enclosure
+
 Digital laser dust sensor (particulates in the air). PM1 being worst as most fine
 TODO: DC vs stepper motor?
 
@@ -22,6 +30,8 @@ Growth of 'enviro sensor kits', i.e. test air quality etc. to create smart home 
 Growth of 'IoT' sensor kits/smart home
 Growth of 'AI sensors'
 (Perhaps more relevent to me is power/energy and automation and sensing)
+Growth of 'IoT' sensor kits
+Growth of sensor compounding, e.g. video now with LiDAR to detect depth   
 
 H-bridge is IC that switches voltage polarity, e.g. run DC motors forwards or backwards
 Rectifier converts AC to DC (transformer is high voltage AC to low voltage AC)

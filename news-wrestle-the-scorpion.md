@@ -109,3 +109,7 @@ Marketing plug for cloud gaming consoles when in fact standard phones can do the
 With improved network performance, perhaps cheaper to offload calculations to powerful servers (VDI: virtual desktop infrastructure)
 
 NB-IoT (narrowband, i.e. low power). Also have CoAP (constrained application protocol) for embedded devices to access Internet 
+
+Easy to fall prey to the act of not adding anything useful to a product, but simply adding IoT and calling it smart, e.g. smart condom
+
+HDR (high dynamic range), implemented in technologies such as Dobly Vision (also have Dolby Atmos)
