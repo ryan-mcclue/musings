@@ -125,3 +125,12 @@ Otherwise, paying an unjustified premium
 Sold as computing on demand (no complexity) when in reality, just renting computers at a higher premium 
 Let your talents to your own machines, rather than Amazon or Google
 
+Will NFC for door locks take hold?
+
+AI for vaccine development sounds promising
+
+Are the petabit speeds of research optical chip really that useful if hardware can't process that fast?
+
+Probably better to use url-shortener service for sharing links
+
+Perhaps explainpaper.com could break into reading programming papers
