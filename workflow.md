@@ -12,6 +12,9 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+TODO: avoid using magic numbers for various buffer sizes
+
+TODO: prefix discriminated union fields
 
 TODO: write more comments on code that is 'exploratory', e.g. ASSUMES static size, 
 IGNORES clearing other fields, etc.
