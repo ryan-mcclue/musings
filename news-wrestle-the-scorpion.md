@@ -129,7 +129,9 @@ Will NFC for door locks take hold?
 
 AI for vaccine development sounds promising
 
-Are the petabit speeds of research optical chip really that useful if hardware can't process that fast?
+Are the petabit speeds of research optical chip really that useful 
+if hardware can't process that fast?
+Will radio only get us so far?
 
 Probably better to use url-shortener service for sharing links
 
@@ -138,3 +140,12 @@ Perhaps explainpaper.com could break into reading programming papers
 More firm on not using Apple, e.g. Apple not allowing other app-stores, taking revenue percentage of adds on apps, etc. 
 
 Bioengineered plants seem promising in say absorbing air pollutants
+
+Amazon continue to kibosh any semblance of non-monolopy now getting into home insurance
+
+Raptor Lake overclock to over 8GHz (however with liquid nitrogen...)
+
+With development of cheaper more powerful hardware, companies introducing more 'gaming' brands 
+e.g. Phillips new gaming monitor
+
+Another cautionary tale to not update with Apple update nerfing ANC earphones

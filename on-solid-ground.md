@@ -1,5 +1,8 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
+Intel thunderbolt faster than USB C
+(ports look very similar)
+
 red team is security offensive, blue is defensive
 
 TODO: vulkan compute shader vs CUDA?
