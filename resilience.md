@@ -30,3 +30,9 @@ break inside of for loop thinking inside of switch
 having a assignment instead of comparison inside of if
 unsigned - value causing overflow thereby giving larger than actual
 mul instruction copying to r0, r1
+
+compiler giving wrong storage class for function, even though the issue was an unmatched closing parentheses.
+example of earlier syntax bug, giving other false-errors
+
+ALWAYS ENABLE ADDRESS SANITISER!
+u8_cursor += byte_counter SHOULD-BE u8_cursor = file_mem + byte_counter;

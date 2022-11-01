@@ -288,7 +288,11 @@ https://pikuma.com/courses
 
 is power profiler kit specific to each board necessary, e.g. nordic, stm32?
 
-blogs:
+software-blogs:
+https://www.gingerbill.org/article/
+https://www.rfleury.com/
+
+embedded-blogs:
 https://blog.st.com/
 https://dmitry.gr/?r=05.Projects
 https://tratt.net/laurie/blog/

@@ -12,6 +12,34 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+DIFFERENCE IN APPROACH TO WORKING ON TEAM AND STAGE OF PROJECT
+on a team, 'proper' commit should change one thing and have accompanying tests.
+So, write explorative code on branch and merge when done
+
+glenn fielder networking
+
+techlinked + michel tunnell (this week in linux)
+
+does mesa stack include open-source drivers for NVIDIA. so, support opengl and vulkan?
+
+sudo and pipes doesn't work.
+to allow gdb to attach: $(sudo bash -c "echo 0 > /proc/sys/kernel/yama/ptrace_scope")
+sudo -i; sudo vim /etc/sysctl.d/10-ptrace.conf
+IMPORTANT(This seems to work): sudo /sbin/setcap CAP_SYS_PTRACE=+eip /usr/bin/gdb
+
+TODO: GO THROUGH https://www.rfleury.com/ articles and implement!!!!
+mr4thdimension (allen webster) youtube videos
+
+TODO: With strncpy and such, get some indication if didn't write entire buffer, i.e. input buffer too small
+
+TODO: variable sized data structures that use memory arena with no holes
+
+TODO: use sanitisers from get go (may catch when mallocs less than a page)
+
+TODO: structure code for cross-platform from get go 
+
+TODO: terminator tab autoopen for project
+
 TODO: avoid using magic numbers for various buffer sizes
 
 TODO: prefix discriminated union fields
