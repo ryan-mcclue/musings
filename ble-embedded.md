@@ -1,5 +1,7 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+although bluetooth LE say 50m distance, a repeater can be used (and really for any RF)
+
 TODO: outdoor project: https://hackaday.io/project/186064-green-detect
 look into further hackaday.io/projects
 

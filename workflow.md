@@ -12,6 +12,8 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+TODO: way to reduce transparency of active window dynamically?
+
 DIFFERENCE IN APPROACH TO WORKING ON TEAM AND STAGE OF PROJECT
 on a team, 'proper' commit should change one thing and have accompanying tests.
 So, write explorative code on branch and merge when done
@@ -28,7 +30,7 @@ sudo -i; sudo vim /etc/sysctl.d/10-ptrace.conf
 IMPORTANT(This seems to work): sudo /sbin/setcap CAP_SYS_PTRACE=+eip /usr/bin/gdb
 
 TODO: GO THROUGH https://www.rfleury.com/ articles and implement!!!!
-mr4thdimension (allen webster) youtube videos
+mr4thdimension (allen webster) youtube videos https://mr4th.com/  
 
 TODO: With strncpy and such, get some indication if didn't write entire buffer, i.e. input buffer too small
 
