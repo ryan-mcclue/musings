@@ -12,6 +12,8 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+TODO: aaron codes (leetcode walkthroughs) 
+
 TODO: way to reduce transparency of active window dynamically?
 
 DIFFERENCE IN APPROACH TO WORKING ON TEAM AND STAGE OF PROJECT
