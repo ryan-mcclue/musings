@@ -12,13 +12,15 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+Files from templates are developed on each project, thereby iteratively improving
+
 TODO: doesn't asynchronous programming just make things harder to debug?
 is performance of say linux io_uring any better than synchronous?
 
 TODO(Ryan): Investigate useful POSIX C functions, e.g. nftw() (netfw.h), getaddrinfo() (netdb.h)
 Also, some require the definition of cryptic macros to be included
 
-TODO: aaron codes (leetcode walkthroughs) 
+TODO: aaron codes, code yao (leetcode walkthroughs)
 
 TODO: way to reduce transparency of active window dynamically?
 
@@ -48,7 +50,7 @@ TODO: use sanitisers from get go (may catch when mallocs less than a page)
 
 TODO: structure code for cross-platform from get go 
 
-TODO: terminator tab autoopen for project
+TODO: terminator tab autoopen for project (include file in project source)
 
 TODO: avoid using magic numbers for various buffer sizes
 

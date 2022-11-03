@@ -1,5 +1,12 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+TODO: working with time-series data
+
+LIN protocol for vehicles (seems to be a host of protocols specific to automotives)
+
+buck converter steps down DC-DC voltage, while stepping up current
+(various step-down mechanisms in relation to AC/DC and voltage/current)
+
 although bluetooth LE say 50m distance, a repeater can be used (and really for any RF)
 
 TODO: profiling not your application
