@@ -2,6 +2,16 @@ IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
 although bluetooth LE say 50m distance, a repeater can be used (and really for any RF)
 
+TODO: profiling not your application
+https://linus.schreibt.jetzt/posts/qemu-9p-performance.html
+
+TODO: gdb python scripts
+https://interrupt.memfault.com/blog/gdbundle-plugin-manager
+
+TODO: https://dev.to/taugustyn/call-stack-logger-function-instrumentation-as-a-way-to-trace-programs-flow-of-execution-419a
+
+MIPI (mobile industry processor interface) DSI
+
 TODO: outdoor project: https://hackaday.io/project/186064-green-detect
 look into further hackaday.io/projects
 
@@ -27,13 +37,15 @@ TODO: 3D printing; outdoor case enclosure
 
 Digital laser dust sensor (particulates in the air). PM1 being worst as most fine
 TODO: DC vs stepper motor?
+TODO: what is the use case for a motor driver such as L298 Dual H-Bridge Motor Driver
+and Tic T500 USB Multi-Interface Stepper Motor Controller (circuitry without MCU?)
 
 Growth of 'enviro sensor kits', i.e. test air quality etc. to create smart home or garden
 Growth of 'IoT' sensor kits/smart home
 Growth of 'AI sensors'
 (Perhaps more relevent to me is power/energy and automation and sensing)
 Growth of 'IoT' sensor kits
-Growth of sensor compounding, e.g. video now with LiDAR to detect depth   
+Growth of sensor compounding, e.g. video now with LiDAR to detect depth, gesture detection sensor
 
 H-bridge is IC that switches voltage polarity, e.g. run DC motors forwards or backwards
 Rectifier converts AC to DC (transformer is high voltage AC to low voltage AC)
@@ -61,6 +73,8 @@ Might see GNSS + INS (inertial navigation system; i.e using IMU as well)
 Perhaps if gaffer low-level correctness, searching for web API design message types?
 
 TODO: amplifiers, e.g. class-D etc. MEMs accelerometers for vibration detection in cars
+
+TODO: RTC is external to oscillator?
 
 Analog LED is single colour
 Digital LED allows controlling each colour separately (so, a.k.a e.g addressable APA102 LEDs)
@@ -295,6 +309,7 @@ https://www.gingerbill.org/article/
 https://www.rfleury.com/
 
 embedded-blogs:
+https://blog.feabhas.com/
 https://blog.st.com/
 https://dmitry.gr/?r=05.Projects
 https://tratt.net/laurie/blog/

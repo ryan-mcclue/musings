@@ -12,6 +12,12 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+TODO: doesn't asynchronous programming just make things harder to debug?
+is performance of say linux io_uring any better than synchronous?
+
+TODO(Ryan): Investigate useful POSIX C functions, e.g. nftw() (netfw.h), getaddrinfo() (netdb.h)
+Also, some require the definition of cryptic macros to be included
+
 TODO: aaron codes (leetcode walkthroughs) 
 
 TODO: way to reduce transparency of active window dynamically?
