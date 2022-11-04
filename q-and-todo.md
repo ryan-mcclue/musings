@@ -19,7 +19,7 @@ https://www.youtube.com/watch?v=BR2my8OE1Sc&list=PL0JVLUVCkk-l7CWCn3-cdftR0oajug
 * the SIG introduces bluetooth 5 which states higher data rate, long range BLE etc.
 are their decisions informed on techonology advances (seems not to be the case with 4G LTE...)
 
-* Understand memory alignment and cost of unaligned accesses? 
+* Understand memory alignment and cost of unaligned accesses? (ABI defines alignment of C types?)
 (is it due to common programmer workflows and less transistors required?)
 for modern hardware, trying to read data from an unaligned memory access
 can result in 2 reads and a combine

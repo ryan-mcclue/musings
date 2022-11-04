@@ -11,3 +11,7 @@ Oh dear, javascript smart watch
 Interesting 3D print to make diffusing sheet for say LEDs to create different ambiences
 
 AI now being used to improve compression algorithms
+
+Amazing potential of 'molecular computers' to make drugs with precise traits
+
+JPEG XL better compression and lossy + lossless mode
