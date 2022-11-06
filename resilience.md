@@ -34,5 +34,7 @@ mul instruction copying to r0, r1
 compiler giving wrong storage class for function, even though the issue was an unmatched closing parentheses.
 example of earlier syntax bug, giving other false-errors
 
-ALWAYS ENABLE ADDRESS SANITISER!
+ALWAYS ENABLE ADDRESS SANITISER! (look at niagara user github page)
 u8_cursor += byte_counter SHOULD-BE u8_cursor = file_mem + byte_counter;
+
+Having -O2 made program crash as was using memory of stack that in debug mode was never modified

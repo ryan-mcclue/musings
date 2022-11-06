@@ -30,6 +30,9 @@ DIFFERENCE IN APPROACH TO WORKING ON TEAM AND STAGE OF PROJECT
 on a team, 'proper' commit should change one thing and have accompanying tests.
 So, write explorative code on branch and merge when done
 
+perhaps start with this:
+https://github.com/TheSandvichMaker/netgame
+and improve with glenn fielder?
 glenn fielder networking
 codersblock
 javidx9 mmo
