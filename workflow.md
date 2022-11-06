@@ -14,6 +14,8 @@ interactive rebase to perform squashing on most recent
 
 Files from templates are developed on each project, thereby iteratively improving
 
+TODO: Andrew Reece (rethinking doxygen youtube live streams)
+
 TODO: doesn't asynchronous programming just make things harder to debug?
 is performance of say linux io_uring any better than synchronous?
 
@@ -29,6 +31,9 @@ on a team, 'proper' commit should change one thing and have accompanying tests.
 So, write explorative code on branch and merge when done
 
 glenn fielder networking
+codersblock
+javidx9 mmo
+(possible informative videos: https://www.youtube.com/watch?v=jmHQa5P7hC8, https://www.youtube.com/watch?v=9OjIDko1uzc)
 
 techlinked + michel tunnell (this week in linux)
 
