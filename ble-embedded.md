@@ -1,8 +1,17 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+
+TODO: networking with containers: https://iximiuz.com/en/series/computer-networking-fundamentals/ 
+
+TODO: look at embeddedartistry course developments for 'building testable embedded systems' 
+
 TODO: working with time-series data
 
 LIN protocol for vehicles (seems to be a host of protocols specific to automotives)
+
+MEMS (micro-electromechanical systems) motion sensor
+
+TODO: using in-built security features of chip, e.g. AES-256
 
 buck converter steps down DC-DC voltage, while stepping up current
 (various step-down mechanisms in relation to AC/DC and voltage/current)
@@ -244,8 +253,11 @@ First separate by whitespace with `while (at[0] != '\0'); break` and `eat_spaces
 3D printing ideas:
 https://www.youtube.com/c/3DSage/videos
 
+
+TODO: zephyr series (perhaps better to do this first as an RTOS as more modern resources than FreeRTOS?)
+https://training.golioth.io/
+https://blog.golioth.io/zephyr-threads-work-queues-message-queues-and-how-we-use-them/?mc_cid=f6bdf458d1&mc_eid=UNIQID
 https://blog.golioth.io/taking-the-next-step-debugging-with-segger-ozone-and-systemview-on-zephyr/
-martin-schroder-zephyr-acceptance-testing
 
 lego technics for gear ideas:
 https://www.youtube.com/playlist?list=PLJTMHMAVxQmvTGatIj-X2rJrN8aGJEaQD

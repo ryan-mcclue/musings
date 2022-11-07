@@ -13,5 +13,16 @@ Interesting 3D print to make diffusing sheet for say LEDs to create different am
 AI now being used to improve compression algorithms
 
 Amazing potential of 'molecular computers' to make drugs with precise traits
+(could extend to human's gaining amazing a priori skills)
 
 JPEG XL better compression and lossy + lossless mode
+
+Again, Microsoft updates not working. This time, not actually properly applying vulnerability update
+
+Interesting can just buy off the shelf drone and attach something like an ESP32 to send data back to us
+
+Cool program that sort of gamifies video conferencing allowing for individual chats: gather.town 
+
+Like 'Scrum Certification' now with Matter have an official certification process
+
+Good work being done in legislating IoT labels, e.g. like nutrition labels that give information sensor data collected by device 

@@ -248,3 +248,10 @@ Many tutorials on low-level like Vulkan, X11 can be wrong so need to understand 
 
 Fibres are green threads, i.e. not OS or hardware threads so not actually faster.
 They just allow interleaved execution which is used in web to not freeze UI on large linear execution
+
+Unfortunate trend on Internet for people to ask why aren't you using what I'm using, e.g. VScode, as oppose to asking
+why are you doing things your way
+Tech news propagates shallow information fast. In aggregate, most of it not important, e.g. new bright blueberry distro release 
+
+The distinction between new as in fashion and new as in forward progress can be overlooked in tech.
+Unfortunately, most is the former

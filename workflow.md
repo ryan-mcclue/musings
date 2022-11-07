@@ -12,6 +12,8 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+TODO: breakpoint/error function print out line information only in debug builds 
+
 Files from templates are developed on each project, thereby iteratively improving
 
 TODO: Andrew Reece (rethinking doxygen youtube live streams)

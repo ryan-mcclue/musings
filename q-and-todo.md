@@ -1,3 +1,5 @@
+* vinegar and bicarb for walls and drain cleaning 
+
 * cool idea of SDR (software defined radio) and RF analyser
 https://greatscottgadgets.com/sdr/1/
 https://github.com/ainfosec/FISSURE
