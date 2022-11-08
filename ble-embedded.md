@@ -1,5 +1,6 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+TODO: investigate Renode for embedded testing
 
 TODO: networking with containers: https://iximiuz.com/en/series/computer-networking-fundamentals/ 
 
