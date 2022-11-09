@@ -1,5 +1,7 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+TODO: is an IoT cloud data store like ThingSpeak used commercially?
+
 TODO: investigate Renode for embedded testing
 
 TODO: networking with containers: https://iximiuz.com/en/series/computer-networking-fundamentals/ 
@@ -9,6 +11,8 @@ TODO: look at embeddedartistry course developments for 'building testable embedd
 TODO: working with time-series data
 
 LIN protocol for vehicles (seems to be a host of protocols specific to automotives)
+
+trimpot a.k.a potentiometer
 
 MEMS (micro-electromechanical systems) motion sensor
 

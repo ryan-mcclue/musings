@@ -255,3 +255,7 @@ Tech news propagates shallow information fast. In aggregate, most of it not impo
 
 The distinction between new as in fashion and new as in forward progress can be overlooked in tech.
 Unfortunately, most is the former
+
+Despite Wayland (and Mir) being far more sane (merging display server and client into one), still not fully supported
+
+Being able to sift through low-quality tech news essential, e.g. almost every week a new database library 
