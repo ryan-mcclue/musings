@@ -12,6 +12,8 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+Updating compiler symlinks: $(sudo ln -vfns /usr/bin/gcc-10 /usr/bin/gcc)
+
 TODO: breakpoint/error function print out line information only in debug builds 
 
 Files from templates are developed on each project, thereby iteratively improving
