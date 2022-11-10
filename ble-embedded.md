@@ -26,9 +26,6 @@ although bluetooth LE say 50m distance, a repeater can be used (and really for a
 TODO: profiling not your application
 https://linus.schreibt.jetzt/posts/qemu-9p-performance.html
 
-TODO: gdb python scripts
-https://interrupt.memfault.com/blog/gdbundle-plugin-manager
-
 TODO: https://dev.to/taugustyn/call-stack-logger-function-instrumentation-as-a-way-to-trace-programs-flow-of-execution-419a
 
 MIPI (mobile industry processor interface) DSI
