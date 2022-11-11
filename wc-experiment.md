@@ -132,7 +132,11 @@ e.g bounded by number of bytes sent to graphics card, kernel stdout etc.
 2. Non-pessimisation (do this all the time)
 Don't introduce unecessary work (interpreter; complex libraries; constructs like polymorphism/classes people have convinced themselves are necessary) for the CPU to do to solve the problem
 3. Fake optimisation (very bad philosophy)
-Repeating context-specific statements e.g. use memcpy as it's optimised (however the speed of something is so context specific, so non-statement), arrays are faster than linked lists (again, so dependent on what your usage patterns are)
+Repeating context-specific statements 
+e.g. use memcpy as it's optimised 
+(however the speed of something is so context specific, so non-statement), 
+arrays are faster than linked lists (again, so dependent on what your usage patterns are)
+IMPORTANT: In programming, preface the suitability of something to a particular environment/context
 
 When many people say too much effort involved in optimisation, 
 they are generally thinking of point 1
@@ -193,7 +197,9 @@ look at these steps for duplicated/unecessary work (may pollute cache). (perhaps
 could we gather things up in a prepass, i.e. outside of loop?
 if allocating memory each cycle that's game over for performance.
 do we actually have to perform the same action to get the same result, e.g. a full raycast is not necessary, just segment on grid
-O(n·m) is multiplicative, not linear O(n). big oh is just indication of how it scales. could be less given some input threshold
+O(n·m) is multiplicative, not linear O(n). 
+big oh is just indication of how it scales. could be less given some input threshold
+(big oh ignores constants, hence looking at aymptotic behaviour, i.e. limiting behaviour)
 now, once code reduced, look at minimising number of ops 
 
 cpu front end is figuring out what work it has to do, i.e. instruction decoding

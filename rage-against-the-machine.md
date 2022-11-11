@@ -261,3 +261,6 @@ Despite Wayland (and Mir) being far more sane (merging display server and client
 Being able to sift through low-quality tech news essential, e.g. almost every week a new database library 
 
 Have to update Ubuntu version if want to easily get compiled version of modern gcc
+
+Unfortunate mnemonic repetition of nonsensical statements in programming, 
+e.g. manual memory management is hard (overly simplistic and misleading)
