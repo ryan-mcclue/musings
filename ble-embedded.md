@@ -1,5 +1,8 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+Dagger CI in code not YAML
+Qucs-S for SPICE, free circuit simulator GUI
+
 TODO: is an IoT cloud data store like ThingSpeak used commercially?
 
 TODO: investigate Renode for embedded testing

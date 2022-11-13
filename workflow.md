@@ -14,6 +14,8 @@ interactive rebase to perform squashing on most recent
 
 although sh in containers (alpine linux), the ubiquity of bash (if git on windows, then have bash) use its features
 
+if global, decide if actually global or thread-local
+
 TODO: investigate analysing core dump files (when becomes necessary)
 
 Updating compiler symlinks: $(sudo ln -vfns /usr/bin/gcc-10 /usr/bin/gcc)
