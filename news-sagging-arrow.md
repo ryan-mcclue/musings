@@ -26,3 +26,13 @@ Cool program that sort of gamifies video conferencing allowing for individual ch
 Like 'Scrum Certification' now with Matter have an official certification process
 
 Good work being done in legislating IoT labels, e.g. like nutrition labels that give information sensor data collected by device 
+
+Have GPU microarchitectures like RNDA.
+
+Chiplets seem future of shrinking size and expanding computing power, now seen in GPUs
+
+VSR (virtual super technology) has GPU scale to 4K and then downscale if necessary to monitor's resolution
+However, if want say 8K gaming, will require a DisplayPort cable
+
+Robots beginning to see more everyday use, e.g. waiters.
+Also, have robots learn in the field, e.g. Texas University have robots walking around campus 
