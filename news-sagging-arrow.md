@@ -36,3 +36,7 @@ However, if want say 8K gaming, will require a DisplayPort cable
 
 Robots beginning to see more everyday use, e.g. waiters.
 Also, have robots learn in the field, e.g. Texas University have robots walking around campus 
+
+Resistive RAM uses analog memory cells to store more information with less energy
+
+GPT-4 upcoming text generation AI
