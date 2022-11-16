@@ -3,9 +3,14 @@ IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 Dagger CI in code not YAML
 Qucs-S for SPICE, free circuit simulator GUI
 
+TODO: braun embedded (useful C has functions)
+https://www.twitch.tv/videos/233685076?filter=all&sort=time
+https://github.com/richardbraun/x1/blob/master/lib/hash.h
+
 I only touch low-voltage 5V side, the high 'dangerous' voltage side I leave to hardware engineers
 
 addressable rgb, each LED has serial chip with a serial port in and serial port out that it funnels through the chain
+https://www.youtube.com/watch?v=rlqbVttV0gI&list=PLF2KJ6Gy3cZ7ynsp8s4tnqEFmY15CKhmH&index=15
 
 TODO: gdb scripts
 https://github.com/espressif/freertos-gdb
