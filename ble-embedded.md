@@ -3,6 +3,10 @@ IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 Dagger CI in code not YAML
 Qucs-S for SPICE, free circuit simulator GUI
 
+I only touch low-voltage 5V side, the high 'dangerous' voltage side I leave to hardware engineers
+
+addressable rgb, each LED has serial chip with a serial port in and serial port out that it funnels through the chain
+
 TODO: gdb scripts
 https://github.com/espressif/freertos-gdb
 
