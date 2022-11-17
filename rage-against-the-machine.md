@@ -264,3 +264,6 @@ Have to update Ubuntu version if want to easily get compiled version of modern g
 
 Unfortunate mnemonic repetition of nonsensical statements in programming, 
 e.g. manual memory management is hard (overly simplistic and misleading)
+
+Auto, i.e. type inference is good when the type is not actually known.
+However, often used in replace of a name that is too long to type, leading to unclear types and over complication

@@ -3,7 +3,8 @@ IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 Dagger CI in code not YAML
 Qucs-S for SPICE, free circuit simulator GUI
 
-TODO: braun embedded (useful C has functions)
+
+TODO: richard braun embedded (useful C has functions)
 https://www.twitch.tv/videos/233685076?filter=all&sort=time
 https://github.com/richardbraun/x1/blob/master/lib/hash.h
 
@@ -72,6 +73,7 @@ Digital laser dust sensor (particulates in the air). PM1 being worst as most fin
 TODO: DC vs stepper motor?
 TODO: what is the use case for a motor driver such as L298 Dual H-Bridge Motor Driver
 and Tic T500 USB Multi-Interface Stepper Motor Controller (circuitry without MCU?)
+driver lines are diode protected from back EMF?
 
 Growth of 'enviro sensor kits', i.e. test air quality etc. to create smart home or garden
 Growth of 'IoT' sensor kits/smart home
@@ -343,6 +345,8 @@ is power profiler kit specific to each board necessary, e.g. nordic, stm32?
 software-blogs:
 https://www.gingerbill.org/article/
 https://www.rfleury.com/
+
+https://linuxafterdark.net/ podcast
 
 embedded-blogs:
 https://blog.feabhas.com/
