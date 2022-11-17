@@ -601,3 +601,11 @@ Use "\r" ASCII code to print a status indicator.
 Only use const for char * string literals stored in the data segment.
 
 Endianness comes into play when reading/writing from disk (e.g. file type magic value) and working directly with `u8 *` (e.g. iterating through bytes of a u32) 
+
+
+MARKETING APP:
+f5bot.com, https://github.com/lawxls/HackerNews-personalized
+I'm notified when keywords related to "human wants thing, my app can do thing" appear on HN, Reddit and Lobsters.
+If I can then contribute with information to that discussion, I'll also leave a link to my app.
+Don't just self plug, people (myself included) appreciate more detailed information on how they can solve their own personal problem, 
+instead of being thrown into "here's an app, figure it out" 

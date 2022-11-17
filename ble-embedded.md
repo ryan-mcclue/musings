@@ -6,7 +6,6 @@ Qucs-S for SPICE, free circuit simulator GUI
 
 TODO: richard braun embedded (useful C has functions)
 https://www.twitch.tv/videos/233685076?filter=all&sort=time
-https://github.com/richardbraun/x1/blob/master/lib/hash.h
 
 I only touch low-voltage 5V side, the high 'dangerous' voltage side I leave to hardware engineers
 
