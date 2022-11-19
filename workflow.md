@@ -40,6 +40,8 @@ DIFFERENCE IN APPROACH TO WORKING ON TEAM AND STAGE OF PROJECT
 on a team, 'proper' commit should change one thing and have accompanying tests.
 So, write explorative code on branch and merge when done
 
+have a _COUNT at the end of every enum
+
 perhaps start with this:
 https://github.com/TheSandvichMaker/netgame
 and improve with glenn fielder?

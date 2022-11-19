@@ -44,3 +44,5 @@ GPT-4 upcoming text generation AI
 Although some people experience myocarditis after COVID vaccine, myocarditis long been linked to a number of viral infections
 
 Borg like spacecraft, i.e. cubesat now in orbit
+
+Silicon carbide power supplies more efficiet

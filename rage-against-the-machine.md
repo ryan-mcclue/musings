@@ -267,3 +267,5 @@ e.g. manual memory management is hard (overly simplistic and misleading)
 
 Auto, i.e. type inference is good when the type is not actually known.
 However, often used in replace of a name that is too long to type, leading to unclear types and over complication
+
+Virtually every week a new 'container-specifier' project appears on Github
