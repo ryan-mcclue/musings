@@ -40,9 +40,10 @@ Also, have robots learn in the field, e.g. Texas University have robots walking 
 Resistive RAM uses analog memory cells to store more information with less energy
 
 GPT-4 upcoming text generation AI
+Perhaps text-to-speech, language transcription too diverse to solve without AI, e.g. deepgram program
 
 Although some people experience myocarditis after COVID vaccine, myocarditis long been linked to a number of viral infections
 
 Borg like spacecraft, i.e. cubesat now in orbit
 
-Silicon carbide power supplies more efficiet
+Silicon carbide power supplies more efficient

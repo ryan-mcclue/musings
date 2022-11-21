@@ -12,6 +12,8 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+if consuming a list each iteration, use doubly linked list to reset (e.g. event consumption)
+
 for any list, stack, queue etc. will wrap in a struct that has first and last pointers
 
 although sh in containers (alpine linux), the ubiquity of bash (if git on windows, then have bash) use its features
