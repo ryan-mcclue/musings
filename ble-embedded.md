@@ -3,6 +3,14 @@ IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 Dagger CI in code not YAML
 Qucs-S for SPICE, free circuit simulator GUI
 
+TODO: possible program usage of syncthing 
+
+bipartite ring buffer more efficient?
+TODO: seems with RTOS emphasis on 'tasks', will require understanding job queues
+https://www.aosabook.org/en/freertos.html
+
+filters relating to a pedometer: 
+https://www.aosabook.org/en/500L/a-pedometer-in-the-real-world.html
 
 TODO: richard braun embedded (useful C has functions)
 https://www.twitch.tv/videos/233685076?filter=all&sort=time
