@@ -258,7 +258,8 @@ Unfortunately, most is the former
 
 Despite Wayland (and Mir) being far more sane (merging display server and client into one), still not fully supported
 
-Being able to sift through low-quality tech news essential, e.g. almost every week a new database library 
+Being able to sift through low-quality tech news essential, e.g. 
+'new' database library/css library/VR headset/distro etc.
 
 Have to update Ubuntu version if want to easily get compiled version of modern gcc
 
