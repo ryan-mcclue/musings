@@ -1,5 +1,8 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+TODO: go through
+https://embedded.fm/blog/embedded-wednesdays
+
 Dagger CI in code not YAML
 Qucs-S for SPICE, free circuit simulator GUI
 
