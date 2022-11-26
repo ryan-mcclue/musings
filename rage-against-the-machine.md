@@ -260,6 +260,7 @@ Despite Wayland (and Mir) being far more sane (merging display server and client
 
 Being able to sift through low-quality tech news essential, e.g. 
 'new' database library/css library/VR headset/distro etc.
+Amazon, Tesla, Twitter, Netflix endeavours
 
 Have to update Ubuntu version if want to easily get compiled version of modern gcc
 
@@ -270,3 +271,6 @@ Auto, i.e. type inference is good when the type is not actually known.
 However, often used in replace of a name that is too long to type, leading to unclear types and over complication
 
 Virtually every week a new 'container-specifier' project appears on Github
+
+C grew out of existing code. All new languages trying to be a top-down design on the opinions of a single programmer (BDFL) 
+Just have a simple language with ideal metaprogramming/code generation facilities so the programmer can decide, not the language designer

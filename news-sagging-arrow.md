@@ -47,3 +47,8 @@ Although some people experience myocarditis after COVID vaccine, myocarditis lon
 Borg like spacecraft, i.e. cubesat now in orbit
 
 Silicon carbide power supplies more efficient
+
+AI requires high quality data, i.e. created by skilled individuals.
+Also requires unique data. Might not have enough unique data in the future
+
+Unfortunate that Intel releasing software-defined-silicon, i.e. pay-as-you-go to enable certain hardware features
