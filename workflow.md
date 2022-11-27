@@ -12,6 +12,38 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+https://www.youtube.com/watch?v=w3_e9vZj7D8&t=15s
+https://www.youtube.com/watch?v=QpAhX-gsHMs
+TODO: look at passing structs in arguments by value (https://floooh.github.io/2019/09/27/modern-c-for-cpp-peeps.html)
+
+strive for value orientated, i.e. use structs by value; so return them and use as arguments.
+removes aliasing and modern compiler's optimised for this
+
+error handling, have the function log internal errors such as errno errors.
+at the call site, just set .valid field in return struct to false
+so, for a series of consecutive calls that could return errors, only check the last one
+(all functions will check the .valid field)
+```
+file = open_file("f");
+img = open_img(file);
+tex = open_tex(img);
+if (tex.valid) {}
+```
+Use stb approach for library design
+Request allocators, or memory; don't allocate
+
+C has moved ahead of no typedefs, forward declarations
+C empty function argument is vararg
+C has designated initialisers (gcc extension has this as well)
+
+C like performance like vegan meat. If you want it, go for the real thing
+C not literally a high level assembly language as compilers do a lot of transformations
+Similarly, assembly is not a direct translation, as the CPU may reorder etc.
+Compiler follows AS-IF rule, i.e. as long as EVENTUALLY equals the same. (in this only a C compiler, hence why it's fast?)
+So, if not observable (e.g. volatile, io, graphics, etc.) could perform instruction reordering/removal
+
+coroutine is function that can be suspended at any point, and resume later
+
 if consuming a list each iteration, use doubly linked list to reset (e.g. event consumption)
 
 for any list, stack, queue etc. will wrap in a struct that has first and last pointers
