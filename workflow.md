@@ -13,10 +13,9 @@ interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
 https://www.youtube.com/watch?v=w3_e9vZj7D8&t=15s
-https://www.youtube.com/watch?v=QpAhX-gsHMs
 TODO: look at passing structs in arguments by value (https://floooh.github.io/2019/09/27/modern-c-for-cpp-peeps.html)
 
-strive for value orientated, i.e. use structs by value; so return them and use as arguments.
+strive for value orientated (less pointers), i.e. use structs by value; so return them and use as arguments.
 removes aliasing and modern compiler's optimised for this
 
 error handling, have the function log internal errors such as errno errors.
@@ -31,6 +30,17 @@ if (tex.valid) {}
 ```
 Use stb approach for library design
 Request allocators, or memory; don't allocate
+In fact, don't call any OS specific calls. request hem
+
+Avoid using most of libc as it's old, bad design (strtok global state, rand locking) and generally slow.
+There are some useful, e.g. memcpy, fixed ints and math
+
+Best to store length of string, so don't have to traverse it with strlen() and negatively affect the cache
+std::string allocates on heap (in fact, a lot of C++ have implicit constructors, more so from implicit conversions)
+
+TODO: best practices and use cases of logging
+
+IMPORTANT: With these approaches, we feel like writing in a completely new language
 
 C has moved ahead of no typedefs, forward declarations
 C empty function argument is vararg
