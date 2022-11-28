@@ -52,3 +52,5 @@ AI requires high quality data, i.e. created by skilled individuals.
 Also requires unique data. Might not have enough unique data in the future
 
 Unfortunate that Intel releasing software-defined-silicon, i.e. pay-as-you-go to enable certain hardware features
+
+Not even subtle that ads are no longer targeted for you, but rather shills 

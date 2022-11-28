@@ -12,6 +12,13 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+ingress (act of entering), egress used for traffic
+
+C is good as in the beginning you always want the results. 
+In the end all you want is control (writing OS instead of libc will also allow for more powerful API)
+
+TODO: with multithreading, be aware of cache byte line invalidation (which is an action of cache coherency)
+
 compiler assumes will not go into undefined behaviour.
 so anything that puts in UB state is considered unreachable (so x/0 is akin to `__builtin_unreachable()`)?
 u16 will be promoted to i32 if it fits (bugs with comparison)
@@ -27,11 +34,18 @@ ptr->b = 20;
 ptr->c = 30;
 the memset() lets the compiler know we are okay overriding padding bytes
 so can use a single 64bit write
+IMPORTANT: want the compiler to always be writing largest size possible
 ```
+with pointers, does not know if point to same memory
+e.g. *array, *count. They could be the same, so can't optimise into a memset
+however, it does assume no aliasing if the pointer types are different, e.g. int* and float*
+unsigned char aliases all types (exception to aforementioned rule)
 
+in C memory objects are not contiguous
+so, &a == &b will be optimised away (avoid by casting to integers)
+are C fat pointers even worth caring about? only really C++ member functions etc.
 
 https://www.youtube.com/watch?v=w3_e9vZj7D8&t=15s
-TODO: look at passing structs in arguments by value (https://floooh.github.io/2019/09/27/modern-c-for-cpp-peeps.html)
 
 strive for value orientated (less pointers), 
 i.e. use structs by value; so return them and use as arguments.
