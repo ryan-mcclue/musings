@@ -12,11 +12,33 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+compiler assumes will not go into undefined behaviour.
+so anything that puts in UB state is considered unreachable (so x/0 is akin to `__builtin_unreachable()`)?
+u16 will be promoted to i32 if it fits (bugs with comparison)
+AS-IF (a.k.a equivalence) rule means a bug may appear before it has happened due to reordering
+
+uninitialised data has an indeterminant state. so, c[0] != c[0]
+
+struct padding is undefined, i.e. compiler's don't have to do it? 
+```
+memset(ptr, 0, sizeof(*ptr));
+ptr->a = 10;
+ptr->b = 20;
+ptr->c = 30;
+the memset() lets the compiler know we are okay overriding padding bytes
+so can use a single 64bit write
+```
+
+
 https://www.youtube.com/watch?v=w3_e9vZj7D8&t=15s
 TODO: look at passing structs in arguments by value (https://floooh.github.io/2019/09/27/modern-c-for-cpp-peeps.html)
 
-strive for value orientated (less pointers), i.e. use structs by value; so return them and use as arguments.
-removes aliasing and modern compiler's optimised for this
+strive for value orientated (less pointers), 
+i.e. use structs by value; so return them and use as arguments.
+removes aliasing and x86 passes small structs into registers, so never hit memory
+and if optimised and inline function, goes away entirely
+(is this the case for 32bit arm?)
+(in C++ this in justified due to hidden copy constructors)
 
 error handling, have the function log internal errors such as errno errors.
 at the call site, just set .valid field in return struct to false
