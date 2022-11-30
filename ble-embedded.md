@@ -1,5 +1,12 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+an adapter board would handle power and signal conversion
+
+TODO: DSI vs USB vs HDMI?
+
+tiny solid-state batteries more efficient that coin cell batteries; 
+useful for wearables
+
 TODO: go through
 https://embedded.fm/blog/embedded-wednesdays
 

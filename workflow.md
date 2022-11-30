@@ -1,6 +1,7 @@
 # Workflow
 Preparation Mentality:
 ## Git usage: TODO(Ryan): collate into bash aliases 
+* possible git notes to append to commits: $(git notes add -m 'Acked-by: <tyler@tylercipriani.com>')
 * use gcd function enter habit to know if out of date
 * git commit aliases showing diff
 * find parents of hash: `git rev-list --parents -n 1 <hash>` 
@@ -11,6 +12,8 @@ Preparation Mentality:
 a standard rebase will apply commits on top of 
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
+
+seems have CI for deploying or testing
 
 ingress (act of entering), egress used for traffic
 

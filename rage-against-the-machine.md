@@ -274,3 +274,5 @@ Virtually every week a new 'container-specifier' project appears on Github
 
 C grew out of existing code. All new languages trying to be a top-down design on the opinions of a single programmer (BDFL) 
 Just have a simple language with ideal metaprogramming/code generation facilities so the programmer can decide, not the language designer
+
+Whilst github codespaces seems cool, the reason for having some many containers is that the build systems for each project is incredibly complex and requires many dependencies

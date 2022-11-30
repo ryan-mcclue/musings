@@ -54,3 +54,9 @@ Also requires unique data. Might not have enough unique data in the future
 Unfortunate that Intel releasing software-defined-silicon, i.e. pay-as-you-go to enable certain hardware features
 
 Not even subtle that ads are no longer targeted for you, but rather shills 
+
+Prompt engineers for many AI generators, e.g. text-davinci-3 
+
+GPU AI DLSS improve performance by offloading frame generation 
+
+Biodegradable sensors made out of organic circuitry proof of concept
