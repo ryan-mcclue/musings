@@ -68,6 +68,7 @@ tex = open_tex(img);
 if (tex.valid) {}
 ```
 Use stb approach for library design
+Have struct argument for large number of configuration options
 Request allocators, or memory; don't allocate
 In fact, don't call any OS specific calls. request hem
 

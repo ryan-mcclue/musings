@@ -48,11 +48,41 @@ blue_led_duty_cycle(pwm_max_val - blue_component);
 ```
 
 DISPLAY:
+useful to display FPS
 technology, size, connection
 as various permutations of these, have various controller permutations 
-e.g. SH1107_I2C, SSD1306_SPI, etc.
+e.g. SH1107_I2C, SSD1306_SPI, etc. (we probably want a library to draw lines, shapes, fonts, etc.)
 I2C developed by Phillips to allow multiple chips on a board to communicate with only 3 wires (id is passed on bus)
 (number of devices is limited by address space; typically 128 addresses?)
+price difference between a shape drawable display and character display?
+```
+// Moire pattern
+for (u32 x = 0; x < display_width; ++x)
+  draw_line(x, 0, display_width - x, display_height);
+
+// Cocentric circles
+for (u32 r_count = 0; r_count < 3; r_count += 1)
+  draw_circle(x, y, r_count);
+
+some_func(some_variable += 10);
+
+// Check how fast we can draw this out over I2C (want something like get_ms())
+// use weighted average to prevent value flickering, i.e. jumping (it will take some number of frames to stabilise as starts at 0)
+weighted_average = prev_value * 0.9 + new_value * 0.1; (probably use LOCAL_PERSIST)
+```
+
+LEDS:
+WS2812B is standard. Neopixel brand. Each chip is RGB LED with MCU.
+probably has low drop-out regulator onboard so can pass 5V to 3.3V
+can buy as grids or strips
+have a library to generate the square wave forms, e.g. FastLED
+
+by powering board with pins, can ensure enough current is passing to it
+can simultaneously connect USB cable and will defer to power pins over it? 
+
+With power, still have to be careful if say, setting max brightness and all LEDS to white
+seems it's common to have GBR as format?
+TODO: only in video 4 are power calculations done?
 
 
 TODO: gdb scripts

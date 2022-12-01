@@ -60,3 +60,7 @@ Prompt engineers for many AI generators, e.g. text-davinci-3
 GPU AI DLSS improve performance by offloading frame generation 
 
 Biodegradable sensors made out of organic circuitry proof of concept
+
+Watching me sleep on the floor is watching how the sausage is made in regards to my posture
+
+Serendipitously obtain a bokeh photo with my outdated phone camera
