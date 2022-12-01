@@ -29,6 +29,31 @@ I only touch low-voltage 5V side, the high 'dangerous' voltage side I leave to h
 
 addressable rgb, each LED has serial chip with a serial port in and serial port out that it funnels through the chain
 https://www.youtube.com/watch?v=rlqbVttV0gI&list=PLF2KJ6Gy3cZ7ynsp8s4tnqEFmY15CKhmH&index=15
+(interesting option of having a light display at sunset)
+using PlatformIO (python under the hood) very slow.
+perhaps though, it's useful for finding libraries or possible environment options to explore like unit testing
+BOARD-SELECTION: (want a board with WiFi and a builtin display?)
+IMPORTANT: chip cost may be $4, board cost $15
+go with ARM (although ESP32 much more powerful than Atmel, e.g. RAM, peripherals, frequency similar cost)
+
+LEDS:
+tricolor led can be any 3 colours. RGB LED is specific colours
+we power level appropriate from cable, board will enter program mode automatically
+resolution of PWM setup dependent on the frequency set up for it 
+(e.g. resolution of 8 gives 100% duty cycle of 255)
+```
+red_led_duty_cycle(pwm_max_val - red_component);
+green_led_duty_cycle(pwm_max_val - green_component);
+blue_led_duty_cycle(pwm_max_val - blue_component);
+```
+
+DISPLAY:
+technology, size, connection
+as various permutations of these, have various controller permutations 
+e.g. SH1107_I2C, SSD1306_SPI, etc.
+I2C developed by Phillips to allow multiple chips on a board to communicate with only 3 wires (id is passed on bus)
+(number of devices is limited by address space; typically 128 addresses?)
+
 
 TODO: gdb scripts
 https://github.com/espressif/freertos-gdb
