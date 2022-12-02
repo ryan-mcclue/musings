@@ -62,13 +62,22 @@ for (u32 x = 0; x < display_width; ++x)
 
 // Cocentric circles
 for (u32 r_count = 0; r_count < 3; r_count += 1)
-  draw_circle(x, y, r_count);
+  draw_circle_outline(x, y, r_count);
 
-some_func(some_variable += 10);
+// rainbow
+light_led(led_i, colour_val += 10);
+
+// stars
+leds[random(leds_len)] = colours[random(colours_len)];
+delay_ms(200);
+// might be better to draw a single LED each pass and use a LOCAL_PERSIST to
+// keep track of how many times function is called
 
 // Check how fast we can draw this out over I2C (want something like get_ms())
 // use weighted average to prevent value flickering, i.e. jumping (it will take some number of frames to stabilise as starts at 0)
 weighted_average = prev_value * 0.9 + new_value * 0.1; (probably use LOCAL_PERSIST)
+
+
 ```
 
 LEDS:

@@ -82,6 +82,8 @@ as python concept of CWD is strange, must run from outside directory
 --------
 Based on what was trained (LAION 400M internet scraped image-text pairs, which contains violent and sexual images (as oppose to DALLE-2)), output may bias, e.g. nerd might bias towards wearing glasses 
 
+chatGPT
+
 txt2img:
 word:weight, word:weight (must weights to proceeding works as well to not override)
 steampunk/low-poly 3D/minecraft rodent, intricate, pen and ink/canon m50, concept art, aerial

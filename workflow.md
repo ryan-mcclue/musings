@@ -13,6 +13,9 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
+If wanting to create a new implementation of a function, perhaps don't just
+delete it entirely, rather change its name to func_old()
+
 seems have CI for deploying or testing
 
 ingress (act of entering), egress used for traffic
