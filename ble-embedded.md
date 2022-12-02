@@ -71,7 +71,25 @@ light_led(led_i, colour_val += 10);
 leds[random(leds_len)] = colours[random(colours_len)];
 delay_ms(200);
 // might be better to draw a single LED each pass and use a LOCAL_PERSIST to
-// keep track of how many times function is called
+// keep track of how many times function is called as have delay
+
+// comet
+u32 trailer_pixel_fade_amount = 128;
+u32 num_core_pixels = 5;
+u32 delta_hue = 4;
+r32 comet_speed = 0.5f;
+
+u32 hue = HUE_RED;
+hue += delta_hue;
+
+i32 direction = -1;
+u32 pos = 0;
+pos += (direction * comet_speed); // IMPORTANT: to get a 'smooth' effect, require floating point speed multiplier
+// instead of clearing all LEDs, reduce brightness, i.e. incrementally fade to black
+// draw comet block
+// have the delay() value specific to the CPU frequency
+
+
 
 // Check how fast we can draw this out over I2C (want something like get_ms())
 // use weighted average to prevent value flickering, i.e. jumping (it will take some number of frames to stabilise as starts at 0)
