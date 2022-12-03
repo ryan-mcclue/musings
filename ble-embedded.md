@@ -48,7 +48,7 @@ blue_led_duty_cycle(pwm_max_val - blue_component);
 ```
 
 DISPLAY:
-useful to display FPS, power consumption (perhaps unscaled power, i.e. power if not performing alterations)
+useful to display FPS, power consumption (perhaps unscaled power, i.e. power if not performing alterations; perhaps only bright LED is power throttling)
 technology, size, connection
 as various permutations of these, have various controller permutations 
 e.g. SH1107_I2C, SSD1306_SPI, etc. (we probably want a library to draw lines, shapes, fonts, etc.)
@@ -131,9 +131,13 @@ if (ball_height < 0) // bounce
 }
 
 position = (ball_height * (strip_len - 1) / start_height);
-set_led(position, colour); // if we do additive colours, led[i] += colour; we get mixing
+set_led(position, colour); 
+// IMPORTANT: as no need for explicit collisiong detection, 
+// if we do additive colours, led[i] += colour; we get mixing
 if (mirrored) set_led(strip_len - 1 - position, colour);
 ```
+#define cli() nvic_globalirq_disable()
+#define sei() nvic_globalirq_enable()
 
 LEDS:
 WS2812B is standard. Neopixel brand. Each chip is RGB LED with MCU.
@@ -148,6 +152,26 @@ With power, still have to be careful if say, setting max brightness and all LEDS
 seems it's common to have GBR as format?
 TODO: only in video 4 are power calculations done?
 (have a function to limit max watts of power drawn?)
+
+// #define EVERY_N_MILLIS_I(NAME,N) static CEveryNMillis NAME(N); if( NAME )
+// operator bool() { return ready(); }
+
+8BIT MATH (another reason to inspect assembly):
+//      qadd8( i, j) == MIN( (i + j), 0xFF ) (saturated add)
+//      qsub8( i, j) == MAX( (i - j), 0 )
+//      mul8( i, j)  == (i * j) & 0xff
+//      add8( i, j)  == (i + j) & 0xff
+//      sub8( i, j)  == (i - j) & 0xff
+//      sin8( x)  == (sin( (x/128.0) * pi) * 128) + 128
+//      cos8( x)  == (cos( (x/128.0) * pi) * 128) + 128
+#if QADD8_C == 1
+    unsigned int t = i + j;
+    if( t > 255) t = 255;
+    return t;
+#elif QADD8_ARM_DSP_ASM == 1
+    asm volatile( "uqadd8 %0, %0, %1" : "+r" (i) : "r" (j));
+    return i;
+#endif
 
 
 TODO: gdb scripts
