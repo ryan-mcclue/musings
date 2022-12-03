@@ -48,7 +48,7 @@ blue_led_duty_cycle(pwm_max_val - blue_component);
 ```
 
 DISPLAY:
-useful to display FPS
+useful to display FPS, power consumption (perhaps unscaled power, i.e. power if not performing alterations)
 technology, size, connection
 as various permutations of these, have various controller permutations 
 e.g. SH1107_I2C, SSD1306_SPI, etc. (we probably want a library to draw lines, shapes, fonts, etc.)
@@ -79,23 +79,60 @@ u32 num_core_pixels = 5;
 u32 delta_hue = 4;
 r32 comet_speed = 0.5f;
 
+// instead of clearing all LEDs, reduce brightness, i.e. incrementally fade to black
+led_fade_to_black(leds, i, amount);
+
 u32 hue = HUE_RED;
 hue += delta_hue;
 
 i32 direction = -1;
 u32 pos = 0;
-pos += (direction * comet_speed); // IMPORTANT: to get a 'smooth' effect, require floating point speed multiplier
-// instead of clearing all LEDs, reduce brightness, i.e. incrementally fade to black
+pos += (direction * comet_speed); 
+// IMPORTANT: to get a 'smooth' effect, require floating point speed multiplier
+// IMPORTANT: so, animation stages are u32, r32 then kinematics 
+// IMPORTANT: when calculating values, the natural derivation may prove too large or too small,
+// e.g. cur_time - prev_time. so, add something like a 'speed_knob' that will / or *
+
 // draw comet block
 // have the delay() value specific to the CPU frequency
-
-
 
 // Check how fast we can draw this out over I2C (want something like get_ms())
 // use weighted average to prevent value flickering, i.e. jumping (it will take some number of frames to stabilise as starts at 0)
 weighted_average = prev_value * 0.9 + new_value * 0.1; (probably use LOCAL_PERSIST)
+```
 
+```
+free-fall: v = sqrt(-2 * gravity * distance_fallen);
 
+r32 gravity = -9.81f;
+r32 start_height = 1;
+r32 impact_velocity = free_fall(start_height);
+r32 speed_knob = 4.0f;
+
+struct BouncingBallEffect
+{
+  u32 output_led_strip_len;
+  u32 fade_rate;
+  b32 mirrored;
+  r32 time_since_last_bounce;
+  r32 ball_speed;
+  r32 dampening; // value closer to 1 preserves more energy (0.9f - i / pow(num_balls, 2))
+  u32 colour;
+};
+
+time_since_last_bounce = time() - clock_at_last_bounce;
+// constant acceleration function (here gravity is decellerating us)
+ball_height = 0.5 * gravity * pow(time_since_last_bounce, 2.0f) + ball_speed * time_since_last_bounce;
+if (ball_height < 0) // bounce
+{
+  ball_height = 0;
+  ball_speed = dampening * ball_speed;
+  if (ball_speed < 0.01f) ball_speed = initial_ball_speed;
+}
+
+position = (ball_height * (strip_len - 1) / start_height);
+set_led(position, colour); // if we do additive colours, led[i] += colour; we get mixing
+if (mirrored) set_led(strip_len - 1 - position, colour);
 ```
 
 LEDS:
@@ -110,6 +147,7 @@ can simultaneously connect USB cable and will defer to power pins over it?
 With power, still have to be careful if say, setting max brightness and all LEDS to white
 seems it's common to have GBR as format?
 TODO: only in video 4 are power calculations done?
+(have a function to limit max watts of power drawn?)
 
 
 TODO: gdb scripts
