@@ -69,6 +69,9 @@ for (u32 r_count = 0; r_count < 3; r_count += 1)
 // rainbow
 light_led(led_i, colour_val += 10);
 
+// Marquee (draw colour, then draw moving black spots)
+for (u32 i = scroll % 5; i < num_leds; ++i) set_led(i, black);
+
 // stars
 leds[random(leds_len)] = colours[random(colours_len)];
 delay_ms(200);
@@ -92,12 +95,47 @@ u32 pos = 0;
 pos += (direction * comet_speed); 
 // IMPORTANT: to get a 'smooth' effect, require floating point speed multiplier
 // IMPORTANT: so, animation stages are u32, r32, then easing (kinematics/lerp)/cycling(sin) etc.
+// IMPORTANT: gradual colour blending to clear, instead of instant colour clear
 // IMPORTANT: then move to perhaps altering colour
 // IMPORTANT: when calculating values, the natural derivation may prove too large or too small,
 // e.g. cur_time - prev_time. so, add something like a 'speed_knob' that will / or *
 
+// IMPORTANT: floating point coordinates only one part of smoothness.
+// also require fractional drawing
+// this means that drawing 0.25 of a pixel will be 0.25 of its original colour
+colour colour_fraction(colour_in, fraction)
+{
+  fraction = min(1.0f, fraction);
+  return colour.fadeToBlack(255 * (1.0f - fraction));
+}
+void draw_pixel(ipos, pixel_len, colour)
+{
+  first_pixel_avail = 1.0f - (fpos - (int)fpos); // get fractional part
+  first_pixel_avail = min(first_pixel_avail, pixel_len);
+  remaining = min(count, strip_len - fpos);
+  ipos = fpos;
+
+  if (remaining > 0.0f)
+  {
+    set_led(ipos++, colour_fraction(colour, first_pixel_avail));
+    remaining -= first_pixel_avail;
+  }
+
+  while (remaining > 1.0f)
+  {
+    set_led(ipos++, colour);
+    remaining--;
+  }
+
+  if (remaining > 0.0f)
+  {
+    set_led(ipos++, colour_fraction(colour, remaining));
+  }
+}
+// IMPORTANT: now increment by say 0.1 instead of 1
+
 // draw comet block
-// have the delay() value specific to the CPU frequency
+// the delay() value will probably be specific to the CPU frequency
 
 // Check how fast we can draw this out over I2C (want something like get_ms())
 // use weighted average to prevent value flickering, i.e. jumping (it will take some number of frames to stabilise as starts at 0)
@@ -145,6 +183,10 @@ print(" " * sin(freq * i) + "ryan") // map sin() to our desired range
 ```
 #define cli() nvic_globalirq_disable()
 #define sei() nvic_globalirq_enable()
+
+```
+// fractional drawing required for smooth 'slow-motion' effects?
+```
 
 IMPORTANT: for a preemptive multitasking kernel like linux, a call to pthread_yeild() (allow other threads to run on CPU)
 is not necessary. however, for embedded, maybe
