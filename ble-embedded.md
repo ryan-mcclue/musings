@@ -27,6 +27,7 @@ https://www.twitch.tv/videos/233685076?filter=all&sort=time
 
 I only touch low-voltage 5V side, the high 'dangerous' voltage side I leave to hardware engineers
 
+TODO: rhymu 'rusty keyboard' series
 addressable rgb, each LED has serial chip with a serial port in and serial port out that it funnels through the chain
 https://www.youtube.com/watch?v=rlqbVttV0gI&list=PLF2KJ6Gy3cZ7ynsp8s4tnqEFmY15CKhmH&index=15
 (interesting option of having a light display at sunset)
@@ -48,7 +49,8 @@ blue_led_duty_cycle(pwm_max_val - blue_component);
 ```
 
 DISPLAY:
-useful to display FPS, power consumption (perhaps unscaled power, i.e. power if not performing alterations; perhaps only bright LED is power throttling)
+useful to display FPS (might only need to display this say, every 250ms as oppose to every frame), 
+power consumption (perhaps unscaled power, i.e. power if not performing alterations; perhaps only bright LED is power throttling)
 technology, size, connection
 as various permutations of these, have various controller permutations 
 e.g. SH1107_I2C, SSD1306_SPI, etc. (we probably want a library to draw lines, shapes, fonts, etc.)
@@ -89,7 +91,8 @@ i32 direction = -1;
 u32 pos = 0;
 pos += (direction * comet_speed); 
 // IMPORTANT: to get a 'smooth' effect, require floating point speed multiplier
-// IMPORTANT: so, animation stages are u32, r32 then kinematics 
+// IMPORTANT: so, animation stages are u32, r32, then easing (kinematics/lerp)/cycling(sin) etc.
+// IMPORTANT: then move to perhaps altering colour
 // IMPORTANT: when calculating values, the natural derivation may prove too large or too small,
 // e.g. cur_time - prev_time. so, add something like a 'speed_knob' that will / or *
 
@@ -122,6 +125,7 @@ struct BouncingBallEffect
 
 time_since_last_bounce = time() - clock_at_last_bounce;
 // constant acceleration function (here gravity is decellerating us)
+// this could be considered an easing function
 ball_height = 0.5 * gravity * pow(time_since_last_bounce, 2.0f) + ball_speed * time_since_last_bounce;
 if (ball_height < 0) // bounce
 {
@@ -135,9 +139,15 @@ set_led(position, colour);
 // IMPORTANT: as no need for explicit collisiong detection, 
 // if we do additive colours, led[i] += colour; we get mixing
 if (mirrored) set_led(strip_len - 1 - position, colour);
+
+print(" " * sin(freq * i) + "ryan") // map sin() to our desired range
+// could also have sawtooth(), cubic() etc. 
 ```
 #define cli() nvic_globalirq_disable()
 #define sei() nvic_globalirq_enable()
+
+IMPORTANT: for a preemptive multitasking kernel like linux, a call to pthread_yeild() (allow other threads to run on CPU)
+is not necessary. however, for embedded, maybe
 
 LEDS:
 WS2812B is standard. Neopixel brand. Each chip is RGB LED with MCU.
@@ -153,7 +163,7 @@ seems it's common to have GBR as format?
 TODO: only in video 4 are power calculations done?
 (have a function to limit max watts of power drawn?)
 
-// #define EVERY_N_MILLIS_I(NAME,N) static CEveryNMillis NAME(N); if( NAME )
+// #define AT_MOST_N_MILLIS(NAME,N) static AtMostNMillis NAME(N); if( NAME )
 // operator bool() { return ready(); }
 
 8BIT MATH (another reason to inspect assembly):
