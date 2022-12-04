@@ -276,3 +276,6 @@ C grew out of existing code. All new languages trying to be a top-down design on
 Just have a simple language with ideal metaprogramming/code generation facilities so the programmer can decide, not the language designer
 
 Whilst github codespaces seems cool, the reason for having some many containers is that the build systems for each project is incredibly complex and requires many dependencies
+
+Sometimes have to rephrase something for the compiler to generate more optimal code,
+e.g. div /= 2; div /= 2; will generate more efficient instruciton that div >> 2 for avr_gcc

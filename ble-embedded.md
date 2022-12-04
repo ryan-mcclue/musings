@@ -47,6 +47,8 @@ red_led_duty_cycle(pwm_max_val - red_component);
 green_led_duty_cycle(pwm_max_val - green_component);
 blue_led_duty_cycle(pwm_max_val - blue_component);
 ```
+TODO: is brightness of PWM determined by duty cycle?
+If so, then a PWM LED fade should just be duty cycle, or should it be colour as well?
 
 DISPLAY:
 useful to display FPS (might only need to display this say, every 250ms as oppose to every frame), 
@@ -108,6 +110,7 @@ colour colour_fraction(colour_in, fraction)
   fraction = min(1.0f, fraction);
   return colour.fadeToBlack(255 * (1.0f - fraction));
 }
+// IMPORTANT: so, in addition to 'sub-pixel' drawing, also have automatic blending
 void draw_pixel(ipos, pixel_len, colour)
 {
   first_pixel_avail = 1.0f - (fpos - (int)fpos); // get fractional part
@@ -154,7 +157,8 @@ struct BouncingBallEffect
 {
   u32 output_led_strip_len;
   u32 fade_rate;
-  b32 mirrored;
+  b32 reversed (draw from len inwards; i = size - 1 - i); // common parameter for effects
+  b32 mirrored (size = size / 2); // common parameter for effects
   r32 time_since_last_bounce;
   r32 ball_speed;
   r32 dampening; // value closer to 1 preserves more energy (0.9f - i / pow(num_balls, 2))
@@ -185,7 +189,36 @@ print(" " * sin(freq * i) + "ryan") // map sin() to our desired range
 #define sei() nvic_globalirq_enable()
 
 ```
-// fractional drawing required for smooth 'slow-motion' effects?
+// fractional drawing required for smooth 'slow-motion' effects
+
+blend_amount_self = 2, blend_amount_neighbour1 = 3 (take 2 parts of itself, 3 parts of neighbour)
+blend_total = 5;
+
+// for parameters essentially / for setting relative to length,
+// + for offset, and * for a scaling factor
+
+// cool
+for (u32 i = 0; i < size; ++i)
+  heat[i] = max(0L, heat[i] - random(0, ((cooling * 10) / size) + 2));
+
+// move heat up
+for (u32 i = 0; i < size; ++i)
+  heat[i] = (heat[i] * blend_self + heat[(i + 1) % size] * blend_neighbour) / blend_total;
+
+// ignite a spark
+for (u32 i = 0; i < num_sparks; ++i)
+{
+  if (random(255) < sparking_threshold_probability)
+  {
+    u32 y = size - 1 - random(spark_height);
+    heat[y] = heat[y] + random(160, 255);
+  }
+}
+
+// convert heat to colour
+for (u32 i = 0; i < size; ++i)
+  colour = map_colour_to_red(heat[i]);
+  draw_pixels(i, 1, colour);
 ```
 
 IMPORTANT: for a preemptive multitasking kernel like linux, a call to pthread_yeild() (allow other threads to run on CPU)
