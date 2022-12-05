@@ -8,3 +8,5 @@ AI generated voice, text. Disney can now alter age
 In summary, generative AI everywhere.
 
 EMV (europay, mastercard and visa) secure payment technology embedded in credit card chip
+
+Waited till USB-C becoming standard to introduce reversible USB-A (acheived with movable plastic divider and duplicated pins)

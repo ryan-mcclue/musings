@@ -1,5 +1,7 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+Fast Fourier Transform (FFTs) are often used with DACs to create a spectrum analyser which allows for subsequent beat detection?
+
 an adapter board would handle power and signal conversion
 
 TODO: DSI vs USB vs HDMI?
@@ -111,7 +113,7 @@ colour colour_fraction(colour_in, fraction)
   return colour.fadeToBlack(255 * (1.0f - fraction));
 }
 // IMPORTANT: so, in addition to 'sub-pixel' drawing, also have automatic blending
-void draw_pixel(ipos, pixel_len, colour)
+void draw_pixels(ipos, pixel_len, colour)
 {
   first_pixel_avail = 1.0f - (fpos - (int)fpos); // get fractional part
   first_pixel_avail = min(first_pixel_avail, pixel_len);
@@ -120,6 +122,7 @@ void draw_pixel(ipos, pixel_len, colour)
 
   if (remaining > 0.0f)
   {
+    // ipos = get_pixel_order();
     set_led(ipos++, colour_fraction(colour, first_pixel_avail));
     remaining -= first_pixel_avail;
   }
@@ -219,6 +222,57 @@ for (u32 i = 0; i < num_sparks; ++i)
 for (u32 i = 0; i < size; ++i)
   colour = map_colour_to_red(heat[i]);
   draw_pixels(i, 1, colour);
+```
+
+```
+FAN_STRIP_SIZE = 16;
+NUM_FANS = 3;
+ZERO_PIXEL_OFFSET = 4; (how much have to rotate by for 0th pixel to be on bottom)
+
+enum PIXEL_ORDER
+{
+  PIXEL_ORDER_SEQUENTIAL = 1 << 0,
+  PIXEL_ORDER_REVERSE = 1 << 1,
+  PIXEL_ORDER_BOTTOM_UP = 1 << 2,
+  PIXEL_ORDER_TOP_DOWN = 1 << 3,
+  PIXEL_ORDER_LEFT_RIGHT = 1 << 4,
+  PIXEL_ORDER_RIGHT_LEFT = 1 << 5,
+};
+
+u32 get_pixel_order(i32 pos, PIXEL_ORDER order)
+{
+  // this allows negative indexing, i.e. -1 is last
+  while (pos < 0) pos += FAN_SIZE;
+
+  u32 offset = (pos + ZERO_PIXEL_OFFSET) % FAN_STRIP_SIZE;
+  u32 reverse_offset = (pos + FAN_STRIP_SIZE - ZERO_PIXEL_OFFSET) % FAN_STRIP_SIZE;
+  // start in particular fan, e.g. 0, 16, 32, 48, 64, etc.
+  u32 fan_base = pos - (pos % FAN_STRIP_SIZE);
+
+  switch (order)
+  {
+    case PIXEL_ORDER_SEQUENTIAL:
+      return fan_base + offset;
+    case PIXEL_ORDER_REVERSE:
+      return fan_base + FAN_STRIP_SIZE - 1 - reverse_offset;
+    case PIXEL_ORDER_BOTTOM_UP:
+      return fan_base + FAN_STRIP_SIZE - 1 - (VERTICAL_LOOKUP[pos % FAN_STRIP_SIZE] + ZERO_PIXEL_OFFSET) % FAN_STRIP_SIZE;
+  }
+}
+
+// IMPORTANT: connecting multiple strips is daisy chaining, so still same output
+// allow for offset from fan_index, and also just passing number treating all fans together
+// IMPORTANT: optional arguments, use struct
+for (u32 i = 0; i < NUM_FANS; ++i)
+   draw_fan_pixels(sin(x), 1, red, PIXEL_ORDER_LEFT_TO_RIGHT, i);
+for (u32 i = 0; i < NUM_PIXELS; ++i)
+   draw_fan_pixels(sin(x), 1, red, PIXEL_ORDER_LEFT_TO_RIGHT, 0);
+```
+
+```
+wire strippers +/- affects tension which will affect any wire braiding
+put heat shrink on before wire soldering
+can twist multiple ground wires together and solder to single ground source
 ```
 
 IMPORTANT: for a preemptive multitasking kernel like linux, a call to pthread_yeild() (allow other threads to run on CPU)
