@@ -33,8 +33,10 @@ https://www.twitch.tv/videos/233685076?filter=all&sort=time
 I only touch low-voltage 5V side, the high 'dangerous' voltage side I leave to hardware engineers
 
 TODO: rhymu 'rusty keyboard' series
+
+TODO: FreeRTOS spectrum analyzer, i.e. using 'tasks': https://www.youtube.com/watch?v=f_zt7zdGJCA
+
 addressable rgb, each LED has serial chip with a serial port in and serial port out that it funnels through the chain
-https://www.youtube.com/watch?v=rlqbVttV0gI&list=PLF2KJ6Gy3cZ7ynsp8s4tnqEFmY15CKhmH&index=15
 (interesting option of having a light display at sunset)
 using PlatformIO (python under the hood) very slow.
 perhaps though, it's useful for finding libraries or possible environment options to explore like unit testing
@@ -285,6 +287,9 @@ Adhesive tape (with conductive pads on end) on bottom of LED strip stick wires t
 (have some electrical tape for this)
 Also, buy wires merged together and only pull apart the end points
 With multimeter, verify that no short circuit by checking continuity amongst wires 
+
+Critical section means non concurrent access to this code. 
+Acheived with a mutex obtain and lock pair?
 ```
 
 IMPORTANT: for a preemptive multitasking kernel like linux, a call to pthread_yeild() (allow other threads to run on CPU)
