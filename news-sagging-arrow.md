@@ -30,6 +30,7 @@ Good work being done in legislating IoT labels, e.g. like nutrition labels that 
 Have GPU microarchitectures like RNDA.
 
 Chiplets seem future of shrinking size and expanding computing power, now seen in GPUs
+They can be easily be recombined to create custom designs
 
 VSR (virtual super technology) has GPU scale to 4K and then downscale if necessary to monitor's resolution
 However, if want say 8K gaming, will require a DisplayPort cable

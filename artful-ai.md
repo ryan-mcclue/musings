@@ -121,3 +121,6 @@ timelapse between prompts
 
 outpainting/inpainting:
 dalle-2 much better here for photos
+
+ChatGPT to generate commit messages: 
+https://github.com/RomanHotsiy/commitgpt
