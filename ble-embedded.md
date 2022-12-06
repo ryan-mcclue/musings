@@ -1,5 +1,12 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+TODO: how to best architect timing requirements given that ISR should be small?
+e.g. this executes every 1 second, this every 500ms etc.
+
+could even be simplex (one way only)
+full-duplex can still be serial, requiring at least two wires
+serial (synchronous with clock data; asynchronous) + parallel 
+
 no heap allocation, just use statically allocated pools: 
 https://mcuoneclipse.com/2022/11/06/how-to-make-sure-no-dynamic-memory-is-used/?mc_cid=26981ac7f4&mc_eid=UNIQID
 
@@ -783,6 +790,14 @@ drive with external source, e.g. ground or voltage.
 
 Pull-up/down resistors are to used for unconnected input pins to avoid floating state
 So, a pull-down will have the pin (when in an unconnected state) to ground, i.e. 0V when switch is not on
+
+IMPORTANT: Although enabling internal resistors, 
+must look at board schematic as external resistors might overrule
+
+Vdd (drain, power supply to chip)
+Vcc (collector, subsection of chip, i.e. supply voltage of circuit)
+Vss (sink, ground)
+Vee (emitter, ground)
 
 the sparsity of linux can make configuration vary
 e.g bluez stack -> modify policies
