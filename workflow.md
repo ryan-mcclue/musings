@@ -92,8 +92,42 @@ C has designated initialisers (gcc extension has this as well)
 C like performance like vegan meat. If you want it, go for the real thing
 C not literally a high level assembly language as compilers do a lot of transformations
 Similarly, assembly is not a direct translation, as the CPU may reorder etc.
-Compiler follows AS-IF rule, i.e. as long as EVENTUALLY equals the same. (in this only a C compiler, hence why it's fast?)
+Compiler follows AS-IF rule, i.e. as long as EVENTUALLY equals the same. (is this only a C compiler, hence why it's fast?)
 So, if not observable (e.g. volatile, io, graphics, etc.) could perform instruction reordering/removal
+
+TODO: volatile vs atomics?
+atomic means we either read all of it, or none of it (i.e. don't read if some other thread is writing to it)
+architectures have specific atomic instructions?
+like, a val++ is not atomic as something could be inserted in between
+so doing atomic_exchange_rel(shared_pointer, a); will nothing will interfere?
+(so, not enough to just say volatile as volatile will allow assignments to be reordered?)
+atomics related to release and acquire?
+release says everything before this point has to be done, i.e. won't be reordered upwards 
+acquire means this won't be reordered downwards, i.e nothing after this will be done, before this completes
+full fence is release and acquire, i.e cannot move up or down
+atomics are not just instructions to compiler to not reorder, but also hardware instructions related to cache flushing etc.
+
+C standard as at least 6 pages of undefined behaviour 
+could be more, in fact anything not explicit defined is undefined.
+there could be more undefined behaviour waiting to be noticed. 
+it's just because C is 50 year old language that many corner cases explored
+
+compiler assumes that code that is undefined behaviour cannot be reached and so will optimise away
+wrapping is undefined for signed values, so can optimise this away in that case
+`x = (x * 2) / 2;`
+shifting more than 32 is undefined, so can optimise away if
+`u32_val <<= x; if (x >= 32) ... `
+```
+switch (index)
+{
+  case 0: func[0];
+  case 1: func[1];
+}
+this gets mapped to if (index) etc.
+however, if put __builtin_unreachable() in default case, can remove this
+so, this is useful for optimising range checks
+GET INTO HABIT OF USING LIKELY AND UNREACHABLE?
+```
 
 coroutine is function that can be suspended at any point, and resume later
 
