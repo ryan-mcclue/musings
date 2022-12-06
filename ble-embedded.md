@@ -1,5 +1,8 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+no heap allocation, just use statically allocated pools: 
+https://mcuoneclipse.com/2022/11/06/how-to-make-sure-no-dynamic-memory-is-used/?mc_cid=26981ac7f4&mc_eid=UNIQID
+
 Fast Fourier Transform (FFTs) are often used with DACs to create a spectrum analyser which allows for subsequent beat detection?
 
 an adapter board would handle power and signal conversion
@@ -272,7 +275,16 @@ for (u32 i = 0; i < NUM_PIXELS; ++i)
 ```
 wire strippers +/- affects tension which will affect any wire braiding
 put heat shrink on before wire soldering
-can twist multiple ground wires together and solder to single ground source
+will often twist multiple common wires (e.g. ground) together and solder to single ground source
+(have gloves on for this)
+wiring can be too fine for holding a particular amperage?
+TODO: look into sleeving wires
+TODO: something like loctite threadlocker is a liquid that prevents threads loosening due to vibration 
+
+Adhesive tape (with conductive pads on end) on bottom of LED strip stick wires to. Then solder end tips to connect bottom to top
+(have some electrical tape for this)
+Also, buy wires merged together and only pull apart the end points
+With multimeter, verify that no short circuit by checking continuity amongst wires 
 ```
 
 IMPORTANT: for a preemptive multitasking kernel like linux, a call to pthread_yeild() (allow other threads to run on CPU)
