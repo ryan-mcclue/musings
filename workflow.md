@@ -22,6 +22,33 @@ ingress (act of entering), egress used for traffic
 
 C is good as in the beginning you always want the results. 
 In the end all you want is control (writing OS instead of libc will also allow for more powerful API)
+Embrace the complexity that C provides (as down the road, you will want that complexity to create varied things)
+You will have the control to solve your problem
+To be a good programmer, you have to want to learn how to do things
+You want compiler errors and things to be explicit
+C++ hides a lot of things. 
+Oftentimes, the language allows you to do things that make you think your clever (intertwined with 'one-liners').
+Extra typing is not bad, it makes things more explicit
+Crashes make you fix things
+
+Spacing good for searching and to avoid a+++++b (a++ + ++b)
+
+```
+u32 vals[2 * 3] = {
+           1, 2, 3
+           4, 5, 6
+}
+```
+
+NAMING (mirrors a directory structure): 
+```
+// structs/functions/global prefixes in a file should have same name as the file they reside in
+obj_create(); obj_destroy(); etc. // would go in obj.[ch]
+```
+
+Think about your code running for decades
+
+
 
 TODO: with multithreading, be aware of cache byte line invalidation (which is an action of cache coherency)
 
@@ -70,7 +97,7 @@ img = open_img(file);
 tex = open_tex(img);
 if (tex.valid) {}
 ```
-Use stb approach for library design
+Use stb approach for library design (might be easier to start out sparse and when shipping, merge together)
 Have struct argument for large number of configuration options
 Request allocators, or memory; don't allocate
 In fact, don't call any OS specific calls. request hem
