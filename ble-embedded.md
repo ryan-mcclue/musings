@@ -7,6 +7,15 @@ could even be simplex (one way only)
 full-duplex can still be serial, requiring at least two wires
 serial (synchronous with clock data; asynchronous) + parallel 
 
+BUTTON BOX 3D PRINT:
+* print out small test part with holes to test if button/screw/etc. inserts fit correctly
+* consider leaving holes in 3D scaffolding for making wiring easier
+* for stylistic finish, can print a separate plate with different resin and attach with hot glue
+* will have a bottom plate to account for wiring (have threaded inserts (male-to-female) to account for box moving about when pressing a button)
+1. solder wires to buttons
+2. solder wires to mcu
+3. secure mcu
+
 no heap allocation, just use statically allocated pools: 
 https://mcuoneclipse.com/2022/11/06/how-to-make-sure-no-dynamic-memory-is-used/?mc_cid=26981ac7f4&mc_eid=UNIQID
 
@@ -43,6 +52,7 @@ TODO: rhymu 'rusty keyboard' series
 
 TODO: FreeRTOS spectrum analyzer, i.e. using 'tasks': https://www.youtube.com/watch?v=f_zt7zdGJCA
 
+https://iosoft.blog/2020/09/29/raspberry-pi-multi-channel-ws2812/
 addressable rgb, each LED has serial chip with a serial port in and serial port out that it funnels through the chain
 (interesting option of having a light display at sunset)
 using PlatformIO (python under the hood) very slow.
