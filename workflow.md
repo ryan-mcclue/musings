@@ -834,3 +834,5 @@ I'm notified when keywords related to "human wants thing, my app can do thing" a
 If I can then contribute with information to that discussion, I'll also leave a link to my app.
 Don't just self plug, people (myself included) appreciate more detailed information on how they can solve their own personal problem, 
 instead of being thrown into "here's an app, figure it out" 
+
+even parity is to make it even, i.e. so if 5 1's, even parity will add a 1 
