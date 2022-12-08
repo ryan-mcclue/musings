@@ -113,6 +113,13 @@ Something arr[10];
 colour_iterate(&arr[0].colour, 10, sizeof(*Something));
 ```
 
+IMPORTANT: A GOOD PROGRAMMER WANTS TO WRITE CODE. 
+WHEN PEOPLE SAY TOO HARD, THIS IS AN OPPORTUNITY TO LEARN
+BUILD YOUR MOUNTAIN THAT WILL NOT AGE. YOU WILL BE A EXPERT THAT CAN FIX IT, BECAUSE YOU WROTE IT
+WHEN YOU WRITE A PIECE OF TECHNOLOGY DON'T VIEW IT AS STANDALONE, VIEW IT AS CREATING AN EVER HIGHER MOUNTAIN THAT WILL ALLOW YOU TO CREATE GREATER THINGS IN THE FUTURE
+IN CONTRAST, AN APPLICATION SHOULD BE A SMALL HOUSE; TECHNOLOGY STACK A MOUNTAIN
+LEARN BY IMPLEMENTING
+
 Think about your code running for decades
 
 TODO: with multithreading, be aware of cache byte line invalidation (which is an action of cache coherency)
@@ -140,10 +147,11 @@ however, it does assume no aliasing if the pointer types are different, e.g. int
 unsigned char aliases all types (exception to aforementioned rule)
 
 in C memory objects are not contiguous
-so, &a == &b will be optimised away (avoid by casting to integers)
+so, &a == &b will be optimised away (avoid by casting to integers) 
+(however a != b will work even if pointers, it's the address of that causes issues)
 are C fat pointers even worth caring about? only really C++ member functions etc.
 
-https://www.youtube.com/watch?v=w3_e9vZj7D8&t=15s
+TODO: if requiring software square root, use Carmack's square root function?
 
 strive for value orientated (less pointers), 
 i.e. use structs by value; so return them and use as arguments.
