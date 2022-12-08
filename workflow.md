@@ -15,8 +15,8 @@ a standard rebase will apply commits on top of
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
 
-If wanting to create a new implementation of a function, perhaps don't just
-delete it entirely, rather change its name to func_old()
+If wanting to create a new implementation of a function, 
+perhaps don't just delete it entirely, rather change its name to func_old()
 
 seems have CI for deploying or testing
 
@@ -299,8 +299,8 @@ TODO: avoid using magic numbers for various buffer sizes
 
 TODO: prefix discriminated union fields
 
-TODO: write more comments on code that is 'exploratory', e.g. ASSUMES static size, 
-IGNORES clearing other fields, etc.
+TODO: write more comments on code that is 'exploratory', 
+e.g. ASSUMES static size, IGNORES clearing other fields, etc.
 
 Good error messages say what happened and why, 
 provide reassurance, are empathetic, 
@@ -339,13 +339,12 @@ also, some compilers might not fully implement the STL feature
 With an undeclared identifier in a unity build, just reorder #includes in main file
 
 Cross platform naming, e.g. With libc,  libraries is more of a discipline thing 
+
 There are no absolutes, just tradeoffs for solving your problem, e.g raw vs smart pointers
-Often issue is not hard code, it's because the problem is messy,  I. E.  Unwritten assumptions,  
+
+Often issue is not hard code, it's because the problem is messy, i.e.  Unwritten assumptions,  
 external constraints, users want lots of generic functionality. 
 So often interesting at the same time, very annoying. 
-
-Data structures don't correspond to layout in memory, 
-e.g. When would you want awful cache locality of linked list
 
 Frameworks change all the time,  fundamentals not so much, e.g how things glue together
 
