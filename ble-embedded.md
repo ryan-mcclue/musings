@@ -312,6 +312,8 @@ Critical section means non concurrent access to this code.
 Acheived with a mutex obtain and lock pair?
 ```
 
+Modern OS will have code memory write protected for security reasons. Bare metal can do this however
+
 IMPORTANT: for a preemptive multitasking kernel like linux, a call to pthread_yeild() (allow other threads to run on CPU)
 is not necessary. however, for embedded, maybe
 

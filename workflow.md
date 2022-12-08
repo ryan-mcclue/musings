@@ -1,3 +1,5 @@
+# LEETCODE EVERYDAY
+
 # Workflow
 Preparation Mentality:
 ## Git usage: TODO(Ryan): collate into bash aliases 
@@ -44,11 +46,74 @@ NAMING (mirrors a directory structure):
 ```
 // structs/functions/global prefixes in a file should have same name as the file they reside in
 obj_create(); obj_destroy(); etc. // would go in obj.[ch]
+
+enum MY_ENUM
+{
+ ME_VALUE1,
+ ME_VALUE2,
+};
+```
+
+ALLOCATE STYLE (MORE GENERAL, SIZEOF STYLE)
+```
+u32 *mem = malloc(sizeof(*mem) * 10);
+```
+
+If discriminated union size disparity an issue, consider:
+```
+struct SomeStruct
+{
+  CommonHeader *header;
+  u32 value;
+};
+some_func(CommonHeader *header)
+{
+  if (header->type == SOME_TYPE)
+  {
+    SomeStruct value = (SomeStruct *)header;  
+  }
+}
+```
+struct padding largest value wants to be on a byte boundary that is divisible by itself
+trailing members may have padding also to ensure consecutive structs in array are aligned as well
+(some machines may crash on unaligned access, or raise an exception which will trigger an interrupt)
+IMPORTANT: On machines with no unaligned accesses, memory arenas may create issues 
+
+each memory page given by OS has rwx flags. 
+this gives some sandboxing between process memory
+(compiler warning should detect stack smashing when trying to overwrite stack areas)
+(address sanitizer should pick up when trying to overwrite heap page areas)
+
+IMPORTANT: memory access is very slow. actual math operations etc. are very fast.
+e.g. SIMD perform 4 multiplies in 1 cycle, reading something from memory 50 cycles
+So, when optimising, look at reducing memory accesses and see if those memory accesses are in the cache
+(smaller cache faster lookups. larger cache, less liklihood of cache misses)
+(IN GENERAL, COMPUTE DON'T LOOKUP)
+```
+struct BareBonesNoRedundancies
+{
+  f32 width, height;
+  // f32 area;
+};
+Remove values that can be computed. Reduces possibility of bugs
+As math is effectively 'free', we can reduce memory size also
+
+If value is very expensive to compute, then wrap dependent values in function, e.g. set_width()
+```
+
+IMPORTANT: BUFFER ITERATIONS, USE STRIDE FOR GREATER FLEXIBILITY
+```
+void colour_iterate(u8 *colours, u32 count, u32 stride);
+struct Something
+{
+  u32 id;
+  u8 colour[3];
+};
+Something arr[10];
+colour_iterate(&arr[0].colour, 10, sizeof(*Something));
 ```
 
 Think about your code running for decades
-
-
 
 TODO: with multithreading, be aware of cache byte line invalidation (which is an action of cache coherency)
 
