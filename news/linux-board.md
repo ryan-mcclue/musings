@@ -2,31 +2,7 @@
 
 https://marketplace.fedevel.education/itemDetail.html?itemtype=course&dbid=1569757838995&instrid=us-east-2_KpwYC7yK5:45f6c01d-ccc8-43e0-8f33-c5a70caf707f
 
-Adventures in Creation
-
-can import .stl files and make basic extrusions/pockets
-
-rpi4-case:
-  * container part
-    - container_body
-      · container_body_base: (centrifically locked; select outer points first)
-      · inlet: vertically constrain construction line to external geometry
-  * lid part
-   · make container sketches visible
-   · defining geometry  
-(link -> union -> transform/create-mesh-shape -> move)
-
-shaft-in-wheel:
-  * revolution pad tool
-  * polar pattern for duplicating holes around centre
-domino:
-  * symmetry sketch around centre line
-  * mirror feature for say entire pad mirroring
-
 when creating lid lips, factor in printer tolerance, say 0.4mm
-also, add chamfer/fillet to lip edge
-
-rename pads and pockets
 
 Spreadsheet (have dimensions to make parametric):
 if want to access parameteric sketch constraint, <<Sketch>>.Constraints.name
