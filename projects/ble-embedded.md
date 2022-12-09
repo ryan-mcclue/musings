@@ -606,11 +606,57 @@ Simple word parser use `at[1] != '\0' && at[1] == 'a'`
 Simple single line parser:
 First separate by whitespace with `while (at[0] != '\0'); break` and `eat_spaces(), find_ch_from_left()`
 
-
-
 3D printing ideas:
 https://www.youtube.com/c/3DSage/videos
 
+https://www.youtube.com/watch?v=1oagM_tEyeA
+
+freeRTOS is more barebones (only 3 files) and effectively just a scheduler (so has timers, priorities) 
+and communication primitives between threads
+This scheduling provides logical isolation of components
+Also, in embedded most programs are monitoring a host of sensors
+(priority over time-slice more efficient in most cases, as if not operating, can go to sleep)
+
+SEPARATE API CALLS TO AVOID LOW PRIORITY CORRUPTING BY BEING INTERRUPTED BY HIGH PRIORITY
+Define a context structure that will hold api call information
+
+typedef struct file_api_params_s
+{
+    uint8_t api_opcode;
+    uint8_t control_opcode;
+    uint8_t file_handle;
+    semaphore sem;
+    void * param1;
+    size_t param2;
+} file_api_params_t;
+
+Depending on the RTOS you can actually define your messages and message pool ahead of time - or you'll be providing a pointer to the parameter structure in your message
+file_api_params_t file_api_pool[n]; //where n = number of tasks that can access the file system + 1;
+
+Each api function does the following:
+   - allocates a free param structure from the pool
+   - populates the parameters from the api call
+   - initializes the semaphore
+   - allocates and initializes a message to send to the file system task
+   - adds the message to the queue
+   - wait for the semaphore
+
+The filesystem task does the following:
+   - waits for messages from the message queue
+   - checks the message validity and that the sender still is valid (for some systems that have bad behavior if the semaphore api does not check for validity)
+   - performs the requested operation
+   - increments the semaphore
+   - goes back to waiting for a message
+So, filesystem task is assigned high priority
+
+If taskA dependent on taskB, taskB should be of higher priority than taskA 
+
+
+
+zephyr more of an RTOS a step towards linux with lots of drivers e.g. LVGL, LittleFS, etc. 
+(with this comes a lot more configuration hassle)
+
+michael ee for RTOS: https://www.youtube.com/playlist?list=PLLYZoEqwvzM35p2Kc7bk7bkwxLtTVwpvy 
 
 TODO: zephyr series (perhaps better to do this first as an RTOS as more modern resources than FreeRTOS?)
 https://training.golioth.io/
