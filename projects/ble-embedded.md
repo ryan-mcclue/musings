@@ -611,11 +611,29 @@ https://www.youtube.com/c/3DSage/videos
 
 https://www.youtube.com/watch?v=1oagM_tEyeA
 
+A real time scheduling algorithm is deterministic (not necessarily fast), i.e. it absolutely must
+(soft time is it should)
+So, a higher priority task will preempt lower priority tasks
+FreeRTOS will have a default idle task created by the kernel that is always running
+(this idle task gives indication of a low-power mode for free?)
+
+middleware extends OS functionality, drivers give OS functionality
+
+freeRTOS makes money through some commercial licenses (with support), middleware (tcp/ip stacks, cli etc.)
+
+TODO: setting freeRTOS interrupt priorities is sometimes done wrong?
+tasks are usually infinite loops
+
 freeRTOS is more barebones (only 3 files) and effectively just a scheduler (so has timers, priorities) 
 and communication primitives between threads
-This scheduling provides logical isolation of components
-Also, in embedded most programs are monitoring a host of sensors
+In most embedded programs, sensors are monitored periodically. Time and functionality are closely related 
+For small programs super loop is fine.
+However, when creating large programs, this time dependency greatly increases complexity.
+So, a priority based real-time scheduler can be used to reduce this time complexity. 
 (priority over time-slice more efficient in most cases, as if not operating, can go to sleep)
+In addition, schedular allows for logical separation of components (concurrent team development) and changing to hardware
+COTS (commercial-off-the-shelf) as opposed to bespoke
+
 
 SEPARATE API CALLS TO AVOID LOW PRIORITY CORRUPTING BY BEING INTERRUPTED BY HIGH PRIORITY
 Define a context structure that will hold api call information
