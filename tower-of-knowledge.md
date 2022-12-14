@@ -25,77 +25,6 @@ PCI usually for attaching peripherals to motherboards,
 e.g. network/audio/usb/graphics controller cards
 
 # Laptop
-
-# Dalgo
-
-# Networks
-RFC documents contain technical specifications for Internet techologies, e.g. IP, UDP, etc.
-
-# Rendering
-shader is a GPU program that is run at a particular stage in the rendering pipeline
-CUDA is a general purpose GPU program that can utilise the GPU's highly parallised architecture
-
-font-rendering with stb: 
-https://todool.handmade.network/blog/p/8561-rendering_glyphs_from_a_storage_buffer#26937
-
-# Programmer
-(sign 1bit) (exponent 8bits) (significand/mantissa 23bits)
-1 *     2² *      0.1234
-
-Data deduplication means to remove duplicates
-
-OAuth (open authentication) exchanges tokens to authorise access;
-specifically use personal access token with OAuth scope 'repo' for github to grant circleci push priveleges
-(have to add this add environment variable to circleci)
-tokens ability to 'scope' gives them an advantage over ssh keys
-typically used by RESTful services
-
-1. to use Google APIs create Google Cloud Console project 
-and grant particular API access to it
-2. create OAuth credentials to access API
-
-so the authorisation part is to establish the 'scope' of the tokens
-
-with OAuth:
-1. consent screen to obtain token
-this will be a GET request, whose location will be described by the 
-standard 'discovery document' (https://accounts.google.com/.well-known/openid-configuration)
-
-authorization_endpoint: "https://accounts.google.com/o/oauth2/v2/auth"
-
-tokens obtained will be short-lived, i.e 2-5 minutes so will have to refresh
-
-(a consent screen only required if accessing another users data?)
-
-(client id and client secret are like our login and password)
-1. get authorisation code
-GET https://accounts.google.com/o/oauth2/v2/auth?
-client_id=937397032650-rmntctql9qo8o85cscd85l2hvo9v1818.apps.googleusercontent.com
-&redirect_uri=urn:ietf:wg:oauth:2.0:oob
-&scope=https://www.googleapis.com/auth/photoslibrary
-&response_type=code
-
-(have to submit verification request to get write access?)
-
-google scopes: https://developers.google.com/identity/protocols/oauth2/scopes#photoslibrary
-
-(particular methods relevent to the API we want to use will require different scope levels)
-
-2. exchange code for access token
-
-RESTful urls respond to CRUD requests in a standard way
-so, a url is an access point to a resource
-e.g, following REST: 
-* GET example.com/users will return list of resource, i.e. all users
-* POST example.com/users will create a new resource
-* GET example.com/users/1 return single resource
-* PUT example.com/users/1 update single resource
-* DELETE example.com/users/1 delete single resource
-
-
-curl defaults to GET
-headers with -H "Pragma: no-cache"
-
 ## Screens
 Touch screen types need some external input to complete circuit
 Resistive works by pressure pushing down plastic<-electric coating->glass
@@ -123,6 +52,41 @@ nit is a measure of luminance, i.e. intensity of light (brightness is how we per
 higher nit display are more easily viewable in a wider array of lighting conditions (e.g. combat the sun's light reflecting off the surface)
 
 e-ink less power than LCD as only uses power when arrangment of colours changes
+
+# Dalgo
+
+# Networks
+RFC documents contain technical specifications for Internet techologies, e.g. IP, UDP, etc.
+
+# Rendering
+shader is a GPU program that is run at a particular stage in the rendering pipeline
+CUDA is a general purpose GPU program that can utilise the GPU's highly parallised architecture
+
+font-rendering with stb: 
+https://todool.handmade.network/blog/p/8561-rendering_glyphs_from_a_storage_buffer#26937
+
+# Programmer
+(sign 1bit)-(exponent 8bits)-(significand/mantissa 23bits)
+1 *     2² *      0.1234
+
+Data deduplication means to remove duplicates
+
+REST (representational state transfer) is an interface that outlines how the state of a resource is interacted with
+On the web, an URL is an access point to a resource
+A RESTful API will have URLs respond to CRUD requests in a standard way:
+* GET example.com/users will return list of resource, i.e. all users
+* POST example.com/users will create a new resource
+* GET example.com/users/1 return single resource
+* PUT example.com/users/1 update single resource
+* DELETE example.com/users/1 delete single resource
+
+OAuth (open authorisation) is a standard that defines a way of authorising access
+OAuth offers different functionality than SSH by having the ability to 'scope' access
+Typically used by RESTful services
+These endpoints described in 'discovery document':
+1. authorisation-server -> authorisation-code
+2. authorisation-code -> access token, refresh token
+3. resource-server -> resource
 
 ## Wireless
 SMS are stored as clear text by provider
