@@ -293,8 +293,21 @@ for (u32 i = 0; i < NUM_FANS; ++i)
 for (u32 i = 0; i < NUM_PIXELS; ++i)
    draw_fan_pixels(sin(x), 1, red, PIXEL_ORDER_LEFT_TO_RIGHT, 0);
 ```
+boustrophodon:
+0 > 1 > 2 > 3 > 4
+                |
+8 < 7 < 6 < 5 <--
+IMPORTANT: LED matrix arranged as boustrophodon columns
+if (x % 2 == 0)
+   return (x * height) + y;
+else
+   return (x * height) + (height - 1 - y);
 
+FFT divides samples into frequency buckets
+logarithmic scale employed in spectrum analyser to account for high frequency range 
+being more greatly separated than low frequency
 ```
+
 wire strippers +/- affects tension which will affect any wire braiding
 put heat shrink on before wire soldering
 will often twist multiple common wires (e.g. ground) together and solder to single ground source
@@ -609,17 +622,20 @@ First separate by whitespace with `while (at[0] != '\0'); break` and `eat_spaces
 3D printing ideas:
 https://www.youtube.com/c/3DSage/videos
 
-https://www.youtube.com/watch?v=1oagM_tEyeA
+michael ee for RTOS: https://www.youtube.com/playlist?list=PLLYZoEqwvzM35p2Kc7bk7bkwxLtTVwpvy 
 
 A real time scheduling algorithm is deterministic (not necessarily fast), i.e. it absolutely must
 (soft time is it should)
+(real time processing means virtually immediately)
 So, a higher priority task will preempt lower priority tasks
 FreeRTOS will have a default idle task created by the kernel that is always running
 (this idle task gives indication of a low-power mode for free?)
 
+
 middleware extends OS functionality, drivers give OS functionality
 
-freeRTOS makes money through some commercial licenses (with support), middleware (tcp/ip stacks, cli etc.)
+freeRTOS makes money through some commercial licenses (with support), 
+middleware (tcp/ip stacks, cli etc.)
 
 TODO: setting freeRTOS interrupt priorities is sometimes done wrong?
 tasks are usually infinite loops
@@ -631,7 +647,8 @@ For small programs super loop is fine.
 However, when creating large programs, this time dependency greatly increases complexity.
 So, a priority based real-time scheduler can be used to reduce this time complexity. 
 (priority over time-slice more efficient in most cases, as if not operating, can go to sleep)
-In addition, schedular allows for logical separation of components (concurrent team development) and changing to hardware
+In addition, schedular allows for logical separation of components (concurrent team development) 
+Also allows easy utilisation of changing hardware, e.g. multiple processor cores
 COTS (commercial-off-the-shelf) as opposed to bespoke
 
 
@@ -674,7 +691,6 @@ If taskA dependent on taskB, taskB should be of higher priority than taskA
 zephyr more of an RTOS a step towards linux with lots of drivers e.g. LVGL, LittleFS, etc. 
 (with this comes a lot more configuration hassle)
 
-michael ee for RTOS: https://www.youtube.com/playlist?list=PLLYZoEqwvzM35p2Kc7bk7bkwxLtTVwpvy 
 
 TODO: zephyr series (perhaps better to do this first as an RTOS as more modern resources than FreeRTOS?)
 https://training.golioth.io/

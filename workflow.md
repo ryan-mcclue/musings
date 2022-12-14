@@ -1,5 +1,7 @@
 # LEETCODE EVERYDAY
 
+TODO: merge 'verify' and 'plotting' into misc/ folders of repositories
+
 # Workflow
 Preparation Mentality:
 ## Git usage: TODO(Ryan): collate into bash aliases 
