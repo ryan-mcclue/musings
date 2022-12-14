@@ -1,46 +1,46 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
-Intel thunderbolt faster than USB C
-(ports look very similar)
+# MCU
 
-red team is security offensive, blue is defensive
+# Phone
 
-TODO: vulkan compute shader vs CUDA?
-
-CMAKE:
-1. inclusive library (`add_subdirectory()`, `include_directories()`, `target_link_libraries()`)
-2. standalone library
-
-investigate structure of (C libraries used etc.): 
-https://whitebox.handmade.network/
-https://azmr.itch.io/whitebox
-
-rmgui?: https://www.youtube.com/watch?v=k4Xd59kzouI
-
-font-rendering with stb: https://todool.handmade.network/blog/p/8561-rendering_glyphs_from_a_storage_buffer#26937
-
-(sign) (exponent) (significand/mantissa)
-1 *     2² *      0.1234
-
-Required software developer traits: https://adamj.eu/tech/2022/06/17/mike-actons-expectations-of-professional-software-engineers/?utm_source=tldrnewsletter
-
-Debugger stepping into kernel functions?
-
-RAID is method of combining multiple disks together so appear like one disk called an array.
-Various types, e.g. RAID0 (striping) some parts of file in multiple disks, RAID1 (mirroring) each disk is duplicate so could give speed increase etc.
-
-How do containerised/sandboxed applications like Flatpak work on linux?
-
-data science: https://tigyog.app/d/C-I1weB9CpTH/r/everyday-data-science
-
-https://asciinema.org/a/421164
-
-CSESoc cochlear is a principal sponsor. how does this differ to major and minor sponsors?
-
+# Wearable
 5ATM is 5 atmospheres. 1 atmosphere is about 10m (however calculated when motionless)
 50m for 10 minutes
 
+# Desktop
+RAID is method of combining multiple disks together so appear like one disk called an array.
+Various types, e.g. RAID0 (striping) some parts of file in multiple disks, 
+RAID1 (mirroring) each disk is duplicate so could give speed increase etc.
+
+How do containerised/sandboxed applications like Flatpak work on linux?
+kernel offers various methods of process isolation, e.g. chroot, cgroups etc.
+(chroot cannot access files outside its designated tree)
+A container will utilise one of these options provided by the kernel to acheive:
+ * cannot send signals to processes outside container
+ * has own networking namespace
+ * resource usage limits
+
+PCI usually for attaching peripherals to motherboards, 
+e.g. network/audio/usb/graphics controller cards
+
+# Laptop
+
+# Dalgo
+
+# Networks
 RFC documents contain technical specifications for Internet techologies, e.g. IP, UDP, etc.
+
+# Rendering
+shader is a GPU program that is run at a particular stage in the rendering pipeline
+CUDA is a general purpose GPU program that can utilise the GPU's highly parallised architecture
+
+font-rendering with stb: 
+https://todool.handmade.network/blog/p/8561-rendering_glyphs_from_a_storage_buffer#26937
+
+# Programmer
+(sign 1bit) (exponent 8bits) (significand/mantissa 23bits)
+1 *     2² *      0.1234
 
 Data deduplication means to remove duplicates
 
@@ -63,7 +63,6 @@ standard 'discovery document' (https://accounts.google.com/.well-known/openid-co
 
 authorization_endpoint: "https://accounts.google.com/o/oauth2/v2/auth"
 
-
 tokens obtained will be short-lived, i.e 2-5 minutes so will have to refresh
 
 (a consent screen only required if accessing another users data?)
@@ -83,12 +82,6 @@ google scopes: https://developers.google.com/identity/protocols/oauth2/scopes#ph
 (particular methods relevent to the API we want to use will require different scope levels)
 
 2. exchange code for access token
-
-
-
-
-
-PCI usually for attaching peripherals to motherboards, e.g. network/audio/usb/graphics controller cards
 
 RESTful urls respond to CRUD requests in a standard way
 so, a url is an access point to a resource

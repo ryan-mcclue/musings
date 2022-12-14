@@ -5,7 +5,8 @@ Time-of-flight sensors can be used to detect water levels
 
 EMV (europay, mastercard and visa) secure payment technology embedded in credit card chip
 
-Waited till USB-C becoming standard to introduce reversible USB-A (acheived with movable plastic divider and duplicated pins)
+Waited till USB-C becoming standard to introduce reversible USB-A (achieved with movable plastic divider and duplicated pins)
+Intel thunderbolt faster than USB-C, yet ports still look very similar
 
 AI in sensors used to alter configuration to optimise power consumption
 AI generated voice, text. Disney can now alter age
@@ -22,3 +23,4 @@ Batcat tool is cat with syntax highlighting
 
 Skeptical of announcements made by budget-starved laboratories (e.g. universities) about breakthroughs for technologies decades away, e.g. fusion 
 There are often caveats and furthermore, commerciality is most likely decades away
+
