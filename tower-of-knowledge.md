@@ -62,10 +62,6 @@ Systemd a collection of binaries,  so not exactly violating Unix philosphy
 Some disparity between systemd idea and its inplementation
 Major component of systemd is service manager,  I.e init system to bootstrap user space
 
-system level software
-systemd ()
-cron (job scheduler)
-
 in a sense, LTS involves significant backports
 
 hardlink to inode (therefore impervious to file name change, deletion, etc.)
@@ -334,6 +330,8 @@ CISC gives reduced cache pressure for high-intensive, sustained loops
 
 memory model: visibility and consistency of changes to data stored in memory
 necessary for understanding multiple thread execution 
+
+alignment ensures that value doesn't straddle cache line boundaries
 
 SystemV ABI:
 rdi, rsi, ... (integer args); xmm0, xmm1, ... (floating args)
