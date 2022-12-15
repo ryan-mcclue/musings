@@ -37,6 +37,28 @@ Crashes make you fix things
 
 Spacing good for searching and to avoid a+++++b (a++ + ++b)
 
+
+IMPORTANT: In C, this becomes a constant expression and so can be used in a switch
+Also, allow for or'ing
+typedef u32 S8_MATCH_FLAGS;
+enum
+{
+  S8_MATCH_FLAG = (1 << 0)
+};
+
+typedef enum NODE_TYPE
+{
+  NODE_TYPE_LIST,
+  NODE_TYPE_COUNT,
+} NODE_TYPE;
+
+typedef struct Node Node;
+struct Node
+{
+  NODE_TYPE type;
+};
+
+
 ```
 u32 vals[2 * 3] = {
            1, 2, 3

@@ -34,7 +34,10 @@ e.g. CC BY-NC, CC BY-SA, etc.?
 Public domain means no license, so could claim as yours
 
 ## Unix
-Ubuntu distro as most user friendly and widely supported
+Ubuntu distro as compared to debian more user friendly.
+For example, automatically includes proprietary drivers like WiFi, 
+has PPAs to allow installation of 3rd party applications.
+Main annoyance with Ubuntu is frequent update release schedule
 
 Linux DRM (direct rendering manager) -> X11 (display server) -> xfce (desktop environment)  
 Linux ALSA (advanced linux sound architecture) -> pulseaudio (sound server) 
