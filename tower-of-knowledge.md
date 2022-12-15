@@ -9,9 +9,37 @@
 50m for 10 minutes
 
 # Desktop
+Ubuntu as most user friendly and widely supported
+
+## Legalities
+Anti-trust laws don't prevent monopolies, they prevent attempts to monopolise by 
+unfair means, e.g. Microsoft browser market, Apple app store etc.
+
+permissive (MIT, BSD, Apache, zlib) gives users more freedom to say relicense, 
+include closed source software, etc.
+generally just attribution licenses (in that this is only enforcement)
+
+weak copyleft (LPGL) (glibc)
+applies to files of library not your entire codebase, i.e. must still release your version of the library used
+so, dynamic linking makes this easier for keeping your source closed
+if static, must make a few extra steps to ensure the LGPL parts are available, e.g. publish object files
+
+copyleft (GPL) enforces devlopers wants the for code on users, so the software stays under the same license. 
+encounter more licensing restrictions.
+GPLv3 tiviosiataion, issue for Mac as their code is signed so doesn't allow for user modification
+(so deals with hardware/system locks)
+code signing issues?
+so, GPL infects your software, enforces even if just a library 
+usage to release whole project as GPLv3 (so source code released)
+
+although android technically open-source, most of the software run on it isn't
+
+creative commons is a set of licenses that make explicit requirements for users, e.g. CC BY-NC, CC BY-SA, etc.
+unlike MIT, Apache includes a user non-litigation, so users can't initiate litigation if the creators decide to patent something
+
 RAID is method of combining multiple disks together so appear like one disk called an array.
 Various types, e.g. RAID0 (striping) some parts of file in multiple disks, 
-RAID1 (mirroring) each disk is duplicate so could give speed increase etc.
+RAID1 (mirroring) each disk is dusplicate so could give speed increase etc.
 
 kernel offers various methods of process isolation, e.g. chroot, cgroups etc.
 (chroot cannot access files outside its designated tree)
@@ -24,7 +52,6 @@ A container will utilise one of these options provided by the kernel to acheive:
 flatpaks and snaps are containerised applications that include the specific libraries and runtimes
 appimages combine the 'shared' libraries and runtimes of flatpaks and snaps into a giant file. this file can be copied and run on any distro
 If packages is being actively maintained, preferable to use .deb as faster and simpler
-
 
 PCI usually for attaching peripherals to motherboards, 
 e.g. network/audio/usb/graphics controller cards
@@ -346,31 +373,6 @@ IEC power cords (kettleplug, cloverleaf)
 
 DC barrel jack
 
-## Legalities
-anti-trust laws don't prevent monopolies, they prevent attempting to
-monopolise illegal, e.g. Microsoft attempting to monopolise browser market
-
-permissive (MIT, BSD, Apache, zlib) gives users more freedom to say relicense, 
-include closed source software, etc.
-generally just attribution licenses (in that this is only enforcement)
-
-weak copyleft (LPGL) (glibc)
-applies to files of library not your entire codebase, i.e. must still release your version of the library used
-so, dynamic linking makes this easier for keeping your source closed
-if static, must make a few extra steps to ensure the LGPL parts are available, e.g. publish object files
-
-copyleft (GPL) enforces devlopers wants the for code on users, so the software stays under the same license. 
-encounter more licensing restrictions.
-GPLv3 tiviosiataion, issue for Mac as their code is signed so doesn't allow for user modification
-(so deals with hardware/system locks)
-code signing issues?
-so, GPL infects your software, enforces even if just a library 
-usage to release whole project as GPLv3 (so source code released)
-
-although android technically open-source, most of the software run on it isn't
-
-creative commons is a set of licenses that make explicit requirements for users, e.g. CC BY-NC, CC BY-SA, etc.
-unlike MIT, Apache includes a user non-litigation, so users can't initiate litigation if the creators decide to patent something
 
 RENDERING:
 rendering is the process of creating the 2D/3D model, i.e. the drawing onto the monitor
