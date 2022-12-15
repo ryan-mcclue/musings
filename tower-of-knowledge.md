@@ -9,33 +9,89 @@
 50m for 10 minutes
 
 # Desktop
-Ubuntu as most user friendly and widely supported
-
 ## Legalities
 Anti-trust laws don't prevent monopolies, they prevent attempts to monopolise by 
 unfair means, e.g. Microsoft browser market, Apple app store etc.
 
-permissive (MIT, BSD, Apache, zlib) gives users more freedom to say relicense, 
+Permissive (MIT, BSD, Apache, zlib) gives users more freedom to say relicense, 
 include closed source software, etc.
-generally just attribution licenses (in that this is only enforcement)
+Generally just attribution licenses (in that this is only enforcement)
+Unlike MIT, Apache includes a user non-litigation? 
 
-weak copyleft (LPGL) (glibc)
-applies to files of library not your entire codebase, i.e. must still release your version of the library used
-so, dynamic linking makes this easier for keeping your source closed
-if static, must make a few extra steps to ensure the LGPL parts are available, e.g. publish object files
+Weak copyleft (LPGL) applies to files of library not your entire codebase, 
+i.e. must still release your version of the library used
+So, dynamic linking makes this easier for keeping your source closed
+If statically linking, must make a few extra steps to ensure the LGPL parts are available, 
+e.g. publish object files
 
-copyleft (GPL) enforces devlopers wants the for code on users, so the software stays under the same license. 
-encounter more licensing restrictions.
-GPLv3 tiviosiataion, issue for Mac as their code is signed so doesn't allow for user modification
-(so deals with hardware/system locks)
-code signing issues?
-so, GPL infects your software, enforces even if just a library 
-usage to release whole project as GPLv3 (so source code released)
+Copyleft (GPL) enforces the developers usage of the code.
+So, any derivative software must release whole project as GPL, i.e infects your software
+Subsequently encounter more licensing restrictions.
 
-although android technically open-source, most of the software run on it isn't
+Creative commons is a set of licenses that make explicit requirements for users, 
+e.g. CC BY-NC, CC BY-SA, etc.?
 
-creative commons is a set of licenses that make explicit requirements for users, e.g. CC BY-NC, CC BY-SA, etc.
-unlike MIT, Apache includes a user non-litigation, so users can't initiate litigation if the creators decide to patent something
+Public domain means no license, so could claim as yours
+
+## Unix
+Ubuntu distro as most user friendly and widely supported
+
+Linux DRM (direct rendering manager) -> X11 (display server) -> xfce (desktop environment)  
+Linux ALSA (advanced linux sound architecture) -> pulseaudio (sound server) 
+
+Terminal type writer something you should ask your grandfather about
+
+KVM (kernel-based virutal machine) kernel based virtual machine allows linux kernel to act as hypervisor
+∴ type 1 hypervisor (virtualbox type 2, i.e. run atop an OS)
+Often see with KVM/QEMU (virt-manager)
+
+Contempt culture (language wars)-change-systemd
+Original Unix borne out of want for simplicity over competing systems
+Service is like a collection of daemons.
+Need for services came from growth of Web and need for handling databases, 
+lots of connections etc. 
+Something like launchd (an unit system) allows services to be started not at boot time.  
+Also listen for software hardware changes.  
+So,  we extend from simple bootstrapping to handling events.  
+So,  now more than service manager,  a system manager
+As kernel more dynamic,  e.g change IRQ for device at runtime,  
+can think of a system layer as an intermediary between kernel and users pace.  
+Have things like network manager. 
+This avoids having 15 disparate packages each with own file format config
+Systemd a collection of binaries,  so not exactly violating Unix philosphy
+Some disparity between systemd idea and its inplementation
+Major component of systemd is service manager,  I.e init system to bootstrap user space
+
+system level software
+systemd ()
+cron (job scheduler)
+
+in a sense, LTS involves significant backports
+
+hardlink to inode (therefore impervious to file name change, deletion, etc.)
+softlink to file name
+
+a directory is a mapping of filenames to inodes (for ext4 atleast?)
+
+journaling is regularly writing operations that are to be performed in RAM to disk area of memory known as journal.
+then apply these changes to disk when necessary
+this overhead makes them slower, but more robust on crashes as can read journal to ascertain
+whether certain operations finished performing
+
+the metadata stored by inode determined by filesystem in use  
+e.g. fat32 won't store permissions, last modification time
+fat32 also no journaling or soft-links
+inode references file metadata (pointer to data, permissions, access time).
+this allows concurrent modification of the file
+
+UUID/GUID (universally/globally) 16bytes
+
+premptive scheduler will swap processes based on specific criteria.
+most are round-robin, i.e. has process is run for a predefined time slice 
+CFS does not use heuristics (ad hoc guide), ∴ more straightforward
+uses rb-tree. so, as task inserted onto this is logarithmic, ∴ this is cost of context switch
+each node key is `(time process as run on CPU) * (process niceness)`
+
 
 RAID is method of combining multiple disks together so appear like one disk called an array.
 Various types, e.g. RAID0 (striping) some parts of file in multiple disks, 
@@ -55,6 +111,20 @@ If packages is being actively maintained, preferable to use .deb as faster and s
 
 PCI usually for attaching peripherals to motherboards, 
 e.g. network/audio/usb/graphics controller cards
+
+
+## Bootstrap 
+UEFI (interface between firmwire and system; essentially interface to boot into things) ACPI (data format to convey firmwire information)
+the ESP will have EGI entries that point to a UUID of where to boot
+one of these will be grub binary like shimx64.efi
+
+## Formats 
+fat for esp (because FAT simple, open and supported virtually everywhere)
+vfat is driver (typically for fat32)
+
+ext4 for system (supports larger file sizes)
+(ntfs microsoft proprietary)
+most filesystems will use a self-balancing tree to index files
 
 # Laptop
 ## Screens
@@ -92,7 +162,8 @@ RFC documents contain technical specifications for Internet techologies, e.g. IP
 
 # Rendering
 shader is a GPU program that is run at a particular stage in the rendering pipeline
-CUDA is a general purpose GPU program that can utilise the GPU's highly parallised architecture
+Nvidia GPU cores named CUDA cores. AMD calls them stream processors
+So, CUDA is a general purpose Nvidia GPU program that can utilise GPU's highly parallised architecture
 
 font-rendering with stb: 
 https://todool.handmade.network/blog/p/8561-rendering_glyphs_from_a_storage_buffer#26937
@@ -215,71 +286,7 @@ still uses NAND flash technology
 
 QSPI can be used without CPU with data queues
 
-## Bootstrap 
-UEFI (interface between firmwire and system; essentially interface to boot into things) ACPI (data format to convey firmwire information)
-the ESP will have EGI entries that point to a UUID of where to boot
-one of these will be grub binary like shimx64.efi
 
-## Formats 
-fat for esp (because FAT simple, open and supported virtually everywhere)
-vfat is driver (typically for fat32)
-
-ext4 for system (supports larger file sizes)
-(ntfs microsoft proprietary)
-most filesystems will use a self-balancing tree to index files
-
-## Unix
-KVM kernel based virtual machine allows linux kernel to act as hypervisor
-∴ type 1 hypervisor (virtualbox type 2, i.e. run atop an OS)
-Often see with KVM/QEMU (virt-manager)
-
-Contempt culture (language wars)-change-systemd
-Original Unix borne out of want for simplicity over competing systems
-Terminal type writer something you should ask your grandfather about
-Service is like a collection of daemons.
-Need for services came from growth of Web and need for handling databases, 
-lots of connections etc. 
-Something like launchd (an unit system) allows services to be started not at boot time.  
-Also listen for software hardware changes.  
-So,  we extend from simple bootstrapping to handling events.  
-So,  now more than service manager,  a system manager
-As kernel more dynamic,  e.g change IRQ for device at runtime,  
-can think of a system layer as an intermediary between kernel and users pace.  
-Have things like network manager. 
-This avoids having 15 disparate packages each with own file format config
-Systemd a collection of binaries,  so not exactly violating Unix philosphy
-Some disparity between systemd idea and its inplementation
-Major component of systemd is service manager,  I.e init system to bootstrap user space
-
-system level software
-systemd ()
-cron (job scheduler)
-
-in a sense, LTS involves significant backports
-
-hardlink to inode (therefore impervious to file name change, deletion, etc.)
-softlink to file name
-
-a directory is a mapping of filenames to inodes (for ext4 atleast?)
-
-journaling is regularly writing operations that are to be performed in RAM to disk area of memory known as journal.
-then apply these changes to disk when necessary
-this overhead makes them slower, but more robust on crashes as can read journal to ascertain
-whether certain operations finished performing
-
-the metadata stored by inode determined by filesystem in use  
-e.g. fat32 won't store permissions, last modification time
-fat32 also no journaling or soft-links
-inode references file metadata (pointer to data, permissions, access time).
-this allows concurrent modification of the file
-
-UUID/GUID (universally/globally) 16bytes
-
-premptive scheduler will swap processes based on specific criteria.
-most are round-robin, i.e. has process is run for a predefined time slice 
-CFS does not use heuristics (ad hoc guide), ∴ more straightforward
-uses rb-tree. so, as task inserted onto this is logarithmic, ∴ this is cost of context switch
-each node key is `(time process as run on CPU) * (process niceness)`
 
 ## CPU
 cpu contains clock. each tick marks a step in the 
@@ -327,6 +334,16 @@ CISC gives reduced cache pressure for high-intensive, sustained loops
 
 memory model: visibility and consistency of changes to data stored in memory
 necessary for understanding multiple thread execution 
+
+SystemV ABI:
+rdi, rsi, ... (integer args); xmm0, xmm1, ... (floating args)
+rax return and syscall number
+stack 16-byte aligned before function call (SSE2 is baseline for x86-64, so make efficient for __m128)?
+(word size 8 bytes?)
+
+more instructions required for unaligned memory accesses?
+(most modern x64 arm will not crash on an unaligned access?)
+from armv7, unaligned accesses allowed
 
 hardware (from machine code to execution on the CPU):
 * sequential consistency (ideal as easy to understand, however doesn't maximise hardware speed)
