@@ -25,3 +25,6 @@ Skeptical of announcements made by budget-starved laboratories (e.g. universitie
 There are often caveats and furthermore, commerciality is most likely decades away
 
 Seems that bipartisan government action required to fix rats nest of drivers in modern OSs in a similar vein to EU enforcing anti-competitive laws on Apple to allow third-party apps, USB-C etc.
+
+Have to be careful not to engage in technological contempt culture, e.g. language wars.
+As technology changes rapidly, address changes with temperance
