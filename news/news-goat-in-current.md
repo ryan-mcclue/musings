@@ -24,3 +24,4 @@ Batcat tool is cat with syntax highlighting
 Skeptical of announcements made by budget-starved laboratories (e.g. universities) about breakthroughs for technologies decades away, e.g. fusion 
 There are often caveats and furthermore, commerciality is most likely decades away
 
+Seems that bipartisan government action required to fix rats nest of drivers in modern OSs in a similar vein to EU enforcing anti-competitive laws on Apple to allow third-party apps, USB-C etc.

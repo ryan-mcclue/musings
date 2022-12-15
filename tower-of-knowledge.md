@@ -13,13 +13,18 @@ RAID is method of combining multiple disks together so appear like one disk call
 Various types, e.g. RAID0 (striping) some parts of file in multiple disks, 
 RAID1 (mirroring) each disk is duplicate so could give speed increase etc.
 
-How do containerised/sandboxed applications like Flatpak work on linux?
 kernel offers various methods of process isolation, e.g. chroot, cgroups etc.
 (chroot cannot access files outside its designated tree)
 A container will utilise one of these options provided by the kernel to acheive:
  * cannot send signals to processes outside container
  * has own networking namespace
  * resource usage limits
+
+.deb and .rpm are binary packages. annoyances arise due to specifying the specific library dependency for each distro version
+flatpaks and snaps are containerised applications that include the specific libraries and runtimes
+appimages combine the 'shared' libraries and runtimes of flatpaks and snaps into a giant file. this file can be copied and run on any distro
+If packages is being actively maintained, preferable to use .deb as faster and simpler
+
 
 PCI usually for attaching peripherals to motherboards, 
 e.g. network/audio/usb/graphics controller cards
