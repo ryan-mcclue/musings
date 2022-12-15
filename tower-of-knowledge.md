@@ -327,7 +327,10 @@ necessary for understanding multiple thread execution
 alignment ensures that value doesn't straddle cache line boundaries
 
 SystemV ABI:
-rdi, rsi, ... (integer args); xmm0, xmm1, ... (floating args)
+IMPORTANT: cannot easily access upper portion of register, only lower 
+rdi, rsi, rdx, rcx, r8, r9 (6 integer arguments)
+xmm0, xmm1, xmm2, xmm3, xmm4, xmm5, xmm6 (7 floating arguments)
+remaining arguments pushed right-to-left on stack
 rax return and syscall number
 stack 16-byte aligned before function call (SSE2 is baseline for x86-64, so make efficient for __m128)?
 (word size 8 bytes?)

@@ -39,11 +39,17 @@ Spacing good for searching and to avoid a+++++b (a++ + ++b)
 
 
 IMPORTANT: In C, this becomes a constant expression and so can be used in a switch
-Also, allow for or'ing
+Also, allow for or'ing of individual flags.
+In addition, composition of flag types
+typedef u32 MATCH_FLAGS;
 typedef u32 S8_MATCH_FLAGS;
 enum
 {
-  S8_MATCH_FLAG = (1 << 0)
+  MATCH_FLAG_FIND_LAST = (1 << 1),
+};
+enum
+{
+  S8_MATCH_FLAG = (1 << 2)
 };
 
 typedef enum NODE_TYPE
