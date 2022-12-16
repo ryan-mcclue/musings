@@ -38,10 +38,19 @@ e.g no derivative, no financial, must share under same license.
 Public domain means no license, so could claim as yours
 
 ## Bootstrap 
-UEFI (interface between firmware and system; essentially interface to boot into things) 
-ACPI (data format to convey firmware information)
-the ESP will have EGI entries that point to a UUID of where to boot
+UEFI firmware interface made to standardise interface between OS and firmware 
+for purposes of booting
+
+UEFI use of GPT (GUID partition table) uses CRC to create more recoverable boot environment
+over BIOS MBR (located in first sector of disk)
+Furthermore, UEFI has more addressable memory in 64-bit mode as oppose to only 16-bit mode
+Also, UEFI supports networking
+The ESP (EFI system partition) will have EGI entries that point to a UUID of where to boot
 one of these will be grub binary like shimx64.efi
+NOTE: The bootloader is the EFI OS loader and is part of the OS
+
+ACPI interface to pass information from firmware to OS.
+This firmware will have hardware information baked into it set by manufacturers 
 
 ## Formats 
 fat for esp (because FAT simple, open and supported virtually everywhere)

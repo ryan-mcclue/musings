@@ -30,3 +30,5 @@ Have to be careful not to engage in technological contempt culture, e.g. languag
 As technology changes rapidly, address changes with temperance
 
 If social media was all RSS (really simple syndication), things would be much simpler
+
+We are in a 'gig' economy, i.e. contract work
