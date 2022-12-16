@@ -13,10 +13,13 @@
 Anti-trust laws don't prevent monopolies, they prevent attempts to monopolise by 
 unfair means, e.g. Microsoft browser market, Apple app store etc.
 
+Technically, any digital work created is automatically protected by copyright. 
+So, without a license, people would have to explicitly ask for permission to use
+
 Permissive (MIT, BSD, Apache, zlib) gives users more freedom to say relicense, 
 include closed source software, etc.
-Generally just attribution licenses (in that this is only enforcement)
-Unlike MIT, Apache includes a user non-litigation? 
+They generally just enforce attribution
+Apache like MIT except must state what files you have changed 
 
 Weak copyleft (LPGL) applies to files of library not your entire codebase, 
 i.e. must still release your version of the library used
@@ -25,28 +28,49 @@ If statically linking, must make a few extra steps to ensure the LGPL parts are 
 e.g. publish object files
 
 Copyleft (GPL) enforces the developers usage of the code.
-So, any derivative software must release whole project as GPL, i.e infects your software
+So, any derivative software must release whole project as GPL, i.e infects your software (and restricts choice of libraries to GPL)
 Subsequently encounter more licensing restrictions.
 
-Creative commons is a set of licenses that make explicit requirements for users, 
-e.g. CC BY-NC, CC BY-SA, etc.?
+Creative commons licenses are composed of various attributes. The default is attribution.
+Other elements are optional and can be combined together, 
+e.g no derivative, no financial, must share under same license.
 
 Public domain means no license, so could claim as yours
+
+## Bootstrap 
+UEFI (interface between firmware and system; essentially interface to boot into things) 
+ACPI (data format to convey firmware information)
+the ESP will have EGI entries that point to a UUID of where to boot
+one of these will be grub binary like shimx64.efi
+
+## Formats 
+fat for esp (because FAT simple, open and supported virtually everywhere)
+vfat is driver (typically for fat32)
+
+ext4 for system (supports larger file sizes)
+(ntfs microsoft proprietary)
+most filesystems will use a self-balancing tree to index files
 
 ## Unix
 Ubuntu distro as compared to debian more user friendly.
 For example, automatically includes proprietary drivers like WiFi, 
-has PPAs to allow installation of 3rd party applications.
-Main annoyance with Ubuntu is frequent update release schedule
+has PPAs to allow installation of 3rd party applications,
+and install procedure just works.
+Also updates more regularly than Debian and provides LTS, so know regular backports provided
+
+Xfce as default Ubuntu GNOME had bug with multiple keyboards. 
+Furthermore, Xfce codebase was readable when inspecting X11 code.
+In addition, Xfce automatically provided GUI shortcut creation
 
 Linux DRM (direct rendering manager) -> X11 (display server) -> xfce (desktop environment)  
 Linux ALSA (advanced linux sound architecture) -> pulseaudio (sound server) 
 
-Terminal type writer something you should ask your grandfather about
-
-KVM (kernel-based virutal machine) kernel based virtual machine allows linux kernel to act as hypervisor
-∴ type 1 hypervisor (virtualbox type 2, i.e. run atop an OS)
-Often see with KVM/QEMU (virt-manager)
+A premptive scheduler will swap processes based on specific criteria.
+Round-robin means each process will run for a designated time slice
+CFS is a premptive round-robin scheduler. 
+Time slices are dynamic, computed like `((1/N) * (niceness))` 
+Processes are managed using a RB-Tree. 
+Therefore, cost of launching a process or a context switch is logarithmic
 
 System level refers to inbetween kernel and userspace, e.g. network manager
 Systemd is a collection of system binaries, e.g. udev
@@ -55,7 +79,25 @@ A service extends the functionality of daemons, e.g. only start after another se
 The kernel will launch systemd init service that will then bootstrap into userspace 
 (hence alllowing for the aforementioned service features)
 
-in a sense, LTS involves significant backports
+Kernel offers various methods of process isolation, e.g. chroot, cgroups etc.
+(chroot cannot access files outside its designated tree)
+A container will utilise one of these options provided by the kernel to acheive:
+ * cannot send signals to processes outside container
+ * has own networking namespace
+ * resource usage limits
+
+.deb and .rpm are binary packages. 
+Annoyances arise due to specifying the specific library dependency for each distro version
+Flatpaks and Snaps are containerised applications that include the specific libraries and runtimes
+AppImages combine the 'shared' libraries and runtimes of Flatpaks and Snaps into a giant file. 
+This file can be copied and run on any distro
+If packages is being actively maintained, preferable to use .deb as faster and simpler
+
+Terminal type writer something you should ask your grandfather about
+
+KVM (kernel-based virutal machine) kernel based virtual machine allows linux kernel to act as hypervisor
+∴ type 1 hypervisor (virtualbox type 2, i.e. run atop an OS)
+Often see with KVM/QEMU (virt-manager)
 
 hardlink to inode (therefore impervious to file name change, deletion, etc.)
 softlink to file name
@@ -75,45 +117,17 @@ this allows concurrent modification of the file
 
 UUID/GUID (universally/globally) 16bytes
 
-A premptive scheduler will swap processes based on specific criteria.
-Round-robin means each process will run for a designated time slice
-CFS is a premptive round-robin scheduler. 
-Time slices are dynamic, computed like `((1/N) * (niceness))` 
-Processes are managed using a RB-Tree. 
-Therefore, cost of launching a process or a context switch is logarithmic
 
 RAID is method of combining multiple disks together so appear like one disk called an array.
 Various types, e.g. RAID0 (striping) some parts of file in multiple disks, 
 RAID1 (mirroring) each disk is dusplicate so could give speed increase etc.
 
-kernel offers various methods of process isolation, e.g. chroot, cgroups etc.
-(chroot cannot access files outside its designated tree)
-A container will utilise one of these options provided by the kernel to acheive:
- * cannot send signals to processes outside container
- * has own networking namespace
- * resource usage limits
 
-.deb and .rpm are binary packages. annoyances arise due to specifying the specific library dependency for each distro version
-flatpaks and snaps are containerised applications that include the specific libraries and runtimes
-appimages combine the 'shared' libraries and runtimes of flatpaks and snaps into a giant file. this file can be copied and run on any distro
-If packages is being actively maintained, preferable to use .deb as faster and simpler
 
 PCI usually for attaching peripherals to motherboards, 
 e.g. network/audio/usb/graphics controller cards
 
 
-## Bootstrap 
-UEFI (interface between firmwire and system; essentially interface to boot into things) ACPI (data format to convey firmwire information)
-the ESP will have EGI entries that point to a UUID of where to boot
-one of these will be grub binary like shimx64.efi
-
-## Formats 
-fat for esp (because FAT simple, open and supported virtually everywhere)
-vfat is driver (typically for fat32)
-
-ext4 for system (supports larger file sizes)
-(ntfs microsoft proprietary)
-most filesystems will use a self-balancing tree to index files
 
 # Laptop
 ## Screens

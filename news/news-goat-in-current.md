@@ -28,3 +28,5 @@ Seems that bipartisan government action required to fix rats nest of drivers in 
 
 Have to be careful not to engage in technological contempt culture, e.g. language wars.
 As technology changes rapidly, address changes with temperance
+
+If social media was all RSS (really simple syndication), things would be much simpler

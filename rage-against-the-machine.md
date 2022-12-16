@@ -261,6 +261,8 @@ Despite Wayland (and Mir) being far more sane (merging display server and client
 Being able to sift through low-quality tech news essential, e.g. 
 'new' database library, css library, VR headset, distro, container library etc.
 Amazon, Tesla, Twitter, Netflix endeavours
+Cancer, alzheimer trial drugs
+Fusion energy
 
 Have to update Ubuntu version if want to easily get compiled version of modern gcc
 

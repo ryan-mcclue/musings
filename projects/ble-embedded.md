@@ -5,6 +5,8 @@ TODO: wolfsound youtube for some audio DSP
 TODO: how to best architect timing requirements given that ISR should be small?
 e.g. this executes every 1 second, this every 500ms etc.
 
+Thermal imaging coupled with camera more 'deterministic/maintainable' than AI vision
+
 There are of course international standards (IEC 60601, or IEC 62304) that you have to follow in order to get your device CE/FDA approval.
 These standards usually require to provide a lot of documentation and to pass a series of tests in order to verify that your device is working as intended and it's not dangerous.
 
