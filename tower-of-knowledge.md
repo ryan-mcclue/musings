@@ -100,6 +100,8 @@ CFS is a premptive round-robin scheduler.
 Time slices are dynamic, computed like `((1/N) * (niceness))` 
 Processes are managed using a RB-Tree. 
 Therefore, cost of launching a process or a context switch is logarithmic
+(kernel will have internal tick rate that updates waiting threads.
+lowering this will increase granularity however will increase CPU time and hence battery time as more time spent in kernel code)
 
 System level refers to inbetween kernel and userspace, e.g. network manager
 Systemd is a collection of system binaries, e.g. udev
@@ -164,6 +166,9 @@ LED is the backlight, as oppose to fluorescent (LCD still used within this).
 so really LED LCD. IPS (in-plane switching), TFT (thin film transistor) 
 are examples of LCD panel technology
 OLED produces own light, i.e. current passed through an OLED diode to produce light. LTPO (low-temperature polycrystalline oxide)
+
+HDR (high dynamic range) ability to show contrasting colours. 
+Also have XDR (extreme dynamic range)
 
 nit is a measure of luminance, i.e. intensity of light (brightness is how we percieve luminance ∴ subjective).
 higher nit display are more easily viewable in a wider array of lighting conditions (e.g. combat the sun's light reflecting off the surface)

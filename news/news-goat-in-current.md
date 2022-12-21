@@ -32,3 +32,6 @@ As technology changes rapidly, address changes with temperance
 If social media was all RSS (really simple syndication), things would be much simpler
 
 We are in a 'gig' economy, i.e. contract work
+
+Example of Apple silicon is M1 chip. 
+Placing some Apple silicon inside new removable monitors to use less power from attached computer

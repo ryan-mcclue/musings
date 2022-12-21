@@ -772,6 +772,7 @@ https://www.rfleury.com/
 https://linuxafterdark.net/ podcast
 
 embedded-blogs:
+https://patternsinthemachine.net/
 https://blog.feabhas.com/
 https://blog.st.com/
 https://dmitry.gr/?r=05.Projects
