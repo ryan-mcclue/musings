@@ -35,3 +35,8 @@ We are in a 'gig' economy, i.e. contract work
 
 Example of Apple silicon is M1 chip. 
 Placing some Apple silicon inside new removable monitors to use less power from attached computer
+
+Optical computing, i.e. analog uses less power excel at linear algebra. 
+Makes them ideal for machine learning
+
+Is prompt engineering now an important skill, as oppose to a sad state of affairs?
