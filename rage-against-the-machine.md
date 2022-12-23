@@ -281,3 +281,6 @@ Whilst github codespaces seems cool, the reason for having some many containers 
 
 Sometimes have to rephrase something for the compiler to generate more optimal code,
 e.g. div /= 2; div /= 2; will generate more efficient instruciton that div >> 2 for avr_gcc
+
+The advent of AI assistants just gives you more settings to disable at factory reset time on a phone
+2022, modern Samsung galaxy S22 ultra won't even recognise USB to transfer files on Ubuntu and Windows ...
