@@ -1,5 +1,7 @@
 # LEETCODE EVERYDAY
 
+TODO: add reddit and hackernews to daily link trawl
+
 TODO: merge 'verify' and 'plotting' into misc/ folders of repositories
 
 # Workflow
