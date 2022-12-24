@@ -444,7 +444,10 @@ Being an ace involves having an opinion
 Most influential software written largely by one person, e.g Linux, Unix, git etc. Then a team is assigned to maintain it. Fallacy about solo programmer productivity requiring large teams.
 Design by committee pushes design to middle of bell curve as opposing views average out
 
-Cpu try to guess what instructions ahead (preemptive). Cost of incorrect reflushing expensive. So want to get rid of conditional jumps. Ideally replace with conditional movs or arithmetic branch less techniques.
+Cpu try to guess what instructions ahead (preemptive). 
+Cost of incorrect reflushing expensive. 
+So want to get rid of conditional jumps. 
+Ideally replace with conditional movs or arithmetic branch less techniques.
 Endianness (register view), twos complement (-1 all 1s)
 Branch less programming is essentially SIMD
 
@@ -457,70 +460,6 @@ Intel speeds optimised for gpr arithmetic, boolean and flops
 Why is Intel shr instruction so slow?
 Intel deliberately makes mmx slow
 -----
-
-For intel CPUs, i3-i7 of same generation will have same micro-architecture.
-Just more cache, hyperthreading, cores, die size etc. 
-
-
-$(grub-)
-
-Intel clock frequency is often changed by OS?
-
-Is cortex-m4 microarchitecture? How does this relate to intel naming? AMD also?
-
-also have uOP cache considered L0
-
-$(getconf LEVEL1_DCACHE_LINESIZE)
-
-$(sudo lshw -html > info.html) for RAM, harddrive and drivers of things
-$(ldd --version) 
-$(lsb_release -a), $(cat /etc/debian_version)
-
-SATA ssd is the lowest grade ssd (however still 4 times bandwidth)
-
-storage devices: form factor (M.2 keying, PCIe), interface (SATAIII, NVMe, PCIe), technology
-a single form factor may support multiple interfaces, so ensure motherboard has
-appropriate chipset
-
-DRAM refreshed periodically. SDRAM (synchronises clock speed with memory speed).
-SDRAM. LPDDR4 (low-power; double pumping on rising and falling edge of clock)
-
-SRAM more expensive, faster, not refreshed, larger die size.
-
-DIIM (dual in-line memory module) is form factor (wider bus)
-SODIMM (small outline)
-
-
-
-From $(cpuinfo) see that although 64bit cpu this is just what the instruction set supports.
-As we have no need for 16 exabytes (tera, peta, exa), the physical address size may be
-39bits, and virtual size 48bits to save on unused transistors
-
-$(cpu-x) for cache information per core
-
-
-
-NUMA node relationship between CPU socket (location on motherboard) and memory banks.
-So, say 2 sockets will probably have 2 NUMA nodes.
-Therefore, not all physical memory directly accessible from 1 cpu socket;
-will have to go through other socket to get it
-
-Hyperthreads don't increase number of instructions per second, rather number of instructions
-that can be queued (so hyperthread like a queue)
-
-Caches, are instruction and data caches combined?
-What distinct features in a core, e.g. shared caches? 
-What additional features on one capable of hyperthreading?
-
-CPU could implement VT-x, but motherboard and bios must support this as well?
-What additional features are present when CPU supports this?
-
-Cache probably 8-way as compromise between lookup and copy speed.
-Flow of cache, is it check if from 8-way copy then L2 8-way or finish L1 entirely?
-If found, in L2 does it copy to L1?
-
-
-
 
 Polymorphism is a single object that can be interpreted as having various types. This can simply be a struct with unions and a type field.
 

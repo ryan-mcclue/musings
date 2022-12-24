@@ -3,6 +3,91 @@
 # MCU
 
 # Phone
+(Serial Advanced Technology Attachment)
+important that these are sustained speeds, so for small file sizes expect a lot less as seconds smaller
+note that storage space advertised with S.I units, whilst OS works with binary
+
+RAM potentially hundreds of cycles (CAS latency and cache retrieval process)
+(important to note that RAM CAS is only say 20% of total latency as will 
+check traverse cache and than copy it to cache)
+https://sites.utexas.edu/jdm4372/2011/03/10/memory-latency-components/
+In general:
+check if in L1. If not go check in L2 and mark least recently accessed L1 for
+move to L2. bubbles up to L3 until need for memory access which will go to memory
+controller etc.
+
+so, ram frequency gives max. throughput
+however latency of ram also important
+
+(cache latency from wikichip)
+
+generic is referencing Ubuntu specific kernel compilation (could also have -lowlatency etc.) 
+(generic does not include a lot of modules in kernel to alleviate RAM, so use modprobe)
+(-41 is build number, i.e how many times compiled)
+(the compiler, linker, libc are all specific to linux OS used, e.g. compiled with different settings, different versions, etc.)
+
+
+For intel CPUs, i3-i7 of same generation will have same micro-architecture.
+Just more cache, hyperthreading, cores, die size etc. 
+
+
+$(grub-)
+
+Intel clock frequency is often changed by OS?
+
+Is cortex-m4 microarchitecture? How does this relate to intel naming? AMD also?
+
+also have uOP cache considered L0
+
+$(getconf LEVEL1_DCACHE_LINESIZE)
+
+$(sudo lshw -html > info.html) for RAM, harddrive and drivers of things
+$(ldd --version) 
+$(lsb_release -a), $(cat /etc/debian_version)
+
+SATA ssd is the lowest grade ssd (however still 4 times bandwidth)
+
+storage devices: form factor (M.2 keying, PCIe), interface (SATAIII, NVMe, PCIe), technology
+a single form factor may support multiple interfaces, so ensure motherboard has
+appropriate chipset
+
+DRAM refreshed periodically. SDRAM (synchronises clock speed with memory speed).
+SDRAM. LPDDR4 (low-power; double pumping on rising and falling edge of clock)
+
+SRAM more expensive, faster, not refreshed, larger die size.
+
+DIIM (dual in-line memory module) is form factor (wider bus)
+SODIMM (small outline)
+
+
+
+From $(cpuinfo) see that although 64bit cpu this is just what the instruction set supports.
+As we have no need for 16 exabytes (tera, peta, exa), the physical address size may be
+39bits, and virtual size 48bits to save on unused transistors
+
+$(cpu-x) for cache information per core
+
+
+
+NUMA node relationship between CPU socket (location on motherboard) and memory banks.
+So, say 2 sockets will probably have 2 NUMA nodes.
+Therefore, not all physical memory directly accessible from 1 cpu socket;
+will have to go through other socket to get it
+
+Hyperthreads don't increase number of instructions per second, rather number of instructions
+that can be queued (so hyperthread like a queue)
+
+Caches, are instruction and data caches combined?
+What distinct features in a core, e.g. shared caches? 
+What additional features on one capable of hyperthreading?
+
+CPU could implement VT-x, but motherboard and bios must support this as well?
+What additional features are present when CPU supports this?
+
+Cache probably 8-way as compromise between lookup and copy speed.
+Flow of cache, is it check if from 8-way copy then L2 8-way or finish L1 entirely?
+If found, in L2 does it copy to L1?
+
 
 # Wearable
 5ATM is 5 atmospheres. 1 atmosphere is about 10m (however calculated when motionless)
