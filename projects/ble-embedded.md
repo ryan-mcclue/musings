@@ -2,6 +2,10 @@ IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
 TODO: wolfsound youtube for some audio DSP
 
+TODO: Fun graphical displays
+https://tcc.lovebyte.party/
+YouTube LoveByte and FieldFX byte jams
+
 TODO: how to best architect timing requirements given that ISR should be small?
 e.g. this executes every 1 second, this every 500ms etc.
 

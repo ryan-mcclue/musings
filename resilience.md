@@ -1,5 +1,7 @@
 # Resilience
 
+programming in AVR assembly actually made me think fondly of modern technology (a rare feeling indeed)
+
 TODO: MAKES THESE SUBSECTIONS OF PROJECTS
 
 TACKLING DIFFICULT PROBLEM -- HOTLOADING
