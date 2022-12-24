@@ -64,21 +64,34 @@ Each CPU socket have memory banks that are local to it, i.e. can be accessed fro
 NUMA (non-uniform memory access) means that accessing memory from a non-local bank will not
 be the same speed. A NUMA-aware OS will try to mitigate these accesses
 
-TODO: what are typically bus sizes, e.g. 10nm?
+Common transistor size is 7nm. Low as 2nm
+Silicon atom is 0.2nm
+From gleaning a Moore's law transistor graph, see that average CPU a few billion transistors
+and high end SOCs around 50 billion transistors
+
 TDP (thermal design power) maximum amount of heat (measure in watts) at maximum load
 that is designed to be dissipated (bus sizes of chips smaller, so TDP getting lower)
 However, value is rather vague as could be measured on over-clock and doesn't take into account ambient conditions
 
-TODO: what is your cpu die-area? 
 Cache eats up precious die-area. Having a large cache increases lookup time
 
-TODO: how many transistors on chip?
 SRAM is fast, requires 6 transistors for each bit.
 So, for 64MB cache, 3.2billion transistors. Sizeable percentage of die-area
+DRAM is 1 transistor per bit
 
+Average CPU die-size is 100mm², GPU much larger as benefits from parallelisation around 500mm²
 
-https://www.reddit.com/r/explainlikeimfive/comments/o71d4q/eli5_why_do_modern_cpus_have_such_little_cache/
-https://www.reddit.com/r/explainlikeimfive/comments/3ytmhm/eli5_cache_memory_variations/
+direct-mapped cache has each memory address mapping to a single cache line
+lookup is instantenous, however high replacement inefficiences
+fully-associative cache has each memory address mapping to any cache line
+entire cache has to be searched, however low replacement inefficiencies
+set-associative cache divides cache into blocks of fully-associative.
+the number of cache lines in a block is what say an 8-way cache means
+this compromises between the efficiency and lookup speed
+
+Caches will stay relatively small due to the nature of how computers are used.
+At any point, there is only a small amount of local data the CPU will process next.
+So, beyond the sweet spot of 64MB, having a larger cache will marginally better hit ratio.
 
 ## Formats 
 Inodes store file metadata.
