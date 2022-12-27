@@ -1,5 +1,7 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+TODO: incorporate rss reader feeder.co into morning routine
+
 TODO: wolfsound youtube for some audio DSP
 
 TODO: Fun graphical displays

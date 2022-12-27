@@ -1,6 +1,12 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
+creating website: https://threadreaderapp.com/thread/1606219302855745538.html
+
+TODO: what is blockchain and web3?
+
 # MCU
+QI is a wireless charging standard most supported by mobile-devices for distances up to 4cm
+FreePower technology allows QI charging mats to support concurrent device charging
 
 # Phone
 (Serial Advanced Technology Attachment)
