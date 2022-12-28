@@ -40,3 +40,5 @@ Optical computing, i.e. analog uses less power excel at linear algebra.
 Makes them ideal for machine learning
 
 Is prompt engineering now an important skill, as oppose to a sad state of affairs?
+
+Would controlling the weather be nice? e.g. releasing sulfur to reflect more sunlight

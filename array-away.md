@@ -35,3 +35,34 @@ Average weekly power ($550) and water ($330) bills?
 Start and end day routines (i.e. wake up time), i.e. social compatibility
 Note down smells, water pressure, how thin walls are, how old property is 
 
+
+
+
+
+
+GE (12):
+* gens
+* phys
+
+Free Electives (36): 
+* COMP8001 (elective)
+* COMP3331 (networks) 
+* COMP9032 (microprocessors)
+
+
+Disciplinary/major (96): 66 (core) + 30 (electives)
+Change to default COMPA1 (Computer Science) from COMPS1 (Embedded Systems)
+* COMP1511 (Programming Fundamentals)
+* COMP1521 (Computer Systems Fundamentals)
+* COMP1531 (Software Engineering Fundamentals)
+* COMP2521 (Data Structures and Algorithms)
+* MATH1081 (Discrete Mathematics) 
+* MATH1131 (Mathematics 1A)
+* MATH1231 (Mathematics 1B)
+
+- COMP4920 (Professional Issues and Ethics in Information Technology)
+- COMP2511 (Object-Orientated Design and Programming)
+- COMP3121 (Algorithms and Programming Techniques)
+
+144UoC total: 
+-- COMP3900 (Computer Science Project)
