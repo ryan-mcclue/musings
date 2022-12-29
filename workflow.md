@@ -24,6 +24,8 @@ perhaps don't just delete it entirely, rather change its name to func_old()
 
 seems have CI for deploying or testing
 
+Linux has vdso (virtual dynamic shared object) which implements vsyscalls, i.e. some kernel functionality, e.g. clock_gettime()
+
 ingress (act of entering), egress used for traffic
 
 C is good as in the beginning you always want the results. 

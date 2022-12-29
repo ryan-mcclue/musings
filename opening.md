@@ -26,7 +26,7 @@ think about what brings money in
 - they can work for free at the start.
 - younger people more knowledgable of social media, e.g. tiktok
 
-5. COMMAND PHYSICAL RESPECT
+5. COMMAND PRESENTATIONAL RESPECT
 
 6. SELL TO EXISTING CUSTOMERS
 - add-on product
@@ -104,3 +104,58 @@ REGULAR ACTIVITY, NO OFF SWITCH
 - identify how much competitor selling for by reverse searching image 
 As gain experience, will see products over and over again, 
 i.e. product saturation (Google Trends can show this)
+
+### STORE CREATION
+Make website fit your brand before adding ads
+
+Make sure domain is available before setting site name (short word namelix.com) 
+
+Tracking essential before running ads, so as to better optimise ads
+Facebook/tiktok pixels tracking code on website installable through shopify app
+Google analytics as well
+
+(Zoho) info@storename.com
+
+Shopify payments (credit cards) and paypal (business account)
+
+Shopify apps:
+* Fulfillment app:
+  DSers -> aliexpress
+  (CJDropshipping, S-pocket, weho, zendrop all have there own apps)
+* Aftership (helps customers track order)
+* Klaviyo/SMSBump marketing channels (email/text, e.g. abandoned cart emails etc.) 
+* Vitals (Product Reviews, Volume Discounts/Product Bundles (Upsells), 
+  Currency Converter, Visitor Replays, Wheel of Fortune, Frequently Bought Together, 
+  Related Products and Product Description tabs.)
+(want to save purchase information to allow one-click purchasing if returning to increase LTV)
+(offer discount in post-purchase emails)
+(GO INTO SHOPIFY AND MODIFY CONFIRMATION EMAIL TO INCLUDE 24HR DISCOUNT
+CONFIRMATION EMAILS HAVE 100% OPEN-RATE)
+
+Put shipping times at bottom of product page, shipping policies and FAQs
+
+Essential pages:
+Home Page, About Us, Product Pages, FAQs, Legal Policies and Contact Us
+add a Shipping Policy and Track Your Order page via the Aftership app
+
+Conversion rate optimisation (if not getting sales, one of these needs improving):
+* Product Photos (5-10 photos; flat-lays on whitebackground and lifestyle someone using)
+initially source from Aliexpress, alibaba, amazon 
+(later down the track can: take photos yourself, 3D realistic model from fiverr/upwork, get professional photos etc.)
+* Pricing (Compare at Price on Shopify for discount offering?)
+(Test free shipping. Perhaps best to offer free shipping over $X to increase AOV)
+* Product Description
+Hero lines describing one core benefit (i.e. how improve's life)
+then 5 bullet-points describing more features (i.e. what the product does)
+MAKE SURE BENEFIT IS TANGIBLE/SPECIFIC AND METRIC BASED IF POSSIBLE, E.G 1000 songs in pocket
+can look at real reviews and write description on their pain points
+* Product Reviews (import reviews from Aliexpress via Vitals app and ensure grammar is correct and have both good and bad reviews) 
+(hero product should have the most)
+* Website Speed (jpgs over pngs (crushpics app), no videos, low number of apps)
+
+Make sure have a 30day money-back garuntee. Ensure customers can contact easily
+
+Anything over 3% good conversion rate
+
+landing page are more suited for digital products (and take a lot longer to make) 
+(can later do with say Shogun, zipify pages etc.)

@@ -44,5 +44,8 @@ Is prompt engineering now an important skill, as oppose to a sad state of affair
 Would controlling the weather be nice? e.g. releasing sulfur to reflect more sunlight
 
 Medical developments not just better treatments but also easier detection, e.g. Alzheimer via blood test
+Even still, immune diseases like rheumatoid arthritis are more easily treated with drugs than osteoarthritis
 
-Home appliances with WiFi connectivity allow for remote updates
+Home appliances with WiFi connectivity allow for remote updates, e.g. LG dishwasher
+
+Seems all phones will be satellite based in the future
