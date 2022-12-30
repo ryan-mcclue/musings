@@ -176,17 +176,64 @@ run ads for 4-7 days to test (if perform terribly on day 1, then probably kill e
 (have to give time for ad algorithm to optimise to find your buyers)
 should get sales within 1-3 days
 after this 4-7 day period, choose to scale up or kill of ad-sets
+(terrible is 0.5% Link CTR, and $3+ Link CPC maybe only wait 48 hours)
 
 Facebook (includes Instagram) and TikTok (perhaps if targeting younger audience)
+(tiktok does not require lots of followers to go viral, just good content)
 Start with one platform, Facebook (king for ecommerce due to data collection and targeted ads)
 With Facebook, set feedback score to send after 8 weeks to ensure to not being blocked if too many bad reviews
+
+Goodle ads, Snapchat and Pinterest aren't for impulse buyers
+(perhaps explore Google ads when doing a branded campaign, e.g. people search for your website)
+
+If doing influencer marketing stick with theme pages as oppose to personal brands, e.g. advertise on an instagram themed page?
+
+Writing a blog and loading it up with keywords can drive ad-free traffic by ranking in google searches.
+However, long and difficult process
 
 Need to have video ads first?
 Hire ad creatives on Fiverr #resources section
 
 Ad Metrics:
 INTEREST:
-* Link CPC (cost per click) how much it costs for one person to click on your ad?
-* Link CTR how many people click through to see website after ad
+* Link CPC (cost per click) how much it costs for one person to click on your ad? (strive for under $1)
+* Link CTR how many people click through to see website after ad (strive for over 1-2%)
+(CPC and CTR correlated)
 ULTIMATE METRIC (if this profitable after 4-7 days, scale product):
 * Cost per purchase how much it costs for someone to purchase on website?
+
+For Facebook ads create a business account from main profile. 
+Has to be a real account not to get banned
+If get banned without doing anything wrong, message and should be resolved 1-2 days
+* Don't call out people directly, e.g. 'People have a problem' over 'you have a problem'
+* No outlandish claims
+
+Add FB pixel helper extension to browser
+Before launching, click on pages, add to cart, checkout and see if events are firing a pixel?
+
+Let ad platforms optimise age/gender ad settings, so leave these broad
+
+Go after 1M audience size?
+Optimise for purchase? (ignore warnings asking to optimise for funnel actions)
+
+Start with (ABO) ad-set budget optimisation. 
+Later might do CBO (campaign budget optimisation)
+
+1%, 3% etc. LLA (look-alike-audiences) target for people who have already made purchases
+(best to do when say 300-500 events)
+(involves creating a custom audience and targeting for them specifically?)
+
+Improve CTR by testing new ad hooks (first 3 seconds to capture attention. rest should keep attention till end. should be replayable. copy competitors)
+Add more call to actions in the ad copy, i.e. add more links
+If have successul ad-sets, modify the hooks of them an rerelease
+
+CPM (cost per 1000 impressions) is cost of ads, which is largely out of your control.
+if you have better ads, i.e. more shares and views, the cost of ads will be cheaper
+
+Not getting sales, look at funnel:
+1. Ad metrics (are people sharing, etc.)
+2. Website metrics (where's the drop-off in customer activity)
+3. New product
+
+Consider changing creatives or extend ad running time if breaking even or slightly profitable, 
+otherwise move on. don't get attached to products (a winning product is waiting out there)
