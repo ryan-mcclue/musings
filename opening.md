@@ -41,6 +41,8 @@ https://www.youtube.com/watch?v=rRzM7MkppEo
 
 ########################################################################################
 ## E-COMMERCE
+brand concept and website essentials
+
 find products from amazon, etsy, ebay, etc.
 however, only sell with aliexpress as offers dropshipping methods, i.e. no packaging
 alibaba is wholesale not dropshipping, i.e. must buy in bulk
@@ -80,7 +82,7 @@ show innovative product with wow factor, they buy on the spot
 
 if product out of stock, refund and send them a 10% discount code
 
-BRANDING:
+### BRANDING:
 get product that solves problem or adds value to their life in a meaningful way
 high perceived value
 can it not be bought in stores
@@ -109,6 +111,7 @@ i.e. product saturation (Google Trends can show this)
 Make website fit your brand before adding ads
 
 Make sure domain is available before setting site name (short word namelix.com) 
+Also ensure domain is verified and web events prioritised before ads?
 
 Tracking essential before running ads, so as to better optimise ads
 Facebook/tiktok pixels tracking code on website installable through shopify app
@@ -159,3 +162,31 @@ Anything over 3% good conversion rate
 
 landing page are more suited for digital products (and take a lot longer to make) 
 (can later do with say Shogun, zipify pages etc.)
+
+### MARKETING
+Human beings are biologically programmed with 8 main desires: 
+Survival, food/drink, freedom from danger, sex, comfortable living conditions, 
+being superior to others, 
+protection of loved ones and social approval.
+Ads that target these will be subconsciously watched
+
+paid traffic and organic traffic (TikTok with someone using your product. study and recreate competitor videos)
+AT LEAST $50 A DAY ON ADS. $150-$200 TO TEST A PRODUCT (does not include $50 for ad creative)
+run ads for 4-7 days to test (if perform terribly on day 1, then probably kill earlier)
+(have to give time for ad algorithm to optimise to find your buyers)
+should get sales within 1-3 days
+after this 4-7 day period, choose to scale up or kill of ad-sets
+
+Facebook (includes Instagram) and TikTok (perhaps if targeting younger audience)
+Start with one platform, Facebook (king for ecommerce due to data collection and targeted ads)
+With Facebook, set feedback score to send after 8 weeks to ensure to not being blocked if too many bad reviews
+
+Need to have video ads first?
+Hire ad creatives on Fiverr #resources section
+
+Ad Metrics:
+INTEREST:
+* Link CPC (cost per click) how much it costs for one person to click on your ad?
+* Link CTR how many people click through to see website after ad
+ULTIMATE METRIC (if this profitable after 4-7 days, scale product):
+* Cost per purchase how much it costs for someone to purchase on website?
