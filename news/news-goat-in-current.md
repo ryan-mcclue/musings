@@ -49,3 +49,5 @@ Even still, immune diseases like rheumatoid arthritis are more easily treated wi
 Home appliances with WiFi connectivity allow for remote updates, e.g. LG dishwasher
 
 Seems all phones will be satellite based in the future
+
+Mass production to TMSC advanced 3-nm chip underway

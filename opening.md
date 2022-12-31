@@ -41,7 +41,7 @@ https://www.youtube.com/watch?v=rRzM7MkppEo
 
 ########################################################################################
 ## E-COMMERCE
-brand concept and website essentials
+Branding/idea and website are essential
 
 find products from amazon, etsy, ebay, etc.
 however, only sell with aliexpress as offers dropshipping methods, i.e. no packaging
@@ -51,7 +51,7 @@ paid ads on facebook, instagram, tiktok
 
 for supplier, can get faster than aliexpress however cost more
 
-add x3 markup on product
+add x3-x5 markup on product to pay for ever increasing advertising cost
 
 (buying in bulk will get faster shipping times)
 manually -> DSers app to automate purchases -> sourcing agent
@@ -83,9 +83,28 @@ show innovative product with wow factor, they buy on the spot
 if product out of stock, refund and send them a 10% discount code
 
 ### BRANDING:
+digital age allows for microexperiments to test market, 
+instead of wasting capital on something that could fail
+(i.e. put advertising into market first to see how customers react)
+
+1. Test market
+We are only concerned with determing purchase intent.
+Customer experience will initially be poor due to long shipping times.
+Aliexpress -> CJDropshipping, Spocket, Zendrop, uDroppy, WiiO
+
+2. Sourcing agent (when have 10-20 orders a day)
+Can reduce pricing, faster shipping, custom packaging, thank you notes, etc.
+
+3. Local fulfillment bulk buying and shipping to a 3PL (3rd party logisitics)
+
+does it target niche customer (write down target audience and their problems you are solving)
 get product that solves problem or adds value to their life in a meaningful way
-high perceived value
-can it not be bought in stores
+product must have a unique selling point
+high perceived value or problem solver, e.g.
+posture corrector -> solves problem
+vegetable slicer -> adds value
+can't be bought in stores (not commonly advertised, not a basic product in store)
+(no one will buy it from an unknown store if not unique)
 targeted to customer niche
 lightweight and easy to ship
 possible to add markup
