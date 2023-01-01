@@ -17,7 +17,7 @@ There are of course international standards (IEC 60601, or IEC 62304) that you h
 These standards usually require to provide a lot of documentation and to pass a series of tests in order to verify that your device is working as intended and it's not dangerous.
 
 could even be simplex (one way only)
-full-duplex can still be serial, requiring at least two wires
+full-duplex can still be serial, requiring at least two wires (duplex meaning bidirectional)
 serial (synchronous with clock data; asynchronous) + parallel 
 
 BUTTON BOX 3D PRINT:
