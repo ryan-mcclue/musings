@@ -5,6 +5,8 @@ creating website: https://threadreaderapp.com/thread/1606219302855745538.html
 TODO: what is blockchain and web3?
 
 # MCU
+Some chips have XIP (execute-in-place) which allows for running directly from flash 
+
 QI is a wireless charging standard most supported by mobile-devices for distances up to 4cm
 FreePower technology allows QI charging mats to support concurrent device charging
 
@@ -101,6 +103,13 @@ Microarchitecture will affect instruction latency and throughtput by implementat
 50m for 10 minutes
 
 # Desktop
+Typically stored as crt0.s, this will perform OS specific run-time initialisation.
+The conditions assumed here will be outlined in ABI, e.g. argc in rdi
+Some functions include setting up processor registers (e.g. SSE), MMU, caches, threading
+ABI stack alignment, frame pointer initialisation, C runtime setup (setting .bss to 0),
+C library setup (e.g. stdout, math precision)
+
+
 ## Legalities
 Anti-trust laws don't prevent monopolies, they prevent attempts to monopolise by 
 unfair means, e.g. Microsoft browser market, Apple app store etc.

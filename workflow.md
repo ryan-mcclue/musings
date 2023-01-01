@@ -544,7 +544,7 @@ In a similar vein, VLAs useful here (note that sizeof(array) and sizeof(pointer)
 distinct areas of memory in assembly are stack, heap and data (globals)
 
 direction of stack growth is often determined by CPU. if selectable, then OS. eg. x86 is downwards
-ulimit -s for stack size
+ulimit -s for stack size (main executable will have stack size listed in headers)
 
 good practice to assign variable for syntatical reasons, i.e. more readable, e.g
 Controller *controller = &evdev_input_device.controller;
