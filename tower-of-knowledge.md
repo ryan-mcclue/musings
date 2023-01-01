@@ -94,6 +94,7 @@ Cache probably 8-way as compromise between lookup and copy speed.
 Flow of cache, is it check if from 8-way copy then L2 8-way or finish L1 entirely?
 If found, in L2 does it copy to L1?
 
+Microarchitecture will affect instruction latency and throughtput by implementation of execution and control units
 
 # Wearable
 5ATM is 5 atmospheres. 1 atmosphere is about 10m (however calculated when motionless)
@@ -166,6 +167,25 @@ However, value is rather vague as could be measured on over-clock and doesn't ta
 
 Cache eats up precious die-area. Having a large cache increases lookup time
 
+Linux is a monolithic kernel, i.e. drivers, file system etc. are all in kernel space.
+So, more efficient, not as robust to component failure
+Windows in hybrid kernel, moving away from microkernel due to inefficiencies
+
+SystemV ABI:
+IMPORTANT: cannot easily access upper portion of register, only lower 
+rdi, rsi, rdx, rcx, r8, r9 (6 integer arguments)
+xmm0, xmm1, xmm2, xmm3, xmm4, xmm5, xmm6 (7 floating arguments)
+remaining arguments pushed right-to-left on stack
+rax return and syscall number
+stack 16-byte aligned before function call (SSE2 is baseline for x86-64, so make efficient for __m128)?
+(word size 8 bytes?)
+
+
+
+CISC gives reduced cache pressure for high-intensive, sustained loops
+Instructions with higher cycle count
+Typically a register-memory architecture, e.g. can add one value in register, one in memory (as oppose to load-store)
+
 SRAM is fast, requires 6 transistors for each bit.
 So, for 64MB cache, 3.2billion transistors. Sizeable percentage of die-area
 DRAM is 1 transistor per bit
@@ -231,6 +251,7 @@ Processes are managed using a RB-Tree.
 Therefore, cost of launching a process or a context switch is logarithmic
 (kernel will have internal tick rate that updates waiting threads.
 lowering this will increase granularity however will increase CPU time and hence battery time as more time spent in kernel code)
+Windows scheduler uses static priorities, so one intensive process can dominate CPU
 
 System level refers to inbetween kernel and userspace, e.g. network manager
 Systemd is a collection of system binaries, e.g. udev
@@ -259,7 +280,8 @@ KVM (kernel-based virutal machine) kernel based virtual machine allows linux ker
 ∴ type 1 hypervisor (virtualbox type 2, i.e. run atop an OS)
 Often see with KVM/QEMU (virt-manager)
 
-hardware scheduler allows for hyperthreading (AMD simultaneous multi-threading) share execution units
+hardware scheduler allows for hyperthreading (AMD simultaneous multi-threading) 
+share execution units
 
 
 RAID is method of combining multiple disks together so appear like one disk called an array.
@@ -478,23 +500,12 @@ overall, endianness usefulness determined by majority of operations performed,
 e.g. converting string to int easier in big-endian
 e.g. little-endian easier to read values of variable length (address does not change)
 
-CISC gives reduced cache pressure for high-intensive, sustained loops
-Instructions with higher cycle count
-Typically a register-memory architecture, e.g. can add one value in register, one in memory (as oppose to load-store)
 
 memory model: visibility and consistency of changes to data stored in memory
 necessary for understanding multiple thread execution 
 
 alignment ensures that value doesn't straddle cache line boundaries
 
-SystemV ABI:
-IMPORTANT: cannot easily access upper portion of register, only lower 
-rdi, rsi, rdx, rcx, r8, r9 (6 integer arguments)
-xmm0, xmm1, xmm2, xmm3, xmm4, xmm5, xmm6 (7 floating arguments)
-remaining arguments pushed right-to-left on stack
-rax return and syscall number
-stack 16-byte aligned before function call (SSE2 is baseline for x86-64, so make efficient for __m128)?
-(word size 8 bytes?)
 
 more instructions required for unaligned memory accesses?
 (most modern x64 arm will not crash on an unaligned access?)
@@ -536,7 +547,7 @@ details hidden due to IP nature, e.g. LPDDR3 memory controller from CPU is all w
 USB-A,USB-B,USB-B(mini) 
 USB-C is USB3.0
 
-3.5mm audio jack (3 pole; 4 pole for added microphone)
+3.5mm audio jack (3 pole number of shafts (internal wires); 4 pole for added microphone)
 
 ethernet CAT backwards compatible. connector called RJ45 
 telephone cable is called RJ11
