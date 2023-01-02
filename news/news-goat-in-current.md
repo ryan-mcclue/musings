@@ -51,3 +51,5 @@ Home appliances with WiFi connectivity allow for remote updates, e.g. LG dishwas
 Seems all phones will be satellite based in the future
 
 Mass production to TMSC advanced 3-nm chip underway
+Unfortunately most likely due to Samsung chips having low yield, 
+they don't have high QA for voltage regulation as compared to TSMC

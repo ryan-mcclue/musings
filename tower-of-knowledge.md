@@ -200,6 +200,7 @@ Cache eats up precious die-area. Having a large cache increases lookup time
 Linux is a monolithic kernel, i.e. drivers, file system etc. are all in kernel space.
 So, more efficient, not as robust to component failure
 Windows in hybrid kernel, moving away from microkernel due to inefficiencies
+Compiled differently, e.g. generic
 
 SystemV ABI:
 IMPORTANT: cannot easily access upper portion of register, only lower 
@@ -465,6 +466,8 @@ Matchmaking,  host migration difficult as hard to measure what user has good con
 e.g. Whats there NAT type?
 
 ## Power
+Pertol cars still use lead-acid as they have lower internal resistance and so can give higher peak current then equivalent lipo (just not for as long)
+
 LiPo  is lithium-ion poly. uses polymer electrolyte instead of liquid.
 lipo more expensive, shorter lifespan, less energy, more robust 
 li-poly battery is rechargeable (so rechargeable is structured to allow a current to be passed to it to reverse the process)
@@ -474,33 +477,25 @@ when charging, lithium ions move to graphite
 when discharging, lithium ions move from graphite to lithium
 so, we can see that the atomic structure of the electrodes are changed, 
 hence why charge cycles affect battery life
-LiPo  is lithium-ion poly. uses polymer electrolyte instead of liquid.
-lipo more expensive, shorter lifespan, less energy, more robust 
+
+Lithium-ion has higher energy density, cheaper, not available in small sizes 
+and more dangerous due to liquid electrolyte
+
+Battery 51Watt/hr, which is A/hr * V is not a fixed value, e.g. 1A/hr could run 0.1A for 10 hours 
 
 ## Memory
 NAND and NOR flash are two types of non-volatile memory
-TODO: vs?
-BIOS is usually NOR flash?
-
-https://superuser.com/questions/594357/ssd-sd-emmc-raw-nand-what-are-the-differences
-
-eMMC is the interface as well
-eMMC precursor to SD.
-TF (transflash) more commonly known as micro-SD card
-cheaper than SSD, yet slower
-still uses NAND-flash technology
-NAND-flash retains memory without power
-
-Storage devices will have a mass storage controller chip, i.e. a microcontroller
-https://superuser.com/questions/919058/whats-the-technical-difference-between-a-flash-drive-and-an-ssd
-
-SSDs perform more internal checks like level-wearing, data integrity checks
-to increase longevity. Also have chips to perform parallel access on NAND flash
-
+NOR has faster read, however more expensive per bit and slower write/erase
+NOR used in BIOS chips
+A NAND mass storage device will require a controller chip, i.e. a microcontroller
+How the controller accesses the NAND flash (i.e. how its Flash Translation Layer operates), 
+will determine what type of storage it is:
+* SD (secure digital)
+* eMMC (embedded multimedia card): Typically SD soldered on motherboard
+* USB (universal serial bus) 
+* SSD (solid state drive): Parallel NAND access, more intelligent wear leveling and block sparring
 
 QSPI can be used without CPU with data queues
-
-
 
 ## CPU
 cpu contains clock. each tick marks a step in the 
