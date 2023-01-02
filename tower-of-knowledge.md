@@ -5,6 +5,8 @@ creating website: https://threadreaderapp.com/thread/1606219302855745538.html
 TODO: what is blockchain and web3?
 
 # MCU
+On startup, copy from Flash to RAM then jump to reset handler address
+No real need for newlib, just use standalone mpaland/printf
 Some chips have XIP (execute-in-place) which allows for running directly from flash 
 
 QI is a wireless charging standard most supported by mobile-devices for distances up to 4cm
@@ -108,7 +110,26 @@ The conditions assumed here will be outlined in ABI, e.g. argc in rdi
 Some functions include setting up processor registers (e.g. SSE), MMU, caches, threading
 ABI stack alignment, frame pointer initialisation, C runtime setup (setting .bss to 0),
 C library setup (e.g. stdout, math precision)
+The program loader will load from Flash into RAM then call _start (which is crt entrypoint)
 
+ELF (executable and linkable format)
+executable header contains type (executable, dynamic, relocatable) and entrypoint
+sections:
+.text ()
+.bss ()
+.data ()
+.rodata ()
+A segment (which confusingly is called a section in ld to be placed in a memory region)
+
+section compile-time
+so, something like .text, .bss
+segment run-time
+so, something like .dseg (data), .eseg (eeprom) and .cseg (code/program)
+essentially will have loadable code segment and loadable data segment 
+which will comprise of sections
+(possibly more segments in MCUs as more memory spaces)
+
+SSE registers are 128bits (4 bytes) XMM, AVX are 256bits (8 bytes) YMM
 
 ## Legalities
 Anti-trust laws don't prevent monopolies, they prevent attempts to monopolise by 
@@ -457,11 +478,25 @@ LiPo  is lithium-ion poly. uses polymer electrolyte instead of liquid.
 lipo more expensive, shorter lifespan, less energy, more robust 
 
 ## Memory
+NAND and NOR flash are two types of non-volatile memory
+TODO: vs?
+BIOS is usually NOR flash?
+
+https://superuser.com/questions/594357/ssd-sd-emmc-raw-nand-what-are-the-differences
+
 eMMC is the interface as well
 eMMC precursor to SD.
 TF (transflash) more commonly known as micro-SD card
 cheaper than SSD, yet slower
-still uses NAND flash technology
+still uses NAND-flash technology
+NAND-flash retains memory without power
+
+Storage devices will have a mass storage controller chip, i.e. a microcontroller
+https://superuser.com/questions/919058/whats-the-technical-difference-between-a-flash-drive-and-an-ssd
+
+SSDs perform more internal checks like level-wearing, data integrity checks
+to increase longevity. Also have chips to perform parallel access on NAND flash
+
 
 QSPI can be used without CPU with data queues
 
