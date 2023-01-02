@@ -105,6 +105,10 @@ Microarchitecture will affect instruction latency and throughtput by implementat
 50m for 10 minutes
 
 # Desktop
+Codec is typically a separate hardware unit that you interact with via a specific API
+HEVC (H.265; high efficiency video coding) newer version of H.264
+VP9 is a open source Google video coding format
+
 Typically stored as crt0.s, this will perform OS specific run-time initialisation.
 The conditions assumed here will be outlined in ABI, e.g. argc in rdi
 Some functions include setting up processor registers (e.g. SSE), MMU, caches, threading
@@ -550,6 +554,20 @@ more instructions required for unaligned memory accesses?
 (most modern x64 arm will not crash on an unaligned access?)
 from armv7, unaligned accesses allowed
 
+to implement a software memory model, i.e. C++, will have to know hardware memory model
+
+language (from source to machine code)
+so, C11 memory model is in relation to rearranging of loads/stores in 
+assembly for optimisations? (so is a weak model?)
+mainly in reference to the behaviour of atomics to synchronise programs
+language memory model will abstract away hardware memory model
+https://research.swtch.com/plmm
+
+a language memory model will provide ways to order memory operations
+and to ensure coherency of modification order, e.g. atomics, acquire/release etc.
+(we can ignore this if we use intrinisics?)
+(i.e. to provide synchronisation primitives, language will have to implement a memory model)
+
 hardware (from machine code to execution on the CPU):
 * sequential consistency (ideal as easy to understand, however doesn't maximise hardware speed)
 * x86-TSO (total store order). 
@@ -561,17 +579,12 @@ therefore, to enforce stronger memory ordering, architecture supplies memory bar
 (in a sense to enforce sequentially consistent behaviours)
 to ensure write queue is flushed before any future reads occur
 (without fences, I suppose write queue length would determine whether certain synchronisation problems occur more frequently)
-* ARM (most relaxed)
+* ARM (most relaxed/weak)
 each processor reads and writes from its own copy of memory
 writes propagate to other processors independently, i.e not all update at same time
 furthermore, the order of the writes can be reordered
 furthermore, processors are allowed to delay reads until writes later in the instruction stream
 
-language (from source to machine code)
-so, C11 memory model is in relation to rearranging of loads/stores in assembly for optimisations? (so is a weak model?)
-mainly in reference to the behaviour of atomics to synchronise programs
-so, language memory model will abstract away hardware memory model?
-https://research.swtch.com/plmm
 
 ## ARM
 cortex-a53 is a synthesisable IP core sold to other semiconductor companies (stm, nxp, etc.)
