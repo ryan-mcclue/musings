@@ -20,122 +20,83 @@ Endianness only relevent when interpreting bytes from a cast
 Can really only see usefulness of Big Endian for say converting string to int
 Little Endian makes recasting variables of different lengths easier as starting address does not change
 
+Although the instruction set supports 64bits, many CPUs address buses 
+don't support entire 16 exabytes.
+As we have no need for 16 exabytes (tera, peta, exa), the physical address size may be
+39bits, and virtual size 48bits to save on unused transistors.
+
 Direct-mapped cache has each memory address mapping to a single cache line
-lookup is instantenous, however high replacement inefficiences
-fully-associative cache has each memory address mapping to any cache line
-entire cache has to be searched, however low replacement inefficiencies
-set-associative cache divides cache into blocks of fully-associative.
-the number of cache lines in a block is what say an 8-way cache means
-this compromises between the efficiency and lookup speed
+Lookup is instantenous, however high number of cache misses.
+Fully-associative cache has each memory address mapping to any cache line.
+The entire cache has to be searched, however low number of cache misses.
+Set-associative cache divides cache into fully-associative blocks.
+An 8-way cache means the number of cache lines in a block.
+This is best in maintaining a fast lookup speed and low number of cache misses.
 
-Caches will stay relatively small due to the nature of how computers are used.
+Cache sizes will stay relatively small due to the nature of how computers are used.
 At any point, there is only a small amount of local data the CPU will process next.
-So, beyond the sweet spot of 64MB, having a larger cache will marginally better hit ratio.
+So, beyond the empirical sweet spot of approximately 64MB, 
+having a larger cache will yield only marginal benefits for cost of SRAM and die-area, 
+i.e. law of diminishing returns.
 
-Cache probably 8-way as compromise between lookup and copy speed.
-Flow of cache, is it check if from 8-way copy then L2 8-way or finish L1 entirely?
-If found, in L2 does it copy to L1?
-Cache eats up precious die-area. Having a large cache increases lookup time
-
-In general:
-check if in L1. If not go check in L2 and mark least recently accessed L1 for
-move to L2. bubbles up to L3 until need for memory access which will go to memory
+Check if in L1. If not go check in L2 and mark least recently accessed L1 for
+move to L2. Bubbles up to L3 until need for memory access which will go to memory
 controller etc.
 
-Average CPU die-size is 100mm², GPU much larger as benefits from parallelisation around 500mm²
+Alignment ensures that values don't straddle cache line boundaries.
 
-Alignment ensures that value doesn't straddle cache line boundaries
-
-
-CISC gives reduced cache pressure for high-intensive, sustained loops
-Instructions with higher cycle count
-Typically a register-memory architecture, e.g. can add one value in register, one in memory (as oppose to load-store)
-
-
-
-
-
-
-
-
-For Intel CPUs, i3-i7 of same generation will have same micro-architecture.
-Just more cache, hyperthreading, cores, die size etc. 
-
-
-
-
-
-memory model: visibility and consistency of changes to data stored in memory
-necessary for understanding multiple thread execution 
-
-
-to implement a software memory model, i.e. C++, will have to know hardware memory model
-
-language (from source to machine code)
-so, C11 memory model is in relation to rearranging of loads/stores in 
-assembly for optimisations? (so is a weak model?)
-mainly in reference to the behaviour of atomics to synchronise programs
-language memory model will abstract away hardware memory model
-https://research.swtch.com/plmm
-
-a language memory model will provide ways to order memory operations
-and to ensure coherency of modification order, e.g. atomics, acquire/release etc.
-(we can ignore this if we use intrinisics?)
-(i.e. to provide synchronisation primitives, language will have to implement a memory model)
-
-hardware (from machine code to execution on the CPU):
-* sequential consistency (ideal as easy to understand, however doesn't maximise hardware speed)
-* x86-TSO (total store order). 
-each processor reads from shared memory
-all processors agree upon the order in which their write queues are written to memory
-write queue is FIFO, so write queue is flushed in same order as seen by the processor
-however, when the write queue is flushed is up to the CPU
-therefore, to enforce stronger memory ordering, architecture supplies memory barriers/fences 
-(in a sense to enforce sequentially consistent behaviours)
-to ensure write queue is flushed before any future reads occur
-(without fences, I suppose write queue length would determine whether certain synchronisation problems occur more frequently)
-* ARM (most relaxed/weak)
-each processor reads and writes from its own copy of memory
-writes propagate to other processors independently, i.e not all update at same time
-furthermore, the order of the writes can be reordered
-furthermore, processors are allowed to delay reads until writes later in the instruction stream
-
-
-
-Intel clock frequency is often changed by OS
-
-
-Hyperthreads don't increase number of instructions per second, rather number of instructions
-that can be queued (so hyperthread like a queue)
-
-
-CPU could implement VT-x, but motherboard and bios must support this as well?
-What additional features are present when CPU supports this?
-
-
-
-Microarchitecture will affect instruction latency and throughtput by implementation of execution and control units
-
-Codec is typically a separate hardware unit that you interact with via a specific API
-HEVC (H.265; high efficiency video coding) newer version of H.264
-VP9 is a open source Google video coding format
-
-When people say vector operations, they mean SIMD
-SSE registers are 128bits (4 bytes) XMM, AVX are 256bits (8 bytes) YMM
-
-Common transistor size is 7nm. Low as 2nm
-Silicon atom is 0.2nm
-From gleaning a Moore's law transistor graph, see that average CPU a few billion transistors
-and high end SOCs around 50 billion transistors
+CISC gives reduced cache pressure for high-intensive, sustained loops as less instructions required.
+Instructions will have higher cycle count.
+Also typically a register-memory architecture, 
+e.g. can add one value in a register and one in memory together (as oppose to load-store)
 
 TDP (thermal design power) maximum amount of heat (measure in watts) at maximum load
 that is designed to be dissipated (bus sizes of chips smaller, so TDP getting lower)
 However, value is rather vague as could be measured on over-clock and doesn't take into account ambient conditions
 
+Clock frequency will often be changed by OS scheduler in idle moments or thermal throttling
 
+Hardware scheduler allows for hyperthreading which is the sharing of execution units.
+Therefore, hyperthreading not a boon in all situations.
+AMD refers to this as simultaneous multithreading.
 
-hardware scheduler allows for hyperthreading (AMD simultaneous multi-threading) 
-share execution units
+Microarchitecture will affect instruction latency and throughput 
+byway of differening execution and control units.
+For Intel CPUs, i3-i7 of same generation will have same microarchitecture.
+Just different cache, hyperthreading, cores, die size etc. 
+
+Codec is typically a separate hardware unit that you interact with via a specific API
+HEVC (H.265; high efficiency video coding) newer version of H.264
+VP9 is a open source Google video coding format
+
+When people say vector operations, they mean SIMD.
+SSE registers are 128bits (4 bytes) XMM, AVX are 256bits (8 bytes) YMM
+
+Average CPU die-size is 100mm².
+GPU much larger at 500mm² as derives more benefits from more control units, i.e. parallelisation
+Common transistor size is 7nm. Low as 2nm
+Silicon atom is 0.2nm
+Gleaning a Moore's law transistor graph, see that average CPU a few billion transistors
+and high end SOCs around 50 billion transistors.
+
+Memory model outlines the rules regarding the visibility of changes to data stored in memory,
+i.e. rules relating to memory reads and writes 
+A hardware memory model relates to the state of affairs as the processor executes machine code:
+* Sequential Consistency: 
+Doesn't allow instruction reordering, so doesn't maximise hardware speed)
+* x86-TSO (Total Store Order):
+All processors agree upon the order in which their write queues are written to memory
+However, when the write queue is flushed is up to the CPU
+* ARM (most relaxed/weak)
+Writes propagate to other processors independently, i.e not all update at same time
+Furthermore, the order of the writes can be reordered
+Processors are allowed to delay reads until writes later in the instruction stream
+
+A software memory model, e.g a language memory model like C++ will abstract over
+the specific hardware memory model it's implemented on.
+It will provide synchronisation semantics, e.g. atomics, acquire, release, fence etc.
+These semantics are used to enforce sequentially consistent behaviour when we want it.
+However, using intrinsics, we can focus only on hardware memory model.
 
 ## Legalities
 Anti-trust laws don't prevent monopolies, they prevent attempts to monopolise by 
@@ -244,13 +205,12 @@ Linux DRM (direct rendering manager) -> X11 (display server) -> xfce (desktop en
 Linux ALSA (advanced linux sound architecture) -> pulseaudio (sound server) 
 
 SystemV ABI:
-IMPORTANT: cannot easily access upper portion of register, only lower 
 rdi, rsi, rdx, rcx, r8, r9 (6 integer arguments)
 xmm0, xmm1, xmm2, xmm3, xmm4, xmm5, xmm6 (7 floating arguments)
-remaining arguments pushed right-to-left on stack
+Remaining arguments pushed right-to-left on stack
 rax return and syscall number
-stack 16-byte aligned before function call (SSE2 is baseline for x86-64, so make efficient for __m128)?
-(word size 8 bytes?)
+Stack 16-byte aligned before function call 
+SSE2 is baseline for x86-64, so make efficient for __m128
 
 A premptive scheduler will swap processes based on specific criteria.
 Round-robin means each process will run for a designated time slice
@@ -258,8 +218,9 @@ CFS is a premptive round-robin scheduler.
 Time slices are dynamic, computed like `((1/N) * (niceness))` 
 Processes are managed using a RB-Tree. 
 Therefore, cost of launching a process or a context switch is logarithmic
-(kernel will have internal tick rate that updates waiting threads.
-lowering this will increase granularity however will increase CPU time and hence battery time as more time spent in kernel code)
+Kernel will have an internal tick rate that updates waiting threads.
+Lowering this will increase granularity however will increase CPU time 
+and hence battery time as more time spent in kernel code.
 Windows scheduler uses static priorities, so one intensive process can dominate CPU
 
 System level refers to inbetween kernel and userspace, e.g. network manager
@@ -276,6 +237,15 @@ A container will utilise one of these options provided by the kernel to acheive:
  * has own networking namespace
  * resource usage limits
 
+ELF (Executable and Linkable Format)
+Header contains type, e.g. executable, dynamic, relocatable and entrypoint
+A section is compile time:
+* .text (code)
+* .bss (uninitialised globals)
+* .data (globals)
+* .rodata (constants)
+A segment is a memory location, e.g .dseg (data), .eseg (eeprom) and .cseg (code/program)
+
 Typically stored as crt0.s, this will perform OS specific run-time initialisation.
 The conditions assumed here will be outlined in ABI, e.g. argc in rdi
 Some functions include setting up processor registers (e.g. SSE), MMU, caches, threading
@@ -283,27 +253,14 @@ ABI stack alignment, frame pointer initialisation, C runtime setup (setting .bss
 C library setup (e.g. stdout, math precision)
 The program loader will load from Flash into RAM then call _start (which is crt entrypoint)
 
-ELF (executable and linkable format)
-executable header contains type (executable, dynamic, relocatable) and entrypoint
-sections:
-.text (code)
-.bss (uninitialised globals)
-.data (globals)
-.rodata (constants)
-A segment (which confusingly is called a section in ld to be placed in a memory region)
-
-section compile-time
-so, something like .text, .bss
-segment run-time
-so, something like .dseg (data), .eseg (eeprom) and .cseg (code/program)
-essentially will have loadable code segment and loadable data segment 
-which will comprise of sections
-(possibly more segments in MCUs as more memory spaces)
-
 ## Components
-important that these are sustained speeds, 
-so for small file sizes expect a lot less as seconds smaller
-note that storage space advertised with S.I units, whilst OS works with binary
+DRAM refreshed periodically. SDRAM (synchronises clock speed with memory speed).
+SDRAM. LPDDR4 (low-power; double pumping on rising and falling edge of clock)
+
+SRAM more expensive, faster, not refreshed, larger die size.
+
+DIIM (dual in-line memory module) is form factor (wider bus)
+SODIMM (small outline)
 
 Column Address Strobe (CAS), or CL (CAS latency) is time between RAM controller
 read and when data is available
@@ -320,20 +277,13 @@ storage devices: form factor (M.2 keying, PCIe), interface (SATAIII, NVMe, PCIe)
 a single form factor may support multiple interfaces, so ensure motherboard has
 appropriate chipset
 
+important that these are sustained speeds, 
+so for small file sizes expect a lot less as seconds smaller
+note that storage space advertised with S.I units, whilst OS works with binary
+
 SATA SSD is the lowest grade ssd (however still 4 times bandwidth)
 
-DRAM refreshed periodically. SDRAM (synchronises clock speed with memory speed).
-SDRAM. LPDDR4 (low-power; double pumping on rising and falling edge of clock)
 
-SRAM more expensive, faster, not refreshed, larger die size.
-
-DIIM (dual in-line memory module) is form factor (wider bus)
-SODIMM (small outline)
-
-From $(cpuinfo) see that although 64bit cpu this is just what the instruction set supports.
-As we have no need for 16 exabytes (tera, peta, exa), the physical address size may be
-39bits, and virtual size 48bits to save on unused transistors
-(i.e. the address bus of the CPU won't support 16 exabytes)
 
 NUMA node relationship between CPU socket (location on motherboard) and memory banks.
 So, say 2 sockets will probably have 2 NUMA nodes.
@@ -355,9 +305,6 @@ SRAM is fast, requires 6 transistors for each bit.
 So, for 64MB cache, 3.2billion transistors. Sizeable percentage of die-area
 DRAM is 1 transistor per bit
 
-
-
-## Power
 Petrol cars still use lead-acid as they have lower internal resistance and 
 so can give higher peak current then equivalent lipo (just not for as long)
 
@@ -376,7 +323,6 @@ and more dangerous due to liquid electrolyte
 
 Battery 51Watt/hr, which is A/hr * V is not a fixed value, e.g. 1A/hr could run 0.1A for 10 hours 
 
-## Memory
 NAND and NOR flash are two types of non-volatile memory
 NOR has faster read, however more expensive per bit and slower write/erase
 NOR used in BIOS chips (firmware will be motherboard manufacturer, e.g. Lenovo)
@@ -390,7 +336,6 @@ will determine what type of storage it is:
 
 QSPI can be used without CPU with data queues
 
-## Ports
 (audio visual) HDMI-A, C (mini), D (micro)
 USB-A,USB-B,USB-B(mini) 
 USB-C is USB3.0
@@ -404,7 +349,6 @@ IEC power cords (kettleplug, cloverleaf)
 
 DC barrel jack
 
-## Screens
 Touch screen types need some external input to complete circuit
 Resistive works by pressure pushing down plastic<-electric coating->glass
 Unresponsive, durable, cheap (e.g. atm machine)
@@ -434,12 +378,6 @@ nit is a measure of luminance, i.e. intensity of light (brightness is how we per
 higher nit display are more easily viewable in a wider array of lighting conditions (e.g. combat the sun's light reflecting off the surface)
 
 e-ink less power than LCD as only uses power when arrangment of colours changes
-
-
-
-
-
-
 
 
 
