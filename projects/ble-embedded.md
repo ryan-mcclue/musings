@@ -2,6 +2,13 @@ IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
 TODO: incorporate rss reader feeder.co into morning routine
 
+TODO: memfault debugging with IoT
+https://embeddedartistry.com/wp-content/uploads/2022/07/IoT-Device-Observability-Requirements-Checklist.pdf?mc_cid=582b1ec73e&mc_eid=UNIQID
+
+working with MPU: https://www.state-machine.com/null-pointer-protection-with-arm-cortex-m-mpu?mc_cid=582b1ec73e&mc_eid=UNIQID
+
+RTOS debouncing: https://blog.golioth.io/how-to-debounce-button-inputs-in-a-real-time-operating-system/?mc_cid=582b1ec73e&mc_eid=UNIQID
+
 TODO: wolfsound youtube for some audio DSP
 
 TODO: Fun graphical displays
