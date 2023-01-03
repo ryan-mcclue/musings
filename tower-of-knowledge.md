@@ -2,57 +2,72 @@
 
 # Desktop
 ## Chips
-cpu contains clock. each tick marks a step in the 
-fetch(signal sent along address bus as specified by PC; instruction or data sent along data bus)-
-so, whenever interacting with memory, will first have to specify address bus and get/store result via data bus
-therefore, for something like LDR rax, [val] will require two fetch-executes.
-this is von-neumann bottleneck
-most modern computers are modified-harvard, in that the L1 caches have separate instruction and data regions.
-therefore, they can be read simultaneously 
+CPU contains a clock.
+Each tick marks a step in the fetch-decode-execute cycle.
+The signal will be sent along the address bus as specified by program counter and 
+instruction or data will be returned along the data bus.
 
-decode-execute cycle
-an accumulator register is term used to indicate typical register that holds results of large arithmetic
+Von-Neumann has instructions and data share address space.
+The Von-Neumann bottleneck occurs when having multiple fetches in a single instruction, e.g. ldr
+Harvard has instructions and data with separate address spaces
+In reality, all CPUs present themselves as Von-Neumann to the user, however for efficiency
+they are modified Harvard at the hardware level, i.e. pipeline/cache stage.
+Specifically, will have separate L1 cache for instructions and data.
+(also have uOP cache considered L0)
+Therefore, when an architecture is described as Harvard, almost certainly modified Harvard.
 
-von-neumann
-instruction, data in RAM
-instructions+data share data bus between CPU and RAM, so they have to
-be fetched separately
+Endianness only relevent when interpreting bytes from a cast
+Can really only see usefulness of Big Endian for say converting string to int
+Little Endian makes recasting variables of different lengths easier as starting address does not change
 
-harvard 
-instruction, data separate
+Direct-mapped cache has each memory address mapping to a single cache line
+lookup is instantenous, however high replacement inefficiences
+fully-associative cache has each memory address mapping to any cache line
+entire cache has to be searched, however low replacement inefficiencies
+set-associative cache divides cache into blocks of fully-associative.
+the number of cache lines in a block is what say an 8-way cache means
+this compromises between the efficiency and lookup speed
 
-in reality, all CPUs are von-neumann presented to the user
-and harvard at the low-level.
-it's only harvard from the pipeline/cache stage
-modified harvard could also mean instruction and data bus, but unified memory 
-so, the variation amongst harvard architectures is in how one transitions to the other 
+Caches will stay relatively small due to the nature of how computers are used.
+At any point, there is only a small amount of local data the CPU will process next.
+So, beyond the sweet spot of 64MB, having a larger cache will marginally better hit ratio.
 
-Procedure Call Standard for the Arm Architecture (AAPCS).
-Part of ABI for ARM (also part of ABI is debugging, dynamic linking semantics etc.)
-From this we can garner say, not to put more than 4 word sized arguments to
-function as this will require stack, consuming more time and space
-Furthermore, alignment restrictions mean that passing a double word has to be even-odd register pair,
-so ordering of parameters important
-So, call standard important for ordering and number of parameters?
+Cache probably 8-way as compromise between lookup and copy speed.
+Flow of cache, is it check if from 8-way copy then L2 8-way or finish L1 entirely?
+If found, in L2 does it copy to L1?
+Cache eats up precious die-area. Having a large cache increases lookup time
 
-When people say vector operations, they mean SIMD
+In general:
+check if in L1. If not go check in L2 and mark least recently accessed L1 for
+move to L2. bubbles up to L3 until need for memory access which will go to memory
+controller etc.
 
-endianness only relevent when reading and writing to memory addresses and 
-interpreting the bytes
-overall, endianness usefulness determined by majority of operations performed,
-e.g. converting string to int easier in big-endian
-e.g. little-endian easier to read values of variable length (address does not change)
+Average CPU die-size is 100mm², GPU much larger as benefits from parallelisation around 500mm²
+
+Alignment ensures that value doesn't straddle cache line boundaries
+
+
+CISC gives reduced cache pressure for high-intensive, sustained loops
+Instructions with higher cycle count
+Typically a register-memory architecture, e.g. can add one value in register, one in memory (as oppose to load-store)
+
+
+
+
+
+
+
+
+For Intel CPUs, i3-i7 of same generation will have same micro-architecture.
+Just more cache, hyperthreading, cores, die size etc. 
+
+
+
 
 
 memory model: visibility and consistency of changes to data stored in memory
 necessary for understanding multiple thread execution 
 
-alignment ensures that value doesn't straddle cache line boundaries
-
-
-more instructions required for unaligned memory accesses?
-(most modern x64 arm will not crash on an unaligned access?)
-from armv7, unaligned accesses allowed
 
 to implement a software memory model, i.e. C++, will have to know hardware memory model
 
@@ -85,36 +100,19 @@ writes propagate to other processors independently, i.e not all update at same t
 furthermore, the order of the writes can be reordered
 furthermore, processors are allowed to delay reads until writes later in the instruction stream
 
-In general:
-check if in L1. If not go check in L2 and mark least recently accessed L1 for
-move to L2. bubbles up to L3 until need for memory access which will go to memory
-controller etc.
 
-For Intel CPUs, i3-i7 of same generation will have same micro-architecture.
-Just more cache, hyperthreading, cores, die size etc. 
-
-important that these are sustained speeds, 
-so for small file sizes expect a lot less as seconds smaller
-note that storage space advertised with S.I units, whilst OS works with binary
 
 Intel clock frequency is often changed by OS
-
-also have uOP cache considered L0
 
 
 Hyperthreads don't increase number of instructions per second, rather number of instructions
 that can be queued (so hyperthread like a queue)
 
-Caches, are instruction and data caches combined?
-What distinct features in a core, e.g. shared caches? 
-What additional features on one capable of hyperthreading?
 
 CPU could implement VT-x, but motherboard and bios must support this as well?
 What additional features are present when CPU supports this?
 
-Cache probably 8-way as compromise between lookup and copy speed.
-Flow of cache, is it check if from 8-way copy then L2 8-way or finish L1 entirely?
-If found, in L2 does it copy to L1?
+
 
 Microarchitecture will affect instruction latency and throughtput by implementation of execution and control units
 
@@ -122,6 +120,7 @@ Codec is typically a separate hardware unit that you interact with via a specifi
 HEVC (H.265; high efficiency video coding) newer version of H.264
 VP9 is a open source Google video coding format
 
+When people say vector operations, they mean SIMD
 SSE registers are 128bits (4 bytes) XMM, AVX are 256bits (8 bytes) YMM
 
 Common transistor size is 7nm. Low as 2nm
@@ -133,26 +132,7 @@ TDP (thermal design power) maximum amount of heat (measure in watts) at maximum 
 that is designed to be dissipated (bus sizes of chips smaller, so TDP getting lower)
 However, value is rather vague as could be measured on over-clock and doesn't take into account ambient conditions
 
-Cache eats up precious die-area. Having a large cache increases lookup time
 
-CISC gives reduced cache pressure for high-intensive, sustained loops
-Instructions with higher cycle count
-Typically a register-memory architecture, e.g. can add one value in register, one in memory (as oppose to load-store)
-
-
-Average CPU die-size is 100mm², GPU much larger as benefits from parallelisation around 500mm²
-
-direct-mapped cache has each memory address mapping to a single cache line
-lookup is instantenous, however high replacement inefficiences
-fully-associative cache has each memory address mapping to any cache line
-entire cache has to be searched, however low replacement inefficiencies
-set-associative cache divides cache into blocks of fully-associative.
-the number of cache lines in a block is what say an 8-way cache means
-this compromises between the efficiency and lookup speed
-
-Caches will stay relatively small due to the nature of how computers are used.
-At any point, there is only a small amount of local data the CPU will process next.
-So, beyond the sweet spot of 64MB, having a larger cache will marginally better hit ratio.
 
 hardware scheduler allows for hyperthreading (AMD simultaneous multi-threading) 
 share execution units
@@ -321,6 +301,10 @@ which will comprise of sections
 (possibly more segments in MCUs as more memory spaces)
 
 ## Components
+important that these are sustained speeds, 
+so for small file sizes expect a lot less as seconds smaller
+note that storage space advertised with S.I units, whilst OS works with binary
+
 Column Address Strobe (CAS), or CL (CAS latency) is time between RAM controller
 read and when data is available
 
@@ -612,6 +596,17 @@ QI is a wireless charging standard most supported by mobile-devices for distance
 FreePower technology allows QI charging mats to support concurrent device charging
 
 # Phone
+Procedure Call Standard for the Arm Architecture (AAPCS).
+Part of ABI for ARM (also part of ABI is debugging, dynamic linking semantics etc.)
+From this we can garner say, not to put more than 4 word sized arguments to
+function as this will require stack, consuming more time and space
+Furthermore, alignment restrictions mean that passing a double word has to be even-odd register pair,
+so ordering of parameters important
+So, call standard important for ordering and number of parameters?
+
+more instructions required for unaligned memory accesses?
+(most modern x64 arm will not crash on an unaligned access?)
+from armv7, unaligned accesses allowed
 
 # Wearable
 5ATM is 5 atmospheres. 1 atmosphere is about 10m (however calculated when motionless)
