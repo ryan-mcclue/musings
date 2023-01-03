@@ -1,88 +1,106 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
-creating website: https://threadreaderapp.com/thread/1606219302855745538.html
+# Desktop
+## Chips
+cpu contains clock. each tick marks a step in the 
+fetch(signal sent along address bus as specified by PC; instruction or data sent along data bus)-
+so, whenever interacting with memory, will first have to specify address bus and get/store result via data bus
+therefore, for something like LDR rax, [val] will require two fetch-executes.
+this is von-neumann bottleneck
+most modern computers are modified-harvard, in that the L1 caches have separate instruction and data regions.
+therefore, they can be read simultaneously 
 
-TODO: what is blockchain and web3?
+decode-execute cycle
+an accumulator register is term used to indicate typical register that holds results of large arithmetic
 
-# MCU
-On startup, copy from Flash to RAM then jump to reset handler address
-No real need for newlib, just use standalone mpaland/printf
-Some chips have XIP (execute-in-place) which allows for running directly from flash 
+von-neumann
+instruction, data in RAM
+instructions+data share data bus between CPU and RAM, so they have to
+be fetched separately
 
-QI is a wireless charging standard most supported by mobile-devices for distances up to 4cm
-FreePower technology allows QI charging mats to support concurrent device charging
+harvard 
+instruction, data separate
 
-# Phone
-(Serial Advanced Technology Attachment)
-important that these are sustained speeds, so for small file sizes expect a lot less as seconds smaller
-note that storage space advertised with S.I units, whilst OS works with binary
+in reality, all CPUs are von-neumann presented to the user
+and harvard at the low-level.
+it's only harvard from the pipeline/cache stage
+modified harvard could also mean instruction and data bus, but unified memory 
+so, the variation amongst harvard architectures is in how one transitions to the other 
 
-RAM potentially hundreds of cycles (CAS latency and cache retrieval process)
-(important to note that RAM CAS is only say 20% of total latency as will 
-check traverse cache and than copy it to cache)
-https://sites.utexas.edu/jdm4372/2011/03/10/memory-latency-components/
+Procedure Call Standard for the Arm Architecture (AAPCS).
+Part of ABI for ARM (also part of ABI is debugging, dynamic linking semantics etc.)
+From this we can garner say, not to put more than 4 word sized arguments to
+function as this will require stack, consuming more time and space
+Furthermore, alignment restrictions mean that passing a double word has to be even-odd register pair,
+so ordering of parameters important
+So, call standard important for ordering and number of parameters?
+
+When people say vector operations, they mean SIMD
+
+endianness only relevent when reading and writing to memory addresses and 
+interpreting the bytes
+overall, endianness usefulness determined by majority of operations performed,
+e.g. converting string to int easier in big-endian
+e.g. little-endian easier to read values of variable length (address does not change)
+
+
+memory model: visibility and consistency of changes to data stored in memory
+necessary for understanding multiple thread execution 
+
+alignment ensures that value doesn't straddle cache line boundaries
+
+
+more instructions required for unaligned memory accesses?
+(most modern x64 arm will not crash on an unaligned access?)
+from armv7, unaligned accesses allowed
+
+to implement a software memory model, i.e. C++, will have to know hardware memory model
+
+language (from source to machine code)
+so, C11 memory model is in relation to rearranging of loads/stores in 
+assembly for optimisations? (so is a weak model?)
+mainly in reference to the behaviour of atomics to synchronise programs
+language memory model will abstract away hardware memory model
+https://research.swtch.com/plmm
+
+a language memory model will provide ways to order memory operations
+and to ensure coherency of modification order, e.g. atomics, acquire/release etc.
+(we can ignore this if we use intrinisics?)
+(i.e. to provide synchronisation primitives, language will have to implement a memory model)
+
+hardware (from machine code to execution on the CPU):
+* sequential consistency (ideal as easy to understand, however doesn't maximise hardware speed)
+* x86-TSO (total store order). 
+each processor reads from shared memory
+all processors agree upon the order in which their write queues are written to memory
+write queue is FIFO, so write queue is flushed in same order as seen by the processor
+however, when the write queue is flushed is up to the CPU
+therefore, to enforce stronger memory ordering, architecture supplies memory barriers/fences 
+(in a sense to enforce sequentially consistent behaviours)
+to ensure write queue is flushed before any future reads occur
+(without fences, I suppose write queue length would determine whether certain synchronisation problems occur more frequently)
+* ARM (most relaxed/weak)
+each processor reads and writes from its own copy of memory
+writes propagate to other processors independently, i.e not all update at same time
+furthermore, the order of the writes can be reordered
+furthermore, processors are allowed to delay reads until writes later in the instruction stream
+
 In general:
 check if in L1. If not go check in L2 and mark least recently accessed L1 for
 move to L2. bubbles up to L3 until need for memory access which will go to memory
 controller etc.
 
-so, ram frequency gives max. throughput
-however latency of ram also important
-
-(cache latency from wikichip)
-
-generic is referencing Ubuntu specific kernel compilation (could also have -lowlatency etc.) 
-(generic does not include a lot of modules in kernel to alleviate RAM, so use modprobe)
-(-41 is build number, i.e how many times compiled)
-(the compiler, linker, libc are all specific to linux OS used, e.g. compiled with different settings, different versions, etc.)
-
-
-For intel CPUs, i3-i7 of same generation will have same micro-architecture.
+For Intel CPUs, i3-i7 of same generation will have same micro-architecture.
 Just more cache, hyperthreading, cores, die size etc. 
 
+important that these are sustained speeds, 
+so for small file sizes expect a lot less as seconds smaller
+note that storage space advertised with S.I units, whilst OS works with binary
 
-$(grub-)
-
-Intel clock frequency is often changed by OS?
-
-Is cortex-m4 microarchitecture? How does this relate to intel naming? AMD also?
+Intel clock frequency is often changed by OS
 
 also have uOP cache considered L0
 
-$(getconf LEVEL1_DCACHE_LINESIZE)
-
-$(sudo lshw -html > info.html) for RAM, harddrive and drivers of things
-$(ldd --version) 
-$(lsb_release -a), $(cat /etc/debian_version)
-
-SATA ssd is the lowest grade ssd (however still 4 times bandwidth)
-
-storage devices: form factor (M.2 keying, PCIe), interface (SATAIII, NVMe, PCIe), technology
-a single form factor may support multiple interfaces, so ensure motherboard has
-appropriate chipset
-
-DRAM refreshed periodically. SDRAM (synchronises clock speed with memory speed).
-SDRAM. LPDDR4 (low-power; double pumping on rising and falling edge of clock)
-
-SRAM more expensive, faster, not refreshed, larger die size.
-
-DIIM (dual in-line memory module) is form factor (wider bus)
-SODIMM (small outline)
-
-
-
-From $(cpuinfo) see that although 64bit cpu this is just what the instruction set supports.
-As we have no need for 16 exabytes (tera, peta, exa), the physical address size may be
-39bits, and virtual size 48bits to save on unused transistors
-
-$(cpu-x) for cache information per core
-
-
-
-NUMA node relationship between CPU socket (location on motherboard) and memory banks.
-So, say 2 sockets will probably have 2 NUMA nodes.
-Therefore, not all physical memory directly accessible from 1 cpu socket;
-will have to go through other socket to get it
 
 Hyperthreads don't increase number of instructions per second, rather number of instructions
 that can be queued (so hyperthread like a queue)
@@ -100,40 +118,44 @@ If found, in L2 does it copy to L1?
 
 Microarchitecture will affect instruction latency and throughtput by implementation of execution and control units
 
-# Wearable
-5ATM is 5 atmospheres. 1 atmosphere is about 10m (however calculated when motionless)
-50m for 10 minutes
-
-# Desktop
 Codec is typically a separate hardware unit that you interact with via a specific API
 HEVC (H.265; high efficiency video coding) newer version of H.264
 VP9 is a open source Google video coding format
 
-Typically stored as crt0.s, this will perform OS specific run-time initialisation.
-The conditions assumed here will be outlined in ABI, e.g. argc in rdi
-Some functions include setting up processor registers (e.g. SSE), MMU, caches, threading
-ABI stack alignment, frame pointer initialisation, C runtime setup (setting .bss to 0),
-C library setup (e.g. stdout, math precision)
-The program loader will load from Flash into RAM then call _start (which is crt entrypoint)
-
-ELF (executable and linkable format)
-executable header contains type (executable, dynamic, relocatable) and entrypoint
-sections:
-.text ()
-.bss ()
-.data ()
-.rodata ()
-A segment (which confusingly is called a section in ld to be placed in a memory region)
-
-section compile-time
-so, something like .text, .bss
-segment run-time
-so, something like .dseg (data), .eseg (eeprom) and .cseg (code/program)
-essentially will have loadable code segment and loadable data segment 
-which will comprise of sections
-(possibly more segments in MCUs as more memory spaces)
-
 SSE registers are 128bits (4 bytes) XMM, AVX are 256bits (8 bytes) YMM
+
+Common transistor size is 7nm. Low as 2nm
+Silicon atom is 0.2nm
+From gleaning a Moore's law transistor graph, see that average CPU a few billion transistors
+and high end SOCs around 50 billion transistors
+
+TDP (thermal design power) maximum amount of heat (measure in watts) at maximum load
+that is designed to be dissipated (bus sizes of chips smaller, so TDP getting lower)
+However, value is rather vague as could be measured on over-clock and doesn't take into account ambient conditions
+
+Cache eats up precious die-area. Having a large cache increases lookup time
+
+CISC gives reduced cache pressure for high-intensive, sustained loops
+Instructions with higher cycle count
+Typically a register-memory architecture, e.g. can add one value in register, one in memory (as oppose to load-store)
+
+
+Average CPU die-size is 100mm², GPU much larger as benefits from parallelisation around 500mm²
+
+direct-mapped cache has each memory address mapping to a single cache line
+lookup is instantenous, however high replacement inefficiences
+fully-associative cache has each memory address mapping to any cache line
+entire cache has to be searched, however low replacement inefficiencies
+set-associative cache divides cache into blocks of fully-associative.
+the number of cache lines in a block is what say an 8-way cache means
+this compromises between the efficiency and lookup speed
+
+Caches will stay relatively small due to the nature of how computers are used.
+At any point, there is only a small amount of local data the CPU will process next.
+So, beyond the sweet spot of 64MB, having a larger cache will marginally better hit ratio.
+
+hardware scheduler allows for hyperthreading (AMD simultaneous multi-threading) 
+share execution units
 
 ## Legalities
 Anti-trust laws don't prevent monopolies, they prevent attempts to monopolise by 
@@ -171,11 +193,13 @@ Typically generated by concatenating bits of MAC address and timestamp
 UEFI firmware interface made to standardise interface between OS and firmware 
 for purposes of booting
 
-Called /dev/sd as originally for SCSI (small computer system interface; standards for transferring data between computers and devices) 
+Called /dev/sd as originally for SCSI 
+(small computer system interface; standards for transferring data between computers and devices) 
 The preceding letter indicates the order in which it's found, e.g. /dev/sda first found 
 The preceding number indicates the partition number, e.g. and /dev/sda1, /dev/sda2
 
-UEFI use of GPT (GUID partition table) incorporates CRC to create more recoverable boot environment
+UEFI use of GPT (GUID partition table) incorporates CRC to create more 
+recoverable boot environment
 over BIOS MBR (located in first sector of disk)
 Furthermore, UEFI has more addressable memory in 64-bit mode as oppose to only 16-bit mode
 Also, UEFI supports networking
@@ -186,62 +210,10 @@ NOTE: The bootloader is the EFI OS loader and is part of the OS that will load t
 ACPI interface to pass information from firmware to OS.
 This firmware will have hardware information baked into it set by manufacturers 
 
-Each CPU socket have memory banks that are local to it, i.e. can be accessed from it directly.
-NUMA (non-uniform memory access) means that accessing memory from a non-local bank will not
-be the same speed. A NUMA-aware OS will try to mitigate these accesses
-
-Common transistor size is 7nm. Low as 2nm
-Silicon atom is 0.2nm
-From gleaning a Moore's law transistor graph, see that average CPU a few billion transistors
-and high end SOCs around 50 billion transistors
-
-TDP (thermal design power) maximum amount of heat (measure in watts) at maximum load
-that is designed to be dissipated (bus sizes of chips smaller, so TDP getting lower)
-However, value is rather vague as could be measured on over-clock and doesn't take into account ambient conditions
-
-Cache eats up precious die-area. Having a large cache increases lookup time
-
-Linux is a monolithic kernel, i.e. drivers, file system etc. are all in kernel space.
-So, more efficient, not as robust to component failure
-Windows in hybrid kernel, moving away from microkernel due to inefficiencies
-Compiled differently, e.g. generic
-
-SystemV ABI:
-IMPORTANT: cannot easily access upper portion of register, only lower 
-rdi, rsi, rdx, rcx, r8, r9 (6 integer arguments)
-xmm0, xmm1, xmm2, xmm3, xmm4, xmm5, xmm6 (7 floating arguments)
-remaining arguments pushed right-to-left on stack
-rax return and syscall number
-stack 16-byte aligned before function call (SSE2 is baseline for x86-64, so make efficient for __m128)?
-(word size 8 bytes?)
-
-
-
-CISC gives reduced cache pressure for high-intensive, sustained loops
-Instructions with higher cycle count
-Typically a register-memory architecture, e.g. can add one value in register, one in memory (as oppose to load-store)
-
-SRAM is fast, requires 6 transistors for each bit.
-So, for 64MB cache, 3.2billion transistors. Sizeable percentage of die-area
-DRAM is 1 transistor per bit
-
-Average CPU die-size is 100mm², GPU much larger as benefits from parallelisation around 500mm²
-
-direct-mapped cache has each memory address mapping to a single cache line
-lookup is instantenous, however high replacement inefficiences
-fully-associative cache has each memory address mapping to any cache line
-entire cache has to be searched, however low replacement inefficiencies
-set-associative cache divides cache into blocks of fully-associative.
-the number of cache lines in a block is what say an 8-way cache means
-this compromises between the efficiency and lookup speed
-
-Caches will stay relatively small due to the nature of how computers are used.
-At any point, there is only a small amount of local data the CPU will process next.
-So, beyond the sweet spot of 64MB, having a larger cache will marginally better hit ratio.
-
 ## Formats 
 Inodes store file metadata.
-The metadata stored by an inode is determined by filesystem in use, except for filename which is never stored 
+The metadata stored by an inode is determined by filesystem in use, 
+except for filename which is never stored 
 Typical metadata includes size, permissions, data pointer
 NOTE: FAT32 won't store permissions, last modification time, no journaling or soft-links
 
@@ -271,12 +243,34 @@ has PPAs to allow installation of 3rd party applications,
 and install procedure just works.
 Also updates more regularly than Debian and provides LTS, so know regular backports provided
 
+Linux is a monolithic kernel, i.e. drivers, file system etc. are all in kernel space.
+So, more efficient, not as robust to component failure
+Windows uses a hybrid kernel, moving away from original microkernel due to inefficiencies
+Using Ubuntu generic kernel (could also have -lowlatency etc.) to not include a lot of
+modules in kernel to free up RAM usage
+
 Xfce as default Ubuntu GNOME had bug with multiple keyboards. 
 Furthermore, Xfce codebase was readable when inspecting X11 code.
 In addition, Xfce automatically provided GUI shortcut creation
 
+.deb and .rpm are binary packages. 
+Annoyances arise due to specifying the specific library dependency for each distro version
+Flatpaks and Snaps are containerised applications that include the specific libraries and runtimes
+AppImages combine the 'shared' libraries and runtimes of Flatpaks and Snaps into a giant file. 
+This file can be copied and run on any distro
+If packages is being actively maintained, preferable to use .deb as faster and simpler
+
 Linux DRM (direct rendering manager) -> X11 (display server) -> xfce (desktop environment)  
 Linux ALSA (advanced linux sound architecture) -> pulseaudio (sound server) 
+
+SystemV ABI:
+IMPORTANT: cannot easily access upper portion of register, only lower 
+rdi, rsi, rdx, rcx, r8, r9 (6 integer arguments)
+xmm0, xmm1, xmm2, xmm3, xmm4, xmm5, xmm6 (7 floating arguments)
+remaining arguments pushed right-to-left on stack
+rax return and syscall number
+stack 16-byte aligned before function call (SSE2 is baseline for x86-64, so make efficient for __m128)?
+(word size 8 bytes?)
 
 A premptive scheduler will swap processes based on specific criteria.
 Round-robin means each process will run for a designated time slice
@@ -302,33 +296,130 @@ A container will utilise one of these options provided by the kernel to acheive:
  * has own networking namespace
  * resource usage limits
 
-.deb and .rpm are binary packages. 
-Annoyances arise due to specifying the specific library dependency for each distro version
-Flatpaks and Snaps are containerised applications that include the specific libraries and runtimes
-AppImages combine the 'shared' libraries and runtimes of Flatpaks and Snaps into a giant file. 
-This file can be copied and run on any distro
-If packages is being actively maintained, preferable to use .deb as faster and simpler
+Typically stored as crt0.s, this will perform OS specific run-time initialisation.
+The conditions assumed here will be outlined in ABI, e.g. argc in rdi
+Some functions include setting up processor registers (e.g. SSE), MMU, caches, threading
+ABI stack alignment, frame pointer initialisation, C runtime setup (setting .bss to 0),
+C library setup (e.g. stdout, math precision)
+The program loader will load from Flash into RAM then call _start (which is crt entrypoint)
 
-Terminal type writer something you should ask your grandfather about
+ELF (executable and linkable format)
+executable header contains type (executable, dynamic, relocatable) and entrypoint
+sections:
+.text (code)
+.bss (uninitialised globals)
+.data (globals)
+.rodata (constants)
+A segment (which confusingly is called a section in ld to be placed in a memory region)
 
-KVM (kernel-based virutal machine) kernel based virtual machine allows linux kernel to act as hypervisor
-∴ type 1 hypervisor (virtualbox type 2, i.e. run atop an OS)
-Often see with KVM/QEMU (virt-manager)
+section compile-time
+so, something like .text, .bss
+segment run-time
+so, something like .dseg (data), .eseg (eeprom) and .cseg (code/program)
+essentially will have loadable code segment and loadable data segment 
+which will comprise of sections
+(possibly more segments in MCUs as more memory spaces)
 
-hardware scheduler allows for hyperthreading (AMD simultaneous multi-threading) 
-share execution units
+## Components
+Column Address Strobe (CAS), or CL (CAS latency) is time between RAM controller
+read and when data is available
 
+so, ram frequency gives max. throughput
+however latency of ram also important
+
+RAM potentially hundreds of cycles (CAS latency and cache retrieval process)
+(important to note that RAM CAS is only say 20% of total latency as will 
+check traverse cache and than copy it to cache)
+
+(Serial Advanced Technology Attachment)
+storage devices: form factor (M.2 keying, PCIe), interface (SATAIII, NVMe, PCIe), technology
+a single form factor may support multiple interfaces, so ensure motherboard has
+appropriate chipset
+
+SATA SSD is the lowest grade ssd (however still 4 times bandwidth)
+
+DRAM refreshed periodically. SDRAM (synchronises clock speed with memory speed).
+SDRAM. LPDDR4 (low-power; double pumping on rising and falling edge of clock)
+
+SRAM more expensive, faster, not refreshed, larger die size.
+
+DIIM (dual in-line memory module) is form factor (wider bus)
+SODIMM (small outline)
+
+From $(cpuinfo) see that although 64bit cpu this is just what the instruction set supports.
+As we have no need for 16 exabytes (tera, peta, exa), the physical address size may be
+39bits, and virtual size 48bits to save on unused transistors
+(i.e. the address bus of the CPU won't support 16 exabytes)
+
+NUMA node relationship between CPU socket (location on motherboard) and memory banks.
+So, say 2 sockets will probably have 2 NUMA nodes.
+Therefore, not all physical memory directly accessible from 1 cpu socket;
+will have to go through other socket to get it
+
+Each CPU socket have memory banks that are local to it, i.e. can be accessed from it directly.
+NUMA (non-uniform memory access) means that accessing memory from a non-local bank will not
+be the same speed. A NUMA-aware OS will try to mitigate these accesses
 
 RAID is method of combining multiple disks together so appear like one disk called an array.
 Various types, e.g. RAID0 (striping) some parts of file in multiple disks, 
 RAID1 (mirroring) each disk is dusplicate so could give speed increase etc.
 
-
 PCI usually for attaching peripherals to motherboards, 
 e.g. network/audio/usb/graphics controller cards
 
+SRAM is fast, requires 6 transistors for each bit.
+So, for 64MB cache, 3.2billion transistors. Sizeable percentage of die-area
+DRAM is 1 transistor per bit
 
-# Laptop
+
+
+## Power
+Petrol cars still use lead-acid as they have lower internal resistance and 
+so can give higher peak current then equivalent lipo (just not for as long)
+
+LiPo  is lithium-ion poly. uses polymer electrolyte instead of liquid.
+lipo more expensive, shorter lifespan, less energy, more robust 
+li-poly battery is rechargeable (so rechargeable is structured to allow a current to be passed to it to reverse the process)
+battery will have two electrodes, say lithium cobalt oxide (cathode) and graphite (anode, negative)
+graphite is almost always used as anode
+when charging, lithium ions move to graphite
+when discharging, lithium ions move from graphite to lithium
+so, we can see that the atomic structure of the electrodes are changed, 
+hence why charge cycles affect battery life
+
+Lithium-ion has higher energy density, cheaper, not available in small sizes 
+and more dangerous due to liquid electrolyte
+
+Battery 51Watt/hr, which is A/hr * V is not a fixed value, e.g. 1A/hr could run 0.1A for 10 hours 
+
+## Memory
+NAND and NOR flash are two types of non-volatile memory
+NOR has faster read, however more expensive per bit and slower write/erase
+NOR used in BIOS chips (firmware will be motherboard manufacturer, e.g. Lenovo)
+A NAND mass storage device will require a controller chip, i.e. a microcontroller
+How the controller accesses the NAND flash (i.e. how its Flash Translation Layer operates), 
+will determine what type of storage it is:
+* SD (secure digital)
+* eMMC (embedded multimedia card): Typically SD soldered on motherboard
+* USB (universal serial bus) 
+* SSD (solid state drive): Parallel NAND access, more intelligent wear leveling and block sparring
+
+QSPI can be used without CPU with data queues
+
+## Ports
+(audio visual) HDMI-A, C (mini), D (micro)
+USB-A,USB-B,USB-B(mini) 
+USB-C is USB3.0
+
+3.5mm audio jack (3 pole number of shafts (internal wires); 4 pole for added microphone)
+
+ethernet CAT backwards compatible. connector called RJ45 
+telephone cable is called RJ11
+
+IEC power cords (kettleplug, cloverleaf)
+
+DC barrel jack
+
 ## Screens
 Touch screen types need some external input to complete circuit
 Resistive works by pressure pushing down plastic<-electric coating->glass
@@ -359,6 +450,14 @@ nit is a measure of luminance, i.e. intensity of light (brightness is how we per
 higher nit display are more easily viewable in a wider array of lighting conditions (e.g. combat the sun's light reflecting off the surface)
 
 e-ink less power than LCD as only uses power when arrangment of colours changes
+
+
+
+
+
+
+
+
 
 # Dalgo
 
@@ -469,121 +568,7 @@ client server (p2p unreliable as internet path optimised for cost/closest exchan
 Matchmaking,  host migration difficult as hard to measure what user has good connection,  
 e.g. Whats there NAT type?
 
-## Power
-Pertol cars still use lead-acid as they have lower internal resistance and so can give higher peak current then equivalent lipo (just not for as long)
 
-LiPo  is lithium-ion poly. uses polymer electrolyte instead of liquid.
-lipo more expensive, shorter lifespan, less energy, more robust 
-li-poly battery is rechargeable (so rechargeable is structured to allow a current to be passed to it to reverse the process)
-battery will have two electrodes, say lithium cobalt oxide (cathode) and graphite (anode, negative)
-graphite is almost always used as anode
-when charging, lithium ions move to graphite
-when discharging, lithium ions move from graphite to lithium
-so, we can see that the atomic structure of the electrodes are changed, 
-hence why charge cycles affect battery life
-
-Lithium-ion has higher energy density, cheaper, not available in small sizes 
-and more dangerous due to liquid electrolyte
-
-Battery 51Watt/hr, which is A/hr * V is not a fixed value, e.g. 1A/hr could run 0.1A for 10 hours 
-
-## Memory
-NAND and NOR flash are two types of non-volatile memory
-NOR has faster read, however more expensive per bit and slower write/erase
-NOR used in BIOS chips
-A NAND mass storage device will require a controller chip, i.e. a microcontroller
-How the controller accesses the NAND flash (i.e. how its Flash Translation Layer operates), 
-will determine what type of storage it is:
-* SD (secure digital)
-* eMMC (embedded multimedia card): Typically SD soldered on motherboard
-* USB (universal serial bus) 
-* SSD (solid state drive): Parallel NAND access, more intelligent wear leveling and block sparring
-
-QSPI can be used without CPU with data queues
-
-## CPU
-cpu contains clock. each tick marks a step in the 
-fetch(signal sent along address bus as specified by PC; instruction or data sent along data bus)-
-so, whenever interacting with memory, will first have to specify address bus and get/store result via data bus
-therefore, for something like LDR rax, [val] will require two fetch-executes.
-this is von-neumann bottleneck
-most modern computers are modified-harvard, in that the L1 caches have separate instruction and data regions.
-therefore, they can be read simultaneously 
-
-decode-execute cycle
-an accumulator register is term used to indicate typical register that holds results of large arithmetic
-
-von-neumann
-instruction, data in RAM
-instructions+data share data bus between CPU and RAM, so they have to
-be fetched separately
-
-harvard 
-instruction, data separate
-
-in reality, all CPUs are von-neumann presented to the user
-and harvard at the low-level.
-it's only harvard from the pipeline/cache stage
-modified harvard could also mean instruction and data bus, but unified memory 
-so, the variation amongst harvard architectures is in how one transitions to the other 
-
-Procedure Call Standard for the Arm Architecture (AAPCS).
-Part of ABI for ARM (also part of ABI is debugging, dynamic linking semantics etc.)
-From this we can garner say, not to put more than 4 word sized arguments to
-function as this will require stack, consuming more time and space
-Furthermore, alignment restrictions mean that passing a double word has to be even-odd register pair,
-so ordering of parameters important
-So, call standard important for ordering and number of parameters?
-
-When people say vector operations, they mean SIMD
-
-endianness only relevent when reading and writing to memory addresses and 
-interpreting the bytes
-overall, endianness usefulness determined by majority of operations performed,
-e.g. converting string to int easier in big-endian
-e.g. little-endian easier to read values of variable length (address does not change)
-
-
-memory model: visibility and consistency of changes to data stored in memory
-necessary for understanding multiple thread execution 
-
-alignment ensures that value doesn't straddle cache line boundaries
-
-
-more instructions required for unaligned memory accesses?
-(most modern x64 arm will not crash on an unaligned access?)
-from armv7, unaligned accesses allowed
-
-to implement a software memory model, i.e. C++, will have to know hardware memory model
-
-language (from source to machine code)
-so, C11 memory model is in relation to rearranging of loads/stores in 
-assembly for optimisations? (so is a weak model?)
-mainly in reference to the behaviour of atomics to synchronise programs
-language memory model will abstract away hardware memory model
-https://research.swtch.com/plmm
-
-a language memory model will provide ways to order memory operations
-and to ensure coherency of modification order, e.g. atomics, acquire/release etc.
-(we can ignore this if we use intrinisics?)
-(i.e. to provide synchronisation primitives, language will have to implement a memory model)
-
-hardware (from machine code to execution on the CPU):
-* sequential consistency (ideal as easy to understand, however doesn't maximise hardware speed)
-* x86-TSO (total store order). 
-each processor reads from shared memory
-all processors agree upon the order in which their write queues are written to memory
-write queue is FIFO, so write queue is flushed in same order as seen by the processor
-however, when the write queue is flushed is up to the CPU
-therefore, to enforce stronger memory ordering, architecture supplies memory barriers/fences 
-(in a sense to enforce sequentially consistent behaviours)
-to ensure write queue is flushed before any future reads occur
-(without fences, I suppose write queue length would determine whether certain synchronisation problems occur more frequently)
-* ARM (most relaxed/weak)
-each processor reads and writes from its own copy of memory
-writes propagate to other processors independently, i.e not all update at same time
-furthermore, the order of the writes can be reordered
-furthermore, processors are allowed to delay reads until writes later in the instruction stream
 
 
 ## ARM
@@ -594,19 +579,6 @@ FPU is a VFPv3-D16 implementation of the ARMv7 floating-point architecture
 
 details hidden due to IP nature, e.g. LPDDR3 memory controller from CPU is all we can know?
 
-## Ports
-(audio visual) HDMI-A, C (mini), D (micro)
-USB-A,USB-B,USB-B(mini) 
-USB-C is USB3.0
-
-3.5mm audio jack (3 pole number of shafts (internal wires); 4 pole for added microphone)
-
-ethernet CAT backwards compatible. connector called RJ45 
-telephone cable is called RJ11
-
-IEC power cords (kettleplug, cloverleaf)
-
-DC barrel jack
 
 
 RENDERING:
@@ -626,3 +598,21 @@ lens refract light to central focal point
 
 /dev/urandom is cryptographically secure pseudo-random number
 /dev/zero
+
+creating website: https://threadreaderapp.com/thread/1606219302855745538.html
+
+TODO: what is blockchain and web3?
+
+# MCU
+On startup, copy from Flash to RAM then jump to reset handler address
+No real need for newlib, just use standalone mpaland/printf
+Some chips have XIP (execute-in-place) which allows for running directly from flash 
+
+QI is a wireless charging standard most supported by mobile-devices for distances up to 4cm
+FreePower technology allows QI charging mats to support concurrent device charging
+
+# Phone
+
+# Wearable
+5ATM is 5 atmospheres. 1 atmosphere is about 10m (however calculated when motionless)
+50m for 10 minutes
