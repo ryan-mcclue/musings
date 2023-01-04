@@ -98,6 +98,12 @@ It will provide synchronisation semantics, e.g. atomics, acquire, release, fence
 These semantics are used to enforce sequentially consistent behaviour when we want it.
 However, using intrinsics, we can focus only on hardware memory model.
 
+TODO: is cache coherency a subset of memory model?
+Intel uses write-back i.e. MESI? so not MOSI?
+x86 CPUs use a variation on the MESI protocol (MESIF for Intel, MOESI for AMD) 
+to keep their caches coherent with each other
+Cache coherency is how caches agree upon writes in cache?
+
 ## Legalities
 Anti-trust laws don't prevent monopolies, they prevent attempts to monopolise by 
 unfair means, e.g. Microsoft browser market, Apple app store etc.
@@ -411,6 +417,8 @@ So, CUDA is a general purpose Nvidia GPU program that can utilise GPU's highly p
 
 Data deduplication means to remove duplicates
 
+TODO: testing procedures
+
 REST (representational state transfer) is an interface that outlines how the state of a resource is interacted with
 On the web, an URL is an access point to a resource
 A RESTful API will have URLs respond to CRUD requests in a standard way:
@@ -508,12 +516,42 @@ e.g. Whats there NAT type?
 
 
 # MCU
-cortex-a53 is a synthesisable IP core sold to other semiconductor companies (stm, nxp, etc.)
-as licensed IP core, the amount of cache will vary e.g. 8-64Kb?
+ARM core ISA e.g. ARMv8
+Will then have profiles, e.g. M-Profile ARMv8-M 
+R-Profile for larger systems like automotive
+
+ARM holdings implements profile in own CPU, e.g. Cortex-A72
+This is a synthesisable IP (Intellectual Property) core sold to other 
+semiconductor companies who make implementation decisions like 
+amount of cache from 8-64kb specification.
+
+However, other companies can build own CPU from ISA alone, e.g. Qualcomm Kryo and Nvidia Denver
+
+Then have actual MCUs e.g. STMicroelectronics, NXP
+or SoCs e.g. Qualcomm Snapdragon, Nvidia Tegra 
 
 FPU is a VFPv3-D16 implementation of the ARMv7 floating-point architecture
 
-details hidden due to IP nature, e.g. LPDDR3 memory controller from CPU is all we can know?
+* UART: 9600 baud (symbols per second; in case of digital≡ bps) 
+(1 start bit, 8 data bits, no parity bit, 1 stop bit) 
+∴ effective data rate is less than bit transmission rate 
+* USART: 
+* SPI:
+* I2C:
+
+On startup, copy from Flash to RAM then jump to reset handler address
+No real need for newlib, just use standalone mpaland/printf
+Some chips have XIP (execute-in-place) which allows for running directly from flash 
+
+QI is a wireless charging standard most supported by mobile-devices for distances up to 4cm
+FreePower technology allows QI charging mats to support concurrent device charging
+
+QSPI can be used without CPU with data queues
+
+LED anode is positive longer lead
+
+
+
 
 
 
@@ -539,16 +577,6 @@ creating website: https://threadreaderapp.com/thread/1606219302855745538.html
 
 TODO: what is blockchain and web3?
 
-On startup, copy from Flash to RAM then jump to reset handler address
-No real need for newlib, just use standalone mpaland/printf
-Some chips have XIP (execute-in-place) which allows for running directly from flash 
-
-QI is a wireless charging standard most supported by mobile-devices for distances up to 4cm
-FreePower technology allows QI charging mats to support concurrent device charging
-
-QSPI can be used without CPU with data queues
-
-LED anode is positive longer lead
 
 
 

@@ -20,8 +20,11 @@ e.g. this executes every 1 second, this every 500ms etc.
 
 Thermal imaging coupled with camera more 'deterministic/maintainable' than AI vision
 
-There are of course international standards (IEC 60601, or IEC 62304) that you have to follow in order to get your device CE/FDA approval.
-These standards usually require to provide a lot of documentation and to pass a series of tests in order to verify that your device is working as intended and it's not dangerous.
+There are of course international standards (IEC 60601, or IEC 62304) that you have 
+to follow in order to get your device CE/FDA approval.
+These standards usually require to provide a lot of documentation and to pass a 
+series of tests in order to verify that your device is working as intended 
+and it's not dangerous.
 
 could even be simplex (one way only)
 full-duplex can still be serial, requiring at least two wires (duplex meaning bidirectional)
@@ -342,9 +345,11 @@ Critical section means non concurrent access to this code.
 Acheived with a mutex obtain and lock pair?
 ```
 
-Modern OS will have code memory write protected for security reasons. Bare metal can do this however
+Modern OS will have code memory write protected for security reasons. 
+Bare metal can do this however
 
-IMPORTANT: for a preemptive multitasking kernel like linux, a call to pthread_yeild() (allow other threads to run on CPU)
+IMPORTANT: for a preemptive multitasking kernel like linux, 
+a call to pthread_yeild() (allow other threads to run on CPU)
 is not necessary. however, for embedded, maybe
 
 LEDS:
