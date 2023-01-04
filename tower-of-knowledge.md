@@ -277,10 +277,11 @@ SDRAM. LPDDR4
 (low-power; double pumping on rising and falling edge of clock, 
 increasing bus clock speed while internal typically stays the same, amount prefetched etc.)
 
-DIIM (dual in-line memory module) is form factor (wider bus)
-SODIMM (small outline)
 
-Column Address Strobe (CAS), or CL (CAS latency) is time between RAM controller
+DIIM (Dual In-Line Memory Module) is form factor with a wider bus
+SODIMM (Small Outline)
+
+CAS (Column Address Strobe), or CL (CAS latency) is time between RAM controller
 read and when data is available.
 RAM frequency gives maximum throughput, however CL affects this also.
 In addition, RAM access is after cache miss, so direct RAM latency is only a percentage
@@ -296,6 +297,7 @@ Flash Translation Layer operates, will determine what type of storage it is:
 * eMMC (embedded multimedia card): Typically SD soldered on motherboard
 * USB (universal serial bus) 
 * SSD (solid state drive): Parallel NAND access, more intelligent wear leveling and block sparring
+3D VNAND (Vertical) memory increases memory density by vertically stacking NAND flash
 
 Form factors include M.2 keying and PCIe (Peripheral Component Interconnect)
 Interface includes SATAIII, NVMe (non-volatile memory host controller) and PCIe
@@ -334,6 +336,8 @@ Petrol cars still use lead-acid as they have lower internal resistance and
 so can give higher peak current then equivalent LiPo (just not for as long)
 
 HDMI(High Definition Multimedia Interface)-A, C (mini), D (micro) carry audio and visual data
+DisplayPort has superior bandwidth to HDMI
+
 USB-A,USB-B,USB-B(mini)
 USB-C is USB3.0
 
@@ -366,47 +370,44 @@ Progressive will display each row sequentially for a given frame
 4k means horizontal resolution of approximately 4000 pixels. 
 standard different for say television and projection industry, e.g. 3840 pixels
 
-plasma is superheated matter, i.e. ionised gas
+A voltage applied to ionised gas, turning them into superheated matter that is plasma.
+Subsequent UV is released.
 
 LCD (Liquid Crystal Display) involves backlight through crystals.
-IPS (in-plane switching), TFT (thin film transistor) are example crystal technologies
-For an LED monitor, the LED is the backlight, as oppose to fluorescent.
-However still uses LCD, so really LED LCD.
-QLED/QNED (brightness) is a adding a 'quantom dot' layer into the white LED backlight LCD sandwich
-
+IPS (In-Plane Switching) and TFT (Thin Film Transistor) are example crystal technologies.
+For an LED monitor, the LED is the backlight, as oppose to a fluorescent.
+However still uses LCD backlight, so really LED LCD.
+QLED/QNED (Quantum NanoCell) is a adding a 'quantom dot' layer into 
+the white LED backlight LCD sandwich.
 OLED is distinct. 
 It produces own light, i.e. current passed through an OLED diode to produce light. 
-LTPO (low-temperature polycrystalline oxide)
+LTPO (Low Temperature Polycrystalline Oxide) is a backplane for OLED technology.
+
+E-ink display uses less power than LCD as only uses power when arrangment of colours changes.
+
+HDR (High Dynamic Range) and XDR (Extreme Dynamic Range) increase ability
+to show contrasting colours. 
+
+Nit is a measure of luminance, i.e. intensity of light 
+Brightness is a subjective perception of luminance.
+A higher nit display is more easily viewable in a wider array of lighting conditions,
+e.g. will combat the sun's light reflecting off the surface in an outdoor setting
 
 5.1 means 5 speakers, 1 subwoofer
-woofer, subwoofer, speaker, tweeter
-
-HDR (high dynamic range) ability to show contrasting colours. 
-Also have XDR (extreme dynamic range)
-
-nit is a measure of luminance, i.e. intensity of light (brightness is how we percieve luminance ∴ subjective).
-higher nit display are more easily viewable in a wider array of lighting conditions (e.g. combat the sun's light reflecting off the surface)
-
-e-ink less power than LCD as only uses power when arrangment of colours changes
-
-
+In order of ascending levels of audible frequencies 20Hz-20000Hz have devices
+woofer, subwoofer, speaker and tweeter.
 
 # Dalgo
 
-# Networks
-RFC documents contain technical specifications for Internet techologies, e.g. IP, UDP, etc.
 
-# Rendering
+
+# Programmer (for this, have wallpaper list projects)
+(sign 1bit)-(exponent 8bits)-(significand/mantissa 23bits)
+1 *     2² *      0.1234
+
 shader is a GPU program that is run at a particular stage in the rendering pipeline
 Nvidia GPU cores named CUDA cores. AMD calls them stream processors
 So, CUDA is a general purpose Nvidia GPU program that can utilise GPU's highly parallised architecture
-
-font-rendering with stb: 
-https://todool.handmade.network/blog/p/8561-rendering_glyphs_from_a_storage_buffer#26937
-
-# Programmer
-(sign 1bit)-(exponent 8bits)-(significand/mantissa 23bits)
-1 *     2² *      0.1234
 
 Data deduplication means to remove duplicates
 
@@ -427,6 +428,9 @@ These endpoints described in 'discovery document':
 2. authorisation-code -> access token, refresh token
 3. resource-server -> resource
 
+# Networks
+RFC documents contain technical specifications for Internet techologies, e.g. IP, UDP, etc.
+
 ## Wireless
 SMS are stored as clear text by provider
 SS7 (signaling system number 7) protocol connects various phone networks across the world
@@ -437,7 +441,7 @@ leaked emails from large companies, probably from internal mail server?
 cloudflare (what are they?) ban kiwi farms forums, so they move to Russian servers.
 how does this help?
 
-RFID (radio frequency identification) no line of sight required 
+RFID (Radio Frequency Identification) no line of sight required 
 (can read through objects unlike barcode) 
 Also read multiple objects at once. RFID tag. Greater read range (shop security)
 A QR code is just a 2d barcode with more bandwidth. Laser readers quicker.
@@ -503,7 +507,7 @@ e.g. Whats there NAT type?
 
 
 
-## ARM
+# MCU
 cortex-a53 is a synthesisable IP core sold to other semiconductor companies (stm, nxp, etc.)
 as licensed IP core, the amount of cache will vary e.g. 8-64Kb?
 
@@ -535,7 +539,6 @@ creating website: https://threadreaderapp.com/thread/1606219302855745538.html
 
 TODO: what is blockchain and web3?
 
-# MCU
 On startup, copy from Flash to RAM then jump to reset handler address
 No real need for newlib, just use standalone mpaland/printf
 Some chips have XIP (execute-in-place) which allows for running directly from flash 
@@ -545,7 +548,11 @@ FreePower technology allows QI charging mats to support concurrent device chargi
 
 QSPI can be used without CPU with data queues
 
-LED anode is positive longer lead?
+LED anode is positive longer lead
+
+
+
+
 
 # Phone
 Procedure Call Standard for the Arm Architecture (AAPCS).
@@ -560,6 +567,5 @@ more instructions required for unaligned memory accesses?
 (most modern x64 arm will not crash on an unaligned access?)
 from armv7, unaligned accesses allowed
 
-# Wearable
 5ATM is 5 atmospheres. 1 atmosphere is about 10m (however calculated when motionless)
 50m for 10 minutes
