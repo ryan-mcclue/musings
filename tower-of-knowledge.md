@@ -254,122 +254,132 @@ C library setup (e.g. stdout, math precision)
 The program loader will load from Flash into RAM then call _start (which is crt entrypoint)
 
 ## Components
-DRAM refreshed periodically. SDRAM (synchronises clock speed with memory speed).
-SDRAM. LPDDR4 (low-power; double pumping on rising and falling edge of clock)
+Storage device sizes are advertised with S.I units, whilst OS works with binary so
+will show smaller than advertised (1000 * 10³ < 1024 * 2¹⁰)
+Also, storage device write speeds are sustained speeds.
+So, for small file sizes expect a lot less
 
-SRAM more expensive, faster, not refreshed, larger die size.
+A flip-flop is a circuit that can have two states and can store state.
+Various types of flip-flops, e.g. clock triggered, data only etc.
+A latch is a certain type of flip-flop.
+Called this as output is latched onto state until another change in input.
+
+Registers and SRAM stored as flip-flops. 
+DRAM is a single transistor and capacitor
+
+SRAM (static) is fast, requires 6 transistors for each bit.
+So, 3.2billion transistors for 64MB cache. Sizeable percentage of die-area
+SRAM more expensive, faster as not periodically refreshed.
+
+DRAM (dynamic) is 1 transistor per bit refreshed periodically.
+SDRAM (synchronises internal clock and bus clock speed).
+SDRAM. LPDDR4 
+(low-power; double pumping on rising and falling edge of clock, 
+increasing bus clock speed while internal typically stays the same, amount prefetched etc.)
 
 DIIM (dual in-line memory module) is form factor (wider bus)
 SODIMM (small outline)
 
 Column Address Strobe (CAS), or CL (CAS latency) is time between RAM controller
-read and when data is available
-
-so, ram frequency gives max. throughput
-however latency of ram also important
-
-RAM potentially hundreds of cycles (CAS latency and cache retrieval process)
-(important to note that RAM CAS is only say 20% of total latency as will 
-check traverse cache and than copy it to cache)
-
-(Serial Advanced Technology Attachment)
-storage devices: form factor (M.2 keying, PCIe), interface (SATAIII, NVMe, PCIe), technology
-a single form factor may support multiple interfaces, so ensure motherboard has
-appropriate chipset
-
-important that these are sustained speeds, 
-so for small file sizes expect a lot less as seconds smaller
-note that storage space advertised with S.I units, whilst OS works with binary
-
-SATA SSD is the lowest grade ssd (however still 4 times bandwidth)
-
-
-
-NUMA node relationship between CPU socket (location on motherboard) and memory banks.
-So, say 2 sockets will probably have 2 NUMA nodes.
-Therefore, not all physical memory directly accessible from 1 cpu socket;
-will have to go through other socket to get it
-
-Each CPU socket have memory banks that are local to it, i.e. can be accessed from it directly.
-NUMA (non-uniform memory access) means that accessing memory from a non-local bank will not
-be the same speed. A NUMA-aware OS will try to mitigate these accesses
-
-RAID is method of combining multiple disks together so appear like one disk called an array.
-Various types, e.g. RAID0 (striping) some parts of file in multiple disks, 
-RAID1 (mirroring) each disk is dusplicate so could give speed increase etc.
-
-PCI usually for attaching peripherals to motherboards, 
-e.g. network/audio/usb/graphics controller cards
-
-SRAM is fast, requires 6 transistors for each bit.
-So, for 64MB cache, 3.2billion transistors. Sizeable percentage of die-area
-DRAM is 1 transistor per bit
-
-Petrol cars still use lead-acid as they have lower internal resistance and 
-so can give higher peak current then equivalent lipo (just not for as long)
-
-LiPo  is lithium-ion poly. uses polymer electrolyte instead of liquid.
-lipo more expensive, shorter lifespan, less energy, more robust 
-li-poly battery is rechargeable (so rechargeable is structured to allow a current to be passed to it to reverse the process)
-battery will have two electrodes, say lithium cobalt oxide (cathode) and graphite (anode, negative)
-graphite is almost always used as anode
-when charging, lithium ions move to graphite
-when discharging, lithium ions move from graphite to lithium
-so, we can see that the atomic structure of the electrodes are changed, 
-hence why charge cycles affect battery life
-
-Lithium-ion has higher energy density, cheaper, not available in small sizes 
-and more dangerous due to liquid electrolyte
-
-Battery 51Watt/hr, which is A/hr * V is not a fixed value, e.g. 1A/hr could run 0.1A for 10 hours 
+read and when data is available.
+RAM frequency gives maximum throughput, however CL affects this also.
+In addition, RAM access is after cache miss, so direct RAM latency is only a percentage
+of total latency as time taken to traverse cache and copy to it.
 
 NAND and NOR flash are two types of non-volatile memory
 NOR has faster read, however more expensive per bit and slower write/erase
 NOR used in BIOS chips (firmware will be motherboard manufacturer, e.g. Lenovo)
 A NAND mass storage device will require a controller chip, i.e. a microcontroller
-How the controller accesses the NAND flash (i.e. how its Flash Translation Layer operates), 
-will determine what type of storage it is:
+How the controller accesses the NAND flash, i.e. the protocol under which its 
+Flash Translation Layer operates, will determine what type of storage it is:
 * SD (secure digital)
 * eMMC (embedded multimedia card): Typically SD soldered on motherboard
 * USB (universal serial bus) 
 * SSD (solid state drive): Parallel NAND access, more intelligent wear leveling and block sparring
 
-QSPI can be used without CPU with data queues
+Form factors include M.2 keying and PCIe (Peripheral Component Interconnect)
+Interface includes SATAIII, NVMe (non-volatile memory host controller) and PCIe
+SATA (Serial Advanced Technology Attachment) SSD is the lowest grade SSD.
+A single form factor may support multiple interfaces, so ensure motherboard has
+appropriate chipset
 
-(audio visual) HDMI-A, C (mini), D (micro)
-USB-A,USB-B,USB-B(mini) 
+Each CPU socket has memory banks that are local to it, i.e. can be accessed from it directly.
+NUMA (non-uniform memory access) means that accessing memory from a non-local bank will not
+be the same speed. A NUMA-aware OS will try to mitigate these accesses.
+
+RAID (redundant array of independent disks) is method of combining multiple disks 
+together so as to appear like one disk called an array.
+Various types, e.g. RAID0 (striping) some parts of file in multiple disks, 
+RAID1 (mirroring) each disk is duplicate so could give speed increase etc.
+
+Battery will have two electrodes, say lithium cobalt oxide and graphite.
+When going through a charging/discharging cycle, ions move between electrodes.
+So, charging cycles will affect the atomic structure of the electrodes and hence
+affect battery life.
+
+Circuits based on conventional current, i.e. + to -
+Cathode is terminal from which conventional current flows out of, i.e. negative
+
+LiPo (lithium-ion polymer) uses polymer electrolyte instead of liquid.
+Standard lithium-ion has higher energy density, cheaper, not available in small sizes 
+and more dangerous due to liquid electrolyte
+LiPo more expensive, shorter lifespan, less energy, more robust 
+LiPo battery is structured to allow a current to be passed to it to 
+reverse the process of oxidation (loss of electrons), i.e. is rechargeable
+
+Battery 51Watt/hr, which is A/hr * V is not a fixed value, 
+e.g. 1A/hr could run 0.1A for 10 hours 
+
+Petrol cars still use lead-acid as they have lower internal resistance and 
+so can give higher peak current then equivalent LiPo (just not for as long)
+
+HDMI(High Definition Multimedia Interface)-A, C (mini), D (micro) carry audio and visual data
+USB-A,USB-B,USB-B(mini)
 USB-C is USB3.0
 
-3.5mm audio jack (3 pole number of shafts (internal wires); 4 pole for added microphone)
+3.5mm audio jack (3 pole number of shafts (internal wires), 4 pole for added microphone)
 
-ethernet CAT backwards compatible. connector called RJ45 
-telephone cable is called RJ11
+Ethernet CAT backwards compatible. 
+Connector called RJ45 
+Telephone cable called RJ11
 
-IEC power cords (kettleplug, cloverleaf)
+IEC (International Electrotechnical Commission) power cords used for 
+connecting power supplies up to 250V, e.g. kettleplug, cloverleaf
 
 DC barrel jack
 
 Touch screen types need some external input to complete circuit
 Resistive works by pressure pushing down plastic<-electric coating->glass
-Unresponsive, durable, cheap (e.g. atm machine)
-Capacitive how a grid of nodes that store some charge, i.e. like a capacitor
-When our finger touches (we are good conductor due to impure ion water in us), 
-charge flows through us and back to the phone, changing the electric current
-Things electrically similar to our fingers are sausages, banana peels
+Unresponsive, durable, cheap
+Capacitive contains a grid of nodes that store some charge.
+When our finger touches charge flows through us and back to the phone, 
+changing the electric current read. 
+We are good conductor due to impure water ion in us.
+So, things electrically similar to our fingers will work also like sausages, banana peels
 
 1080i/p
-interlaced means display even and odd rows for each frame (due to bandwith, not used anymore)
-progressive will display each row sequentially for a given frame
+1080 references vertical height in pixels
+Interlaced means display even and odd rows for each frame.
+Due to modern high bandwith not used anymore.
+Progressive will display each row sequentially for a given frame
 
-4k means horizontal resolution of approximately 4000 pixels. standard
-different for say television and projection industry
+4k means horizontal resolution of approximately 4000 pixels. 
+standard different for say television and projection industry, e.g. 3840 pixels
 
 plasma is superheated matter, i.e. ionised gas
 
-LED is the backlight, as oppose to fluorescent (LCD still used within this).
-so really LED LCD. IPS (in-plane switching), TFT (thin film transistor) 
-are examples of LCD panel technology
-OLED produces own light, i.e. current passed through an OLED diode to produce light. LTPO (low-temperature polycrystalline oxide)
+LCD (Liquid Crystal Display) involves backlight through crystals.
+IPS (in-plane switching), TFT (thin film transistor) are example crystal technologies
+For an LED monitor, the LED is the backlight, as oppose to fluorescent.
+However still uses LCD, so really LED LCD.
+QLED/QNED (brightness) is a adding a 'quantom dot' layer into the white LED backlight LCD sandwich
+
+OLED is distinct. 
+It produces own light, i.e. current passed through an OLED diode to produce light. 
+LTPO (low-temperature polycrystalline oxide)
+
+5.1 means 5 speakers, 1 subwoofer
+woofer, subwoofer, speaker, tweeter
 
 HDR (high dynamic range) ability to show contrasting colours. 
 Also have XDR (extreme dynamic range)
@@ -532,6 +542,10 @@ Some chips have XIP (execute-in-place) which allows for running directly from fl
 
 QI is a wireless charging standard most supported by mobile-devices for distances up to 4cm
 FreePower technology allows QI charging mats to support concurrent device charging
+
+QSPI can be used without CPU with data queues
+
+LED anode is positive longer lead?
 
 # Phone
 Procedure Call Standard for the Arm Architecture (AAPCS).
