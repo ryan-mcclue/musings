@@ -46,8 +46,6 @@ Fast Fourier Transform (FFTs) are often used with DACs to create a spectrum anal
 
 an adapter board would handle power and signal conversion
 
-TODO: DSI vs USB vs HDMI?
-
 tiny solid-state batteries more efficient that coin cell batteries; 
 useful for wearables
 
@@ -69,7 +67,8 @@ https://www.aosabook.org/en/500L/a-pedometer-in-the-real-world.html
 TODO: richard braun embedded (useful C has functions)
 https://www.twitch.tv/videos/233685076?filter=all&sort=time
 
-I only touch low-voltage 5V side, the high 'dangerous' voltage side I leave to hardware engineers
+I only touch low-voltage 5V side, 
+the high 'dangerous' voltage side I leave to hardware engineers
 
 TODO: rhymu 'rusty keyboard' series
 
@@ -103,7 +102,8 @@ power consumption (perhaps unscaled power, i.e. power if not performing alterati
 technology, size, connection
 as various permutations of these, have various controller permutations 
 e.g. SH1107_I2C, SSD1306_SPI, etc. (we probably want a library to draw lines, shapes, fonts, etc.)
-I2C developed by Phillips to allow multiple chips on a board to communicate with only 3 wires (id is passed on bus)
+I2C developed by Phillips to allow multiple chips on a board to communicate with only 3 wires 
+(id is passed on bus)
 (number of devices is limited by address space; typically 128 addresses?)
 price difference between a shape drawable display and character display?
 ```
@@ -336,7 +336,8 @@ wiring can be too fine for holding a particular amperage?
 TODO: look into sleeving wires
 TODO: something like loctite threadlocker is a liquid that prevents threads loosening due to vibration 
 
-Adhesive tape (with conductive pads on end) on bottom of LED strip stick wires to. Then solder end tips to connect bottom to top
+Adhesive tape (with conductive pads on end) on bottom of LED strip stick wires to. 
+Then solder end tips to connect bottom to top
 (have some electrical tape for this)
 Also, buy wires merged together and only pull apart the end points
 With multimeter, verify that no short circuit by checking continuity amongst wires 
@@ -418,7 +419,7 @@ https://linus.schreibt.jetzt/posts/qemu-9p-performance.html
 
 TODO: https://dev.to/taugustyn/call-stack-logger-function-instrumentation-as-a-way-to-trace-programs-flow-of-execution-419a
 
-MIPI (mobile industry processor interface) DSI
+MIPI (mobile industry processor interface) developed DSI
 
 TODO: outdoor project: https://hackaday.io/project/186064-green-detect
 look into further hackaday.io/projects
@@ -437,8 +438,6 @@ https://www.digikey.com/en/maker/projects/getting-started-with-stm32-introductio
 
 TODO: bootlin courses
 
-TODO: relay connected to a maglock
-
 TODO: GPS tracking, LORAwan (long range, low power), satelitte connection, etc.
 
 TODO: 3D printing; outdoor case enclosure
@@ -454,7 +453,8 @@ Growth of 'IoT' sensor kits/smart home
 Growth of 'AI sensors'
 (Perhaps more relevent to me is power/energy and automation and sensing)
 Growth of 'IoT' sensor kits
-Growth of sensor compounding, e.g. video now with LiDAR to detect depth, gesture detection sensor
+Growth of sensor compounding, e.g. video now with LiDAR to detect depth, 
+gesture detection sensor
 
 H-bridge is IC that switches voltage polarity, e.g. run DC motors forwards or backwards
 Rectifier converts AC to DC (transformer is high voltage AC to low voltage AC)
@@ -465,21 +465,19 @@ Could not live stream gnuplot?
 TODO: domestica course on creative coding.
 css, html graphics also for 2D animations?
 
-TODO: Hackaday for project inspiration
-
-Marketing refers to some MCU work as physical computing
+Marketing refers to some MCU work that react to environment as physical computing
 
 TODO: investigate both AVR github and gists: https://github.com/BobBurns 
 
 CFFI to create a python interface for C for something say like a console session?
 
-TODO: Perhaps for a machine just targeting embedded development, use WSL to easily use GUI debugger apps?
+TODO: Perhaps for a machine just targeting embedded development, 
+use WSL to easily use GUI debugger apps?
 
-TODO: Essentials of putting metadata section in firmware binary, such as version string! (particularly so test runners can utilise this information)
+TODO: Essentials of putting metadata section in firmware binary, such as version string! 
+(particularly so test runners can utilise this information)
 
 Might see GNSS + INS (inertial navigation system; i.e using IMU as well)
-
-Perhaps if gaffer low-level correctness, searching for web API design message types?
 
 TODO: amplifiers, e.g. class-D etc. MEMs accelerometers for vibration detection in cars
 
@@ -489,18 +487,19 @@ Analog LED is single colour
 Digital LED allows controlling each colour separately (so, a.k.a e.g addressable APA102 LEDs)
 This is done through an LED chip (think WS2812B LED chip for NeoPixel)
 
-A channel in a sensor is quantity measured. So an acceleration sensor could have 3 channels, 1 for each axes
+A channel in a sensor is quantity measured. 
+So an acceleration sensor could have 3 channels, 1 for each axes
 
 DSP: http://www.dspguide.com/pdfbook.htm
-terms like THD (total harmonic distribution), PFC (power factor correction), HV (high voltage)
+terms like THD (total harmonic distribution), 
+PFC (power factor correction), HV (high voltage)
 
 circuit design in software (perhaps parallel with Robert Feranc?): https://www.jitx.com/  
 
-https://embeddedartistry.com/blog/2019/04/08/a-general-overview-of-what-happens-before-main/?mc_cid=3835da293a&mc_eid=UNIQID
-
 Go through talks on memfault.com blog 
 
-Simulator testing gives much faster turn-around times, can add sanitisers without memory concerns, pass peripheral data in from file, draw to window instead of display etc. 
+Simulator testing gives much faster turn-around times, 
+can add sanitisers without memory concerns, pass peripheral data in from file, draw to window instead of display etc. 
 
 For memory allocator, set to 0 on free in debug builds?
 Investigate gcc tunables, e.g. in debug build: export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
@@ -551,9 +550,11 @@ Compile with different compilers to see performance benefits at end.
 Also possible may have to use a particular compiler for specific hardware.
 
 In reality, don't want an RTOS if timing very critical.
-Most MCU don't even have multiple cores so adding software overhead (or are there additional hardware to emulate cores?)
+Most MCU don't even have multiple cores so adding software overhead 
+(or are there additional hardware to emulate cores?)
 Even without RTOS, will most likely have some timer and separation of tasks.
-Main overall benefit of RTOS is consistent driver interfaces across multiple mcus (useful for say complex bluetooth/ethernet stacks etc.)
+Main overall benefit of RTOS is consistent driver interfaces across multiple mcus 
+(useful for say complex bluetooth/ethernet stacks etc.)
 Most mcus are overpowered for what they do, so using an RTOS is probably a good idea.
 
 tamper response usually done with a button on the board that gets activated when case opens
@@ -565,10 +566,6 @@ cpu has modes like Stop mode that is a power saving mode.
 battery balancing relevent to multiple cells
 TP4056 Lithium Battery Charging Board?
 
-we want performant, reliable software.
-
-testing should have coverage information also
-
 verification: requirements
 validation: does it solve problem
 authenticate: identity
@@ -577,18 +574,11 @@ token something used to authorise
 
 HTML not turing-complete, i.e. can't perform data manipulations
 
-working with new ISA think about registers and addressing modes
-
 robot ➞ renode (why not just qemu with shell scripts perhaps?)
 seems that robot/renode parsing of UART cleaner?
 
-https://www.youtube.com/watch?v=-Ecf7lb4aZ0
-latches ➞ flip flops (or latches are a type of flip-flop?)
-several latches combined together form a register
-D-type latch in SRAM (caches)
-DRAM uses transistor and capacitor
-
-embedded systems special purpose, constrained, often real time (product may be released in regulated environment standardsd, e.g. automotive, rail, defence, medical etc.)
+embedded systems special purpose, constrained, 
+often real time (product may be released in regulated environment standardsd, e.g. automotive, rail, defence, medical etc.)
 challenges are testabilty and software/hardware comprimises for optimisation problem solving, e.g. bit-banging or cheap mcu, external timer or in-built timer, adding hardware increases power consumption, e.g. ray tracing card or just rasterisation, big.LITTLE clusters
 1/4 scalar performance for 1/2 power consumption good tradeoff
 
@@ -613,7 +603,8 @@ like malloc and printf are not reentrant
 qemu useful over native for when word-size different. also, assembly inspection
 
 TODO: DSP, RTOS, wireless + IoT, battery/power, peripheral protocols (USB, LCD, etc.), CODECS,
-optimisations particular to MCUs, assembly knowledge, sql, c++ stl, python systems testing (continous integration),
+optimisations particular to MCUs, assembly knowledge, sql, c++ stl, 
+python systems testing (continous integration),
 bootloaders
 
 ARM, RISC-V, xtensa
@@ -652,7 +643,6 @@ A real time scheduling algorithm is deterministic (not necessarily fast), i.e. i
 So, a higher priority task will preempt lower priority tasks
 FreeRTOS will have a default idle task created by the kernel that is always running
 (this idle task gives indication of a low-power mode for free?)
-
 
 middleware extends OS functionality, drivers give OS functionality
 
@@ -724,12 +714,16 @@ https://www.youtube.com/playlist?list=PLJTMHMAVxQmvTGatIj-X2rJrN8aGJEaQD
 
 want to make something like stargate wheel
 
-first step in embedded debugging commandments; thou shalt check voltage (e.g. check 5V going to LCD by placing multimeter on soldered pin heads)
+first step in embedded debugging commandments;
+thou shalt check voltage 
+(e.g. check 5V going to LCD by placing multimeter on soldered pin heads)
 
 we can see in x86 (wikichips), instruction and data separate from L2 cache
 arm SoC block diagram (datasheet), see d-bus and i-bus to RAM
-introduce things like CCM (core coupled cache) and ART (adaptive real-time accelerator) that add some more harvard like instruction things
-essentially, more busses instead of more cores like in x86, (i.e. a lot more than just a CPU to be concerned with)
+introduce things like CCM (core coupled cache) 
+and ART (adaptive real-time accelerator) that add some more harvard like instruction things
+essentially, more busses instead of more cores like in x86, 
+(i.e. a lot more than just a CPU to be concerned with)
 also have more debug hardware
 don't really know why cortex-m4 has MPU
 
@@ -768,7 +762,9 @@ https://learn.sparkfun.com/tutorials/bus-pirate-v36a-hookup-guide/all
 (look for device specific tutorials on bus pirate website)
 http://www.starlino.com/bus_pirate_i2c_tutorial.html
 
-seems that RMII (reduced media-independent interface) is a pin layout to connect MAC devices (flexible in implementation). Can be implemented to support say an RJ45 connector
+seems that RMII (reduced media-independent interface) 
+is a pin layout to connect MAC devices (flexible in implementation). 
+Can be implemented to support say an RJ45 connector
 
 stm32 datasheet and reference manual (documents of different depths about same mcu) nomenclature
 will have 'Application Notes' that detail specific features like CCM RAM
@@ -888,8 +884,6 @@ So, a combination of stable crystal (however generate relatively slow signal, e.
 openocd -f /usr/share/openocd/scripts/interface/jlink.cfg -f /usr/share/openocd/scripts/target/stm32f4x.cfg
 should open a tcp port on 3333 for gdb
 
-Seems that an RTOS is a multiprocessing kernel that allows the user to control its scheduling priority?
-
 The CPU architecture will have an exception (a cpu interrupt) model. Here, reset behaviour will be defined.
 the 32 bit arm cortex-m4 has FPU (a application, m for microcontroller, r high performance real time)
 TODO(Ryan): avr vs arm vs rsic-v vs x86 vs powerpc vs sparc vs mips
@@ -942,4 +936,3 @@ unit test notes from udemy
 
 Aardvark adapter essential for automated testing (so, an adapter of sorts should always be used
 for automated testing?)
-Ask philip johnston on embedded artistry regarding widespread testing, e.g. multiple adapters?

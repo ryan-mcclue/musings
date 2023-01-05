@@ -307,7 +307,6 @@ How the controller accesses the NAND flash, i.e. the protocol under which its
 Flash Translation Layer operates, will determine what type of storage it is:
 * SD (secure digital)
 * eMMC (embedded multimedia card): Typically SD soldered on motherboard
-(For SD/MMC protocol, will have a RCA, i.e. Relative Card Address for selecting card)
 * USB (universal serial bus) 
 * SSD (solid state drive): Parallel NAND access, more intelligent wear leveling and block sparring
 3D VNAND (Vertical) memory increases memory density by vertically stacking NAND flash
@@ -573,8 +572,6 @@ QI is a wireless charging standard most supported by mobile-devices for distance
 FreePower technology allows QI charging mats to support concurrent device charging
 
 QSPI can be used without CPU with data queues
-
-Chrom-ART Accelerator offers DMA for graphics, i.e. fast copy, pixel conversion, blending etc.
 
 LED anode is positive longer lead
 
