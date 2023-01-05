@@ -1,5 +1,7 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+TODO: IoT embedded project
+
 TODO: incorporate rss reader feeder.co into morning routine
 
 TODO: memfault debugging with IoT

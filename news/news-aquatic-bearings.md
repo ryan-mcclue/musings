@@ -9,3 +9,7 @@ Further proliferation of OSs, e.g. Touch Ubuntu, Edubuntu, Kubuntu etc.
 Google wants RISC-V as tier-1 architecture for Android. 
 Part of further push for open source usage so as to not pay licensing fees, 
 e.g. developing their own video codec etc.
+
+Death of narrator with AI text to speech
+
+Nvidia AI on certain GPUs can upscale older blurry videos

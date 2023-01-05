@@ -554,7 +554,14 @@ e.g. MEMS microphone
 
 SPDIF (Sony Phillips Digital Interface) carries digital audio over a relatively short distance
 without having to convert to analog, thereby preserving audio quality.
-Can be coaxial (conductor with shielding) or fibre optic (glass)
+
+The polarity of the magnetic field created by power and ground wires will be opposite.
+So, having the same position in each wire line up will reduce outgoing noise as superposition of
+their inverse magnetic fields will cancel out. Furthermore, incoming noise will affect each
+wire similarly
+Coaxial has the two conductors share an axis with shielding outside.
+Twisted pair wire is a cheaper way of implementing coaxial
+Glass fibre optic does not have this issue.
 
 ASIC (Application Specific Integrated Circuit) MCU for specific task 
 
