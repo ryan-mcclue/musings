@@ -83,7 +83,7 @@ Memory model outlines the rules regarding the visibility of changes to data stor
 i.e. rules relating to memory reads and writes 
 A hardware memory model relates to the state of affairs as the processor executes machine code:
 * Sequential Consistency: 
-Doesn't allow instruction reordering, so doesn't maximise hardware speed)
+Doesn't allow instruction reordering, so doesn't maximise hardware speed
 * x86-TSO (Total Store Order):
 All processors agree upon the order in which their write queues are written to memory
 However, when the write queue is flushed is up to the CPU
@@ -98,11 +98,17 @@ It will provide synchronisation semantics, e.g. atomics, acquire, release, fence
 These semantics are used to enforce sequentially consistent behaviour when we want it.
 However, using intrinsics, we can focus only on hardware memory model.
 
-TODO: is cache coherency a subset of memory model?
-Intel uses write-back i.e. MESI? so not MOSI?
-x86 CPUs use a variation on the MESI protocol (MESIF for Intel, MOESI for AMD) 
-to keep their caches coherent with each other
-Cache coherency is how caches agree upon writes in cache?
+A cache controller implements cache coherency by recording states for each cache line.
+MESI is baseline used. Has states:
+* Modified: Only in this cache and dirty from main memory
+* Exclusive: Only in this cache and clean from main memory
+* Shared: Clean and shared amongst other caches 
+* Invalid
+Intel uses MESIF (Forward same as shared except designated responder), 
+while Arm uses MOESI (Owned is modified by possibly in other caches)
+Cache coherency performance issues are difficult to debug, 
+e.g. one value changed in cache line invalidates it, even though another value in cache line
+remains unchanged
 
 ## Legalities
 Anti-trust laws don't prevent monopolies, they prevent attempts to monopolise by 
