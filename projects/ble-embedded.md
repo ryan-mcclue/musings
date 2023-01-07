@@ -32,6 +32,10 @@ could even be simplex (one way only)
 full-duplex can still be serial, requiring at least two wires (duplex meaning bidirectional)
 serial (synchronous with clock data; asynchronous) + parallel 
 
+If you put "used Bluetooth" then I would expect you to talk about which transceivers you used, what the api was like (deficiencies it had, how low level, how was it good), and of course a high level overview of where the Bluetooth spec ends and application begins.
+
+Simply bieng able to say "I don't know, but I do know that in the spec/experience it says xyz, so maybe it would do abc, but I would have to look for jkl to be sure." is huge.
+
 BUTTON BOX 3D PRINT:
 * print out small test part with holes to test if button/screw/etc. inserts fit correctly
 * consider leaving holes in 3D scaffolding for making wiring easier
