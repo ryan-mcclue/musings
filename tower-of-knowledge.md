@@ -631,3 +631,7 @@ from armv7, unaligned accesses allowed
 
 5ATM is 5 atmospheres. 1 atmosphere is about 10m (however calculated when motionless)
 50m for 10 minutes
+
+MIDI (Musical Instrument Digital Interface) 3 byte messages that describe note type, how hard pressed and what channel
+Useful for sending out on MCU
+FRAM (ferrous) is non-volatile gives same access properties as RAM

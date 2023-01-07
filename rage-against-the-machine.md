@@ -288,3 +288,6 @@ The advent of AI assistants just gives you more settings to disable at factory r
 With security conscious individuals, surely more dependecies is bad from this viewpoint. No matter...
 
 With the proliferation of web technologies, now say AOT (ahead-of-time) compilation for what was normally just compilation
+
+Reason for GUI proliferation is that installation procedures are so complex,
+e.g. install and use esp-idf requires python virtual environment
