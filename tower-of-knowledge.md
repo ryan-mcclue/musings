@@ -620,6 +620,7 @@ function as this will require stack, consuming more time and space
 Furthermore, alignment restrictions mean that passing a double word has to be even-odd register pair,
 so ordering of parameters important
 So, call standard important for ordering and number of parameters?
+TODO: registers here
 
 more instructions required for unaligned memory accesses?
 (most modern x64 arm will not crash on an unaligned access?)
@@ -648,4 +649,14 @@ FRAM (ferrous) is non-volatile gives same access properties as RAM
 
 The ART (Android Runtime) is the Java Virtual Machine that performs JIT bytecode compilation of APK (Android Package Kit)
 
-VFP (Vector Floating Point) is floating point extension on ARM. So is FPU?
+VFP (Vector Floating Point) is floating point extension on ARM architecture.
+Called vector as initially introduced floating point and vector floating point.
+Neon is product name for ASE (Advanced SIMD Extension), i.e. SIMD for cortex-A and cortex-R 
+(more recent is SVE (Scalable Vector Extension))
+Helium is product name for MVE (M-profile Vector Extension), i.e. SIMD for cortex-M
+
+accelerometer
+magnometer (µT?)
+orientation (azimuth?)
+gyroscope -> determine gravity, linear acceleration and rotation vectors?
+ambient light sensor -> in lux?
