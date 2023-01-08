@@ -418,9 +418,6 @@ woofer, subwoofer, speaker and tweeter.
 (sign 1bit)-(exponent 8bits)-(significand/mantissa 23bits)
 1 *     2² *      0.1234
 
-shader is a GPU program that is run at a particular stage in the rendering pipeline
-Nvidia GPU cores named CUDA cores. AMD calls them stream processors
-So, CUDA is a general purpose Nvidia GPU program that can utilise GPU's highly parallised architecture
 
 Data deduplication means to remove duplicates
 
@@ -660,3 +657,12 @@ magnometer (µT?)
 orientation (azimuth?)
 gyroscope -> determine gravity, linear acceleration and rotation vectors?
 ambient light sensor -> in lux?
+
+shader is a GPU program that is run at a particular stage in the rendering pipeline
+Nvidia GPU cores named CUDA cores. AMD calls them stream processors. ARM shader cores
+So, CUDA is a general purpose Nvidia GPU program that can utilise GPU's highly parallised architecture
+opencl whilst more supportive, i.e can run on CPU or GPU, does not yield same performance benefits
+renderscript is android specific heteregenous in that it will distribute load automatically
+vulkan is ...
+
+
