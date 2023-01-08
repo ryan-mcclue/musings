@@ -612,10 +612,6 @@ creating website: https://threadreaderapp.com/thread/1606219302855745538.html
 TODO: what is blockchain and web3?
 
 
-
-
-
-
 # Phone
 Procedure Call Standard for the Arm Architecture (AAPCS).
 Part of ABI for ARM (also part of ABI is debugging, dynamic linking semantics etc.)
@@ -632,6 +628,24 @@ from armv7, unaligned accesses allowed
 5ATM is 5 atmospheres. 1 atmosphere is about 10m (however calculated when motionless)
 50m for 10 minutes
 
+Built atop Android OS, many phones will implement own custom OS, e.g. Huewei EMUI, Samsung One UI
+
+big.LITTLE is heterogenous processing architecture with two types of processors.
+big cores are designed for maximum compute performance and LITTLE for maximum power efficiency
+
+DSP instructions may include transforms like FFT, filters like IIR/FIR and statistical like moving average
+
+Thumb-1, thumb-2, ARM, aarch64, Neon, MTE (Memory Tagging Extension), etc. possible instruction sets
+thumb, i.e. 16bit or 32bit instructions only available on aarch32? (arm retroactively called aarch32?)
+
+ARM instructions are 32bits long (still 32bit on aarch64)
+
+MPU (Memory Protection Unit) only provide memory protection not virtual memory like an MMU (Memory Management Unit)
+
 MIDI (Musical Instrument Digital Interface) 3 byte messages that describe note type, how hard pressed and what channel
 Useful for sending out on MCU
 FRAM (ferrous) is non-volatile gives same access properties as RAM
+
+The ART (Android Runtime) is the Java Virtual Machine that performs JIT bytecode compilation of APK (Android Package Kit)
+
+VFP (Vector Floating Point) is floating point extension on ARM. So is FPU?

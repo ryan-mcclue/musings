@@ -24,22 +24,6 @@ Can join linear operations populate and min/max determination
 
 
 
-
-Listing says $310p/w. Description says $320p/w
-Listing says minimum stay 12 months. Description says 6 months
-How does kitchen, laundry, dishwasher sharing work? 
-What bills included in rent?
-
-Communal goods like toilet paper, cleaning products, cleaning roster?
-Average weekly power ($550) and water ($330) bills?
-Start and end day routines (i.e. wake up time), i.e. social compatibility
-Note down smells, water pressure, how thin walls are, how old property is 
-
-
-
-
-
-
 GE (12):
 * gens
 * phys
