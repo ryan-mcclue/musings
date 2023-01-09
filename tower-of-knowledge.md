@@ -436,81 +436,6 @@ These endpoints described in 'discovery document':
 2. authorisation-code -> access token, refresh token
 3. resource-server -> resource
 
-# Networks
-RFC documents contain technical specifications for Internet techologies, e.g. IP, UDP, etc.
-
-for long range, LoRa or sigfox
-essentially tradeoffs between power and data rate
-ieee 802.11 group for WLANs (wifi - high data rate), 
-802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 
-802.15.4 low data rate (zigbee implements this standard)
-
-## Wireless
-SMS are stored as clear text by provider
-SS7 (signaling system number 7) protocol connects various phone networks across the world
-This protocol is old and has been attacked many times
-
-leaked emails from large companies, probably from internal mail server? 
-
-cloudflare (what are they?) ban kiwi farms forums, so they move to Russian servers.
-how does this help?
-
-RFID (Radio Frequency Identification) no line of sight required 
-(can read through objects unlike barcode) 
-Also read multiple objects at once. RFID tag. Greater read range (shop security)
-A QR code is just a 2d barcode with more bandwidth. Laser readers quicker.
-NFC for low-power data transfer. NFC tag. (payment systems)
-
-TV standards
-Americas: NTSC (30fps, less scanlines per frame) 4.4MHz
-Europe, Asia, Australia: PAL (Phase alternate line) (25fps) 2.5MHz
-
-sound waves 20Hz - 20kHz (sonar; sound navigation and ranging)
-ultrasonic (radio waves largely absorbed in seawater due conductiveness)
-
-more easily focused as longer wavelength to not bend around corners
-radio waves 10Hz - 300GHz (true radio would be FM radio)
-higher frequency means more information can be conveyed
-radio waves bounce off ionosphere (long range)
-
-microwaves make up majority of the spectrum of radio waves
-microwaves 300MHz - 300GHz (radar)
-divided into bands, e.g. C-band, L-band, etc.
-
-infrared waves 300GHz - 300THz (object detection)
-heat emission
-
-visible light (lasers; weather dependent) 
-lidar
-
-UV
-
-ionising x-rays
-
-ionising gamma-rays
-
-ISM (industrial, scientific and medical) bands exclude telecommunication frequencies
-
-4G (generation) type of cellular technology. define min/max upload/download rates
-as many cell towers cannot fully support the bandwidth capabilities outlined by
-4G, use the term 4G LTE (long term evolution) to indicate implement some of 4G features.
-now have 4G LTE cat 13 to indicate featurs implemented
-around 1800MHz
-
-does version 5.0 expand upon enhanced data rate, i.e. bluetooth classic bandwidth? 
-seems higher that higher than 6GHz requires license?
-ISM range? (why bluetooth considered part of ISM?)
-
-GNSS (Global Navigation Satellite Systems) constellations (GPS:US, GLONASS:Russia, Galileo:EU, Beido:China)
-all location providing services. implement different frequencies, etc.
-
-lower frequency, longer range
-
-telecommunications standards:
-* GSM (global system for mobile communications) - uses SIM (subscriber identification module) cards to authenticate and authorise access
-I suppose eSIM would make SIM-locking easier to overcome 
-Phone number linked/contained within SIM, however can be reassigned
-* CDMA (code division multiple access) - uses ESN (electronic serial number) 
 
 Udp (head of line blocking) +
 client server (p2p unreliable as internet path optimised for cost/closest exchange point) 
@@ -604,15 +529,23 @@ TODO: what is blockchain and web3?
 
 
 # Phone
-Procedure Call Standard for the Arm Architecture (AAPCS).
+EABI is new ARM ABI
 Part of ABI for ARM (also part of ABI is debugging, dynamic linking semantics etc.)
 From this we can garner say, not to put more than 4 word sized arguments to function as this will require stack, consuming more time and space
 Furthermore, alignment restrictions mean that passing a double word has to be even-odd register pair,
 so ordering of parameters important
-So, call standard important for ordering and number of parameters?
-TODO: registers here
 
-TODO: distinction between architecture ABI and OS abi
+Procedure Call Standard for the Arm Architecture (AAPCS).
+AAPCS:
+r0-r3, rest stack
+s0-s7
+stack 4-byte aligned, if on function call, 8-byte aligned
+
+AAPCS64:
+x0-x7 (w0-w7 for 32-bit), rest stack
+v0-v7
+stack 16-byte aligned
+
 
 more instructions required for unaligned memory accesses?
 (most modern x64 arm will not crash on an unaligned access?)
@@ -683,7 +616,6 @@ a gimbal is a pivoted support that permits rotation about an axis
 IMU (Inertial Measurement Unit) is an accelerometer + gyroscope + magnetometer (teslas)
 the magnetometer is used to correct gyroscope drift as it can provide a point of reference
 
-
 shader is a GPU program that is run at a particular stage in the rendering pipeline
 Nvidia GPU cores named CUDA cores. AMD calls them stream processors. ARM shader cores
 So, CUDA is a general purpose Nvidia GPU program that can utilise GPU's highly parallised architecture
@@ -692,3 +624,92 @@ renderscript is android specific heteregenous in that it will distribute load au
 OpenGL has a lot of fixed function legacy (now shader based) and drivers rarely follow the standard in its entirety
 OpenGL ES (Embedded Systems) is a subset
 vulkan is low-level that more closely reflects how modern GPUs work
+
+
+# Networks
+RFC documents contain technical specifications for Internet techologies, e.g. IP, UDP, etc.
+
+for long range, LoRa or sigfox
+essentially tradeoffs between power and data rate
+ieee 802.11 group for WLANs (wifi - high data rate), 
+802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 
+802.15.4 low data rate (zigbee implements this standard)
+
+## Wireless
+SMS are stored as clear text by provider
+SS7 (signaling system number 7) protocol connects various phone networks across the world
+This protocol is old and has been attacked many times
+
+leaked emails from large companies, probably from internal mail server? 
+
+cloudflare (what are they?) ban kiwi farms forums, so they move to Russian servers.
+how does this help?
+
+RFID (Radio Frequency Identification) no line of sight required 
+(can read through objects unlike barcode) 
+Also read multiple objects at once. RFID tag. Greater read range (shop security)
+A QR code is just a 2d barcode with more bandwidth. Laser readers quicker.
+NFC for low-power data transfer. NFC tag. (payment systems)
+
+TV standards
+Americas: NTSC (30fps, less scanlines per frame) 4.4MHz
+Europe, Asia, Australia: PAL (Phase alternate line) (25fps) 2.5MHz
+
+sound waves 20Hz - 20kHz (sonar; sound navigation and ranging)
+ultrasonic (radio waves largely absorbed in seawater due conductiveness)
+
+more easily focused as longer wavelength to not bend around corners
+radio waves 10Hz - 300GHz (true radio would be FM radio)
+higher frequency means more information can be conveyed
+radio waves bounce off ionosphere (long range)
+
+microwaves make up majority of the spectrum of radio waves
+microwaves 300MHz - 300GHz (radar)
+divided into bands, e.g. C-band, L-band, etc.
+
+infrared waves 300GHz - 300THz (object detection)
+heat emission
+
+visible light (lasers; weather dependent) 
+lidar
+
+UV
+
+ionising x-rays
+
+ionising gamma-rays
+
+ISM (industrial, scientific and medical) bands exclude telecommunication frequencies
+
+4G (generation) type of cellular technology. define min/max upload/download rates
+as many cell towers cannot fully support the bandwidth capabilities outlined by
+4G, use the term 4G LTE (long term evolution) to indicate implement some of 4G features.
+now have 4G LTE cat 13 to indicate featurs implemented
+around 1800MHz
+
+does version 5.0 expand upon enhanced data rate, i.e. bluetooth classic bandwidth? 
+seems higher that higher than 6GHz requires license?
+ISM range? (why bluetooth considered part of ISM?)
+
+bluetooth LE  
+
+// GATT is a hierarchy of data a device exposes (profile -> service -> characteristic (actual data))
+// So when talking to a device, we are really dealing with a particular characteristic of a service
+
+// BLE transmitter only on if being read or written to (so it just broadcasts data that others listen to?)
+// subscribe to data changes in GATT database?
+// e.g. GATT keys are 128bit UUIDs, 95DDA90-251D-470A-A062-FA1922DFA9A8
+// peripheral advertises; central scans and connects
+// also have Beacon (only transmitting) and Observer
+// can create custom profiles (generic architecture; is this a gatt?)
+
+GNSS (Global Navigation Satellite Systems) constellations (GPS:US, GLONASS:Russia, Galileo:EU, Beido:China)
+all location providing services. implement different frequencies, etc.
+
+lower frequency, longer range
+
+telecommunications standards:
+* GSM (global system for mobile communications) - uses SIM (subscriber identification module) cards to authenticate and authorise access
+I suppose eSIM would make SIM-locking easier to overcome 
+Phone number linked/contained within SIM, however can be reassigned
+* CDMA (code division multiple access) - uses ESN (electronic serial number) 
