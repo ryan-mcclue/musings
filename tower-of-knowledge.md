@@ -606,12 +606,13 @@ TODO: what is blockchain and web3?
 # Phone
 Procedure Call Standard for the Arm Architecture (AAPCS).
 Part of ABI for ARM (also part of ABI is debugging, dynamic linking semantics etc.)
-From this we can garner say, not to put more than 4 word sized arguments to
-function as this will require stack, consuming more time and space
+From this we can garner say, not to put more than 4 word sized arguments to function as this will require stack, consuming more time and space
 Furthermore, alignment restrictions mean that passing a double word has to be even-odd register pair,
 so ordering of parameters important
 So, call standard important for ordering and number of parameters?
 TODO: registers here
+
+TODO: distinction between architecture ABI and OS abi
 
 more instructions required for unaligned memory accesses?
 (most modern x64 arm will not crash on an unaligned access?)
