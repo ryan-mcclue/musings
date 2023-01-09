@@ -570,7 +570,7 @@ MPU (Memory Protection Unit) only provide memory protection not virtual memory l
 
 MIDI (Musical Instrument Digital Interface) 3 byte messages that describe note type, how hard pressed and what channel
 Useful for sending out on MCU
-FRAM (ferrous) is non-volatile gives same access properties as RAM
+FRAM (ferroelectric) is non-volatile gives same access properties as RAM
 
 The ART (Android Runtime) is the Java Virtual Machine that performs JIT bytecode compilation of APK (Android Package Kit)
 
@@ -616,40 +616,43 @@ a gimbal is a pivoted support that permits rotation about an axis
 IMU (Inertial Measurement Unit) is an accelerometer + gyroscope + magnetometer (teslas)
 the magnetometer is used to correct gyroscope drift as it can provide a point of reference
 
-shader is a GPU program that is run at a particular stage in the rendering pipeline
+Shader is a GPU program that is run at a particular stage in the rendering pipeline
 Nvidia GPU cores named CUDA cores. AMD calls them stream processors. ARM shader cores
 So, CUDA is a general purpose Nvidia GPU program that can utilise GPU's highly parallised architecture
 opencl whilst more supportive, i.e can run on CPU or GPU, does not yield same performance benefits
 renderscript is android specific heteregenous in that it will distribute load automatically
 OpenGL has a lot of fixed function legacy (now shader based) and drivers rarely follow the standard in its entirety
 OpenGL ES (Embedded Systems) is a subset
-vulkan is low-level that more closely reflects how modern GPUs work
+Vulkan is low-level that more closely reflects how modern GPUs work
 
 
 # Networks
-RFC documents contain technical specifications for Internet techologies, e.g. IP, UDP, etc.
+RFC (Request For Comments) documents contain technical specifications for Internet techologies, e.g. IP, UDP, etc.
 
-for long range, LoRa or sigfox
+LoRa (Long Range) has low power requirements and long distance. AES-128 encrypted by default.
+LoRa useful if only sending some data a few times a day.
+LoRa has configurable bandwitdh, so can go up to 500KHz if regulations permit (lower frequency, longer range, so will be narrowband)
+Don't require IP addresses.
+LoRaWAN allows for large star networks to exist, e.g. city (which will require 1 IP address for the gateway)
+Sigfox more power.
+
+Wifi, Bluetooth, ZigBee are for local networks.
+LoRa is like a low bandwidth GSM (phone data)
 essentially tradeoffs between power and data rate
-ieee 802.11 group for WLANs (wifi - high data rate), 
+IEEE (Institute of Electrical and Electronic Engineers) 802.11 group for WLANs (WiFi - high data rate), 
 802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 
-802.15.4 low data rate (zigbee implements this standard)
+802.15.4 low data rate (ZigBee, LoRa, Sigfox)
 
 ## Wireless
 SMS are stored as clear text by provider
 SS7 (signaling system number 7) protocol connects various phone networks across the world
 This protocol is old and has been attacked many times
 
-leaked emails from large companies, probably from internal mail server? 
-
-cloudflare (what are they?) ban kiwi farms forums, so they move to Russian servers.
-how does this help?
-
 RFID (Radio Frequency Identification) no line of sight required 
 (can read through objects unlike barcode) 
 Also read multiple objects at once. RFID tag. Greater read range (shop security)
-A QR code is just a 2d barcode with more bandwidth. Laser readers quicker.
-NFC for low-power data transfer. NFC tag. (payment systems)
+A QR (Quick Response) code is just a 2d barcode with more bandwidth. Laser readers quicker.
+NFC (Near Field Communication) for low-power data transfer. NFC tag. (payment systems)
 
 TV standards
 Americas: NTSC (30fps, less scanlines per frame) 4.4MHz
@@ -687,9 +690,10 @@ as many cell towers cannot fully support the bandwidth capabilities outlined by
 now have 4G LTE cat 13 to indicate featurs implemented
 around 1800MHz
 
+ISM (Industrial Scientific Medical) range? (why bluetooth and wifi considered part of ISM?)
 does version 5.0 expand upon enhanced data rate, i.e. bluetooth classic bandwidth? 
 seems higher that higher than 6GHz requires license?
-ISM range? (why bluetooth considered part of ISM?)
+ISM (900MHz, 2.4GHz, 5GHz) occupies unlicensed RF band
 
 bluetooth LE  
 
@@ -706,10 +710,7 @@ bluetooth LE
 GNSS (Global Navigation Satellite Systems) constellations (GPS:US, GLONASS:Russia, Galileo:EU, Beido:China)
 all location providing services. implement different frequencies, etc.
 
-lower frequency, longer range
 
-telecommunications standards:
 * GSM (global system for mobile communications) - uses SIM (subscriber identification module) cards to authenticate and authorise access
 I suppose eSIM would make SIM-locking easier to overcome 
-Phone number linked/contained within SIM, however can be reassigned
-* CDMA (code division multiple access) - uses ESN (electronic serial number) 
+
