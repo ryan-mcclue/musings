@@ -401,10 +401,6 @@ E-ink display uses less power than LCD as only uses power when arrangment of col
 HDR (High Dynamic Range) and XDR (Extreme Dynamic Range) increase ability
 to show contrasting colours. 
 
-Nit is a measure of luminance, i.e. intensity of light 
-Brightness is a subjective perception of luminance.
-A higher nit display is more easily viewable in a wider array of lighting conditions,
-e.g. will combat the sun's light reflecting off the surface in an outdoor setting
 
 5.1 means 5 speakers, 1 subwoofer
 In order of ascending levels of audible frequencies 20Hz-20000Hz have devices
@@ -546,8 +542,6 @@ Various synthetic benchmarks indicative of performace, e.g.
 DMIPS (Dhrystone Million Instructions per Second) for integer and
 WMIPS (Whetstone) for floating point
 
-MEMS (Micro Electro Mechanical Systems) combines mechanical parts with electronics like some IC, 
-e.g. MEMS microphone 
 
 SPDIF (Sony Phillips Digital Interface) carries digital audio over a relatively short distance
 without having to convert to analog, thereby preserving audio quality.
@@ -653,16 +647,47 @@ Neon is product name for ASE (Advanced SIMD Extension), i.e. SIMD for cortex-A a
 Helium is product name for MVE (M-profile Vector Extension), i.e. SIMD for cortex-M
 
 accelerometer
-magnometer (µT?)
-orientation (azimuth?)
+magnometer
 gyroscope -> determine gravity, linear acceleration and rotation vectors?
 ambient light sensor -> in lux?
+
+flux is an arbitrary term used to describe the flow of things, e.g. photon flux, magentic flux
+
+lumens is how much light in total is produced
+candela is intensity of light beam (so property of emitter)
+lux is how much light hits a surface (so property of receiver)
+nit is how much light is reflected off a surface (so is what our eyes and cameras pick up)
+(so a display in nits as nits refers to object, i.e the screen not the emitter, i.e. the leds)
+A higher nit display is more easily viewable in a wider array of lighting conditions,
+e.g. will combat the sun's light reflecting off the surface in an outdoor setting
+brightness is subjective, and therefore does not have a value associated to it
+
+MEMS (Micro Electro Mechanical Systems) combines mechanical parts with electronics like some IC, (so circuitry with moving parts)
+e.g. microphone (sound waves cause diaphragm to move and cause induction), accelerometer, gyroscope
+
+on phone, implemented as non-wakeup sensors.
+this means phone can be in a suspended state and the sensors don't wake the CPU up to report data
+
+accelerometer measures rate of change in velocity, i.e. vibrations associated with movement (m/s²)
+so can check changes in orientation
+it will have a housing that is fixed to the surface and a seismic mass that can move about.
+detecting the amount of movement in the seismic mass
+
+gyroscope measures rotational acceleration, unlike an accelerometer which is unable to distinguish it from linear (rad/s²)
+gyroscope resists changes to its orientation due to intertial forces of a vibrating mass.
+so can detect angular momentum and useful for guidance correction
+
+a gimbal is a pivoted support that permits rotation about an axis
+
+IMU (Inertial Measurement Unit) is an accelerometer + gyroscope + magnetometer (teslas)
+the magnetometer is used to correct gyroscope drift as it can provide a point of reference
+
 
 shader is a GPU program that is run at a particular stage in the rendering pipeline
 Nvidia GPU cores named CUDA cores. AMD calls them stream processors. ARM shader cores
 So, CUDA is a general purpose Nvidia GPU program that can utilise GPU's highly parallised architecture
 opencl whilst more supportive, i.e can run on CPU or GPU, does not yield same performance benefits
 renderscript is android specific heteregenous in that it will distribute load automatically
-vulkan is ...
-
-
+OpenGL has a lot of fixed function legacy (now shader based) and drivers rarely follow the standard in its entirety
+OpenGL ES (Embedded Systems) is a subset
+vulkan is low-level that more closely reflects how modern GPUs work
