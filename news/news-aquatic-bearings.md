@@ -13,3 +13,7 @@ e.g. developing their own video codec etc.
 Death of narrator with AI text to speech
 
 Nvidia AI on certain GPUs can upscale older blurry videos
+
+AI training on users that will eventually replace them, e.g. Adobe tracking artists workflow, Github copilot, etc.
+
+Interesting storing application state in base64 url. No server required, and browser history becomes undo-redo
