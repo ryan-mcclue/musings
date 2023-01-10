@@ -1,5 +1,14 @@
 # IMPORTANT: FOR ALL TOPICS INCLUDED, HAVE SOME MENTION ON WALLPAPER
 
+# Local
+Sap is a fluid that transports nutrients throughout tree
+Gum trees named as sap is gum like, as oppose to say resin like. 
+Will also typically be smoothed bark
+Eucalyptus type of gum tree
+Eucalyptus oil droplets from the forests combine with water vapour to scatter short wavelength
+rays of light that are predominantly blue (ROYGBIV in descending wavelengths)
+
+
 # Desktop
 ## Chips
 CPU contains a clock.
@@ -401,7 +410,6 @@ E-ink display uses less power than LCD as only uses power when arrangment of col
 HDR (High Dynamic Range) and XDR (Extreme Dynamic Range) increase ability
 to show contrasting colours. 
 
-
 5.1 means 5 speakers, 1 subwoofer
 In order of ascending levels of audible frequencies 20Hz-20000Hz have devices
 woofer, subwoofer, speaker and tweeter.
@@ -446,7 +454,9 @@ e.g. Whats there NAT type?
 
 
 # MCU
-Where are MOSFETs used?
+MOSFET type of transistor that is voltage controlled
+
+CMOS technology allows the creation of low standby-power devices, e.g. non-volatile CMOS static RAM 
 
 What is fstab?
 
