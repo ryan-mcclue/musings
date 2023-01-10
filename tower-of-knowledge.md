@@ -719,3 +719,46 @@ all location providing services. implement different frequencies, etc.
 * GSM (global system for mobile communications) - uses SIM (subscriber identification module) cards to authenticate and authorise access
 I suppose eSIM would make SIM-locking easier to overcome 
 
+
+Is daylight time different to standard time?
+Australia 5 time zones:
+Christmas Island (UTC+7), Perth (UTC+8), Adelaide (UTC+10:30), Canberra (UTC+11), Norfolk Island (UTC+12)
+
+daylight savings adds extra daylight in summer season
+days shorter in winter months
+
+so spring, clock springs forward, we lose an hour (23 hours in day)
+in fall, clock falls back, we gain an hour (25 hours in a day)
+
+daylight savings starts in October, i.e. clocks put forward an hour ends in April
+(in spring as literal hours of sunlight increases)
+
+So, AEST and AEDT are different time zones.
+Adelaide, south-east onwards observe daylight savings
+WA not observed as large part of state is close to equator, negating effect of tilt of earth
+
+Gregorian calendar does not correspond exactly to one solar year. So, every 4 years Feburary has an extra day (28 to 29)
+
+Gregorian calendar primarily used, however Chinese calendar has each month start on a new lunar phase
+Solar eclipse when sun is eclipsed by moon
+Lunar eclipse when moon is eclipsed by earth
+Timestamp is calendar and time of day (and UTC (Coordinated Universal Time) offset for unambiguous time zone)   
+Meridian is Greenwich, England.
+Longitude is vertical lines, indicating east or west from meridian 
+International Date Line is when you cross over 180° longitude, i.e. from UTC+12 to UTC-12 or vice versa
+Earth rotates eastward, so sun rises in the east.
+
+Latitude is horizontal from equator
+Places on the equator have equal time of daylight and night time
+
+Tropics 23.5° (this number as the equator is tilted by this amount) equator
+north is cancer, south is capricorn
+Tropics (area between tropics) are hot, as they get sunlight all year round
+So, tropics are actually hotter than equatorial regions
+
+Artic (top) and Antarctic (bottom) are latitude circles. 
+They represent what areas of sunlight will hit, so in summer 24hour days, winter 0hour days
+
+Solstices mark the start of summer (longest daylight of year) and winter
+Equinox is start of spring and autumn (equal number of daylight and night time)
+
