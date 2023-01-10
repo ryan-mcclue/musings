@@ -357,7 +357,7 @@ USB-C is USB3.0
 3.5mm audio jack (3 pole number of shafts (internal wires), 4 pole for added microphone)
 
 Ethernet CAT backwards compatible. 
-Connector called RJ45 
+
 Telephone cable called RJ11
 
 IEC (International Electrotechnical Commission) power cords used for 
@@ -445,8 +445,13 @@ e.g. Whats there NAT type?
 
 
 
-
 # MCU
+Where are MOSFETs used?
+
+What is fstab?
+
+EMV (europay, mastercard, visa) chip implements NFC for payments
+
 ARM core ISA e.g. ARMv8
 Will then have profiles, e.g. M-Profile ARMv8-M 
 R-Profile for larger systems like automotive

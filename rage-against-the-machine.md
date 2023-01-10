@@ -179,7 +179,7 @@ memory safety not of that much concern for programming. however, for security I 
 wish security wasn't an issue
 https://github.com/KULeuven-COSIC/Starlink-FI/
 
-various daughterboard accoutrement nomenclature, e.g. arduino shield, beaglebone cape, raspberry pi hat etc.
+various daughterboard accoutrement nomenclature, e.g. arduino shield, beaglebone cape, raspberry pi hat, ST Zio/Morpho connectors etc.
 
 discordant packaging naming in ubuntu 'dummy packages', e.g. qemu is package name, however binaries are named differently.
 
