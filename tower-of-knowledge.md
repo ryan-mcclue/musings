@@ -635,6 +635,47 @@ OpenGL has a lot of fixed function legacy (now shader based) and drivers rarely 
 OpenGL ES (Embedded Systems) is a subset
 Vulkan is low-level that more closely reflects how modern GPUs work
 
+RSA (Rivest-Shamir-Adleman) is asymmetric, i.e. public and private key. Much slower than AES
+AES (Advanced Encryption Standard) is symmetric, i.e. one key
+SHA (Secure Hash Algorithm) is one-way and produces a digest
+
+## Wireless
+Sound waves 20Hz-20kHz
+Ultrasonic are sound waves not audible by humans
+SONAR (Sound Navigation And Ranging) used in maritime as radio waves largely absorbed in seawater due to conductiveness
+
+RADAR (Radio Detecting And Ranging)
+adar transmit much faster than sonar
+more easily focused as longer wavelength to not bend around corners
+radio waves 10Hz - 300GHz (true radio would be FM radio)
+higher frequency means more information can be conveyed
+radio waves bounce off ionosphere (long range)
+
+microwaves make up majority of the spectrum of radio waves
+microwaves 300MHz - 300GHz (radar)
+divided into bands, e.g. C-band, L-band, etc.
+
+infrared waves 300GHz - 300THz (object detection)
+Heat is the motion of atoms, faster they move, more heat.
+approx. 50% of solar radiation, approx. 80% atmosphere is Nitrogen
+
+visible light 
+LIDAR (Light Detection And Ranging) 
+(lasers; weather dependent) 
+higher accuracy and resolution than radar, lower range
+
+UV
+UVA has longer wavelength, associated with skin ageing
+UVB associated with skin burning
+UVB doesn't pass through glass, however UVA does
+SPF (Sun Protection Factor) is how many times longer it takes to burn than with no sunscreen.
+However, UV can still get through and sunscreen is water-resistant, not waterproof
+Melanoma is skin cancer that forms in melanocytes in skin that control pigment
+
+ionising x-rays
+
+ionising gamma-rays
+
 
 # Networks
 RFC (Request For Comments) documents contain technical specifications for Internet techologies, e.g. IP, UDP, etc.
@@ -653,7 +694,6 @@ IEEE (Institute of Electrical and Electronic Engineers) 802.11 group for WLANs (
 802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 
 802.15.4 low data rate (ZigBee, LoRa, Sigfox)
 
-## Wireless
 SMS are stored as clear text by provider
 SS7 (signaling system number 7) protocol connects various phone networks across the world
 This protocol is old and has been attacked many times
@@ -668,29 +708,6 @@ TV standards
 Americas: NTSC (30fps, less scanlines per frame) 4.4MHz
 Europe, Asia, Australia: PAL (Phase alternate line) (25fps) 2.5MHz
 
-sound waves 20Hz - 20kHz (sonar; sound navigation and ranging)
-ultrasonic (radio waves largely absorbed in seawater due conductiveness)
-
-more easily focused as longer wavelength to not bend around corners
-radio waves 10Hz - 300GHz (true radio would be FM radio)
-higher frequency means more information can be conveyed
-radio waves bounce off ionosphere (long range)
-
-microwaves make up majority of the spectrum of radio waves
-microwaves 300MHz - 300GHz (radar)
-divided into bands, e.g. C-band, L-band, etc.
-
-infrared waves 300GHz - 300THz (object detection)
-heat emission
-
-visible light (lasers; weather dependent) 
-lidar
-
-UV
-
-ionising x-rays
-
-ionising gamma-rays
 
 ISM (industrial, scientific and medical) bands exclude telecommunication frequencies
 
