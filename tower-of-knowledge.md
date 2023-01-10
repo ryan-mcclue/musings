@@ -534,7 +534,11 @@ TODO: what is blockchain and web3?
 
 
 # Phone
-EABI is new ARM ABI
+PIC (Position Independent Code) can be executed anywhere in memory by using relative addresses, e.g. shared libraries
+The process of converting relative to absolute, i.e. query unresolved symbols at runtime adds a level of indirection as 
+normally function address present in instruction stream.
+
+EABI is new ARM ABI (called embedded as suited to the needs of embedded applications)
 Part of ABI for ARM (also part of ABI is debugging, dynamic linking semantics etc.)
 From this we can garner say, not to put more than 4 word sized arguments to function as this will require stack, consuming more time and space
 Furthermore, alignment restrictions mean that passing a double word has to be even-odd register pair,
@@ -566,8 +570,9 @@ big cores are designed for maximum compute performance and LITTLE for maximum po
 
 DSP instructions may include transforms like FFT, filters like IIR/FIR and statistical like moving average
 
-Thumb-1, thumb-2, ARM, aarch64, Neon, MTE (Memory Tagging Extension), etc. possible instruction sets
-thumb, i.e. 16bit or 32bit instructions only available on aarch32? (arm retroactively called aarch32?)
+Thumb-1 (16-bit), thumb-2 (16/32-bit), arm (32bit instructions), aarch64 (32bit instructions), 
+Neon, MTE (Memory Tagging Extension), etc. possible instruction sets
+thumb, i.e. 16bit or 32bit instructions only available on aarch32? (arm retroactively called aarch32)
 
 ARM instructions are 32bits long (still 32bit on aarch64)
 
@@ -762,3 +767,8 @@ They represent what areas of sunlight will hit, so in summer 24hour days, winter
 Solstices mark the start of summer (longest daylight of year) and winter
 Equinox is start of spring and autumn (equal number of daylight and night time)
 
+Use caesium atoms to control when to apply an electric jolt to quartz to keep it oscillating at the same frequency
+quartz is piezoelectric, meaning mechanical stress results in electric charge and vice versa
+
+NTP (Network Time Protocol) is TCP/IP protocol for clock synchronisation. 
+It works by comparing with atomic clock servers
