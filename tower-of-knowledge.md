@@ -8,6 +8,52 @@ Eucalyptus type of gum tree
 Eucalyptus oil droplets from the forests combine with water vapour to scatter short wavelength
 rays of light that are predominantly blue (ROYGBIV in descending wavelengths)
 
+Australia 5 time zones:
+Christmas Island (UTC+7), Perth (UTC+8), Adelaide (UTC+10:30), Canberra (UTC+11), Norfolk Island (UTC+12)
+
+Daylight savings incorporates the literal increase in sunlight to timezone 
+So in Spring, the clock springs forward.
+We lose an hour, i.e 23 hours in that day
+
+In the Fall, the clock falls back.
+We gain an hour, i.e 25 hours in that day
+
+When using daylight saving time, will be AEDT as oppose to AEST, i.e. different time zones
+Adelaide, south-east onwards observe daylight savings
+WA not observed as large part of state is close to tropics, negating effect of tilt of earth
+
+Gregorian calendar does not correspond exactly to one solar year. 
+So, every 4 years Feburary has an extra day (28 to 29) known as a leap year.
+Also have leap seconds.
+Gregorian calendar primarily used, however Chinese calendar has each month start on a new lunar phase
+
+Solar eclipse when sun is eclipsed by moon
+Lunar eclipse when moon is eclipsed by earth
+
+Prime meridian is through Greenwich, England.
+Longitude is vertical lines, indicating east or west from prime meridian.
+International Date Line is when you cross over 180° longitude, i.e. from UTC+12 to UTC-12 or vice versa
+
+Latitude is horizontal from equator.
+Places on the equator have equal time of daylight and night time
+
+Tropics are at 23.5°
+They are at this amount as this how much they are tilted from the equator
+North line is cancer, south line is capricorn.
+The tropics are the region between the tropic lines.
+They are hot, due to the sunlight they recieve all year round
+So, tropics are actually hotter than equatorial regions
+Northern Artic and Southern Antarctic are latitude circles. 
+They represent what areas of sunlight will hit.
+So in summer, will have 24 hour days, whilst in winter 0hour days.
+
+Solstices mark the start of summer (longest daylight of year) and winter.
+Equinox is start of spring and autumn (equal number of daylight and night time)
+
+Timestamp is calendar and time of day and UTC (Coordinated Universal Time) offset
+
+Earth rotates eastward, so sun rises in the east no matter what hemisphere.
+
 
 # Desktop
 ## Chips
@@ -423,6 +469,198 @@ to show contrasting colours.
 In order of ascending levels of audible frequencies 20Hz-20000Hz have devices
 woofer, subwoofer, speaker and tweeter.
 
+# Phone
+ARM core ISA e.g. ARMv8
+Will then have profiles, e.g. M-Profile ARMv8-M 
+R-Profile for larger systems like automotive
+
+ARM holdings implements profile in own CPU, e.g. Cortex-A72
+This is a synthesisable IP (Intellectual Property) core sold to other 
+semiconductor companies who make implementation decisions like 
+amount of cache from 8-64kb specification.
+
+However, other companies can build own CPU from ISA alone, e.g. Qualcomm Kryo and Nvidia Denver
+
+Then have actual MCUs e.g. STMicroelectronics, NXP
+or SoCs e.g. Qualcomm Snapdragon, Nvidia Tegra 
+
+big.LITTLE is heterogenous processing architecture with two types of processors.
+big cores are designed for maximum compute performance and LITTLE for maximum power efficiency
+
+FFT divides samples (typically from an ADC) into frequency band
+A logarithmic scale typically employed to account for nonlinear values whereby a greater proportion in high frequency band
+
+DSP instructions may include transforms like FFT, filters like IIR/FIR (Finite Impulse Response; no feedback) and statistical like moving average
+
+With the addition of 64bit extension, ARM retroactively called aarch32.
+Possible instruction sets include Thumb-1 (16-bit), Thumb-2 (16/32-bit), aarch32 (32bit instructions), aarch64 (32bit instructions), 
+Neon, MTE (Memory Tagging Extension), etc. 
+aarch64 does not allow Thumb instructions
+
+FPU is a VFPv3-D16 implementation of the ARMv7 floating-point architecture
+VFP (Vector Floating Point) is floating point extension on ARM architecture.
+Called vector as initially introduced floating point and vector floating point.
+Neon is product name for ASE (Advanced SIMD Extension), i.e. SIMD for cortex-A and cortex-R 
+(more recent is SVE (Scalable Vector Extension))
+Helium is product name for MVE (M-profile Vector Extension), i.e. SIMD for cortex-M
+
+RSA (Rivest-Shamir-Adleman) is asymmetric, i.e. public and private key. Much slower than AES
+AES (Advanced Encryption Standard) is symmetric, i.e. one key
+SHA (Secure Hash Algorithm) is one-way and produces a digest
+
+MPU (Memory Protection Unit) only provide memory protection not virtual memory like an MMU (Memory Management Unit)
+
+Built atop Android OS, many phones will implement own custom OS, e.g. Huewei EMUI, Samsung One UI
+The ART (Android Runtime) is the Java Virtual Machine that performs JIT bytecode compilation of APK (Android Package Kit)
+
+EABI (Embedded) is new ARM ABI, renamed as it suits the needs of embedded applications.
+An EABI will omit certain abstractions present in an ABI designed for a kernel, e.g run in priveleged mode
+From the calling convention part of ABI we can garner number of arguments until stack usage and alignment requirements.
+
+AAPCS (Arm Architecture Procedure Call Standard):
+r0-r3, rest stack
+s0-s7
+Stack 4-byte aligned, if on function call, 8-byte aligned
+
+AAPCS64:
+x0-x7 (w0-w7 for 32-bit), rest stack
+v0-v7
+Stack 16-byte aligned
+
+Most modern ARM architectures will not crash on unaligned accesses
+
+Shader is a GPU program that is run at a particular stage in the rendering pipeline
+Nvidia GPU cores named CUDA cores. AMD calls them stream processors. ARM shader cores
+So, CUDA is a general purpose Nvidia GPU program that can utilise GPU's highly parallised architecture
+OpenCL whilst more supportive, i.e can run on CPU or GPU, does not yield same performance benefits
+Renderscript is android specific heteregenous in that it will distribute load automatically
+OpenGL has a lot of fixed function legacy (now shader based) and drivers rarely follow the standard in its entirety
+OpenGL ES (Embedded Systems) is a subset
+Vulkan is low-level that more closely reflects how modern GPUs work
+
+Flux is an arbitrary term used to describe the flow of things, e.g. photon flux, magnetic flux
+
+Lumens is how much total light is produced by an emitter
+Candela is intensity of light beam produced by an emitter 
+Lux is how much light hits a recieving surface
+Nit is how much light is reflected off a surface and so is what our eyes and cameras pick up.
+A display will be in nits as its a recieving object as oppose to the backlight LEDs
+A higher nit display is more easily viewable in a wider array of lighting conditions,
+e.g. will combat the sun's light reflecting off the surface in an outdoor setting
+Brightness is subjective, and therefore does not have a value associated to it
+
+## Waves
+Sound Waves (20Hz-20kHz)
+Ultrasonic are sound waves not audible by humans
+SONAR (Sound Navigation And Ranging) used in maritime as radio waves largely absorbed in seawater due to conductiveness
+
+Radio Waves (10Hz-300GHz) 
+Microwaves make up the majority of the spectrum of radio waves (300MHz-300GHz)
+They are divided into bands, e.g. C-band, L-band, etc.
+RADAR (Radio Detecting And Ranging) encompasses microwave spectrum
+Higher frequency results in higher resolution than SONAR.
+Also as EM wave, much faster transmission rate.
+Allowing for long range transmission, radio waves bounce off ionosphere (where Earth's atmosphere meets with space)
+
+Infrared Waves (300GHz-300THz) 
+Can be used in object detection.
+Heat is the motion of atoms. 
+The faster they move, the more heat is produced
+Approximately 50% of solar radiation is infrared.
+
+Visible light 
+LIDAR (Light Detection And Ranging) 
+(lasers; weather dependent) 
+higher accuracy and resolution than radar, lower range
+
+Ultraviolet
+UVA has longer wavelength, associated with skin ageing
+UVB associated with skin burning
+UVB doesn't pass through glass, however UVA does
+UVC is a germicide
+SPF (Sun Protection Factor) is how many times longer it takes to burn than with no sunscreen.
+However, UV can still get through and sunscreen is water-resistant, not waterproof
+
+Ionising X-Rays
+
+Ionising Gamma-Rays
+Sterilisation and radiotherapy
+
+## Wireless Protocols
+ISM (Industrial, Scientific and Medical) bands (900MHz, 2.4GHz, 5GHz) occupy unlicensed RF band.
+They include Wifi, Bluetooth but exclude telecommunication frequencies
+
+GNSS (Global Navigation Satellite Systems) contain constellations GPS (US), GLONASS (Russia), Galileo (EU) and Beido (China)
+They all provide location services, however implement different frequencies, etc.
+
+GSM (Global System for Mobile Communications) uses SIM (Subscriber Identification Module) cards to authenticate (identity) and authorise (privelege) access
+
+4G (Generation; 1800MHz) outlines min/max upload/download rates and associated frequencies.
+Many cell towers cannot fully support the bandwidth capabilities outlined by 4G. 
+As a result, the term 4G LTE (Long Term Evolution) is used indicate that some of the 4G spec is implemented.
+More specifically have 4G LTE cat 13 to indicate particular features implemented.
+
+SMS (Short Message Service) are stored as clear text by provider
+SS7 (Signaling System Number 7) protocol connects various phone networks across the world
+
+Between protocols, tradeoffs between power and data rate
+IEEE (Institute of Electrical and Electronic Engineers):
+* 802.11 group for WLANs (WiFi - high data rate), 
+* 802.15 for WPANs; 802.15.1 (Bluetooth), 
+* 802.15.4 low data rate (ZigBee, LoRa, Sigfox)
+
+Wifi, Bluetooth, ZigBee are for local networks.
+LoRa is like a low bandwidth GSM
+LoRa (Long Range) has low power requirements and long distance. AES-128 encrypted by default.
+LoRa useful if only sending some data a few times a day.
+LoRa has configurable bandwitdh, so can go up to 500KHz if regulations permit
+Lower frequency yields longer range as longer wavelength won't be reflected off objects. Will be called narrowband
+Doesn't require IP addresses.
+LoRaWAN allows for large star networks to exist in say a city, but will require at least 1 IP address for a gateway
+Sigfox uses more power.
+
+A BLE (Bluetooth Low Energy) transceiver only on if being read or written to
+GATT (Generic Attribute Profile) is a database that contains keys for particular services and characteristcs (actual data) 
+When communicating with a BLE device, we are querying a particular characteristic of a service
+
+A QR (Quick Response) code is a 2D barcode with more bandwidth. Uses a laser reader.
+RFID (Radio Frequency Identification) does not require line-of-sight and can read multiple objects at once. 
+Uses RFID tag. 
+NFC (Near Field Communication) is for low-power data transfer. 
+Uses NFC tag
+
+TV standards
+Americas: NTSC (30fps, less scanlines per frame) 4.4MHz
+Europe, Asia, Australia: PAL (Phase alternate line) (25fps) 2.5MHz
+
+## Sensors
+MEMS (Micro Electro Mechanical Systems) combines mechanical parts with electronics like some IC, i.e. circuitry with moving parts.
+e.g. microphone (sound waves cause diaphragm to move and cause induction), accelerometer, gyroscope (originally mechanical)
+
+On phone, many sensors implemented as non-wakeup.
+This means the phone can be in a suspended state and the sensors don't wake the CPU up to report data
+
+Accelerometer measures rate of change in velocity, i.e. vibrations associated with movement (m/s²)
+So can check changes in orientation.
+It will have a housing that is fixed to the surface and a mass that can move about.
+Detecting the amount of movement in the mass, can determine acceleration in that plane.
+
+Gyroscope measures rotational acceleration, unlike an accelerometer which is unable to distinguish it from linear (rad/s²)
+Gyroscope resists changes to its orientation due to intertial forces of a vibrating mass.
+So can detect angular momentum which can be useful for guidance correction.
+
+A gimbal is a pivoted support that permits rotation about an axis
+
+IMU (Inertial Measurement Unit) is an accelerometer + gyroscope + magnetometer (teslas)
+The magnetometer is used to correct gyroscope drift as it can provide a point of reference
+
+Quartz is piezoelectric, meaning mechanical stress results in electric charge and vice versa.
+In an atomic clock, Caesium atoms are used to control the supply of voltage across quartz.
+This is done, in order to keep it oscillating at the same frequency.
+
+NTP (Network Time Protocol) is TCP/IP protocol for clock synchronisation. 
+It works by comparing with atomic clock servers
+
 # Dalgo
 
 
@@ -455,6 +693,8 @@ These endpoints described in 'discovery document':
 2. authorisation-code -> access token, refresh token
 3. resource-server -> resource
 
+
+RFC (Request For Comments) documents contain technical specifications for Internet techologies, e.g. IP, UDP, etc.
 
 Udp (head of line blocking) +
 client server (p2p unreliable as internet path optimised for cost/closest exchange point) 
@@ -543,266 +783,3 @@ creating website: https://threadreaderapp.com/thread/1606219302855745538.html
 TODO: what is blockchain and web3?
 
 
-# Phone
-ARM core ISA e.g. ARMv8
-Will then have profiles, e.g. M-Profile ARMv8-M 
-R-Profile for larger systems like automotive
-
-ARM holdings implements profile in own CPU, e.g. Cortex-A72
-This is a synthesisable IP (Intellectual Property) core sold to other 
-semiconductor companies who make implementation decisions like 
-amount of cache from 8-64kb specification.
-
-However, other companies can build own CPU from ISA alone, e.g. Qualcomm Kryo and Nvidia Denver
-
-Then have actual MCUs e.g. STMicroelectronics, NXP
-or SoCs e.g. Qualcomm Snapdragon, Nvidia Tegra 
-
-big.LITTLE is heterogenous processing architecture with two types of processors.
-big cores are designed for maximum compute performance and LITTLE for maximum power efficiency
-
-FFT divides samples (typically from an ADC) into frequency band
-A logarithmic scale typically employed to account for nonlinear values whereby a greater proportion in high frequency band
-
-DSP instructions may include transforms like FFT, filters like IIR/FIR (Finite Impulse Response; no feedback) and statistical like moving average
-
-With the addition of 64bit extension, ARM retroactively called aarch32.
-Possible instruction sets include Thumb-1 (16-bit), Thumb-2 (16/32-bit), aarch32 (32bit instructions), aarch64 (32bit instructions), 
-Neon, MTE (Memory Tagging Extension), etc. 
-aarch64 does not allow Thumb instructions
-
-FPU is a VFPv3-D16 implementation of the ARMv7 floating-point architecture
-VFP (Vector Floating Point) is floating point extension on ARM architecture.
-Called vector as initially introduced floating point and vector floating point.
-Neon is product name for ASE (Advanced SIMD Extension), i.e. SIMD for cortex-A and cortex-R 
-(more recent is SVE (Scalable Vector Extension))
-Helium is product name for MVE (M-profile Vector Extension), i.e. SIMD for cortex-M
-
-RSA (Rivest-Shamir-Adleman) is asymmetric, i.e. public and private key. Much slower than AES
-AES (Advanced Encryption Standard) is symmetric, i.e. one key
-SHA (Secure Hash Algorithm) is one-way and produces a digest
-
-MPU (Memory Protection Unit) only provide memory protection not virtual memory like an MMU (Memory Management Unit)
-
-Built atop Android OS, many phones will implement own custom OS, e.g. Huewei EMUI, Samsung One UI
-The ART (Android Runtime) is the Java Virtual Machine that performs JIT bytecode compilation of APK (Android Package Kit)
-
-EABI (Embedded) is new ARM ABI, renamed as it suits the needs of embedded applications.
-An EABI will omit certain abstractions present in an ABI designed for a kernel, e.g run in priveleged mode
-From the calling convention part of ABI we can garner number of arguments until stack usage and alignment requirements.
-
-AAPCS (Arm Architecture Procedure Call Standard):
-r0-r3, rest stack
-s0-s7
-stack 4-byte aligned, if on function call, 8-byte aligned
-
-AAPCS64:
-x0-x7 (w0-w7 for 32-bit), rest stack
-v0-v7
-stack 16-byte aligned
-
-Most modern ARM architectures will not crash on unaligned accesses
-
-Shader is a GPU program that is run at a particular stage in the rendering pipeline
-Nvidia GPU cores named CUDA cores. AMD calls them stream processors. ARM shader cores
-So, CUDA is a general purpose Nvidia GPU program that can utilise GPU's highly parallised architecture
-opencl whilst more supportive, i.e can run on CPU or GPU, does not yield same performance benefits
-renderscript is android specific heteregenous in that it will distribute load automatically
-OpenGL has a lot of fixed function legacy (now shader based) and drivers rarely follow the standard in its entirety
-OpenGL ES (Embedded Systems) is a subset
-Vulkan is low-level that more closely reflects how modern GPUs work
-
-flux is an arbitrary term used to describe the flow of things, e.g. photon flux, magentic flux
-
-lumens is how much light in total is produced
-candela is intensity of light beam (so property of emitter)
-lux is how much light hits a surface (so property of receiver)
-nit is how much light is reflected off a surface (so is what our eyes and cameras pick up)
-(so a display in nits as nits refers to object, i.e the screen not the emitter, i.e. the leds)
-A higher nit display is more easily viewable in a wider array of lighting conditions,
-e.g. will combat the sun's light reflecting off the surface in an outdoor setting
-brightness is subjective, and therefore does not have a value associated to it
-
-## Wireless
-Sound waves 20Hz-20kHz
-Ultrasonic are sound waves not audible by humans
-SONAR (Sound Navigation And Ranging) used in maritime as radio waves largely absorbed in seawater due to conductiveness
-
-RADAR (Radio Detecting And Ranging)
-Higher frequency results in higher resolution than SONAR.
-Also as EM wave, much faster transmission rate
-For long range, radio waves bounce off ionosphere (where Earth's atmosphere meets with space)
-radio waves 10Hz - 300GHz (true radio would be FM radio)
-
-microwaves make up majority of the spectrum of radio waves
-microwaves 300MHz - 300GHz (radar)
-divided into bands, e.g. C-band, L-band, etc.
-
-infrared waves 300GHz - 300THz (object detection)
-Heat is the motion of atoms, faster they move, more heat.
-approx. 50% of solar radiation, approx. 80% atmosphere is Nitrogen
-
-visible light 
-LIDAR (Light Detection And Ranging) 
-(lasers; weather dependent) 
-higher accuracy and resolution than radar, lower range
-
-UV
-UVA has longer wavelength, associated with skin ageing
-UVB associated with skin burning
-UVB doesn't pass through glass, however UVA does
-SPF (Sun Protection Factor) is how many times longer it takes to burn than with no sunscreen.
-However, UV can still get through and sunscreen is water-resistant, not waterproof
-Melanoma is skin cancer that forms in melanocytes in skin that control pigment
-
-ionising x-rays
-
-ionising gamma-rays
-
-
-# Networks
-RFC (Request For Comments) documents contain technical specifications for Internet techologies, e.g. IP, UDP, etc.
-
-LoRa (Long Range) has low power requirements and long distance. AES-128 encrypted by default.
-LoRa useful if only sending some data a few times a day.
-LoRa has configurable bandwitdh, so can go up to 500KHz if regulations permit (lower frequency, longer range, so will be narrowband)
-Don't require IP addresses.
-LoRaWAN allows for large star networks to exist, e.g. city (which will require 1 IP address for the gateway)
-Sigfox more power.
-
-Wifi, Bluetooth, ZigBee are for local networks.
-LoRa is like a low bandwidth GSM (phone data)
-essentially tradeoffs between power and data rate
-IEEE (Institute of Electrical and Electronic Engineers) 802.11 group for WLANs (WiFi - high data rate), 
-802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 
-802.15.4 low data rate (ZigBee, LoRa, Sigfox)
-
-SMS are stored as clear text by provider
-SS7 (signaling system number 7) protocol connects various phone networks across the world
-This protocol is old and has been attacked many times
-
-RFID (Radio Frequency Identification) no line of sight required 
-(can read through objects unlike barcode) 
-Also read multiple objects at once. RFID tag. Greater read range (shop security)
-A QR (Quick Response) code is just a 2d barcode with more bandwidth. Laser readers quicker.
-NFC (Near Field Communication) for low-power data transfer. NFC tag. (payment systems)
-
-TV standards
-Americas: NTSC (30fps, less scanlines per frame) 4.4MHz
-Europe, Asia, Australia: PAL (Phase alternate line) (25fps) 2.5MHz
-
-
-ISM (industrial, scientific and medical) bands exclude telecommunication frequencies
-
-4G (generation) type of cellular technology. define min/max upload/download rates
-as many cell towers cannot fully support the bandwidth capabilities outlined by
-4G, use the term 4G LTE (long term evolution) to indicate implement some of 4G features.
-now have 4G LTE cat 13 to indicate featurs implemented
-around 1800MHz
-
-ISM (Industrial Scientific Medical) range? (why bluetooth and wifi considered part of ISM?)
-does version 5.0 expand upon enhanced data rate, i.e. bluetooth classic bandwidth? 
-seems higher that higher than 6GHz requires license?
-ISM (900MHz, 2.4GHz, 5GHz) occupies unlicensed RF band
-
-bluetooth LE  
-
-// GATT is a hierarchy of data a device exposes (profile -> service -> characteristic (actual data))
-// So when talking to a device, we are really dealing with a particular characteristic of a service
-
-// BLE transmitter only on if being read or written to (so it just broadcasts data that others listen to?)
-// subscribe to data changes in GATT database?
-// e.g. GATT keys are 128bit UUIDs, 95DDA90-251D-470A-A062-FA1922DFA9A8
-// peripheral advertises; central scans and connects
-// also have Beacon (only transmitting) and Observer
-// can create custom profiles (generic architecture; is this a gatt?)
-
-GNSS (Global Navigation Satellite Systems) constellations (GPS:US, GLONASS:Russia, Galileo:EU, Beido:China)
-all location providing services. implement different frequencies, etc.
-
-
-* GSM (global system for mobile communications) - uses SIM (subscriber identification module) cards to authenticate and authorise access
-I suppose eSIM would make SIM-locking easier to overcome 
-
-
-
-
-
-
-
-accelerometer
-magnometer
-gyroscope -> determine gravity, linear acceleration and rotation vectors?
-ambient light sensor -> in lux?
-
-
-MEMS (Micro Electro Mechanical Systems) combines mechanical parts with electronics like some IC, (so circuitry with moving parts)
-e.g. microphone (sound waves cause diaphragm to move and cause induction), accelerometer, gyroscope
-
-on phone, implemented as non-wakeup sensors.
-this means phone can be in a suspended state and the sensors don't wake the CPU up to report data
-
-accelerometer measures rate of change in velocity, i.e. vibrations associated with movement (m/s²)
-so can check changes in orientation
-it will have a housing that is fixed to the surface and a seismic mass that can move about.
-detecting the amount of movement in the seismic mass
-
-gyroscope measures rotational acceleration, unlike an accelerometer which is unable to distinguish it from linear (rad/s²)
-gyroscope resists changes to its orientation due to intertial forces of a vibrating mass.
-so can detect angular momentum and useful for guidance correction
-
-a gimbal is a pivoted support that permits rotation about an axis
-
-IMU (Inertial Measurement Unit) is an accelerometer + gyroscope + magnetometer (teslas)
-the magnetometer is used to correct gyroscope drift as it can provide a point of reference
-
-
-
-
-Is daylight time different to standard time?
-Australia 5 time zones:
-Christmas Island (UTC+7), Perth (UTC+8), Adelaide (UTC+10:30), Canberra (UTC+11), Norfolk Island (UTC+12)
-
-daylight savings adds extra daylight in summer season
-days shorter in winter months
-
-so spring, clock springs forward, we lose an hour (23 hours in day)
-in fall, clock falls back, we gain an hour (25 hours in a day)
-
-daylight savings starts in October, i.e. clocks put forward an hour ends in April
-(in spring as literal hours of sunlight increases)
-
-So, AEST and AEDT are different time zones.
-Adelaide, south-east onwards observe daylight savings
-WA not observed as large part of state is close to equator, negating effect of tilt of earth
-
-Gregorian calendar does not correspond exactly to one solar year. So, every 4 years Feburary has an extra day (28 to 29)
-
-Gregorian calendar primarily used, however Chinese calendar has each month start on a new lunar phase
-Solar eclipse when sun is eclipsed by moon
-Lunar eclipse when moon is eclipsed by earth
-Timestamp is calendar and time of day (and UTC (Coordinated Universal Time) offset for unambiguous time zone)   
-Meridian is Greenwich, England.
-Longitude is vertical lines, indicating east or west from meridian 
-International Date Line is when you cross over 180° longitude, i.e. from UTC+12 to UTC-12 or vice versa
-Earth rotates eastward, so sun rises in the east.
-
-Latitude is horizontal from equator
-Places on the equator have equal time of daylight and night time
-
-Tropics 23.5° (this number as the equator is tilted by this amount) equator
-north is cancer, south is capricorn
-Tropics (area between tropics) are hot, as they get sunlight all year round
-So, tropics are actually hotter than equatorial regions
-
-Artic (top) and Antarctic (bottom) are latitude circles. 
-They represent what areas of sunlight will hit, so in summer 24hour days, winter 0hour days
-
-Solstices mark the start of summer (longest daylight of year) and winter
-Equinox is start of spring and autumn (equal number of daylight and night time)
-
-Use caesium atoms to control when to apply an electric jolt to quartz to keep it oscillating at the same frequency
-quartz is piezoelectric, meaning mechanical stress results in electric charge and vice versa
-
-NTP (Network Time Protocol) is TCP/IP protocol for clock synchronisation. 
-It works by comparing with atomic clock servers
