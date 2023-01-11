@@ -225,6 +225,8 @@ If packages is being actively maintained, preferable to use .deb as faster and s
 Linux DRM (direct rendering manager) -> X11 (display server) -> xfce (desktop environment)  
 Linux ALSA (advanced linux sound architecture) -> pulseaudio (sound server) 
 
+Fstab (File System Table) describes filesystems that should be mounted, when they should be mounted and with what options.
+
 SystemV ABI:
 rdi, rsi, rdx, rcx, r8, r9 (6 integer arguments)
 xmm0, xmm1, xmm2, xmm3, xmm4, xmm5, xmm6 (7 floating arguments)
@@ -392,6 +394,8 @@ Progressive will display each row sequentially for a given frame
 4k means horizontal resolution of approximately 4000 pixels. 
 standard different for say television and projection industry, e.g. 3840 pixels
 
+Screen density is a ratio between screen size and resolution measured in PPI (Pixels Per Inch) 
+
 A voltage applied to ionised gas, turning them into superheated matter that is plasma.
 Subsequent UV is released.
 
@@ -399,8 +403,13 @@ LCD (Liquid Crystal Display) involves backlight through crystals.
 IPS (In-Plane Switching) and TFT (Thin Film Transistor) are example crystal technologies.
 For an LED monitor, the LED is the backlight, as oppose to a fluorescent.
 However still uses LCD backlight, so really LED LCD.
-QLED/QNED (Quantum NanoCell) is a adding a 'quantom dot' layer into 
+
+Quantum science deals with quanta, i.e. smallest unit that comprises something
+They behave strangely and don't have well defined values for common properites like position, energy etc., e.g. uncertainty principle
+A 'quantum dot' is a semiconductor nanoparticle that has different properties to larger particles as a result of quantum mechanics.
+QLED/QNED (Quantum NanoCell) adds a 'quantom dot' layer into 
 the white LED backlight LCD sandwich.
+
 OLED is distinct. 
 It produces own light, i.e. current passed through an OLED diode to produce light. 
 LTPO (Low Temperature Polycrystalline Oxide) is a backplane for OLED technology.
@@ -422,6 +431,8 @@ woofer, subwoofer, speaker and tweeter.
 (sign 1bit)-(exponent 8bits)-(significand/mantissa 23bits)
 1 *     2² *      0.1234
 
+PIC (Position Independent Code) can be executed anywhere in memory by using relative addresses, e.g. shared libraries
+The process of converting relative to absolute, i.e. query unresolved symbols at runtime adds a level of indirection 
 
 Data deduplication means to remove duplicates
 
@@ -458,25 +469,9 @@ MOSFET type of transistor that is voltage controlled
 
 CMOS technology allows the creation of low standby-power devices, e.g. non-volatile CMOS static RAM 
 
-What is fstab?
 
 EMV (europay, mastercard, visa) chip implements NFC for payments
 
-ARM core ISA e.g. ARMv8
-Will then have profiles, e.g. M-Profile ARMv8-M 
-R-Profile for larger systems like automotive
-
-ARM holdings implements profile in own CPU, e.g. Cortex-A72
-This is a synthesisable IP (Intellectual Property) core sold to other 
-semiconductor companies who make implementation decisions like 
-amount of cache from 8-64kb specification.
-
-However, other companies can build own CPU from ISA alone, e.g. Qualcomm Kryo and Nvidia Denver
-
-Then have actual MCUs e.g. STMicroelectronics, NXP
-or SoCs e.g. Qualcomm Snapdragon, Nvidia Tegra 
-
-FPU is a VFPv3-D16 implementation of the ARMv7 floating-point architecture
 
 Various synthetic benchmarks indicative of performace, e.g. 
 DMIPS (Dhrystone Million Instructions per Second) for integer and
@@ -516,7 +511,12 @@ Chrom-ART Accelerator offers DMA for graphics, i.e. fast copy, pixel conversion,
 
 LED anode is positive longer lead
 
+5ATM is 5 atmospheres. 1 atmosphere is about 10m (however calculated when motionless)
+50m for 10 minutes
 
+MIDI (Musical Instrument Digital Interface) 3 byte messages that describe note type, how hard pressed and what channel
+Useful for sending out on MCU
+FRAM (ferroelectric) is non-volatile gives same access properties as RAM
 
 
 
@@ -544,18 +544,54 @@ TODO: what is blockchain and web3?
 
 
 # Phone
-PIC (Position Independent Code) can be executed anywhere in memory by using relative addresses, e.g. shared libraries
-The process of converting relative to absolute, i.e. query unresolved symbols at runtime adds a level of indirection as 
-normally function address present in instruction stream.
+ARM core ISA e.g. ARMv8
+Will then have profiles, e.g. M-Profile ARMv8-M 
+R-Profile for larger systems like automotive
 
-EABI is new ARM ABI (called embedded as suited to the needs of embedded applications)
-Part of ABI for ARM (also part of ABI is debugging, dynamic linking semantics etc.)
-From this we can garner say, not to put more than 4 word sized arguments to function as this will require stack, consuming more time and space
-Furthermore, alignment restrictions mean that passing a double word has to be even-odd register pair,
-so ordering of parameters important
+ARM holdings implements profile in own CPU, e.g. Cortex-A72
+This is a synthesisable IP (Intellectual Property) core sold to other 
+semiconductor companies who make implementation decisions like 
+amount of cache from 8-64kb specification.
 
-Procedure Call Standard for the Arm Architecture (AAPCS).
-AAPCS:
+However, other companies can build own CPU from ISA alone, e.g. Qualcomm Kryo and Nvidia Denver
+
+Then have actual MCUs e.g. STMicroelectronics, NXP
+or SoCs e.g. Qualcomm Snapdragon, Nvidia Tegra 
+
+big.LITTLE is heterogenous processing architecture with two types of processors.
+big cores are designed for maximum compute performance and LITTLE for maximum power efficiency
+
+FFT divides samples (typically from an ADC) into frequency band
+A logarithmic scale typically employed to account for nonlinear values whereby a greater proportion in high frequency band
+
+DSP instructions may include transforms like FFT, filters like IIR/FIR (Finite Impulse Response; no feedback) and statistical like moving average
+
+With the addition of 64bit extension, ARM retroactively called aarch32.
+Possible instruction sets include Thumb-1 (16-bit), Thumb-2 (16/32-bit), aarch32 (32bit instructions), aarch64 (32bit instructions), 
+Neon, MTE (Memory Tagging Extension), etc. 
+aarch64 does not allow Thumb instructions
+
+FPU is a VFPv3-D16 implementation of the ARMv7 floating-point architecture
+VFP (Vector Floating Point) is floating point extension on ARM architecture.
+Called vector as initially introduced floating point and vector floating point.
+Neon is product name for ASE (Advanced SIMD Extension), i.e. SIMD for cortex-A and cortex-R 
+(more recent is SVE (Scalable Vector Extension))
+Helium is product name for MVE (M-profile Vector Extension), i.e. SIMD for cortex-M
+
+RSA (Rivest-Shamir-Adleman) is asymmetric, i.e. public and private key. Much slower than AES
+AES (Advanced Encryption Standard) is symmetric, i.e. one key
+SHA (Secure Hash Algorithm) is one-way and produces a digest
+
+MPU (Memory Protection Unit) only provide memory protection not virtual memory like an MMU (Memory Management Unit)
+
+Built atop Android OS, many phones will implement own custom OS, e.g. Huewei EMUI, Samsung One UI
+The ART (Android Runtime) is the Java Virtual Machine that performs JIT bytecode compilation of APK (Android Package Kit)
+
+EABI (Embedded) is new ARM ABI, renamed as it suits the needs of embedded applications.
+An EABI will omit certain abstractions present in an ABI designed for a kernel, e.g run in priveleged mode
+From the calling convention part of ABI we can garner number of arguments until stack usage and alignment requirements.
+
+AAPCS (Arm Architecture Procedure Call Standard):
 r0-r3, rest stack
 s0-s7
 stack 4-byte aligned, if on function call, 8-byte aligned
@@ -565,45 +601,16 @@ x0-x7 (w0-w7 for 32-bit), rest stack
 v0-v7
 stack 16-byte aligned
 
+Most modern ARM architectures will not crash on unaligned accesses
 
-more instructions required for unaligned memory accesses?
-(most modern x64 arm will not crash on an unaligned access?)
-from armv7, unaligned accesses allowed
-
-5ATM is 5 atmospheres. 1 atmosphere is about 10m (however calculated when motionless)
-50m for 10 minutes
-
-Built atop Android OS, many phones will implement own custom OS, e.g. Huewei EMUI, Samsung One UI
-
-big.LITTLE is heterogenous processing architecture with two types of processors.
-big cores are designed for maximum compute performance and LITTLE for maximum power efficiency
-
-DSP instructions may include transforms like FFT, filters like IIR/FIR and statistical like moving average
-
-Thumb-1 (16-bit), thumb-2 (16/32-bit), arm (32bit instructions), aarch64 (32bit instructions), 
-Neon, MTE (Memory Tagging Extension), etc. possible instruction sets
-thumb, i.e. 16bit or 32bit instructions only available on aarch32? (arm retroactively called aarch32)
-
-ARM instructions are 32bits long (still 32bit on aarch64)
-
-MPU (Memory Protection Unit) only provide memory protection not virtual memory like an MMU (Memory Management Unit)
-
-MIDI (Musical Instrument Digital Interface) 3 byte messages that describe note type, how hard pressed and what channel
-Useful for sending out on MCU
-FRAM (ferroelectric) is non-volatile gives same access properties as RAM
-
-The ART (Android Runtime) is the Java Virtual Machine that performs JIT bytecode compilation of APK (Android Package Kit)
-
-VFP (Vector Floating Point) is floating point extension on ARM architecture.
-Called vector as initially introduced floating point and vector floating point.
-Neon is product name for ASE (Advanced SIMD Extension), i.e. SIMD for cortex-A and cortex-R 
-(more recent is SVE (Scalable Vector Extension))
-Helium is product name for MVE (M-profile Vector Extension), i.e. SIMD for cortex-M
-
-accelerometer
-magnometer
-gyroscope -> determine gravity, linear acceleration and rotation vectors?
-ambient light sensor -> in lux?
+Shader is a GPU program that is run at a particular stage in the rendering pipeline
+Nvidia GPU cores named CUDA cores. AMD calls them stream processors. ARM shader cores
+So, CUDA is a general purpose Nvidia GPU program that can utilise GPU's highly parallised architecture
+opencl whilst more supportive, i.e can run on CPU or GPU, does not yield same performance benefits
+renderscript is android specific heteregenous in that it will distribute load automatically
+OpenGL has a lot of fixed function legacy (now shader based) and drivers rarely follow the standard in its entirety
+OpenGL ES (Embedded Systems) is a subset
+Vulkan is low-level that more closely reflects how modern GPUs work
 
 flux is an arbitrary term used to describe the flow of things, e.g. photon flux, magentic flux
 
@@ -616,50 +623,16 @@ A higher nit display is more easily viewable in a wider array of lighting condit
 e.g. will combat the sun's light reflecting off the surface in an outdoor setting
 brightness is subjective, and therefore does not have a value associated to it
 
-MEMS (Micro Electro Mechanical Systems) combines mechanical parts with electronics like some IC, (so circuitry with moving parts)
-e.g. microphone (sound waves cause diaphragm to move and cause induction), accelerometer, gyroscope
-
-on phone, implemented as non-wakeup sensors.
-this means phone can be in a suspended state and the sensors don't wake the CPU up to report data
-
-accelerometer measures rate of change in velocity, i.e. vibrations associated with movement (m/s²)
-so can check changes in orientation
-it will have a housing that is fixed to the surface and a seismic mass that can move about.
-detecting the amount of movement in the seismic mass
-
-gyroscope measures rotational acceleration, unlike an accelerometer which is unable to distinguish it from linear (rad/s²)
-gyroscope resists changes to its orientation due to intertial forces of a vibrating mass.
-so can detect angular momentum and useful for guidance correction
-
-a gimbal is a pivoted support that permits rotation about an axis
-
-IMU (Inertial Measurement Unit) is an accelerometer + gyroscope + magnetometer (teslas)
-the magnetometer is used to correct gyroscope drift as it can provide a point of reference
-
-Shader is a GPU program that is run at a particular stage in the rendering pipeline
-Nvidia GPU cores named CUDA cores. AMD calls them stream processors. ARM shader cores
-So, CUDA is a general purpose Nvidia GPU program that can utilise GPU's highly parallised architecture
-opencl whilst more supportive, i.e can run on CPU or GPU, does not yield same performance benefits
-renderscript is android specific heteregenous in that it will distribute load automatically
-OpenGL has a lot of fixed function legacy (now shader based) and drivers rarely follow the standard in its entirety
-OpenGL ES (Embedded Systems) is a subset
-Vulkan is low-level that more closely reflects how modern GPUs work
-
-RSA (Rivest-Shamir-Adleman) is asymmetric, i.e. public and private key. Much slower than AES
-AES (Advanced Encryption Standard) is symmetric, i.e. one key
-SHA (Secure Hash Algorithm) is one-way and produces a digest
-
 ## Wireless
 Sound waves 20Hz-20kHz
 Ultrasonic are sound waves not audible by humans
 SONAR (Sound Navigation And Ranging) used in maritime as radio waves largely absorbed in seawater due to conductiveness
 
 RADAR (Radio Detecting And Ranging)
-adar transmit much faster than sonar
-more easily focused as longer wavelength to not bend around corners
+Higher frequency results in higher resolution than SONAR.
+Also as EM wave, much faster transmission rate
+For long range, radio waves bounce off ionosphere (where Earth's atmosphere meets with space)
 radio waves 10Hz - 300GHz (true radio would be FM radio)
-higher frequency means more information can be conveyed
-radio waves bounce off ionosphere (long range)
 
 microwaves make up majority of the spectrum of radio waves
 microwaves 300MHz - 300GHz (radar)
@@ -750,6 +723,40 @@ all location providing services. implement different frequencies, etc.
 
 * GSM (global system for mobile communications) - uses SIM (subscriber identification module) cards to authenticate and authorise access
 I suppose eSIM would make SIM-locking easier to overcome 
+
+
+
+
+
+
+
+accelerometer
+magnometer
+gyroscope -> determine gravity, linear acceleration and rotation vectors?
+ambient light sensor -> in lux?
+
+
+MEMS (Micro Electro Mechanical Systems) combines mechanical parts with electronics like some IC, (so circuitry with moving parts)
+e.g. microphone (sound waves cause diaphragm to move and cause induction), accelerometer, gyroscope
+
+on phone, implemented as non-wakeup sensors.
+this means phone can be in a suspended state and the sensors don't wake the CPU up to report data
+
+accelerometer measures rate of change in velocity, i.e. vibrations associated with movement (m/s²)
+so can check changes in orientation
+it will have a housing that is fixed to the surface and a seismic mass that can move about.
+detecting the amount of movement in the seismic mass
+
+gyroscope measures rotational acceleration, unlike an accelerometer which is unable to distinguish it from linear (rad/s²)
+gyroscope resists changes to its orientation due to intertial forces of a vibrating mass.
+so can detect angular momentum and useful for guidance correction
+
+a gimbal is a pivoted support that permits rotation about an axis
+
+IMU (Inertial Measurement Unit) is an accelerometer + gyroscope + magnetometer (teslas)
+the magnetometer is used to correct gyroscope drift as it can provide a point of reference
+
+
 
 
 Is daylight time different to standard time?
