@@ -1,5 +1,7 @@
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
+TODO: raylib game programming (perhaps also for byte jams as well)
+
 TODO: IoT embedded project
 
 TODO: incorporate rss reader feeder.co into morning routine
