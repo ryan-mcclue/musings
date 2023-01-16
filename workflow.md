@@ -1,5 +1,8 @@
 # LEETCODE EVERYDAY
 
+IMPORTANT: premature MICROOPTIMISATION (i.e. fine-tuning things) is root of all evil.
+overall optimisation should always be at forefront 
+
 TODO: add reddit and hackernews to daily link trawl
 
 TODO: merge 'verify' and 'plotting' into misc/ folders of repositories

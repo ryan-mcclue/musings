@@ -30,10 +30,6 @@ These standards usually require to provide a lot of documentation and to pass a
 series of tests in order to verify that your device is working as intended 
 and it's not dangerous.
 
-could even be simplex (one way only)
-full-duplex can still be serial, requiring at least two wires (duplex meaning bidirectional)
-serial (synchronous with clock data; asynchronous) + parallel 
-
 If you put "used Bluetooth" then I would expect you to talk about which transceivers you used, what the api was like (deficiencies it had, how low level, how was it good), and of course a high level overview of where the Bluetooth spec ends and application begins.
 
 Simply bieng able to say "I don't know, but I do know that in the spec/experience it says xyz, so maybe it would do abc, but I would have to look for jkl to be sure." is huge.
@@ -595,11 +591,6 @@ what would a segfault ➞ coredump look like on bare-metal?
 C type qualifiers are idempotent, e.g. `const const const int` is fine
 sparse + smatch static analysis tools that give named address spaces (near, far pointers)
 
-synchronisation constructs:
-* lock (only one thread access at a time)
-* mutex (lock that can be shared by multiple processes)
-* semaphore (can allow many threads access at a time)
-
 is ARM nested interrupt by default?
 
 C atomics just insert barriers?
@@ -816,9 +807,6 @@ https://embeddedartistry.com/fieldatlas/embedded-software-development-maturity-m
 Seems that IAR compiler produces smaller, faster code than gcc?
 
 Fallback to: https://grep.app/search when searching for code snippets on github?
-
-UART is protocol for sending/recieving bits. 
-RS232 specifies voltage levels
 
 DSP:
 https://www.youtube.com/playlist?list=PLTNEB0-EzPluXh0d_5zRprbgRfgkrYxfO

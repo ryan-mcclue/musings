@@ -18,3 +18,5 @@ AI training on users that will eventually replace them, e.g. Adobe tracking arti
 However, AI does not create innovative results.
 
 Interesting storing application state in base64 url. No server required, and browser history becomes undo-redo
+
+Self-driving aircraft being tested

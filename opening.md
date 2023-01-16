@@ -1,5 +1,18 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+diaphramatic breathing, e.g. should be able to do 5-7 strokes at easy pace
+big exhale through nose as turning head
+look to side when turning and keep bottom goggle in water
+
+good posture, ok for head to look slightly forwards
+feet flexed, kick remains in small 'bucket' range, kick with hips (heels should breach surface breifly)
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
 1. SPEED:
 - create models with newest sensors straight away
 - create new models all-the-time

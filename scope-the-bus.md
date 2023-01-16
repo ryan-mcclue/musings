@@ -30,7 +30,6 @@ Also investigate PWM
 
 math -> decoder on; event table on (make sure zoomed out enough to view multiple packets (this will increase memory automatically?); increase baud also)
 
-
 Bus Pirate has PIC as a SOIC (surface outline integrated circuit) package
 
 Multimeter measure power consumption of MCU? (stm32 nucleo boards have convenient IDD jumper)
