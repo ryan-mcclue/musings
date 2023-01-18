@@ -1,4 +1,8 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
+TODO: chatGPT in workflow
+https://www.youtube.com/watch?v=sTeoEFzVNSc
+
+
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y install \

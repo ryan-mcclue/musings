@@ -131,4 +131,3 @@ ad infinatum
 
 Borrowing money: clear you're the right person to give the money to. Clear you understand what you're doing and the game process is figured out. Proof of you will complete it. 
 Here is the game, why I'm good at it, why people will like it and why I'm going to succeed at developing it
-Interview ability to explain problems you have encountered on projects

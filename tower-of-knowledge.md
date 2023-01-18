@@ -607,9 +607,9 @@ Between protocols, tradeoffs between power and data rate
 IEEE (Institute of Electrical and Electronic Engineers):
 * 802.11 group for WLANs (WiFi - high data rate), 
 * 802.15 for WPANs; 802.15.1 (Bluetooth), 
-* 802.15.4 low data rate (ZigBee, LoRa, Sigfox)
+* 802.15.4 low data rate (ZigBee, LoRa, Sigfox, Z-Wave)
 
-Wifi, Bluetooth, ZigBee are for local networks.
+Wifi, Bluetooth, ZigBee, Z-Wave (lowest power) are for local networks.
 LoRa is like a low bandwidth GSM
 LoRa (Long Range) has low power requirements and long distance. AES-128 encrypted by default.
 LoRa useful if only sending some data a few times a day.

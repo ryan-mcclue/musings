@@ -7,11 +7,19 @@ look to side when turning and keep bottom goggle in water
 good posture, ok for head to look slightly forwards
 feet flexed, kick remains in small 'bucket' range, kick with hips (heels should breach surface breifly)
 
+arms extend straight along 'train tracks'
 
 
 
 
 --------------------------------------------------------------------------------------------------------------------------
+
+
+
+book - how things work now
+book - rebuild civilisation
+assassins teapot
+-------------------------------
 
 1. SPEED:
 - create models with newest sensors straight away

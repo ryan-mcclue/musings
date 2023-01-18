@@ -1,3 +1,8 @@
+DSP into: https://www.youtube.com/watch?v=SrJq2AzXZME&t=334s
+Bare metal: https://github.com/cpq/bare-metal-programming-guide 
+C-oddities: https://tmewett.com/c-tips/
+Ask about embedded automated testing: https://tmewett.com/work/
+
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
 TODO: raylib game programming (perhaps also for byte jams as well)

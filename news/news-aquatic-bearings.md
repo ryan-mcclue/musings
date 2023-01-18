@@ -20,3 +20,9 @@ However, AI does not create innovative results.
 Interesting storing application state in base64 url. No server required, and browser history becomes undo-redo
 
 Self-driving aircraft being tested
+
+Code maintainability the main drawback in reaching a situation where programmers simply query LLM (Large Language Models) and just clean up the output?
+
+New display electroluminescent quantum dots to possible replace OLED
+
+New memory packaging with higher density to replace SO-DIMM, CAMM (Compression Attached Memory Module)
