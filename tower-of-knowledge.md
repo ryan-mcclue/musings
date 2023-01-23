@@ -55,11 +55,12 @@ Colder, nutrient rich water travels to ocean surface
 La nina (warmer water near Australia, leading to higher evaporation and more rainfall; possible coral bleaching) <->
 neutral <-> El nino (Spanish little boy; higher temperatures as clearer skies)
 
+Along the moon line, there is a very slight pull to the moon.
+The resultant force vectors around the earth are directed towards the centre.
+This increases water pressure, and results in oceans being squeezed.
+Similar to squeezing a balloon, get bulges at either side.
 
-Tides caused by oceans being squeezed by moon's gravity.
-Similar to squeezing a balloon, get bulges at either side
-
-Solstices mark the start of summer (longest daylight of year) and winter.
+Solstices mark the astronomical (as oppose to calendar meteorological) start of summer (sun reaches highest point in sky; longest daylight of year) and winter.
 Equinox is start of spring and autumn (equal number of daylight and night time)
 
 Timestamp is calendar and time of day and UTC (Coordinated Universal Time) offset

@@ -28,3 +28,5 @@ New display electroluminescent quantum dots to possible replace OLED
 New memory packaging with higher density to replace SO-DIMM, CAMM (Compression Attached Memory Module)
 
 Skeptical about copilot AI code writing as doesn't understand architectural issues and beyond.
+
+Interesting possibility of 'gravity' batteries used in abandoned mines
