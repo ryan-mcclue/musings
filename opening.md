@@ -9,12 +9,14 @@ feet flexed, kick remains in small 'bucket' range, kick with hips (heels should 
 
 arms extend straight along 'train tracks'
 
-
-
+when rotate, shoulder out of water (armpit should be visible)
+rotate with elbow pointing to sky. motion should originate with elbow, forearm relaxed
+fingers enter first, elbow can slap down after
 
 --------------------------------------------------------------------------------------------------------------------------
 
-
+map - australia
+map - world
 
 book - how things work now
 book - rebuild civilisation

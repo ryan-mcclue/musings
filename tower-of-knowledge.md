@@ -4,7 +4,7 @@
 Sap is a fluid that transports nutrients throughout tree
 Gum trees named as sap is gum like, as oppose to say resin like. 
 Will also typically be smoothed bark
-Eucalyptus type of gum tree
+Eucalyptus type of gum tree, endemic (localised but consistent) to Australia
 Eucalyptus oil droplets from the forests combine with water vapour to scatter short wavelength
 rays of light that are predominantly blue (ROYGBIV in descending wavelengths)
 
@@ -14,7 +14,6 @@ Christmas Island (UTC+7), Perth (UTC+8), Adelaide (UTC+10:30), Canberra (UTC+11)
 Daylight savings incorporates the literal increase in sunlight to timezone 
 So in Spring, the clock springs forward.
 We lose an hour, i.e 23 hours in that day
-
 In the Fall, the clock falls back.
 We gain an hour, i.e 25 hours in that day
 
@@ -22,23 +21,21 @@ When using daylight saving time, will be AEDT as oppose to AEST, i.e. different 
 Adelaide, south-east onwards observe daylight savings
 WA not observed as large part of state is close to tropics, negating effect of tilt of earth
 
-Gregorian calendar does not correspond exactly to one solar year. 
+Gregorian calendar (Pope Gregory) does not correspond exactly to one solar year. 
 So, every 4 years Feburary has an extra day (28 to 29) known as a leap year.
 Also have leap seconds.
 Gregorian calendar primarily used, however Chinese calendar has each month start on a new lunar phase
 
 Solar eclipse when sun is eclipsed by moon
 Lunar eclipse when moon is eclipsed by earth
+New moon waxes and full moon wanes as it orbits about 27 days 
 
 Prime meridian is through Greenwich, England.
 Longitude is vertical lines, indicating east or west from prime meridian.
-International Date Line is when you cross over 180° longitude, i.e. from UTC+12 to UTC-12 or vice versa
-
+International Date Line is when you cross over 180° longitude, i.e. from UTC+12 (east) to UTC-12 or vice versa
 Latitude is horizontal from equator.
 Places on the equator have equal time of daylight and night time
-
-Tropics are at 23.5°
-They are at this amount as this how much they are tilted from the equator
+Tropics are at 23.5°. They are at this amount as this is how much they are tilted from the equator
 North line is cancer, south line is capricorn.
 The tropics are the region between the tropic lines.
 They are hot, due to the sunlight they recieve all year round
@@ -47,13 +44,27 @@ Northern Artic and Southern Antarctic are latitude circles.
 They represent what areas of sunlight will hit.
 So in summer, will have 24 hour days, whilst in winter 0hour days.
 
+Hot air has lower pressure, and so rises. 
+As higher pressure moves to low pressure, colder denser air will fill its place. 
+This is wind
+Wind direction from where it originates
+Trade winds are winds that reliably blow from the east (easterlies) just north and south of equator 
+As tropics hotter, higher pressure flows to equator. As earth rotates, wind is eastwards
+Warmer surface water is thusly transported eastwards across Pacific.
+Colder, nutrient rich water travels to ocean surface
+La nina (warmer water near Australia, leading to higher evaporation and more rainfall; possible coral bleaching) <->
+neutral <-> El nino (Spanish little boy; higher temperatures as clearer skies)
+
+
+Tides caused by oceans being squeezed by moon's gravity.
+Similar to squeezing a balloon, get bulges at either side
+
 Solstices mark the start of summer (longest daylight of year) and winter.
 Equinox is start of spring and autumn (equal number of daylight and night time)
 
 Timestamp is calendar and time of day and UTC (Coordinated Universal Time) offset
 
 Earth rotates eastward, so sun rises in the east no matter what hemisphere.
-
 
 # Desktop
 ## Chips
@@ -507,6 +518,7 @@ Helium is product name for MVE (M-profile Vector Extension), i.e. SIMD for corte
 RSA (Rivest-Shamir-Adleman) is asymmetric, i.e. public and private key. Much slower than AES
 AES (Advanced Encryption Standard) is symmetric, i.e. one key
 SHA (Secure Hash Algorithm) is one-way and produces a digest
+OpenSSL is common open-source cryptography toolkit that implements these
 
 MPU (Memory Protection Unit) only provide memory protection not virtual memory like an MMU (Memory Management Unit)
 
@@ -605,7 +617,7 @@ SS7 (Signaling System Number 7) protocol connects various phone networks across 
 
 Between protocols, tradeoffs between power and data rate
 IEEE (Institute of Electrical and Electronic Engineers):
-* 802.11 group for WLANs (WiFi - high data rate), 
+* 802.11 group for WLANs (WiFi 6E - high data rate), 
 * 802.15 for WPANs; 802.15.1 (Bluetooth), 
 * 802.15.4 low data rate (ZigBee, LoRa, Sigfox, Z-Wave)
 
