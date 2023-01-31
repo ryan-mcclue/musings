@@ -21,6 +21,11 @@ Preparation Mentality:
 a standard rebase will apply commits on top of 
 interactive rebase to perform squashing on most recent
 **merge conflict resolution**: `git mergetool`
+* using submodules:
+  - add: $(git submodule add)
+  - fetch: $(git clone --recurse-submodules) or $(git submodule update --init)
+  - update: ... 
+
 
 Use the approach the particular system API follows. You can always use your own approach atop
 

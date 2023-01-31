@@ -30,3 +30,7 @@ New memory packaging with higher density to replace SO-DIMM, CAMM (Compression A
 Skeptical about copilot AI code writing as doesn't understand architectural issues and beyond.
 
 Interesting possibility of 'gravity' batteries used in abandoned mines
+
+Profileration of natural language can see developers create 'lazy' UI decisions
+
+Now AI can generate handwriting.

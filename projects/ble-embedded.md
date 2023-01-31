@@ -28,6 +28,7 @@
     How does an OS manage memory?
 -------
 
+Linear acutator is motor that moves up and down
 
 Bare metal: https://github.com/cpq/bare-metal-programming-guide 
 C-oddities: https://tmewett.com/c-tips/

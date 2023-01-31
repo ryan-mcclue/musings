@@ -13,6 +13,8 @@ when rotate, shoulder out of water (armpit should be visible)
 rotate with elbow pointing to sky. motion should originate with elbow, forearm relaxed
 fingers enter first, elbow can slap down after
 
+catch only forearm should move. elbow stays high and forward
+
 --------------------------------------------------------------------------------------------------------------------------
 
 map - australia
