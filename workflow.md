@@ -575,7 +575,7 @@ the speed of accessing the memory from cache is pretty cheap for nearby regions
 don't make changes for conceptual cleanliness. end of the day, want to make performant, bug free code
 in the shortest amount of time.
 
-when programming some days you are off. this just means you're going to be debugging a lot
+when programming some days you are off. this just means you're going to be debugging a lot. hopefully bugs are proximal
 
 we want it to be clear what our code can and cannot touch. global variables make this hard (however, can add _ to see where they are all used)
 however, as many OSs are rather janky and most code will live outside this, it is ok to have some globals here

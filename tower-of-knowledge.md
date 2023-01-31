@@ -57,7 +57,7 @@ neutral <-> El nino (Spanish little boy; higher temperatures as clearer skies)
 
 Along the moon line, there is a very slight pull to the moon.
 The resultant force vectors around the earth are directed towards the centre.
-This increases water pressure, and results in oceans being squeezed.
+This increases water pressure, and results in oceans being squeezed. Only oceans as very large surface area
 Similar to squeezing a balloon, get bulges at either side.
 
 Solstices mark the astronomical (as oppose to calendar meteorological) start of summer (sun reaches highest point in sky; longest daylight of year) and winter.
@@ -74,13 +74,13 @@ Each tick marks a step in the fetch-decode-execute cycle.
 The signal will be sent along the address bus as specified by program counter and 
 instruction or data will be returned along the data bus.
 
-Von-Neumann has instructions and data share address space.
+Von-Neumann has instructions and data sharing address space.
 The Von-Neumann bottleneck occurs when having multiple fetches in a single instruction, e.g. ldr
 Harvard has instructions and data with separate address spaces
 In reality, all CPUs present themselves as Von-Neumann to the user, however for efficiency
 they are modified Harvard at the hardware level, i.e. pipeline/cache stage.
 Specifically, will have separate L1 cache for instructions and data.
-(also have uOP cache considered L0)
+Also have uOP cache considered L0
 Therefore, when an architecture is described as Harvard, almost certainly modified Harvard.
 
 Endianness only relevent when interpreting bytes from a cast
