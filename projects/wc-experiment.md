@@ -1,3 +1,23 @@
+optimisation requires specialised knowledge of platform and is time consuming
+performance-aware programming works towards optimisation, just not all the way
+
+1. reduce number of instructions
+2. increase speed of instructions
+
+don't think about source language. think about what it becomes, e.g. templates, garbage-collection are not a zero-cost
+it's only about what the source turns into, is when we can talk about its speed
+
+main source of modern program slowdown is wasteful instructions
+consider python. if we compile interpreter from source to inspect what assembly is run, find that incredible amount of waste
+to first determine operator, then more waste to store result. all that was required was a single 'add' instruction
+instruction stream is hugely widened for bytecode interpreter to do its work
+literally just naive 'add' program see 100x slowdown
+so, we don't need to do 'optimisation' just come back to our senses
+could offload to numpy, or use JIT?
+
+
+
+----------------------------------------------------------------------------------------------------
 time -p; getrusage();
 
 callbacks less CPU intensive than polling

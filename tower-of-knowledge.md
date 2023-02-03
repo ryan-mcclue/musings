@@ -128,7 +128,7 @@ Therefore, hyperthreading not a boon in all situations.
 AMD refers to this as simultaneous multithreading.
 
 Microarchitecture will affect instruction latency and throughput 
-byway of differening execution and control units.
+byway of differing execution and control units.
 For Intel CPUs, i3-i7 of same generation will have same microarchitecture.
 Just different cache, hyperthreading, cores, die size etc. 
 

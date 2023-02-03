@@ -28,11 +28,12 @@
     How does an OS manage memory?
 -------
 
+Backup power from a capacitor that has just enough power to transfer state to EEPROM in case of power outage?
+
 Linear acutator is motor that moves up and down
 
 Bare metal: https://github.com/cpq/bare-metal-programming-guide 
 C-oddities: https://tmewett.com/c-tips/
-Ask about embedded automated testing: https://tmewett.com/work/
 
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
