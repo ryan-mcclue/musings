@@ -14,7 +14,18 @@ instruction stream is hugely widened for bytecode interpreter to do its work
 literally just naive 'add' program see 100x slowdown
 so, we don't need to do 'optimisation' just come back to our senses
 could offload to numpy, or use JIT?
+NOTE: 10x overhead considered good for interpreter (this would be with bytecode) 
+loop unrolling can remove say `cmp` overhead, but may increase instruction cache usage
 
+modern CPUs are superscalar/overlapped, i.e. instruction level parallelism allowing for multiple instructions per cycle
+this is acheived as the CPU will look for instructions it can execute at the same time
+so, instructions must not be serially dependent
+the CPU does not have complex logic in ascertaining dependency chains. 
+it only looks at operands. so, assumes series of 'add' on same register are serially dependent
+`add a, input[i]; add a, input[i + 1]`
+we can help the CPU however, noting that say a summation can be broken up into multiple dependency chains
+`add a, input[i]; add b, input[i + 1]`
+so, a CPU will have a max. IPC value
 
 
 ----------------------------------------------------------------------------------------------------

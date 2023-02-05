@@ -15,3 +15,5 @@ all users add features they want for themselves. the rule is they have to give t
 
 Technology to decode EEG brain waves is fairly stable. Possibly present in wearable devices.
 Extends on from using machine learning to understand customer
+
+Space force in full reality. Satellite surveillance and weapons

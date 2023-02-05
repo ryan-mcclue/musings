@@ -28,6 +28,8 @@
     How does an OS manage memory?
 -------
 
+oscilloscope XY mode to display graphics
+
 Backup power from a capacitor that has just enough power to transfer state to EEPROM in case of power outage?
 
 Linear acutator is motor that moves up and down
