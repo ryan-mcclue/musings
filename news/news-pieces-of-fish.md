@@ -17,3 +17,7 @@ Technology to decode EEG brain waves is fairly stable. Possibly present in weara
 Extends on from using machine learning to understand customer
 
 Space force in full reality. Satellite surveillance and weapons
+
+Despite an appliance being smart, most users have them disconnected from the Internet.
+With embedded, important to be responsible and not brick device if company shuts down.
+Also, if automated, add a manual option

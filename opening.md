@@ -21,6 +21,8 @@ down kick on same leg as arm about to pull back
 OR
 down kick on opposite leg as arm enters water
 
+for increase stroke rate, increase speed of arm outside of water
+
 --------------------------------------------------------------------------------------------------------------------------
 
 map - australia
