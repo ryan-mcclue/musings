@@ -16,6 +16,11 @@ so, we don't need to do 'optimisation' just come back to our senses
 could offload to numpy, or use JIT?
 NOTE: 10x overhead considered good for interpreter (this would be with bytecode) 
 loop unrolling can remove say `cmp` overhead, but may increase instruction cache usage
+even if stuck in a high-level, can gain some performance benefits by rearranging code
+furthermore, could offload sections to C
+
+strictly, waste is if it was necessary for the computation.
+not if it might be used sometime in another problem, as this would mean technically nothing is waste
 
 modern CPUs are superscalar/overlapped, i.e. instruction level parallelism allowing for multiple instructions per cycle
 this is acheived as the CPU will look for instructions it can execute at the same time
@@ -26,6 +31,27 @@ it only looks at operands. so, assumes series of 'add' on same register are seri
 we can help the CPU however, noting that say a summation can be broken up into multiple dependency chains
 `add a, input[i]; add b, input[i + 1]`
 so, a CPU will have a max. IPC value
+generally, if can reduce dependency chain, always applicable
+
+JIT varied term. JIT debugging, is debugger automatically opening when program crashes
+JIT compilation first compiles to something like bytecode. then at runtime, converts to machine language
+this is powerful as can generate varied codepaths for same function based on run time, 
+e.g. if paramater small inline, if large do something else, if called a certain way do this etc.
+languages that use JIT like Javascript are not very slow because of JIT, rather language design decisions that mean it can't be optimised like C (like garbage collection)
+Rust has a strong-compile language model like C
+Java JVM incorporates JIT in bytecode interpretation
+
+Not as simple to say if 4 add units then unroll 4 times. 
+To determine loop unrolling factor must analyse port usage
+ports perform multiple operations, e.g. add or cmp. but can only do 1 at a time
+so, there might be port contention
+
+Given a codebase, not really a constructive question to ask why written in a language
+What's done is done. Just be performance-aware. Perhaps was better in another language, but that decision is made. 
+If I know how fast something can run, strive to make it as fast as I can
+
+Make decisions you know it will make a difference on say, Skylake chip
+Know performance characteristics of microarchtictures and how they apply to say the pipeline execution
 
 
 ----------------------------------------------------------------------------------------------------

@@ -29,6 +29,8 @@ interactive rebase to perform squashing on most recent
   - update: ... 
 
 
+TODO: use enums to allow compiler to provide greater error checking for use 
+
 Use the approach the particular system API follows. You can always use your own approach atop
 
 If wanting to create a new implementation of a function, 
