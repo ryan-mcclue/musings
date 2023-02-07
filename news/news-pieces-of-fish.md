@@ -21,3 +21,5 @@ Space force in full reality. Satellite surveillance and weapons
 Despite an appliance being smart, most users have them disconnected from the Internet.
 With embedded, important to be responsible and not brick device if company shuts down.
 Also, if automated, add a manual option
+
+Are their sufficient AI generative models to embody the four horsemen?
