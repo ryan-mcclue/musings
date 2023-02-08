@@ -7,7 +7,9 @@ With false uptimes reported by say Telstra, has become Goodhart's law (when a me
 
 Generative AI revolution has begun. 
 ChatGPT fastest growing user base in history
-Important to note that text generation still gets conceptual and implementation details wrong
+Important to note that code generation still gets conceptual and implementation details wrong
+Best suited for text generation like, cover letter, resume, interview preparation, mission statement etc.
+So, chatbots become prevalent
 
 a follow on from this is how I view open source.
 not as the altruistic community participiation, but rather from tit-for-tat as a game theory for making an efficient product
@@ -22,4 +24,6 @@ Despite an appliance being smart, most users have them disconnected from the Int
 With embedded, important to be responsible and not brick device if company shuts down.
 Also, if automated, add a manual option
 
-Are their sufficient AI generative models to embody the four horsemen?
+Are their sufficient AI generative models to embody the four horsemen for human made technology?
+
+Growth of companies offloading to independent workers instead of retaining fulltime
