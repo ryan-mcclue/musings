@@ -137,7 +137,8 @@ HEVC (H.265; high efficiency video coding) newer version of H.264
 VP9 is a open source Google video coding format
 
 When people say vector operations, they mean SIMD.
-SSE registers are 128bits (4 bytes) XMM, AVX are 256bits (8 bytes) YMM
+SSE registers are 128bits (4 lanes) XMM, AVX are 256bits (8 lanes) YMM
+TODO: performance-aware; vector slightly different properties to sse?
 
 Average CPU die-size is 100mm².
 GPU much larger at 500mm² as derives more benefits from more control units, i.e. parallelisation

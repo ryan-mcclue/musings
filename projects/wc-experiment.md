@@ -2,7 +2,7 @@ optimisation requires specialised knowledge of platform and is time consuming
 performance-aware programming works towards optimisation, just not all the way
 
 1. reduce number of instructions
-2. increase speed of instructions
+2. increase speed of instructions (same instructions can be faster)
 
 don't think about source language. think about what it becomes, e.g. templates, garbage-collection are not a zero-cost
 it's only about what the source turns into, is when we can talk about its speed
@@ -63,6 +63,10 @@ performance analysis one of 2 things:
    look at mean/median 
 
 times where compiler want produce what is optimally possible, e.g. staggered parallelism
+
+IMPORTANT: sse will still end up doing 4 add instructions
+its main benefit is removing all the front-end work for CPU, i.e.
+less instruction decoding, less dependency determinations etc.
 
 ----------------------------------------------------------------------------------------------------
 time -p; getrusage();

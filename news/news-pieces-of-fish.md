@@ -27,3 +27,6 @@ Also, if automated, add a manual option
 Are their sufficient AI generative models to embody the four horsemen for human made technology?
 
 Growth of companies offloading to independent workers instead of retaining fulltime
+
+Analysing genes in centenarians finds they have a particular gene that protects against cardiovascular events.
+Safer to give people protein produced by this gene rather than gene therapy
