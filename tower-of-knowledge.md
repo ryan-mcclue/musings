@@ -796,4 +796,13 @@ creating website: https://threadreaderapp.com/thread/1606219302855745538.html
 
 TODO: what is blockchain and web3?
 
-
+  Web servers are IO bound, as they are stateless and handle a lot of clients
+  Game servers are CPU bound, primarily due to the state that is calculated and sent
+  Don't use text encoding, as many bits are wasted
+ 
+  Socket is communication link.
+  BSD sockets are API implemented for IP sockets (and so require big-endian)
+ 
+  We don't have net-neutrality in Australia, so ISPs allowed to throttle on sites and customers
+  Net neutrality assumes all traffic is the same. It isn't.
+  Email checking is not time critical. 

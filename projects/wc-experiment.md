@@ -30,6 +30,7 @@ it only looks at operands. so, assumes series of 'add' on same register are seri
 `add a, input[i]; add a, input[i + 1]`
 we can help the CPU however, noting that say a summation can be broken up into multiple dependency chains
 `add a, input[i]; add b, input[i + 1]`
+`TODO: quadPtrScalar faster as less expensive microps for address generation?` (compiler might not be smart enough as we have disabled SLP vectorisation?)
 so, a CPU will have a max. IPC value
 generally, if can reduce dependency chain, always applicable
 
@@ -53,6 +54,15 @@ If I know how fast something can run, strive to make it as fast as I can
 Make decisions you know it will make a difference on say, Skylake chip
 Know performance characteristics of microarchtictures and how they apply to say the pipeline execution
 
+performance analysis one of 2 things:
+1. determine behaviour of microarchitecture, i.e. peak fastest:
+   if only take mean, median we don't see what it converges to
+   we want to take minimum cycles, to see what will happen if 'all the stars align'
+2. see what is typical
+   given a mix of what is cache state, what else in pipeline, other cores doing 
+   look at mean/median 
+
+times where compiler want produce what is optimally possible, e.g. staggered parallelism
 
 ----------------------------------------------------------------------------------------------------
 time -p; getrusage();
