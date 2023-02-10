@@ -75,7 +75,19 @@ Can also do 16 bit lane size or even 8 bit
 Can combine IPC with SIMD
 With just IPC and SIMD multipliers, can literally get 1000x increase compared to Python 
 
+
 However, won't get these performance benefits if bad cache performance
+So, in general we have the main problem to be optimised, i.e. the 'add'
+However, we also have important overheads to this:
+  * loads (reading from memory)
+  so `add a, input[0]` is dependent on load
+  first see if particular memory location already moved into L1 cache
+  * stores (these are equivalent to loads in terms of performance)
+So, want to have cache size/layout in back-of-mind to know if exceeding
+We have to keep things in size of cache so that compuation performance improvements actually matter and not just waiting on loads
+IMPORTANT: Peak performance when all data in L1
+
+Threading can help with cache performance as well
 
 
 ----------------------------------------------------------------------------------------------------
