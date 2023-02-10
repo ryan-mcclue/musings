@@ -64,9 +64,19 @@ performance analysis one of 2 things:
 
 times where compiler want produce what is optimally possible, e.g. staggered parallelism
 
-IMPORTANT: sse will still end up doing 4 add instructions
+IMPORTANT: sse will still end up doing 4 add instructions internally
 its main benefit is removing all the front-end work for CPU, i.e.
 less instruction decoding, less dependency determinations etc.
+Will still expect almost 4x speed increase
+
+Lots of elbow grease organising data with SIMD
+Can also do 16 bit lane size or even 8 bit  
+
+Can combine IPC with SIMD
+With just IPC and SIMD multipliers, can literally get 1000x increase compared to Python 
+
+However, won't get these performance benefits if bad cache performance
+
 
 ----------------------------------------------------------------------------------------------------
 time -p; getrusage();
