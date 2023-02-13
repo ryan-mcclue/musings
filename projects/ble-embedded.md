@@ -40,6 +40,9 @@ Linear acutator is motor that moves up and down
 Bare metal: https://github.com/cpq/bare-metal-programming-guide 
 C-oddities: https://tmewett.com/c-tips/
 
+LiPo require special charging circuitry.
+Furthermore, when using typically have either a regulator or boost converter  
+
 IMPORTANT: ALWAYS PROVIDE EXAMPLE!
 
 TODO: raylib game programming (perhaps also for byte jams as well)

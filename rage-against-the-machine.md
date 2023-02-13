@@ -291,3 +291,6 @@ With the proliferation of web technologies, now say AOT (ahead-of-time) compilat
 
 Reason for GUI proliferation is that installation procedures are so complex,
 e.g. install and use esp-idf requires python virtual environment
+
+Non-trivial to get non-root access to USB devices with linux. 
+might be to add udev rules file or add user to a group

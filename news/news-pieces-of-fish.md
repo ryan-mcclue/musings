@@ -9,7 +9,8 @@ Generative AI revolution has begun.
 ChatGPT fastest growing user base in history
 Important to note that code generation still gets conceptual and implementation details wrong
 Best suited for text generation like, cover letter, resume, interview preparation, mission statement etc.
-So, chatbots become prevalent. However, don't want to fully embrace the idea of talking to an AI as a required 'skill'
+So, chatbots become prevalent; incorporated into word/powerpoint/browser etc.
+However, don't want to fully embrace the idea of talking to an AI as a required 'skill'
 
 a follow on from this is how I view open source.
 not as the altruistic community participiation, but rather from tit-for-tat as a game theory for making an efficient product
@@ -31,4 +32,6 @@ Growth of companies offloading to independent workers instead of retaining fullt
 Analysing genes in centenarians finds they have a particular gene that protects against cardiovascular events.
 Safer to give people protein produced by this gene rather than gene therapy
 
+Often times I'm subject to the Dunning-Kruger effect when it comes to programming
 
+Interesting that most farmers rent patented seeds from large companies
