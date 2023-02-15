@@ -294,3 +294,5 @@ e.g. install and use esp-idf requires python virtual environment
 
 Non-trivial to get non-root access to USB devices with linux. 
 might be to add udev rules file or add user to a group
+
+Sandboxing apps like docker, snap etc. just creates more headaches around copying files

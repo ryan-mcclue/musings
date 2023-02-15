@@ -1,6 +1,8 @@
 optimisation requires specialised knowledge of platform and is time consuming
 performance-aware programming works towards optimisation, just not all the way
 
+IMPORTANT: theoretical increases like 4x with 4 cores etc. only seen if inside cache
+
 1. reduce number of instructions
 2. increase speed of instructions (same instructions can be faster)
 
@@ -33,6 +35,7 @@ we can help the CPU however, noting that say a summation can be broken up into m
 `TODO: quadPtrScalar faster as less expensive microps for address generation?` (compiler might not be smart enough as we have disabled SLP vectorisation?)
 so, a CPU will have a max. IPC value
 generally, if can reduce dependency chain, always applicable
+branch misprediction is costly because of this, as have to look ahead in instruction stream to make things pipelined
 
 JIT varied term. JIT debugging, is debugger automatically opening when program crashes
 JIT compilation first compiles to something like bytecode. then at runtime, converts to machine language
@@ -64,7 +67,7 @@ performance analysis one of 2 things:
 
 times where compiler want produce what is optimally possible, e.g. staggered parallelism
 
-IMPORTANT: sse will still end up doing 4 add instructions internally
+IMPORTANT: sse will still end up doing 4 add instructions internally (via a SIMD adder unit, not a scalar unit)
 its main benefit is removing all the front-end work for CPU, i.e.
 less instruction decoding, less dependency determinations etc.
 Will still expect almost 4x speed increase
@@ -87,7 +90,16 @@ So, want to have cache size/layout in back-of-mind to know if exceeding
 We have to keep things in size of cache so that compuation performance improvements actually matter and not just waiting on loads
 IMPORTANT: Peak performance when all data in L1
 
-Threading can help with cache performance as well
+Multi-threading gives us literally distinct instruction streams
+Smaller buffer sizes could mean overhead of adding more threads not advantageous
+Multi-threading can help with cache performance as well, as effectively get bigger L1 cache, i.e. 32K x 4 = effective 128K L1 cache
+(this is why if have 4 threads an approximate x4 increase is actually minimum)
+On chips optimised for single thread execution, a single core occupies majority of memory bandwidth. 
+So, adding more cores won't increase memory bandwidth that much (visible in situations exceeding cache size)
+Threads are becoming almost as a great a multiple as waste.
+Server machines literally have 96 cores
+Cores are rapidly increasing in new machines. SIMD, IPC remaining steady
+So, biggest speed decreases are waste, cache and threads
 
 
 ----------------------------------------------------------------------------------------------------

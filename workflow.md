@@ -1,5 +1,7 @@
 # LEETCODE EVERYDAY
 
+IMPORTANT(Ryan): Will always have problems/todos. Focus on what has been acheived
+
 IMPORTANT(Ryan): No tests, doesn't work!
 
 IMPORTANT: premature MICROOPTIMISATION (i.e. fine-tuning things) is root of all evil.
