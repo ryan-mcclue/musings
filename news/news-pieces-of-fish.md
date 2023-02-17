@@ -11,6 +11,7 @@ Important to note that code generation still gets conceptual and implementation 
 Best suited for text generation like, cover letter, resume, interview preparation, mission statement etc.
 So, chatbots become prevalent; incorporated into word/powerpoint/browser etc.
 However, don't want to fully embrace the idea of talking to an AI as a required 'skill'
+In fact, currently could be bad for novices; at the moment, they lack and understanding of the truth, and so are likely to make mistakes with confidence
 
 a follow on from this is how I view open source.
 not as the altruistic community participiation, but rather from tit-for-tat as a game theory for making an efficient product
@@ -35,3 +36,6 @@ Safer to give people protein produced by this gene rather than gene therapy
 Often times I'm subject to the Dunning-Kruger effect when it comes to programming
 
 Interesting that most farmers rent patented seeds from large companies
+
+Just like supposed driverless cars being fully functional, Microsofts chat bot is highly error prone.
+This is from a company that purports to be the leader in this space, having invested billions
