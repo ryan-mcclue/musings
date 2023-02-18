@@ -3,8 +3,8 @@ performance-aware programming works towards optimisation, just not all the way
 
 IMPORTANT: theoretical increases like 4x with 4 cores etc. only seen if inside cache
 
-1. reduce number of instructions
-2. increase speed of instructions (same instructions can be faster)
+1. reduce number of instructions (waste, SIMD)
+2. increase speed of instructions (same instructions can be faster) (IPC, cache, multithreading)
 
 don't think about source language. think about what it becomes, e.g. templates, garbage-collection are not a zero-cost
 it's only about what the source turns into, is when we can talk about its speed
@@ -101,6 +101,15 @@ Server machines literally have 96 cores
 Cores are rapidly increasing in new machines. SIMD, IPC remaining steady
 So, biggest speed decreases are waste, cache and threads
 
+This great speedup from Python to C just for a naive add loop. 
+So, for larger more complex programs that can utilise more hardware, even greater speedups!
+
+Python speed up:
+Using builtins faster like sum() as get rid of iteration overhead
+reduce type deduction
+call out to C library like numpy
+integrate C directly like cython (fastest possible with SIMD etc.)
+(in effect, on really need to know enough C to write optimised loops to insert into a higher level language)
 
 ----------------------------------------------------------------------------------------------------
 time -p; getrusage();
