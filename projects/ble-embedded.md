@@ -2,6 +2,8 @@ TODO: https://github.com/jubalh/awesome-package-maintainer?utm_source=tldrnewsle
 become debian package maintainer for raylib
 -------
 
+    TODO: elecia white 'Interview Questions' at end of chapters
+
     What is static?
 
     What is volatile?
@@ -30,6 +32,8 @@ become debian package maintainer for raylib
 
     How does an OS manage memory?
 -------
+
+TODO: running some functions out of SRAM instead of flash
 
 oscilloscope XY mode to display graphics
 
@@ -830,6 +834,7 @@ https://www.rfleury.com/
 https://linuxafterdark.net/ podcast
 
 embedded-blogs:
+https://vivonomicon.com/
 https://patternsinthemachine.net/
 https://blog.feabhas.com/
 https://blog.st.com/

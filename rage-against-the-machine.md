@@ -296,3 +296,5 @@ Non-trivial to get non-root access to USB devices with linux.
 might be to add udev rules file or add user to a group
 
 Sandboxing apps like docker, snap etc. just creates more headaches around copying files
+
+Often linux OSs ignore simple things like right-click create a shortcut, or dissosociate default application for file type

@@ -9,7 +9,7 @@ Generative AI revolution has begun.
 ChatGPT fastest growing user base in history
 Important to note that code generation still gets conceptual and implementation details wrong
 Best suited for text generation like, cover letter, resume, interview preparation, mission statement etc.
-So, chatbots become prevalent; incorporated into word/powerpoint/browser etc.
+So, chatbots become prevalent; incorporated into word/powerpoint/browser etc. However, will probably incorporate paid-for links in results
 However, don't want to fully embrace the idea of talking to an AI as a required 'skill'
 In fact, currently could be bad for novices; at the moment, they lack and understanding of the truth, and so are likely to make mistakes with confidence
 Furthmore, proofreading code is hard
@@ -40,3 +40,5 @@ Interesting that most farmers rent patented seeds from large companies
 
 Just like supposed driverless cars being fully functional, Microsofts chat bot is highly error prone.
 This is from a company that purports to be the leader in this space, having invested billions
+
+Emulation plentiful. PS2, n64, android, containers etc.
