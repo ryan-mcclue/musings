@@ -42,3 +42,5 @@ Just like supposed driverless cars being fully functional, Microsofts chat bot i
 This is from a company that purports to be the leader in this space, having invested billions
 
 Emulation plentiful. PS2, n64, android, containers etc.
+
+Mind controlled devices a future

@@ -1,6 +1,12 @@
 TODO: https://github.com/jubalh/awesome-package-maintainer?utm_source=tldrnewsletter
 become debian package maintainer for raylib
 -------
+    implementing a ‘time of day’ from a partial data sheet and a single 16 bit timer, 
+    down counting so they need to think harder about boundaries and races.
+
+    C like volatile, how to make an FSM, how to manipulate bits etc
+
+    https://rmbconsulting.us/publications/a-c-test-the-0x10-best-questions-for-would-be-embedded-programmers/
 
     TODO: elecia white 'Interview Questions' at end of chapters
 
