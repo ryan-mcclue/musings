@@ -44,3 +44,5 @@ This is from a company that purports to be the leader in this space, having inve
 Emulation plentiful. PS2, n64, android, containers etc.
 
 Mind controlled devices a future
+
+Return to self-hosting as cheaper than cloud for large companies
