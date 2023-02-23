@@ -1,6 +1,9 @@
 optimisation requires specialised knowledge of platform and is time consuming
 performance-aware programming works towards optimisation, just not all the way
 
+also, algorithmic optimisation is not necessarily performance aware programming (i.e. might involve math etc.)
+We are learning about CPU mental model
+
 IMPORTANT: theoretical increases like 4x with 4 cores etc. only seen if inside cache
 
 1. reduce number of instructions (waste, SIMD)
@@ -110,6 +113,16 @@ reduce type deduction
 call out to C library like numpy
 integrate C directly like cython (fastest possible with SIMD etc.)
 (in effect, on really need to know enough C to write optimised loops to insert into a higher level language)
+
+
+1. Operational, e.g: First step is optimising math operations (as easiest. this is core competency)
+2. Input: how did the data get here, e.g. points for math operation (could be JSON file, which is not favourable for performance)
+(probably optimising use of file, rather than OS actually opening file)
+So, time how long input takes and 'math' takes  
+
+Break down problem into parts, and find what are performance bottlenecks
+Learn what we expect for parsing etc. Then make estimate for theoretical maximum
+
 
 ----------------------------------------------------------------------------------------------------
 time -p; getrusage();

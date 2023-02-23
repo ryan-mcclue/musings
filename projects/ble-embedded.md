@@ -3,6 +3,8 @@ post embedded project to hackaday.io?
 TODO: https://github.com/jubalh/awesome-package-maintainer?utm_source=tldrnewsletter
 become debian package maintainer for raylib
 -------
+    if don't know, say what you would assume based on experience, how to find out more
+
     implementing a ‘time of day’ from a partial data sheet and a single 16 bit timer, 
     down counting so they need to think harder about boundaries and races.
 
