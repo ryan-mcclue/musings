@@ -1,5 +1,19 @@
 <!-- SPDX-License-Identifier: zlib-acknowledgement -->
 
+Espresso breath (if lethargic)
+Sit up with a straight lower spine, tuck your chin slightly, and begin rapid exhales through your nose, at the rate of roughly two per second. The inhale happens naturally. You should feel your belly contracting like a pump with each exhale. Continue for 30 exhales. Once you’ve completed this, exhale completely to the end of your breath, holding until you feel mild breath-hunger (the desire to inhale).
+Then inhale deeply and hold at the top for 20-30 seconds. Release the breath completely, keeping your body as motionless as possible for 30 seconds afterward to allow the effects to settle.
+Repeat this 2-3 times as desired. You may also experiment with noticing how this short practice creates a shift in your internal state.
+
+Breath of calm
+This practice uses the technique of alternate nostril breathing that has been shown in studies to effectively reduce anxiety, combined with an exhale that is twice the length of the inhale. Longer exhales are key for the down-regulation of the parasympathetic nervous system, which is the branch that enables us to recover and rejuvenate following a stressor and also creates the conditions for sleep in the evening.
+Ensure you’re sitting comfortably, ideally with a straight lower spine. Bring your right hand up to your face, using your ring finger to close the left nostril and your thumb to close the right nostril.
+Begin by closing the right nostril and inhaling through the left side for a count of three. Then hold at the top for three. Exhale through the right side for a count of six. Now inhale right-side for three, hold for three, and exhale left for six. This is one full round. If you find a count of three and six challenging, start with inhaling for two, holding two, and exhaling for four. Over time your carbon dioxide tolerance will increase, and you can extend to counts of 10 in and 20 out.
+Repeat for 3-5 rounds or until you feel sufficiently calm. It’s beneficial to end the practice with a full inhale and an audible relaxed sigh, which deepens the relaxation response.
+There are various cues to watch for to see if your body is downshifting gears into parasympathetic. The most obvious is a spontaneous sigh response, but you also may be aware of a softening in muscular tension in the shoulders and belly or a more relaxed gaze.
+
+------------------------------------------------------------
+
 diaphramatic breathing, e.g. should be able to do 5-7 strokes at easy pace
 big exhale through nose as turning head
 look to side when turning and keep bottom goggle in water

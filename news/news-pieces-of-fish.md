@@ -46,3 +46,9 @@ Emulation plentiful. PS2, n64, android, containers etc.
 Mind controlled devices a future
 
 Return to self-hosting as cheaper than cloud for large companies
+
+In some spheres, AI is pushing the cost of generation to zero
+
+AI generative voice can fool biometrics
+
+MarioGPT generates levels

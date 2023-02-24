@@ -41,6 +41,22 @@ become debian package maintainer for raylib
     Why would you use an RTOS?
 
     How does an OS manage memory?
+
+
+    // TODO(Ryan): How can I answer/know: 
+    // "Hey you need to guarantee a response to this external command in 40ms, that seems pretty tight."
+    // "Sweet, I've got 10x what I need" (thinking 5ms is an eternity)
+    // (perhaps just knowing cycle count of CPU and average instructions in ISR?) 
+    //
+    // "And it frequently comes from someone asking how long it takes this system to boot. Oh around 600 uS"
+    //  Most of which is waiting for the power supply to settle down and send the power-good signal...
+    //  Or the PLL to lock, or the 32 khz crystal to stabilize
+    //
+    // This extends to the idea of literally powering a light bulb for a few micro seconds a time each second and sleeping in between  
+    //
+    // Seems that printf is considered resource heavy: hence lightweight-logging
+
+
 -------
 
 TODO: running some functions out of SRAM instead of flash
