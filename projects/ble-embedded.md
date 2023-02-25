@@ -2,6 +2,8 @@ post embedded project to hackaday.io?
 
 TODO: https://github.com/jubalh/awesome-package-maintainer?utm_source=tldrnewsletter
 become debian package maintainer for raylib
+
+most open source embedded projects are flight controllers and RTOSs
 -------
     if don't know, say what you would assume based on experience, how to find out more
 
