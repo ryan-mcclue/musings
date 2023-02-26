@@ -1,5 +1,8 @@
 # LEETCODE EVERYDAY
 
+Criticism of C lack of generics often comes from library developers
+For application development it's great
+
 IMPORTANT(Ryan): Will always have problems/todos. Focus on what has been acheived
 
 IMPORTANT(Ryan): No tests, doesn't work!

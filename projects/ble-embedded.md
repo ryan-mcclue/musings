@@ -3,6 +3,10 @@ post embedded project to hackaday.io?
 TODO: https://github.com/jubalh/awesome-package-maintainer?utm_source=tldrnewsletter
 become debian package maintainer for raylib
 
+COBS for framing. Don't want length tag, as you might start reading a packet mid way
+slip encoding to send packets?
+serialisation can be just a memcpy struct or protobuf (nanopb) 
+
 most open source embedded projects are flight controllers and RTOSs
 -------
     if don't know, say what you would assume based on experience, how to find out more
