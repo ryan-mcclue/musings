@@ -1,3 +1,5 @@
+https://eternalstudent.xyz/post/links
+
 post embedded project to hackaday.io?
 
 TODO: https://github.com/jubalh/awesome-package-maintainer?utm_source=tldrnewsletter
