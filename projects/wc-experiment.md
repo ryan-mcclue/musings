@@ -4,6 +4,10 @@ performance-aware programming works towards optimisation, just not all the way
 also, algorithmic optimisation is not necessarily performance aware programming (i.e. might involve math etc.)
 We are learning about CPU mental model
 
+when timing code, repeat; this will give time to show what it's like when cache is primed
+
+count operations/cycle
+
 IMPORTANT: theoretical increases like 4x with 4 cores etc. only seen if inside cache
 
 1. reduce number of instructions (waste, SIMD)
@@ -122,6 +126,21 @@ So, time how long input takes and 'math' takes
 
 Break down problem into parts, and find what are performance bottlenecks
 Learn what we expect for parsing etc. Then make estimate for theoretical maximum
+
+
+'clean code':
+(should be accompanied with, your code will become a lot slower if you do them)
+polymorphism (no ifs/switches)
+  -- the vtables are roughly 1.5x slower than switch
+  -- in perspective, this is like erasing 3-4 years of hardware gains
+black box (don't know internals of anything)
+  -- switch statements help align everything by function, rather than class
+  -- so, we can see what commonalities we have and optimise (another reason against having classes in distinct files)
+  -- knowing what we are doing specifically is key to getting optimal performance 
+  -- TODO: seems that a lookup table is faster if being called repetively as values in cache
+functions should be small
+functions should do one thing
+
 
 
 ----------------------------------------------------------------------------------------------------

@@ -1,3 +1,5 @@
+certain things in C might introduce CVEs but be fast?
+
 https://eternalstudent.xyz/post/links
 
 post embedded project to hackaday.io?
