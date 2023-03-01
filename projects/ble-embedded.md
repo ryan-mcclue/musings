@@ -68,6 +68,13 @@ most open source embedded projects are flight controllers and RTOSs
 
 
 -------
+https://github.com/Serial-Studio/Serial-Studio
+
+https://core-electronics.com.au/guides/identify-electrical-connectors/
+
+battery form factors, e.g. 18650?
+
+image sensor module is the optical to digital conversion part of a camera
 
 TODO: running some functions out of SRAM instead of flash
 
