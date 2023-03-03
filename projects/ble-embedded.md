@@ -1,3 +1,5 @@
+stm32 chrom-art and neochrom GPU
+
 certain things in C might introduce CVEs but be fast?
 
 https://eternalstudent.xyz/post/links
@@ -66,6 +68,11 @@ most open source embedded projects are flight controllers and RTOSs
     //
     // Seems that printf is considered resource heavy: hence lightweight-logging
 
+// fast control loops:
+// I ran a timer at 20kHz and did 25us of work in the ISR every time. That was on a 168MHz F4. It was absolutely fine. The system had plenty of steam left for comms, UI and so o
+// Depending on the application, you could even spend 50-75% of CPU time in the control loop, with the RTOS only managing the other 25%!
+You just need set your control loop interrupt priority so that it is lower priority (higher number on Cortex-M) than configMAX_SYSCALL_INTERRUPT_PRIORITY
+There is no need to run the control loop using the RTOS master tick. Just use another timer, then have the ISR signal your control loop thread. You can use this up to 100 - 200 kHz with STM32H7. Above that you need to put the control code in the ISR itself.
 
 -------
 https://github.com/Serial-Studio/Serial-Studio
