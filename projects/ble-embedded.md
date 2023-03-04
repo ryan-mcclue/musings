@@ -1,3 +1,5 @@
+Lauterbach Trace32
+
 stm32 chrom-art and neochrom GPU
 
 certain things in C might introduce CVEs but be fast?
@@ -29,6 +31,7 @@ most open source embedded projects are flight controllers and RTOSs
     What is static?
 
     What is volatile?
+What types of issues can arise if you forget the volatile keyword?
 
     How does an interrupt work?
 
@@ -41,6 +44,7 @@ most open source embedded projects are flight controllers and RTOSs
     How does an ADC work? How about a DAC?
 
     Compare and contrast Mutex and Semaphores
+A mutex is a binary semaphore, i.e. a semaphore initiated with counter at 1. Mutex for mutually exclusive access, semaphores to manage wait queues. These are the main differences and similarities in a nutshell.
 
     Linked List algorithm questions
 
@@ -53,6 +57,24 @@ most open source embedded projects are flight controllers and RTOSs
     Why would you use an RTOS?
 
     How does an OS manage memory?
+
+What is spinlock? When and how do you use it?
+
+- What is a cache? Why do we need a CPU cache? Cache policies, associativity, ways, cache coherence.
+
+- High speed buses/interfaces and signal integrity.
+
+- MMU & IOMMU. TLB, ASID, page tables, then come questions on memory spaces for a process.
+
+- SoC boot up process. Linux kernel boot up, initrd, initramfs, boot loaders.
+
+- File systems and flash. Wear levelling.
+
+- What would happen if we have unstable DDR or CPU core power supply? How would you debug it
+
+- What is the most common issue you dealt with on embedded system? What is a race condition, priority inversion, starvation, memory corruption, etc
+
+- How would you debug <some issue> (like memory corruption).
 
 
     // TODO(Ryan): How can I answer/know: 
