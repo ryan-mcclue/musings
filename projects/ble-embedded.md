@@ -1,3 +1,6 @@
+TODO: watch embedded+memfault webinars https://go.memfault.com/ota-updates-fleet-management-at-scale
+TODO: watch videos from https://embeddedonlineconference.com/ 
+
 Lauterbach Trace32
 
 stm32 chrom-art and neochrom GPU
@@ -17,6 +20,25 @@ serialisation can be just a memcpy struct or protobuf (nanopb)
 
 most open source embedded projects are flight controllers and RTOSs
 -------
+Yes you need what’s called a « watchdog strategy », defining what your watchdog is monitoring and why it’s worth resetting if it goes wrong.
+You can either run the watchdog with the highest priority, and then the register will be serviced about a thousand times a second.
+Or at the lowest priority, and if ever your system becomes lagged, then it reboots, even if everything works. It all depends what is important for you.
+
+
+If you can't think of things to use 76 I/O pins for, you haven't designed any real products.
+The one I've got a reference up for right now is a controller for an LED hula hoop. 
+It has about 30 I/Os - 4 for SPI flash, 8 for the WiFi module's SPI plus control lines and IRQ, 2 for IR comms, 3 for the motion sensor I2C and IRQ, sleep button, 2 battery charger status lines, 3 for LED data and clock, power control signals for the LEDs and IR receiver, USB VBUS detection, battery voltage monitoring, and a serial debug output.
+And that's for a device with no parallel interfaces (e.g. LCD). Most of those I/Os don't involve a lot of CPU time. 
+Things like the charger status signals can be interrupts, or polled a few times a second. 
+Some of them are only needed for proper reset sequencing of peripherals. 
+Anything involving high-speed transfers uses DMA - the WiFi module, SPI flash, and LED output can all be running simultaneously at full speed without taking up CPU cycles.
+
+Two days later, you're trying to decide which peripherals can be multiplexed because you have no more pins available.
+It's amazing how fast 50 pins needed turns into 120 pins needed. Even simple ICs sometimes give you so many options that they could burn 6 or 7 IOs.
+
+
+https://embeddedinventor.com/books/ (interview questions)
+
     if don't know, say what you would assume based on experience, how to find out more
 
     implementing a ‘time of day’ from a partial data sheet and a single 16 bit timer, 
@@ -906,6 +928,7 @@ https://www.rfleury.com/
 https://linuxafterdark.net/ podcast
 
 embedded-blogs:
+http://www.ganssle.com/watchdogs.htm
 https://vivonomicon.com/
 https://patternsinthemachine.net/
 https://blog.feabhas.com/
