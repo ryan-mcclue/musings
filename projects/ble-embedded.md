@@ -20,6 +20,12 @@ serialisation can be just a memcpy struct or protobuf (nanopb)
 
 most open source embedded projects are flight controllers and RTOSs
 -------
+software reset It will (should) behave exactly as if it has just been powered on, except that RAM retains values that were set before software reset. 
+if your goal is to avoid reinitializing variables After software reset, then you'll need eeprom to save a reset-counter variable.
+no need for an eeprom, simply define a memory region in normal ram as noinit (maybe called differently depending on linker/compiler). the startup code then won't touch it, except you explicitly tell it to do so.
+I use this to keep track of error codes, that need to persist a soft reset but gets wiped after a hard reset.
+I have done this with IAR (.icf linker files) and also GCC (.ld linker files).
+
 Yes you need what’s called a « watchdog strategy », defining what your watchdog is monitoring and why it’s worth resetting if it goes wrong.
 You can either run the watchdog with the highest priority, and then the register will be serviced about a thousand times a second.
 Or at the lowest priority, and if ever your system becomes lagged, then it reboots, even if everything works. It all depends what is important for you.

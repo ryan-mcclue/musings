@@ -28,6 +28,7 @@ rotate with elbow pointing to sky. motion should originate with elbow, forearm r
 fingers enter first, elbow can slap down after
 
 catch only forearm should move. elbow stays high and forward
+keep arm forward and only pull back when other hand enters water (ESSENTIAL TO BALANCE TO USE BACK MUSCLES AND FULL ROTATION)
 power diamond
 
 when reaching out, shoulder should rotate forwards
