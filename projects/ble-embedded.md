@@ -20,6 +20,12 @@ serialisation can be just a memcpy struct or protobuf (nanopb)
 
 most open source embedded projects are flight controllers and RTOSs
 -------
+https://apollolabsblog.hashnode.dev/how-to-estimate-your-embedded-iot-device-power-consumption
+You need to get a power monitor. Then you can enable different components and see what they pull relative to base draw. 
+e.g. establish a baseline for idle system, then enable some component and check the difference from idle.
+e.g. log power usage during a wireless transmission
+In this case, you won’t actually use a battery. You wire up the system to the power monitor which acts like the battery.
+
 software reset It will (should) behave exactly as if it has just been powered on, except that RAM retains values that were set before software reset. 
 if your goal is to avoid reinitializing variables After software reset, then you'll need eeprom to save a reset-counter variable.
 no need for an eeprom, simply define a memory region in normal ram as noinit (maybe called differently depending on linker/compiler). the startup code then won't touch it, except you explicitly tell it to do so.
