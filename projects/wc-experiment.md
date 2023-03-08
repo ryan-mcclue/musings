@@ -1,3 +1,7 @@
+to compare CPUs, is MIPS Performance any good?
+
+compilers using templates introduce a lot of bloated/duplicated binary code (more cache misses) in addition to added runtime cost
+
 optimisation requires specialised knowledge of platform and is time consuming
 performance-aware programming works towards optimisation, just not all the way
 
