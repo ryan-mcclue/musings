@@ -1,3 +1,15 @@
+TODO: embedded security:
+The Secure Thingz Secure Boot Manager (SBM) provides a robust root of trust for a device, securing the overall boot process, protecting the device against the injection of malicious software and enabling and protecting a secure update mechanism. The SBM will utilise the security and cryptographic capabilities of each particular device. It should be injected into a microcontroller (MCU) at birth, alongside the provisioning of secure keys and certificates.
+Early in the development phase, the OEM programs the SBM into the MCU using its preferred method (SWD, JTAG, other, etc) and provisions the MCU’s certificates, keys and security lock bits. At this point, the SBM is immutable and any subsequent "application programming" for the processor must be delivered via the secure process utilizing the boot manager that ensures the application code is signed and encrypted correctly.
+Every time the processor transitions through a device reset process, the SBM calculates the hash signature of the application and compares it against the values stored in the signature table (in protected memory) to ensure nothing in the application memory has been tampered with, before running the application.
+The SBM also enables a fully authenticated secure software update process. As part of the software update the customer application will download the software update to a separate memory location and will make a software update API call to the SBM. The SBM will reset the MCU, authenticate the update and program the flash with the software. This also enforces anti-rollback when required by the application
+A port of the SBM is available for each supported device. The SBM source code is available as part of the Security From Inception Suite.
+
+MSP430 is a Texas Instruments architecture
+
+USBx is an embedded USB stack
+FILEx is an embedded FAT stack
+
 TODO: watch embedded+memfault webinars https://go.memfault.com/ota-updates-fleet-management-at-scale
 TODO: watch videos from https://embeddedonlineconference.com/ 
 
