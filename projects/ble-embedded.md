@@ -38,6 +38,36 @@ https://www.youtube.com/playlist?list=PLTjcBkvRBqGGbSckyAGLTy05sbPPl6dJA
 
 most open source embedded projects are flight controllers and RTOSs
 -------
+Yup, always RTOS. Because if you get feature creep, it's a lot easier to add stuff into an RTOS than bare metal.
+And if you're bare metal and decide at some point you do need RTOS, that means you start over. I've never seen the reverse where someone wants an RTOS removed.
+
+The caveat would be really low power, really low cost stuff. I make a lot of embedded implementations that are going to do something very minimal, like in 10,000 or more units that cost a few dollars, and it does something like "read an i2c sensor and send it to a level converter to an RS-485 bus" or "send code A when button A is pushed, send code B when button B is pushed"
+
+But, as you say, priorities were handy. Mostly I used lower priority threads for those long blocking operations.
+I have seen many applications where people got into a dreadful pickle with complex thread interactions. Also, every thread needs a control block and a stack. That can become expensive, so a mechanism to keep the thread count low is useful.
+
+My application had hard realtime sensor reads at a moderate frequency, with a background 100ms blocking calculation run at 1Hz to process data accumulated in the previous second. Raw data and crunched results were written to FatFS in a third lower priority thread. All comms between threads was through events posted to their respective queues.
+
+My concern is that most people seem to see a gulf between a single task system (typically done with a super loop) and a preemptive system (they often go full thread-tastic). I've seen people advising that every sensor should have its own thread! That's wasteful and complicated.
+
+I liked and stuck to the approach that was taken in my first safety-critical projects: bare metal with a simple scheduler.
+
+Unless you want to use libraries that require using an RTOS, I don’t really see the point of using one.
+
+Closer to bare metal, more control and more stability production-wise as you use less complexity. Further from bare metal you can handle a lot more complexity but harder to achieve stability as the stack can reach EOL and kill you.
+
+Save serial number in flash
+Typically implemented in the script that runs the production programmers. You statically allocate a memory address for the HW ID, that is common for all the devices. That way you only compile one version of you fw. It's not uncommon to only flash a boot loader + provisioning app to your device in prod, for the end-user to run a DFU to get the latest FW revision when they start using the devices.
+However, some devices:
+Some devices already have a unique read-only HW ID register (in MCU or flash etc.), set by the vendor. You can read it in production and use it for QA, provisioning, etc. It will also speed up FA request to the vendor if you have the HW ID on hand.
+
+Some devices have OTP (one-time-programmable) areas in their flash. Unique device identifiers go there.
+This is more secure than flash
+
+If you don't have a recovery image then you'll brick the device if you lose power while writing the new firmware in program space.
+
+
+
 Tell them HOW you would find it if you don’t know. That’s the important part.
 
 https://apollolabsblog.hashnode.dev/how-to-estimate-your-embedded-iot-device-power-consumption
