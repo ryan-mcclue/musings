@@ -1,3 +1,12 @@
+Do you need the ability to program via swd in the field? If not, you can do something similar to some dev kits and put, say, a tag connect header on a snap off. Then when you are done programming and debugging, just snap it off.
+Otherwise, just put pads to SWD data, clock, and output (if you need it) on the board and attach wires or use pogos when programming and debugging (similar to some of the Adafruit Feather boards).
+I believe either just leaving the pads to use e.g. with pogo-pins / tag-connectors or even the SWD 2x5 pin headers would work
+(Pogo pin programming is for when say SWDIO pin is a pad on board not a physically wire insert?)
+
+minimalist debugging, e.g. no UART pins on PCB
+I once worked on a system in which the only way to dump info after a crash was via a blinking LED. The SW would bit bash a UART over the LED.
+We would attach a circuit with a phototransistor and RS232 driver to send the data to a PC's serial port. There was a magnet in it so that it would stay attached to the panel.
+
 TODO: embedded security:
 The Secure Thingz Secure Boot Manager (SBM) provides a robust root of trust for a device, securing the overall boot process, protecting the device against the injection of malicious software and enabling and protecting a secure update mechanism. The SBM will utilise the security and cryptographic capabilities of each particular device. It should be injected into a microcontroller (MCU) at birth, alongside the provisioning of secure keys and certificates.
 Early in the development phase, the OEM programs the SBM into the MCU using its preferred method (SWD, JTAG, other, etc) and provisions the MCU’s certificates, keys and security lock bits. At this point, the SBM is immutable and any subsequent "application programming" for the processor must be delivered via the secure process utilizing the boot manager that ensures the application code is signed and encrypted correctly.
