@@ -1,3 +1,12 @@
+Seems that for 100K units, ST not reliable. NXP, Microchip, TI better
+At least, 32bit CPU issues. Plenty of 8bit CPUs
+
+CR2032 coin cell battery and associated adapter to obtain Vin and Gnd pins?
+
+Interesting 'embedded supercomputers' jetson Xavier NX. Will run embedded linux. Might write a driver for a camera sensor
+
+Mail queues are present in CMSIS-RTOS?
+
 Do you need the ability to program via swd in the field? If not, you can do something similar to some dev kits and put, say, a tag connect header on a snap off. Then when you are done programming and debugging, just snap it off.
 Otherwise, just put pads to SWD data, clock, and output (if you need it) on the board and attach wires or use pogos when programming and debugging (similar to some of the Adafruit Feather boards).
 I believe either just leaving the pads to use e.g. with pogo-pins / tag-connectors or even the SWD 2x5 pin headers would work
@@ -18,6 +27,9 @@ MSP430 is a Texas Instruments architecture
 
 USBx is an embedded USB stack
 FILEx is an embedded FAT stack
+lwIP is an embedded TCP/IP stack
+
+omdia research?
 
 TODO: watch embedded+memfault webinars https://go.memfault.com/ota-updates-fleet-management-at-scale
 TODO: watch videos from https://embeddedonlineconference.com/ 
