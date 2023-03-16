@@ -8,3 +8,6 @@ Silicon valley bank technically insolvent due to unliquidated assets.
 Many 'ultra-zoom 100x' on phone cameras are just artificially injecting pixels
 
 Containers are new OSs, LLM are new CPUs
+
+Advantageous for apps to not be standalone and only be accessible via web.
+More ad targeting metrics

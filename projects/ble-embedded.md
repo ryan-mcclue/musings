@@ -1,5 +1,9 @@
 https://www.youtube.com/playlist?list=PLDqMkB5cbBA5oDg8VXM110GKc-CmvUqEZ
 
+There is no guarantee that the bit fields will be in the order you expect - they probably will be, but if you switch compiler or platform you might get an unpleasant surprise. Some compilers have options to specify the bitfield order etc, but I don't like relying on that.
+The conventional way to do it is define the field values and use bitwise operations (and and or)
+
+
 addressable LEDs: A shift register has 8 outputs (sometimes lettered ABCDEFGH), a "clock" input and a "data" input. When the clock input changes, it reads the data input line and puts that on the first output, A. The previous value of output A is moved to output B, the previous value of output B is moved to output C, and so on down the line.
 
 If your embedded application runs on battery, it is sometimes more battery-efficient to have a short periodic burst of high-speed communication (such as wi-fi or 5G - that are active for less time and then shut off between transmissions) than a slower, less power-hungry transmission method (LoRa) that must be active for a MUCH longer period of time.
