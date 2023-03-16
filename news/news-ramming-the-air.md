@@ -6,3 +6,5 @@ Metasurface technology replace liquid crystals in LCD. Increases efficiency and 
 Silicon valley bank technically insolvent due to unliquidated assets.
 
 Many 'ultra-zoom 100x' on phone cameras are just artificially injecting pixels
+
+Containers are new OSs, LLM are new CPUs

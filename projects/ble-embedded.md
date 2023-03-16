@@ -1,3 +1,23 @@
+https://www.youtube.com/playlist?list=PLDqMkB5cbBA5oDg8VXM110GKc-CmvUqEZ
+
+addressable LEDs: A shift register has 8 outputs (sometimes lettered ABCDEFGH), a "clock" input and a "data" input. When the clock input changes, it reads the data input line and puts that on the first output, A. The previous value of output A is moved to output B, the previous value of output B is moved to output C, and so on down the line.
+
+If your embedded application runs on battery, it is sometimes more battery-efficient to have a short periodic burst of high-speed communication (such as wi-fi or 5G - that are active for less time and then shut off between transmissions) than a slower, less power-hungry transmission method (LoRa) that must be active for a MUCH longer period of time.
+Depending upon your application, Protocols that utilize UDP, RTSP can be FAR more efficient (and faster) than protocols like REST which rely TCP-based transport protocols (which requires a 3-way handshake). As one other commenter mentioned, you will want to decide how much error correction you wish to add and/or if/how you want to ensure lossless data transfer (retries, etc).
+Sometimes, basic data compression of a file can be effective.
+
+Various RTOS IPC: Message Queue vs IPC Service vs IPM
+
+Interesting critiques for industrial MCUs:
+* Every IoT project I've been remotely involved in has required readback protection to prevent IP theft of the firmware.
+* For industrial applications you need at least a range of -40..85 (industrial grade components), and for things that may end in really hot places you'd better go for automotive grade stuff (-40.. 125 Celsius degrees). 
+
+You should not forget the other players than STM32. NXP still has the highest performing microcontrollers at 600+ MHz (although ST is catching up). Texas Instruments has a speciality for analog peripherals and are often used in motor control systems where I work. And then the big players for automotive industry like Renesas and Infineon. The whole industry is pretty much based on ARM Cortex-M now.
+
+Low number of pins, 8bit MCUs like ATTiny202 useful for something simple like a battery gauge indicator, e.g.detecting when the battery gets plugged into a charger or load device, waking devices from sleep, lighting up the indicator, some animations, and going back to sleep when it get's disconnected 
+
+Would be a computer engineer, however don't really care for analog
+
 Seems that for 100K units, ST not reliable. NXP, Microchip, TI better
 At least, 32bit CPU issues. Plenty of 8bit CPUs
 
