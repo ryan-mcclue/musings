@@ -11,3 +11,7 @@ Containers are new OSs, LLM are new CPUs
 
 Advantageous for apps to not be standalone and only be accessible via web.
 More ad targeting metrics
+
+With AI, from Silicon Valley to Cerebral Valley
+
+Heat from data servers heating local pool

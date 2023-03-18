@@ -1,5 +1,11 @@
 https://www.youtube.com/playlist?list=PLDqMkB5cbBA5oDg8VXM110GKc-CmvUqEZ
 
+Clock configuration named differently, e.g. stm32 RCC, msp430 UCS
+
+I am familiar with various peripherals like UART, SPI, I2C , Timer module ,RTC, GPIO and UCS etc.
+Familiar with various communication protocols like RS485 MODBUS, TCP/IP and have development stacks for the same.
+Have good experience with FREERTOS and I am familiar with various managers like Heap manager, Task Manager, Semaphore, Queues, Event groups etc. 
+
 There is no guarantee that the bit fields will be in the order you expect - they probably will be, but if you switch compiler or platform you might get an unpleasant surprise. Some compilers have options to specify the bitfield order etc, but I don't like relying on that.
 The conventional way to do it is define the field values and use bitwise operations (and and or)
 
