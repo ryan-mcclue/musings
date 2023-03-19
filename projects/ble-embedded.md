@@ -1,5 +1,35 @@
 https://www.youtube.com/playlist?list=PLDqMkB5cbBA5oDg8VXM110GKc-CmvUqEZ
 
+Noisy signals:
+Need to know what kind of noise or interference affects your data.
+So, plot a FFT of your signal. 
+
+* Does the noise band overlapp in the frequency domain with the signal band? If no, then a bandpass filter is enough. If yes, then you need to perform noise cancellation. Now it depends if you have a state space model of the measured system, if yes, Kalman filter is the way. If not then something like SVD or certain types of Wiener filters can be used. 
+* low-pass: out += (noisy_signal - out) * gain
+  where gain is < 1.0, often around 0.1 depending on the sample rate. if your platform doesn't have floats, you'll have to open your bag of integer math tricks
+  (One downside is with integer math and a steady state input,you won't ever reach a state where in = out)
+* try the "leaky integrator" first over moving average? 
+Linear filters (lowpass, bandpass, bandstop - analog or digital)
+Model-based signal reconstruction (e.g. Kalman filter)
+1. Band pass filter to select the desired frequency range
+2. Maybe a mean filter with just 3, 4 in-memory samples to smooth the values but at the same time don't distort large variations in the signal.
+3. If you want to perform a roll, pith, yaw estimation, use complementary filter since accelerometer is good for "long-term" compensation while gyroscpoe is good for "short-term" compensation.
+(If you have cables sending the signal to your board, without a doubt, that signal should be sent over a differential pair)
+
+
+
+I usually use mutex when a resource should be locked like UART or modification of concurrent data. And for kind of communication I use semaphores. Mutex have an interface like lock and unlock. Semaphores have an interface like wait and notify.
+
+Spinlocks are faster and useful to protect a tiny portion of critical section. Mutexes introduce context-switch, so you have more overhead, but are indicated to protect a larger amount of critical section with more than 2 threads accessing it.
+Mutex cooperates with the scheduler to put a thread in a sleep state, spinlocks waste the time in a loop, trying constantly to get the lock for the resource
+
+Usually you will see spinlocks in contexts that can't sleep (e.g. interrupts) that is the most common case.
+
+
+have to communicate the value you gained from each project to the recruiter/engineer that will read your portfolio.
+
+Interpolation is any technique that estimates the value of a sample at a non-measured position based on other measures samples
+
 Clock configuration named differently, e.g. stm32 RCC, msp430 UCS
 
 I am familiar with various peripherals like UART, SPI, I2C , Timer module ,RTC, GPIO and UCS etc.
