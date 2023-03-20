@@ -1,5 +1,19 @@
 https://www.youtube.com/playlist?list=PLDqMkB5cbBA5oDg8VXM110GKc-CmvUqEZ
 
+cortex-a adds FIQs?
+
+project where data will be occasionally written to flash under control of our own code. Of course, this exposes us to flash memory corruption during unforeseen power loss events
+instead: during Flash programming run code in SRAM and this code will check in a loop the PVD detector state?
+Also make sure your micro has the BOR programmed and can handle sudden supply drop off below operating point.
+MCUs have multiple voltage operating levels.
+At some the flash might not work while the CPU can still kick.
+
+battery charging IC
+
+transformer delivers same power at different voltage
+rectifier is AC to DC
+When monitoring power, will get 50Hz mains noise and 100Hz noise (ripple/residual AC voltage from rectifier)
+
 The Higher priority task will normally wait for the mutex/semaphore to become available. 
 This is usually called "priority inversion". Where a lower priority task has seemingly higher priority than a higher priority task.
 

@@ -74,20 +74,25 @@ First use tin by touching tip with solder and thrusting into wool. Repeat twice
 Future use tin whenever the iron starts looking anything less than clean.
 Also tin the iron before finishing and then turn off
 
-Tinning is coating the tip with the solder to reduce the rate of oxidation in the presence of heat.
+Tinning is coating the tip with the solder to reduce the rate of oxidation.
+Reducing this allows for solder to flow smoothly
 
 IMPORTANT:
 A 'tip tinner' is something you want to avoid until there is no other option.
 They are a corrosive agent designed to corrode the oxides and expose the underlying metal
 
 ## Cleaning:
-Use regularly to clean away contaminants (to remove dirt/grease will require cloth or steel brush) 
+Use regularly to clean away contaminants (to remove dirt/grease will require cloth or steel brush)
+Stab the wool. Use after every solder application to remove excess solder on tip (this will happen always)
 You do not use brass wool as an abrasive in any way
-(do after every component?)
-There should still be some solder on it.
 
 ## Action:
-heat materials with iron and apply solder to junction
+Heat materials you want to join with the iron.
+Apply solder to this junction. 
+Don't apply solder to the iron. So, often have to angle the iron away (ok if gets on it indirectly)
+### Wires:
+Heat underneath wire and apply solder to top. Do this for each end
+Then do same for actual join
 
 Hold iron against blob shortly, than slightly pull iron up when removing?
 
@@ -96,7 +101,7 @@ Hold iron against blob shortly, than slightly pull iron up when removing?
 components typically higher thermal capacity, ∴ higher temperature
 
 ## SMD
-flux pen
+flux pen (ensure it's a passive flux)
 0.6mm gauge
 
 grounding strap with 1Mohm resistor to ensure same potential as board for sensitive electronics
