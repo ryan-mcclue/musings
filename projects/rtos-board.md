@@ -34,16 +34,18 @@ can also use printrun usb-b interface to print without SD card?
 
 
 --------------------------------------------------------------------------
-most solder has flux core (typically rosin) to remove oxide films, i.e. wetting the metal
-(to remove dirt/grease will require cloth or steel brush) 
+most solder has flux core (typically rosin) to prevent oxidation (wets the metal?)
+if we were to leave a blob of solder on the iron whilst hot, it would oxidise and become visibly flaky
+
 Sn/Pb (60/40) lower boiling point and shinier finish (cone shaped) then non-leaded.
 fumes are flux as boiling point of lead (≈1700°C) much higher 
-fume extractor at top
+lead is if course bad if ingested
+lead-free developed due to landfill leeching of disposed electronics
 
 like most metal products, the iron has core (Cu, Fe) and plating metals (Cr, Sn)
 
-lead is if course bad if ingested
-lead-free developed due to landfill leeching of disposed electronics
+fume extractor at top
+
 
 wire guage is diametre
 use solid wire as easier to work with than stranded (which handles flexing better, so better for final projects)
@@ -61,17 +63,33 @@ silicon mat, brass wool (routinely removing stuck solder debris and rust),
 chisel-head (conical head other 10%),
 gloves, glasses
 
-300°C-350°C: lead
-350°C-400°C: non-lead
+Although boiling point of leaded solder is 180, 400 as wanting to transfer heat to junction as well
+450 for non-leaded
 
-iron temp. of 325°C good compromise
-
-tin by touching tip with solder and thrusting into wool. repeat twice
-tin regularly 
-
-heat materials with iron and apply solder to junction
 soldering station has feedback/adjustable/regulated temperature
-tin the tip every session
+
+## Tinning:
+First use tin by touching tip with solder and thrusting into wool. Repeat twice
+
+Future use tin whenever the iron starts looking anything less than clean.
+Also tin the iron before finishing and then turn off
+
+Tinning is coating the tip with the solder to reduce the rate of oxidation in the presence of heat.
+
+IMPORTANT:
+A 'tip tinner' is something you want to avoid until there is no other option.
+They are a corrosive agent designed to corrode the oxides and expose the underlying metal
+
+## Cleaning:
+Use regularly to clean away contaminants (to remove dirt/grease will require cloth or steel brush) 
+You do not use brass wool as an abrasive in any way
+(do after every component?)
+There should still be some solder on it.
+
+## Action:
+heat materials with iron and apply solder to junction
+
+Hold iron against blob shortly, than slightly pull iron up when removing?
 
 ## THT
 1mm gauges
