@@ -1,5 +1,22 @@
 https://www.youtube.com/playlist?list=PLDqMkB5cbBA5oDg8VXM110GKc-CmvUqEZ
 
+The Higher priority task will normally wait for the mutex/semaphore to become available. 
+This is usually called "priority inversion". Where a lower priority task has seemingly higher priority than a higher priority task.
+
+To understand priority inversion, imagine a low priority task has acquired a mutex for your I2C bus, and then a high-priority task attempts to acquire the same mutex, but is blocked from doing so by the low-priority task. But now imagine that a middle-priority task starts running, preventing the low-priority task from running and completing its I2C bus access and freeing the mutex. The problem here is that we want the high priority task to run as soon as possible, but it's being prevented from doing so by the middle-priority task, even though that task doesn't use the I2C bus at all.
+Different RTOSes provide different approaches for resolving this. For instance, with priority inheritance, the low-priority thread that holds the mutex automatically and temporarily inherits the priority of the high-priority thread that is waiting on it, allowing it to complete use of the I2C bus and freeing up of the mutex, at which point it returns to its normal priority.
+
+deadlock, no one can resolve the issue, e.g:
+two threads which attempt to run transfer(a, b) and transfer(b, a) each acquiring locks
+
+When it becomes more than simple IO with a single developer involved, an RTOS provides the structure to write communicating state machines. This allows breaking up the overall firmware into discrete pieces (here's the mqtt state machine.., here's the tcp state machine, etc, here's our sensor dma comms state machine, etc) 
+However:
+* Stacks are typically statically defined, and easy to overflow and estimate wrong
+* Priorities can be inverted if not careful
+* Near impossible to test over the complete set of potential states your program can be in
+* Deadlocks and memory corruption become more common and harder to find
+Discrete communicating state machines are very powerful - however depending on your project, an rtos might take itself out of the running if you can't devise a thorough testing regime.
+
 Noisy signals:
 Need to know what kind of noise or interference affects your data.
 So, plot a FFT of your signal. 
