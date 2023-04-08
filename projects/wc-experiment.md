@@ -1,3 +1,5 @@
+https://git.some.website/aolo2/compooter-enhensa
+
 to compare CPUs, is MIPS Performance any good?
 
 compilers using templates introduce a lot of bloated/duplicated binary code (more cache misses) in addition to added runtime cost

@@ -15,3 +15,5 @@ More ad targeting metrics
 With AI, from Silicon Valley to Cerebral Valley
 
 Heat from data servers heating local pool
+
+ESP32 a unicorn that combines WiFi, BLE and Zigbee in one

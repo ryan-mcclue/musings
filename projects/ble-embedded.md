@@ -1,5 +1,60 @@
 https://www.youtube.com/playlist?list=PLDqMkB5cbBA5oDg8VXM110GKc-CmvUqEZ
 
+I’ve seen questions like design a traffic control systems, design a calculator that performs basic math. Candidates are expected to choose sensors, actuators, justify the choice of processor suitable for the system, draw timing diagrams, component diagrams, etc and even make a choice between bare metal or RTOS system. What are other such systems you can think of?
+
+asking you about processor architectures
+
+simple software problem solving in pseudo code
+
+importance of "volatile" keyword
+
+C/asm constructs
+
+ability to read schematics
+
+understanding of and experience with dmms and scopes
+
+Anything related to synchronization between processes, and with interrupts.
+
+Timing, performance, latency, throughput.
+
+Some sense of time scales and data rates.
+
+Some sense of memory size required for various forms of data.
+
+AS INTERN:
+Don’t get stuck, ask questions to create forward movement.
+Yes, please please please ask questions, whether it would be in person or even within a PR - something like "what is the purpose of this line of code?" isn't to challenge the person but genuinely understand what is going on.
+
+Start reading up a bit on the office culture, and start picking out a couple people you want to talk to. Not specific people, but roles, like product engineer, project manager, quality, etc. Try to plan what you want to learn and how to engage people. I know it's kind of a weird suggestion, but all of my interns generally have a better experience the faster they build relationships with more members of the team
+
+Do: Listen more than you talk. Write notes.
+
+Take notes, ask questions and don't expect to solve all problems you're presented with by yourself. It's important to realize you're there to learn from the experts
+
+In my experience, they barely let intern touch the code but do more maintenance jobs. I say ask questions and ask them to get task on embedded software u can do. They might say no at first but if ur consistent, they will eventually give you a shot. Try to get as many experience you can during ur internship.
+
+
+An embedded project, with some micro-processor with a design document.
+IMPORTANT: What you did to make it work and IT WORKS.
+
+Power supply with SCPI command support
+
+Nice all-in-one portable https://digilent.com/shop/analog-discovery-2-100ms-s-usb-oscilloscope-logic-analyzer-and-variable-power-supply/  
+
+Government will soon impose security and privacy regulations on devices
+
+Error handling policies essential (and static analysis amongst others) to 'prevent fires'
+
+$(fzf) like terminal fSearch
+
+Modbus can be implemented over UART?
+
+fast shutter (when light exposed) speeds essential for non-blur fast motion cameras 
+
+in test mode, will want to have code that intentionally breaks things to enable higher coverage
+also for testing analog input, use function generator?
+
 cortex-a adds FIQs?
 
 project where data will be occasionally written to flash under control of our own code. Of course, this exposes us to flash memory corruption during unforeseen power loss events
