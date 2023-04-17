@@ -1,5 +1,21 @@
 https://www.youtube.com/playlist?list=PLDqMkB5cbBA5oDg8VXM110GKc-CmvUqEZ
 
+https://www.bengreenberg.dev/posts/2023-04-09-github-profile-dynamic-content/?utm_source=tldrnewsletter
+
+Python CI and CD and:
+An example:
+we use a scpi based power supply this lets us power cycle the board and cycle through different input voltages while monitoring the power and current
+That is just a socket or usb serial interface it depends on the supply
+Meanwhile the python code is talking scpi to an tel or hp scope collecting wave forms setting up triggers and taking measurements
+And logging this data into a database
+And it is commanding the the oven to heat to some temp
+It might also tell a vacuum chamber to pump down while cooling stuff to -50 deg c
+And the python code might be talking to the device exercising different io interfaces
+
+how to implement a thread scheduler
+
+implementing division with bitwise operations
+
 I’ve seen questions like design a traffic control systems, design a calculator that performs basic math. Candidates are expected to choose sensors, actuators, justify the choice of processor suitable for the system, draw timing diagrams, component diagrams, etc and even make a choice between bare metal or RTOS system. What are other such systems you can think of?
 
 asking you about processor architectures
