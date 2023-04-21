@@ -2,6 +2,30 @@ https://www.youtube.com/playlist?list=PLDqMkB5cbBA5oDg8VXM110GKc-CmvUqEZ
 
 https://www.bengreenberg.dev/posts/2023-04-09-github-profile-dynamic-content/?utm_source=tldrnewsletter
 
+RESUME: move skills to bottom and have some statement about what you want to do and how you work. Emphasize how you work across the stack
+
+https://www.reddit.com/r/embedded/comments/12u20oh/37_free_sessions_the_2023_embedded_online/
+
+pyserial for HIL
+
+My employer does 2-week sprints. I apply this process to each ticket in the sprint, to planning and executing the sprint, and to the overall project.
+1.Define the problem.
+2.Plan a solution.
+3.Implement the plan.
+4.Test the solution.
+5.Document the results, recurse and/or iterate as needed.
+
+DESIGN API QUESTIONS (e.g. bit-banging, ISR, multiple threads, DMA, etc.)
+While it's not necessarily a bad idea to make buffers for storing longer pieces of RX and TX data the best practice for a UART API would be to expect a caller-supplied buffer for that purpose. Most low-level APIs will only be moving a couple (or just one) byte around at a time.
+Sort of a side note: any time you're outlining an implementation with a resource shared between threads you should acknowledge the potential for concurrency issues and throw in some mention of a mutual exclusion primitive (typically mutex will be the go-to unless you're dealing with a pool of resources where multiple can be in-use at a time, in which case you want a semaphore).
+
+The other option is bit-banging which is far less efficient, but may be necessary in certain niche cases. For bit-banging you'll likely end up implementing some form of finite state machine with a hardware timer (hopefully) to keep things aligned with time.
+
+The question is vague, which makes me think it was designed around you understanding the UART protocol, how a micro might have a peripheral that supports UART and how a buffer would then interact with the peripheral.
+
+For an interview, there is no wrong answer per say, but explaining your thought process and understanding it’s flaws is key.
+You may have missed the race handling as the ring buffer pointers get updated .. assuming there is an interrupt driven section.
+
 Python CI and CD and:
 An example:
 we use a scpi based power supply this lets us power cycle the board and cycle through different input voltages while monitoring the power and current
