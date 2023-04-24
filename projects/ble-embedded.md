@@ -8,12 +8,30 @@ https://www.reddit.com/r/embedded/comments/12u20oh/37_free_sessions_the_2023_emb
 
 pyserial for HIL
 
+Plenty of people can code and do specialized things, passion is a real winner.
+I want to sense strong commitment to learn new things
+What will actually let you stand out from others at your level is character and the feeling that you are a good fit and a team player
+Keeping engaged and asking questions when I don’t the terminology
+"I know things, but stay modest etc."
+
+1.Willingness to adapt and learn their technology.
+2.Be Inquisitive and ask tons of questions , challenge existing ideas as well as present your own.
+3.Be pleasant to work with and open to criticism from your peers.
+4.Show competence in Electronics basics and at-least one programming language.
+
 My employer does 2-week sprints. I apply this process to each ticket in the sprint, to planning and executing the sprint, and to the overall project.
 1.Define the problem.
 2.Plan a solution.
 3.Implement the plan.
 4.Test the solution.
 5.Document the results, recurse and/or iterate as needed.
+
+tell me about your school projects, what did you do what had problems and how did you fix the problems?
+draw me a block diagram of the entire system, then draw a diagram of the part you did and explain how it worked
+
+ROS (robot operating system) experience good also
+
+PLC in industry are hardened over typically SoC (at the cost of lower processing power), e.g. high MTBF, I/Os high protection (optoisolator), 200kg screwdriver dropped on it (environment tolerant)
 
 DESIGN API QUESTIONS (e.g. bit-banging, ISR, multiple threads, DMA, etc.)
 While it's not necessarily a bad idea to make buffers for storing longer pieces of RX and TX data the best practice for a UART API would be to expect a caller-supplied buffer for that purpose. Most low-level APIs will only be moving a couple (or just one) byte around at a time.
