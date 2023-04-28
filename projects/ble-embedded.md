@@ -1,10 +1,44 @@
+TODO: using ChatGPT effectively for embedded
+
 https://www.youtube.com/playlist?list=PLDqMkB5cbBA5oDg8VXM110GKc-CmvUqEZ
+
+https://philbooth.me/blog/nine-ways-to-shoot-yourself-in-the-foot-with-postgresql?utm_source=tldrnewsletter
 
 https://www.bengreenberg.dev/posts/2023-04-09-github-profile-dynamic-content/?utm_source=tldrnewsletter
 
 RESUME: move skills to bottom and have some statement about what you want to do and how you work. Emphasize how you work across the stack
 
+If you have any friends with jobs at companies that hire embedded engineers, ask them for referrals.
+TODO: what does a job referral mean?
+
 https://www.reddit.com/r/embedded/comments/12u20oh/37_free_sessions_the_2023_embedded_online/
+
+This list can never be complete, because the technology and the industry are forever changing. 
+The most important skill you can develop is the ability to learn new skills. That builds versatility to keep you relevant and marketable in the jobs marketplace for a long, sustainable career. 
+List of skills so long because:
+Embedded systems comprise a wide range, environments, resources, safety, reliability etc.
+
+IMPORTANT: know MISRA C subset (i.e. so can say embedded C) 
+
+You'll need to learn about both hardware capabilities and software protocol stacks:
+    Serial
+    USB
+    Ethernet
+    WiFi
+    Bluetooth
+    Zigbee
+    Cellular
+
+checksum, TLS, CRC, OSI, TLS, AES, PID, feedback loop, flash filesystem
+
+Specific commercial and open-source RTOS's and their internals and support tools.
+Like communications technologies, pick a couple to learn about in detail. Understand their configuration and build systems, driver model, thread/task model, concurrency mechanisms, differentiation between kernel and userspace and other privilege and security models, system libraries, BSP's, etc.
+
+TODO: hardware Protocol analyzer (i.e. communications data/packet capture)
+
+They might ask you how they work, where they would be appropriate to use, what tradeoffs there might be among various options, how you would implement them.
+
+FOR PROJECT: Being able to document your work and present it to others is itself an important skill. 
 
 pyserial for HIL
 
