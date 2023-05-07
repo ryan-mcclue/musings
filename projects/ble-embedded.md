@@ -2,6 +2,16 @@ TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e
 https://www.vipshek.com/blog/gpt-learning?utm_source=tldrnewsletter
 TODO: read these after shower!
 
+I asked it to write a C program to compute a CRC. The result looked pretty good... but it was fundamentally wrong. It should have asked me what kind of CRC I wanted; instead it produced code for the (pedestrian!) most common sort.
+That's exactly what I'd expect from an inexperienced developer. A pro would snort, realize he asked the wrong question, and reframe it with more detail. The result will be (presumably) useful code; the AI acting as a great adjunct, but only when carefully instructed. It's rather like a search engine: ask the wrong question and you get poor results. As I wrote in the last issue, framing the problem is a big part of solving the problem.
+
+Today, you don’t even have to know how to read, perform on an instrument, or write music, if you can whistle a tune, there is software for your cell phone which will write the score and let you refine it and add multiple parts.  You can even publish your music from your cell phone although repeat listeners are not guaranteed.
+I believe software is headed down this same path
+
+differential drive, i.e. two separately driven wheels 
+zero turn radius, i.e. rotate in place
+focal length indicates how long
+
 https://www.youtube.com/playlist?list=PLDqMkB5cbBA5oDg8VXM110GKc-CmvUqEZ
 
 https://philbooth.me/blog/nine-ways-to-shoot-yourself-in-the-foot-with-postgresql?utm_source=tldrnewsletter
