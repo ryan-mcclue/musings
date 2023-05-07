@@ -1,10 +1,16 @@
-TODO: using ChatGPT effectively for embedded
+TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e. AI as a coding assistant
+https://www.vipshek.com/blog/gpt-learning?utm_source=tldrnewsletter
+TODO: read these after shower!
 
 https://www.youtube.com/playlist?list=PLDqMkB5cbBA5oDg8VXM110GKc-CmvUqEZ
 
 https://philbooth.me/blog/nine-ways-to-shoot-yourself-in-the-foot-with-postgresql?utm_source=tldrnewsletter
 
 https://www.bengreenberg.dev/posts/2023-04-09-github-profile-dynamic-content/?utm_source=tldrnewsletter
+
+HD video streaming over Wifi
+Small stuff can be done with an ESP32. But it will choke on HD.
+I personally would use an Intel N5105 + Linux + Python + ffmpeg und putting it to Suspend to RAM automatically. There are variants that are able to directly eat 12V.
 
 RESUME: move skills to bottom and have some statement about what you want to do and how you work. Emphasize how you work across the stack
 
