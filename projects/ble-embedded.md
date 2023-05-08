@@ -2,6 +2,23 @@ TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e
 https://www.vipshek.com/blog/gpt-learning?utm_source=tldrnewsletter
 TODO: read these after shower!
 
+(https://maaslalani.com/slides/)
+Giving presentation on project:
+And start your presentation with why you chose this project while emphasizing more on the value it produced
+    Requirements (what the product needs to do)
+    Pseudocode and System design
+    Dependencies listed, assumptions called
+    Changes made (not including the code changes as they were made when I worked in another company)
+    Reasoning why the changes were made
+    Test results
+Wanted to see:
+Presentation skills - specially explaining tech stuff to non tech or different domain experts, time management
+Dev Team wanted to see, code style and use of version control
+Overall playground for seeing how I think, design and approach problems
+
+FOTA is OTA for ECU(contains an MCU) in automative 
+
+
 I asked it to write a C program to compute a CRC. The result looked pretty good... but it was fundamentally wrong. It should have asked me what kind of CRC I wanted; instead it produced code for the (pedestrian!) most common sort.
 That's exactly what I'd expect from an inexperienced developer. A pro would snort, realize he asked the wrong question, and reframe it with more detail. The result will be (presumably) useful code; the AI acting as a great adjunct, but only when carefully instructed. It's rather like a search engine: ask the wrong question and you get poor results. As I wrote in the last issue, framing the problem is a big part of solving the problem.
 
