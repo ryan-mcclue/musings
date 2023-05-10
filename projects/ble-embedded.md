@@ -2,6 +2,14 @@ TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e
 https://www.vipshek.com/blog/gpt-learning?utm_source=tldrnewsletter
 TODO: read these after shower!
 
+TODO: allocate time for reading articles (perhaps after running?)
+https://animeshz.github.io/site/blogs/demystifying-uefi.html
+https://jack-vanlightly.com/blog/2023/5/9/is-sequential-io-dead-in-the-era-of-the-nvme-drive?utm_source=tldrnewsletter
+
+Embedded is all about cramming the most functionality into the smallest viable package with lowest power consumption. Hence, looking at which special-function ICs are trending and which peripherals/processors are trending should give you an idea what's coming to the world of embedded.
+
+RISC-V: https://www.eetimes.com/examining-the-top-five-fallacies-about-risc-v/ 
+
 (https://maaslalani.com/slides/)
 Giving presentation on project:
 And start your presentation with why you chose this project while emphasizing more on the value it produced
