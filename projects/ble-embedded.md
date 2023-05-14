@@ -6,6 +6,13 @@ TODO: allocate time for reading articles (perhaps after running?)
 https://animeshz.github.io/site/blogs/demystifying-uefi.html
 https://jack-vanlightly.com/blog/2023/5/9/is-sequential-io-dead-in-the-era-of-the-nvme-drive?utm_source=tldrnewsletter
 
+Reading assembly:
+Don't worry about being able to write it well, if you need to do that you're doing something fairly specialized like custom RISCV instructions or whatever. Knowing how to read it though? That'll save you a lot of headaches, especially with uC drivers and such.
+
+"If you have a 8bit register, how would you flip the 0th, 3rd, and 5th bits in C"
+
+tools/debug how to read a data sheet (wave form) and compare with an oscilloscope plot/trace.(ie: is the i2c correct? are you using the correct spi mode?
+
 Embedded is all about cramming the most functionality into the smallest viable package with lowest power consumption. Hence, looking at which special-function ICs are trending and which peripherals/processors are trending should give you an idea what's coming to the world of embedded.
 
 RISC-V: https://www.eetimes.com/examining-the-top-five-fallacies-about-risc-v/ 
@@ -23,6 +30,11 @@ Wanted to see:
 Presentation skills - specially explaining tech stuff to non tech or different domain experts, time management
 Dev Team wanted to see, code style and use of version control
 Overall playground for seeing how I think, design and approach problems
+
+q1) can you draw a block diagram of that system as a whole
+q2) ok you did the little part over there in the corner (not the whole thing)
+can you show/draw a block diagram of your part in detail. all inputs and outputs
+q3) can you intelligently describe the parts involved? who they interact?
 
 FOTA is OTA for ECU(contains an MCU) in automative 
 
