@@ -2,9 +2,20 @@ TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e
 https://www.vipshek.com/blog/gpt-learning?utm_source=tldrnewsletter
 TODO: read these after shower!
 
+
+AI:
+There are I guess 3 main areas:
+    General embedded systems that are capable of running simplified models for e.g. Edge-based inference (e.g. Tensorflow->TFLite)
+    Embedded systems with dedicated edge/AI accelerators that use their own frameworks (OpenVINO, TensorRT/CUDA, etc.)
+    Microcontrollers or other resource-constrained processors running bare metal models (tfmicro, various PL IPs for HLS on FPGAs, etc.)
+Each approach has its own pros/cons and plenty of things to work on.
+You also have intermediate frameworks that can run the same model on different devices (ONNX, OpenVINO, etc.) in case you have to deal with changes of availability of resources and driving system reconfiguration at run-time.
+
 TODO: allocate time for reading articles (perhaps after running?)
 https://animeshz.github.io/site/blogs/demystifying-uefi.html
 https://jack-vanlightly.com/blog/2023/5/9/is-sequential-io-dead-in-the-era-of-the-nvme-drive?utm_source=tldrnewsletter
+
+Python for black-box testing
 
 Reading assembly:
 Don't worry about being able to write it well, if you need to do that you're doing something fairly specialized like custom RISCV instructions or whatever. Knowing how to read it though? That'll save you a lot of headaches, especially with uC drivers and such.
