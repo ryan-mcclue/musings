@@ -2,6 +2,21 @@ TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e
 https://www.vipshek.com/blog/gpt-learning?utm_source=tldrnewsletter
 TODO: read these after shower!
 
+Reach out to your manager/new company and ask them what skills for job. We can’t tell you what you’ll be doing, and embedded is vast. You could be doing anything from application level work to kernel/OS side
+Yeah no you’re good. This is a good thing to ask. I even ask it in my interviews as a way of trying to show interest and initiative. “If I were to join the team, based on my background, what could I specifically study or improve on to prepare for the role”
+
+If your technical lead/manager is good - as a new hire you're probably going to be spun up on the project and pointed at an existing code base. Your job here will likely be to learn, follow, and improve upon their pre-existing patterns, not break anything, and test and verify existing legacy code. These initial tasks will probably be very specific and there won't be much you can study for ahead of time in that regard.
+You will be pretty busy learning the team's workflow, version control pattern, agile/waterfall SDLC, and the various other squishy less technical processes surrounding software development that are just as important as the software development itself.
+Your attitude for being prepared is great and I wish more seasoned engineers were willing to review the fundamentals or take them me to read up on new technology and tooling. However I think any initial refreshing you do won't be as useful as you expect. As a software professional you will constantly be learning and relearning everything about your stack while on the job. The larger your tech stack and codebase and the more you move around within it, the harder this brain-maintenance is. This is normal. Your first couple of months, just aim for competency in general but pick a couple of things to really excel at.
+
+I wish i learn how to communicate ideas and how to say "I don't know how to do it" in team environment before entering my first job
+When I started, i have the mindset where if I'm incapable to do X job with minimal assistance then I'm a bad employee.
+Turns out what it doesn't matter. I can ask for help, and all my team lead care about is whether I can deliver quality code faster.
+
+
+A good rule of thumb is to pick hardware with at least twice the resources (RAM, flash, CPU cycles etc) you estimate will be required. Running out of resources makes maintenance and adding features very difficult
+my rule of thumb was when engineers estimated how long it would take to do something was to double it. it almost never failed me. there should probably be a universal 2x rule :)
+
 
 AI:
 There are I guess 3 main areas:
