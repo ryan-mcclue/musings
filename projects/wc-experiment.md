@@ -1,3 +1,23 @@
+Here's some other useful things to know when spec-ing an embedded system:
+
+    what is the power source, battery or wall power?
+
+    are there any particular size requirements?
+
+    are there any particular cost targets?
+
+    what peripherals do you need to interface to for sensing and communication? Do you need a camera for your intrusion detection? Do you need Wi-Fi or LTE for communication?
+
+    does the system have to respond in real time or have any hard deadlines?
+
+    what are the compute resources required by your algorithm? Some of the previous questions like whether it was implemented in c or Python or if it's using a framework like tiny ML are all relevant here. If you've implemented it in c or c++, it can be compiled for an embedded CPU and you can extract flash and RAM requirements for that. If you never want to leave the world of python, you probably need to run embedded Linux, and might pay a size cost power penalty for that if it's unnecessary.
+    (important for performance metric gathering)
+
+    do you have any experience in either embedded Linux or bare metal programming or with real-time operating systems?
+
+
+
+
 https://git.some.website/aolo2/compooter-enhensa
 
 to compare CPUs, is MIPS Performance any good?
