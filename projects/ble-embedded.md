@@ -2,6 +2,16 @@ TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e
 https://www.vipshek.com/blog/gpt-learning?utm_source=tldrnewsletter
 TODO: read these after shower!
 
+Something else I don't see mentioned: Some applications will require a high level of functional safety that IAR meets (IEC 61508)
+
+JTAG like SWD is a debugging interface and is not capable of flashing EEPROM or FLASH chips directly (these require I2C or SPI)
+
+BLE battery powered device should only advertise. Fixed power device should scan
+
+Environment limitations, e.g. would IR RF communication work in direct sunlight?
+
+IoT is a subset of embedded that will bring you more towards OSes like FreeRTOS or even embedded Linux.
+
 Reach out to your manager/new company and ask them what skills for job. We can’t tell you what you’ll be doing, and embedded is vast. You could be doing anything from application level work to kernel/OS side
 Yeah no you’re good. This is a good thing to ask. I even ask it in my interviews as a way of trying to show interest and initiative. “If I were to join the team, based on my background, what could I specifically study or improve on to prepare for the role”
 
