@@ -1,6 +1,13 @@
 TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e. AI as a coding assistant
+https://news.ycombinator.com/item?id=36037559
+
 https://www.vipshek.com/blog/gpt-learning?utm_source=tldrnewsletter
 TODO: read these after shower!
+
+
+video card/SOC/IC controllable by MCU:
+No. I could imagine Full HD @ 8bit static display might be just on the verge of what a Cortex M with fast SDRAM or octo-SPI flash is capable of, but not 4x more bandwidth. Even then, the cost of HDMI coverter would ruin the project.
+Memory bandwidth and size make little sense to pair with a weak CPU.
 
 Something else I don't see mentioned: Some applications will require a high level of functional safety that IAR meets (IEC 61508)
 
