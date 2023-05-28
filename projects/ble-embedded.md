@@ -4,6 +4,9 @@ https://news.ycombinator.com/item?id=36037559
 https://www.vipshek.com/blog/gpt-learning?utm_source=tldrnewsletter
 TODO: read these after shower!
 
+JEDEC specification to implement commands to get NOR flash sector sizes?
+
+https://academy.nordicsemi.com/courses/bluetooth-low-energy-fundamentals/
 
 video card/SOC/IC controllable by MCU:
 No. I could imagine Full HD @ 8bit static display might be just on the verge of what a Cortex M with fast SDRAM or octo-SPI flash is capable of, but not 4x more bandwidth. Even then, the cost of HDMI coverter would ruin the project.
