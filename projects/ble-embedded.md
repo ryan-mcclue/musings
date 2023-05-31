@@ -1,6 +1,10 @@
 TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e. AI as a coding assistant
 https://news.ycombinator.com/item?id=36037559
 
+TODO: STM32 audio synthesiser https://trebledj.github.io/posts/digital-audio-synthesis-for-dummies-part-1/ 
+
+interesting pnemuatics and vacuum pumps: https://www.programmableair.com/ 
+
 https://www.vipshek.com/blog/gpt-learning?utm_source=tldrnewsletter
 TODO: read these after shower!
 
