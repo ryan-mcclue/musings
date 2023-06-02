@@ -1,6 +1,53 @@
 TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e. AI as a coding assistant
 https://news.ycombinator.com/item?id=36037559
 
+TODO: use terminology like this CRC
+CRC32 isn't one standard algorithm. It's 232 different possible algorithms, depending on which polynomial you pick. There are a few dozen or so commonly used polynomials. ST's AN4187 gives good documentation on how to compute them using the CRC peripheral. The STM32F1 series is specialized to compute only the 0x4C11DB7 polynomial, with the initial value 0xFFFFFFFF. That's a common one (used in 802.3 Ethernet), but isn't the only one.
+
+IIRC even the old STM32F1xx the CRC32 peripheral can process has a throughput of 8 bit per cycle (also 16 bit every two cycles or 32 bit every 4 cycles). That's hard to beat with anything more than add/shift/xor.
+
+78k cycles to compute a CRC for 256 words is some 300 cycles per word. That must be for the 1-bit at a time algorithm.
+I'ts possible to do CRC32 using a byte based algorithm using a 1k lookup table at a fraction of these cycles.
+
+ST manual will give polynomial used for CRC, so can check on PC:
+```
+class Crc32:
+    crc_table = {}
+
+    def __init__(self, _poly):
+        # Generate CRC table for polynomial
+        for i in range(256):
+            c = i << 24
+            for j in range(8):
+                c = (c << 1) ^ _poly if (c & 0x80000000) else c << 1
+            self.crc_table[i] = c & 0xFFFFFFFF
+
+    # Calculate CRC from input buffer
+    def calculate(self, buf):
+        crc = 0xFFFFFFFF
+
+        i = 0
+        while i < len(buf):
+            b = [buf[i+3], buf[i+2], buf[i+1], buf[i+0]]
+            i += 4
+            for byte in b:
+                crc = ((crc << 8) & 0xFFFFFFFF) ^ self.crc_table[(crc >> 24) ^ byte]
+        return crc
+    
+    # Create bytes array from integer input
+    def crc_int_to_bytes(self, i):
+        return [(i >> 24) & 0xFF, (i >> 16) & 0xFF, (i >> 8) & 0xFF, i & 0xFF]
+        
+# Use it
+# Prepare CRC block
+crc = Crc32(0x04C11DB7)
+result = crc.calculate(your_input....)
+```
+
+
+
+TODO: know how to write application with an RTOS
+
 TODO: STM32 audio synthesiser https://trebledj.github.io/posts/digital-audio-synthesis-for-dummies-part-1/ 
 
 interesting pnemuatics and vacuum pumps: https://www.programmableair.com/ 
