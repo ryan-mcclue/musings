@@ -2,6 +2,9 @@ TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e
 https://news.ycombinator.com/item?id=36037559
 
 TODO: use terminology like this CRC
+STM32F1 implements the CRC32 from IEEE 802.3 (Ethernet). Lots of other systems use that CRC32-IEEE, but there are a few other different CRC32 standards in common use. MPEG2 also uses the same CRC32 version as Ethernet. CRC32C is probably the second most common CRC32 function used.
+CRC32 is a pseudorandom function family, there are many functions (mappings from {0,1}n→{0,1}32) in the family. The parameters are the 32-bit input polynomial, the byte ordering, the bit ordering, whether there's padding, and whether there's an initial input value (and what it is if so).
+
 CRC32 isn't one standard algorithm. It's 232 different possible algorithms, depending on which polynomial you pick. There are a few dozen or so commonly used polynomials. ST's AN4187 gives good documentation on how to compute them using the CRC peripheral. The STM32F1 series is specialized to compute only the 0x4C11DB7 polynomial, with the initial value 0xFFFFFFFF. That's a common one (used in 802.3 Ethernet), but isn't the only one.
 
 IIRC even the old STM32F1xx the CRC32 peripheral can process has a throughput of 8 bit per cycle (also 16 bit every two cycles or 32 bit every 4 cycles). That's hard to beat with anything more than add/shift/xor.
