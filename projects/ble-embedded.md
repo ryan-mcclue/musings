@@ -1,6 +1,8 @@
 TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e. AI as a coding assistant
 https://news.ycombinator.com/item?id=36037559
 
+compression for compression speed, e.g. lz4 or resultant size
+
 regarding embedded CI:
 CD is not comparable to what CD would mean for a Web app. In our case it's a series of scripts in a pipeline which automate the delivery process (from building to packaging, notifying the right people, archiving all artifacts, etc). But then it's not "deployed" per se as it wouldn't make sense in our product.
 Basically all steps that used to be done locally and manually when delivering firmware have been automated/scripted and put in a configurable pipeline.
