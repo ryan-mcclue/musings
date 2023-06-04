@@ -1,6 +1,20 @@
 TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e. AI as a coding assistant
 https://news.ycombinator.com/item?id=36037559
 
+regarding embedded CI:
+CD is not comparable to what CD would mean for a Web app. In our case it's a series of scripts in a pipeline which automate the delivery process (from building to packaging, notifying the right people, archiving all artifacts, etc). But then it's not "deployed" per se as it wouldn't make sense in our product.
+Basically all steps that used to be done locally and manually when delivering firmware have been automated/scripted and put in a configurable pipeline.
+
+Totally depends on your needs, it's here to help you not to add constraints. Maybe in some IoT projects it's even a proper deployment in the sense that at the end of the pipeline some firmware update is pushed to all endpoints. In your case or mine it may not be relevant.
+What matters is to automate what can be automated and would bring value if it is, shorten the cycle and gain in confidence in what you're doing. The what depends on the use case.
+
+Yeah implementing buzzwords doesn't make your product or sev experience better. You implement buzzwords IF they make your product/dev experience better. Or if the boss says so...
+
+Honestly I believe the biggest hurdle is effective and sane hardware in the loop ci/cd.
+We've accomplished this by having on prem ci/cd agents hooked up to hardware over uart and jtag to run tests etc
+
+TODO: stm32 radar
+
 TODO: use terminology like this CRC
 STM32F1 implements the CRC32 from IEEE 802.3 (Ethernet). Lots of other systems use that CRC32-IEEE, but there are a few other different CRC32 standards in common use. MPEG2 also uses the same CRC32 version as Ethernet. CRC32C is probably the second most common CRC32 function used.
 CRC32 is a pseudorandom function family, there are many functions (mappings from {0,1}n→{0,1}32) in the family. The parameters are the 32-bit input polynomial, the byte ordering, the bit ordering, whether there's padding, and whether there's an initial input value (and what it is if so).
