@@ -1,6 +1,27 @@
 TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e. AI as a coding assistant
 https://news.ycombinator.com/item?id=36037559
 
+if have code signing keys, should have way to revoke keys in case they are stolen
+
+document control system for CAD/HW files, i.e. store in separate repo to software to avoid say 8GB repos? (so a non-monorepo)
+
+learning RTOS:
+The core of using a RTOS is the application design, that should be event driven to avoid polling and work efficiently and execute obeying the real time requirements.
+
+first some concepts are universal: mutex, binary semaphor, counting semaphore, a queu, and priority
+a good learning example is to create your own (each one of those) using a conditioned variable
+learn these separately. have a good understanding.
+understand for example priority inversion.
+only then learn a specific rtos which is an implimentation
+another thing to learn is how a task switch occurs on a specific cpu.
+how for example does the rtos start the first task, why does it create this weird data structure on the stack? how is this similar to an interrupt/context(pre-emption) switch? agian that would be for a specific implementation of an rtos on a specific cpu.
+and yes you will need to learn assembly language it is a key component of how a scheduler and context switch occur
+
+Not every RTOS is POSIX compliant, but IMO there is value in learning the POSIX implementations and APIs for ptheads, mutexes, semaphores, message queues, barriers, etc.
+
+for safety critical applications, typically have a team or someone specialising in specifying software safety requirements:
+Working in Automotive safety, I can tell you that you need a qualified team of engineers in each domain, or the effort needed in a cross-functional safety team increases tremendously. 
+
 compression for compression speed, e.g. lz4 or resultant size
 
 regarding embedded CI:
@@ -1676,6 +1697,7 @@ https://vivonomicon.com/
 https://patternsinthemachine.net/
 https://blog.feabhas.com/
 https://blog.st.com/
+https://dojofive.com/blog/
 https://dmitry.gr/?r=05.Projects
 https://tratt.net/laurie/blog/
 http://stevehanov.ca/blog/
