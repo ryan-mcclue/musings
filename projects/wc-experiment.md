@@ -27,7 +27,7 @@ compilers using templates introduce a lot of bloated/duplicated binary code (mor
 optimisation requires specialised knowledge of platform and is time consuming
 performance-aware programming works towards optimisation, just not all the way
 
-also, algorithmic optimisation is not necessarily performance aware programming (i.e. might involve math etc.)
+Distinction between, algorithmic optimisation is not necessarily performance aware programming (i.e. might involve math etc.)
 We are learning about CPU mental model
 
 when timing code, repeat; this will give time to show what it's like when cache is primed
