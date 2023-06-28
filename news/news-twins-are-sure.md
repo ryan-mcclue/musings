@@ -13,3 +13,5 @@ Google makes money through ads, not standalone products.
 So, will shutdown product if cannot monetise them with billions of ads.
 
 If LLM produce too much online content, then further training will be corrupted as its trained on defective model data
+
+Update software licenses to account for AI scraping?

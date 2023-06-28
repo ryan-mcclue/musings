@@ -16,6 +16,9 @@ black box (don't know internals of anything)
 functions should be small
 functions should do one thing
 
+code is much more readable if local and don't have to open 30 tabs.
+then you have to understand package structure to understand functionality
+
 performance excuses (generally only apply to handrolled assembly):
 - too small (language or architectural decisions only yeild about 10% difference)
 - niche (only game enginers, embedded etc.)

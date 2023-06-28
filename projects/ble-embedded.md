@@ -1,10 +1,10 @@
+https://interviewing.io/guides/hiring-process?utm_source=tldrnewsletter
+
 TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e. AI as a coding assistant
 https://news.ycombinator.com/item?id=36037559
 
 TODO: parsing binary protocols in python: https://implement-dns.wizardzines.com/book/part_2.html
 https://integer.exposed/#0xaa55
-https://float.exposed/0x44bf9400
-
 
 
 if have code signing keys, should have way to revoke keys in case they are stolen
