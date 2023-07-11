@@ -14,4 +14,12 @@ So, will shutdown product if cannot monetise them with billions of ads.
 
 If LLM produce too much online content, then further training will be corrupted as its trained on defective model data
 
-Update software licenses to account for AI scraping?
+It seems software licenses need to be updated to account for AI scraping
+
+Microsoft wants to put Windows in Cloud for better AI; which means better data harvesting...
+
+Graphics cards want to improve performance of superior ray tracing rendering
+
+Subculture in linux that only use containers
+
+A lot of AI, particular LLM can be modified to spread misinformation

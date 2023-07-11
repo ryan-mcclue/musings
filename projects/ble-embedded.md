@@ -1,5 +1,8 @@
 https://interviewing.io/guides/hiring-process?utm_source=tldrnewsletter
 
+fpga: https://tinytapeout.com/digital_design/
+https://promwad.com/news/art-fpga-debugging-how-speed-it-smart-design-testing-tricks
+
 TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e. AI as a coding assistant
 https://news.ycombinator.com/item?id=36037559
 
