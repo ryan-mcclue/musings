@@ -23,3 +23,5 @@ Graphics cards want to improve performance of superior ray tracing rendering
 Subculture in linux that only use containers
 
 A lot of AI, particular LLM can be modified to spread misinformation
+
+Possible areas to invest in: space mining, underwater gold rush, nuclear fusion etc.
