@@ -9,6 +9,8 @@ https://news.ycombinator.com/item?id=36037559
 TODO: parsing binary protocols in python: https://implement-dns.wizardzines.com/book/part_2.html
 https://integer.exposed/#0xaa55
 
+compiler differences:
+https://m0agx.eu/practical-comparison-of-ARM-compilers.html 
 
 if have code signing keys, should have way to revoke keys in case they are stolen
 

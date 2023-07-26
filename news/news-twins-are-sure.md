@@ -25,3 +25,7 @@ Subculture in linux that only use containers
 A lot of AI, particular LLM can be modified to spread misinformation
 
 Possible areas to invest in: space mining, underwater gold rush, nuclear fusion etc.
+
+WormGPT shows dangers of 'unethical' AI that can give instructions to create malware etc.
+
+HPC (high-performance-computing), i.e supercomputers and clusters
