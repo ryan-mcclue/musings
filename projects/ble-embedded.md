@@ -1,3 +1,6 @@
+https://cpu.land/
+https://www.lesswrong.com/posts/vfRpzyGsikujm9ujj/a-brief-history-of-computers
+
 https://interviewing.io/guides/hiring-process?utm_source=tldrnewsletter
 
 fpga: https://tinytapeout.com/digital_design/
