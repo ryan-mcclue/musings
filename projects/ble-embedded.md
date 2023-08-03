@@ -1,3 +1,5 @@
+To make determinations on chip/supply chain shortages, can look at lead times stats/reports on digikey etc. to see if trending down
+
 https://cpu.land/
 https://www.lesswrong.com/posts/vfRpzyGsikujm9ujj/a-brief-history-of-computers
 

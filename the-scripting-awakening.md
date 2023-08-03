@@ -21,3 +21,17 @@ printf "App v1.0 by Ryan McClue\n" >&2
 printf "Usage:\n" >&2
 printf "app -arg <value>\n" >&2
 ```
+for i in range(10):
+  print(i)
+
+# TODO: fix search and replace for proper file formats
+
+# insert: r!<cmd>
+
+# display inline: :echo system(<cmd>)
+# display selection: :'<,'>w !<cmd>
+
+# substitute:  :.!<cmd> (put result one line after)
+# MUST SELECT LINES FIRST (IN VISUAL MODE), THEN RUN THIS
+yPgv:!bash
+:xnoremap x yPgv:!bash<CR>
