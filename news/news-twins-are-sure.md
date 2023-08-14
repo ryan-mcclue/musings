@@ -29,3 +29,5 @@ Possible areas to invest in: space mining, underwater gold rush, nuclear fusion 
 WormGPT shows dangers of 'unethical' AI that can give instructions to create malware etc.
 
 HPC (high-performance-computing), i.e supercomputers and clusters
+
+Furthering importance of knowing hardware are many companies producing own silicon for AI, server, etc.

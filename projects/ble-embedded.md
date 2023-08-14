@@ -1,5 +1,9 @@
 To make determinations on chip/supply chain shortages, can look at lead times stats/reports on digikey etc. to see if trending down
 
+I don’t know what prep materials will help you ace Amazon’s SD interview, but I would get to know Amazon’s embedded products like echo dot, echo show, kindle, etc. I’m hoping to interview with them, and I’ll probably look into their user manuals to get their features and come up with SD.
+
+Interview always answer with: I want to stay for a longer duration
+
 https://cpu.land/
 https://www.lesswrong.com/posts/vfRpzyGsikujm9ujj/a-brief-history-of-computers
 
