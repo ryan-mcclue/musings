@@ -14,3 +14,13 @@ Haber process creates ammonia from atmosphere rich in nitrogen (though strongly 
 So, Haber process responsible for sustaining such large populations through ammonium nitrate fertiliser
 However, ammonium nitrate is also an explosive
 ### Q.A
+
+# Tue 24 Oct 2023
+## Quantum
+RSA public key is two primes multiplied together. 
+These primes constitute private key.
+Qubit can be in multiple states. So, compute all bit combinations at once.
+However, result is a superposition, so can only read one of the state results
+Therefore, as difficult to extract meaningful information from superposition, quantum computing not useful for most algorithms 
+However, quantum fourier transform can be done on a periodic superposition
+So, if superposition has inherent periodicity, useful
