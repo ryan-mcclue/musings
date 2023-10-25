@@ -24,3 +24,11 @@ However, result is a superposition, so can only read one of the state results
 Therefore, as difficult to extract meaningful information from superposition, quantum computing not useful for most algorithms 
 However, quantum fourier transform can be done on a periodic superposition
 So, if superposition has inherent periodicity, useful
+
+# Wed 24 Oct 2023
+## 
+single event upset; soft-error;
+trace elements of uranium releasing alpha particles that interfered with transistor in ram (electronics so small)
+cosmic rays can cause bit flips all the time, e.g. belgium voting, speed running, plane system
+in fact, laboratories have neutron detectors for this
+so, could have duplicate computers to account for this, say on an airplane
