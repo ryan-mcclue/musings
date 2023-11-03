@@ -32,3 +32,13 @@ trace elements of uranium releasing alpha particles that interfered with transis
 cosmic rays can cause bit flips all the time, e.g. belgium voting, speed running, plane system
 in fact, laboratories have neutron detectors for this
 so, could have duplicate computers to account for this, say on an airplane
+
+# Sat 04 Nov 2023 
+## 
+press-releases for science are oversimplified and sensationalised to attract attention
+also pressure to publish first
+e.g. worm hole created in quatum computer, really just mathematical simulation
+quite often early reports are wrong, e.g. ambient pressure, room-temperature superconductor
+some areas in computer science over-hyped, e.g. AI, quantum computing
+there can infinite falsities, but only one truth, so most likely wrong
+
