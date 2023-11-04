@@ -42,3 +42,8 @@ quite often early reports are wrong, e.g. ambient pressure, room-temperature sup
 some areas in computer science over-hyped, e.g. AI, quantum computing
 there can infinite falsities, but only one truth, so most likely wrong
 
+0 kelvin is absence of thermal energy. 247 kelvin is 0celsius
+thermionic emission is emission of electrons from a heated surface
+this led to vacuum diode, which could rectify AC
+signal amplification is increasing amplitude, so further distances and less noise
+vacuum diode was first electrical switch used in first digital computer ENIAC
