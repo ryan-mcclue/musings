@@ -52,3 +52,12 @@ vacuum diode was first electrical switch used in first digital computer ENIAC
 ## Jumping Robot
 Rubber can store tremendous amounts of elastic energy (also why used for tires as can be deformed)
 Carbon fibre high strength-to-weight ratio (graphene best)
+
+# Sun 04 Nov 2023 
+Analog computers such as the antikythera mechanism can use gears, with each tooth representing a value (often mechanical devices) to measure orbits. Also tides
+Analog errors are easy to occur and can multiply, also as models of the real world, not general purpose.
+So, digital more noise-resilient and easily made as same components
+
+Multiplying 32bit numbers may require hundreds of transistors.
+Analog could just add two currents and apply resistor easily.
+So, in come cases, analog better
