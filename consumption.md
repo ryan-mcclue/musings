@@ -52,12 +52,20 @@ vacuum diode was first electrical switch used in first digital computer ENIAC
 ## Jumping Robot
 Rubber can store tremendous amounts of elastic energy (also why used for tires as can be deformed)
 Carbon fibre high strength-to-weight ratio (graphene best)
+Interesting observations of bush-baby muscle attachments leading to robot design
 
 # Sun 04 Nov 2023 
+## Analog Computing
 Analog computers such as the antikythera mechanism can use gears, with each tooth representing a value (often mechanical devices) to measure orbits. Also tides
 Analog errors are easy to occur and can multiply, also as models of the real world, not general purpose.
-So, digital more noise-resilient and easily made as same components
+So, digital more noise-resilient, general-purpose and easily made as same components
 
-Multiplying 32bit numbers may require hundreds of transistors.
+Multiplying 32bit numbers may require hundreds of transistors for digital
 Analog could just add two currents and apply resistor easily.
-So, in come cases, analog better
+So, in come cases, analog better as less components and less power.
+Success of neural networks is their size. So, require large amounts of power and memory to train
+In fact, neural networks effectively boil down to matrix multiplication
+By storing certain amount of electrons and applying a certain voltage, output currents can be added together
+Size of transistor approaching size of atom, so Moore's law ending
+
+Relatively low-pressure can get high force if over a large area
