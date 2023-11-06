@@ -69,3 +69,9 @@ By storing certain amount of electrons and applying a certain voltage, output cu
 Size of transistor approaching size of atom, so Moore's law ending
 
 Relatively low-pressure can get high force if over a large area
+
+Such large nuclei of uranium, plutonium make nuclei unstable. 
+Isotopes (different neutrons) can be more radioactive than others
+Half-life is exponentially decreasing constant (uranium into lead in 4.5billion years)
+
+Diesal more efficient and no sparkplug, but heavy engine, so not in high-performance
