@@ -74,4 +74,17 @@ Such large nuclei of uranium, plutonium make nuclei unstable.
 Isotopes (different neutrons) can be more radioactive than others
 Half-life is exponentially decreasing constant (uranium into lead in 4.5billion years)
 
-Diesal more efficient and no sparkplug, but heavy engine, so not in high-performance
+Diesel more efficient and no sparkplug, but heavy engine, so not in high-performance.
+Used in larger vehicles like fire trucks
+
+If rub garlic on feet, can taste as it goes into bloodstream
+
+## Fri 10 Nov 2023
+# FFT
+Convert from time-domain into frequency-domain to divide signal into various subcarrier frequencies.
+This allows to send parallel data, i.e. higher bandwidth in 5G
+FFT developed to detect nuclear testing
+Thermonuclear/hydrogen bomb first uses fission which triggers fusion
+Peace sign made by combining semaphores of N and D (nucler deterrant)
+Around 55 earthquakes a day
+
