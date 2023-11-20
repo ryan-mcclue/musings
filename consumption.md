@@ -87,4 +87,13 @@ FFT developed to detect nuclear testing
 Thermonuclear/hydrogen bomb first uses fission which triggers fusion
 Peace sign made by combining semaphores of N and D (nucler deterrant)
 Around 55 earthquakes a day
+So, FFT to have fast way determining underground nuclear tests
 
+
+## Sat 11 Nov 2023
+# Ground
+Voltage is difference between two points. Ground is reference voltage (as in say a CPU, there is no literal ground)
+
+x11 requires window manager (from desktop environment like xfce, gnome (gtk), kde (qt)); compositor all in one
+x11 siphoned input, graphics, fonts and indirect communication etc. 
+wayland and mor are compositors
