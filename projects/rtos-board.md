@@ -34,6 +34,32 @@ can also use printrun usb-b interface to print without SD card?
 
 
 --------------------------------------------------------------------------
+RoHs (restriction of hazardous substances) solid 22AWG (not enough for .. amps?)
+UPS (uninterratable power supply?) vs normal battery?
+polarised/keyed connectors ensure connect right terminals. so good for power supplies, however say for brushless dc motor, want to be able to reverse
+battery could have built-in fuse
+kill switch simply disconnects battery from the system?
+breadboard only good for say 500ma-1A as spring contacts give higher contact resistance than a perfboard
+or direct wires?
+
+Of course, if your loads are motors and 1.2A is the run current then the starting or stall currents could be much higher.
+
+Put a 10uF and a 100nF capacitor in parallel across the servo power feed... will help suppress noise...
+
+seems perfboard(per-pad)/strip-vero-board almost always prefable to breadboard as troubleshooting becomes harder for higher current/frequencies
+adafruit permaproto good quality (bakelite, phenolic are low quality with pads flaking off)
+
+IMPORTANT: AWG measured by conductor not including insulation
+AWG listed current ratings are extremely conservative.
+Also, not as simple as to directly look at chart, as it's not just the current rating of the wire, but the temperature rise that must be considered (e.g. insulation rating, operating temperature etc.)
+
+terminal strip?
+
+xt30 y-harness
+
+fortunately tjc8 connector (aka servo connector) spaced apart same as jumper wires and pins on mcu and breadboard
+
+
 most solder has flux core (typically rosin) to prevent oxidation (wets the metal?)
 if we were to leave a blob of solder on the iron whilst hot, it would oxidise and become visibly flaky
 

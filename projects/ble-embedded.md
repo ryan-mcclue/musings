@@ -1,4 +1,21 @@
+simd: https://lemire.me/blog/2023/09/22/parsing-integers-quickly-with-avx-512/ 
+https://travisdowns.github.io/
+
 To make determinations on chip/supply chain shortages, can look at lead times stats/reports on digikey etc. to see if trending down
+
+Having CI for just building when merging a feature branch notice compiler errors early on
+
+Rust adds unecessary complexity to simple code, allowing for issues to creep in
+
+For freeing, set to NULL, so segfault if use-after-free 
+
+fuzzing: https://carstein.github.io/2020/05/21/writing-simple-fuzzer-4.html
+
+xbox controller SWD: https://wrongbaud.github.io/posts/stm-xbox-jtag/
+
+Kalman/Complementary Filters: 
+https://plaw.info/articles/sensorfusion/#articles
+https://simondlevy.github.io/ekf-tutorial/
 
 I don’t know what prep materials will help you ace Amazon’s SD interview, but I would get to know Amazon’s embedded products like echo dot, echo show, kindle, etc. I’m hoping to interview with them, and I’ll probably look into their user manuals to get their features and come up with SD.
 
