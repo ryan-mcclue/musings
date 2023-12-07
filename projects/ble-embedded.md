@@ -1,3 +1,53 @@
+## IOT: 
+device types (not high bandwidth realtime)
+1. app-device
+  1. http as simple:
+     have the device serve a simple web ui with no app
+     have a refresh button for the user to manually request data updates
+  2. device-to-user push, i.e. real-time updates:
+     long-polling simplest for infrequent messages
+     sse (server-sent events) also
+     websockets would offer bidirectional real time information 
+  3. if limited by http, go to CoAP (request model similar to http) 
+     or offload to less power with BLE and specific app
+2. device-server
+  1. transferring sensor/state data, i.e. one-way no response data; MQTT
+3. device-device
+  ... zigbee?
+
+- STAGES:
+
+
+- CONNECTION:
+  * app-device: device discovery protocols, e.g. SSDP or mDNS
+- SECURITY:
+  * http: TLS, however certificates for unknown domain names as for embedded devices is challenging 
+- RF:
+  - 4G/5G
+   all access
+   
+MQTT + mbedTLS + AWS IOT
+
+https://tttapa.github.io/ESP8266/Chap01%20-%20ESP8266.html
+TODO: https://www.reddit.com/user/Azdle/ (ask about stages)
+https://github.com/azdle?tab=repositories
+
+- PROTOCOL: 
+  * http simple 
+  * custom UDP
+  * mqtt favoured as don't have to polling?
+    mqtt less protocol overhead than http so less power?
+    But even in more high level projects, 
+    which need larger data packets, encryption and qos guarantee (i.e. message delivery garuntees), mqtt fits in
+    quite slow as MQTT is designed for 1 second+ timing
+    realtime require 100-200ms delay?
+    Though this requires a central always-on and listening "hub", not a fit for app to device.
+
+- SERVER: 3rd party service: thingspeak, thethings.io, ..., etc.
+  * influxdb time-series db for sensor data?
+  * some visualisation dashboard web tool, e.g. grafana OSS
+
+
 simd: https://lemire.me/blog/2023/09/22/parsing-integers-quickly-with-avx-512/ 
 https://travisdowns.github.io/
 

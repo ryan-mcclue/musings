@@ -53,11 +53,19 @@ IMPORTANT: AWG measured by conductor not including insulation
 AWG listed current ratings are extremely conservative.
 Also, not as simple as to directly look at chart, as it's not just the current rating of the wire, but the temperature rise that must be considered (e.g. insulation rating, operating temperature etc.)
 
-terminal strip?
-
 xt30 y-harness
 
 fortunately tjc8 connector (aka servo connector) spaced apart same as jumper wires and pins on mcu and breadboard
+
+20mA across heart will cause cardiac arrest
+current flows due to potential difference, not necessarily a ground. 
+current can flow in a closed loop, as it does when you touch a wire
+AC causes greater muscle contractions, i.e. loss of muscle control and stop breathing
+
+TODO: current flows path of least resistance, so if touch with finger, unlikely to pass across heart? how does it flow hand to hand?
+
+## Crimping
+
 
 
 most solder has flux core (typically rosin) to prevent oxidation (wets the metal?)
@@ -114,9 +122,12 @@ You do not use brass wool as an abrasive in any way
 
 ## Action:
 Heat materials you want to join with the iron.
-Apply solder to this junction. 
+Apply solder to the junction/pad/leg. 
+Move solder away before moving the iron away.
 Don't apply solder to the iron. So, often have to angle the iron away (ok if gets on it indirectly)
-### Wires:
+### 
+
+### Splicing (TODO):
 Heat underneath wire and apply solder to top. Do this for each end
 Then do same for actual join
 
