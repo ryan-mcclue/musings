@@ -1,13 +1,24 @@
 ## Wireless
+esp32 vs stm32
+HOW-TO-VERIFY?: stm32 better ADC accuracy, lower ISR latency, good documentation, better power efficiency, more IO
+esp32 binary bloat
+So, seems only use esp32 if need Wifi?
+For example, when you set up a wake up pin it will enable an internal pull resistor even if previously you disabled it. In my case it led to an unstable wake up and I had to fix the source code in the EDP-IDF. No fix in version 5.0 to this issue. And it's not a single bug, it happens a lot when I have to dig into the source code of the ESP-IDF.
+
 ### App-Device
+https://www.youtube.com/watch?v=DEFPSfLRObk
+
+https://www.youtube.com/watch?v=WeXjPkm4djg
+
 https://www.youtube.com/watch?v=pL3dhGtmcMY
+
 TODO: how to test website on device? don't have to develop locally? just have to reflash?
 1. WiFi + HTTP + asynchronous (manual refresh button) + self-hosted (device serves web site)
 2. Real-Time Communication 
 device-to-user push, i.e. real-time updates:
 long-polling simplest for infrequent messages
-sse (server-sent events) also
-websockets would offer bidirectional real time information 
+sse (server-sent events)
+USE THIS: websockets would offer bidirectional real time information (used over a http request as persist) (full-duplex; tcp)
 3. Standalone App
 device discovery SSDP or mDNS
 security with TLS
