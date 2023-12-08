@@ -1,11 +1,21 @@
+## Professional
+logs: Once about to ship, add logs so can look at historical data to know program execution/state and ask say 'why didn't this run?'
+TODO: git hygiene (commits, branches): https://www.youtube.com/watch?v=qw_IwxShEow
+infrastructure as code (i.e. configure server with a file rather than CLI)
+
+
 ## Wireless
+TODO: would using an external bluetooth peripheral be worth it? or embedded in mcu? or separate mcu esp32?
+
 esp32 vs stm32
 HOW-TO-VERIFY?: stm32 better ADC accuracy, lower ISR latency, good documentation, better power efficiency, more IO
-esp32 binary bloat
-So, seems only use esp32 if need Wifi?
+esp32 binary bloat, xtensa arch
+So, seems only use esp32 if need Wifi? POF?
 For example, when you set up a wake up pin it will enable an internal pull resistor even if previously you disabled it. In my case it led to an unstable wake up and I had to fix the source code in the EDP-IDF. No fix in version 5.0 to this issue. And it's not a single bug, it happens a lot when I have to dig into the source code of the ESP-IDF.
 
 ### App-Device
+debugging: https://www.youtube.com/watch?v=uq93H7T7cOQ  
+
 https://www.youtube.com/watch?v=DEFPSfLRObk
 
 https://www.youtube.com/watch?v=WeXjPkm4djg
