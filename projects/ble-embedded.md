@@ -1,3 +1,27 @@
+MORNING:
+ 1. review system stats
+ 2. review comp. info and emb. info
+ 3. review interview questions
+reddit: embedded interview questions; intern interview questions
+
+memory bus set up to transfer 4 bytes at a time on exactly 4 byte boundaries.
+this alignment is for hardware efficiency
+if unaligned, and if the hardware supports it, 2 cycles required to get 4bytes
+
+compare build times of c-gnu11 to c17? majority of cruft worth it?
+2023 embedded survey: c/c++, OS, single-core, wireless, automation, updating existing
+low power with DMA handling peripheral transfers only
+
+security big 3: memory (overflow, free), input sanitisation (injection), authentication (tokens)
+
+heartbeat metrics first to region of flash (global struct->serialize->store); then to central server to store in database
+
+TODO: apply memfault discussion talking points
+
+compiler assembly inspection: https://coffeebeforearch.github.io/2020/08/12/clamp-optimization.html
+
+
+
 ## Professional
 logs: Once about to ship, add logs so can look at historical data to know program execution/state and ask say 'why didn't this run?'
 TODO: git hygiene (commits, branches): https://www.youtube.com/watch?v=qw_IwxShEow
