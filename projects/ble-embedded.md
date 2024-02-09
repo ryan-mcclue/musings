@@ -1,41 +1,47 @@
 MORNING:
  1. review system stats
  2. review comp. info and emb. info
- 3. review interview questions
+ 3. review comp. and emb. interview questions
 reddit: embedded interview questions; intern interview questions
+
+
+Here's some other useful things to know when spec-ing an embedded system:
+
+what is the power source, battery or wall power?
+
+are there any particular size requirements?
+
+are there any particular cost targets?
+
+what peripherals do you need to interface to for sensing and communication? 
+Do you need a camera for your intrusion detection? 
+Do you need Wi-Fi or LTE for communication?
+
+does the system have to respond in real time or have any hard deadlines?
+
+what are the compute resources required by your algorithm? 
+Some of the previous questions like whether it was implemented in c or Python or if it's using a framework like tiny ML are all relevant here. 
+If you've implemented it in c or c++, it can be compiled for an embedded CPU and you can extract flash and RAM requirements for that. 
+If you never want to leave the world of python, you probably need to run embedded Linux, and might pay a size cost power penalty for that if it's unnecessary.
 
 memory bus set up to transfer 4 bytes at a time on exactly 4 byte boundaries.
 this alignment is for hardware efficiency
 if unaligned, and if the hardware supports it, 2 cycles required to get 4bytes
 
-compare build times of c-gnu11 to c17? majority of cruft worth it?
-2023 embedded survey: c/c++, OS, single-core, wireless, automation, updating existing
-low power with DMA handling peripheral transfers only
-
-security big 3: memory (overflow, free), input sanitisation (injection), authentication (tokens)
+security big 3: memory (overflow, free) (really an issue with ASLR, PIE, DEP?)
+input sanitisation (injection), authentication (tokens)
 
 heartbeat metrics first to region of flash (global struct->serialize->store); then to central server to store in database
 
-TODO: apply memfault discussion talking points
-
 compiler assembly inspection: https://coffeebeforearch.github.io/2020/08/12/clamp-optimization.html
 
-
-
-## Professional
 logs: Once about to ship, add logs so can look at historical data to know program execution/state and ask say 'why didn't this run?'
 TODO: git hygiene (commits, branches): https://www.youtube.com/watch?v=qw_IwxShEow
-infrastructure as code (i.e. configure server with a file rather than CLI)
 
+TODO: HOW-TO-VERIFY?
+stm32 better ADC accuracy, lower ISR latency, good documentation, better power efficiency, more IO
 
-## Wireless
-TODO: would using an external bluetooth peripheral be worth it? or embedded in mcu? or separate mcu esp32?
-
-esp32 vs stm32
-HOW-TO-VERIFY?: stm32 better ADC accuracy, lower ISR latency, good documentation, better power efficiency, more IO
-esp32 binary bloat, xtensa arch
-So, seems only use esp32 if need Wifi? POF?
-For example, when you set up a wake up pin it will enable an internal pull resistor even if previously you disabled it. In my case it led to an unstable wake up and I had to fix the source code in the EDP-IDF. No fix in version 5.0 to this issue. And it's not a single bug, it happens a lot when I have to dig into the source code of the ESP-IDF.
+Using third party libraries like ESP-IDF opens up to issues like setting wake up pin enables an internal pull-up resistor behind-the-scenes, causing unstable wake times
 
 ### App-Device
 debugging: https://www.youtube.com/watch?v=uq93H7T7cOQ  
@@ -46,7 +52,6 @@ https://www.youtube.com/watch?v=WeXjPkm4djg
 
 https://www.youtube.com/watch?v=pL3dhGtmcMY
 
-TODO: how to test website on device? don't have to develop locally? just have to reflash?
 1. WiFi + HTTP + asynchronous (manual refresh button) + self-hosted (device serves web site)
 2. Real-Time Communication 
 device-to-user push, i.e. real-time updates:
@@ -105,10 +110,6 @@ To make determinations on chip/supply chain shortages, can look at lead times st
 
 Having CI for just building when merging a feature branch notice compiler errors early on
 
-Rust adds unecessary complexity to simple code, allowing for issues to creep in
-
-For freeing, set to NULL, so segfault if use-after-free 
-
 fuzzing: https://carstein.github.io/2020/05/21/writing-simple-fuzzer-4.html
 
 xbox controller SWD: https://wrongbaud.github.io/posts/stm-xbox-jtag/
@@ -116,10 +117,6 @@ xbox controller SWD: https://wrongbaud.github.io/posts/stm-xbox-jtag/
 Kalman/Complementary Filters: 
 https://plaw.info/articles/sensorfusion/#articles
 https://simondlevy.github.io/ekf-tutorial/
-
-I don’t know what prep materials will help you ace Amazon’s SD interview, but I would get to know Amazon’s embedded products like echo dot, echo show, kindle, etc. I’m hoping to interview with them, and I’ll probably look into their user manuals to get their features and come up with SD.
-
-Interview always answer with: I want to stay for a longer duration
 
 https://cpu.land/
 https://www.lesswrong.com/posts/vfRpzyGsikujm9ujj/a-brief-history-of-computers
@@ -129,108 +126,30 @@ https://interviewing.io/guides/hiring-process?utm_source=tldrnewsletter
 fpga: https://tinytapeout.com/digital_design/
 https://promwad.com/news/art-fpga-debugging-how-speed-it-smart-design-testing-tricks
 
-TODO: using ChatGPT effectively for embedded, i.e. AI as a coding assistant, i.e. AI as a coding assistant
-https://news.ycombinator.com/item?id=36037559
-
 TODO: parsing binary protocols in python: https://implement-dns.wizardzines.com/book/part_2.html
 https://integer.exposed/#0xaa55
 
 compiler differences:
 https://m0agx.eu/practical-comparison-of-ARM-compilers.html 
 
-if have code signing keys, should have way to revoke keys in case they are stolen
-
-document control system for CAD/HW files, i.e. store in separate repo to software to avoid say 8GB repos? (so a non-monorepo)
-
-learning RTOS:
 The core of using a RTOS is the application design, that should be event driven to avoid polling and work efficiently and execute obeying the real time requirements.
 
-first some concepts are universal: mutex, binary semaphor, counting semaphore, a queu, and priority
+first some concepts are universal: mutex, binary semaphor, counting semaphore, a queue, and priority queue
 a good learning example is to create your own (each one of those) using a conditioned variable
 learn these separately. have a good understanding.
 understand for example priority inversion.
 only then learn a specific rtos which is an implimentation
 another thing to learn is how a task switch occurs on a specific cpu.
-how for example does the rtos start the first task, why does it create this weird data structure on the stack? how is this similar to an interrupt/context(pre-emption) switch? agian that would be for a specific implementation of an rtos on a specific cpu.
+how for example does the rtos start the first task, why does it create this weird data structure on the stack? 
+how is this similar to an interrupt/context(pre-emption) switch? agian that would be for a specific implementation of an rtos on a specific cpu.
 and yes you will need to learn assembly language it is a key component of how a scheduler and context switch occur
 
-Not every RTOS is POSIX compliant, but IMO there is value in learning the POSIX implementations and APIs for ptheads, mutexes, semaphores, message queues, barriers, etc.
-
-for safety critical applications, typically have a team or someone specialising in specifying software safety requirements:
-Working in Automotive safety, I can tell you that you need a qualified team of engineers in each domain, or the effort needed in a cross-functional safety team increases tremendously. 
+Not every RTOS is POSIX compliant, but IMO there is value in learning the POSIX implementations and APIs for 
+ptheads, mutexes, semaphores, message queues, barriers, etc.
 
 compression for compression speed, e.g. lz4 or resultant size
 
-regarding embedded CI:
-CD is not comparable to what CD would mean for a Web app. In our case it's a series of scripts in a pipeline which automate the delivery process (from building to packaging, notifying the right people, archiving all artifacts, etc). But then it's not "deployed" per se as it wouldn't make sense in our product.
-Basically all steps that used to be done locally and manually when delivering firmware have been automated/scripted and put in a configurable pipeline.
-
-Totally depends on your needs, it's here to help you not to add constraints. Maybe in some IoT projects it's even a proper deployment in the sense that at the end of the pipeline some firmware update is pushed to all endpoints. In your case or mine it may not be relevant.
-What matters is to automate what can be automated and would bring value if it is, shorten the cycle and gain in confidence in what you're doing. The what depends on the use case.
-
-Yeah implementing buzzwords doesn't make your product or sev experience better. You implement buzzwords IF they make your product/dev experience better. Or if the boss says so...
-
-Honestly I believe the biggest hurdle is effective and sane hardware in the loop ci/cd.
-We've accomplished this by having on prem ci/cd agents hooked up to hardware over uart and jtag to run tests etc
-
-TODO: stm32 radar
-
 TODO: use terminology like this CRC
-STM32F1 implements the CRC32 from IEEE 802.3 (Ethernet). Lots of other systems use that CRC32-IEEE, but there are a few other different CRC32 standards in common use. MPEG2 also uses the same CRC32 version as Ethernet. CRC32C is probably the second most common CRC32 function used.
-CRC32 is a pseudorandom function family, there are many functions (mappings from {0,1}n→{0,1}32) in the family. The parameters are the 32-bit input polynomial, the byte ordering, the bit ordering, whether there's padding, and whether there's an initial input value (and what it is if so).
-
-CRC32 isn't one standard algorithm. It's 232 different possible algorithms, depending on which polynomial you pick. There are a few dozen or so commonly used polynomials. ST's AN4187 gives good documentation on how to compute them using the CRC peripheral. The STM32F1 series is specialized to compute only the 0x4C11DB7 polynomial, with the initial value 0xFFFFFFFF. That's a common one (used in 802.3 Ethernet), but isn't the only one.
-
-IIRC even the old STM32F1xx the CRC32 peripheral can process has a throughput of 8 bit per cycle (also 16 bit every two cycles or 32 bit every 4 cycles). That's hard to beat with anything more than add/shift/xor.
-
-78k cycles to compute a CRC for 256 words is some 300 cycles per word. That must be for the 1-bit at a time algorithm.
-I'ts possible to do CRC32 using a byte based algorithm using a 1k lookup table at a fraction of these cycles.
-
-ST manual will give polynomial used for CRC, so can check on PC:
-```
-class Crc32:
-    crc_table = {}
-
-    def __init__(self, _poly):
-        # Generate CRC table for polynomial
-        for i in range(256):
-            c = i << 24
-            for j in range(8):
-                c = (c << 1) ^ _poly if (c & 0x80000000) else c << 1
-            self.crc_table[i] = c & 0xFFFFFFFF
-
-    # Calculate CRC from input buffer
-    def calculate(self, buf):
-        crc = 0xFFFFFFFF
-
-        i = 0
-        while i < len(buf):
-            b = [buf[i+3], buf[i+2], buf[i+1], buf[i+0]]
-            i += 4
-            for byte in b:
-                crc = ((crc << 8) & 0xFFFFFFFF) ^ self.crc_table[(crc >> 24) ^ byte]
-        return crc
-    
-    # Create bytes array from integer input
-    def crc_int_to_bytes(self, i):
-        return [(i >> 24) & 0xFF, (i >> 16) & 0xFF, (i >> 8) & 0xFF, i & 0xFF]
-        
-# Use it
-# Prepare CRC block
-crc = Crc32(0x04C11DB7)
-result = crc.calculate(your_input....)
-```
-
-
-
-TODO: know how to write application with an RTOS
-
-TODO: STM32 audio synthesiser https://trebledj.github.io/posts/digital-audio-synthesis-for-dummies-part-1/ 
-
-interesting pnemuatics and vacuum pumps: https://www.programmableair.com/ 
-
-https://www.vipshek.com/blog/gpt-learning?utm_source=tldrnewsletter
-TODO: read these after shower!
 
 then i suggest something like the following:
 
@@ -240,7 +159,8 @@ then i suggest something like the following:
 
         50MHz cortex M MCU
 
-        firmware algorithm to process sensor data (give range of performance; perhaps 50 to 50k cycles to process 1kB of sensor data, depending on the values in that data set)
+        firmware algorithm to process sensor data 
+        (give range of performance; perhaps 50 to 50k cycles to process 1kB of sensor data, depending on the values in that data set)
 
         wifi module connected via UART
 
@@ -294,17 +214,13 @@ then i suggest something like the following:
 
         ask how they might ensure the design is maintainable over time and that future engineers are least likely to inject new mistakes (e.g. readable code, inline documentation, unit tests, etc)
 
-i hold that interviews are conversation starters. you should listen more than you speak and give the candidate lots of opportunity to make mistakes and identify them with the least interference you can muster. the best work environments, in my opinion, will eventually give them the opportunity to solve problems however they see fit... they need to be comfortable making mistakes, identifying them, owning them in front of their group, fixing them, and documenting that process to help the group as a whole mature such that they will all make fewer mistakes in the future.
+Ask the candidate about their experience with RTOS then expand from there. 
+Start with what they know then base the design on that to stretch them a little. 
+E.g. What would you change to add another sensor? 
+How did you prove it works? 
+What would you change for the next revision? 
+How would you handle scaling to 100x quantity?
 
-Ask the candidate about their experience with RTOS then expand from there. Start with what they know then base the design on that to stretch them a little. E.g. What would you change to add another sensor? How did you prove it works? What would you change for the next revision? How would you handle scaling to 100x quantity?
-
-firmware security: https://bugprove.com/knowledge-hub/firmware-vulnerabilities-you-dont-want-in-your-product/ 
-
-
-
-JEDEC specification to implement commands to get NOR flash sector sizes?
-
-https://academy.nordicsemi.com/courses/bluetooth-low-energy-fundamentals/
 
 video card/SOC/IC controllable by MCU:
 No. I could imagine Full HD @ 8bit static display might be just on the verge of what a Cortex M with fast SDRAM or octo-SPI flash is capable of, but not 4x more bandwidth. Even then, the cost of HDMI coverter would ruin the project.
@@ -314,27 +230,21 @@ Something else I don't see mentioned: Some applications will require a high leve
 
 JTAG like SWD is a debugging interface and is not capable of flashing EEPROM or FLASH chips directly (these require I2C or SPI)
 
-BLE battery powered device should only advertise. Fixed power device should scan
-
-Environment limitations, e.g. would IR RF communication work in direct sunlight?
-
-IoT is a subset of embedded that will bring you more towards OSes like FreeRTOS or even embedded Linux.
-
-Reach out to your manager/new company and ask them what skills for job. We can’t tell you what you’ll be doing, and embedded is vast. You could be doing anything from application level work to kernel/OS side
-Yeah no you’re good. This is a good thing to ask. I even ask it in my interviews as a way of trying to show interest and initiative. “If I were to join the team, based on my background, what could I specifically study or improve on to prepare for the role”
-
-If your technical lead/manager is good - as a new hire you're probably going to be spun up on the project and pointed at an existing code base. Your job here will likely be to learn, follow, and improve upon their pre-existing patterns, not break anything, and test and verify existing legacy code. These initial tasks will probably be very specific and there won't be much you can study for ahead of time in that regard.
+If your technical lead/manager is good - as a new hire you're probably going to be spun up on the project and pointed at an existing code base. 
+Your job here will likely be to learn, follow, and improve upon their pre-existing patterns, not break anything, and test and verify existing legacy code. 
+These initial tasks will probably be very specific and there won't be much you can study for ahead of time in that regard.
 You will be pretty busy learning the team's workflow, version control pattern, agile/waterfall SDLC, and the various other squishy less technical processes surrounding software development that are just as important as the software development itself.
-Your attitude for being prepared is great and I wish more seasoned engineers were willing to review the fundamentals or take them me to read up on new technology and tooling. However I think any initial refreshing you do won't be as useful as you expect. As a software professional you will constantly be learning and relearning everything about your stack while on the job. The larger your tech stack and codebase and the more you move around within it, the harder this brain-maintenance is. This is normal. Your first couple of months, just aim for competency in general but pick a couple of things to really excel at.
+Your attitude for being prepared is great and I wish more seasoned engineers were willing to review the fundamentals or take them me to read up on new technology and tooling. 
+However I think any initial refreshing you do won't be as useful as you expect. 
+As a software professional you will constantly be learning and relearning everything about your stack while on the job. 
+The larger your tech stack and codebase and the more you move around within it, the harder this brain-maintenance is. 
+This is normal. Your first couple of months, just aim for competency in general but pick a couple of things to really excel at.
 
 I wish i learn how to communicate ideas and how to say "I don't know how to do it" in team environment before entering my first job
 When I started, i have the mindset where if I'm incapable to do X job with minimal assistance then I'm a bad employee.
 Turns out what it doesn't matter. I can ask for help, and all my team lead care about is whether I can deliver quality code faster.
 
-
-A good rule of thumb is to pick hardware with at least twice the resources (RAM, flash, CPU cycles etc) you estimate will be required. Running out of resources makes maintenance and adding features very difficult
-my rule of thumb was when engineers estimated how long it would take to do something was to double it. it almost never failed me. there should probably be a universal 2x rule :)
-
+A good rule of thumb is to pick hardware with at least twice the resources (RAM, flash, CPU cycles etc) you estimate will be required. 
 
 AI:
 There are I guess 3 main areas:
@@ -344,22 +254,13 @@ There are I guess 3 main areas:
 Each approach has its own pros/cons and plenty of things to work on.
 You also have intermediate frameworks that can run the same model on different devices (ONNX, OpenVINO, etc.) in case you have to deal with changes of availability of resources and driving system reconfiguration at run-time.
 
-TODO: allocate time for reading articles (perhaps after running?)
-https://animeshz.github.io/site/blogs/demystifying-uefi.html
-https://jack-vanlightly.com/blog/2023/5/9/is-sequential-io-dead-in-the-era-of-the-nvme-drive?utm_source=tldrnewsletter
-
 Python for black-box testing
 
 Reading assembly:
-Don't worry about being able to write it well, if you need to do that you're doing something fairly specialized like custom RISCV instructions or whatever. Knowing how to read it though? That'll save you a lot of headaches, especially with uC drivers and such.
-
-"If you have a 8bit register, how would you flip the 0th, 3rd, and 5th bits in C"
+Don't worry about being able to write it well, if you need to do that you're doing something fairly specialized like custom RISCV instructions or whatever. 
+Knowing how to read it though? That'll save you a lot of headaches, especially with uC drivers and such.
 
 tools/debug how to read a data sheet (wave form) and compare with an oscilloscope plot/trace.(ie: is the i2c correct? are you using the correct spi mode?
-
-Embedded is all about cramming the most functionality into the smallest viable package with lowest power consumption. Hence, looking at which special-function ICs are trending and which peripherals/processors are trending should give you an idea what's coming to the world of embedded.
-
-RISC-V: https://www.eetimes.com/examining-the-top-five-fallacies-about-risc-v/ 
 
 (https://maaslalani.com/slides/)
 Giving presentation on project:
@@ -382,40 +283,16 @@ q3) can you intelligently describe the parts involved? who they interact?
 
 FOTA is OTA for ECU(contains an MCU) in automative 
 
-
-I asked it to write a C program to compute a CRC. The result looked pretty good... but it was fundamentally wrong. It should have asked me what kind of CRC I wanted; instead it produced code for the (pedestrian!) most common sort.
-That's exactly what I'd expect from an inexperienced developer. A pro would snort, realize he asked the wrong question, and reframe it with more detail. The result will be (presumably) useful code; the AI acting as a great adjunct, but only when carefully instructed. It's rather like a search engine: ask the wrong question and you get poor results. As I wrote in the last issue, framing the problem is a big part of solving the problem.
-
-Today, you don’t even have to know how to read, perform on an instrument, or write music, if you can whistle a tune, there is software for your cell phone which will write the score and let you refine it and add multiple parts.  You can even publish your music from your cell phone although repeat listeners are not guaranteed.
-I believe software is headed down this same path
-
 differential drive, i.e. two separately driven wheels 
 zero turn radius, i.e. rotate in place
 focal length indicates how long
-
-https://www.youtube.com/playlist?list=PLDqMkB5cbBA5oDg8VXM110GKc-CmvUqEZ
-
-https://philbooth.me/blog/nine-ways-to-shoot-yourself-in-the-foot-with-postgresql?utm_source=tldrnewsletter
-
-https://www.bengreenberg.dev/posts/2023-04-09-github-profile-dynamic-content/?utm_source=tldrnewsletter
 
 HD video streaming over Wifi
 Small stuff can be done with an ESP32. But it will choke on HD.
 I personally would use an Intel N5105 + Linux + Python + ffmpeg und putting it to Suspend to RAM automatically. There are variants that are able to directly eat 12V.
 
-RESUME: move skills to bottom and have some statement about what you want to do and how you work. Emphasize how you work across the stack
+IMPORTANT: know MISRA C subset (i.e. so can say embedded C)
 
-If you have any friends with jobs at companies that hire embedded engineers, ask them for referrals.
-TODO: what does a job referral mean?
-
-https://www.reddit.com/r/embedded/comments/12u20oh/37_free_sessions_the_2023_embedded_online/
-
-This list can never be complete, because the technology and the industry are forever changing. 
-The most important skill you can develop is the ability to learn new skills. That builds versatility to keep you relevant and marketable in the jobs marketplace for a long, sustainable career. 
-List of skills so long because:
-Embedded systems comprise a wide range, environments, resources, safety, reliability etc.
-
-IMPORTANT: know MISRA C subset (i.e. so can say embedded C) 
 
 You'll need to learn about both hardware capabilities and software protocol stacks:
     Serial
@@ -429,50 +306,20 @@ You'll need to learn about both hardware capabilities and software protocol stac
 checksum, TLS, CRC, OSI, TLS, AES, PID, feedback loop, flash filesystem
 
 Specific commercial and open-source RTOS's and their internals and support tools.
-Like communications technologies, pick a couple to learn about in detail. Understand their configuration and build systems, driver model, thread/task model, concurrency mechanisms, differentiation between kernel and userspace and other privilege and security models, system libraries, BSP's, etc.
-
-TODO: hardware Protocol analyzer (i.e. communications data/packet capture)
-
-They might ask you how they work, where they would be appropriate to use, what tradeoffs there might be among various options, how you would implement them.
-
-FOR PROJECT: Being able to document your work and present it to others is itself an important skill. 
-
-pyserial for HIL
-
-Plenty of people can code and do specialized things, passion is a real winner.
-I want to sense strong commitment to learn new things
-What will actually let you stand out from others at your level is character and the feeling that you are a good fit and a team player
-Keeping engaged and asking questions when I don’t the terminology
-"I know things, but stay modest etc."
-
-1.Willingness to adapt and learn their technology.
-2.Be Inquisitive and ask tons of questions , challenge existing ideas as well as present your own.
-3.Be pleasant to work with and open to criticism from your peers.
-4.Show competence in Electronics basics and at-least one programming language.
-
-My employer does 2-week sprints. I apply this process to each ticket in the sprint, to planning and executing the sprint, and to the overall project.
-1.Define the problem.
-2.Plan a solution.
-3.Implement the plan.
-4.Test the solution.
-5.Document the results, recurse and/or iterate as needed.
-
-tell me about your school projects, what did you do what had problems and how did you fix the problems?
-draw me a block diagram of the entire system, then draw a diagram of the part you did and explain how it worked
-
-ROS (robot operating system) experience good also
+Like communications technologies, pick a couple to learn about in detail. 
+Understand their configuration and build systems, driver model, thread/task model, concurrency mechanisms, differentiation between kernel and userspace and other privilege and security models, system libraries, BSP's, etc.
 
 PLC in industry are hardened over typically SoC (at the cost of lower processing power), e.g. high MTBF, I/Os high protection (optoisolator), 200kg screwdriver dropped on it (environment tolerant)
 
 DESIGN API QUESTIONS (e.g. bit-banging, ISR, multiple threads, DMA, etc.)
-While it's not necessarily a bad idea to make buffers for storing longer pieces of RX and TX data the best practice for a UART API would be to expect a caller-supplied buffer for that purpose. Most low-level APIs will only be moving a couple (or just one) byte around at a time.
+While it's not necessarily a bad idea to make buffers for storing longer pieces of RX and TX data the best practice for a UART API 
+would be to expect a caller-supplied buffer for that purpose. Most low-level APIs will only be moving a couple (or just one) byte around at a time.
+
 Sort of a side note: any time you're outlining an implementation with a resource shared between threads you should acknowledge the potential for concurrency issues and throw in some mention of a mutual exclusion primitive (typically mutex will be the go-to unless you're dealing with a pool of resources where multiple can be in-use at a time, in which case you want a semaphore).
 
-The other option is bit-banging which is far less efficient, but may be necessary in certain niche cases. For bit-banging you'll likely end up implementing some form of finite state machine with a hardware timer (hopefully) to keep things aligned with time.
+The other option is bit-banging which is far less efficient, but may be necessary in certain niche cases. 
+For bit-banging you'll likely end up implementing some form of finite state machine with a hardware timer (hopefully) to keep things aligned with time.
 
-The question is vague, which makes me think it was designed around you understanding the UART protocol, how a micro might have a peripheral that supports UART and how a buffer would then interact with the peripheral.
-
-For an interview, there is no wrong answer per say, but explaining your thought process and understanding it’s flaws is key.
 You may have missed the race handling as the ring buffer pointers get updated .. assuming there is an interrupt driven section.
 
 Python CI and CD and:
@@ -485,11 +332,8 @@ And it is commanding the the oven to heat to some temp
 It might also tell a vacuum chamber to pump down while cooling stuff to -50 deg c
 And the python code might be talking to the device exercising different io interfaces
 
-how to implement a thread scheduler
-
-implementing division with bitwise operations
-
-I’ve seen questions like design a traffic control systems, design a calculator that performs basic math. Candidates are expected to choose sensors, actuators, justify the choice of processor suitable for the system, draw timing diagrams, component diagrams, etc and even make a choice between bare metal or RTOS system. What are other such systems you can think of?
+I’ve seen questions like design a traffic control systems, design a calculator that performs basic math. 
+Candidates are expected to choose sensors, actuators, justify the choice of processor suitable for the system, draw timing diagrams, component diagrams, etc and even make a choice between bare metal or RTOS system. What are other such systems you can think of?
 
 asking you about processor architectures
 
@@ -511,40 +355,12 @@ Some sense of time scales and data rates.
 
 Some sense of memory size required for various forms of data.
 
-AS INTERN:
-Don’t get stuck, ask questions to create forward movement.
-Yes, please please please ask questions, whether it would be in person or even within a PR - something like "what is the purpose of this line of code?" isn't to challenge the person but genuinely understand what is going on.
-
-Start reading up a bit on the office culture, and start picking out a couple people you want to talk to. Not specific people, but roles, like product engineer, project manager, quality, etc. Try to plan what you want to learn and how to engage people. I know it's kind of a weird suggestion, but all of my interns generally have a better experience the faster they build relationships with more members of the team
-
-Do: Listen more than you talk. Write notes.
-
-Take notes, ask questions and don't expect to solve all problems you're presented with by yourself. It's important to realize you're there to learn from the experts
-
-In my experience, they barely let intern touch the code but do more maintenance jobs. I say ask questions and ask them to get task on embedded software u can do. They might say no at first but if ur consistent, they will eventually give you a shot. Try to get as many experience you can during ur internship.
 
 
-An embedded project, with some micro-processor with a design document.
-IMPORTANT: What you did to make it work and IT WORKS.
 
 Power supply with SCPI command support
 
-Nice all-in-one portable https://digilent.com/shop/analog-discovery-2-100ms-s-usb-oscilloscope-logic-analyzer-and-variable-power-supply/  
-
-Government will soon impose security and privacy regulations on devices
-
-Error handling policies essential (and static analysis amongst others) to 'prevent fires'
-
-$(fzf) like terminal fSearch
-
 Modbus can be implemented over UART?
-
-fast shutter (when light exposed) speeds essential for non-blur fast motion cameras 
-
-in test mode, will want to have code that intentionally breaks things to enable higher coverage
-also for testing analog input, use function generator?
-
-cortex-a adds FIQs?
 
 project where data will be occasionally written to flash under control of our own code. Of course, this exposes us to flash memory corruption during unforeseen power loss events
 instead: during Flash programming run code in SRAM and this code will check in a loop the PVD detector state?
@@ -552,9 +368,6 @@ Also make sure your micro has the BOR programmed and can handle sudden supply dr
 MCUs have multiple voltage operating levels.
 At some the flash might not work while the CPU can still kick.
 
-battery charging IC
-
-transformer delivers same power at different voltage
 rectifier is AC to DC
 When monitoring power, will get 50Hz mains noise and 100Hz noise (ripple/residual AC voltage from rectifier)
 
@@ -1020,15 +833,10 @@ What is WCET and where does it matter?
 What is Lockstep execution?
 
 -------
-https://github.com/Serial-Studio/Serial-Studio
-
-https://core-electronics.com.au/guides/identify-electrical-connectors/
 
 battery form factors, e.g. 18650?
 
 image sensor module is the optical to digital conversion part of a camera
-
-TODO: running some functions out of SRAM instead of flash
 
 oscilloscope XY mode to display graphics
 
@@ -1036,74 +844,16 @@ Backup power from a capacitor that has just enough power to transfer state to EE
 
 Linear acutator is motor that moves up and down
 
-Bare metal: https://github.com/cpq/bare-metal-programming-guide 
-C-oddities: https://tmewett.com/c-tips/
-
 LiPo require special charging circuitry.
 Furthermore, when using typically have either a regulator or boost converter  
 
-IMPORTANT: ALWAYS PROVIDE EXAMPLE!
-
-TODO: raylib game programming (perhaps also for byte jams as well)
-
-TODO: IoT embedded project
-
-TODO: incorporate rss reader feeder.co into morning routine
-
-TODO: memfault debugging with IoT
-https://embeddedartistry.com/wp-content/uploads/2022/07/IoT-Device-Observability-Requirements-Checklist.pdf?mc_cid=582b1ec73e&mc_eid=UNIQID
-
-working with MPU: https://www.state-machine.com/null-pointer-protection-with-arm-cortex-m-mpu?mc_cid=582b1ec73e&mc_eid=UNIQID
-
-RTOS debouncing: https://blog.golioth.io/how-to-debounce-button-inputs-in-a-real-time-operating-system/?mc_cid=582b1ec73e&mc_eid=UNIQID
-
-TODO: wolfsound youtube for some audio DSP
-
-TODO: Fun graphical displays
-https://tcc.lovebyte.party/
-YouTube LoveByte and FieldFX byte jams
 
 TODO: how to best architect timing requirements given that ISR should be small?
 e.g. this executes every 1 second, this every 500ms etc.
 
 Thermal imaging coupled with camera more 'deterministic/maintainable' than AI vision
 
-There are of course international standards (IEC 60601, or IEC 62304) that you have 
-to follow in order to get your device CE/FDA approval.
-These standards usually require to provide a lot of documentation and to pass a 
-series of tests in order to verify that your device is working as intended 
-and it's not dangerous.
-
-If you put "used Bluetooth" then I would expect you to talk about which transceivers you used, what the api was like (deficiencies it had, how low level, how was it good), and of course a high level overview of where the Bluetooth spec ends and application begins.
-
 Simply bieng able to say "I don't know, but I do know that in the spec/experience it says xyz, so maybe it would do abc, but I would have to look for jkl to be sure." is huge.
-
-BUTTON BOX 3D PRINT:
-* print out small test part with holes to test if button/screw/etc. inserts fit correctly
-* consider leaving holes in 3D scaffolding for making wiring easier
-* for stylistic finish, can print a separate plate with different resin and attach with hot glue
-* will have a bottom plate to account for wiring (have threaded inserts (male-to-female) to account for box moving about when pressing a button)
-1. solder wires to buttons
-2. solder wires to mcu
-3. secure mcu
-
-no heap allocation, just use statically allocated pools: 
-https://mcuoneclipse.com/2022/11/06/how-to-make-sure-no-dynamic-memory-is-used/?mc_cid=26981ac7f4&mc_eid=UNIQID
-
-Fast Fourier Transform (FFTs) are often used with DACs to create a spectrum analyser which allows for subsequent beat detection?
-
-an adapter board would handle power and signal conversion
-
-tiny solid-state batteries more efficient that coin cell batteries; 
-useful for wearables
-
-TODO: go through
-https://embedded.fm/blog/embedded-wednesdays
-
-Dagger CI in code not YAML
-Qucs-S for SPICE, free circuit simulator GUI
-
-TODO: possible program usage of syncthing 
 
 bipartite ring buffer more efficient?
 TODO: seems with RTOS emphasis on 'tasks', will require understanding job queues
@@ -1112,17 +862,6 @@ https://www.aosabook.org/en/freertos.html
 filters relating to a pedometer: 
 https://www.aosabook.org/en/500L/a-pedometer-in-the-real-world.html
 
-TODO: richard braun embedded (useful C has functions)
-https://www.twitch.tv/videos/233685076?filter=all&sort=time
-
-I only touch low-voltage 5V side, 
-the high 'dangerous' voltage side I leave to hardware engineers
-
-TODO: rhymu 'rusty keyboard' series
-
-TODO: FreeRTOS spectrum analyzer, i.e. using 'tasks': https://www.youtube.com/watch?v=f_zt7zdGJCA
-
-https://iosoft.blog/2020/09/29/raspberry-pi-multi-channel-ws2812/
 addressable rgb, each LED has serial chip with a serial port in and serial port out that it funnels through the chain
 (interesting option of having a light display at sunset)
 using PlatformIO (python under the hood) very slow.
@@ -1136,13 +875,6 @@ tricolor led can be any 3 colours. RGB LED is specific colours
 we power level appropriate from cable, board will enter program mode automatically
 resolution of PWM setup dependent on the frequency set up for it 
 (e.g. resolution of 8 gives 100% duty cycle of 255)
-```
-red_led_duty_cycle(pwm_max_val - red_component);
-green_led_duty_cycle(pwm_max_val - green_component);
-blue_led_duty_cycle(pwm_max_val - blue_component);
-```
-TODO: is brightness of PWM determined by duty cycle?
-If so, then a PWM LED fade should just be duty cycle, or should it be colour as well?
 
 DISPLAY:
 useful to display FPS (might only need to display this say, every 250ms as oppose to every frame), 
@@ -1371,18 +1103,8 @@ if (x % 2 == 0)
 else
    return (x * height) + (height - 1 - y);
 
-FFT divides samples into frequency buckets
-logarithmic scale employed in spectrum analyser to account for high frequency range 
-being more greatly separated than low frequency
 ```
 
-wire strippers +/- affects tension which will affect any wire braiding
-put heat shrink on before wire soldering
-will often twist multiple common wires (e.g. ground) together and solder to single ground source
-(have gloves on for this)
-wiring can be too fine for holding a particular amperage?
-TODO: look into sleeving wires
-TODO: something like loctite threadlocker is a liquid that prevents threads loosening due to vibration 
 
 Adhesive tape (with conductive pads on end) on bottom of LED strip stick wires to. 
 Then solder end tips to connect bottom to top
@@ -1393,30 +1115,11 @@ With multimeter, verify that no short circuit by checking continuity amongst wir
 Critical section means non concurrent access to this code. 
 Acheived with a mutex obtain and lock pair?
 ```
-
-Modern OS will have code memory write protected for security reasons. 
-Bare metal can do this however
-
-IMPORTANT: for a preemptive multitasking kernel like linux, 
-a call to pthread_yeild() (allow other threads to run on CPU)
-is not necessary. however, for embedded, maybe
-
 LEDS:
 WS2812B is standard. Neopixel brand. Each chip is RGB LED with MCU.
 probably has low drop-out regulator onboard so can pass 5V to 3.3V
 can buy as grids or strips
 have a library to generate the square wave forms, e.g. FastLED
-
-by powering board with pins, can ensure enough current is passing to it
-can simultaneously connect USB cable and will defer to power pins over it? 
-
-With power, still have to be careful if say, setting max brightness and all LEDS to white
-seems it's common to have GBR as format?
-TODO: only in video 4 are power calculations done?
-(have a function to limit max watts of power drawn?)
-
-// #define AT_MOST_N_MILLIS(NAME,N) static AtMostNMillis NAME(N); if( NAME )
-// operator bool() { return ready(); }
 
 8BIT MATH (another reason to inspect assembly):
 //      qadd8( i, j) == MIN( (i + j), 0xFF ) (saturated add)
@@ -1436,19 +1139,6 @@ TODO: only in video 4 are power calculations done?
 #endif
 
 
-TODO: gdb scripts
-https://github.com/espressif/freertos-gdb
-
-TODO: is an IoT cloud data store like ThingSpeak used commercially?
-
-TODO: investigate Renode for embedded testing
-
-TODO: networking with containers: https://iximiuz.com/en/series/computer-networking-fundamentals/ 
-
-TODO: look at embeddedartistry course developments for 'building testable embedded systems' 
-
-TODO: working with time-series data
-
 LIN protocol for vehicles (seems to be a host of protocols specific to automotives)
 
 trimpot a.k.a potentiometer
@@ -1462,47 +1152,7 @@ buck converter steps down DC-DC voltage, while stepping up current
 
 although bluetooth LE say 50m distance, a repeater can be used (and really for any RF)
 
-TODO: profiling not your application
-https://linus.schreibt.jetzt/posts/qemu-9p-performance.html
-
-TODO: https://dev.to/taugustyn/call-stack-logger-function-instrumentation-as-a-way-to-trace-programs-flow-of-execution-419a
-
-MIPI (mobile industry processor interface) developed DSI
-
-TODO: outdoor project: https://hackaday.io/project/186064-green-detect
-look into further hackaday.io/projects
-
-TODO: embed LEDs onto 3D printed board
-
-contrasting telephoto and wide angle lens
-
-TODO: differences between ribbon cable and normal
-
-TODO: TPM (trusted platform module) for embedded 
-https://www.amazon.com/Trusted-Platform-Module-Basics-Technology/dp/0750679603
-
-TODO: freeRTOS
-https://www.digikey.com/en/maker/projects/getting-started-with-stm32-introduction-to-freertos/ad275395687e4d85935351e16ec575b1
-
-TODO: bootlin courses
-
-TODO: GPS tracking, LORAwan (long range, low power), satelitte connection, etc.
-
-TODO: 3D printing; outdoor case enclosure
-
 Digital laser dust sensor (particulates in the air). PM1 being worst as most fine
-TODO: DC vs stepper motor?
-TODO: what is the use case for a motor driver such as L298 Dual H-Bridge Motor Driver
-and Tic T500 USB Multi-Interface Stepper Motor Controller (circuitry without MCU?)
-driver lines are diode protected from back EMF?
-
-Growth of 'enviro sensor kits', i.e. test air quality etc. to create smart home or garden
-Growth of 'IoT' sensor kits/smart home
-Growth of 'AI sensors'
-(Perhaps more relevent to me is power/energy and automation and sensing)
-Growth of 'IoT' sensor kits
-Growth of sensor compounding, e.g. video now with LiDAR to detect depth, 
-gesture detection sensor
 
 H-bridge is IC that switches voltage polarity, e.g. run DC motors forwards or backwards
 Rectifier converts AC to DC (transformer is high voltage AC to low voltage AC)
@@ -1510,26 +1160,11 @@ Rectifier converts AC to DC (transformer is high voltage AC to low voltage AC)
 TODO: is something like SerialStudio necessary for visualisation? 
 Could not live stream gnuplot?
 
-TODO: domestica course on creative coding.
-css, html graphics also for 2D animations?
-
-Marketing refers to some MCU work that react to environment as physical computing
-
-TODO: investigate both AVR github and gists: https://github.com/BobBurns 
-
 CFFI to create a python interface for C for something say like a console session?
-
-TODO: Perhaps for a machine just targeting embedded development, 
-use WSL to easily use GUI debugger apps?
-
-TODO: Essentials of putting metadata section in firmware binary, such as version string! 
-(particularly so test runners can utilise this information)
 
 Might see GNSS + INS (inertial navigation system; i.e using IMU as well)
 
 TODO: amplifiers, e.g. class-D etc. MEMs accelerometers for vibration detection in cars
-
-TODO: RTC is external to oscillator?
 
 Analog LED is single colour
 Digital LED allows controlling each colour separately (so, a.k.a e.g addressable APA102 LEDs)
@@ -1538,40 +1173,18 @@ This is done through an LED chip (think WS2812B LED chip for NeoPixel)
 A channel in a sensor is quantity measured. 
 So an acceleration sensor could have 3 channels, 1 for each axes
 
-DSP: http://www.dspguide.com/pdfbook.htm
-terms like THD (total harmonic distribution), 
-PFC (power factor correction), HV (high voltage)
-
 circuit design in software (perhaps parallel with Robert Feranc?): https://www.jitx.com/  
-
-Go through talks on memfault.com blog 
 
 Simulator testing gives much faster turn-around times, 
 can add sanitisers without memory concerns, pass peripheral data in from file, draw to window instead of display etc. 
 
-For memory allocator, set to 0 on free in debug builds?
 Investigate gcc tunables, e.g. in debug build: export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
-
-network game (with some testing tools): https://github.com/TheSandvichMaker/netgame 
 
 TODO: how to calculate: "Its power supply system can supply up to 4200 mAh and run for more than 5 hours"
 SiC (silicon carbide) power module
 Whole area in power management (also leads onto safety regulations, e.g. SIL) 
 
-use time-series database where everything is stored ordered 
-(as oppose to relational based on set thoery whose order is determined in clauses. also get full SQL support here and can store more data types)
-
-investigate automated 'agriculture', e.g smart argicultural kit, automatic pot plant watering, etc.
-
 databases useful for tracking time series IoT sensor data 
-
-how to overclock and underclock?
-how are these different to adjusting clock scalers?
-
-awesome escape puzzles:
-https://www.youtube.com/c/PlayfulTechnology
-
-investigate cpu fault handling: https://github.com/tobermory/faultHandling-cortex-m
 
 DC motor: raw PWM signal and ground
 signal controls speed
@@ -1585,11 +1198,6 @@ can be made to move precise well defined 'steps', i.e. jumps between electromagn
 position fundamental (e.g. 3D printers)
 
 AVR used in lower-end (8bit) as less complex, cheaper than ARM
-
-TODO: working with thumb instructions
-TODO: best practices monitoring systems in the field (4G?)
-
-note, if using newlib, will still have a _start
 
 May compile for different architectures in embedded for different product lines 
 e.g. low-end fit bit, high-end fitbit
@@ -1608,11 +1216,6 @@ Most mcus are overpowered for what they do, so using an RTOS is probably a good 
 tamper response usually done with a button on the board that gets activated when case opens
 this will trigger an interrupt handled by RTC (real time clock)
 
-cpu has modes like Stop mode that is a power saving mode.
-
-
-battery balancing relevent to multiple cells
-TP4056 Lithium Battery Charging Board?
 
 verification: requirements
 validation: does it solve problem
@@ -1622,9 +1225,6 @@ token something used to authorise
 
 HTML not turing-complete, i.e. can't perform data manipulations
 
-robot ➞ renode (why not just qemu with shell scripts perhaps?)
-seems that robot/renode parsing of UART cleaner?
-
 embedded systems special purpose, constrained, 
 often real time (product may be released in regulated environment standardsd, e.g. automotive, rail, defence, medical etc.)
 challenges are testabilty and software/hardware comprimises for optimisation problem solving, e.g. bit-banging or cheap mcu, external timer or in-built timer, adding hardware increases power consumption, e.g. ray tracing card or just rasterisation, big.LITTLE clusters
@@ -1632,37 +1232,20 @@ challenges are testabilty and software/hardware comprimises for optimisation pro
 
 what would a segfault ➞ coredump look like on bare-metal?
 
-C type qualifiers are idempotent, e.g. `const const const int` is fine
-sparse + smatch static analysis tools that give named address spaces (near, far pointers)
-
-is ARM nested interrupt by default?
-
-C atomics just insert barriers?
 
 function reentrant if can be swapped out and its execution rentered
 functions that operate on global structures and employ lock-based sychronisation (could encounter deadlocks if called from signal handler) (and are thread-safe)
 like malloc and printf are not reentrant 
-
-qemu useful over native for when word-size different. also, assembly inspection
 
 TODO: DSP, RTOS, wireless + IoT, battery/power, peripheral protocols (USB, LCD, etc.), CODECS,
 optimisations particular to MCUs, assembly knowledge, sql, c++ stl, 
 python systems testing (continous integration),
 bootloaders
 
-ARM, RISC-V, xtensa
-
-# Language of the People
-
-https://drh.github.io/lcc/
 
 Garbage collection replaces us with a 'search' of our memory and decides when to free
 So really only use if you can't figure out when to free something
 This search is not free
-
-No language implements a feature that determines a memory footprint, i.e. how much memory we use
-
-Know OS specific forking (process launching), file checking/reading/writing, IPCs
 
 Steps for adding new feature: 
 create a new file, e.g. commands.c and include it in main.c (order it before things that will use it) 
@@ -1670,15 +1253,6 @@ then do a git commit.
 This gets us off on a nice feeling
 In new file, create function with barebones functionality that can then be inserted into location and called/tested
 
-Simple word parser use `at[1] != '\0' && at[1] == 'a'`
-
-Simple single line parser:
-First separate by whitespace with `while (at[0] != '\0'); break` and `eat_spaces(), find_ch_from_left()`
-
-3D printing ideas:
-https://www.youtube.com/c/3DSage/videos
-
-michael ee for RTOS: https://www.youtube.com/playlist?list=PLLYZoEqwvzM35p2Kc7bk7bkwxLtTVwpvy 
 
 A real time scheduling algorithm is deterministic (not necessarily fast), i.e. it absolutely must
 (soft time is it should)
@@ -1692,7 +1266,6 @@ middleware extends OS functionality, drivers give OS functionality
 freeRTOS makes money through some commercial licenses (with support), 
 middleware (tcp/ip stacks, cli etc.)
 
-TODO: setting freeRTOS interrupt priorities is sometimes done wrong?
 tasks are usually infinite loops
 
 freeRTOS is more barebones (only 3 files) and effectively just a scheduler (so has timers, priorities) 
@@ -1741,21 +1314,9 @@ So, filesystem task is assigned high priority
 
 If taskA dependent on taskB, taskB should be of higher priority than taskA 
 
-
-
 zephyr more of an RTOS a step towards linux with lots of drivers e.g. LVGL, LittleFS, etc. 
 (with this comes a lot more configuration hassle)
 
-
-TODO: zephyr series (perhaps better to do this first as an RTOS as more modern resources than FreeRTOS?)
-https://training.golioth.io/
-https://blog.golioth.io/zephyr-threads-work-queues-message-queues-and-how-we-use-them/?mc_cid=f6bdf458d1&mc_eid=UNIQID
-https://blog.golioth.io/taking-the-next-step-debugging-with-segger-ozone-and-systemview-on-zephyr/
-
-lego technics for gear ideas:
-https://www.youtube.com/playlist?list=PLJTMHMAVxQmvTGatIj-X2rJrN8aGJEaQD
-
-want to make something like stargate wheel
 
 first step in embedded debugging commandments;
 thou shalt check voltage 
@@ -1781,29 +1342,9 @@ are not going to be fighting on the same bus, i.e. spread out load
 lower power peripherals on lower frequency busses?
 this level of knowledge further emphasises need to know hardware to understand what is going on
 
-
-# Embedded Workflow
-https://go.memfault.com/debugging-embedded-devices-in-production-virtual-panel?mc_cid=32b3cae3e7&mc_eid=UNIQID
-https://go.memfault.com/embedded-device-observability-metrics-panel-recording?mc_cid=32b3cae3e7&mc_eid=UNIQID
-
-use specifically for understanding mesh networks in context of bluetooth?: https://academy.novelbits.io/register/annual-membership?_gl=1*15qz5rp*_ga*NzM2MjQ4ODUzLjE2NTY0OTIwNjc.*_ga_FTRKLL78BY*MTY1OTU3OTAxNS4xLjEuMTY1OTU3OTIyMy4w&_ga=2.149910452.341656361.1659579015-736248853.1656492067
-
-https://interrupt.memfault.com/blog/ota-delta-updates?utm_campaign=Interrupt%20Blog&utm_medium=email&_hsmi=222505339&_hsenc=p2ANqtz-9kmqPywlKxifduWJneXhUh1h_RQ4bf-v41o2qF8iBciZYc9beFlhwM4EiOVbP3DKUl8kxc_4GOIdpzvkJi5iOGzgwSWA&utm_content=222505339&utm_source=hs_email
-
 automated crash reporting:
 https://lance.handmade.network/blog/p/8491-automated_crash_reporting_in_basically_one_400-line_function#26634
-in embedded, how are metrics transmitted remotely, i.e. via bluetooth to phone than web? too much power if directly to web?
 
-something related to HIL (hardware-in-loop testing)
-https://blog.golioth.io/golioth-hil-testing-part1/?mc_cid=da33e3796b&mc_eid=UNIQID
-
-something related to systems testing with aardvark SPI/I2C adapter (more tutorials with bus pirate)
-10:00 time mark: https://www.youtube.com/watch?v=N60WSQc-G_8&list=PLTG9uzDd_HQ84wVz0DwQ5_mwf1GnpY6LB&index=11
-seems indepth bus pirate manual is on git?
-http://dangerousprototypes.com/docs/Bus_Pirate
-https://learn.sparkfun.com/tutorials/bus-pirate-v36a-hookup-guide/all
-(look for device specific tutorials on bus pirate website)
-http://www.starlino.com/bus_pirate_i2c_tutorial.html
 
 seems that RMII (reduced media-independent interface) 
 is a pin layout to connect MAC devices (flexible in implementation). 
@@ -1816,9 +1357,6 @@ therefore, at the front will have a table comparing memory, number of gpios, etc
 
 bit twiddling:
 http://graphics.stanford.edu/~seander/bithacks.html
-
-interesting courses:
-https://pikuma.com/courses
 
 is power profiler kit specific to each board necessary, e.g. nordic, stm32?
 
@@ -1849,60 +1387,8 @@ https://martinfowler.com/articles/patterns-of-distributed-systems/?mc_cid=3835da
 
 memfault
 
-https://embeddedartistry.com/fieldatlas/embedded-software-development-maturity-model/?mc_cid=da33e3796b&mc_eid=UNIQID
-
-Seems that IAR compiler produces smaller, faster code than gcc?
-
-Fallback to: https://grep.app/search when searching for code snippets on github?
-
-DSP:
-https://www.youtube.com/playlist?list=PLTNEB0-EzPluXh0d_5zRprbgRfgkrYxfO
-
-Wifi/Ethernet:
-https://www.youtube.com/watch?v=dumqa78j1sg&t=1046s
-
-Lora/Nrf/IoT connections:
-https://www.youtube.com/watch?v=mB7LsiscM78
-
-courses:
-https://www.youtube.com/watch?v=dnfuNT1dPiM&t=25s
-https://www.udemy.com/course/mastering-microcontroller-with-peripheral-driver-development/?ranMID=39197&ranEAID=YuKpx7UHSEk&ranSiteID=YuKpx7UHSEk-VcxzUKL7wAR1VyB2muQaaQ&LSNPUBID=YuKpx7UHSEk&utm_source=aff-campaign&utm_medium=udemyads
-https://www.udemy.com/course/microcontroller-dma-programming-fundamentals-to-advanced/?ranMID=39197&ranEAID=YuKpx7UHSEk&ranSiteID=YuKpx7UHSEk-85NcF8rkTsNIoMCfETBU3g&LSNPUBID=YuKpx7UHSEk&utm_source=aff-campaign&utm_medium=udemyads
-https://www.udemy.com/course/mastering-rtos-hands-on-with-freertos-arduino-and-stm32fx/?ranMID=39197&ranEAID=YuKpx7UHSEk&ranSiteID=YuKpx7UHSEk-qjeQee0Iel.PZ6z63nXsmw&LSNPUBID=YuKpx7UHSEk&utm_source=aff-campaign&utm_medium=udemyads
-
-memory align up:
-sbrk((x + 7) & ~7); sbrk() is system call malloc uses?
-
 silicon mainly obtained from quartz. 
 electric arc when insulator air is supplied enough energy to ionise
-
-1. **Documentation**
-   Generalities such as *Debug Interface* or *Procedure Call Standard*
-   Architecture specifics such as *armv7m*
-   Micro-architecture specifics such as *cortex-m4*
-   Micro-controller specifics such as *stm32f429zi*
-   Board specifics such as pin-out diagram and schematic
-2. **BSP**
-   This can be done via an IDE such as STM32CubeMX to create an example project Makefile.
-   Alternatively can be done via a command line application such as libopencm3.
-3. **Targets**
-   Disable hardware fpu instructions and enable libgloss for simulator. Ensure main() call ordering mock test working 
-   Enable nano libc with no system calls for target
-4. **Flashing and Debugging**
-   Coordinate *JLink/STLink* probe and board pin-outs
-   Ascertain board debug firmware and determine if reflashing required, e.g. *STLinkReflash*
-   Preferable to use debugger software such as *Ozone* that automates flashing.
-   If not, determine flash software such as *JLinkExe*, *stlink-tools*, *openocd*, *nrfjprog* etc.
-   Coordinate debugger software such as *QTCreator* with qemu gdb server
-5. **Hardware Tools**
-   Measure voltage, current, resistance/continuity/diode with multimeter?
-   Oscilloscope for ...
-   Logic analyser for, SPI and I2C
-
-(HSPI is high speed parallel interface)
-
-6. **Protocol**
-  USB port probably in-built serial port
 
 astable means no stable states, i.e. is not predominatley low or high, e.g. square wave, sine wave etc.
 oscillator generates wave (could be for carrier or clock)
@@ -1924,9 +1410,6 @@ The feedback of the output frequency into the initial phase detector can be chan
 Adding dividers/pre-scalers into this circuit allows to get programmable voltage.
 So, a combination of stable crystal (however generate relatively slow signal, e.g. 100MHz) and high frequency RC oscillators (a type of VCO; voltage controlled oscillator)
 
-openocd -f /usr/share/openocd/scripts/interface/jlink.cfg -f /usr/share/openocd/scripts/target/stm32f4x.cfg
-should open a tcp port on 3333 for gdb
-
 The CPU architecture will have an exception (a cpu interrupt) model. Here, reset behaviour will be defined.
 the 32 bit arm cortex-m4 has FPU (a application, m for microcontroller, r high performance real time)
 TODO(Ryan): avr vs arm vs rsic-v vs x86 vs powerpc vs sparc vs mips
@@ -1946,16 +1429,12 @@ drive with external source, e.g. ground or voltage.
 Pull-up/down resistors are to used for unconnected input pins to avoid floating state
 So, a pull-down will have the pin (when in an unconnected state) to ground, i.e. 0V when switch is not on
 
-IMPORTANT: Although enabling internal resistors, 
-must look at board schematic as external resistors might overrule
+https://embeddedartistry.com/blog/2018/06/04/demystifying-microcontroller-gpio-settings/?mc_cid=c443ecbc14&mc_eid=UNIQID
 
 Vdd (drain, power supply to chip)
 Vcc (collector, subsection of chip, i.e. supply voltage of circuit)
 Vss (sink, ground)
 Vee (emitter, ground)
-
-the sparsity of linux can make configuration vary
-e.g bluez stack -> modify policies
 
 for long range, LoRa or sigfox
 essentially tradeoffs between power and data rate
@@ -1963,19 +1442,4 @@ ieee 802.11 group for WLANs (wifi - high data rate),
 802.15 for WPANs; 802.15.1 (bluetooth - le variant - heavily used in audio), 
 802.15.4 low data rate (zigbee implements this standard)
 
-
-unlike windows msdn, linux documentation is mostly source code (not good as if not fast/easy, not used). 
-so, essential to have something like ctags and compile from source (sed -e "s/-Werror//g" -i *.make)
-source and unit tests are documentation in many linux sources
-
-xor with itself sets to 0
-
-"1's and 0's" + matej youtube channels
-
-https://embeddedartistry.com/blog/2018/06/04/demystifying-microcontroller-gpio-settings/?mc_cid=c443ecbc14&mc_eid=UNIQID
-https://embeddedartistry.com/blog/2019/04/08/a-general-overview-of-what-happens-before-main/?mc_cid=c443ecbc14&mc_eid=UNIQID
-
-unit test notes from udemy
-
-Aardvark adapter essential for automated testing (so, an adapter of sorts should always be used
-for automated testing?)
+Aardvark adapter essential for automated testing (so, an adapter of sorts should always be used for automated testing?)
